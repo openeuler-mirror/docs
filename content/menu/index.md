@@ -2,7 +2,7 @@
 headless: true
 ---
 
-- [前言]({{< relref "/docs/前言.md" >}})
+- [前言]({{< relref "/docs/home.md" >}})
 - [安装准备]({{< relref "/docs/安装准备.md" >}})
   - [获取安装源]({{< relref "/docs/获取安装源.md" >}})
   - [硬件兼容支持]({{< relref "/docs/硬件兼容支持.md" >}})
