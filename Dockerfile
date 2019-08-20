@@ -3,7 +3,8 @@ FROM nginx
 MAINTAINER Edward Lee <freesky.edward@gmail.com>
 
 RUN apt-get update && \
-    apt install curl -y
+    apt install curl -y && \
+    apt-get install git -y
 
 ENV HUGO_VERSION=0.56.3
 
