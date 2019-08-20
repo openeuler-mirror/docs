@@ -1,5 +1,7 @@
 # How to contribute
 
+### Brief Introduction
+
 This project is [Apache 2.0](LICENSE) licensed and accepts contributions via pull requests. This document outlines some of the conventions on commit message formatting, contact points for developers and other resources to make getting your contribution easier.
 
 Before you start, NOTICE that ```master``` branch is development version. ```stable``` branch
@@ -9,15 +11,13 @@ provided for customers and users. So all code modifications SHOULD be submitted 
 This repository is integrated by website which will provide the final outline, so please only maintain docs in this repository.
 anything others like styles, js are maintained in website as a combined hugo theme.
 
-#### Brief Introduction
-
-This repository contents oranganized by hugo book  which is a framework helping build our own book.
+Contents oranganized by hugo book  which is a framework helping build our own book.
 please refer to hugo book [website](https://github.com/alex-shpak/hugo-book) for more detailed information.
 
 All files are written with MarkDown syntax, please note: If you want to add internal links,
 be careful to point to the .html pages corresponding to the .md pages of the folder.
 
-#### Debug local
+### Debug local
 
 This doc only provides running test on linux, please prepare linux server before running 
 following commands.
@@ -37,7 +37,7 @@ curl -L https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo
 hugo serve --bind 0.0.0.0 --port 80 --baseUrl /
 ```
 
-The website will serving on http://your-server-ip:4000
+The website will serving on http://your-server-ip:80
 
 
 ### Debug with docker
@@ -53,7 +53,7 @@ note: here ```docs``` is the image name, you can change it as you need.
 2. Running in container
 
 ```
-docker run -p 80:80 -d docs:v0.0.1 >> docs.pid
+docker run -p 80:80 -d docs:v0.0.1 > docs.pid
 ```
 
 The website will serving on http://your-server-ip:80
@@ -77,8 +77,8 @@ Note: menu file home file name must be named ```home.md```.
 
 ## Getting help
 
-IRC: TODO 
-Mail: TODO  
+- IRC: TODO 
+- Mail: TODO  
 
 ## Report issues
 
