@@ -23,6 +23,9 @@ docker run -p 80:80 -d docs:v0.0.1 > docs.pid
 
 The website will serving on http://your-server-ip:80
 
+The defalut language(en) will serving on http://your-server-ip/
+Other language(zh) will serving on http://your-server-ip/zh
+
 3. Stopping the container
 
 ```

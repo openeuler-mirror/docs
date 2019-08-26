@@ -64,6 +64,10 @@ The website will serving on http://your-server-ip:80
 docker rm -f `cat docs.pid` && rm -f docs.pid
 ```
 
+***Note***: 
+The defalut language(en) will serving on http://your-server-ip/
+Other language(zh) will serving on http://your-server-ip/zh
+
 ### Add/Modify file
 
 Before openning a PR, running locally and have a check would be good step that will help
