@@ -1,8 +1,8 @@
 ---
 headless: true
 ---
--[Installation Guide]
-- [前言]({{< relref "/docs/home.md" >}})
+- [安装指南]
+- [前言]({{< relref "/docs/Installation/home.md" >}})
 - [安装准备]({{< relref "/docs/安装准备.md" >}})
   - [获取安装源]({{< relref "/docs/获取安装源.md" >}})
   - [硬件兼容支持]({{< relref "/docs/硬件兼容支持.md" >}})
