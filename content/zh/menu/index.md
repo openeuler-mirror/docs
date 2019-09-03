@@ -12,7 +12,7 @@ headless: true
   - [通过U盘安装]({{< relref "/docs/Installation/通过U盘安装.md" >}})
   - [通过硬盘安装]({{< relref "/docs/Installation/通过硬盘安装.md" >}})
   - [使用PXE通过网络安装]({{< relref "/docs/Installation/使用PXE通过网络安装.md" >}})
-    - [总体介绍]({{< relref "//docs/Installation/总体介绍.md" >}})
+    - [总体介绍]({{< relref "/docs/Installation/总体介绍.md" >}})
 	- [准备安装源]({{< relref "/docs/Installation/准备安装源.md" >}})
 	  - [在NFS服务器]({{< relref "/docs/Installation/在NFS服务器.md" >}})
 	  - [在FTP、HTTPS服务器]({{< relref "/docs/Installation/在FTP-HTTPS和HTTP服务器.md" >}})
