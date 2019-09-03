@@ -2,11 +2,11 @@
 headless: true
 ---
 - [安装指南]
-- [前言]({{< relref "/docs/Installation/home.md" >}})
-- [安装准备]({{< relref "/docs/Installation/安装准备.md" >}})
-  - [获取安装源]({{< relref "/docs/Installation/获取安装源.md" >}})
-  - [硬件兼容支持]({{< relref "/docs/Installation/硬件兼容支持.md" >}})
-  - [最小硬件要求]({{< relref "/docs/Installation/最小硬件要求.md" >}})
+  - [前言]({{< relref "/docs/Installation/home.md" >}})
+  - [安装准备]({{< relref "/docs/Installation/安装准备.md" >}})
+    - [获取安装源]({{< relref "/docs/Installation/获取安装源.md" >}})
+    - [硬件兼容支持]({{< relref "/docs/Installation/硬件兼容支持.md" >}})
+    - [最小硬件要求]({{< relref "/docs/Installation/最小硬件要求.md" >}})
 - [启动安装]({{< relref "/docs/Installation/启动安装.md" >}})
   - [通过光盘安装]({{< relref "/docs/Installation/通过光盘安装.md" >}})
   - [通过U盘安装]({{< relref "/docs/Installation/通过U盘安装.md" >}})
