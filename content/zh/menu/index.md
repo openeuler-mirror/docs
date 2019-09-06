@@ -1,7 +1,7 @@
 ---
 headless: true
 ---
-- [开发指南]
+- [开发指南]({{< relref "/docs/Development/home.md" >}})
   - [前言]({{< relref "/docs/Development/前言.md" >}})
   - [使用GCC编译]({{< relref "/docs/Development/使用GCC编译.md" >}})
     - [使用基础编译]({{< relref "/docs/Development/使用基础编译.md" >}})
