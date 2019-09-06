@@ -1,0 +1,11 @@
+# 部署远端repo源<a name="ZH-CN_TOPIC_0183245391"></a>
+
+安装操作系统openEuler1.0（openEuler-1.0-aarch64-dvd.iso），在openEuler1.0上通过nginx部署repo源。
+
+-   **[nginx安装与配置](nginx安装与配置.md)**  
+
+-   **[启动nginx服务](启动nginx服务.md)**  
+
+-   **[repo源部署](repo源部署.md)**  
+
+
