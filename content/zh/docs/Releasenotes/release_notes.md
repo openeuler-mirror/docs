@@ -1,1 +1,3 @@
-introduction of openEuler
+# openEuler 1.0 版本发行说明<a name="ZH-CN_TOPIC_0182168854"></a>
+
+openEuler 开源项目是社区驱动的免费 Linux 软件项目，致力于打造国产操作系统生态。openEuler 开源项目提供了方便的源码和发布包下载途径，包括 openEuler 开源操作系统，虚拟化、容器，以及 HCC 编译器等。为了推动软件的自由、免费，所有人可以通过 openEuler 开源社区免费获取对应软件。我们非常欢迎广大爱好者能够积极参与到社区中来，发挥自己的能力和想象力，相互协作，共同参与社区的建设。
