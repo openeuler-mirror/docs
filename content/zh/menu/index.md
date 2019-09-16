@@ -194,7 +194,7 @@ headless: true
                 - [bond口已具有多个IPV6地址时，添加或删除IPV6地址耗时过久]({{< relref "/docs/Administration/bond口已具有多个IPV6地址时-添加或删除IPV6地址耗时过久.md" >}})
                 - [Rsyslog在IPV4和IPV6混合使用场景中日志传输延迟]({{< relref "/docs/Administration/Rsyslog在IPV4和IPV6混合使用场景中日志传输延迟.md" >}})
     - [搭建服务]({{< relref "/docs/Administration/搭建服务.md" >}})
-        - [搭建repo服务器]({{< relref "/docs/Administration/搭建repo服务器-删除.md" >}})
+        - [搭建repo服务器]({{< relref "/docs/Administration/搭建repo服务器.md" >}})
             - [概述]({{< relref "/docs/Administration/概述.md" >}})
             - [创建/更新本地repo源]({{< relref "/docs/Administration/创建-更新本地repo源.md" >}})
                 - [获取ISO镜像]({{< relref "/docs/Administration/获取ISO镜像.md" >}})
