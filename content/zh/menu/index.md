@@ -8,7 +8,7 @@ headless: true
     - [技术特性]({{< relref "/docs/Releasenotes/技术特性.md" >}})
         - [系统安装]({{< relref "/docs/Releasenotes/系统安装.md" >}})
         - [定制/裁减]({{< relref "/docs/Releasenotes/定制-裁减.md" >}})
-      - [文件系统]({{< relref "/docs/Releasenotes/文件系统.md" >}})
+        - [文件系统]({{< relref "/docs/Releasenotes/文件系统.md" >}})
         - [内核]({{< relref "/docs/Releasenotes/内核.md" >}})
         - [系统管理]({{< relref "/docs/Releasenotes/系统管理.md" >}})
         - [编译器]({{< relref "/docs/Releasenotes/编译器.md" >}})
