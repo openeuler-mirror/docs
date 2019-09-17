@@ -65,9 +65,7 @@
 
 Dockerfile介绍：
 
-Dockerfile是一个镜像的表示，可以通过Dockerfile来描述构建镜像的步骤，并自动构建一个容器，所有的 Dockerfile 命令格式都是：
-
-**INSTRUCTION arguments**
+Dockerfile是一个镜像的表示，可以通过Dockerfile来描述构建镜像的步骤，并自动构建一个容器，所有的 Dockerfile 命令格式都是：**INSTRUCTION arguments**
 
 **FROM命令**
 
@@ -151,9 +149,9 @@ CMD command param1 param2 \(as a shell\)
 
 **ONBUILD命令**
 
-格式：
+格式：ONBUILD \[其它指令\]
 
-功能：
+功能：后面跟其它指令，比如 RUN、COPY 等，这些指令，在当前镜像构建时并不会被执行，只有当以当前镜像为基础镜像，去构建下一级镜像的时候才会被执行
 
 下面是Dockerfile的一个完整例子，该Dockerfile将构建一个安装了sshd服务的image
 
@@ -175,7 +173,7 @@ ENTRYPOINT /usr/sbin/sshd -D</pre>
 1.  以上文的Dockerfile构建一个image
 
     ```
-    $ sudo docker build -t ubuntu:sshd /home/leijitang/test
+    $ sudo docker build -t ubuntu:latest
     ```
 
 2.  通过以下命令可以看到这个生成的image：

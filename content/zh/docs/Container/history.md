@@ -15,7 +15,7 @@
 示例：
 
 ```
-$ sudo docker history euleros:test
+$ sudo docker history busybox:test
 IMAGE               CREATED             CREATED BY          SIZE                COMMENT
 be4672959e8b        15 minutes ago      bash                23B
 21970dfada48        4 weeks ago                             128MB               Imported from -

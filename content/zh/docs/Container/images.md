@@ -19,8 +19,6 @@
 ```
 $ sudo docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-euleros             test                be4672959e8b        15 minutes ago      128MB
-euleros             v2r7                21970dfada48        4 weeks ago         128MB
 busybox             latest              e02e811dd08f        2 years ago         1.09MB
 ```
 

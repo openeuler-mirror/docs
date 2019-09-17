@@ -13,10 +13,10 @@
 ```
 $ sudo docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-b15976967abb        euleros:v2r7        "bash"              3 seconds ago       Up 2 seconds                            festive_morse
+b15976967abb        busybox:latest        "bash"              3 seconds ago       Up 2 seconds                            festive_morse
 $ sudo docker rename pedantic_euler new_name
 $ sudo docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-b15976967abb        euleros:v2r7        "bash"              34 seconds ago      Up 33 seconds                           new_name
+b15976967abb        busybox:latest        "bash"              34 seconds ago      Up 33 seconds                           new_name
 ```
 

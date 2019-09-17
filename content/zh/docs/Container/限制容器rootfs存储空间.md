@@ -10,7 +10,7 @@
 
 1.  环境准备
 
-    文件系统支持Project ID和Project Quota属性，Euler OS4.19上内核已经支持，外围包e2fsprogs版本不低于1.43.4-2。
+    文件系统支持Project ID和Project Quota属性，4.19版本内核已经支持，外围包e2fsprogs版本不低于1.43.4-2。
 
 2.  在容器挂载overlayfs之前，需要对不同容器的upper目录和work目录设置不同的project id，同时设置继承选项，在容器挂载overlayfs之后不允许再修改project id和继承属性。
 3.  配额的设置需要在容器外以特权用户进行。

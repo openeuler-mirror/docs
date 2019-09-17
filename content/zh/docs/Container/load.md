@@ -15,8 +15,6 @@ $ sudo docker load -i busybox.tar
 Loaded image ID: sha256:e02e811dd08fd49e7f6032625495118e63f597eb150403d02e3238af1df240ba
 $ sudo docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-euleros             test                be4672959e8b        19 minutes ago      128MB
-euleros             v2r7                21970dfada48        4 weeks ago         128MB
 busybox             latest              e02e811dd08f        2 years ago         1.09MB
 ```
 

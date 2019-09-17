@@ -8,8 +8,6 @@
 
 -a, --all=false     显示所用的容器
 
---before=""       显示在指定容器的之前创建的容器（e.g. --before=”ps\_test”，列出在ps\_test容器创建之前创建的容器）
-
 -f, --filter=\[\]      筛选值，可用的筛选值有：exited=<int\>容器的退出码status=\(restarting|running|paused|exited\)容器的状态码（e.g. -f status=running，列出正在运行的容器）
 
 -l, --latest=false   列出最近创建的一个容器
@@ -21,8 +19,6 @@
 -q, --quiet=false   显示容器的ID
 
 -s, --size=false    显示容器的大小
-
---since=""        显示在指定容器之后创建的容器
 
 示例：
 

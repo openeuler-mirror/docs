@@ -43,6 +43,6 @@
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >rootfs的制作示例如下  
->1.  docker\_convert -i rnd-dockerhub.huawei.com/official/busybox-aarch64:latest -o ./system-busybox。  
+>1.  docker\_convert -i docker.io/official/busybox-aarch64:latest -o ./system-busybox。  
 >2.  lcrc run  -tid  --external-rootfs ./system-busybox/root-fs/ none init。  
 

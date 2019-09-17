@@ -14,7 +14,7 @@
     ```
 
 -   使用devicemapper时推荐加上--storage-opt dm.use\_deferred\_deletion=true --storage-opt dm.use\_deferred\_removal=true。
--   在EulerOS上使用devicemapper时，容器文件系统推荐使用ext4，需要在docker daemon的配置参数中加 上--storage-opt dm.fs=ext4。
+-   使用devicemapper时，容器文件系统推荐使用ext4，需要在docker daemon的配置参数中加 上--storage-opt dm.fs=ext4。
 -   当graphdriver为devicemapper时，如果metadata文件损坏且不可恢复，需要人工介入恢复。禁止直接操作或篡改daemon存储devicemapper的元数据。
 
 **docker daemon开启了user namespace特性，切换devicemapper存储池时的注意事项**

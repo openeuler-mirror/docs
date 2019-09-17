@@ -17,13 +17,11 @@
 运行一个容器，然后将这个容器提交成一个新的image
 
 ```
-$ sudo docker commit test eulerof:test
+$ sudo docker commit test busybox:test
 sha256:be4672959e8bd8a4291fbdd9e99be932912fe80b062fba3c9b16ee83720c33e1
 
 $ sudo docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-euleros             test                be4672959e8b        9 seconds ago       128MB
-euleros             v2r7                21970dfada48        4 weeks ago         128MB
 busybox             latest              e02e811dd08f        2 years ago         1.09MB
 ```
 

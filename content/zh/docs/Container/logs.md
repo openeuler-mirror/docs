@@ -16,7 +16,7 @@
 
 示例：
 
-1.  查看jaegertracing容器的日志信息，该容器上跑了一个jaeger tracing服务
+1.  查看jaegertracing容器的日志信息，该容器上跑了一个jaegertracing服务
 
     ```
     $ sudo docker logs jaegertracing
@@ -30,7 +30,7 @@
     {"level":"info","ts":1566979103.4577134,"caller":"all-in-one/main.go:256","msg":"Listening for Zipkin HTTP traffic","zipkin.http-port":9411}
     ```
 
-2.  加上-f选项，实时打印registry容器的日志信息
+2.  加上-f选项，实时打印jaegertracing容器的日志信息
 
     ```
     $ sudo docker logs -f jaegertracing

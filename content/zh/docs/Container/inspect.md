@@ -19,7 +19,7 @@
 1.  返回一个容器的信息
 
     ```
-    $ sudo docker inspect euleros_test
+    $ sudo docker inspect busybox_test
     [
         {
             "Id": "9fbb8649d5a8b6ae106bb0ac7686c40b3cbd67ec2fd1ab03e0c419a70d755577",

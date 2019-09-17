@@ -2,7 +2,7 @@
 
 为了让docker-engine容器引擎支持新的容器运行时kata-runtime，需要通过以下步骤对docker-engine容器引擎进行配置：
 
-1.  请保证环境上所有的软件包都已经安装完毕。
+1.  请保证环境上所有的软件包（docker-engine、kata-containers）都已经安装完毕。
 2.  停止docker-engine。
 
     ```

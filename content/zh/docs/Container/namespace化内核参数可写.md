@@ -55,7 +55,7 @@
 启动容器， 指定--ns-change-opt=net：
 
 ```
-[root@localhost ~]# lcrc run -tid --ns-change-opt net --system-container --external-rootfs /root /myrootfs none init
+[root@localhost ~]# lcrc run -tid --ns-change-opt net --system-container --external-rootfs /root/myrootfs none init
 4bf44a42b4a14fdaf127616c90defa64b4b532b18efd15b62a71cbf99ebc12d2
 [root@localhost ~]# lcrc exec -it 4b mount | grep /proc/sys
 proc on /proc/sys type proc (ro,nosuid,nodev,noexec,relatime)

@@ -42,7 +42,7 @@ user namespace是将容器的root映射到主机的普通用户，使得容器�
 系统容器启动指定--user-remap参数：
 
 ```
-[root@localhost ~]# lcrc run -tid --user-remap 100000:100000:65535 --system-container --external-rootfs /home/euleros/root-fs none /sbin/init
+[root@localhost ~]# lcrc run -tid --user-remap 100000:100000:65535 --system-container --external-rootfs /home/root-fs none /sbin/init
 eb9605b3b56dfae9e0b696a729d5e1805af900af6ce24428fde63f3b0a443f4a
 ```
 
@@ -65,8 +65,8 @@ root      4948  0.0  0.0 213032   808 pts/0    S+   15:48   0:00 grep --color=au
 [root@localhost /]# echo test123 >> /test123
 [root@localhost /]# exit
 exit
-[root@localhost ~]# ll /home/euleros/root-fs/test123
--rw-------. 1 100000 100000 8 Aug  2 15:52 /home/euleros/root-fs/test123
+[root@localhost ~]# ll /home/root-fs/test123
+-rw-------. 1 100000 100000 8 Aug  2 15:52 /home/root-fs/test123
 ```
 
 可以看到，在容器内生成了一个文件，它的owner是root，但是在宿主机上看到的owner是id=100000这个用户。

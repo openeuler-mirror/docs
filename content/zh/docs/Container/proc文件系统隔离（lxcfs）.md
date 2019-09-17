@@ -86,7 +86,7 @@ docker-lxcfs-toolkit [OPTIONS] COMMAND [COMMAND_OPTIONS]
 2.  容器启动完成之后查看容器内是否存在lxcfs挂载点。
 
     ```
-    [root@localhost ~]# lcrc run -tid -v /var/lib/lxc:/var/lib/lxc --hook-spec /var/lib/lcrd/hooks/hookspec.json --system-container --external-rootfs /home/euleros/root-fs none init
+    [root@localhost ~]# lcrc run -tid -v /var/lib/lxc:/var/lib/lxc --hook-spec /var/lib/lcrd/hooks/hookspec.json --system-container --external-rootfs /home/root-fs none init
     a8acea9fea1337d9fd8270f41c1a3de5bceb77966e03751346576716eefa9782
     [root@localhost ~]# lcrc exec a8 mount | grep lxcfs
     lxcfs on /var/lib/lxc/lxcfs type fuse.lxcfs (rw,nosuid,nodev,relatime,user_id=0,group_id=0,allow_other)
