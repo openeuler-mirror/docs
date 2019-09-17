@@ -21,7 +21,7 @@ The address assignment of a specific device can be viewed as follows:
 # ip addr show dev eth0
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
   link/ether f0:de:f1:7b:6e:5f brd ff:ff:ff:ff:**:**
-  inet 192.168.0.10/24 brd 1192.168.0.255 scope global global eth0
+  inet 192.168.0.10/24 brd 192.168.0.255 scope global global eth0
     valid_lft 58682sec preferred_lft 58682sec
   inet6 fe80::f2de:f1ff:fe7b:6e5f/64 scope link
     valid_lft forever preferred_lft forever

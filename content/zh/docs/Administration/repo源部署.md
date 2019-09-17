@@ -40,10 +40,13 @@
     ![](figures/nginx部署成功.png "nginx部署成功")
 
 5.  通过下面几种方式将repo源放入到/srv/repo下：
-    -   在/srv/repo下直接创建repo源
+    -   拷贝镜像中相关文件至在/srv/repo下
 
         ```
-        mkrepo -i /home/openEuler/openEuler-1.0-aarch64-dvd.iso -d /srv/repo/os/2.8/base/aarch64 --key-dir /srv/repo
+        mount /home/openEuler/openEuler-1.0-aarch64-dvd.iso  /mnt/
+        cp -r /mnt/Packages /srv/repo/
+        cp -r /mnt/repodata /srv/repo/
+        cp -r /mnt/RPM-GPG-KEY-openEuler /srv/repo/
         ```
 
         openEuler-1.0-aarch64-dvd.iso存放在/home/openEuler目录下。

@@ -14,7 +14,7 @@
 
 ## 解决方法<a name="zh-cn_topic_0162742550_section102511102189"></a>
 
-1.  按ctrl+alt+f2切换控制台，执行lsblk命令找到原来装了系统的两块raid盘sda、sdb。以下步骤中以sda盘为例，如果有更多有问题的磁盘，执行同样的操作即可。
+1.  按“Ctrl+Alt+F2”切换控制台，执行lsblk命令找到原来装了系统的两块raid盘sda、sdb。以下步骤中以sda盘为例，如果有更多有问题的磁盘，执行同样的操作即可。
 
     ![](figures/zh-cn_image_0187280908.jpg)
 

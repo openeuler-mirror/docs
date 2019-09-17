@@ -1,4 +1,4 @@
-# openEuler 安装指南
+# openEuler 1.0 安装指南
 
 -   [前言](前言.md)
 -   [安装准备](安装准备.md)
@@ -44,27 +44,9 @@
 
 
 -   [使用kickstart自动化安装](使用kickstart自动化安装.md)
-    -   [简介](简介.md)
-    -   [执行kickstart安装](执行kickstart安装.md)
-        -   [openEuler系统的半自动化安装](openEuler系统的半自动化安装.md)
-            -   [openEuler系统的半自动化安装优缺点](openEuler系统的半自动化安装优缺点.md)
-            -   [openEuler系统的半自动化安装环境需求](openEuler系统的半自动化安装环境需求.md)
-            -   [openEuler系统的半自动化安装步](openEuler系统的半自动化安装步.md)
-
-        -   [openEuler系统的全自动化安装](openEuler系统的全自动化安装.md)
-            -   [openEuler系统的全自动化安装优缺点](openEuler系统的全自动化安装优缺点.md)
-            -   [openEuler系统的全自动化安装环境需求](openEuler系统的全自动化安装环境需求.md)
-            -   [openEuler系统的全自动化安装步骤](openEuler系统的全自动化安装步骤.md)
-
-
-    -   [kickstart文件说明](kickstart文件说明.md)
-        -   [kickstart文件简介](kickstart文件简介.md)
-        -   [kickstart 命令](kickstart-命令.md)
-        -   [选择软件包](选择软件包.md)
-        -   [编写预安装脚本](编写预安装脚本.md)
-        -   [编写安装后脚本](编写安装后脚本.md)
-        -   [kickstart配置文件示例](kickstart配置文件示例.md)
-
+    -   [总体介绍](总体介绍.md)
+    -   [半自动化安装指导](半自动化安装指导.md)
+    -   [全自动化安装指导](全自动化安装指导.md)
 
 -   [FAQ](FAQ.md)
     -   [安装openEuler时选择第二盘位为安装目标，操作系统无法启动](安装openEuler时选择第二盘位为安装目标-操作系统无法启动.md)
@@ -76,5 +58,6 @@
         -   [软件包依赖](软件包依赖.md)
         -   [选择http网络安装](选择http网络安装.md)
 
+    -   [如何手动开启kdump服务](如何手动开启kdump服务.md)
 
 

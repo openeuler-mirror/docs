@@ -73,7 +73,7 @@ IPv6中PMTU的最小值为1280，如果mtu值设置小于1280则会导致IPv6地
     \[home|nodad\] 选项只针对IPv6地址有效。
 
     -   home：将该地址指定为RFC 6275中定义的家庭地址。（这是移动节点从家庭链路获取的地址， 是移动节点的永久地址，如果移动节点保持在相同的归属链路中，则各种实体之间的通信照常进行。）
-    -   nodad：配置该项（仅限IPv6）添加此地址时不执行重复地址检测DAD（RFC 4862）。如果一台设备上多个接口通过nodad配置了多个相同的ipv6地址，则会按照接口顺序使用该ipv6地址。同一个接口上不能添加一个nodad一个非nodad的相同ipv6地址。因为两个地址时一样的，所以会报“RTNETLINK answers: File exists”。
+    -   nodad：配置该项（仅限IPv6）添加此地址时不执行重复地址检测DAD（RFC 4862）。如果一台设备上多个接口通过nodad配置了多个相同的ipv6地址，则会按照接口顺序使用该ipv6地址。同一个接口上不能添加一个nodad一个非nodad的相同ipv6地址。因为两个地址是一样的，所以会报“RTNETLINK answers: File exists”。
 
 3.  命令：
 
@@ -81,7 +81,7 @@ IPv6中PMTU的最小值为1280，如果mtu值设置小于1280则会导致IPv6地
     ip [-6] addr del IFADDR dev IFNAME
     ```
 
-    删除Pv6地址可以选择添加-6选项也可以不添加，ip addr del命令会根据具体地址类型来判断是ipv4地址还是ipv6地址。
+    删除IPv6地址可以选择添加-6选项也可以不添加，ip addr del命令会根据具体地址类型来判断是ipv4地址还是ipv6地址。
 
 4.  命令：
 

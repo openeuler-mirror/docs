@@ -1,4 +1,4 @@
-# openEuler 管理员指南
+# openEuler 1.0 管理员指南
 
 -   [前言](前言.md)
 -   [基础配置](基础配置.md)
@@ -101,12 +101,12 @@
 
 
 -   [搭建服务](搭建服务.md)
-    -   [搭建repo服务器【删除】](搭建repo服务器-删除.md)
+    -   [搭建repo服务器](搭建repo服务器.md)
         -   [概述](概述.md)
         -   [创建/更新本地repo源](创建-更新本地repo源.md)
             -   [获取ISO镜像](获取ISO镜像.md)
             -   [挂载ISO创建repo源](挂载ISO创建repo源.md)
-            -   [mkrepo创建repo源](mkrepo创建repo源.md)
+            -   [创建本地repo源](创建本地repo源.md)
             -   [更新repo源](更新repo源.md)
 
         -   [部署远端repo源](部署远端repo源.md)
@@ -117,7 +117,7 @@
         -   [使用repo源](使用repo源.md)
             -   [repo配置为yum源](repo配置为yum源.md)
             -   [repo优先级](repo优先级.md)
-            -   [yum相关命令](yum相关命令.md)
+            -   [dnf相关命令](dnf相关命令.md)
 
 
     -   [搭建FTP服务器](搭建FTP服务器.md)

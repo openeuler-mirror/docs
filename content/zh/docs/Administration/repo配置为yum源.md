@@ -9,7 +9,7 @@
     ```
     [base]
     name=base
-    baseurl=file:///srv/repo/os/1.0/base/aarch64
+    baseurl=file:///srv/repo
     enabled=1
     gpgcheck=1
     gpgkey=file:///srv/repo/RPM-GPG-KEY-openEuler
@@ -26,7 +26,7 @@
     ```
     [base]
     name=base
-    baseurl=http://192.168.1.2/os/1.0/base/aarch64
+    baseurl=http://192.168.1.2/
     enabled=1
     gpgcheck=1
     gpgkey=http://192.168.1.2/RPM-GPG-KEY-openEuler
