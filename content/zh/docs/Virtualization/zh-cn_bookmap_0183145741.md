@@ -51,7 +51,7 @@
             -   [调整虚拟CPU绑定关系](调整虚拟CPU绑定关系.md)
 
         -   [管理虚拟内存](管理虚拟内存.md)
-            -   [NUMA 简介](NUMA-简介.md)
+            -   [NUMA简介](NUMA简介.md)
             -   [配置Host NUMA](配置Host-NUMA.md)
             -   [配置Guest NUMA](配置Guest-NUMA.md)
 

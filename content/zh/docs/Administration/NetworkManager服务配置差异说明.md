@@ -2,7 +2,7 @@
 
 ## 概述<a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_section15457154213251"></a>
 
-NetworkManager服务使用ifup/ifdown的逻辑接口定义进行高级网络设置。其参数大多数都是在/etc/sysconfig/network和/etc/sysconfig/network-scripts/ifcfg-<interface-name\>两个配置文件设置。前者为全局设置，后者未指定网卡的设置，当两者有冲突时，后者生效。
+NetworkManager服务使用ifup/ifdown的逻辑接口定义进行高级网络设置。其参数大多数都是在/etc/sysconfig/network和/etc/sysconfig/network-scripts/ifcfg-<interface-name\>两个配置文件设置。前者为全局设置，后者为指定网卡的设置，当两者有冲突时，后者生效。
 
 ## 配置差异说明<a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_section125411051142511"></a>
 
