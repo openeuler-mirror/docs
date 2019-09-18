@@ -44,7 +44,7 @@ Please refer to [CONTRIBUTING](./CONTRIBUTING.md) for more guide.
 
 ### Get Help
 
-- IRC: XXX
-- MAIL: XXX
+- IRC: #openeuler-doc
+- MAIL: dev@openeuler.org
 
 
