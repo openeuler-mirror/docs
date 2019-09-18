@@ -4,7 +4,7 @@
 
 在docker-engine的runtimeArges字段可以利用--kata-config指定私有文件，默认的配置文件路径为/usr/share/defaults/kata-containers/configuration.toml。
 
-常用配置文件字段如下，详细的配置文件选项参考[configuration.toml配置说明](configuration-toml配置说明.md#ZH-CN_TOPIC_0184808187)。
+常用配置文件字段如下，详细的配置文件选项参考[configuration.toml配置说明]。
 
 1.  hypervisor.qemu
     -   path ：指定虚拟化qemu执行路径。
