@@ -6,7 +6,7 @@
 
 ## 用法<a name="zh-cn_topic_0183293570_section188811239165314"></a>
 
-lcrc create/run时使用--device-write/read-bps <device-path\>:<number\>\[<unit\>\]来限制容器中设备的读写速度。
+lcrc create/run时使用--device-read-bps/--device-write-bps  <device-path\>:<number\>\[<unit\>\]来限制容器中设备的读写速度。
 
 ## 参数<a name="zh-cn_topic_0183293570_section204328722112"></a>
 
@@ -23,9 +23,9 @@ create/run时指定--device-read/write-bps参数。
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0183293570_r771d05a684c4482b930111a484d0e970"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.1 "><p id="zh-cn_topic_0183293570_p15638101313244"><a name="zh-cn_topic_0183293570_p15638101313244"></a><a name="zh-cn_topic_0183293570_p15638101313244"></a>--device-read/write-bps</p>
+<tbody><tr id="zh-cn_topic_0183293570_r771d05a684c4482b930111a484d0e970"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.1 "><p id="zh-cn_topic_0183293570_p15638101313244"><a name="zh-cn_topic_0183293570_p15638101313244"></a><a name="zh-cn_topic_0183293570_p15638101313244"></a>--device-read<span id="zh-cn_topic_0183293570_ph16698174013614"><a name="zh-cn_topic_0183293570_ph16698174013614"></a><a name="zh-cn_topic_0183293570_ph16698174013614"></a>-bps</span>/<span id="zh-cn_topic_0183293570_ph81148214370"><a name="zh-cn_topic_0183293570_ph81148214370"></a><a name="zh-cn_topic_0183293570_ph81148214370"></a>--device-</span>write-bps</p>
 </td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.2 "><p id="zh-cn_topic_0183293570_p121511444243"><a name="zh-cn_topic_0183293570_p121511444243"></a><a name="zh-cn_topic_0183293570_p121511444243"></a>限制容器中设备的读/写速度</p>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.2 "><p id="zh-cn_topic_0183293570_p121511444243"><a name="zh-cn_topic_0183293570_p121511444243"></a><a name="zh-cn_topic_0183293570_p121511444243"></a>限制容器中设备的读<span id="zh-cn_topic_0183293570_ph299917175377"><a name="zh-cn_topic_0183293570_ph299917175377"></a><a name="zh-cn_topic_0183293570_ph299917175377"></a>速度</span>/写速度</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.3 "><p id="zh-cn_topic_0183293570_p1363841312411"><a name="zh-cn_topic_0183293570_p1363841312411"></a><a name="zh-cn_topic_0183293570_p1363841312411"></a>64位整数(int64)。值为正整数，可以为0，0表示不设置（不限制）；单位可以为空(byte)，KB，MB，GB，TB，PB.</p>
 </td>
@@ -37,9 +37,15 @@ create/run时指定--device-read/write-bps参数。
 
 ## 示例<a name="zh-cn_topic_0183293570_section1734193235916"></a>
 
-如果需要限制容器内设备的读写速度，在运行容器时，直接加上--device-write/read-bps <device-path\>:<number\>\[<unit\>\]即可，如：
+如果需要限制容器内设备的读写速度，在运行容器时，直接加上--device-write-bps/--device-read-bps <device-path\>:<number\>\[<unit\>\]即可，例如，限制容器busybox内设备/dev/sda的读速度为 1MB 每秒，则命令如下：
 
 ```
-lcrc run -tid --device-write/read-bps /dev/sda:1mb busybox sh
+lcrc run -tid --device-write /dev/sda:1mb busybox sh
+```
+
+限制写速度的命令如下：
+
+```
+lcrc run -tid read-bps /dev/sda:1mb busybox sh
 ```
 
