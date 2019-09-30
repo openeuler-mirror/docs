@@ -6,12 +6,12 @@
 
 ## 接口说明<a name="zh-cn_topic_0182200844_section571216114417"></a>
 
-系统容器对外提供两个工具包：一个是lxcfs软件，另外一个是配合lxcfs一起使用的docker-lxcfs-toolkit工具。其中lxcfs作为宿主机daemon进程常驻，docker-lxcfs-toolkit通过hook机制将宿主机的lxcfs文件系统绑定挂载到容器。
+系统容器对外提供两个工具包：一个是lxcfs软件，另外一个是配合lxcfs一起使用的iSulad-lxcfs-toolkit工具。其中lxcfs作为宿主机daemon进程常驻，iSulad-lxcfs-toolkit通过hook机制将宿主机的lxcfs文件系统绑定挂载到容器。
 
-docker-lxcfs-toolkit命令行格式如下：
+iSulad-lxcfs-toolkit命令行格式如下：
 
 ```
-docker-lxcfs-toolkit [OPTIONS] COMMAND [COMMAND_OPTIONS]
+isulad-lxcfs-toolkit [OPTIONS] COMMAND [COMMAND_OPTIONS]
 ```
 
 <a name="zh-cn_topic_0182200844_table1869210387418"></a>
@@ -76,10 +76,10 @@ docker-lxcfs-toolkit [OPTIONS] COMMAND [COMMAND_OPTIONS]
 
 ## 使用示例<a name="zh-cn_topic_0182200844_section8108617154414"></a>
 
-1.  首先需要安装lxcfs和docker-lxcfs-toolkit这两个包，并启动lxcfs服务。
+1.  首先需要安装lxcfs和iSulad-lxcfs-toolkit这两个包，并启动lxcfs服务。
 
     ```
-    [root@localhost ~]# yum install lxcfs docker-lxcfs-toolkit 
+    [root@localhost ~]# yum install lxcfs iSulad-lxcfs-toolkit 
     [root@localhost ~]# systemctl start lxcfs
     ```
 
