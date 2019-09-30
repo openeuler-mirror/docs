@@ -5,7 +5,25 @@
     对轻量级虚拟机的CPU资源配置即虚拟机运行的vcpu配置，安全容器使用--annotation com.github.containers.virtcontainers.sandbox\_cpu配置轻量级虚拟机运行CPU资源，该参数仅可配置在pause容器上：
 
     ```
-    docker run -tid --runtime --network none --annotation io.kubernetes.docker.type=podsandbox --annotation com.github.containers.virtcontainers.sandbox_cpu=<cpu-nums> <pause-image> <command>
+    docker run -tid --runtime kata-runtime --network none --annotation io.kubernetes.docker.type=podsandbox --annotation com.github.containers.virtcontainers.sandbox_cpu=<cpu-nums> <pause-image> <command>
+    ```
+
+    举例：
+
+    ```
+    # 启动一个pause容器
+    docker run -tid --runtime kata-runtime --network none --annotation io.kubernetes.docker.type=podsandbox --annotation com.github.containers.virtcontainers.sandbox_cpu=4 ubuntu-arm64 bash
+    be3255a3f66a35508efe419bc52eccd3b000032b9d8c9c62df611d5bdc115954
+    
+    # 进入容器查看CPU信息，查看CPU个数是否与com.github.containers.virtcontainers.sandbox_cpu配置的CPU个数相等
+    docker exec be32 lscpu
+    Architecture:        aarch64
+    Byte Order:          Little Endian
+    CPU(s):              4
+    On-line CPU(s) list: 0-3
+    Thread(s) per core:  1
+    Core(s) per socket:  1
+    Socket(s):           4
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
@@ -66,23 +84,58 @@
 
     kata-runtime配置文件config.toml中**enable\_cpu\_memory\_hotplug**选项负责开启和禁用CPU和内存热插拔。默认取值为false，表示禁用CPU和内存热插拔功能；取值为true，表示开启CPU和内存热插拔功能。
 
-    kata-runtime中复用了**--cpus**选项实现了CPU热插拔的功能，通过统计Pod中所有容器的**--cpus**选项的和，然后确定需要热插多少个CPU到轻量级虚机中，例如，
+    kata-runtime中复用了**--cpus**选项实现了CPU热插拔的功能，通过统计Pod中所有容器的**--cpus**选项的和，然后确定需要热插多少个CPU到轻量级虚机中。
 
-    -   启动一个pause容器，轻量级虚机默认分配了1个vcpu：
+    举例：
 
-        ```
-        docker run -tid --runtime --network none --annotation io.kubernetes.docker.type=podsandbox <pause-image>
-        ```
+    ```
+    # 启动一个pause容器，轻量级虚机默认分配了1个vcpu
+    docker run -tid --runtime kata-runtime --network none --annotation io.kubernetes.docker.type=podsandbox ubuntu bash
+    77b40fb72f63b11dd3fcab2f6dabfc7768295fced042af8c7ad9c0286b17d24f
+    
+    # 查看启动完pause容器后轻量级虚机中CPU个数
+    docker exec 77b40fb72f6 lscpu
+    Architecture:          x86_64
+    CPU op-mode(s):        32-bit, 64-bit
+    Byte Order:            Little Endian
+    CPU(s):                1
+    On-line CPU(s) list:   0
+    Thread(s) per core:    1
+    Core(s) per socket:    1
+    Socket(s):             1
+    
+    # 在同一个Pod中启动新的容器并通过--cpus设置容器需要的CPU数量为4
+    docker run -tid --runtime kata-runtime --network none --cpus 4 --annotation io.kubernetes.docker.type=container --annotation io.kubernetes.sandbox.id=77b40fb72f63b11dd3fcab2f6dabfc7768295fced042af8c7ad9c0286b17d24f ubuntu bash
+    7234d666851d43cbdc41da356bf62488b89cd826361bb71d585a049b6cedafd3
+    
+    # 查看当前轻量级虚机中CPU的个数
+    docker exec 7234d6668 lscpu
+    Architecture:          x86_64
+    CPU op-mode(s):        32-bit, 64-bit
+    Byte Order:            Little Endian
+    CPU(s):                4
+    On-line CPU(s) list:   0-3
+    Thread(s) per core:    1
+    Core(s) per socket:    1
+    Socket(s):             4
+    
+    # 删除热插了CPU的容器后，查看轻量级虚机中CPU的个数
+    docker rm -f 7234d666851d
+    7234d666851d
+    
+    docker exec 77b40fb72f6  lscpu
+    Architecture:          x86_64
+    CPU op-mode(s):        32-bit, 64-bit
+    Byte Order:            Little Endian
+    CPU(s):                1
+    On-line CPU(s) list:   0
+    Thread(s) per core:    1
+    Core(s) per socket:    1
+    Socket(s):             1
+    ```
 
-
-    -   在同一个Pod中启动新的容器并通过--cpus设置容器需要的CPU数量：
-
-        ```
-        docker run -tid --runtime kata-runtime --network none --cpus 4 --annotation io.kubernetes.docker.type=container --annotation io.kubernetes.sandbox.id=<sandbox-id> <image> <command>
-        ```
-
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >由于pause容器只是一个占位容器没有工作负载，所以轻量级虚机启动时默认分配的1个CPU可以被其它容器共享，因此上面例子中启动的新容器只需要再热插3个CPU到轻量级虚机中即可。  
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >由于pause容器只是一个占位容器没有工作负载，所以轻量级虚机启动时默认分配的1个CPU可以被其它容器共享，因此上面例子中启动的新容器只需要再热插3个CPU到轻量级虚机中即可。  
 
     -   当停止热插了CPU的容器后，启动容器时热插进去的CPU也会被拔出。
 
