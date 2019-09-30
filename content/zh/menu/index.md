@@ -120,7 +120,7 @@ headless: true
                     - [更改属性]({{< relref "/docs/Administration/更改属性.md" >}})
                 - [配置静态路由]({{< relref "/docs/Administration/配置静态路由.md" >}})
             - [使用命令行]({{< relref "/docs/Administration/使用命令行.md" >}})
-                - [通过ifcfg 文件配置网络]({{< relref "/docs/Administration/通过ifcfg-文件配置网络.md" >}})
+                - [通过ifcfg文件配置网络]({{< relref "/docs/Administration/通过ifcfg文件配置网络.md" >}})
                 - [使用 ip 命令配置网络]({{< relref "/docs/Administration/使用-ip-命令配置网络.md" >}})
                 - [静态路由及默认网关]({{< relref "/docs/Administration/静态路由及默认网关.md" >}})
         - [配置主机名]({{< relref "/docs/Administration/配置主机名.md" >}})
