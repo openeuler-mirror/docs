@@ -299,7 +299,7 @@ headless: true
                 - [user namespace多对多]({{< relref "/docs/Container/user-namespace多对多.md" >}})
                 - [用户权限控制]({{< relref "/docs/Container/用户权限控制.md" >}})
                 - [proc文件系统隔离（lxcfs）]({{< relref "/docs/Container/proc文件系统隔离（lxcfs）.md" >}})
-            - [容器资源动态管理（docker-tools）]({{< relref "/docs/Container/容器资源动态管理（docker-tools）.md" >}})
+            - [容器资源动态管理（iSulad-tools）]({{< relref "/docs/Container/容器资源动态管理（iSulad-tools）.md" >}})
                 - [设备管理]({{< relref "/docs/Container/设备管理.md" >}})
                 - [网卡管理]({{< relref "/docs/Container/网卡管理.md" >}})
                 - [路由管理]({{< relref "/docs/Container/路由管理.md" >}})
