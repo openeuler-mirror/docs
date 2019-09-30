@@ -492,7 +492,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0184347952_p26824357124"><a name="zh-cn_topic_0184347952_p26824357124"></a><a name="zh-cn_topic_0184347952_p26824357124"></a>必选</p>
 </td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0184347952_p1768217354124"><a name="zh-cn_topic_0184347952_p1768217354124"></a><a name="zh-cn_topic_0184347952_p1768217354124"></a>网络名称，由用户自定义，需保证唯一</p>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0184347952_p1768217354124"><a name="zh-cn_topic_0184347952_p1768217354124"></a><a name="zh-cn_topic_0184347952_p1768217354124"></a>网络名称，由用户自定义，需保证唯一。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0184347952_row35791856171010"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0184347952_p11579125661015"><a name="zh-cn_topic_0184347952_p11579125661015"></a><a name="zh-cn_topic_0184347952_p11579125661015"></a>plugins</p>
@@ -501,7 +501,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0184347952_p15579115611015"><a name="zh-cn_topic_0184347952_p15579115611015"></a><a name="zh-cn_topic_0184347952_p15579115611015"></a>必选</p>
 </td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0184347952_p557985671019"><a name="zh-cn_topic_0184347952_p557985671019"></a><a name="zh-cn_topic_0184347952_p557985671019"></a>具体配置见<a href="#zh-cn_topic_0184347952_table425023335913">表1 CNI单网络配置参数</a></p>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0184347952_p557985671019"><a name="zh-cn_topic_0184347952_p557985671019"></a><a name="zh-cn_topic_0184347952_p557985671019"></a>具体配置请参见<a href="#zh-cn_topic_0184347952_table425023335913">表1 CNI单网络配置参数</a>。</p>
 </td>
 </tr>
 </tbody>
