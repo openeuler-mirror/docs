@@ -42,7 +42,7 @@
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
->rootfs的制作示例如下  
+>rootfs的制作示例如下（需要安装docker-toolkit工具，执行命令：yum install docker-toolkit）  
 >1.  docker\_convert -i docker.io/official/busybox-aarch64:latest -o ./system-busybox。  
 >2.  lcrc run  -tid  --external-rootfs ./system-busybox/root-fs/ none init。  
 
