@@ -325,8 +325,6 @@ headless: true
                 - [限制内存资源]({{< relref "/docs/Container/限制内存资源.md" >}})
                 - [限制Blkio资源]({{< relref "/docs/Container/限制Blkio资源.md" >}})
                 - [限制文件描述符资源]({{< relref "/docs/Container/限制文件描述符资源.md" >}})
-            - [为安全容器配置网络]({{< relref "/docs/Container/为安全容器配置网络.md" >}})
-            - [为安全容器配置存储]({{< relref "/docs/Container/为安全容器配置存储.md" >}})
             - [监控安全容器]({{< relref "/docs/Container/监控安全容器.md" >}})
         - [附录]({{< relref "/docs/Container/附录-25.md" >}})
             - [configuration.toml配置说明]({{< relref "/docs/Container/configuration-toml配置说明.md" >}})
