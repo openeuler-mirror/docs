@@ -1,6 +1,6 @@
 # nmcli介绍<a name="ZH-CN_TOPIC_0183005781"></a>
 
-nmcli是NetworkManager 的一个命令行工具，它提供了使用命令行配置由NetworkManager 管理网络连接的方法。 nmcli 命令的基本格式为：
+nmcli是NetworkManager的一个命令行工具，它提供了使用命令行配置由NetworkManager管理网络连接的方法。nmcli命令的基本格式为：
 
 ```
  nmcli [OPTIONS] OBJECT { COMMAND | help }

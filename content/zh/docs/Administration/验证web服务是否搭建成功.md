@@ -37,7 +37,16 @@ Web服务器搭建完成后，可以通过如下方式验证是否搭建成功�
     TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
     ```
 
-2.  验证web服务器是否搭建成功，用户可选择Linux或Windows系统进行验证。
+2.  配置防火墙：
+
+    ```
+    # firewall-cmd --add-service=http --permanent
+    success
+    # firewall-cmd --reload
+    success
+    ```
+
+3.  验证web服务器是否搭建成功，用户可选择Linux或Windows系统进行验证。
     -   使用Linux系统验证
 
         执行如下命令，查看是否可以访问网页信息，服务搭建成功时，该网页可以正常访问。

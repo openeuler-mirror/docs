@@ -3,6 +3,9 @@
 1.  请自行下载nginx工具并安装nginx。
 2.  安装nginx之后，配置/etc/nginx/nginx.conf。
 
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >文档中的配置内容仅供参考，请用户根据实际情况（例如安全加固需要）进行配置。  
+
     ```
     user  root;
     worker_processes  auto;                          # 建议设置为core-1

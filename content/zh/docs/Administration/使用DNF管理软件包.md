@@ -5,5 +5,6 @@ DNF是一款Linux软件包管理工具，用于管理RPM软件包。DNF可以查
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >-   DNF与YUM完全兼容，提供了YUM兼容的命令行以及为扩展和插件提供的API。  
 >-   使用DNF，需要管理员权限，本章所有命令，在管理员权限下执行。  
+ 
 
 

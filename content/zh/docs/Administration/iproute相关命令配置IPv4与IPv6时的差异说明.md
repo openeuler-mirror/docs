@@ -7,7 +7,7 @@
 ## IPv6地址的生命周期<a name="zh-cn_topic_0161841798_zh-cn_topic_0159090633_section10703103152516"></a>
 
 <a name="zh-cn_topic_0161841798_zh-cn_topic_0159090633_table2076913233253"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0161841798_zh-cn_topic_0159090633_row583762317252"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.3.1.1"><p id="zh-cn_topic_0161841798_zh-cn_topic_0159090633_p2837142362517"><a name="zh-cn_topic_0161841798_zh-cn_topic_0159090633_p2837142362517"></a><a name="zh-cn_topic_0161841798_zh-cn_topic_0159090633_p2837142362517"></a><strong id="zh-cn_topic_0161841798_zh-cn_topic_0159090633_b1352931112514"><a name="zh-cn_topic_0161841798_zh-cn_topic_0159090633_b1352931112514"></a><a name="zh-cn_topic_0161841798_zh-cn_topic_0159090633_b1352931112514"></a>ipv6状态</strong></p>
+<table><thead align="left"><tr id="zh-cn_topic_0161841798_zh-cn_topic_0159090633_row583762317252"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.3.1.1"><p id="zh-cn_topic_0161841798_zh-cn_topic_0159090633_p2837142362517"><a name="zh-cn_topic_0161841798_zh-cn_topic_0159090633_p2837142362517"></a><a name="zh-cn_topic_0161841798_zh-cn_topic_0159090633_p2837142362517"></a><strong id="zh-cn_topic_0161841798_zh-cn_topic_0159090633_b1352931112514"><a name="zh-cn_topic_0161841798_zh-cn_topic_0159090633_b1352931112514"></a><a name="zh-cn_topic_0161841798_zh-cn_topic_0159090633_b1352931112514"></a>IPv6状态</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="78%" id="mcps1.1.3.1.2"><p id="zh-cn_topic_0161841798_zh-cn_topic_0159090633_p10837823172516"><a name="zh-cn_topic_0161841798_zh-cn_topic_0159090633_p10837823172516"></a><a name="zh-cn_topic_0161841798_zh-cn_topic_0159090633_p10837823172516"></a><strong id="zh-cn_topic_0161841798_zh-cn_topic_0159090633_b105031361254"><a name="zh-cn_topic_0161841798_zh-cn_topic_0159090633_b105031361254"></a><a name="zh-cn_topic_0161841798_zh-cn_topic_0159090633_b105031361254"></a>解释</strong></p>
 </th>
@@ -50,7 +50,7 @@
 ip link set IFNAME mtu MTU
 ```
 
-IPv6中PMTU的最小值为1280，如果mtu值设置小于1280则会导致IPv6地址丢失。其它设备无法ping通该ipv6地址。
+IPv6中PMTU的最小值为1280，如果mtu值设置小于1280则会导致IPv6地址丢失。其它设备无法ping通该IPv6地址。
 
 ## ip addr命令<a name="zh-cn_topic_0161841798_zh-cn_topic_0159090633_section7725170124014"></a>
 
@@ -60,7 +60,7 @@ IPv6中PMTU的最小值为1280，如果mtu值设置小于1280则会导致IPv6地
     ip [-6] addr add IFADDR dev IFNAME
     ```
 
-    添加IPv6地址可以选择添加-6选项也可以不添加，ip addr命令会根据具体地址类型来判断是ipv4地址还是ipv6地址。
+    添加IPv6地址可以选择添加-6选项也可以不添加，ip addr命令会根据具体地址类型来判断是ipv4地址还是IPv6地址。
 
     如果指定“-6”选项，但是IFADDR 是ipv4地址则会有错误返回。
 
@@ -73,7 +73,7 @@ IPv6中PMTU的最小值为1280，如果mtu值设置小于1280则会导致IPv6地
     \[home|nodad\] 选项只针对IPv6地址有效。
 
     -   home：将该地址指定为RFC 6275中定义的家庭地址。（这是移动节点从家庭链路获取的地址， 是移动节点的永久地址，如果移动节点保持在相同的归属链路中，则各种实体之间的通信照常进行。）
-    -   nodad：配置该项（仅限IPv6）添加此地址时不执行重复地址检测DAD（RFC 4862）。如果一台设备上多个接口通过nodad配置了多个相同的ipv6地址，则会按照接口顺序使用该ipv6地址。同一个接口上不能添加一个nodad一个非nodad的相同ipv6地址。因为两个地址是一样的，所以会报“RTNETLINK answers: File exists”。
+    -   nodad：配置该项（仅限IPv6）添加此地址时不执行重复地址检测DAD（RFC 4862）。如果一台设备上多个接口通过nodad配置了多个相同的IPv6地址，则会按照接口顺序使用该IPv6地址。同一个接口上不能添加一个nodad一个非nodad的相同IPv6地址。因为两个地址是一样的，所以会报“RTNETLINK answers: File exists”。
 
 3.  命令：
 
@@ -81,7 +81,7 @@ IPv6中PMTU的最小值为1280，如果mtu值设置小于1280则会导致IPv6地
     ip [-6] addr del IFADDR dev IFNAME
     ```
 
-    删除IPv6地址可以选择添加-6选项也可以不添加，ip addr del命令会根据具体地址类型来判断是ipv4地址还是ipv6地址。
+    删除IPv6地址可以选择添加-6选项也可以不添加，ip addr del命令会根据具体地址类型来判断是ipv4地址还是IPv6地址。
 
 4.  命令：
 

@@ -12,14 +12,13 @@ timedatectl
 
 ```
 $ timedatectl
-      Local time: 五2015-08-14 15:57:24 CST
-  Universal time: 五2015-08-14 07:57:24 UTC
-        RTC time: 五2015-08-14 07:57:24
-        Timezone: Asia/Shanghai (CST, +0800)
-     NTP enabled: yes
-NTP synchronized: no
- RTC in local TZ: no
-      DST active: n/a
+               Local time: Mon 2019-09-30 04:05:00 EDT
+           Universal time: Mon 2019-09-30 08:05:00 UTC
+                 RTC time: Mon 2019-09-30 08:05:00
+                Time zone: America/New_York (EDT, -0400)
+System clock synchronized: no
+              NTP service: inactive
+          RTC in local TZ: no
 ```
 
 ## 修改时间<a name="zh-cn_topic_0151920969_se54af369f529405695dc242e60511f46"></a>

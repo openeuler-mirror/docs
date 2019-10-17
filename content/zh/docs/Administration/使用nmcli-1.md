@@ -4,7 +4,6 @@
 
     ```
     # nmcli con add type bond con-name mybond0 ifname mybond0 mode activebackup
-    Connection 'mybond0' (9301ff97-abbc-4432-aad1-246d7faea7fb) successfully added.
     ```
 
 -   添加从属接口，使用示例如下：
@@ -17,7 +16,7 @@
 
     ```
     # nmcli con add type bond-slave ifname ens3 master mybond0
-    Connection 'bond-slave-ens3-1' (50c59350-1531-45f4-ba04-33431c16e386) successfully added.
+    Connection 'bond-slave-ens3' (05e56afc-b953-41a9-b3f9-0791eb49f7d3) successfully added.
     ```
 
 -   要启动绑定，则必须首先启动从属接口，使用示例如下：

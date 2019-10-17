@@ -62,7 +62,7 @@
             -   [配置静态路由](配置静态路由.md)
 
         -   [使用命令行](使用命令行.md)
-            -   [通过ifcfg 文件配置网络](通过ifcfg-文件配置网络.md)
+            -   [通过ifcfg文件配置网络](通过ifcfg文件配置网络.md)
             -   [使用 ip 命令配置网络](使用-ip-命令配置网络.md)
             -   [静态路由及默认网关](静态路由及默认网关.md)
 
@@ -91,14 +91,6 @@
             -   [IPv4的dhclient守护进程持久化配置](IPv4的dhclient守护进程持久化配置.md)
             -   [iproute相关命令配置IPv4与IPv6时的差异说明](iproute相关命令配置IPv4与IPv6时的差异说明.md)
             -   [NetworkManager服务配置差异说明](NetworkManager服务配置差异说明.md)
-
-        -   [FAQ](FAQ.md)
-            -   [iscsi-initiator-utils不支持登录fe80 IPV6地址](iscsi-initiator-utils不支持登录fe80-IPV6地址.md)
-            -   [网卡down掉之后，ipv6地址丢失](网卡down掉之后-ipv6地址丢失.md)
-            -   [bond口已具有多个IPV6地址时，添加或删除IPV6地址耗时过久](bond口已具有多个IPV6地址时-添加或删除IPV6地址耗时过久.md)
-            -   [Rsyslog在IPV4和IPV6混合使用场景中日志传输延迟](Rsyslog在IPV4和IPV6混合使用场景中日志传输延迟.md)
-
-
 
 -   [搭建服务](搭建服务.md)
     -   [搭建repo服务器](搭建repo服务器.md)

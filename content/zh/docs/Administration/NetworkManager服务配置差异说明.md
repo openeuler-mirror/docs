@@ -21,21 +21,21 @@ NetworkManager服务使用ifup/ifdown的逻辑接口定义进行高级网络设�
 </td>
 <td class="cellrowborder" valign="top" width="40.564056405640564%" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p1334482573012"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p1334482573012"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p1334482573012"></a>IPV6FORWARDING=yes|no</p>
 </td>
-<td class="cellrowborder" valign="top" width="36.43364336433643%" headers="mcps1.1.4.1.3 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p934414251302"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p934414251302"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p934414251302"></a>ipv6转发，默认不转发。</p>
+<td class="cellrowborder" valign="top" width="36.43364336433643%" headers="mcps1.1.4.1.3 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p934414251302"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p934414251302"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p934414251302"></a>IPv6转发，默认不转发。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_row1344122517308"><td class="cellrowborder" valign="top" width="23.002300230023003%" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p9344152513303"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p9344152513303"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p9344152513303"></a>NA</p>
 </td>
 <td class="cellrowborder" valign="top" width="40.564056405640564%" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p123441025123013"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p123441025123013"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p123441025123013"></a>IPV6_AUTOCONF=yes|no</p>
 </td>
-<td class="cellrowborder" valign="top" width="36.43364336433643%" headers="mcps1.1.4.1.3 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p1134418258307"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p1134418258307"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p1134418258307"></a>ipv6转发打开是no，否则是yes。</p>
+<td class="cellrowborder" valign="top" width="36.43364336433643%" headers="mcps1.1.4.1.3 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p1134418258307"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p1134418258307"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p1134418258307"></a>IPv6转发打开是no，否则是yes。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_row3344325173018"><td class="cellrowborder" valign="top" width="23.002300230023003%" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p9344725143019"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p9344725143019"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p9344725143019"></a>NA</p>
 </td>
 <td class="cellrowborder" valign="top" width="40.564056405640564%" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p2344225183011"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p2344225183011"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p2344225183011"></a>IPV6_ROUTER=yes|no</p>
 </td>
-<td class="cellrowborder" valign="top" width="36.43364336433643%" headers="mcps1.1.4.1.3 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p113441425163010"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p113441425163010"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p113441425163010"></a>ipv6转发打开是yes，否则是no。</p>
+<td class="cellrowborder" valign="top" width="36.43364336433643%" headers="mcps1.1.4.1.3 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p113441425163010"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p113441425163010"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p113441425163010"></a>IPv6转发打开是yes，否则是no。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_row173447253307"><td class="cellrowborder" valign="top" width="23.002300230023003%" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p534417251308"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p534417251308"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p534417251308"></a>NA</p>
@@ -49,7 +49,7 @@ NetworkManager服务使用ifup/ifdown的逻辑接口定义进行高级网络设�
 </td>
 <td class="cellrowborder" valign="top" width="40.564056405640564%" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p234515256308"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p234515256308"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p234515256308"></a>IPV6_DEFAULTGW=&lt;IPv6 address[%interface]&gt; (optional)</p>
 </td>
-<td class="cellrowborder" valign="top" width="36.43364336433643%" headers="mcps1.1.4.1.3 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p103451125123015"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p103451125123015"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p103451125123015"></a>在ipv6中设置默认网关。</p>
+<td class="cellrowborder" valign="top" width="36.43364336433643%" headers="mcps1.1.4.1.3 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p103451125123015"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p103451125123015"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p103451125123015"></a>在IPv6中设置默认网关。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_row1234519256301"><td class="cellrowborder" valign="top" width="23.002300230023003%" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p334511251304"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p334511251304"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p334511251304"></a>NA</p>
@@ -140,7 +140,7 @@ NetworkManager服务使用ifup/ifdown的逻辑接口定义进行高级网络设�
 </td>
 <td class="cellrowborder" valign="top" width="40.339999999999996%" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p33481925173012"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p33481925173012"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p33481925173012"></a>IPV6INIT=yes|no</p>
 </td>
-<td class="cellrowborder" valign="top" width="36.3%" headers="mcps1.1.4.1.3 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p113492254302"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p113492254302"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p113492254302"></a>默认开启ipv6。</p>
+<td class="cellrowborder" valign="top" width="36.3%" headers="mcps1.1.4.1.3 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p113492254302"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p113492254302"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p113492254302"></a>默认开启IPv6。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_row133491725173012"><td class="cellrowborder" valign="top" width="23.36%" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p1834922518303"><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p1834922518303"></a><a name="zh-cn_topic_0161841799_zh-cn_topic_0159175469_p1834922518303"></a>NA</p>

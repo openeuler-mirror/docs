@@ -25,6 +25,12 @@
     tcp6       0      0 :::21                   :::*                    LISTEN      19716/vsftpd
     ```
 
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >如果没有netstat命令，可以执行如下命令安装后再使用netstat：  
+    >```  
+    >dnf install net-tools  
+    >```  
+
 -   停止vsftpd服务
 
     ```

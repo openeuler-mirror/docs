@@ -1,8 +1,8 @@
-# 通过ifcfg 文件配置网络<a name="ZH-CN_TOPIC_0183005790"></a>
+# 通过ifcfg文件配置网络<a name="ZH-CN_TOPIC_0183005790"></a>
 
 ## 配置静态网络<a name="zh-cn_topic_0154464458_section125991333192917"></a>
 
-以 eth0 网络接口进行静态网络设置为例，通过修改 ifcfg 文件实现，在 /etc/sysconfig/networkscripts/目录中生成名为 ifcfg-eth0 的文件中，修改参数配置，示例如下：
+以 eth0 网络接口进行静态网络设置为例，通过修改 ifcfg 文件实现，在 /etc/sysconfig/network-scripts/ 目录中生成名为 ifcfg-eth0 的文件中，修改参数配置，示例如下：
 
 ```
 DEVICE=eth0
