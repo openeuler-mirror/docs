@@ -2,9 +2,9 @@
 
 ## 问题现象<a name="section0712504256"></a>
 
-执行命令行命令systemctl status kdump，显示状态信息如下：
+执行命令行命令systemctl status kdump，显示状态信息如下，提示无预留内存。
 
-![](figures/zh-cn_image_0192348006.png)显示无预留内存。
+![](figures/zh-cn_image_0192348006.png)
 
 ## 原因分析<a name="section118871366253"></a>
 
@@ -12,9 +12,31 @@ kdump需要预留出一段内存，运行kdump内核。当前无预留内存，�
 
 ## 解决方法<a name="section5400186182614"></a>
 
-方法1：修改/boot/efi/EFI/openEuler/grub.cfg，添加crashkernel=512M,high，重启系统。
+**方法一：**已安装操作系统的场景
 
-方法2：在kickstart脚本的post段中，添加修改/boot/efi/EFI/openEuler/grub.cfg文件的命令，添加crashkernel=512M,high参数。
+1.  修改/boot/efi/EFI/openEuler/grub.cfg，添加crashkernel=1024M,high。
+2.  重启系统使配置生效。
+3.  执行如下命令，检查kdump状态，
+
+    ```
+    systemctl status kdump
+    ```
+
+    若回显如下，即kdump的状态为active，说明kdump已使能，操作结束。
+
+    ![](figures/zh-cn_image_0195402261.png)
+
+
+**方法二：**kickstart自动化安装场景
+
+kickstart安装过程中，在kickstart脚本的post段中，添加修改/boot/efi/EFI/openEuler/grub.cfg文件的命令，设置crashkernel=1024M,high。
+
+```
+%post
+#enable kdump
+sed  -i "s/ ro / ro crashkernel=1024M,high /" /boot/efi/EFI/openEuler/grub.cfg
+%end
+```
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >kdump内核预留内存参数说明如下：  
@@ -36,7 +58,7 @@ kdump需要预留出一段内存，运行kdump内核。当前无预留内存，�
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="p10894142915265"><a name="p10894142915265"></a><a name="p10894142915265"></a>在4G以下的物理内存预留X大小的内存给kdump使用。</p>
 </td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="p1894229162614"><a name="p1894229162614"></a><a name="p1894229162614"></a>当前系统默认配置512M，用户根据实际情况调整。</p>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="p1894229162614"><a name="p1894229162614"></a><a name="p1894229162614"></a>无，用户根据实际情况调整</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="p2895429202612"><a name="p2895429202612"></a><a name="p2895429202612"></a>该配置方法只在4G以下内存预留，必须保证4G以下连续可用内存足够预留。</p>
 </td>
@@ -54,7 +76,7 @@ kdump需要预留出一段内存，运行kdump内核。当前无预留内存，�
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="p589582910260"><a name="p589582910260"></a><a name="p589582910260"></a>在4G以下的物理内存中预留256M大小，在4G以上预留X大小内存给kdump使用。</p>
 </td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="p589516295260"><a name="p589516295260"></a><a name="p589516295260"></a>无，用户根据实际情况调整</p>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="p589516295260"><a name="p589516295260"></a><a name="p589516295260"></a>无，用户根据实际情况调整，推荐值为1024M,high。</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="p389520290261"><a name="p389520290261"></a><a name="p389520290261"></a>确保4G以下内存有256M连续可用内存，4G以上有连续X大小内存可预留。实际预留内存大小为256M+X。</p>
 </td>

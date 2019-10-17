@@ -79,3 +79,6 @@ create/run时可以指定下列参数。
 lcrc run -tid --cpuset-cpus 0,2-3 busybox sh
 ```
 
+>![](public_sys-resources/icon-note.gif) **说明：**   
+>是否设置成功，请参见“查询单个容器信息”章节。  
+

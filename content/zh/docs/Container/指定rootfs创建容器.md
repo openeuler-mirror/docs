@@ -42,7 +42,5 @@
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
->rootfs的制作示例如下（需要安装docker-toolkit工具，执行命令：yum install docker-toolkit）  
->1.  docker\_convert -i docker.io/official/busybox-aarch64:latest -o ./system-busybox。  
->2.  lcrc run  -tid  --external-rootfs ./system-busybox/root-fs/ none init。  
+>rootfs为自定义的文件系统，请用户自行准备。例如容器镜像的tar包解压后，即为一个rootfs。  
 

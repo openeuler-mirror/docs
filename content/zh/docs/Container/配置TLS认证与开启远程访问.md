@@ -78,19 +78,20 @@ chmod -v 0444 ca.pem server-cert.pem cert.pem
 如果需要采用单向认证方式进行通讯，则服务端采用模式2，客户端采用模式2；
 
 >![](public_sys-resources/icon-notice.gif) **注意：**   
->采用RPM安装方式时，服务端配置可通过/etc/isulad/daemon.json以及/etc/sysconfig/iSulad配置修改  
+>-   采用RPM安装方式时，服务端配置可通过/etc/isulad/daemon.json以及/etc/sysconfig/iSulad配置修改  
+>-   相比非认证或者单向认证方式，双向认证具备更高的安全性，推荐使用双向认证的方式进行通讯  
 
 ## 示例<a name="zh-cn_topic_0183092517_section953765812481"></a>
 
 服务端：
 
 ```
- lcrd -H=tcp://0.0.0.0:2376 --tlsverify --tlscacert=~/.iSulad/ca.pem --tlscert=~/.iSulad/server-cert.pem --tlskey=~/.iSulad/server-key.pem
+ lcrd -H=tcp://0.0.0.0:2376 --tlsverify --tlscacert ~/.iSulad/ca.pem --tlscert ~/.iSulad/server-cert.pem --tlskey ~/.iSulad/server-key.pem
 ```
 
 客户端：
 
 ```
- lcrc version -H=tcp://$HOSTIP:2376 --tlsverify --tlscacert=~/.iSulad/ca.pem --tlscert=~/.iSulad/cert.pem --tlskey=~/.iSulad/key.pem
+ lcrc version -H=tcp://$HOSTIP:2376 --tlsverify --tlscacert ~/.iSulad/ca.pem --tlscert ~/.iSulad/cert.pem --tlskey ~/.iSulad/key.pem
 ```
 

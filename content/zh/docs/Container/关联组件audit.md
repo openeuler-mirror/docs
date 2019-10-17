@@ -16,9 +16,11 @@ docker支持配置audit，但不是强制的。例如：
 配置docker的audit，好处在于可以记录更多信息便于审计，但从安全角度来看，它对防攻击并没有实质性的作用。另一方面，上面的配置会导致严重的效率问题，出现系统非常卡顿的情况。以“-w /var/lib/docker -k docker”为例：
 
 ```
-[root@localhost signal]# cat /etc/audit/rules.d/audit.rules|grep docker -w /var/lib/docker/  -k docker 
+[root@localhost signal]# cat /etc/audit/rules.d/audit.rules|grep docker 
+-w /var/lib/docker/  -k docker 
 [root@localhost signal]# auditctl -R /etc/audit/rules.d/audit.rules |grep docker 
-[root@localhost signal]# auditctl -l|grep docker -w /var/lib/docker/ -p rwxa -k docker
+[root@localhost signal]# auditctl -l|grep docker 
+-w /var/lib/docker/ -p rwxa -k docker
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：**   

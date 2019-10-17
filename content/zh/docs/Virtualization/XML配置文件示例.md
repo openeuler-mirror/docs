@@ -53,10 +53,11 @@
         <video>
            <model type='virtio'/>
         </video>
+        <controller type='scsi' index='0' model='virtio-scsi'/>
 	<controller type='usb' model='ehci'/>
 	<input type='tablet' bus='usb'/>
 	<input type='keyboard' bus='usb'/>
-	<graphics type='vnc' listen='0.0.0.0'/>
+	<graphics type='vnc' listen='0.0.0.0' passwd='n8VfjbFK'/>
     </devices>
 </domain>
 ```
@@ -135,7 +136,7 @@
         </video>
 	<input type='tablet' bus='usb'/>
 	<input type='keyboard' bus='usb'/>
-	<graphics type='vnc' listen='0.0.0.0'/>
+	<graphics type='vnc' listen='0.0.0.0' passwd='n8VfjbFK'/>
     </devices>
 </domain>
 ```

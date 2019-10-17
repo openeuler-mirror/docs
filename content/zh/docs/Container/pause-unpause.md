@@ -18,13 +18,11 @@
     $ sudo docker run -d --name pause_test -p 5000:5000 registry
     ```
 
-    此时可以用curl命令访问这个服务，返回这个服务的版本信息
+    此时可以用curl命令访问这个服务，请求状态码会返回200 OK。
 
     ```
-    $ sudo curl 127.0.0.1:5000
+    $ sudo curl -v 127.0.0.1:5000
     ```
-
-    ![](figures/111.png)
 
 2.  暂停这个容器内的进程
 
@@ -40,8 +38,6 @@
     $ sudo docker unpause pause_test
     ```
 
-    此时步骤2中的curl访问将恢复运行，返回docker registry的版本信息：
-
-    ![](figures/111-0.png)
+    此时步骤2中的curl访问将恢复运行，请求状态码返回200 OK。
 
 

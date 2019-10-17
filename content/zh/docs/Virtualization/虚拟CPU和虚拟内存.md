@@ -30,7 +30,7 @@
     <vcpu>4</vcpu>
     <memory unit='GiB'>8</memory>
     <cpu mode='host-passthrough'>
-        <topology sockets='2' cores='2' thread='1'/>
+        <topology sockets='2' cores='2' threads='1'/>
     </cpu>
 ...
 </domain>

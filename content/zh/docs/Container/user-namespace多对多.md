@@ -39,6 +39,11 @@ user namespace是将容器的root映射到主机的普通用户，使得容器�
 
 ## 使用指导<a name="zh-cn_topic_0182200842_section738582164018"></a>
 
+>![](public_sys-resources/icon-note.gif) **说明：**   
+>指定--user-remap参数前，请先将rootfs下所有目录和文件的uid和gid做整体偏移，偏移量为--user-remap指定uid和gid的偏移量。  
+>例如将dev目录的uid和gid整体uid和gid偏移100000的参考命令为：  
+>chown 100000:100000 dev  
+
 系统容器启动指定--user-remap参数：
 
 ```

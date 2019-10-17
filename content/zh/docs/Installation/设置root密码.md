@@ -1,6 +1,6 @@
 # 设置root密码<a name="ZH-CN_TOPIC_0187280617"></a>
 
-在[图1](进入安装界面-0.md#zh-cn_topic_0155778949_zh-cn_topic_0151920777_fcabdc4c637504f26ac19e9c99f288111)中输入“7”，然后回车，设置root密码。
+在[图1](进入安装界面-0.md#zh-cn_topic_0155778949_zh-cn_topic_0151920777_fcabdc4c637504f26ac19e9c99f288111)中输入“7”，然后按“Enter”，设置root密码。
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >-   强制用户在安装系统时设置root密码，否则无法安装通过。  

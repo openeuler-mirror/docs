@@ -112,7 +112,7 @@ hook1.json内容如下：
 hook2.json内容如下：
 
 ```
-# cat /etc/docker-tools/hookspec.json 
+# cat /etc/isulad-tools/hookspec.json 
 {
       "prestart": [
          {

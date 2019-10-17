@@ -54,7 +54,7 @@
     BlkioLeafWeight = "blkio_leaf_weight"
     ```
 
-    例如：
+    举例：
 
     ```
     docker run -tid --runtime kata-runtime --network none --annotation com.github.containers.virtcontainers.blkio_cgroup='{"blkiocgroup":[{"path":"/dev/sda","limits":[{"type":"throttle_read_bps","value":400},{"type":"throttle_write_bps","value":400},{"type":"throttle_read_iops","value":700},{"type":"throttle_write_iops","value":699}]},{"limits":[{"type":"blkio_weight","value":78}]}]}' rnd-dockerhub.huawei.com/official/pause

@@ -39,7 +39,7 @@
 
 2.  通过daemon端参数或配置文件
 
-    详见[命令行接口](zh-cn_topic_0183090182.md)与[配置文件](zh-cn_topic_0183088436.md)中的--default-ulimits相关选项。
+    详见[命令行接口](命令行参数说明.md)与[配置文件](zh-cn_topic_0184347952.md)中的--default-ulimits相关选项。
 
 
 --ulimit可以对以下类型的资源进行限制。
