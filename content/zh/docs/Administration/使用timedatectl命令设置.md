@@ -23,7 +23,7 @@ System clock synchronized: no
 
 ## 修改时间<a name="zh-cn_topic_0151920969_se54af369f529405695dc242e60511f46"></a>
 
-修改当前的时间，在root权限下执行如下命令，其中  _HH_  代表小时，_MM_  代表分钟，_SS_  代表秒，请根据实际情况修改：
+修改当前的时间，在root权限下执行如下命令，其中  HH  代表小时，MM  代表分钟，SS  代表秒，请根据实际情况修改：
 
 ```
 timedatectl set-time HH:MM:SS
@@ -37,7 +37,7 @@ timedatectl set-time HH:MM:SS
 
 ## 修改日期<a name="zh-cn_topic_0151920969_s90de08d7175c48ae8aac6a36c686cef0"></a>
 
-修改当前的日期，在root权限下执行如下命令，其中_ YYYY _代表年份_，MM _代表月份，_DD_  代表某天，请根据实际情况修改：
+修改当前的日期，在root权限下执行如下命令，其中 YYYY 代表年份，MM 代表月份，DD 代表某天，请根据实际情况修改：
 
 ```
 timedatectl set-time YYYY-MM-DD

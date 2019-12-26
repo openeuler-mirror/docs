@@ -49,7 +49,7 @@
 
 ## 远程更改主机名<a name="zh-cn_topic_0154473021_section1530231411392"></a>
 
-在远程系统中运行 hostnamectl 命令时，要使用 -H, --host 选项，使用如下命令：：
+在远程系统中运行 hostnamectl 命令时，要使用 -H, --host 选项，使用如下命令：
 
 ```
 # hostnamectl set-hostname -H [username]@hostname

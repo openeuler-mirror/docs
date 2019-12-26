@@ -31,7 +31,7 @@ user namespace是将容器的root映射到主机的普通用户，使得容器�
 ## 约束限制<a name="zh-cn_topic_0182200842_section173481025112313"></a>
 
 -   如果系统容器指定了--user-remap，那么rootfs目录必须能够被--user-remap指定的uid/gid用户所访问，否则会导致容器user  namespace无法访问rootfs，容器启动失败。
--   容器内所有的id都应该能映射到主机rootfs，某些目录/文件可能是从主机mount到容器，比如/dev/pts目录下面的设备文件，如果offset值太小可能会导致mount失败报错。
+-   容器内所有的id都应该能映射到主机rootfs，某些目录/文件可能是从主机mount到容器，比如/dev/pts目录下面的设备文件，如果offset值太小可能会导致mount失败。
 -   uid、gid和offset的值由上层调度平台控制，容器引擎只做合法性检查。
 -   --user-remap只适用于系统容器。
 -   --user-remap和--privileged不能共存，否则容器启动会报错。
