@@ -2,7 +2,7 @@
 
 ## 问题现象<a name="section0712504256"></a>
 
-执行命令行命令systemctl status kdump，显示状态信息如下，提示无预留内存。
+执行命令systemctl status kdump，显示状态信息如下，提示无预留内存。
 
 ![](figures/zh-cn_image_0192348006.png)
 

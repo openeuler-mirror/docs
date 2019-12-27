@@ -99,7 +99,7 @@ isulad-lxcfs-toolkit [OPTIONS] COMMAND [COMMAND_OPTIONS]
     lxcfs on /proc/uptime type fuse.lxcfs (rw,nosuid,nodev,relatime,user_id=0,group_id=0,allow_other)
     ```
 
-3.  执行update命令更新容器的cpu和mem资源配置，然后查看容器资源。
+3.  执行update命令更新容器的cpu和mem资源配置，然后查看容器资源。根据如下回显可知，容器资源视图显示的是容器真实资源数据而不是宿主机的数据。
 
     ```
     [root@localhost ~]# lcrc update --cpuset-cpus 0-1 --memory 1G a8
@@ -131,6 +131,5 @@ isulad-lxcfs-toolkit [OPTIONS] COMMAND [COMMAND_OPTIONS]
     Swap:          4095           0        4095
     ```
 
-    可以看到容器资源视图显示的是容器真实资源数据而不是宿主机的数据。
 
 
