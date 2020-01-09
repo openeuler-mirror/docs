@@ -43,10 +43,10 @@ timedatectl set-time HH:MM:SS
 timedatectl set-time YYYY-MM-DD
 ```
 
-例如修改当前的日期为2015年8月14号，命令如下：
+例如修改当前的日期为2019年8月15号，命令如下：
 
 ```
-# timedatectl set-time '2015-08-14'
+# timedatectl set-time '2019-08-15'
 ```
 
 ## 修改时区<a name="zh-cn_topic_0151920969_s4155dba8786c41c3bc49fef330d721d2"></a>
