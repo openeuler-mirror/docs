@@ -36,7 +36,7 @@ rpc ListContainerStats(ListContainerStatsRequest) returns (ListContainerStatsRes
 </tr>
 <tr id="zh-cn_topic_0183088057_row87419551317"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088057_p3465158518"><a name="zh-cn_topic_0183088057_p3465158518"></a><a name="zh-cn_topic_0183088057_p3465158518"></a>repeated <a href="接口-2.md#zh-cn_topic_0182207110_li55689514215">ContainerStats</a> stats</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.46%"><p id="zh-cn_topic_0183088057_p14745551137"><a name="zh-cn_topic_0183088057_p14745551137"></a><a name="zh-cn_topic_0183088057_p14745551137"></a>容器信息的列表,具体内容参考左侧链接。注：disk和inodes只支持oci格式镜像起的容器查询</p>
+<td class="cellrowborder" valign="top" width="60.46%"><p id="zh-cn_topic_0183088057_p14745551137"><a name="zh-cn_topic_0183088057_p14745551137"></a><a name="zh-cn_topic_0183088057_p14745551137"></a>容器信息的列表,具体内容参考左侧链接。注：disk和inodes只支持oci格式镜像启动的容器查询</p>
 </td>
 </tr>
 </tbody>

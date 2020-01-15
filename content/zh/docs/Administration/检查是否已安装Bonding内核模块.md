@@ -12,5 +12,5 @@
 # modinfo bonding
 ```
 
-更多命令选项请查看 modprobe\(8\) man page。
+更多命令请使用modprobe --help查看。
 

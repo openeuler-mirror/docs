@@ -1,5 +1,6 @@
 # openEuler 1.0 管理员指南
 
+-   [法律声明](法律声明.md)
 -   [前言](前言.md)
 -   [基础配置](基础配置.md)
     -   [通过命令设置](通过命令设置.md)
@@ -18,7 +19,6 @@
     -   [修改用户账号](修改用户账号.md)
     -   [删除用户](删除用户.md)
     -   [管理员账户授权](管理员账户授权.md)
-        -   [创建多个管理员账户](创建多个管理员账户.md)
         -   [为普通用户分配特权](为普通用户分配特权.md)
 
 
@@ -69,8 +69,8 @@
 
     -   [配置主机名](配置主机名.md)
         -   [简介](简介-0.md)
-        -   [使用 hostnamectl 配置主机名](使用-hostnamectl-配置主机名.md)
-        -   [使用 nmcli 配置主机名](使用-nmcli-配置主机名.md)
+        -   [使用hostnamectl配置主机名](使用hostnamectl配置主机名.md)
+        -   [使用nmcli配置主机名](使用nmcli配置主机名.md)
 
     -   [配置网络绑定](配置网络绑定.md)
         -   [使用nmcli](使用nmcli-1.md)
@@ -91,6 +91,14 @@
             -   [IPv4的dhclient守护进程持久化配置](IPv4的dhclient守护进程持久化配置.md)
             -   [iproute相关命令配置IPv4与IPv6时的差异说明](iproute相关命令配置IPv4与IPv6时的差异说明.md)
             -   [NetworkManager服务配置差异说明](NetworkManager服务配置差异说明.md)
+
+        -   [FAQ](FAQ.md)
+            -   [iscsi-initiator-utils不支持登录fe80 IPv6地址](iscsi-initiator-utils不支持登录fe80-IPv6地址.md)
+            -   [网卡down掉之后，IPv6地址丢失](网卡down掉之后-IPv6地址丢失.md)
+            -   [bond口已具有多个IPv6地址时，添加或删除IPv6地址耗时过久](bond口已具有多个IPv6地址时-添加或删除IPv6地址耗时过久.md)
+            -   [Rsyslog在IPv4和IPv6混合使用场景中日志传输延迟](Rsyslog在IPv4和IPv6混合使用场景中日志传输延迟.md)
+
+
 
 -   [搭建服务](搭建服务.md)
     -   [搭建repo服务器](搭建repo服务器.md)

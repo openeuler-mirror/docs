@@ -34,7 +34,7 @@
     iptables -I INPUT -p tcp --dport 80 -j ACCEPT
     ```
 
-4.  nginx服务设置好之后，即可通过ip直接访问网页，如[图 1](#zh-cn_topic_0151921017_fig1880404110396)：
+4.  nginx服务设置好之后，即可通过ip直接访问网页，如[图1](#zh-cn_topic_0151921017_fig1880404110396)：
 
     **图 1**  nginx部署成功<a name="zh-cn_topic_0151921017_fig1880404110396"></a>  
     ![](figures/nginx部署成功.png "nginx部署成功")

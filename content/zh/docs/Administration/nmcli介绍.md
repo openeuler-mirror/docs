@@ -41,10 +41,9 @@ nmcli是NetworkManager的一个命令行工具，它提供了使用命令行配�
 -   使用nmcli工具启动和停止网络接口，例如：
 
     ```
-    nmcli con up id bond0
-    nmcli con up id port0
-    nmcli dev disconnect iface bond0
-    nmcli dev disconnect iface ens3
+    
+    nmcli connection up id enp3s0
+    nmcli device disconnect enp3s0
     ```
 
 

@@ -28,7 +28,7 @@ struct sockaddr_in6 {
 int port = 1234;
 int sk_fd;
 int iff_index = 0;
-char iff_name[100] = "eth0";
+char iff_name[100] = "enp3s0";
 char * ll_addr[100] = "fe80::123:456:789";
 struct sockaddr_in6 server_addr;
 
