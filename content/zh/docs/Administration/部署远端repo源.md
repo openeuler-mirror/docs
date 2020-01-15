@@ -2,5 +2,3 @@
 
 安装操作系统openEuler1.0（openEuler-1.0-aarch64-dvd.iso），在openEuler1.0上通过nginx部署repo源。
 
-
-

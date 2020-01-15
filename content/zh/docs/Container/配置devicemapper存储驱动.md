@@ -1,4 +1,24 @@
-# 配置devicemapper存储驱动<a name="ZH-CN_TOPIC_0184808209"></a>
+# 配置devicemapper存储驱动<a name="ZH-CN_TOPIC_0215574101"></a>
+
+用户如果需要使用devicemapper存储驱动，可以通过如下两种方式显示指定。
+
+-   编辑/etc/docker/daemon.json，通过storage-driver字段显示指定。
+
+    ```
+    cat /etc/docker/daemon.json
+    {
+        "storage-driver": "devicemapper"
+    }
+    ```
+
+
+-   编辑/etc/sysconfig/docker-storage，通过docker deamon启动参数显示指定。
+
+    ```
+    cat /etc/sysconfig/docker-storage 
+    DOCKER_STORAGE_OPTIONS="--storage-driver=devicemapper"
+    ```
+
 
 ## 注意事项<a name="zh-cn_topic_0182217267_section425342310219"></a>
 
@@ -16,6 +36,7 @@
 -   使用devicemapper时推荐加上--storage-opt dm.use\_deferred\_deletion=true --storage-opt dm.use\_deferred\_removal=true。
 -   使用devicemapper时，容器文件系统推荐使用ext4，需要在docker daemon的配置参数中加 上--storage-opt dm.fs=ext4。
 -   当graphdriver为devicemapper时，如果metadata文件损坏且不可恢复，需要人工介入恢复。禁止直接操作或篡改daemon存储devicemapper的元数据。
+-   使用devicemapper lvm时，异常掉电导致的devicemapper thinpool损坏，无法保证thinpool损坏后可以修复，也不能保证数据的完整性，需重建thinpool。
 
 **docker daemon开启了user namespace特性，切换devicemapper存储池时的注意事项**
 

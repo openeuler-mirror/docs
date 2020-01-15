@@ -2,7 +2,7 @@
 
 为提升虚拟机性能，在虚拟机启动前，用户可以通过虚拟机XML配置文件为虚拟机指定主机的NUMA节点，使虚拟机内存分配在指定的NUMA节点上。本特性一般与vCPU绑定一起使用，从而避免vCPU远端访问内存。
 
->![](public_sys-resources/icon-notice.gif) **注意：**   
+>![](public_sys-resources/icon-notice.gif) **须知：**   
 >如果在指定的NODE上内存不够时，启动虚拟机会失败，并且存在系统OOM（Out Of Memory）强制关闭进程的可能性。  
 
 ## 操作步骤<a name="section13996950155118"></a>

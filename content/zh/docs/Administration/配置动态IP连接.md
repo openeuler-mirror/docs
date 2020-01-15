@@ -11,8 +11,8 @@ nmcli connection add type ethernet con-name connection-name ifname interface-nam
 例如创建名为net-test的动态连接配置文件，使用以下命令：
 
 ```
-# nmcli con add type ethernet con-name net-test ifname ens3  
-Connection 'net-test' (86395ace-4594-4778-a74b-5f589ad5b406) successfully added.
+# nmcli connection add type ethernet con-name net-test ifname enp3s0 
+Connection 'net-test' (a771baa0-5064-4296-ac40-5dc8973967ab) successfully added.
 ```
 
 NetworkManager 会将参数 connection.autoconnect 设定为 yes，并将设置保存到 “/etc/sysconfig/network-scripts/ifcfg-net-test”文件中，在该文件中会将 ONBOOT 设置为 yes。
@@ -30,10 +30,12 @@ Connection successfully activated (D-Bus active path:/org/freedesktop/NetworkMan
 
 ```
 # nmcli device status
-EVICE     TYPE      STATE         CONNECTION
-ens3      ethernet  connected     net-test 
-ens6      ethernet  disconnected  -- 
-lo        loopback  unmanaged     --
+DEVICE      TYPE      STATE      CONNECTION
+enp4s0      ethernet  connected  enp4s0
+enp3s0      ethernet  connected  net-test
+virbr0      bridge    connected  virbr0
+lo          loopback  unmanaged  --
+virbr0-nic  tun       unmanaged  --
 ```
 
 更改主机发送到 DHCP 服务器的主机名，则需要修改 dhcp-hostname 属性，使用如下命令：

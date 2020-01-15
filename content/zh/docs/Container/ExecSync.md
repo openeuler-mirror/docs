@@ -34,7 +34,7 @@ rpc ExecSync(ExecSyncRequest) returns (ExecSyncResponse) {}
 </tr>
 <tr id="zh-cn_topic_0183088052_row4812119101610"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088052_p24734935614"><a name="zh-cn_topic_0183088052_p24734935614"></a><a name="zh-cn_topic_0183088052_p24734935614"></a>int64 timeout</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.46%"><p id="zh-cn_topic_0183088052_p6510957162719"><a name="zh-cn_topic_0183088052_p6510957162719"></a><a name="zh-cn_topic_0183088052_p6510957162719"></a>停止命令的超时时间（秒）。 默认值：0（无超时限制）。 <strong id="zh-cn_topic_0183088052_b921123104014"><a name="zh-cn_topic_0183088052_b921123104014"></a><a name="zh-cn_topic_0183088052_b921123104014"></a>未使用</strong></p>
+<td class="cellrowborder" valign="top" width="60.46%"><p id="zh-cn_topic_0183088052_p6510957162719"><a name="zh-cn_topic_0183088052_p6510957162719"></a><a name="zh-cn_topic_0183088052_p6510957162719"></a>停止命令的超时时间（秒）。 默认值：0（无超时限制）。 <strong id="zh-cn_topic_0183088052_b921123104014"><a name="zh-cn_topic_0183088052_b921123104014"></a><a name="zh-cn_topic_0183088052_b921123104014"></a>暂不支持</strong></p>
 </td>
 </tr>
 </tbody>

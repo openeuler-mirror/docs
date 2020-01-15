@@ -20,6 +20,7 @@
 <td class="cellrowborder" valign="top" width="39.47%" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0182200832_p7384134752211"><a name="zh-cn_topic_0182200832_p7384134752211"></a><a name="zh-cn_topic_0182200832_p7384134752211"></a>--restart</p>
 </td>
 <td class="cellrowborder" valign="top" width="46.239999999999995%" headers="mcps1.1.4.1.3 "><a name="zh-cn_topic_0182200832_ul1096612111241"></a><a name="zh-cn_topic_0182200832_ul1096612111241"></a><ul id="zh-cn_topic_0182200832_ul1096612111241"><li>字符串变量。</li><li>可取指定值：<p id="zh-cn_topic_0182200832_p153828551538"><a name="zh-cn_topic_0182200832_p153828551538"></a><a name="zh-cn_topic_0182200832_p153828551538"></a>on-reboot：表示重启系统容器。</p>
+<p id="zh-cn_topic_0182200832_p1778024415312"><a name="zh-cn_topic_0182200832_p1778024415312"></a><a name="zh-cn_topic_0182200832_p1778024415312"></a></p>
 </li></ul>
 </td>
 </tr>
