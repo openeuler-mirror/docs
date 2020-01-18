@@ -1,4 +1,4 @@
-# 设置root密码<a name="ZH-CN_TOPIC_0214071126"></a>
+# 设置root密码<a name="ZH-CN_TOPIC_0220373214"></a>
 
 在“安装概览”页面中输入“7”，然后按“Enter”，设置root密码。
 

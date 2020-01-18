@@ -11,9 +11,10 @@ headless: true
         - [最小硬件要求]({{< relref "/docs/Installation/最小硬件要求.md" >}})
     - [安装方式介绍]({{< relref "/docs/Installation/安装方式介绍.md" >}})
         - [通过光盘安装]({{< relref "/docs/Installation/通过光盘安装.md" >}})
+        - [使用PXE通过网络安装]({{< relref "/docs/Installation/使用PXE通过网络安装.md" >}})
     - [安装指导]({{< relref "/docs/Installation/安装指导.md" >}})
         - [启动安装]({{< relref "/docs/Installation/启动安装.md" >}})
-        - [通过图形化模式安装]({{< relref "/docs/Installation/通过图形化模式安装.md" >}})
+        - [（推荐）通过图形化模式安装]({{< relref "/docs/Installation/（推荐）通过图形化模式安装.md" >}})
             - [设置安装程序语言]({{< relref "/docs/Installation/设置安装程序语言.md" >}})
             - [进入安装界面]({{< relref "/docs/Installation/进入安装界面.md" >}})
             - [设置安装参数]({{< relref "/docs/Installation/设置安装参数.md" >}})
@@ -39,6 +40,12 @@ headless: true
                 - [设置root密码]({{< relref "/docs/Installation/设置root密码.md" >}})
                 - [创建用户]({{< relref "/docs/Installation/创建用户.md" >}})
             - [完成安装]({{< relref "/docs/Installation/完成安装.md" >}})
+
+- [使用kickstart自动化安装]({{< relref "/docs/Installation/使用kickstart自动化安装.md" >}})
+    - [总体介绍]({{< relref "/docs/Installation/总体介绍.md" >}})
+    - [半自动化安装指导]({{< relref "/docs/Installation/半自动化安装指导.md" >}})
+    - [全自动化安装指导]({{< relref "/docs/Installation/全自动化安装指导.md" >}})
+
        - [FAQ]({{< relref "/docs/Installation/FAQ.md" >}})
         - [安装openEuler时选择第二盘位为安装目标，操作系统无法启动]({{< relref "/docs/Installation/安装openEuler时选择第二盘位为安装目标-操作系统无法启动.md" >}})
         - [网络配置约束限制]({{< relref "/docs/Installation/网络配置约束限制.md" >}})
@@ -161,7 +168,9 @@ headless: true
             - [配置文件说明]({{< relref "/docs/Administration/配置文件说明.md" >}})
             - [管理模块和SSL]({{< relref "/docs/Administration/管理模块和SSL.md" >}})
             - [验证web服务是否搭建成功]({{< relref "/docs/Administration/验证web服务是否搭建成功.md" >}})	    
-	    
+- [FAQ]({{< relref "/docs/Administration/FAQ-4.md" >}})
+    - [设置RAID0卷，参数stripsize设置为4时出错]({{< relref "/docs/Administration/设置RAID0卷-参数stripsize设置为4时出错.md.md" >}})
+	
 - [虚拟化用户指南]({{< relref "/docs/Virtualization/virtualization.md" >}})
     - [法律声明]({{< relref "/docs/Virtualization/法律声明.md" >}})
     - [前言]({{< relref "/docs/Virtualization/前言.md" >}})

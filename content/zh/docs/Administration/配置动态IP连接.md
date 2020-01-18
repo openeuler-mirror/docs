@@ -11,7 +11,7 @@ nmcli connection add type ethernet con-name connection-name ifname interface-nam
 例如创建名为net-test的动态连接配置文件，使用以下命令：
 
 ```
-# nmcli connection add type ethernet con-name net-test ifname enp3s0 
+# nmcli connection add type ethernet con-name net-test ifname enp3s0
 Connection 'net-test' (a771baa0-5064-4296-ac40-5dc8973967ab) successfully added.
 ```
 
@@ -30,6 +30,7 @@ Connection successfully activated (D-Bus active path:/org/freedesktop/NetworkMan
 
 ```
 # nmcli device status
+
 DEVICE      TYPE      STATE      CONNECTION
 enp4s0      ethernet  connected  enp4s0
 enp3s0      ethernet  connected  net-test

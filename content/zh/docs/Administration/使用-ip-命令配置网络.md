@@ -36,6 +36,7 @@ ip 命令支持为同一接口分配多个地址，可重复多次使用 ip 命�
 # ip address add 192.168.2.223/24 dev enp4s0
 # ip address add 192.168.4.223/24 dev enp4s0
 # ip addr
+
 3: enp4s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
     link/ether 52:54:00:aa:da:e2 brd ff:ff:ff:ff:ff:ff
     inet 192.168.203.12/16 brd 192.168.255.255 scope global dynamic noprefixroute enp4s0
