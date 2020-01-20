@@ -57,11 +57,11 @@ IPv6与IPv4都可以通过DHCP的方式获得IP地址。IPv6地址有两种配�
             }
             pool6 {
                     allow members of "hw";
-                    range6 fc00:4:12:ffff::ff10 2019:4:12:ffff::ff20;
+                    range6 fc00:4:12:ffff::ff10 fc00:4:12:ffff::ff20;
             }
             pool6 {
                     allow unknown clients;
-                    range6 fc00:4:12:ffff::100 2019:4:12:ffff::120;
+                    range6 fc00:4:12:ffff::100 fc00:4:12:ffff::120;
             }
     }
     ```

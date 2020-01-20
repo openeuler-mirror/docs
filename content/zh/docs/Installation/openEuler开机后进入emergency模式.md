@@ -1,10 +1,10 @@
-# openEuler开机后进入emergency模式<a name="ZH-CN_TOPIC_0214071103"></a>
+# openEuler开机后进入emergency模式<a name="ZH-CN_TOPIC_0220373219"></a>
 
 ## 问题现象<a name="zh-cn_topic_0151920822_s079358afc7a646ecac367116895121cd"></a>
 
 openEuler系统开机后进入emergency模式，如下图所示：
 
-![](figures/zh-cn_image_0214071156.jpg)
+![](figures/zh-cn_image_0220373180.jpg)
 
 ## 原因分析<a name="zh-cn_topic_0151920822_s5def92a13626401e865071b5f2ac127c"></a>
 

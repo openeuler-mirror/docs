@@ -56,7 +56,7 @@ date +"format"
 </tr>
 <tr id="zh-cn_topic_0151920961_r34b505f1fd7741cfb1780a831fbf72d2"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151920961_ac01465841ba64c03ae64788361a25a4e"><a name="zh-cn_topic_0151920961_ac01465841ba64c03ae64788361a25a4e"></a><a name="zh-cn_topic_0151920961_ac01465841ba64c03ae64788361a25a4e"></a>%Y</p>
 </td>
-<td class="cellrowborder" valign="top" width="81.77%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151920961_a6419efda4cdc4072914756ebb31ec1fa"><a name="zh-cn_topic_0151920961_a6419efda4cdc4072914756ebb31ec1fa"></a><a name="zh-cn_topic_0151920961_a6419efda4cdc4072914756ebb31ec1fa"></a>年份以YYYY格式（例如 <span id="ph6165133371415"><a name="ph6165133371415"></a><a name="ph6165133371415"></a>2019</span>）。</p>
+<td class="cellrowborder" valign="top" width="81.77%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151920961_a6419efda4cdc4072914756ebb31ec1fa"><a name="zh-cn_topic_0151920961_a6419efda4cdc4072914756ebb31ec1fa"></a><a name="zh-cn_topic_0151920961_a6419efda4cdc4072914756ebb31ec1fa"></a>年份以YYYY格式（例如 2019）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0151920961_r2a7d4de380fe4194ab6d757429583f60"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151920961_ada7b17d82b7b45668fef67f483b31b33"><a name="zh-cn_topic_0151920961_ada7b17d82b7b45668fef67f483b31b33"></a><a name="zh-cn_topic_0151920961_ada7b17d82b7b45668fef67f483b31b33"></a>%Z</p>
@@ -66,7 +66,7 @@ date +"format"
 </tr>
 <tr id="zh-cn_topic_0151920961_r65c5b28a951b4f10a0ab67d51ea41c75"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151920961_aaf432a3ed9c548d7bd3b45929723ca72"><a name="zh-cn_topic_0151920961_aaf432a3ed9c548d7bd3b45929723ca72"></a><a name="zh-cn_topic_0151920961_aaf432a3ed9c548d7bd3b45929723ca72"></a>%F</p>
 </td>
-<td class="cellrowborder" valign="top" width="81.77%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151920961_a7a6917b7cf9a46759467cd140afc17e9"><a name="zh-cn_topic_0151920961_a7a6917b7cf9a46759467cd140afc17e9"></a><a name="zh-cn_topic_0151920961_a7a6917b7cf9a46759467cd140afc17e9"></a>日期整体格式为YYYY-MM-DD（例如 <span id="ph164151328121"><a name="ph164151328121"></a><a name="ph164151328121"></a>2019</span>-7-15），等同%Y-%m-%d。</p>
+<td class="cellrowborder" valign="top" width="81.77%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151920961_a7a6917b7cf9a46759467cd140afc17e9"><a name="zh-cn_topic_0151920961_a7a6917b7cf9a46759467cd140afc17e9"></a><a name="zh-cn_topic_0151920961_a7a6917b7cf9a46759467cd140afc17e9"></a>日期整体格式为YYYY-MM-DD（例如 2019-7-15），等同%Y-%m-%d。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0151920961_r722205ab957549d187a171eb72cb040b"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151920961_a2e925e19328a49b082150aadec3869a2"><a name="zh-cn_topic_0151920961_a2e925e19328a49b082150aadec3869a2"></a><a name="zh-cn_topic_0151920961_a2e925e19328a49b082150aadec3869a2"></a>%T</p>

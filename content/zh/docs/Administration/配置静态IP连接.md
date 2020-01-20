@@ -51,6 +51,7 @@ Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkMa
 
 ```
 # nmcli device status
+
 DEVICE      TYPE      STATE      CONNECTION
 enp4s0      ethernet  connected  enp4s0
 enp3s0      ethernet  connected  net-static

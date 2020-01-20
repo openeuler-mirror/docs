@@ -21,21 +21,21 @@ System clock synchronized: no
           RTC in local TZ: no
 ```
 
-## 修改时间<a name="zh-cn_topic_0151920969_se54af369f529405695dc242e60511f46"></a>
+## 通过远程服务器进行时间同步<a name="section14365868500"></a>
 
-修改当前的时间，在root权限下执行如下命令，其中_HH_代表小时，_MM_代表分钟，_SS_代表秒，请根据实际情况修改：
-
-```
-timedatectl set-time HH:MM:SS
-```
-
-例如修改当前的时间为15点57分24秒，命令如下：
+您可以启用NTP远程服务器进行系统时钟的自动同步。是否启用NTP，可在root权限下执行如下命令进行设置。其中_boolean_  可取值yes和no，分别表示启用和不启用NTP进行系统时钟自动同步，请根据实际情况修改：
 
 ```
-# timedatectl set-time 15:57:24
+timedatectl set-ntp boolean
 ```
 
-## 修改日期<a name="zh-cn_topic_0151920969_s90de08d7175c48ae8aac6a36c686cef0"></a>
+例如启用自动远程时间同步，命令如下：
+
+```
+# timedatectl set-ntp yes
+```
+
+## 修改日期<a name="section1859294020462"></a>
 
 修改当前的日期，在root权限下执行如下命令，其中_YYYY_代表年份_，MM_代表月份，_DD_代表某天，请根据实际情况修改：
 
@@ -47,6 +47,26 @@ timedatectl set-time YYYY-MM-DD
 
 ```
 # timedatectl set-time '2019-08-14'
+```
+
+## 修改时间<a name="zh-cn_topic_0151920969_se54af369f529405695dc242e60511f46"></a>
+
+>![](public_sys-resources/icon-note.gif) **说明：**   
+>修改时间前，需确保已经关闭NTP系统时钟自动同步。命令如下：  
+>```  
+>timedatectl set-ntp no  
+>```  
+
+修改当前的时间，在root权限下执行如下命令，其中_HH_代表小时，_MM_代表分钟，_SS_代表秒，请根据实际情况修改：
+
+```
+timedatectl set-time HH:MM:SS
+```
+
+例如修改当前的时间为15点57分24秒，命令如下：
+
+```
+# timedatectl set-time 15:57:24
 ```
 
 ## 修改时区<a name="zh-cn_topic_0151920969_s4155dba8786c41c3bc49fef330d721d2"></a>
@@ -94,19 +114,5 @@ Asia/Tokyo
 
 ```
 # timedatectl set-timezone Asia/Shanghai
-```
-
-## 通过远程服务器进行时间同步<a name="zh-cn_topic_0151920969_s0590ae6580cd4f2a82752ffae061d5c0"></a>
-
-您可以启用NTP远程服务器进行系统时钟的自动同步。是否启用NTP，可在root权限下执行如下命令进行设置。其中  _boolean_  可取值yes和no，分别表示启用和不启用NTP进行系统时钟自动同步，请根据实际情况修改：
-
-```
-timedatectl set-ntp boolean
-```
-
-例如启用自动远程时间同步，命令如下：
-
-```
-# timedatectl set-ntp yes
 ```
 
