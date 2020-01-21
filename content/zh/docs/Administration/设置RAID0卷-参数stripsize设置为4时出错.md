@@ -10,5 +10,5 @@
 
 ## 解决方法<a name="zh-cn_topic_0151920731_s9c2d562eab3549f3a0d44f642c8c118a"></a>
 
-openEuler条带化规格支持的stripesize最小值为64KB，将参数stripesize设置为64。
+不需要修改配置文件，openeuler执行lvcreate命令时，条带化规格支持的stripesize最小值为64KB，将参数stripesize设置为64。
 

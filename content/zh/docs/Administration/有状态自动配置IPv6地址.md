@@ -72,7 +72,7 @@ IPv6与IPv4都可以通过DHCP的方式获得IP地址。IPv6地址有两种配�
     服务端使用方法：
 
     ```
-    dhcpd -6 <interface> -cf /etc/dhcp/dhcpd6.conf <interface>
+    dhcpd -6 -cf /etc/dhcp/dhcpd6.conf <interface>
     ```
 
 

@@ -39,18 +39,3 @@ lo          loopback  unmanaged  --
 virbr0-nic  tun       unmanaged  --
 ```
 
-更改主机发送到 DHCP 服务器的主机名，则需要修改 dhcp-hostname 属性，使用如下命令：
-
-```
-# nmcli con modify net-test net-test ipv4.dhcp-hostname host-name ipv6.dhcp-hostname host-name
-```
-
-更改主机发送到 DHCP 服务器的 IPv4 客户端 ID，需要修改 dhcp-client-id 属性，使用如下命令：
-
-```
-# nmcli con modify net-test net-test ipv4.dhcp-client-id client-IDstring
-```
-
->![](public_sys-resources/icon-note.gif) **说明：**   
->当前没有用于 IPv6 的 dhcp-client-id 属性，dhclient 为 IPv6 生成识别符。详细说明请查看 dhclient\(8\) manpage。  
-

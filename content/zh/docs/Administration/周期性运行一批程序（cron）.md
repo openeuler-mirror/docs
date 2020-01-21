@@ -84,18 +84,18 @@ minute hour day-of-month month-of-year day-of-week commands
 例如晚上18点到22点之间每两个小时，在/tmp/test.txt文件中加入sleepy文本。在crontab文件中对应的行如下：
 
 ```
-* 18-22/2 * * * echo"sleepy" >> /tmp/test.txt
+* 18-22/2 * * * echo "sleepy" >> /tmp/test.txt
 ```
 
 每次编辑完某个用户的cron设置后，cron自动在/var/spool/cron下生成一个与此用户同名的文件。此用户的cron信息都记录在这个文件中，这个文件是不可以直接编辑的，只可以用crontab -e来编辑。用户也可以另外建立一个文件，使用“cron文件名”命令导入cron设置。
 
 假设有个用户名为globus，它需要为自己创建的一个crontab文件。步骤如下：
 
-1.  首先可以使用任何文本编辑器建立一个新文件，并将向该文件加入需要运行的命令和要定期执行的时间，假发该文件为 \~/globus.cron。
+1.  首先可以使用任何文本编辑器建立一个新文件，并将向该文件加入需要运行的命令和要定期执行的时间，假设该文件为 \~/globus.cron。
 2.  然后使用crontab命令安装这个文件，使用crontab命令使之成为该用户的crontab文件。命令如下：
 
     ```
-    crontab  globus. -/globus.cron
+    crontab  globus. ~/globus.cron
     ```
 
 
