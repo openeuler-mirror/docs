@@ -1,0 +1,1 @@
+本文档简要描述如何获取openEuler的安装包，并通过多种方式完成openEuler的默认安装。文中安装使用openEuler 1.0版本。

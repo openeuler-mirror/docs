@@ -189,9 +189,9 @@ headless: true
             - [管理httpd]({{< relref "/docs/Administration/管理httpd.md" >}})
             - [配置文件说明]({{< relref "/docs/Administration/配置文件说明.md" >}})
             - [管理模块和SSL]({{< relref "/docs/Administration/管理模块和SSL.md" >}})
-            - [验证web服务是否搭建成功]({{< relref "/docs/Administration/验证web服务是否搭建成功.md" >}})	    
+            - [验证web服务是否搭建成功]({{< relref "/docs/Administration/验证web服务是否搭建成功.md" >}})    
 - [FAQ]({{< relref "/docs/Administration/FAQ-4.md" >}})
-    - [设置RAID0卷，参数stripsize设置为4时出错]({{< relref "/docs/Administration/设置RAID0卷-参数stripsize设置为4时出错.md.md" >}})
+    - [设置RAID0卷，参数stripsize设置为4时出错]({{< relref "/docs/Administration/设置RAID0卷-参数stripsize设置为4时出错.md" >}})
 
 - [虚拟化用户指南]({{< relref "/docs/Virtualization/virtualization.md" >}})
     - [法律声明]({{< relref "/docs/Virtualization/法律声明.md" >}})
