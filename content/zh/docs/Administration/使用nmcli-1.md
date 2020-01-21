@@ -3,7 +3,7 @@
 -   创建名为mybond0的绑定，使用示例如下：
 
     ```
-    # nmcli con add type bond con-name mybond0 ifname mybond0 mode activebackup
+    # nmcli con add type bond con-name mybond0 ifname mybond0 mode active-backup
     ```
 
 -   添加从属接口，使用示例如下：

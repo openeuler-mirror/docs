@@ -43,5 +43,30 @@ httpd服务是一个模块化的应用，它和许多动态共享对象DSO（Dyn
 
 ## SSL介绍<a name="section745572210620"></a>
 
-安全套接层SSL（Secure Sockets Layer）是一个允许服务端和客户端之间进行安全通信的加密协议。其中，传输层安全性协议TLS（Transport Layer Security）为网络通信提供了安全性和数据完整性保障。openEuler支持Mozilla NSS（Network Security Services）作为安全性协议TLS进行配置。
+安全套接层SSL（Secure Sockets Layer）是一个允许服务端和客户端之间进行安全通信的加密协议。其中，传输层安全性协议TLS（Transport Layer Security）为网络通信提供了安全性和数据完整性保障。openEuler支持Mozilla NSS（Network Security Services）作为安全性协议TLS进行配置。加载SSL的操作步骤如下：
+
+1.  安装mod\_ssl的rpm包。
+
+    ```
+    # dnf install mod_ssl
+    ```
+
+2.  安装完成后，请重启httpd服务以便于重新加载配置文件。
+
+    ```
+    # systemctl restart httpd
+    ```
+
+3.  加载完成后，使用httpd -M的命令查看是否已经加载了SSL。
+
+    ```
+    # httpd -M | grep ssl
+    ```
+
+    回显如下，说明SSL已加载成功。
+
+    ```
+    ssl_module (shared)
+    ```
+
 

@@ -6,6 +6,7 @@
 -   在repo源的Packages目录下添加rpm包，然后更新repo源，可通过createrepo命令更新repo源
 
     ```
+    dnf install createrepo
     createrepo --update --workers=10 /srv/repo
     ```
 

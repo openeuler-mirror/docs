@@ -52,8 +52,8 @@
 在远程系统中运行hostnamectl命令时，要使用-H，--host 选项，使用如下命令：
 
 ```
-# hostnamectl set-hostname -H [username]@hostname
+# hostnamectl set-hostname -H [username]@hostname new_hostname
 ```
 
-其中hostname是要配置的远程主机，username为自选项，hostnamectl会通过SSH连接到远程系统。
+其中hostname是要配置的远程主机，username为自选项，new\_hostname为新主机名。hostnamectl会通过SSH连接到远程系统。
 
