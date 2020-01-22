@@ -1,17 +1,17 @@
 ---
 headless: true
 ---
-- [Installation Guide]({{< relref "/docs/Installation/{{< relref "/docs/Installation/Installation.md" >}})
-    - [Terms of Use]({{< relref "/docs/Installation/{{< relref "/docs/Installation/terms-of-use.md" >}})
-    - [Preface]({{< relref "/docs/Installation/{{< relref "/docs/Installation/preface.md" >}})
-    - [Installation Preparations]({{< relref "/docs/Installation/{{< relref "/docs/Installation/installation-preparations.md" >}})
-        - [Obtaining the Installation Source]({{< relref "/docs/Installation/{{< relref "/docs/Installation/obtaining-the-installation-source.md" >}})
-        - [Release Package Integrity Check]({{< relref "/docs/Installation/{{< relref "/docs/Installation/release-package-integrity-check.md" >}})
-        - [Hardware Compatibility]({{< relref "/docs/Installation/{{< relref "/docs/Installation/hardware-compatibility.md" >}})
-        - [Minimal Hardware Specifications]({{< relref "/docs/Installation/{{< relref "/docs/Installation/minimal-hardware-specifications.md" >}})
+- [Installation Guide]({{< relref "/docs/Installation/Installation.md" >}})
+    - [Terms of Use]({{< relref "/docs/Installation/terms-of-use.md" >}})
+    - [Preface]({{< relref "/docs/Installation/preface.md" >}})
+    - [Installation Preparations]({{< relref "/docs/Installation/installation-preparations.md" >}})
+        - [Obtaining the Installation Source]({{< relref "/docs/Installation/obtaining-the-installation-source.md" >}})
+        - [Release Package Integrity Check]({{< relref "/docs/Installation/release-package-integrity-check.md" >}})
+        - [Hardware Compatibility]({{< relref "/docs/Installation/hardware-compatibility.md" >}})
+        - [Minimal Hardware Specifications]({{< relref "/docs/Installation/minimal-hardware-specifications.md" >}})
 
-    - [Installation Mode]({{< relref "/docs/Installation/{{< relref "/docs/Installation/installation-mode.md" >}})
-        - [Installation Through the CD/DVD-ROM]({{< relref "/docs/Installation/{{< relref "/docs/Installation/installation-through-the-cd-dvd-rom.md" >}})
+    - [Installation Mode]({{< relref "/docs/Installation/installation-mode.md" >}})
+        - [Installation Through the CD/DVD-ROM]({{< relref "/docs/Installation/installation-through-the-cd-dvd-rom.md" >}})
 
     - [Installation Guideline]({{< relref "/docs/Installation/installation-guideline.md" >}})
         - [Starting the Installation]({{< relref "/docs/Installation/starting-the-installation.md" >}})
