@@ -3,7 +3,7 @@
 可以拷贝镜像中相关文件至本地目录以创建本地repo源，示例如下：
 
 ```
-mount /home/openEuler/openEuler-1.0-aarch64-dvd.iso  /mnt/
+mount /home/openEuler/openEuler-1.0-beta-aarch64-dvd.iso  /mnt/
 mkdir -p /srv/repo/
 cp -r /mnt/Packages /srv/repo/
 cp -r /mnt/repodata /srv/repo/

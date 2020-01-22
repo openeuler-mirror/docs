@@ -60,7 +60,7 @@ lo          loopback  unmanaged  --
 virbr0-nic  tun       unmanaged  --
 ```
 
-查看配置的连接详情，使用以下命令（使用 -p, --pretty 选项在输出结果中添加标题和分段）：
+查看配置的连接详情，使用以下命令（使用 -p, \--pretty 选项在输出结果中添加标题和分段）：
 
 ```
 # nmcli -p con show net-static 

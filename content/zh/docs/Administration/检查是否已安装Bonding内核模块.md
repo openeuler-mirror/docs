@@ -12,5 +12,5 @@
 # modinfo bonding
 ```
 
-更多命令请使用modprobe --help查看。
+更多命令请使用modprobe \--help查看。
 

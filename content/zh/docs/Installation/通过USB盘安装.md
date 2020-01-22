@@ -28,7 +28,7 @@
     ```
 
     -   如果执行此命令后无输出，表明未挂载，可以继续执行下一步。
-    -   如果输出以下信息，表明USB设备已经自动挂载。
+    -   如果输出以下信息，表明USB盘已经自动挂载。
 
         ```
         # findmnt /dev/sdb
@@ -42,7 +42,7 @@
         # umount /mnt/iso
         ```
 
-4.  使用dd命令将ISO安装镜像直接写入USB设备：
+4.  使用dd命令将ISO安装镜像直接写入USB盘：
 
     ```
     # dd if=/path/to/image.iso of=/dev/device bs=blocksize
@@ -50,13 +50,13 @@
 
     使用您下载的ISO镜像文件的完整路径替换 /path/to/image.iso，使用之前由 dmesg 命令给出的设备名称替换device，同时设置合理的块大小（例如：512k）替换 blocksize，这样可以加快写入进度。
 
-    例如：如果该ISO镜像文件位于 /home/testuser/Downloads/EulerOS.iso，同时探测到的设备名称为sdb，则该命令如下：
+    例如：如果该ISO镜像文件位于 /home/testuser/Downloads/openEuler-1.0-beta-aarch64-dvd.iso，同时探测到的设备名称为sdb，则该命令如下：
 
     ```
-    # dd if=/home/testuser/Downloads/EulerOS.iso of=/dev/sdb bs=512k
+    # dd if=/home/testuser/Downloads/openEuler-1.0-beta-aarch64-dvd.iso of=/dev/sdb bs=512k
     ```
 
-5.  等待镜像写入完成，拔掉USB设备。
+5.  等待镜像写入完成，拔掉USB盘。
 
     镜像写入过程中不会有进度显示，当\#号再次出现时，表明写入完成。退出root账户，拔掉USB盘。此时，您可以使用该USB盘作为系统的安装源。
 

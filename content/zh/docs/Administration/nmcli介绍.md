@@ -6,7 +6,7 @@ nmcli是NetworkManager的一个命令行工具，它提供了使用命令行配�
  nmcli [OPTIONS] OBJECT { COMMAND | help }
 ```
 
-其中，OBJECT选项可以是general、networking、radio、connection或device等。在日常使用中，最常使用的是-t, --terse（用于脚本）、-p, --pretty选项（用于用户）及-h, --help选项，用户可以使用“ nmcli help”获取更多参数及使用信息。
+其中，OBJECT选项可以是general、networking、radio、connection或device等。在日常使用中，最常使用的是-t, \--terse（用于脚本）、-p, \--pretty选项（用于用户）及-h, \--help选项，用户可以使用“ nmcli help”获取更多参数及使用信息。
 
 ```
 # nmcli help
@@ -26,7 +26,7 @@ nmcli是NetworkManager的一个命令行工具，它提供了使用命令行配�
     nmcli connection show
     ```
 
--   只显示当前活动连接，如下所示添加 -a, --active：
+-   只显示当前活动连接，如下所示添加 -a, \--active：
 
     ```
     nmcli connection show --active

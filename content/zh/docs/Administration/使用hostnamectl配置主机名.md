@@ -27,9 +27,9 @@
 # hostnamectl set-hostname name [option...]
 ```
 
-其中option可以是--pretty、--static、--transient中的一个或多个选项。
+其中option可以是\--pretty、\--static、\--transient中的一个或多个选项。
 
-如果--static或--transient与--pretty选项一同使用时，则会将static和transient主机名简化为pretty主机名格式，使用“-”替换空格，并删除特殊字符。
+如果\--static或\--transient与\--pretty选项一同使用时，则会将static和transient主机名简化为pretty主机名格式，使用“-”替换空格，并删除特殊字符。
 
 当设定pretty主机名时，如果主机名中包含空格或单引号，需要使用引号。命令示例如下：
 
@@ -45,11 +45,11 @@
 # hostnamectl set-hostname "" [option...]
 ```
 
-其中 "" 是空白字符串，option是--pretty、--static和-transient中的一个或多个选项。
+其中 "" 是空白字符串，option是\--pretty、\--static和\--transient中的一个或多个选项。
 
 ## 远程更改主机名<a name="zh-cn_topic_0154473021_section1530231411392"></a>
 
-在远程系统中运行hostnamectl命令时，要使用-H，--host 选项，使用如下命令：
+在远程系统中运行hostnamectl命令时，要使用-H，\--host 选项，使用如下命令：
 
 ```
 # hostnamectl set-hostname -H [username]@hostname new_hostname

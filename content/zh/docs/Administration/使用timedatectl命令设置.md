@@ -23,7 +23,7 @@ System clock synchronized: no
 
 ## 通过远程服务器进行时间同步<a name="section14365868500"></a>
 
-您可以启用NTP远程服务器进行系统时钟的自动同步。是否启用NTP，可在root权限下执行如下命令进行设置。其中_boolean_  可取值yes和no，分别表示启用和不启用NTP进行系统时钟自动同步，请根据实际情况修改：
+您可以启用NTP远程服务器进行系统时钟的自动同步。是否启用NTP，可在root权限下执行如下命令进行设置。其中_ boolean_  可取值yes和no，分别表示启用和不启用NTP进行系统时钟自动同步，请根据实际情况修改：
 
 ```
 timedatectl set-ntp boolean
@@ -37,7 +37,7 @@ timedatectl set-ntp boolean
 
 ## 修改日期<a name="section1859294020462"></a>
 
-修改当前的日期，在root权限下执行如下命令，其中_YYYY_代表年份_，MM_代表月份，_DD_代表某天，请根据实际情况修改：
+修改当前的日期，在root权限下执行如下命令，其中_ YYYY_  代表年份，_MM_  代表月份，_DD_  代表某天，请根据实际情况修改：
 
 ```
 timedatectl set-time YYYY-MM-DD
@@ -57,7 +57,7 @@ timedatectl set-time YYYY-MM-DD
 >timedatectl set-ntp no  
 >```  
 
-修改当前的时间，在root权限下执行如下命令，其中_HH_代表小时，_MM_代表分钟，_SS_代表秒，请根据实际情况修改：
+修改当前的时间，在root权限下执行如下命令，其中_HH_ 代表小时，_MM_ 代表分钟，_SS_ 代表秒，请根据实际情况修改：
 
 ```
 timedatectl set-time HH:MM:SS
@@ -77,7 +77,7 @@ timedatectl set-time HH:MM:SS
 timedatectl list-timezones
 ```
 
-要修改当前的时区，在root权限下执行如下命令，其中_time\_zone_是您想要设置的时区，请根据实际情况修改：
+要修改当前的时区，在root权限下执行如下命令，其中 _time\_zone_ 是您想要设置的时区，请根据实际情况修改：
 
 ```
 timedatectl set-timezone time_zone
