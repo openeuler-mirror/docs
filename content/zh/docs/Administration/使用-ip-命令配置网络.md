@@ -1,6 +1,6 @@
 # 使用 ip 命令配置网络<a name="ZH-CN_TOPIC_0183005791"></a>
 
-使用ip命令为接口配置地址，命令格式如下，其中_interface-name_为网卡名称。
+使用ip命令为接口配置地址，命令格式如下，其中 _interface-name_ 为网卡名称。
 
 ```
 ip addr [ add | del ] address dev interface-name

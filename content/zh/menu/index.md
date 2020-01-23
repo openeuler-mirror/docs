@@ -22,6 +22,7 @@ headless: true
         - [虚拟化]({{< relref "/docs/Releasenotes/虚拟化.md" >}})
         - [容器]({{< relref "/docs/Releasenotes/容器.md" >}})
         - [支持鲲鹏生态]({{< relref "/docs/Releasenotes/支持鲲鹏生态.md" >}})
+    - [发布包说明]({{< relref "/docs/Releasenotes/发布包说明.md" >}})
 
 - [安装指南]({{< relref "/docs/Installation/installation.md" >}})
     - [法律声明]({{< relref "/docs/Installation/法律声明.md" >}})

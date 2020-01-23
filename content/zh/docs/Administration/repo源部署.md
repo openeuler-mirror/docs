@@ -43,13 +43,13 @@
     -   拷贝镜像中相关文件至在/srv/repo下
 
         ```
-        mount /home/openEuler/openEuler-1.0-aarch64-dvd.iso  /mnt/
+        mount /home/openEuler/openEuler-1.0-beta-aarch64-dvd.iso  /mnt/
         cp -r /mnt/Packages /srv/repo/
         cp -r /mnt/repodata /srv/repo/
         cp -r /mnt/RPM-GPG-KEY-openEuler /srv/repo/
         ```
 
-        openEuler-1.0-aarch64-dvd.iso存放在/home/openEuler目录下。
+        openEuler-1.0-beta-aarch64-dvd.iso存放在/home/openEuler目录下。
 
     -   在/srv/repo下创建repo源的软链接
 

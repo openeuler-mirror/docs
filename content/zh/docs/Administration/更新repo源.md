@@ -10,6 +10,6 @@
     createrepo --update --workers=10 /srv/repo
     ```
 
-    其中，--update表示更新，--workers表示线程数，可自定义。
+    其中，\--update表示更新，\--workers表示线程数，可自定义。
 
 

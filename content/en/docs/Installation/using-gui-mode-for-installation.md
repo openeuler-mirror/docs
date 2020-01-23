@@ -10,16 +10,4 @@ Perform graphical installation operations using a keyboard.
 -   Press the spacebar or  **Enter**  to select or delete highlighted options, expand or collapse a drop-down list.
 -   Press  **Alt**+a shortcut key \(the shortcut key varies for different pages\) to select the control where the shortcut key is located. The shortcut key can be highlighted \(underlined\) by holding down Alt.
 
--   **[Configuring an Installation Program Language](configuring-an-installation-program-language.md)**  
-
--   **[Entering the Installation Interface](entering-the-installation-interface.md)**  
-
--   **[Setting Installation Parameters](setting-installation-parameters.md)**  
-
--   **[Starting Installation](starting-installation.md)**  
-
--   **[Configurations During Installation](configurations-during-installation.md)**  
-
--   **[Completing the Installation](completing-the-installation.md)**  
-
 
