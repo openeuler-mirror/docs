@@ -15,7 +15,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0182200826_row12924616195217"><td class="cellrowborder" valign="top" width="15.2%" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0182200826_p092419166523"><a name="zh-cn_topic_0182200826_p092419166523"></a><a name="zh-cn_topic_0182200826_p092419166523"></a>lcrc create/run</p>
+<tbody><tr id="zh-cn_topic_0182200826_row12924616195217"><td class="cellrowborder" valign="top" width="15.2%" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0182200826_p092419166523"><a name="zh-cn_topic_0182200826_p092419166523"></a><a name="zh-cn_topic_0182200826_p092419166523"></a>isula create/run</p>
 </td>
 <td class="cellrowborder" valign="top" width="40.01%" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0182200826_p692431614524"><a name="zh-cn_topic_0182200826_p692431614524"></a><a name="zh-cn_topic_0182200826_p692431614524"></a>--external-rootfs</p>
 </td>
@@ -38,7 +38,7 @@
 假设本地rootfs的路径为/root/myrootfs，那么启动一个系统容器的命令如下：
 
 ```
-# lcrc run  -tid --system-container --external-rootfs /root/myrootfs none init
+# isula run  -tid --system-container --external-rootfs /root/myrootfs none init
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：**   

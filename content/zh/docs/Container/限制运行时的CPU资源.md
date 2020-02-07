@@ -6,7 +6,7 @@
 
 ## 用法<a name="zh-cn_topic_0183293568_section188811239165314"></a>
 
-lcrc create/run时使用cpu相关的参数限制容器的各项cpu资源值，具体参数及取值见下方参数列表。
+isula create/run时使用cpu相关的参数限制容器的各项cpu资源值，具体参数及取值见下方参数列表。
 
 ## 参数<a name="zh-cn_topic_0183293568_section204328722112"></a>
 
@@ -76,7 +76,7 @@ create/run时可以指定下列参数。
 如果需要限制容器只是用特定的cpu，在运行容器时，直接加上--cpuset-cpus number 即可，如：
 
 ```
-lcrc run -tid --cpuset-cpus 0,2-3 busybox sh
+isula run -tid --cpuset-cpus 0,2-3 busybox sh
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：**   

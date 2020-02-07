@@ -270,7 +270,8 @@
 </td>
 <td class="cellrowborder" valign="top" width="7.4399999999999995%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0184347952_p146419334591"><a name="zh-cn_topic_0184347952_p146419334591"></a><a name="zh-cn_topic_0184347952_p146419334591"></a>可选</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.800000000000004%" headers="mcps1.2.5.1.4 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="52.800000000000004%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0184347952_p1646513319596"><a name="zh-cn_topic_0184347952_p1646513319596"></a><a name="zh-cn_topic_0184347952_p1646513319596"></a>无</p>
+</td>
 </tr>
 <tr id="zh-cn_topic_0184347952_row14466173355917"><td class="cellrowborder" valign="top" width="22.85%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0184347952_p9466143317596"><a name="zh-cn_topic_0184347952_p9466143317596"></a><a name="zh-cn_topic_0184347952_p9466143317596"></a>capabilities</p>
 </td>
@@ -278,7 +279,8 @@
 </td>
 <td class="cellrowborder" valign="top" width="7.4399999999999995%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0184347952_p4466333135917"><a name="zh-cn_topic_0184347952_p4466333135917"></a><a name="zh-cn_topic_0184347952_p4466333135917"></a>可选</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.800000000000004%" headers="mcps1.2.5.1.4 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="52.800000000000004%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0184347952_p1046603317599"><a name="zh-cn_topic_0184347952_p1046603317599"></a><a name="zh-cn_topic_0184347952_p1046603317599"></a>无</p>
+</td>
 </tr>
 </tbody>
 </table>

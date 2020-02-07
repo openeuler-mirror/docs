@@ -21,7 +21,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0182200836_row12693163810415"><td class="cellrowborder" valign="top" width="20.96%" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0182200836_p66931838134110"><a name="zh-cn_topic_0182200836_p66931838134110"></a><a name="zh-cn_topic_0182200836_p66931838134110"></a>lcrc create/run</p>
+<tbody><tr id="zh-cn_topic_0182200836_row12693163810415"><td class="cellrowborder" valign="top" width="20.96%" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0182200836_p66931838134110"><a name="zh-cn_topic_0182200836_p66931838134110"></a><a name="zh-cn_topic_0182200836_p66931838134110"></a>isula create/run</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.47%" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0182200836_p20308121310422"><a name="zh-cn_topic_0182200836_p20308121310422"></a><a name="zh-cn_topic_0182200836_p20308121310422"></a>--ns-change-opt</p>
 </td>
@@ -55,9 +55,9 @@
 启动容器， 指定--ns-change-opt=net：
 
 ```
-[root@localhost ~]# lcrc run -tid --ns-change-opt net --system-container --external-rootfs /root/myrootfs none init
+[root@localhost ~]# isula run -tid --ns-change-opt net --system-container --external-rootfs /root/myrootfs none init
 4bf44a42b4a14fdaf127616c90defa64b4b532b18efd15b62a71cbf99ebc12d2
-[root@localhost ~]# lcrc exec -it 4b mount | grep /proc/sys
+[root@localhost ~]# isula exec -it 4b mount | grep /proc/sys
 proc on /proc/sys type proc (ro,nosuid,nodev,noexec,relatime)
 proc on /proc/sysrq-trigger type proc (ro,nosuid,nodev,noexec,relatime)
 proc on /proc/sys/net type proc (rw,nosuid,nodev,noexec,relatime)
@@ -68,9 +68,9 @@ proc on /proc/sys/net type proc (rw,nosuid,nodev,noexec,relatime)
 再启动一个容器，指定--ns-change-opt=ipc：
 
 ```
-[root@localhost ~]# lcrc run -tid --ns-change-opt ipc --system-container --external-rootfs /root/myrootfs none init
+[root@localhost ~]# isula run -tid --ns-change-opt ipc --system-container --external-rootfs /root/myrootfs none init
 c62e5e5686d390500dab2fa76b6c44f5f8da383a4cbbeac12cfada1b07d6c47f
-[root@localhost ~]# lcrc exec -it c6 mount | grep /proc/sys
+[root@localhost ~]# isula exec -it c6 mount | grep /proc/sys
 proc on /proc/sys type proc (ro,nosuid,nodev,noexec,relatime)
 proc on /proc/sysrq-trigger type proc (ro,nosuid,nodev,noexec,relatime)
 proc on /proc/sys/kernel/shmmax type proc (rw,nosuid,nodev,noexec,relatime)

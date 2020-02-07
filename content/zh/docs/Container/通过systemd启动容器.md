@@ -15,7 +15,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0182200831_row12693163810415"><td class="cellrowborder" valign="top" width="14.04%" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0182200831_p66931838134110"><a name="zh-cn_topic_0182200831_p66931838134110"></a><a name="zh-cn_topic_0182200831_p66931838134110"></a>lcrc create/run</p>
+<tbody><tr id="zh-cn_topic_0182200831_row12693163810415"><td class="cellrowborder" valign="top" width="14.04%" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0182200831_p66931838134110"><a name="zh-cn_topic_0182200831_p66931838134110"></a><a name="zh-cn_topic_0182200831_p66931838134110"></a>isula create/run</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.67%" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0182200831_p169241552111"><a name="zh-cn_topic_0182200831_p169241552111"></a><a name="zh-cn_topic_0182200831_p169241552111"></a>--system-container</p>
 </td>
@@ -39,13 +39,13 @@
 -   指定--system-container和--external-rootfs参数启动系统容器。
 
     ```
-    [root@localhost ~]# lcrc run -tid -n systest01 --system-container --external-rootfs /root/myrootfs none init
+    [root@localhost ~]# isula run -tid -n systest01 --system-container --external-rootfs /root/myrootfs none init
     ```
 
 -   执行以上命令后容器成功运行，通过exec进容器查看进程信息，可看到systemd服务已启动。
 
     ```
-    [root@localhost ~]# lcrc exec -it systest01 bash
+    [root@localhost ~]# isula exec -it systest01 bash
     [root@localhost /]# ps -ef
     UID        PID  PPID  C STIME TTY          TIME CMD
     root         1     0  2 06:49 ?        00:00:00 init
