@@ -2,7 +2,7 @@
 
 ## 描述<a name="zh-cn_topic_0183092517_section142111513104513"></a>
 
-iSulad采用C/S模式进行设计，在默认情况，iSulad守护进程lcrd只侦听本地/var/run/lcrd.sock，因此只能在本地通过客户端lcrc执行相关命令操作容器。为了能使lcrc可以远程访问容器，lcrd守护进程需要通过tcp:ip的方式侦听远程访问的端口。然而，仅通过简单配置tcp ip:port进行侦听，这样会导致所有的ip都可以通过调用lcrc -H tcp://<remote server ip\>:port与lcrd通信，容易导致安全问题，因此推荐使用较安全版本的TLS\(**Transport Layer Security - 安全传输层协议**）方式进行远程访问。
+iSulad采用C/S模式进行设计，在默认情况，iSulad守护进程isulad只侦听本地/var/run/isulad.sock，因此只能在本地通过客户端isula执行相关命令操作容器。为了能使isula可以远程访问容器，isulad守护进程需要通过tcp:ip的方式侦听远程访问的端口。然而，仅通过简单配置tcp ip:port进行侦听，这样会导致所有的ip都可以通过调用isula -H tcp://<remote server ip\>:port与isulad通信，容易导致安全问题，因此推荐使用较安全版本的TLS\(**Transport Layer Security - 安全传输层协议**）方式进行远程访问。
 
 ## 生成TLS证书<a name="zh-cn_topic_0183092517_section992244212139"></a>
 
@@ -135,12 +135,12 @@ iSulad采用C/S模式进行设计，在默认情况，iSulad守护进程lcrd只�
 服务端：
 
 ```
- lcrd -H=tcp://0.0.0.0:2376 --tlsverify --tlscacert ~/.iSulad/ca.pem --tlscert ~/.iSulad/server-cert.pem --tlskey ~/.iSulad/server-key.pem
+ isulad -H=tcp://0.0.0.0:2376 --tlsverify --tlscacert ~/.iSulad/ca.pem --tlscert ~/.iSulad/server-cert.pem --tlskey ~/.iSulad/server-key.pem
 ```
 
 客户端：
 
 ```
- lcrc version -H=tcp://$HOSTIP:2376 --tlsverify --tlscacert ~/.iSulad/ca.pem --tlscert ~/.iSulad/cert.pem --tlskey ~/.iSulad/key.pem
+ isula version -H=tcp://$HOSTIP:2376 --tlsverify --tlscacert ~/.iSulad/ca.pem --tlscert ~/.iSulad/cert.pem --tlskey ~/.iSulad/key.pem
 ```
 

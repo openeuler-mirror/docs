@@ -12,7 +12,7 @@
 
 通过两种方法配置ulimit
 
-1.  lcrc create/run时使用--ulimit <type\>=<soft\>\[:<hard\>\]来控制shell执行程序的资源。
+1.  isula create/run时使用--ulimit <type\>=<soft\>\[:<hard\>\]来控制shell执行程序的资源。
 
     <a name="zh-cn_topic_0183316275_table192755843616"></a>
     <table><thead align="left"><tr id="zh-cn_topic_0183316275_row1927175818360"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.5.1.1"><p id="zh-cn_topic_0183316275_p2027105863611"><a name="zh-cn_topic_0183316275_p2027105863611"></a><a name="zh-cn_topic_0183316275_p2027105863611"></a><strong id="zh-cn_topic_0183316275_b122755815363"><a name="zh-cn_topic_0183316275_b122755815363"></a><a name="zh-cn_topic_0183316275_b122755815363"></a>参数项</strong></p>
@@ -140,10 +140,10 @@
 在容器的创建或者运行时，加上--ulimit <type\>=<soft\>\[:<hard\>\]即可，如：
 
 ```
-lcrc create/run -tid --ulimit nofile=1024:2048 busybox sh
+isula create/run -tid --ulimit nofile=1024:2048 busybox sh
 ```
 
 ## 约束<a name="zh-cn_topic_0183316275_section346363019141"></a>
 
-不能在daemon.json和/etc/sysconfig/iSulad文件（或lcrd命令行）中同时配置ulimit限制，否则lcrd启动会报错。
+不能在daemon.json和/etc/sysconfig/iSulad文件（或isulad命令行）中同时配置ulimit限制，否则isulad启动会报错。
 

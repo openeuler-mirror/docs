@@ -22,14 +22,14 @@
 
 5.  daemon支持以下选项，用于为容器设置默认的限制，
 
-    --storage-opt overlay2.basesize=128M 指定默认限制的大小，若lcrc run时也指定 了--storeage-opt size选项，则以run时指定来生效，若daemon跟lcrc run时都不指定大小，则表示不限制。
+    --storage-opt overlay2.basesize=128M 指定默认限制的大小，若isula run时也指定 了--storeage-opt size选项，则以run时指定来生效，若daemon跟isula run时都不指定大小，则表示不限制。
 
-6.  需要开启文件系统Project和Project Quota属性。
+6.  需要开启文件系统Project ID和Project Quota属性。
     -   新格式化文件系统并mount
 
         ```
         # mkfs.ext4 -O quota,project /dev/sdb
-        # mount -o prjquota /dev/sdb /var/lib/lcrd
+        # mount -o prjquota /dev/sdb /var/lib/isulad
         ```
 
 
@@ -63,10 +63,10 @@ create/run时指定--storage-opt参数。
 
 ## 示例<a name="zh-cn_topic_0183293571_section1734193235916"></a>
 
-在lcrc run/create命令行上通过已有参数“--storage-opt size=<value\>”来设置限额。其中value是一个正数，单位可以是\[kKmMgGtTpP\]?\[iI\]?\[bB\]?，在不带单位的时候默认单位是字节。
+在isula run/create命令行上通过已有参数“--storage-opt size=<value\>”来设置限额。其中value是一个正数，单位可以是\[kKmMgGtTpP\]?\[iI\]?\[bB\]?，在不带单位的时候默认单位是字节。
 
 ```
-$ [root@localhost ~]# lcrc run -ti --storage-opt size=10M busybox
+$ [root@localhost ~]# isula run -ti --storage-opt size=10M busybox
 / # df -h
 Filesystem                Size      Used Available Use% Mounted on
 overlay                  10.0M     48.0K     10.0M   0% /
@@ -111,17 +111,17 @@ overlay                  10.0M     10.0M         0 100% /
     内核必须支持ext4的project quota功能，并在mkfs的时候要加上-O quota,project，挂载的时候要加上-o prjquota。任何一个不满足，在使用--storage-opt size=<value\>时都将报错。
 
     ```
-    $ [root@localhost ~]# lcrc run -it --storage-opt size=10Mb busybox df -h
+    $ [root@localhost ~]# isula run -it --storage-opt size=10Mb busybox df -h
     Error response from daemon: Failed to prepare rootfs with error: time="2019-04-09T05:13:52-04:00" level=fatal msg="error creating read-
     write layer with ID "a4c0e55e82c55e4ee4b0f4ee07f80cc2261cf31b2c2dfd628fa1fb00db97270f": --storage-opt is supported only for overlay over
     xfs or ext4 with 'pquota' mount option"
     ```
 
 3.  限制额度的说明。
-    1.  限制的额度大于lcrd的root所在分区的size时，在容器内用df看到的文件系统的额度是lcrd的root所在分区的size，而不是设置的限额。
-    2.  --storage-opt size=0代表不限制，且设置值不能小于4096。size的精度为1个字节，如果指定精度含小数个字节，小数部分被忽略，如指定size=0.1实际等同于size=0不限制。（受计算机存储浮点数精度的限制，即0.999999999999999999999999999与1是等价的，具体的9的个数不同计算机可能存在差异，故设置4095.999999999999999999999999999与4096等价，其它情况类似），注意lcrc inspect显示原始命令行指定形式，如果含小数字节，需自行忽略小数部分。
+    1.  限制的额度大于isulad的root所在分区的size时，在容器内用df看到的文件系统的额度是isulad的root所在分区的size，而不是设置的限额。
+    2.  --storage-opt size=0代表不限制，且设置值不能小于4096。size的精度为1个字节，如果指定精度含小数个字节，小数部分被忽略，如指定size=0.1实际等同于size=0不限制。（受计算机存储浮点数精度的限制，即0.999999999999999999999999999与1是等价的，具体的9的个数不同计算机可能存在差异，故设置4095.999999999999999999999999999与4096等价，其它情况类似），注意isula inspect显示原始命令行指定形式，如果含小数字节，需自行忽略小数部分。
     3.  限制的额度过小时，比如--storage-opt size=4k，可能会导致容器无法启动，因为启动容器本身需要创建一些文件。
-    4.  上一次启动lcrd时，lcrd的root所在分区挂载时加了-o prjquota选项，这次启动时不加，那么上一次启动中创建的带quota的容器的设置值不生效。
+    4.  上一次启动isulad时，isulad的root所在分区挂载时加了-o prjquota选项，这次启动时不加，那么上一次启动中创建的带quota的容器的设置值不生效。
     5.  daemon端配额--storage-opt overlay2.basesize，其取值范围与--storage-opt size相同。
 
 4.  指定storage-opt为4k时，轻量级容器启动与docker有差异
@@ -139,9 +139,9 @@ overlay                  10.0M     10.0M         0 100% /
     轻量级容器不报错，正常启动
 
     ```
-    [root@localhost ~]# lcrc run -itd --storage-opt size=4k rnd-dockerhub.huawei.com/official/ubuntu-arm64:latest
+    [root@localhost ~]# isula run -itd --storage-opt size=4k rnd-dockerhub.huawei.com/official/ubuntu-arm64:latest
     636480b1fc2cf8ac895f46e77d86439fe2b359a1ff78486ae81c18d089bbd728
-    [root@localhost ~]# lcrc ps
+    [root@localhost ~]# isula ps
     STATUS  PID   IMAGE                                                 COMMAND   EXIT_CODE RESTART_COUNT STARTAT       FINISHAT RUNTIME ID           NAMES                                                            
     running 17609 rnd-dockerhub.huawei.com/official/ubuntu-arm64:latest /bin/bash 0         0             2 seconds ago -        lcr     636480b1fc2c 636480b1fc2cf8ac895f46e77d86439fe2b359a1ff78486ae81c18d089bbd728 
     ```
@@ -153,7 +153,7 @@ overlay                  10.0M     10.0M         0 100% /
     轻量级容器在启动容器过程中，使用默认配置时，挂载点较少，如/proc，或/sys等路径不存在时，才会创建。用例中的镜像rnd-dockerhub.huawei.com/official/ubuntu-arm64:latest本身含有/proc， /sys等，因此整个启动容器的过程中，都不会有新文件或路径生成，故轻量级容器启动过程不会报错。为验证这一过程，当把镜像替换为rnd-dockerhub.huawei.com/official/busybox-aarch64:latest时，由于该镜像内无/proc存在，轻量级容器启动一样会报错。
 
     ```
-    [root@localhost ~]# lcrc run -itd --storage-opt size=4k rnd-dockerhub.huawei.com/official/busybox-aarch64:latest
+    [root@localhost ~]# isula run -itd --storage-opt size=4k rnd-dockerhub.huawei.com/official/busybox-aarch64:latest
     8e893ab483310350b8caa3b29eca7cd3c94eae55b48bfc82b350b30b17a0aaf4
     Error response from daemon: Start container error: runtime error: 8e893ab483310350b8caa3b29eca7cd3c94eae55b48bfc82b350b30b17a0aaf4:tools/lxc_start.c:main:404 starting container process caused "Failed to setup lxc,
     please check the config file."
@@ -161,9 +161,9 @@ overlay                  10.0M     10.0M         0 100% /
 
 5.  其他说明。
 
-    使用限额功能的lcrd切换数据盘时，需要保证被切换的数据盘使用\`prjquota\`选项挂载，且/var/lib/lcrd/storage/overlay2目录的挂载方式与/var/lib/lcrd相同。
+    使用限额功能的isulad切换数据盘时，需要保证被切换的数据盘使用\`prjquota\`选项挂载，且/var/lib/isulad/storage/overlay2目录的挂载方式与/var/lib/isulad相同。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
-    >切换数据盘时需要保证/var/lib/lcrd/storage/overlay2的挂载点被卸载。  
+    >切换数据盘时需要保证/var/lib/isulad/storage/overlay2的挂载点被卸载。  
 
 

@@ -6,7 +6,7 @@
 
 ## 用法<a name="zh-cn_topic_0183293570_section188811239165314"></a>
 
-lcrc create/run时使用--device-read-bps/--device-write-bps <device-path\>:<number\>\[<unit\>\]来限制容器中设备的读写速度。
+isula create/run时使用--device-read-bps/--device-write-bps <device-path\>:<number\>\[<unit\>\]来限制容器中设备的读写速度。
 
 ## 参数<a name="zh-cn_topic_0183293570_section204328722112"></a>
 
@@ -40,12 +40,12 @@ create/run时指定--device-read/write-bps参数。
 如果需要限制容器内设备的读写速度，在运行容器时，直接加上--device-write-bps/--device-read-bps <device-path\>:<number\>\[<unit\>\]即可，例如，限制容器busybox内设备/dev/sda的读速度为 1MB 每秒，则命令如下：
 
 ```
-lcrc run -tid --device-write /dev/sda:1mb busybox sh
+isula run -tid --device-write /dev/sda:1mb busybox sh
 ```
 
 限制写速度的命令如下：
 
 ```
-lcrc run -tid read-bps /dev/sda:1mb busybox sh
+isula run -tid read-bps /dev/sda:1mb busybox sh
 ```
 

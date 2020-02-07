@@ -59,7 +59,7 @@ isulad-lxcfs-toolkit [OPTIONS] COMMAND [COMMAND_OPTIONS]
 ## 约束限制<a name="zh-cn_topic_0182200844_section344733012429"></a>
 
 -   当前只支持proc文件系统下的cpuinfo,  meminfo, stat, diskstats,  partitions，swaps和uptime文件，其他的文件和其他内核API文件系统（比如sysfs）未做隔离 。
--   安装rpm包后会在/var/lib/lcrd/hooks/hookspec.json生成样例json文件，用户如果需要增加日志功能，需要在定制时加入--log配置。
+-   安装rpm包后会在/var/lib/isulad/hooks/hookspec.json生成样例json文件，用户如果需要增加日志功能，需要在定制时加入--log配置。
 -   diskstats只能显示支持cfq调度的磁盘信息，无法显示分区信息。容器内设备会被显示为/dev目录下的名字。若不存在则为空。此外，容器根目录所在设备会被显示为sda。
 -   挂载lxcfs时必须使用slave参数。若使用shared参数，可能会导致容器内挂载点泄露到主机，影响主机运行 。
 -   lxcfs支持服务优雅降级使用，若lxcfs服务crash或者不可用，容器内查看到的cpuinfo,  meminfo, stat, diskstats, partitions, swaps和uptime均为host信息，容器其它业务功能不受影响。
@@ -86,9 +86,9 @@ isulad-lxcfs-toolkit [OPTIONS] COMMAND [COMMAND_OPTIONS]
 2.  容器启动完成之后查看容器内是否存在lxcfs挂载点。
 
     ```
-    [root@localhost ~]# lcrc run -tid -v /var/lib/lxc:/var/lib/lxc --hook-spec /var/lib/lcrd/hooks/hookspec.json --system-container --external-rootfs /home/root-fs none init
+    [root@localhost ~]# isula run -tid -v /var/lib/lxc:/var/lib/lxc --hook-spec /var/lib/isulad/hooks/hookspec.json --system-container --external-rootfs /home/root-fs none init
     a8acea9fea1337d9fd8270f41c1a3de5bceb77966e03751346576716eefa9782
-    [root@localhost ~]# lcrc exec a8 mount | grep lxcfs
+    [root@localhost ~]# isula exec a8 mount | grep lxcfs
     lxcfs on /var/lib/lxc/lxcfs type fuse.lxcfs (rw,nosuid,nodev,relatime,user_id=0,group_id=0,allow_other)
     lxcfs on /proc/cpuinfo type fuse.lxcfs (rw,nosuid,nodev,relatime,user_id=0,group_id=0,allow_other)
     lxcfs on /proc/diskstats type fuse.lxcfs (rw,nosuid,nodev,relatime,user_id=0,group_id=0,allow_other)
@@ -102,9 +102,9 @@ isulad-lxcfs-toolkit [OPTIONS] COMMAND [COMMAND_OPTIONS]
 3.  执行update命令更新容器的cpu和mem资源配置，然后查看容器资源。根据如下回显可知，容器资源视图显示的是容器真实资源数据而不是宿主机的数据。
 
     ```
-    [root@localhost ~]# lcrc update --cpuset-cpus 0-1 --memory 1G a8
+    [root@localhost ~]# isula update --cpuset-cpus 0-1 --memory 1G a8
     a8
-    [root@localhost ~]# lcrc exec a8 cat /proc/cpuinfo
+    [root@localhost ~]# isula exec a8 cat /proc/cpuinfo
     processor       : 0
     BogoMIPS        : 100.00
     cpu MHz         : 2400.000
@@ -125,7 +125,7 @@ isulad-lxcfs-toolkit [OPTIONS] COMMAND [COMMAND_OPTIONS]
     CPU part        : 0xd08
     CPU revision    : 2
     
-    [root@localhost ~]# lcrc exec a8 free -m
+    [root@localhost ~]# isula exec a8 free -m
                   total        used        free      shared  buff/cache   available
     Mem:           1024          17         997           7           8        1006
     Swap:          4095           0        4095

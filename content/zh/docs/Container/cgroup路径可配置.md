@@ -15,7 +15,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0182200835_row12693163810415"><td class="cellrowborder" valign="top" width="21.09%" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0182200835_p66931838134110"><a name="zh-cn_topic_0182200835_p66931838134110"></a><a name="zh-cn_topic_0182200835_p66931838134110"></a>lcrc create/run</p>
+<tbody><tr id="zh-cn_topic_0182200835_row12693163810415"><td class="cellrowborder" valign="top" width="21.09%" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0182200835_p66931838134110"><a name="zh-cn_topic_0182200835_p66931838134110"></a><a name="zh-cn_topic_0182200835_p66931838134110"></a>isula create/run</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.03%" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0182200835_p20308121310422"><a name="zh-cn_topic_0182200835_p20308121310422"></a><a name="zh-cn_topic_0182200835_p20308121310422"></a>--cgroup-parent</p>
 </td>
@@ -56,14 +56,14 @@
 启动系统容器，指定--cgroup-parent参数：
 
 ```
-[root@localhost ~]# lcrc run -tid --cgroup-parent /lxc/cgroup123 --system-container --external-rootfs /root/myrootfs none init
+[root@localhost ~]# isula run -tid --cgroup-parent /lxc/cgroup123 --system-container --external-rootfs /root/myrootfs none init
 115878a4dfc7c5b8c62ef8a4b44f216485422be9a28f447a4b9ecac4609f332e
 ```
 
 查看容器init进程的cgroup信息：
 
 ```
-[root@localhost ~]# lcrc inspect -f "{{json .State.Pid}}" 11
+[root@localhost ~]# isula inspect -f "{{json .State.Pid}}" 11
 22167
 [root@localhost ~]# cat /proc/22167/cgroup
 13:blkio:/lxc/cgroup123/115878a4dfc7c5b8c62ef8a4b44f216485422be9a28f447a4b9ecac4609f332e

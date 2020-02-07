@@ -17,7 +17,7 @@ user namespace是将容器的root映射到主机的普通用户，使得容器�
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0182200842_row12693163810415"><td class="cellrowborder" valign="top" width="19.98%" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0182200842_p66931838134110"><a name="zh-cn_topic_0182200842_p66931838134110"></a><a name="zh-cn_topic_0182200842_p66931838134110"></a>lcrc create/run</p>
+<tbody><tr id="zh-cn_topic_0182200842_row12693163810415"><td class="cellrowborder" valign="top" width="19.98%" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0182200842_p66931838134110"><a name="zh-cn_topic_0182200842_p66931838134110"></a><a name="zh-cn_topic_0182200842_p66931838134110"></a>isula create/run</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.36%" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0182200842_p08101647154218"><a name="zh-cn_topic_0182200842_p08101647154218"></a><a name="zh-cn_topic_0182200842_p08101647154218"></a>--user-remap</p>
 </td>
@@ -47,14 +47,14 @@ user namespace是将容器的root映射到主机的普通用户，使得容器�
 系统容器启动指定--user-remap参数：
 
 ```
-[root@localhost ~]# lcrc run -tid --user-remap 100000:100000:65535 --system-container --external-rootfs /home/root-fs none /sbin/init
+[root@localhost ~]# isula run -tid --user-remap 100000:100000:65535 --system-container --external-rootfs /home/root-fs none /sbin/init
 eb9605b3b56dfae9e0b696a729d5e1805af900af6ce24428fde63f3b0a443f4a
 ```
 
 分别在宿主机和容器内查看/sbin/init进程信息：
 
 ```
-[root@localhost ~]# lcrc exec eb ps aux | grep /sbin/init
+[root@localhost ~]# isula exec eb ps aux | grep /sbin/init
 root         1  0.6  0.0  21624  9624 ?        Ss   15:47   0:00 /sbin/init
 [root@localhost ~]# ps aux | grep /sbin/init
 100000    4861  0.5  0.0  21624  9624 ?        Ss   15:47   0:00 /sbin/init
@@ -66,7 +66,7 @@ root      4948  0.0  0.0 213032   808 pts/0    S+   15:48   0:00 grep --color=au
 在容器内创建一个文件，然后在宿主机上查看文件的owner：
 
 ```
-[root@localhost ~]# lcrc exec -it eb bash
+[root@localhost ~]# isula exec -it eb bash
 [root@localhost /]# echo test123 >> /test123
 [root@localhost /]# exit
 exit

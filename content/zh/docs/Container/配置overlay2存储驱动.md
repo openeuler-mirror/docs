@@ -41,7 +41,7 @@ docker默认为使用overlay2存储驱动，也可以通过如下两种方式显
         -   只有源路径和目标路径都在merged层时，才允许rename系统调用，否则rename系统调用会报错-EXDEV。
         -   内核4.10引入了redirect dir特性来修复rename问题，对应内核选项为CONFIG\_OVERLAY\_FS\_REDIRECT\_DIR。
 
-            使用overlay2时，在文件系统中对于目录进行重命名时，因为EulerOS中/sys/module/overlay/parameters/redirect\_dir特性开关已设置为关闭状态，则会导致使用失败；如果用户要使用相关特性，需要用户手动设置/sys/module/overlay/parameters/redirect\_dir为“Y”。
+            在使用overlay2场景下，对文件系统目录进行重命名时，如果系统配置文件/sys/module/overlay/parameters/redirect\_dir中配置的特性开关为关闭状态，则会导致使用失败；如果用户要使用相关特性，需要用户手动设置/sys/module/overlay/parameters/redirect\_dir为“Y”。
 
     -   Hard link break问题
         -   当lower层目录中有多个硬链接，在merged层写入数据会触发Copy-UP，导致硬链接断开。

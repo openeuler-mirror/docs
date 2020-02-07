@@ -142,7 +142,7 @@ SSH（Secure Shell）是目前较可靠，专为远程登录会话和其他网�
     <tr id="zh-cn_topic_0152100390_ra02142c2f88e45e9b5be9a7454ae9448"><td class="cellrowborder" valign="top" width="16.56%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0152100390_aeb3a4319a7f44cbc8f2241e48f65f48e"><a name="zh-cn_topic_0152100390_aeb3a4319a7f44cbc8f2241e48f65f48e"></a><a name="zh-cn_topic_0152100390_aeb3a4319a7f44cbc8f2241e48f65f48e"></a>PermitRootLogin</p>
     <p id="zh-cn_topic_0152100390_a8a1361665a0541038580404b621043a4"><a name="zh-cn_topic_0152100390_a8a1361665a0541038580404b621043a4"></a><a name="zh-cn_topic_0152100390_a8a1361665a0541038580404b621043a4"></a></p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.34%" headers="mcps1.2.5.1.2 "><p id="p91440171268"><a name="p91440171268"></a><a name="p91440171268"></a>禁止root账户直接SSH登录系统。</p>
+    <td class="cellrowborder" valign="top" width="45.34%" headers="mcps1.2.5.1.2 "><p id="p91440171268"><a name="p91440171268"></a><a name="p91440171268"></a><span id="ph132920221337"><a name="ph132920221337"></a><a name="ph132920221337"></a>是否允许</span>root账户直接<span id="ph2759102973319"><a name="ph2759102973319"></a><a name="ph2759102973319"></a>使用</span>SSH登录系统</p>
     <div class="note" id="note1914411176268"><a name="note1914411176268"></a><a name="note1914411176268"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p6144151714266"><a name="p6144151714266"></a><a name="p6144151714266"></a>若需要直接使用root账户通过SSH登录系统，请修改/etc/ssh/sshd_config文件的PermitRootLogin字段的值为yes。</p>
     </div></div>
     </td>
@@ -419,7 +419,7 @@ SSH（Secure Shell）是目前较可靠，专为远程登录会话和其他网�
 
         ```
         chown root:root /sftp/sftpuser
-        chmod 755 /sftp
+        chmod 777 /sftp/sftpuser
         ```
 
     8.  修改/etc/ssh/sshd\_config文件
