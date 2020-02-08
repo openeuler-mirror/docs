@@ -5,7 +5,7 @@
 示例如下：
 
 ```
-mount /home/openEuler/openEuler-1.0-beta-aarch64-dvd.iso  /mnt/
+mount /home/openEuler/openEuler-1.0-base-aarch64-dvd.iso  /mnt/
 ```
 
 挂载好的mnt目录如下：

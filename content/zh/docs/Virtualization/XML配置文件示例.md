@@ -40,7 +40,7 @@
 	</disk>
 	<disk type='file' device='cdrom'>
 	    <driver name='qemu' type='raw'/>
-	    <source file='/mnt/openEuler-1.0-aarch64-dvd.iso'/>
+	    <source file='/mnt/openEuler-1.0-base-aarch64-dvd.iso'/>
 	    <readonly/>
 	    <target dev='sdb' bus='scsi'/>
 	    <boot order='2'/>
@@ -98,7 +98,7 @@
 	</disk>
 	<disk type='file' device='cdrom'>
 	    <driver name='qemu' type='raw'/>
-	    <source file='/mnt/openEuler-1.0-aarch64-dvd.iso'/>
+	    <source file='/mnt/openEuler-1.0-base-aarch64-dvd.iso'/>
 	    <readonly/>
 	    <target dev='sdb' bus='scsi'/>
 	    <boot order='2'/>

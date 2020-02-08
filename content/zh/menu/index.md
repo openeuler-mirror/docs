@@ -194,6 +194,7 @@ headless: true
     - [FAQ]({{< relref "/docs/Administration/FAQ-4.md" >}})
         - [使用systemctl和top命令查询libvirtd服务占用内存不同]({{< relref "/docs/Administration/使用systemctl和top命令查询libvirtd服务占用内存不同.md" >}})
         - [设置RAID0卷，参数stripsize设置为4时出错]({{< relref "/docs/Administration/设置RAID0卷-参数stripsize设置为4时出错.md" >}})
+        - [使用rpmbuild编译mariadb失败]({{< relref "/docs/Administration/使用rpmbuild编译mariadb失败.md" >}})
 
 - [虚拟化用户指南]({{< relref "/docs/Virtualization/virtualization.md" >}})
     - [法律声明]({{< relref "/docs/Virtualization/法律声明.md" >}})

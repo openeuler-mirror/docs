@@ -50,10 +50,10 @@
 
     使用您下载的ISO镜像文件的完整路径替换 /path/to/image.iso，使用之前由 dmesg 命令给出的设备名称替换device，同时设置合理的块大小（例如：512k）替换 blocksize，这样可以加快写入进度。
 
-    例如：如果该ISO镜像文件位于 /home/testuser/Downloads/openEuler-1.0-beta-aarch64-dvd.iso，同时探测到的设备名称为sdb，则该命令如下：
+    例如：如果该ISO镜像文件位于 /home/testuser/Downloads/openEuler-1.0-base-aarch64-dvd.iso，同时探测到的设备名称为sdb，则该命令如下：
 
     ```
-    # dd if=/home/testuser/Downloads/openEuler-1.0-beta-aarch64-dvd.iso of=/dev/sdb bs=512k
+    # dd if=/home/testuser/Downloads/openEuler-1.0-base-aarch64-dvd.iso of=/dev/sdb bs=512k
     ```
 
 5.  等待镜像写入完成，拔掉USB盘。
