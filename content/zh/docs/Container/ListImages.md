@@ -14,8 +14,8 @@ rpc ListImages(ListImagesRequest) returns (ListImagesResponse) {}
 
 为统一接口，对于embedded格式镜像，可以通过cri images查询到。但是因embedded镜像不是标准OCI镜像，因此查询得到的结果有以下限制：
 
-1.  因embedded镜像无镜像ID，显示的镜像ID为 镜像的config digest。
-2.  因embedded镜像本身无digest仅有config的digest，且格式不符合OCI镜像规范，因此无法显示digest。
+-   因embedded镜像无镜像ID，显示的镜像ID为镜像的config digest。
+-   因embedded镜像本身无digest仅有config的digest，且格式不符合OCI镜像规范，因此无法显示digest。
 
 ## 参数<a name="zh-cn_topic_0183088060_section349492895613"></a>
 

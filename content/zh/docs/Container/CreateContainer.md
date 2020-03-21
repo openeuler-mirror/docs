@@ -6,15 +6,15 @@ grpc::Status CreateContainer(grpc::ServerContext *context, const runtime::Create
 
 ## 接口描述<a name="zh-cn_topic_0183088045_section729211519569"></a>
 
-在PodSandbox内创建一个容器
+在PodSandbox内创建一个容器。
 
 ## 注意事项<a name="zh-cn_topic_0183088045_section973104418419"></a>
 
-1. 请求CreateContainerRequest 中的sandbox\_config与传递给RunPodSandboxRequest以创建PodSandbox的配置相同。 它再次传递，只是为了方便参考。 PodSandboxConfig是不可变的，在pod的整个生命周期内保持不变。
+-   请求CreateContainerRequest 中的sandbox\_config与传递给RunPodSandboxRequest以创建PodSandbox的配置相同。 它再次传递，只是为了方便参考。 PodSandboxConfig是不可变的，在pod的整个生命周期内保持不变。
+-   由于容器命名以[ContainerMetadata](接口-2.md#zh-cn_topic_0182207110_li17135914132319)中的字段为来源，且以下划线"\_"为分割字符，因此限制metadata中的数据不能包含下划线，否则会出现sandbox运行成功，但无法使用[ListContainers](ListContainers.md#ZH-CN_TOPIC_0184808103)接口查询的现象。
+-   CreateContainerRequest中无runtime\_handler字段，创建container时的runtime类型和其对应的sandbox的runtime相同。
 
-2. 由于容器命名以[ContainerMetadata](接口-2.md#zh-cn_topic_0182207110_li17135914132319)中的字段为来源，且以下划线"\_"为分割字符，因此限制metadata中的数据不能包含下划线，否则会出现sandbox运行成功，但无法使用[ListContainers](ListContainers.md#ZH-CN_TOPIC_0184808103)接口查询的现象。
-
-## 参数： CreateContainerRequest<a name="zh-cn_topic_0183088045_section349492895613"></a>
+## 参数<a name="zh-cn_topic_0183088045_section349492895613"></a>
 
 <a name="zh-cn_topic_0183088045_table184320467318"></a>
 <table><tbody><tr id="zh-cn_topic_0183088045_row78917461336"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088045_p1089154617315"><a name="zh-cn_topic_0183088045_p1089154617315"></a><a name="zh-cn_topic_0183088045_p1089154617315"></a><strong id="zh-cn_topic_0183088045_b98915462314"><a name="zh-cn_topic_0183088045_b98915462314"></a><a name="zh-cn_topic_0183088045_b98915462314"></a>参数成员</strong></p>
@@ -40,7 +40,7 @@ grpc::Status CreateContainer(grpc::ServerContext *context, const runtime::Create
 </tbody>
 </table>
 
-## 补充 ：annotations<a name="zh-cn_topic_0183088045_section192641215164616"></a>
+## 补充<a name="zh-cn_topic_0183088045_section192641215164616"></a>
 
 可用于存储和检索任意元数据的非结构化键值映射。有一些字段由于cri接口没有提供特定的参数，可通过该字段将参数传入
 
@@ -61,7 +61,7 @@ grpc::Status CreateContainer(grpc::ServerContext *context, const runtime::Create
     </table>
 
 
-## 返回值 ：CreateContainerResponse<a name="zh-cn_topic_0183088045_section1526020315504"></a>
+## 返回值<a name="zh-cn_topic_0183088045_section1526020315504"></a>
 
 <a name="zh-cn_topic_0183088045_table1526093165012"></a>
 <table><tbody><tr id="zh-cn_topic_0183088045_row926093115015"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088045_p14260143155018"><a name="zh-cn_topic_0183088045_p14260143155018"></a><a name="zh-cn_topic_0183088045_p14260143155018"></a><strong id="zh-cn_topic_0183088045_b10260153118509"><a name="zh-cn_topic_0183088045_b10260153118509"></a><a name="zh-cn_topic_0183088045_b10260153118509"></a>返回值</strong></p>

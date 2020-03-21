@@ -10,9 +10,7 @@ rpc PodSandboxStatus(PodSandboxStatusRequest) returns (PodSandboxStatusResponse)
 
 查询sandbox的状态，如果sandbox不存在，返回错误。
 
-## 注意事项<a name="zh-cn_topic_0183088043_section973104418419"></a>
-
-## 参数: PodSandboxStatusRequest<a name="zh-cn_topic_0183088043_section349492895613"></a>
+## 参数<a name="zh-cn_topic_0183088043_section349492895613"></a>
 
 <a name="zh-cn_topic_0183088043_table184320467318"></a>
 <table><tbody><tr id="zh-cn_topic_0183088043_row78917461336"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088043_p1089154617315"><a name="zh-cn_topic_0183088043_p1089154617315"></a><a name="zh-cn_topic_0183088043_p1089154617315"></a><strong id="zh-cn_topic_0183088043_b98915462314"><a name="zh-cn_topic_0183088043_b98915462314"></a><a name="zh-cn_topic_0183088043_b98915462314"></a>参数成员</strong></p>
@@ -33,7 +31,7 @@ rpc PodSandboxStatus(PodSandboxStatusRequest) returns (PodSandboxStatusResponse)
 </tbody>
 </table>
 
-## 返回值: PodSandboxStatusResponse<a name="zh-cn_topic_0183088043_section10495164611565"></a>
+## 返回值<a name="zh-cn_topic_0183088043_section10495164611565"></a>
 
 <a name="zh-cn_topic_0183088043_table15296551936"></a>
 <table><tbody><tr id="zh-cn_topic_0183088043_row18741555834"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088043_p197485518319"><a name="zh-cn_topic_0183088043_p197485518319"></a><a name="zh-cn_topic_0183088043_p197485518319"></a><strong id="zh-cn_topic_0183088043_b77413551933"><a name="zh-cn_topic_0183088043_b77413551933"></a><a name="zh-cn_topic_0183088043_b77413551933"></a>返回值</strong></p>

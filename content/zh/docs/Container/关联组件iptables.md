@@ -11,7 +11,7 @@ Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
 ...
 ```
 
-在Chain FORWARD中，DROP上面多出了一条ACCEP icmp的规则，造成加了--icc=false后，容器之间也能ping能通，但udp/tcp仍然是不通的。
+在Chain FORWARD中，DROP上面多出了一条ACCEPT icmp的规则，造成加了--icc=false后，容器之间也能ping通，但容器之间如果使用udp/tcp协议，对端仍然是不可达的。
 
 因此，在容器os中使用docker，如果需要使用--icc=false选项时，建议先在host上清理一下iptables相关的规则。
 

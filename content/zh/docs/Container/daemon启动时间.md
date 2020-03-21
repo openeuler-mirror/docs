@@ -4,7 +4,9 @@ Docker服务由systemd管理，systemd对各个服务的启动时间有限制，
 
 -   如果使用devicemapper且为第一次启动，docker daemon需要对该设备做文件系统初始化操作，而该操作会进行大量磁盘IO操作，在磁盘性能不佳或存在大量IO竞争时，很可能会导致docker daemon启动超时。devicemapper设备只需要初始化一次，后续docker daemon启动时不再需要重复初始化。
 -   如果当前系统资源占用太高，导致系统卡顿，系统所有的操作都会变慢，也可能会出现docker服务启动超时的情况。
--   daemon重启过程中，需要遍历并读取docker工作目录下每一个容器的配置文件、容器init层和可写层的配置，如果当前系统存在过多容器（包含created和exited的容器）、并且磁盘读写性能受限，也会出现daemon遍历文件过久导致docker服务启动超时的情况。
+-   daemon重启过程中，需要遍历并读取docker工作目录下每一个容器的配置文件、容器init层和可写层的配置，如果当前系统存在过多容器（包含created和exited的容器），并且磁盘读写性能受限，也会出现daemon遍历文件过久导致docker服务启动超时的情况。
+
+  
 
 出现服务启动超时情况，建议对以下两种情况进行排查调整：
 

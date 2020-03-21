@@ -14,7 +14,7 @@ rpc Exec(ExecRequest) returns (ExecResponse) {}
 
 执行执行一条单独的命令，也能打开终端与容器交互。stdin/stdout/stderr之一必须是真的。如果tty为真，stderr必须是假的。 不支持多路复用,  在这种情况下, stdout和stderr的输出将合并为单流。
 
-## 参数: ExecRequest<a name="zh-cn_topic_0183088053_section349492895613"></a>
+## 参数<a name="zh-cn_topic_0183088053_section349492895613"></a>
 
 <a name="zh-cn_topic_0183088053_table184320467318"></a>
 <table><tbody><tr id="zh-cn_topic_0183088053_row78917461336"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088053_p1089154617315"><a name="zh-cn_topic_0183088053_p1089154617315"></a><a name="zh-cn_topic_0183088053_p1089154617315"></a><strong id="zh-cn_topic_0183088053_b98915462314"><a name="zh-cn_topic_0183088053_b98915462314"></a><a name="zh-cn_topic_0183088053_b98915462314"></a>参数成员</strong></p>
@@ -55,7 +55,7 @@ rpc Exec(ExecRequest) returns (ExecResponse) {}
 </tbody>
 </table>
 
-## 返回值: ExecResponse<a name="zh-cn_topic_0183088053_section10495164611565"></a>
+## 返回值<a name="zh-cn_topic_0183088053_section10495164611565"></a>
 
 <a name="zh-cn_topic_0183088053_table15296551936"></a>
 <table><tbody><tr id="zh-cn_topic_0183088053_row18741555834"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088053_p197485518319"><a name="zh-cn_topic_0183088053_p197485518319"></a><a name="zh-cn_topic_0183088053_p197485518319"></a><strong id="zh-cn_topic_0183088053_b77413551933"><a name="zh-cn_topic_0183088053_b77413551933"></a><a name="zh-cn_topic_0183088053_b77413551933"></a>返回值</strong></p>

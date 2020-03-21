@@ -14,7 +14,7 @@ rpc RemovePodSandbox(RemovePodSandboxRequest) returns (RemovePodSandboxResponse)
 
 1. 删除sandbox时，不会删除sandbox的网络资源，在删除pod前必须先调用StopPodSandbox才能清理网络资源，调用者应当保证在删除sandbox之前至少调用一次StopPodSandbox。
 
-## 参数: RemovePodSandboxRequest<a name="zh-cn_topic_0183088042_section349492895613"></a>
+## 参数<a name="zh-cn_topic_0183088042_section349492895613"></a>
 
 <a name="zh-cn_topic_0183088042_table184320467318"></a>
 <table><tbody><tr id="zh-cn_topic_0183088042_row78917461336"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088042_p1089154617315"><a name="zh-cn_topic_0183088042_p1089154617315"></a><a name="zh-cn_topic_0183088042_p1089154617315"></a><strong id="zh-cn_topic_0183088042_b98915462314"><a name="zh-cn_topic_0183088042_b98915462314"></a><a name="zh-cn_topic_0183088042_b98915462314"></a>参数成员</strong></p>
@@ -30,7 +30,7 @@ rpc RemovePodSandbox(RemovePodSandboxRequest) returns (RemovePodSandboxResponse)
 </tbody>
 </table>
 
-## 返回值: RemovePodSandboxResponse<a name="zh-cn_topic_0183088042_section10495164611565"></a>
+## 返回值<a name="zh-cn_topic_0183088042_section10495164611565"></a>
 
 <a name="zh-cn_topic_0183088042_table15296551936"></a>
 <table><tbody><tr id="zh-cn_topic_0183088042_row18741555834"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088042_p197485518319"><a name="zh-cn_topic_0183088042_p197485518319"></a><a name="zh-cn_topic_0183088042_p197485518319"></a><strong id="zh-cn_topic_0183088042_b77413551933"><a name="zh-cn_topic_0183088042_b77413551933"></a><a name="zh-cn_topic_0183088042_b77413551933"></a>返回值</strong></p>

@@ -67,11 +67,15 @@ Dockerfile介绍：
 
 Dockerfile是一个镜像的表示，可以通过Dockerfile来描述构建镜像的步骤，并自动构建一个容器，所有的 Dockerfile 命令格式都是：**INSTRUCTION arguments**
 
+  
+
 **FROM命令**
 
 格式：FROM <image\>   或    FROM <image\>:<tag\>
 
 功能：该命令指定基本镜像，是所有Dockerfile文件的第一个命令，如果没有指定基本镜像的tag，使用默认tag名latest。
+
+  
 
 **RUN命令**
 
@@ -85,9 +89,13 @@ docker run image command
 
 docker commit container\_id
 
+  
+
 **注释**
 
 使用\#注释
+
+  
 
 **MAINTAINER命令**
 
@@ -95,11 +103,15 @@ docker commit container\_id
 
 功能：命令用来指定维护者的姓名和联系方式
 
+  
+
 **ENTRYPOINT命令**
 
 格式：ENTRYPOINT cmd param1 param2 ...  或者ENTRYPOINT \["cmd", "param1", "param2"...\]
 
 功能：设置在容器启动时执行命令
+
+  
 
 **USER命令**
 
@@ -107,11 +119,15 @@ docker commit container\_id
 
 功能：指定 memcached 的运行用户
 
+  
+
 **EXPOSE命令**
 
 格式：EXPOSE <port\> \[<port\>...\]
 
 功能：开放镜像的一个或多个端口
+
+  
 
 **ENV命令**
 
@@ -119,11 +135,15 @@ docker commit container\_id
 
 功能：设置环境变量，设置了后，后续的RUN命令都可以使用
 
+  
+
 **ADD命令**
 
 格式：ADD <src\> <dst\>
 
 功能：从src复制文件到container的dest路径，<src\> 是相对被构建的源目录的相对路径，可以是文件或目录的路径，也可以是一个远程的文件url，<dest\> 是container中的绝对路径
+
+  
 
 **VOLUME命令**
 
@@ -131,11 +151,15 @@ docker commit container\_id
 
 功能：创建一个挂载点用于共享目录
 
+  
+
 **WORKDIR命令**
 
 格式：workdir <path\>
 
 功能：配置RUN, CMD, ENTRYPOINT 命令设置当前工作路径可以设置多次，如果是相对路径，则相对前一个 WORKDIR 命令
+
+  
 
 **CMD命令**
 
@@ -147,6 +171,8 @@ CMD command param1 param2 \(as a shell\)
 
 功能：一个Dockerfile里只能有一个CMD，如果有多个，只有最后一个生效
 
+  
+
 **ONBUILD命令**
 
 格式：ONBUILD \[其它指令\]
@@ -156,7 +182,7 @@ CMD command param1 param2 \(as a shell\)
 下面是Dockerfile的一个完整例子，该Dockerfile将构建一个安装了sshd服务的image
 
 <a name="zh-cn_topic_0183243738_zh-cn_topic_0155237683_zh-cn_topic_0076221025_zh-cn_topic_0043209539_table50916422"></a>
-<table><tbody><tr id="zh-cn_topic_0183243738_zh-cn_topic_0155237683_zh-cn_topic_0076221025_zh-cn_topic_0043209539_row58396974"><td class="cellrowborder" valign="top" width="100%"><pre class="screen" id="zh-cn_topic_0183243738_zh-cn_topic_0155237683_zh-cn_topic_0076221025_zh-cn_topic_0043209539_screen13353554311"><a name="zh-cn_topic_0183243738_zh-cn_topic_0155237683_zh-cn_topic_0076221025_zh-cn_topic_0043209539_screen13353554311"></a><a name="zh-cn_topic_0183243738_zh-cn_topic_0155237683_zh-cn_topic_0076221025_zh-cn_topic_0043209539_screen13353554311"></a>FROM ubuntu:14.04
+<table><tbody><tr id="zh-cn_topic_0183243738_zh-cn_topic_0155237683_zh-cn_topic_0076221025_zh-cn_topic_0043209539_row58396974"><td class="cellrowborder" valign="top" width="100%"><pre class="screen" id="zh-cn_topic_0183243738_zh-cn_topic_0155237683_zh-cn_topic_0076221025_zh-cn_topic_0043209539_screen13353554311"><a name="zh-cn_topic_0183243738_zh-cn_topic_0155237683_zh-cn_topic_0076221025_zh-cn_topic_0043209539_screen13353554311"></a><a name="zh-cn_topic_0183243738_zh-cn_topic_0155237683_zh-cn_topic_0076221025_zh-cn_topic_0043209539_screen13353554311"></a>FROM busybox
 ENV  http_proxy http://192.168.0.226:3128
 ENV  https_proxy https://192.168.0.226:3128
 RUN apt-get update &amp;&amp; apt-get install -y openssh-server
@@ -173,13 +199,13 @@ ENTRYPOINT /usr/sbin/sshd -D</pre>
 1.  以上文的Dockerfile构建一个image
 
     ```
-    $ sudo docker build -t ubuntu:latest
+    $ sudo docker build -t busybox:latest
     ```
 
 2.  通过以下命令可以看到这个生成的image：
 
     ```
-    docker images | grep ubuntu
+    docker images | grep busybox
     ```
 
 

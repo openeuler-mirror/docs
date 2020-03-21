@@ -12,11 +12,11 @@
 
 实例：
 
-启动一个名为ubuntu的容器，添加-i -a选项附加标准输入输出，容器启动后直接进入容器内部，输入exit可以退出容器。
+启动一个名为busybox的容器，添加-i -a选项附加标准输入输出，容器启动后直接进入容器内部，输入exit可以退出容器。
 
 如果启动容器时不加-i -a选项，容器将在后台启动。
 
 ```
-$ sudo docker start -i -a ubuntu
+$ sudo docker start -i -a busybox
 ```
 

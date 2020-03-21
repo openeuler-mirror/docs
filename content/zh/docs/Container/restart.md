@@ -11,7 +11,7 @@
 示例：
 
 ```
-$ sudo docker restart ubuntu
+$ sudo docker restart busybox
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：**   

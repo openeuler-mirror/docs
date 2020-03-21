@@ -14,9 +14,9 @@
 
 示例：
 
-使用ubuntu镜像运行一个容器，在容器启动后执行/bin/bash
+使用busybox镜像运行一个容器，在容器启动后执行/bin/sh
 
 ```
-$ sudo docker run -ti ubuntu /bin/bash
+$ sudo docker run -ti busybox /bin/sh
 ```
 

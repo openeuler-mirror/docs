@@ -10,9 +10,7 @@ rpc ContainerStatus(ContainerStatusRequest) returns (ContainerStatusResponse) {}
 
 返回容器状态信息，如果容器不存在，则返回错误。
 
-## 注意事项<a name="zh-cn_topic_0183088050_section973104418419"></a>
-
-## 参数: ContainerStatusRequest<a name="zh-cn_topic_0183088050_section349492895613"></a>
+## 参数<a name="zh-cn_topic_0183088050_section349492895613"></a>
 
 <a name="zh-cn_topic_0183088050_table184320467318"></a>
 <table><tbody><tr id="zh-cn_topic_0183088050_row78917461336"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088050_p1089154617315"><a name="zh-cn_topic_0183088050_p1089154617315"></a><a name="zh-cn_topic_0183088050_p1089154617315"></a><strong id="zh-cn_topic_0183088050_b98915462314"><a name="zh-cn_topic_0183088050_b98915462314"></a><a name="zh-cn_topic_0183088050_b98915462314"></a>参数成员</strong></p>
@@ -33,7 +31,7 @@ rpc ContainerStatus(ContainerStatusRequest) returns (ContainerStatusResponse) {}
 </tbody>
 </table>
 
-## 返回值: ContainerStatusResponse<a name="zh-cn_topic_0183088050_section10495164611565"></a>
+## 返回值<a name="zh-cn_topic_0183088050_section10495164611565"></a>
 
 <a name="zh-cn_topic_0183088050_table15296551936"></a>
 <table><tbody><tr id="zh-cn_topic_0183088050_row18741555834"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088050_p197485518319"><a name="zh-cn_topic_0183088050_p197485518319"></a><a name="zh-cn_topic_0183088050_p197485518319"></a><strong id="zh-cn_topic_0183088050_b77413551933"><a name="zh-cn_topic_0183088050_b77413551933"></a><a name="zh-cn_topic_0183088050_b77413551933"></a>返回值</strong></p>
