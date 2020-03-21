@@ -255,11 +255,14 @@ headless: true
         - [安装虚拟化核心组件]({{< relref "/docs/Virtualization/安装虚拟化核心组件.md" >}})
             - [安装方法]({{< relref "/docs/Virtualization/安装方法.md" >}})
             - [验证安装是否成功]({{< relref "/docs/Virtualization/验证安装是否成功.md" >}})
+    
+    
     - [用户和管理员指南]({{< relref "/docs/Virtualization/用户和管理员指南.md" >}})
         - [准备环境]({{< relref "/docs/Virtualization/准备环境.md" >}})
             - [准备虚拟机镜像]({{< relref "/docs/Virtualization/准备虚拟机镜像.md" >}})
             - [准备虚拟机网络]({{< relref "/docs/Virtualization/准备虚拟机网络.md" >}})
-            - [准备UEFI引导工具集EDK II]({{< relref "/docs/Virtualization/准备UEFI引导工具集EDK-II.md" >}})
+            - [准备引导固件]({{< relref "/docs/Virtualization/准备引导固件.md" >}})
+    
         - [虚拟机配置]({{< relref "/docs/Virtualization/虚拟机配置.md" >}})
             - [总体介绍]({{< relref "/docs/Virtualization/总体介绍.md" >}})
             - [虚拟机描述]({{< relref "/docs/Virtualization/虚拟机描述.md" >}})
@@ -269,40 +272,72 @@ headless: true
                 - [网络设备]({{< relref "/docs/Virtualization/网络设备.md" >}})
                 - [总线配置]({{< relref "/docs/Virtualization/总线配置.md" >}})
                 - [其它常用设备]({{< relref "/docs/Virtualization/其它常用设备.md" >}})
+    
+            - [体系架构相关配置]({{< relref "/docs/Virtualization/体系架构相关配置.md" >}})
             - [其他常见配置项]({{< relref "/docs/Virtualization/其他常见配置项.md" >}})
             - [XML配置文件示例]({{< relref "/docs/Virtualization/XML配置文件示例.md" >}})
+    
         - [管理虚拟机]({{< relref "/docs/Virtualization/管理虚拟机.md" >}})
             - [虚拟机生命周期]({{< relref "/docs/Virtualization/虚拟机生命周期.md" >}})
                 - [总体介绍]({{< relref "/docs/Virtualization/总体介绍-0.md" >}})
                 - [管理命令]({{< relref "/docs/Virtualization/管理命令.md" >}})
                 - [示例]({{< relref "/docs/Virtualization/示例.md" >}})
+    
             - [在线修改虚拟机配置]({{< relref "/docs/Virtualization/在线修改虚拟机配置.md" >}})
             - [查询虚拟机信息]({{< relref "/docs/Virtualization/查询虚拟机信息.md" >}})
             - [登录虚拟机]({{< relref "/docs/Virtualization/登录虚拟机.md" >}})
-                [使用VNC密码登录]({{< relref "/docs/Virtualization/使用VNC密码登录.md" >}})
-                [配置VNC TLS登录]({{< relref "/docs/Virtualization/配置VNC-TLS登录.md" >}})
+                - [使用VNC密码登录]({{< relref "/docs/Virtualization/使用VNC密码登录.md" >}})
+                - [配置VNC TLS登录]({{< relref "/docs/Virtualization/配置VNC-TLS登录.md" >}})
+    
+    
         - [热迁移虚拟机]({{< relref "/docs/Virtualization/热迁移虚拟机.md" >}})
             - [总体介绍]({{< relref "/docs/Virtualization/总体介绍-1.md" >}})
             - [应用场景]({{< relref "/docs/Virtualization/应用场景.md" >}})
             - [注意事项和约束限制]({{< relref "/docs/Virtualization/注意事项和约束限制.md" >}})
             - [热迁移操作]({{< relref "/docs/Virtualization/热迁移操作.md" >}})
+    
         - [管理系统资源]({{< relref "/docs/Virtualization/管理系统资源.md" >}})
             - [管理虚拟CPU]({{< relref "/docs/Virtualization/管理虚拟CPU.md" >}})
                 - [CPU份额]({{< relref "/docs/Virtualization/CPU份额.md" >}})
-                - [绑定qemu进程至物理CPU]({{< relref "/docs/Virtualization/绑定qemu进程至物理CPU.md" >}})
+                - [绑定QEMU进程至物理CPU]({{< relref "/docs/Virtualization/绑定QEMU进程至物理CPU.md" >}})
                 - [调整虚拟CPU绑定关系]({{< relref "/docs/Virtualization/调整虚拟CPU绑定关系.md" >}})
+    
             - [管理虚拟内存]({{< relref "/docs/Virtualization/管理虚拟内存.md" >}})
                 - [NUMA简介]({{< relref "/docs/Virtualization/NUMA简介.md" >}})
                 - [配置Host NUMA]({{< relref "/docs/Virtualization/配置Host-NUMA.md" >}})
                 - [配置Guest NUMA]({{< relref "/docs/Virtualization/配置Guest-NUMA.md" >}})
+    
+    
         - [管理设备]({{< relref "/docs/Virtualization/管理设备.md" >}})
             - [配置虚拟机PCIe控制器]({{< relref "/docs/Virtualization/配置虚拟机PCIe控制器.md" >}})
             - [管理虚拟磁盘]({{< relref "/docs/Virtualization/管理虚拟磁盘.md" >}})
             - [管理虚拟网卡]({{< relref "/docs/Virtualization/管理虚拟网卡.md" >}})
             - [配置虚拟串口]({{< relref "/docs/Virtualization/配置虚拟串口.md" >}})
+            - [管理设备直通]({{< relref "/docs/Virtualization/管理设备直通.md" >}})
+                - [PCI直通]({{< relref "/docs/Virtualization/PCI直通.md" >}})
+                - [SR-IOV直通]({{< relref "/docs/Virtualization/SR-IOV直通.md" >}})
+    
+            - [管理虚拟机USB]({{< relref "/docs/Virtualization/管理虚拟机USB.md" >}})
+                - [配置USB控制器]({{< relref "/docs/Virtualization/配置USB控制器.md" >}})
+                - [配置USB直通设备]({{< relref "/docs/Virtualization/配置USB直通设备.md" >}})
+    
+            - [存储快照]({{< relref "/docs/Virtualization/存储快照.md" >}})
+    
         - [最佳实践]({{< relref "/docs/Virtualization/最佳实践.md" >}})
-            - [halt-polling]({{< relref "/docs/Virtualization/halt-polling.md" >}})
-            - [内存大页]({{< relref "/docs/Virtualization/内存大页.md" >}})
+            - [性能最佳实践]({{< relref "/docs/Virtualization/性能最佳实践.md" >}})
+                - [halt-polling]({{< relref "/docs/Virtualization/halt-polling.md" >}})
+                - [IOThread配置]({{< relref "/docs/Virtualization/IOThread配置.md" >}})
+                - [裸设备映射]({{< relref "/docs/Virtualization/裸设备映射.md" >}})
+                - [kworker隔离绑定]({{< relref "/docs/Virtualization/kworker隔离绑定.md" >}})
+                - [内存大页]({{< relref "/docs/Virtualization/内存大页.md" >}})
+    
+            - [安全最佳实践]({{< relref "/docs/Virtualization/安全最佳实践.md" >}})
+                - [Libvirt鉴权]({{< relref "/docs/Virtualization/Libvirt鉴权.md" >}})
+                - [qemu-ga]({{< relref "/docs/Virtualization/qemu-ga.md" >}})
+                - [sVirt保护]({{< relref "/docs/Virtualization/sVirt保护.md" >}})
+    
+    
+    
     - [附录]({{< relref "/docs/Virtualization/附录.md" >}})
         - [术语和缩略语]({{< relref "/docs/Virtualization/术语和缩略语.md" >}})
 
