@@ -215,6 +215,8 @@ headless: true
             - [删除非授权文件的全局可写属性]({{< relref "/docs/SecHarden/删除非授权文件的全局可写属性.md" >}})
             - [限制at命令的使用权限]({{< relref "/docs/SecHarden/限制at命令的使用权限.md" >}})
             - [限制cron命令的使用权限]({{< relref "/docs/SecHarden/限制cron命令的使用权限.md" >}})
+            - [限制sudo命令的使用权限]({{< relref "/docs/SecHarden/限制sudo命令的使用权限.md" >}})
+    
         - [内核参数]({{< relref "/docs/SecHarden/内核参数.md" >}})
             - [加固内核参数]({{< relref "/docs/SecHarden/加固内核参数.md" >}})
         - [授权认证]({{< relref "/docs/SecHarden/授权认证.md" >}})
@@ -233,6 +235,13 @@ headless: true
             - [设置口令的加密算法]({{< relref "/docs/SecHarden/设置口令的加密算法.md" >}})
             - [登录失败超过三次后锁定]({{< relref "/docs/SecHarden/登录失败超过三次后锁定.md" >}})
             - [加固su命令]({{< relref "/docs/SecHarden/加固su命令.md" >}})
+    
+    
+    - [安全加固工具]({{< relref "/docs/SecHarden/安全加固工具.md" >}})
+        - [加固操作]({{< relref "/docs/SecHarden/加固操作.md" >}})
+        - [加固生效]({{< relref "/docs/SecHarden/加固生效.md" >}})
+    
+    - [SELinux配置]({{< relref "/docs/SecHarden/SELinux配置.md" >}})
     - [附录]({{< relref "/docs/SecHarden/附录.md" >}})
         - [文件和目录权限含义]({{< relref "/docs/SecHarden/文件和目录权限含义.md" >}})
         - [umask值含义]({{< relref "/docs/SecHarden/umask值含义.md" >}})
