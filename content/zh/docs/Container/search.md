@@ -27,6 +27,8 @@
     tiangolo/nginx-rtmp               Docker image with Nginx using the nginx-rtmp…   51                                      [OK]
     ```
 
+      
+
 2.  在私有镜像库中搜寻busybox，在私有镜像库中搜寻时要加上私有镜像库的地址
 
     ```

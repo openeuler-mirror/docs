@@ -10,9 +10,7 @@ rpc StopPodSandbox(StopPodSandboxRequest) returns (StopPodSandboxResponse) {}
 
 停止pod sandbox，停止sandbox容器，回收分配给sandbox的网络资源（比如IP地址）。如果有任何running的容器属于该sandbox，则必须被强制停止。
 
-## 注意事项<a name="zh-cn_topic_0183088041_section973104418419"></a>
-
-## 参数: StopPodSandboxRequest<a name="zh-cn_topic_0183088041_section349492895613"></a>
+## 参数<a name="zh-cn_topic_0183088041_section349492895613"></a>
 
 <a name="zh-cn_topic_0183088041_table184320467318"></a>
 <table><tbody><tr id="zh-cn_topic_0183088041_row78917461336"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088041_p1089154617315"><a name="zh-cn_topic_0183088041_p1089154617315"></a><a name="zh-cn_topic_0183088041_p1089154617315"></a><strong id="zh-cn_topic_0183088041_b98915462314"><a name="zh-cn_topic_0183088041_b98915462314"></a><a name="zh-cn_topic_0183088041_b98915462314"></a>参数成员</strong></p>
@@ -28,7 +26,7 @@ rpc StopPodSandbox(StopPodSandboxRequest) returns (StopPodSandboxResponse) {}
 </tbody>
 </table>
 
-## 返回值: StopPodSandboxResponse<a name="zh-cn_topic_0183088041_section10495164611565"></a>
+## 返回值<a name="zh-cn_topic_0183088041_section10495164611565"></a>
 
 <a name="zh-cn_topic_0183088041_table15296551936"></a>
 <table><tbody><tr id="zh-cn_topic_0183088041_row18741555834"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088041_p197485518319"><a name="zh-cn_topic_0183088041_p197485518319"></a><a name="zh-cn_topic_0183088041_p197485518319"></a><strong id="zh-cn_topic_0183088041_b77413551933"><a name="zh-cn_topic_0183088041_b77413551933"></a><a name="zh-cn_topic_0183088041_b77413551933"></a>返回值</strong></p>

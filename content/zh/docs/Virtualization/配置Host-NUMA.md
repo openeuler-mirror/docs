@@ -2,12 +2,9 @@
 
 为提升虚拟机性能，在虚拟机启动前，用户可以通过虚拟机XML配置文件为虚拟机指定主机的NUMA节点，使虚拟机内存分配在指定的NUMA节点上。本特性一般与vCPU绑定一起使用，从而避免vCPU远端访问内存。
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
->如果在指定的NODE上内存不够时，启动虚拟机会失败，并且存在系统OOM（Out Of Memory）强制关闭进程的可能性。  
-
 ## 操作步骤<a name="section13996950155118"></a>
 
--   查看Host的NUMA拓扑结构：
+-   查看host的NUMA拓扑结构：
 
     ```
      # numactl -H
@@ -32,7 +29,7 @@
       3:  20  20  15  10
     ```
 
--   在虚拟机XML配置文件中添加numatune字段，创建并启动虚拟机。配置参数如下：
+-   在虚拟机XML配置文件中添加numatune字段，创建并启动虚拟机。例如使用主机上的NUMA node 0给虚拟机分配内存，配置参数如下：
 
     ```
       <numatune>
@@ -40,6 +37,10 @@
       </numatune>
     ```
 
-    以上配置表示虚拟机的内存将在Host的NUMA NODE0上分配。假设虚拟机的vCPU也绑定在NODE0的PCPU上，就可以避免由于vCPU访问远端内存带来的性能下降。
+    假设虚拟机的vCPU也绑定在NODE0的物理CPU上，就可以避免由于vCPU访问远端内存带来的性能下降。
+
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >-   分配给虚拟机的内存不要超过该NUMA节点剩余的可用内存，否则可能导致虚拟机启动失败。  
+    >-   建议虚拟机内存和vCPU都绑定在同一NUMA节点，避免vCPU访问远端内存造成性能下降。例如将上例中vCPU也绑定在NUMA node 0上。  
 
 

@@ -16,19 +16,7 @@ rpc ImageFsInfo(ImageFsInfoRequest) returns (ImageFsInfoResponse) {}
 
 ## 参数<a name="zh-cn_topic_0183088064_section349492895613"></a>
 
-<a name="zh-cn_topic_0183088064_table184320467318"></a>
-<table><tbody><tr id="zh-cn_topic_0183088064_row78917461336"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088064_p1089154617315"><a name="zh-cn_topic_0183088064_p1089154617315"></a><a name="zh-cn_topic_0183088064_p1089154617315"></a><strong id="zh-cn_topic_0183088064_b98915462314"><a name="zh-cn_topic_0183088064_b98915462314"></a><a name="zh-cn_topic_0183088064_b98915462314"></a>参数成员</strong></p>
-</td>
-<td class="cellrowborder" valign="top" width="60.46%"><p id="zh-cn_topic_0183088064_p128984613319"><a name="zh-cn_topic_0183088064_p128984613319"></a><a name="zh-cn_topic_0183088064_p128984613319"></a><strong id="zh-cn_topic_0183088064_b989164612317"><a name="zh-cn_topic_0183088064_b989164612317"></a><a name="zh-cn_topic_0183088064_b989164612317"></a>描述</strong></p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0183088064_row10898461533"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088064_p0136125811713"><a name="zh-cn_topic_0183088064_p0136125811713"></a><a name="zh-cn_topic_0183088064_p0136125811713"></a>无</p>
-</td>
-<td class="cellrowborder" valign="top" width="60.46%"><p id="zh-cn_topic_0183088064_p1189846434"><a name="zh-cn_topic_0183088064_p1189846434"></a><a name="zh-cn_topic_0183088064_p1189846434"></a>无</p>
-</td>
-</tr>
-</tbody>
-</table>
+无
 
 ## 返回值<a name="zh-cn_topic_0183088064_section10495164611565"></a>
 

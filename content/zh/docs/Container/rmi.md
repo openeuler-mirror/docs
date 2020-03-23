@@ -13,6 +13,6 @@
 示例：
 
 ```
-$ sudo docker rmi 192.168.1.110:5000/ubuntu:sshd
+$ sudo docker rmi 192.168.1.110:5000/busybox:sshd
 ```
 

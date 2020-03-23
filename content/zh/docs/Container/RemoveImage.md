@@ -32,17 +32,5 @@ rpc RemoveImage(RemoveImageRequest) returns (RemoveImageResponse) {}
 
 ## 返回值<a name="zh-cn_topic_0183088063_section10495164611565"></a>
 
-<a name="zh-cn_topic_0183088063_table15296551936"></a>
-<table><tbody><tr id="zh-cn_topic_0183088063_row18741555834"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088063_p197485518319"><a name="zh-cn_topic_0183088063_p197485518319"></a><a name="zh-cn_topic_0183088063_p197485518319"></a><strong id="zh-cn_topic_0183088063_b77413551933"><a name="zh-cn_topic_0183088063_b77413551933"></a><a name="zh-cn_topic_0183088063_b77413551933"></a>返回值</strong></p>
-</td>
-<td class="cellrowborder" valign="top" width="60.46%"><p id="zh-cn_topic_0183088063_p374185520310"><a name="zh-cn_topic_0183088063_p374185520310"></a><a name="zh-cn_topic_0183088063_p374185520310"></a><strong id="zh-cn_topic_0183088063_b174125511315"><a name="zh-cn_topic_0183088063_b174125511315"></a><a name="zh-cn_topic_0183088063_b174125511315"></a>描述</strong></p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0183088063_row87419551317"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088063_p157445512318"><a name="zh-cn_topic_0183088063_p157445512318"></a><a name="zh-cn_topic_0183088063_p157445512318"></a>无</p>
-</td>
-<td class="cellrowborder" valign="top" width="60.46%"><p id="zh-cn_topic_0183088063_p14745551137"><a name="zh-cn_topic_0183088063_p14745551137"></a><a name="zh-cn_topic_0183088063_p14745551137"></a>无</p>
-</td>
-</tr>
-</tbody>
-</table>
+无
 

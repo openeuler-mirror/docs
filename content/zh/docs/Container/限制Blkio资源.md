@@ -57,7 +57,7 @@
     举例：
 
     ```
-    docker run -tid --runtime kata-runtime --network none --annotation com.github.containers.virtcontainers.blkio_cgroup='{"blkiocgroup":[{"path":"/dev/sda","limits":[{"type":"throttle_read_bps","value":400},{"type":"throttle_write_bps","value":400},{"type":"throttle_read_iops","value":700},{"type":"throttle_write_iops","value":699}]},{"limits":[{"type":"blkio_weight","value":78}]}]}' rnd-dockerhub.huawei.com/official/pause
+    docker run -tid --runtime kata-runtime --network none --annotation com.github.containers.virtcontainers.blkio_cgroup='{"blkiocgroup":[{"path":"/dev/sda","limits":[{"type":"throttle_read_bps","value":400},{"type":"throttle_write_bps","value":400},{"type":"throttle_read_iops","value":700},{"type":"throttle_write_iops","value":699}]},{"limits":[{"type":"blkio_weight","value":78}]}]}' busybox sleep 999999
     ```
 
     上面命令表示对启动的安全容器所使用的/dev/sda磁盘进行blkio限流，分别将throttle\_read\_bps限速为400bps，throttle\_write\_bps限速为400bps，throttle\_read\_iops限速为700次/秒，throttle\_write\_iops限速为699次/秒，以及所在blkio cgroup组的权重值设置为78。

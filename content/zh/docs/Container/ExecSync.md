@@ -14,7 +14,7 @@ rpc ExecSync(ExecSyncRequest) returns (ExecSyncResponse) {}
 
 执行执行一条单独的命令，不能打开终端与容器交互。
 
-## 参数：ExecSyncRequest<a name="zh-cn_topic_0183088052_section349492895613"></a>
+## 参数<a name="zh-cn_topic_0183088052_section349492895613"></a>
 
 <a name="zh-cn_topic_0183088052_table184320467318"></a>
 <table><tbody><tr id="zh-cn_topic_0183088052_row78917461336"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088052_p1089154617315"><a name="zh-cn_topic_0183088052_p1089154617315"></a><a name="zh-cn_topic_0183088052_p1089154617315"></a><strong id="zh-cn_topic_0183088052_b98915462314"><a name="zh-cn_topic_0183088052_b98915462314"></a><a name="zh-cn_topic_0183088052_b98915462314"></a>参数成员</strong></p>
@@ -40,7 +40,7 @@ rpc ExecSync(ExecSyncRequest) returns (ExecSyncResponse) {}
 </tbody>
 </table>
 
-## 返回值: ExecSyncResponse<a name="zh-cn_topic_0183088052_section344116515246"></a>
+## 返回值<a name="zh-cn_topic_0183088052_section344116515246"></a>
 
 <a name="zh-cn_topic_0183088052_table1244111592419"></a>
 <table><tbody><tr id="zh-cn_topic_0183088052_row844114513243"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088052_p244117515249"><a name="zh-cn_topic_0183088052_p244117515249"></a><a name="zh-cn_topic_0183088052_p244117515249"></a><strong id="zh-cn_topic_0183088052_b1044111592411"><a name="zh-cn_topic_0183088052_b1044111592411"></a><a name="zh-cn_topic_0183088052_b1044111592411"></a>返回值</strong></p>

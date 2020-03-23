@@ -10,7 +10,7 @@
 
 -   简化配置方法
 
-    在虚拟机的XML文件中写入以下内容，controller的其他属性由Libvirt自动填充：
+    在虚拟机的XML文件中写入以下内容，controller的其他属性由libvirt自动填充：
 
     ```
       <controller type='pci' index='0' model='pcie-root'/>

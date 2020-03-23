@@ -380,9 +380,9 @@
 
 示例：
 
-创建了一个名为ubuntu的容器，创建之后的容器用docker start命令启动。
+创建了一个名为busybox的容器，创建之后的容器用docker start命令启动。
 
 ```
-$ sudo docker create -ti --name=ubuntu ubuntu /bin/bash
+$ sudo docker create -ti --name=busybox busybox /bin/bash
 ```
 

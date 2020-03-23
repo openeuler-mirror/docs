@@ -2,7 +2,7 @@
 
 ## 描述<a name="zh-cn_topic_0183074344_section1297635115590"></a>
 
-daemon端可以绑定多个unix socket或者tcp端口，并在这些端口上监听，客户端可以通过这些端口和daemon端进行交互。
+daemon端可以绑定多个unix socket或者tcp端口，并在这些端口上侦听，客户端可以通过这些端口和daemon端进行交互。
 
 ## 接口<a name="zh-cn_topic_0183074344_section778202914013"></a>
 
@@ -24,7 +24,7 @@ daemon端可以绑定多个unix socket或者tcp端口，并在这些端口上监
 OPTIONS='-H unix:///var/run/isulad.sock --host tcp://127.0.0.1:6789'
 ```
 
-如果用户在daemon.json文件及iSulad中均未指定hosts，则daemon在启动之后将默认监听unix:///var/run/isulad.sock。
+如果用户在daemon.json文件及iSulad中均未指定hosts，则daemon在启动之后将默认侦听unix:///var/run/isulad.sock。
 
 ## 限制<a name="zh-cn_topic_0183074344_section172611258112"></a>
 

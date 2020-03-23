@@ -61,6 +61,8 @@ docker默认为使用overlay2存储驱动，也可以通过如下两种方式显
 
 容器使用配置了overlay2存储驱动的过程中，可能出现挂载点被覆盖的异常情况。例如
 
+  
+
 ## 异常场景-挂载点被覆盖<a name="zh-cn_topic_0215573557_section03841042181112"></a>
 
 挂载关系：在问题容器的挂载点的下面，存在一个/var/lib/docker/overlay2的挂载点：
@@ -86,6 +88,8 @@ docker rm: Error response from daemon: driver "overlay2" failed to remove root f
         ```
         docker info | grep "Storage Driver"
         ```
+
+          
 
     2.  查询当前的挂载点：
 

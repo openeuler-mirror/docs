@@ -8,13 +8,13 @@ rpc Status(StatusRequest) returns (StatusResponse) {};
 
 ## 接口描述<a name="zh-cn_topic_0183088059_section729211519569"></a>
 
-获取runtime和pod的网络状态，在获取网络状态时，会触发网络配置的刷新。
+获取runtime和pod的网络状态，在获取网络状态时，会触发网络配置的刷新。仅支持runtime类型为lcr的容器。
 
 ## 注意事项<a name="zh-cn_topic_0183088059_section973104418419"></a>
 
 如果网络配置刷新失败，不会影响原有配置；只有刷新成功时，才会覆盖原有配置。
 
-## 参数： StatusRequest<a name="zh-cn_topic_0183088059_section349492895613"></a>
+## 参数<a name="zh-cn_topic_0183088059_section349492895613"></a>
 
 <a name="zh-cn_topic_0183088059_table184320467318"></a>
 <table><tbody><tr id="zh-cn_topic_0183088059_row78917461336"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088059_p1089154617315"><a name="zh-cn_topic_0183088059_p1089154617315"></a><a name="zh-cn_topic_0183088059_p1089154617315"></a><strong id="zh-cn_topic_0183088059_b98915462314"><a name="zh-cn_topic_0183088059_b98915462314"></a><a name="zh-cn_topic_0183088059_b98915462314"></a>参数成员</strong></p>
@@ -30,7 +30,7 @@ rpc Status(StatusRequest) returns (StatusResponse) {};
 </tbody>
 </table>
 
-## 返回值： StatusResponse<a name="zh-cn_topic_0183088059_section10495164611565"></a>
+## 返回值<a name="zh-cn_topic_0183088059_section10495164611565"></a>
 
 <a name="zh-cn_topic_0183088059_table15296551936"></a>
 <table><tbody><tr id="zh-cn_topic_0183088059_row18741555834"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088059_p197485518319"><a name="zh-cn_topic_0183088059_p197485518319"></a><a name="zh-cn_topic_0183088059_p197485518319"></a><strong id="zh-cn_topic_0183088059_b77413551933"><a name="zh-cn_topic_0183088059_b77413551933"></a><a name="zh-cn_topic_0183088059_b77413551933"></a>返回值</strong></p>

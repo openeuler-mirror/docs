@@ -12,7 +12,7 @@
 
     ```
     # 启动一个pause容器
-    docker run -tid --runtime kata-runtime --network none --annotation io.kubernetes.docker.type=podsandbox --annotation com.github.containers.virtcontainers.sandbox_cpu=4 ubuntu-arm64 bash
+    docker run -tid --runtime kata-runtime --network none --annotation io.kubernetes.docker.type=podsandbox --annotation com.github.containers.virtcontainers.sandbox_cpu=4 busybox sleep 999999
     be3255a3f66a35508efe419bc52eccd3b000032b9d8c9c62df611d5bdc115954
     
     # 进入容器查看CPU信息，查看CPU个数是否与com.github.containers.virtcontainers.sandbox_cpu配置的CPU个数相等
@@ -90,7 +90,7 @@
 
     ```
     # 启动一个pause容器，轻量级虚机默认分配了1个vcpu
-    docker run -tid --runtime kata-runtime --network none --annotation io.kubernetes.docker.type=podsandbox ubuntu bash
+    docker run -tid --runtime kata-runtime --network none --annotation io.kubernetes.docker.type=podsandbox busybox sleep 999999
     77b40fb72f63b11dd3fcab2f6dabfc7768295fced042af8c7ad9c0286b17d24f
     
     # 查看启动完pause容器后轻量级虚机中CPU个数
@@ -105,7 +105,7 @@
     Socket(s):             1
     
     # 在同一个Pod中启动新的容器并通过--cpus设置容器需要的CPU数量为4
-    docker run -tid --runtime kata-runtime --network none --cpus 4 --annotation io.kubernetes.docker.type=container --annotation io.kubernetes.sandbox.id=77b40fb72f63b11dd3fcab2f6dabfc7768295fced042af8c7ad9c0286b17d24f ubuntu bash
+    docker run -tid --runtime kata-runtime --network none --cpus 4 --annotation io.kubernetes.docker.type=container --annotation io.kubernetes.sandbox.id=77b40fb72f63b11dd3fcab2f6dabfc7768295fced042af8c7ad9c0286b17d24f busybox sleep 999999
     7234d666851d43cbdc41da356bf62488b89cd826361bb71d585a049b6cedafd3
     
     # 查看当前轻量级虚机中CPU的个数
@@ -133,6 +133,10 @@
     Core(s) per socket:    1
     Socket(s):             1
     ```
+
+      
+
+      
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >由于pause容器只是一个占位容器没有工作负载，所以轻量级虚机启动时默认分配的1个CPU可以被其它容器共享，因此上面例子中启动的新容器只需要再热插3个CPU到轻量级虚机中即可。  

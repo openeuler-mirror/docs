@@ -42,10 +42,12 @@
     ......
     ```
 
-2.  按照给定格式返回一个容器的指定信息，下面的例子返回ubuntu\_test容器IP地址
+      
+
+2.  按照给定格式返回一个容器的指定信息，下面的例子返回busybox\_test容器IP地址
 
     ```
-    $ sudo docker inspect -f {{.NetworkSettings.IPAddress}} ubuntu_test
+    $ sudo docker inspect -f {{.NetworkSettings.IPAddress}} busybox_test
     172.17.0.91
     ```
 

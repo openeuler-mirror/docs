@@ -1,10 +1,8 @@
 # rename<a name="ZH-CN_TOPIC_0184808251"></a>
 
-用法：**docker rename \[OPTIONS\] OLD\_NAME NEW\_NAME**
+用法：**docker rename OLD\_NAME NEW\_NAME**
 
 功能：重命名容器
-
-选项：
 
 示例：
 
@@ -19,4 +17,6 @@ $ sudo docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 b15976967abb        busybox:latest        "bash"              34 seconds ago      Up 33 seconds                           new_name
 ```
+
+  
 

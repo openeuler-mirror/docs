@@ -30,6 +30,8 @@
     {"level":"info","ts":1566979103.4577134,"caller":"all-in-one/main.go:256","msg":"Listening for Zipkin HTTP traffic","zipkin.http-port":9411}
     ```
 
+      
+
 2.  加上-f选项，实时打印jaegertracing容器的日志信息
 
     ```
@@ -40,5 +42,7 @@
     {"level":"info","ts":1566979103.3908608,"caller":"peerlistmgr/peer_list_mgr.go:111","msg":"Registering active peer","peer":"127.0.0.1:14267"}
     {"level":"info","ts":1566979103.3922884,"caller":"all-in-one/main.go:186","msg":"Starting agent"}
     ```
+
+      
 
 

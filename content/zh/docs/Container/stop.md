@@ -11,6 +11,6 @@
 示例：
 
 ```
-$ sudo docker stop -t=15 ubuntu
+$ sudo docker stop -t=15 busybox
 ```
 

@@ -6,7 +6,7 @@
 
 选项：
 
--a, --all-tags=false    下载一个镜像仓库的所有镜像（一个镜像仓库可以被打多个标签，比如一个ubuntu镜像库，可能有多个标签如ubuntu:14.04,ubuntu:13.10,ubuntu:latest等，使用-a选项后，将所有标签的ubuntu镜像拉取下来）
+-a, --all-tags=false    下载一个镜像仓库的所有镜像（一个镜像仓库可以被打多个标签，比如一个busybox镜像库，可能有多个标签如busybox:14.04,busybox:13.10,busybox:latest等，使用-a选项后，将所有标签的busybox镜像拉取下来）
 
 示例：
 
