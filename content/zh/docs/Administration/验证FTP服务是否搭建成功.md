@@ -1,4 +1,4 @@
-# 验证FTP服务是否搭建成功<a name="ZH-CN_TOPIC_0186991369"></a>
+# 验证FTP服务是否搭建成功<a name="ZH-CN_TOPIC_0229622775"></a>
 
 可以使用openEuler提供的FTP客户端进行验证。命令和回显如下，根据提示输入用户名（用户为系统中存在的用户）和密码。如果显示Login successful，即说明FTP服务器搭建成功。
 

@@ -1,4 +1,4 @@
-# 使用rpmbuild编译mariadb失败<a name="ZH-CN_TOPIC_0222550782"></a>
+# 使用rpmbuild编译mariadb失败<a name="ZH-CN_TOPIC_0229622805"></a>
 
 ## 问题描述<a name="section883217013220"></a>
 

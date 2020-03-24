@@ -1,4 +1,4 @@
-# 更新repo源<a name="ZH-CN_TOPIC_0183245390"></a>
+# 更新repo源<a name="ZH-CN_TOPIC_0229622710"></a>
 
 更新repo源有两种方式：
 
@@ -10,6 +10,6 @@
     createrepo --update --workers=10 /srv/repo
     ```
 
-    其中，\--update表示更新，\--workers表示线程数，可自定义。
+    其中，--update表示更新，--workers表示线程数，可自定义。
 
 

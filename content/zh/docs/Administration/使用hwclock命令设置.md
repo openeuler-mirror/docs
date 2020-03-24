@@ -1,4 +1,4 @@
-# 使用hwclock命令设置<a name="ZH-CN_TOPIC_0182317139"></a>
+# 使用hwclock命令设置<a name="ZH-CN_TOPIC_0229622802"></a>
 
 可以使用 hwclock 命令设置硬件时钟RTC \(Real Time Clock\) 。
 
@@ -28,7 +28,7 @@ hwclock
 
 ## 设置日期和时间<a name="zh-cn_topic_0151920986_s3b4cd9b6571a45ca87e0f43b0a54e63f"></a>
 
-修改当前硬件的日期和时间，在root权限下执行如下命令，其中  _dd_  表示日，_mm_  表示月份，_yyyy_ 表示年份，_HH_  表示小时，_MM_  表示分钟，请根据实际情况修改：
+修改当前硬件的日期和时间，在root权限下执行如下命令，其中  _dd_  表示日，_mm_  表示月份，_yyyy_  表示年份，_HH_  表示小时，_MM_  表示分钟，请根据实际情况修改：
 
 ```
 hwclock --set --date "dd mm yyyy HH:MM"

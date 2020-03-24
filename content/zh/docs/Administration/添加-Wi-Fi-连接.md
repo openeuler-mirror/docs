@@ -1,4 +1,4 @@
-# 添加 Wi-Fi 连接<a name="ZH-CN_TOPIC_0183005786"></a>
+# 添加 Wi-Fi 连接<a name="ZH-CN_TOPIC_0229622783"></a>
 
 使用以下命令查看可用 Wi-Fi 访问点：
 

@@ -1,10 +1,10 @@
-# repo配置为yum源<a name="ZH-CN_TOPIC_0183245396"></a>
+# repo配置为yum源<a name="ZH-CN_TOPIC_0229622704"></a>
 
 构建好的repo可以配置为yum源使用，在/etc/yum.repos.d/目录下创建\*\*\*.repo的配置文件（必须以.repo为扩展名），分为本地和http服务器配置yum源两种方式：
 
 -   配置本地yum源
 
-    在/etc/yum.repos.d目录下创建openEuler-1.0-Base.repo文件，使用构建的本地repo作为yum源，openEuler-1.0-Base.repo的内容如下：
+    在/etc/yum.repos.d目录下创建openEuler.repo文件，使用构建的本地repo作为yum源，openEuler.repo的内容如下：
 
     ```
     [base]
@@ -21,7 +21,7 @@
 
 -   配置http服务器yum源
 
-    在/etc/yum.repos.d目录下创建openEuler-1.0-Base.repo文件，使用http服务端的repo作为yum源，openEuler-1.0-Base.repo的内容如下：
+    在/etc/yum.repos.d目录下创建openEuler.repo文件，使用http服务端的repo作为yum源，openEuler.repo的内容如下：
 
     ```
     [base]

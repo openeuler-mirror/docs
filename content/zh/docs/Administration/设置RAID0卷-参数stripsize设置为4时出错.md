@@ -1,4 +1,4 @@
-# 设置RAID0卷，参数stripsize设置为4时出错<a name="ZH-CN_TOPIC_0220819792"></a>
+# 设置RAID0卷，参数stripsize设置为4时出错<a name="ZH-CN_TOPIC_0229622794"></a>
 
 ## 问题现象<a name="zh-cn_topic_0151920731_sf8787c1a7e564af4ad6d72b45d07f036"></a>
 

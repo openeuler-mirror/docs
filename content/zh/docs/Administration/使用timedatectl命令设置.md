@@ -1,4 +1,4 @@
-# 使用timedatectl命令设置<a name="ZH-CN_TOPIC_0182317137"></a>
+# 使用timedatectl命令设置<a name="ZH-CN_TOPIC_0229622732"></a>
 
 ## 显示日期和时间<a name="zh-cn_topic_0151920969_sc056744ea86c4289b1764936ba4b753e"></a>
 
@@ -60,7 +60,7 @@ timedatectl set-time YYYY-MM-DD
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >修改时间前，请确保已经关闭NTP系统时钟自动同步。  
 
-修改当前的时间，在root权限下执行如下命令，其中 _HH_ 代表小时，_MM_ 代表分钟，_SS_ 代表秒，请根据实际情况修改：
+修改当前的时间，在root权限下执行如下命令，其中_HH_  代表小时，_MM_  代表分钟，_SS_  代表秒，请根据实际情况修改：
 
 ```
 timedatectl set-time HH:MM:SS
@@ -80,7 +80,7 @@ timedatectl set-time HH:MM:SS
 timedatectl list-timezones
 ```
 
-要修改当前的时区，在root权限下执行如下命令，其中 _time\_zone_ 是您想要设置的时区，请根据实际情况修改：
+要修改当前的时区，在root权限下执行如下命令，其中  _time\_zone_  是您想要设置的时区，请根据实际情况修改：
 
 ```
 timedatectl set-timezone time_zone
@@ -118,3 +118,4 @@ Asia/Tokyo
 ```
 # timedatectl set-timezone Asia/Shanghai
 ```
+

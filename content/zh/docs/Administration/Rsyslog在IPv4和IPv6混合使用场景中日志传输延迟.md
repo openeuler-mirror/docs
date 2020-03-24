@@ -1,4 +1,4 @@
-# Rsyslog在IPv4和IPv6混合使用场景中日志传输延迟<a name="ZH-CN_TOPIC_0183013296"></a>
+# Rsyslog在IPv4和IPv6混合使用场景中日志传输延迟<a name="ZH-CN_TOPIC_0229622772"></a>
 
 ## 问题现象<a name="zh-cn_topic_0161841804_zh-cn_topic_0160738402_section93998313484"></a>
 

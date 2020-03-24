@@ -1,4 +1,4 @@
-# 配置静态IP连接<a name="ZH-CN_TOPIC_0183005784"></a>
+# 配置静态IP连接<a name="ZH-CN_TOPIC_0229622755"></a>
 
 ## 配置IP<a name="section153871657145318"></a>
 
@@ -60,7 +60,7 @@ lo          loopback  unmanaged  --
 virbr0-nic  tun       unmanaged  --
 ```
 
-查看配置的连接详情，使用以下命令（使用 -p, \--pretty 选项在输出结果中添加标题和分段）：
+查看配置的连接详情，使用以下命令（使用 -p, --pretty 选项在输出结果中添加标题和分段）：
 
 ```
 # nmcli -p con show net-static 

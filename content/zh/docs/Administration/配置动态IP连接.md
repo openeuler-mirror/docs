@@ -1,4 +1,4 @@
-# 配置动态IP连接<a name="ZH-CN_TOPIC_0183005783"></a>
+# 配置动态IP连接<a name="ZH-CN_TOPIC_0229622727"></a>
 
 ## 配置IP<a name="section5521535134318"></a>
 
