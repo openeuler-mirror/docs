@@ -1,4 +1,4 @@
-# 安装openEuler时选择第二盘位为安装目标，操作系统无法启动<a name="ZH-CN_TOPIC_0220373238"></a>
+# 安装openEuler时选择第二盘位为安装目标，操作系统无法启动<a name="ZH-CN_TOPIC_0229291252"></a>
 
 ## 问题现象<a name="zh-cn_topic_0151920731_sf8787c1a7e564af4ad6d72b45d07f036"></a>
 
