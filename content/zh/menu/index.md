@@ -564,6 +564,7 @@ headless: true
         - [安装部署]({{< relref "/docs/Container/安装部署-30.md" >}})
             - [安装配置介绍及注意事项]({{< relref "/docs/Container/安装配置介绍及注意事项.md" >}})
                 - [基本安装配置]({{< relref "/docs/Container/基本安装配置.md" >}})
+                    - [注意事项]({{< relref "/docs/Container/注意事项.md" >}})
                     - [配置daemon参数]({{< relref "/docs/Container/配置daemon参数.md" >}})
                     - [daemon运行目录配置]({{< relref "/docs/Container/daemon运行目录配置.md" >}})
                     - [daemon自带网络配置]({{< relref "/docs/Container/daemon自带网络配置.md" >}})
@@ -581,7 +582,7 @@ headless: true
                     - [配置overlay2存储驱动]({{< relref "/docs/Container/配置overlay2存储驱动.md" >}})
                     - [配置devicemapper存储驱动]({{< relref "/docs/Container/配置devicemapper存储驱动-31.md" >}})
     
-                - [强杀docker相关后台进程的影响]({{< relref "/docs/Container/强杀docker相关后台进程的影响.md" >}})
+                - [强制退出docker相关后台进程的影响]({{< relref "/docs/Container/强杀docker相关后台进程的影响.md" >}})
                     - [信号量残留]({{< relref "/docs/Container/信号量残留.md" >}})
                     - [网卡残留]({{< relref "/docs/Container/网卡残留.md" >}})
                     - [重启容器失败]({{< relref "/docs/Container/重启容器失败.md" >}})
