@@ -1,11 +1,11 @@
-# 挂载ISO创建repo源<a name="ZH-CN_TOPIC_0183245388"></a>
+# 挂载ISO创建repo源<a name="ZH-CN_TOPIC_0229622797"></a>
 
 使用mount命令挂载镜像文件。
 
 示例如下：
 
 ```
-mount /home/openEuler/openEuler-1.0-base-aarch64-dvd.iso  /mnt/
+mount /home/openEuler/openEuler-20.03-LTS-aarch64-dvd.iso  /mnt/
 ```
 
 挂载好的mnt目录如下：
@@ -13,6 +13,7 @@ mount /home/openEuler/openEuler-1.0-base-aarch64-dvd.iso  /mnt/
 ```
 .
 │── boot.catalog
+│── docs
 │── EFI
 │── images
 │── Packages

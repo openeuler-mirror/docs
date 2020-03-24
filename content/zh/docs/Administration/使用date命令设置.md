@@ -1,4 +1,4 @@
-# 使用date命令设置<a name="ZH-CN_TOPIC_0182317138"></a>
+# 使用date命令设置<a name="ZH-CN_TOPIC_0229622703"></a>
 
 ## 显示当前的日期和时间<a name="zh-cn_topic_0151920961_s2056a6f57e364d2189fafa6dce8e0f7f"></a>
 
@@ -8,7 +8,7 @@
 date
 ```
 
-默认情况下，date命令显示本地时间。要显示UTC时间，添加\--utc或-u参数：
+默认情况下，date命令显示本地时间。要显示UTC时间，添加--utc或-u参数：
 
 ```
 date --utc
@@ -103,13 +103,13 @@ date +"format"
 
 ## 修改时间<a name="zh-cn_topic_0151920961_sa20694fa22894f45ab03a8efe4d06e99"></a>
 
-要修改当前的时间，添加\--set或者-s参数。在root权限下执行如下命令，其中 _HH_  代表小时，_MM_  代表分钟，_SS_  代表秒，请根据实际情况修改：
+要修改当前的时间，添加--set或者-s参数。在root权限下执行如下命令，其中  _HH_  代表小时，_MM_  代表分钟，_SS_  代表秒，请根据实际情况修改：
 
 ```
 date --set HH:MM:SS
 ```
 
-默认情况下， date命令设置本地时间。要设置UTC时间，添加\--utc或-u参数：
+默认情况下， date命令设置本地时间。要设置UTC时间，添加--utc或-u参数：
 
 ```
 date --set HH:MM:SS --utc
@@ -123,7 +123,7 @@ date --set HH:MM:SS --utc
 
 ## 修改日期<a name="zh-cn_topic_0151920961_sab41b619059d4a2b9be402a1b10e53e7"></a>
 
-修改当前的日期，添加\--set或者-s参数。在root权限下执行如下命令，其中 _YYYY_ 代表年份，_MM_ 代表月份，_DD_  代表某天，请根据实际情况修改：
+修改当前的日期，添加--set或者-s参数。在root权限下执行如下命令，其中  _YYYY_  代表年份，_MM_  代表月份，_DD_  代表某天，请根据实际情况修改：
 
 ```
 date --set YYYY-MM-DD

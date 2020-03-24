@@ -1,4 +1,4 @@
-# 启动nginx服务<a name="ZH-CN_TOPIC_0183245393"></a>
+# 启动nginx服务<a name="ZH-CN_TOPIC_0229622776"></a>
 
 1.  通过systemd启动nginx服务：
 

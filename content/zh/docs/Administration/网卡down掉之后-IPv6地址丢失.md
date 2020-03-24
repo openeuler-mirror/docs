@@ -1,4 +1,4 @@
-# 网卡down掉之后，IPv6地址丢失<a name="ZH-CN_TOPIC_0183013294"></a>
+# 网卡down掉之后，IPv6地址丢失<a name="ZH-CN_TOPIC_0229622781"></a>
 
 ## 问题现象<a name="zh-cn_topic_0161841802_zh-cn_topic_0155558602_section2046213177403"></a>
 

@@ -1,4 +1,4 @@
-# repo源部署<a name="ZH-CN_TOPIC_0183245394"></a>
+# repo源部署<a name="ZH-CN_TOPIC_0229622749"></a>
 
 1.  创建nginx配置文件/etc/nginx/nginx.conf中指定的目录/srv/repo：
 
@@ -43,13 +43,13 @@
     -   拷贝镜像中相关文件至在/srv/repo下
 
         ```
-        mount /home/openEuler/openEuler-1.0-base-aarch64-dvd.iso  /mnt/
+        mount /home/openEuler/openEuler-20.03-LTS-aarch64-dvd.iso  /mnt/
         cp -r /mnt/Packages /srv/repo/
         cp -r /mnt/repodata /srv/repo/
         cp -r /mnt/RPM-GPG-KEY-openEuler /srv/repo/
         ```
 
-        openEuler-1.0-base-aarch64-dvd.iso存放在/home/openEuler目录下。
+        openEuler-20.03-LTS-aarch64-dvd.iso存放在/home/openEuler目录下。
 
     -   在/srv/repo下创建repo源的软链接
 

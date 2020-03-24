@@ -1,12 +1,12 @@
-# 通过USB盘安装<a name="ZH-CN_TOPIC_0221454716"></a>
+# 通过USB盘安装<a name="ZH-CN_TOPIC_0229291281"></a>
 
 本节介绍如何制作USB盘安装源，并介绍基本的操作步骤，指导用户进行安装。
 
 ## 准备安装源<a name="zh-cn_topic_0022605797_zh-cn_topic_0018374843_section16523819201222"></a>
 
-您需要注意USB盘容量的大小，它必须有足够的的空间放下整个镜像，建议USB盘空间大于4G。
+您需要注意USB盘容量的大小，它必须有足够的的空间放下整个镜像，建议USB盘空间大于16G。
 
-1.  将USB盘连接到该系统中，并执行 dmesg 命令查看相关的日志信息。在该日志的最后可以看到刚刚连接USB盘所生成的一组信息，应类似如下：
+1.  将USB盘连接到该系统中，并执行 dmesg 命令查看相关的日志信息。在该日志的最后可以看到刚刚连接的USB盘所生成的一组信息，应类似如下：
 
     ```
     [ 170.171135] sd 5:0:0:0: [sdb] Attached SCSI removable disk
@@ -18,10 +18,10 @@
 2.  切换为root用户。使用su命令，需要输入相应的密码。
 
     ```
-    $ su -root
+    $ su - root
     ```
 
-3.  确保USB盘设备没有被挂载。使用如下命令进行查询：
+3.  确保USB盘没有被挂载。使用如下命令进行查询：
 
     ```
     # findmnt /dev/sdb
@@ -50,10 +50,10 @@
 
     使用您下载的ISO镜像文件的完整路径替换 /path/to/image.iso，使用之前由 dmesg 命令给出的设备名称替换device，同时设置合理的块大小（例如：512k）替换 blocksize，这样可以加快写入进度。
 
-    例如：如果该ISO镜像文件位于 /home/testuser/Downloads/openEuler-1.0-base-aarch64-dvd.iso，同时探测到的设备名称为sdb，则该命令如下：
+    例如：如果该ISO镜像文件位于 /home/testuser/Downloads/openEuler-20.03-LTS-aarch64-dvd.iso，同时探测到的设备名称为sdb，则该命令如下：
 
     ```
-    # dd if=/home/testuser/Downloads/openEuler-1.0-base-aarch64-dvd.iso of=/dev/sdb bs=512k
+    # dd if=/home/testuser/Downloads/openEuler-20.03-LTS-aarch64-dvd.iso of=/dev/sdb bs=512k
     ```
 
 5.  等待镜像写入完成，拔掉USB盘。

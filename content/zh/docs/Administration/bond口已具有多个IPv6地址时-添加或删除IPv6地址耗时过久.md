@@ -1,4 +1,4 @@
-# bond口已具有多个IPv6地址时，添加或删除IPv6地址耗时过久<a name="ZH-CN_TOPIC_0183013295"></a>
+# bond口已具有多个IPv6地址时，添加或删除IPv6地址耗时过久<a name="ZH-CN_TOPIC_0229622743"></a>
 
 ## 问题现象<a name="zh-cn_topic_0161841803_zh-cn_topic_0159682015_section119221611174719"></a>
 

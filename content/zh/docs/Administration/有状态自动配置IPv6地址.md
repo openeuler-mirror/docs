@@ -1,4 +1,4 @@
-# 有状态自动配置IPv6地址<a name="ZH-CN_TOPIC_0183013287"></a>
+# 有状态自动配置IPv6地址<a name="ZH-CN_TOPIC_0229622762"></a>
 
 ## 概述<a name="zh-cn_topic_0161841795_zh-cn_topic_0149431074_section10918173910311"></a>
 

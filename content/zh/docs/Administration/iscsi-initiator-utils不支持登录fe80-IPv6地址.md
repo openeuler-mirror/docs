@@ -1,4 +1,4 @@
-# iscsi-initiator-utils不支持登录fe80 IPv6地址<a name="ZH-CN_TOPIC_0183013293"></a>
+# iscsi-initiator-utils不支持登录fe80 IPv6地址<a name="ZH-CN_TOPIC_0229622757"></a>
 
 ## 问题现象<a name="zh-cn_topic_0161841801_zh-cn_topic_0150455943_section2046213177403"></a>
 

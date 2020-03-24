@@ -1,4 +1,4 @@
-# iproute相关命令配置IPv4与IPv6时的差异说明<a name="ZH-CN_TOPIC_0183013290"></a>
+# iproute相关命令配置IPv4与IPv6时的差异说明<a name="ZH-CN_TOPIC_0229622740"></a>
 
 ## 概述<a name="zh-cn_topic_0161841798_zh-cn_topic_0159090633_section9133649143112"></a>
 

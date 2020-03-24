@@ -1,4 +1,4 @@
-# 设置接口设备MTU值<a name="ZH-CN_TOPIC_0183013286"></a>
+# 设置接口设备MTU值<a name="ZH-CN_TOPIC_0229622767"></a>
 
 ## 概述<a name="zh-cn_topic_0161841794_zh-cn_topic_0150261767_section814514912316"></a>
 

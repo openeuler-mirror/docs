@@ -1,4 +1,4 @@
-# 使用nmcli配置主机名<a name="ZH-CN_TOPIC_0183005798"></a>
+# 使用nmcli配置主机名<a name="ZH-CN_TOPIC_0229622754"></a>
 
 查询static主机名，使用如下命令：
 

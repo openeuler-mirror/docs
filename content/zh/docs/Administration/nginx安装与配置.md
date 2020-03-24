@@ -1,4 +1,4 @@
-# nginx安装与配置<a name="ZH-CN_TOPIC_0183245392"></a>
+# nginx安装与配置<a name="ZH-CN_TOPIC_0229622702"></a>
 
 1.  请自行下载nginx工具并安装nginx。
 2.  安装nginx之后，配置/etc/nginx/nginx.conf。

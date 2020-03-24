@@ -1,11 +1,13 @@
-# 通过ifcfg文件配置网络<a name="ZH-CN_TOPIC_0183005790"></a>
+# 通过ifcfg文件配置网络<a name="ZH-CN_TOPIC_0229622788"></a>
+
+>![](public_sys-resources/icon-note.gif) **说明：**   
+>通过ifcfg文件配置的网络配置不会立即生效，需要执行**systemctl reload NetworkManager**命令以重启网络服务后才生效。  
 
 ## 配置静态网络<a name="zh-cn_topic_0154464458_section125991333192917"></a>
 
 以enp4s0网络接口进行静态网络设置为例，通过修改ifcfg文件实现，在/etc/sysconfig/network-scripts/目录中生成名为ifcfg-enp4s0的文件中，修改参数配置，示例如下：
 
 ```
-
 TYPE=Ethernet
 PROXY_METHOD=none
 BROWSER_ONLY=no
@@ -55,4 +57,10 @@ DNS2=ip-address
 ```
 
 其中ip-address是DNS服务器的地址。这样就会让网络服务使用指定的DNS服务器更新/etc/resolv.conf。
+
+## 配置默认网关<a name="zh-cn_topic_0154464460_section46751588496"></a>
+
+在确定默认网关时，首先解析 /etc/sysconfig/network 文件，然后解析 ifcfg 文件 ，将最后读取的 GATEWAY 的取值作为路由表中的默认路由。
+
+在动态网络环境中，使用 NetworkManager 管理主机时，建议设置为由 DHCP 来分配。
 

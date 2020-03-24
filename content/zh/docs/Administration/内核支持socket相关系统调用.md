@@ -1,4 +1,4 @@
-# 内核支持socket相关系统调用<a name="ZH-CN_TOPIC_0183013288"></a>
+# 内核支持socket相关系统调用<a name="ZH-CN_TOPIC_0229622746"></a>
 
 ## 概述<a name="zh-cn_topic_0161841796_zh-cn_topic_0150261766_section152301399181"></a>
 
