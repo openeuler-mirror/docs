@@ -10,7 +10,7 @@
 
 1.  登录主机。
 2.  开启主机SELinux功能。
-    1.  修改/boot/grub2/grub.cfg，将selinux设置为1。
+    1.  修改系统启动的grub.cfg，将selinux设置为1。
 
         ```
         selinux=1
