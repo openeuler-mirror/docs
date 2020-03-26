@@ -74,7 +74,7 @@ headless: true
         - [多块磁盘组成逻辑卷安装系统后，再次安装不能只选其中一块磁盘]({{< relref "/docs/Installation/多块磁盘组成逻辑卷安装系统后-再次安装不能只选其中一块磁盘.md" >}})
         - [x86物理机UEFI模式由于security boot安全选项问题无法安装]({{< relref "/docs/Installation/x86物理机UEFI模式由于security-boot安全选项问题无法安装.md" >}})
 
-[管理员指南]({{< relref "/docs/Administration/administration.md" >}})
+- [管理员指南]({{< relref "/docs/Administration/administration.md" >}})
     - [法律声明]({{< relref "/docs/Administration/法律声明.md" >}})
     - [前言]({{< relref "/docs/Administration/前言.md" >}})
     - [基础配置]({{< relref "/docs/Administration/基础配置.md" >}})
