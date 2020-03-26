@@ -1,1 +1,1 @@
-本文介绍 openEuler 1.0 Base 版本的发行说明。
+本文是 openEuler 20.03 LTS 版本的发行说明。
