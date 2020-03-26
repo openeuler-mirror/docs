@@ -768,8 +768,8 @@ headless: true
                 - [info]({{< relref "/docs/Container/info.md" >}})
                 - [version]({{< relref "/docs/Container/version.md" >}})
 
-- [A-Tune用户指南]({{< relref "/docs/A-Tune/{{< relref "/docs/A-Tune/A-Tune.md" >}})
-    - [法律申明]({{< relref "/docs/A-Tune/{{< relref "/docs/A-Tune/法律申明.md" >}})
+- [A-Tune用户指南]({{< relref "/docs/A-Tune/A-Tune.md" >}})
+    - [法律申明]({{< relref "/docs/A-Tune/法律申明.md" >}})
     - [前言]({{< relref "/docs/A-Tune/前言.md" >}})
     - [认识A-Tune]({{< relref "/docs/A-Tune/认识A-Tune.md" >}})
         - [简介]({{< relref "/docs/A-Tune/简介.md" >}})
