@@ -1,61 +1,6 @@
 ---
 headless: true
 ---
-- [Installation Guide]({{< relref "/docs/Installation/Installation.md" >}})
-    - [Terms of Use]({{< relref "/docs/Installation/terms-of-use.md" >}})
-    - [Preface]({{< relref "/docs/Installation/preface.md" >}})
-    - [Installation Preparations]({{< relref "/docs/Installation/installation-preparations.md" >}})
-        - [Obtaining the Installation Source]({{< relref "/docs/Installation/obtaining-the-installation-source.md" >}})
-        - [Release Package Integrity Check]({{< relref "/docs/Installation/release-package-integrity-check.md" >}})
-        - [Hardware Compatibility]({{< relref "/docs/Installation/hardware-compatibility.md" >}})
-        - [Minimal Hardware Specifications]({{< relref "/docs/Installation/minimal-hardware-specifications.md" >}})
-
-    - [Installation Mode]({{< relref "/docs/Installation/installation-mode.md" >}})
-        - [Installation Through the CD/DVD-ROM]({{< relref "/docs/Installation/installation-through-the-cd-dvd-rom.md" >}})
-
-    - [Installation Guideline]({{< relref "/docs/Installation/installation-guideline.md" >}})
-        - [Starting the Installation]({{< relref "/docs/Installation/starting-the-installation.md" >}})
-        - [Using GUI Mode for Installation]({{< relref "/docs/Installation/using-gui-mode-for-installation.md" >}})
-            - [Configuring an Installation Program Language]({{< relref "/docs/Installation/configuring-an-installation-program-language.md" >}})
-            - [Entering the Installation Interface]({{< relref "/docs/Installation/entering-the-installation-interface.md" >}})
-            - [Setting Installation Parameters]({{< relref "/docs/Installation/setting-installation-parameters.md" >}})
-                - [Setting the Keyboard Layout]({{< relref "/docs/Installation/setting-the-keyboard-layout.md" >}})
-                - [Setting a System Language]({{< relref "/docs/Installation/setting-a-system-language.md" >}})
-                - [Setting Date and Time]({{< relref "/docs/Installation/setting-date-and-time.md" >}})
-                - [Setting the Installation Source]({{< relref "/docs/Installation/setting-the-installation-source.md" >}})
-                - [Selecting Installation Software]({{< relref "/docs/Installation/selecting-installation-software.md" >}})
-                - [Setting the Installation Destination]({{< relref "/docs/Installation/setting-the-installation-destination.md" >}})
-                - [Setting the Network and Host Name]({{< relref "/docs/Installation/setting-the-network-and-host-name.md" >}})
-
-            - [Starting Installation]({{< relref "/docs/Installation/starting-installation.md" >}})
-            - [Configurations During Installation]({{< relref "/docs/Installation/configurations-during-installation.md" >}})
-            - [Completing the Installation]({{< relref "/docs/Installation/completing-the-installation.md" >}})
-
-        - [Using Text Mode for Installation]({{< relref "/docs/Installation/using-text-mode-for-installation.md" >}})
-            - [Entering the Installation Interface]({{< relref "/docs/Installation/entering-the-installation-interface-0.md" >}})
-            - [Setting Installation Parameters]({{< relref "/docs/Installation/setting-installation-parameters-1.md" >}})
-                - [Configuring the System Language]({{< relref "/docs/Installation/configuring-the-system-language.md" >}})
-                - [Configuring the Time Zone and NTP Service]({{< relref "/docs/Installation/configuring-the-time-zone-and-ntp-service.md" >}})
-                - [Configuring the Installation Source]({{< relref "/docs/Installation/configuring-the-installation-source.md" >}})
-                - [Selecting Installation Software]({{< relref "/docs/Installation/selecting-installation-software-2.md" >}})
-                - [Configuring the Installation Location]({{< relref "/docs/Installation/configuring-the-installation-location.md" >}})
-                - [Configuring the Network]({{< relref "/docs/Installation/configuring-the-network.md" >}})
-                - [Setting the root User Password]({{< relref "/docs/Installation/setting-the-root-user-password.md" >}})
-                - [Creating a User]({{< relref "/docs/Installation/creating-a-user.md" >}})
-
-            - [Completing the Installation]({{< relref "/docs/Installation/completing-the-installation-3.md" >}})
-
-
-    - [FAQs]({{< relref "/docs/Installation/faqs.md" >}})
-        - [Why Does openEuler Fail to Start After I Install It to the Second Disk?]({{< relref "/docs/Installation/why-does-openeuler-fail-to-start-after-i-install-it-to-the-second-disk.md" >}})
-        - [What Are the Constraints on Network Configurations?]({{< relref "/docs/Installation/what-are-the-constraints-on-network-configurations.md" >}})
-        - [Why Does openEuler Enter Emergency Mode After It Is Powered On?]({{< relref "/docs/Installation/why-does-openeuler-enter-emergency-mode-after-it-is-powered-on.md" >}})
-        - [Failed to Reinstall openEuler When a Logical Volume Group That Cannot Be Activated Has Existed in openEuler]({{< relref "/docs/Installation/failed-to-reinstall-openeuler-when-a-logical-volume-group-that-cannot-be-activated-has-existed-in-op.md" >}})
-        - [An Exception Occurs During the Selection of the Installation Source]({{< relref "/docs/Installation/an-exception-occurs-during-the-selection-of-the-installation-source.md" >}})
-            - [Software Dependency]({{< relref "/docs/Installation/software-dependency.md" >}})
-
-        - [How Do I Manually Enable the kdump Service?]({{< relref "/docs/Installation/how-do-i-manually-enable-the-kdump-service.md" >}})
-
 
 - [Security Hardening Guide]({{< relref "./docs/SecHarden/secHarden.md" >}})
     - [Terms of Use]({{< relref "./docs/SecHarden/terms-of-use.md" >}})
@@ -421,63 +366,63 @@ headless: true
                 - [version]({{< relref "./docs/Container/version.md" >}})
     
 - [A-Tune User Guide]({{< relref "./docs/A-Tune/A-Tune.md" >}})
-    - [Legal Statement]({{< relref "./docs/A-Tune/legal-statement" >}})
-    - [Preface]({{< relref "./docs/A-Tune/preface" >}})
-    - [Getting to Know A-Tune]({{< relref "./docs/A-Tune/getting-to-know-a-tune" >}})
-        - [Introduction]({{< relref "./docs/A-Tune/introduction" >}})
-        - [Architecture]({{< relref "./docs/A-Tune/architecture" >}})
-        - [Supported Features and Service Models]({{< relref "./docs/A-Tune/supported-features-and-service-models" >}})
+    - [Legal Statement]({{< relref "./docs/A-Tune/legal-statement.md" >}})
+    - [Preface]({{< relref "./docs/A-Tune/preface.md" >}})
+    - [Getting to Know A-Tune]({{< relref "./docs/A-Tune/getting-to-know-a-tune.md" >}})
+        - [Introduction]({{< relref "./docs/A-Tune/introduction.md" >}})
+        - [Architecture]({{< relref "./docs/A-Tune/architecture.md" >}})
+        - [Supported Features and Service Models]({{< relref "./docs/A-Tune/supported-features-and-service-models.md" >}})
     
-    - [Installation and Deployment]({{< relref "./docs/A-Tune/installation-and-deployment" >}})
-        - [Software and Hardware Requirements]({{< relref "./docs/A-Tune/software-and-hardware-requirements" >}})
-        - [Environment Preparation]({{< relref "./docs/A-Tune/environment-preparation" >}})
-        - [A-Tune Installation]({{< relref "./docs/A-Tune/a-tune-installation" >}})
-            - [Installation Modes]({{< relref "./docs/A-Tune/installation-modes" >}})
-            - [Installation Procedure]({{< relref "./docs/A-Tune/installation-procedure" >}})
+    - [Installation and Deployment]({{< relref "./docs/A-Tune/installation-and-deployment.md" >}})
+        - [Software and Hardware Requirements]({{< relref "./docs/A-Tune/software-and-hardware-requirements.md" >}})
+        - [Environment Preparation]({{< relref "./docs/A-Tune/environment-preparation.md" >}})
+        - [A-Tune Installation]({{< relref "./docs/A-Tune/a-tune-installation.md" >}})
+            - [Installation Modes]({{< relref "./docs/A-Tune/installation-modes.md" >}})
+            - [Installation Procedure]({{< relref "./docs/A-Tune/installation-procedure.md" >}})
     
-        - [A-Tune Deployment]({{< relref "./docs/A-Tune/a-tune-deployment" >}})
-            - [Overview]({{< relref "./docs/A-Tune/overview" >}})
+        - [A-Tune Deployment]({{< relref "./docs/A-Tune/a-tune-deployment.md" >}})
+            - [Overview]({{< relref "./docs/A-Tune/overview.md" >}})
     
-        - [Starting A-Tune]({{< relref "./docs/A-Tune/starting-a-tune" >}})
+        - [Starting A-Tune]({{< relref "./docs/A-Tune/starting-a-tune.md" >}})
     
-    - [Application Scenarios]({{< relref "./docs/A-Tune/application-scenarios" >}})
-        - [Overview]({{< relref "./docs/A-Tune/overview-0" >}})
-        - [Querying Workload Types]({{< relref "./docs/A-Tune/querying-workload-types" >}})
-            - [list]({{< relref "./docs/A-Tune/list" >}})
+    - [Application Scenarios]({{< relref "./docs/A-Tune/application-scenarios.md" >}})
+        - [Overview]({{< relref "./docs/A-Tune/overview-0.md" >}})
+        - [Querying Workload Types]({{< relref "./docs/A-Tune/querying-workload-types.md" >}})
+            - [list]({{< relref "./docs/A-Tune/list.md" >}})
     
-        - [Workload Type Analysis and Auto Optimization]({{< relref "./docs/A-Tune/workload-type-analysis-and-auto-optimization" >}})
-            - [analysis]({{< relref "./docs/A-Tune/analysis" >}})
+        - [Workload Type Analysis and Auto Optimization]({{< relref "./docs/A-Tune/workload-type-analysis-and-auto-optimization.md" >}})
+            - [analysis]({{< relref "./docs/A-Tune/analysis.md" >}})
     
-        - [User-defined Model]({{< relref "./docs/A-Tune/user-defined-model" >}})
-            - [define]({{< relref "./docs/A-Tune/define" >}})
-            - [collection]({{< relref "./docs/A-Tune/collection" >}})
-            - [train]({{< relref "./docs/A-Tune/train" >}})
-            - [undefine]({{< relref "./docs/A-Tune/undefine" >}})
+        - [User-defined Model]({{< relref "./docs/A-Tune/user-defined-model.md" >}})
+            - [define]({{< relref "./docs/A-Tune/define.md" >}})
+            - [collection]({{< relref "./docs/A-Tune/collection.md" >}})
+            - [train]({{< relref "./docs/A-Tune/train.md" >}})
+            - [undefine]({{< relref "./docs/A-Tune/undefine.md" >}})
     
-        - [Querying Profiles]({{< relref "./docs/A-Tune/querying-profiles" >}})
-            - [info]({{< relref "./docs/A-Tune/info" >}})
+        - [Querying Profiles]({{< relref "./docs/A-Tune/querying-profiles.md" >}})
+            - [info]({{< relref "./docs/A-Tune/info.md" >}})
     
-        - [Updating a Profile]({{< relref "./docs/A-Tune/updating-a-profile" >}})
-            - [update]({{< relref "./docs/A-Tune/update" >}})
+        - [Updating a Profile]({{< relref "./docs/A-Tune/updating-a-profile.md" >}})
+            - [update]({{< relref "./docs/A-Tune/update.md" >}})
     
-        - [Activating a Profile]({{< relref "./docs/A-Tune/activating-a-profile" >}})
-            - [profile]({{< relref "./docs/A-Tune/profile" >}})
+        - [Activating a Profile]({{< relref "./docs/A-Tune/activating-a-profile.md" >}})
+            - [profile]({{< relref "./docs/A-Tune/profile.md" >}})
     
-        - [Rolling Back Profiles]({{< relref "./docs/A-Tune/rolling-back-profiles" >}})
-            - [rollback]({{< relref "./docs/A-Tune/rollback" >}})
+        - [Rolling Back Profiles]({{< relref "./docs/A-Tune/rolling-back-profiles.md" >}})
+            - [rollback]({{< relref "./docs/A-Tune/rollback.md" >}})
     
-        - [Updating Database]({{< relref "./docs/A-Tune/updating-database" >}})
-            - [upgrade]({{< relref "./docs/A-Tune/upgrade" >}})
+        - [Updating Database]({{< relref "./docs/A-Tune/updating-database.md" >}})
+            - [upgrade]({{< relref "./docs/A-Tune/upgrade.md" >}})
     
-        - [Querying System Information]({{< relref "./docs/A-Tune/querying-system-information" >}})
-            - [check]({{< relref "./docs/A-Tune/check" >}})
+        - [Querying System Information]({{< relref "./docs/A-Tune/querying-system-information.md" >}})
+            - [check]({{< relref "./docs/A-Tune/check.md" >}})
     
-        - [Automatic Parameter Optimization]({{< relref "./docs/A-Tune/automatic-parameter-optimization" >}})
-            - [Tuning]({{< relref "./docs/A-Tune/tuning" >}})
+        - [Automatic Parameter Optimization]({{< relref "./docs/A-Tune/automatic-parameter-optimization.md" >}})
+            - [Tuning]({{< relref "./docs/A-Tune/tuning.md" >}})
     
     
-    - [FAQs]({{< relref "./docs/A-Tune/faqs" >}})
-    - [Appendixes]({{< relref "./docs/A-Tune/appendixes" >}})
-        - [Acronyms and Abbreviations]({{< relref "./docs/A-Tune/acronyms-and-abbreviations" >}})
+    - [FAQs]({{< relref "./docs/A-Tune/faqs.md" >}})
+    - [Appendixes]({{< relref "./docs/A-Tune/appendixes.md" >}})
+        - [Acronyms and Abbreviations]({{< relref "./docs/A-Tune/acronyms-and-abbreviations.md" >}})
 
 
