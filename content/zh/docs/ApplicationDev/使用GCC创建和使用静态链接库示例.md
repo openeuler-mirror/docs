@@ -1,6 +1,6 @@
 # 使用GCC创建和使用静态链接库示例<a name="ZH-CN_TOPIC_0229243709"></a>
 
-1.  cd到代码目录，此处以用户“/home/code”进行举例。并在该目录下创建src，lib，include子目录，分别用于存放源文件，动态库文件和头文件。
+1.  cd到代码目录，此处以用户“/home/code”进行举例。并在该目录下创建src，lib，include子目录，分别用于存放源文件，静态库文件和头文件。
 
     ```
     cd /home/code

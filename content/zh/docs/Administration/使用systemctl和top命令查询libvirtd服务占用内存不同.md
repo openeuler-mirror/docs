@@ -12,7 +12,7 @@ systemd管理的服务（包括systemctl和systemd-cgtop）中显示的内存通
 
 -   anon\_rss：用户空间的匿名映射页（Anonymous pages in User Mode address spaces），比如调用malloc分配的内存，以及使用MAP\_ANONYMOUS的mmap。当系统内存不够时，内核可以将这部分内存交换出去。
 -   file\_rss：用户空间的文件映射页（Mapped pages in User Mode address spaces），包含map file和map tmpfs，前者比如指定文件的mmap，后者比如IPC共享内存。当系统内存不够时，内核可以回收这些页，但回收之前可能需要与文件同步数据。
--   file\_cache：文件缓存（page in page cache of disk file），发生在程序通过普通的读写（read/write）文件时。当系统内存不够时，内核可以回收这些页，但回收之前可能需要与文件同步数据。
+-   file\_cache：文件缓存（page in page cache of disk file），普通读写（read/write）文件时产生的文件缓存。当系统内存不够时，内核可以回收这些页，但回收之前可能需要与文件同步数据。
 -   buffer pages：属于page cache，比如读取块设备文件时的相关缓存。
 
 其中anon\_rss和file\_rss属于进程的RSS，file\_cache和buffer pages属于page cache。简单来说：
