@@ -14,13 +14,13 @@
     <memory unit='GiB'>8</memory>
     <vcpu>4</vcpu>
     <os>
-    <type arch='aarch64' machine='virt'>hvm</type>
-    <loader readonly='yes' type='pflash'>/usr/share/edk2/aarch64/QEMU_EFI-pflash.raw</loader>
-    <nvram>/var/lib/libvirt/qemu/nvram/openEulerVM.fd</nvram>
+	<type arch='aarch64' machine='virt'>hvm</type>
+	<loader readonly='yes' type='pflash'>/usr/share/edk2/aarch64/QEMU_EFI-pflash.raw</loader>
+	<nvram>/var/lib/libvirt/qemu/nvram/openEulerVM.fd</nvram>
     </os>
     <features>
-    <acpi/>
-    <gic version='3'/>
+	<acpi/>
+	<gic version='3'/>
     </features>
     <cpu mode='host-passthrough'>
         <topology sockets='2' cores='2' threads='1'/>
@@ -31,33 +31,33 @@
     <on_reboot>restart</on_reboot>
     <on_crash>restart</on_crash>
     <devices>
-    <emulator>/usr/libexec/qemu-kvm</emulator>
-    <disk type='file' device='disk'>
-        <driver name='qemu' type='qcow2' iothread="1"/>
-        <source file='/mnt/openEuler-image.qcow2'/>
-        <target dev='vda' bus='virtio'/>
-        <boot order='1'/>
-    </disk>
-    <disk type='file' device='cdrom'>
-        <driver name='qemu' type='raw'/>
-        <source file='/mnt/openEuler-20.03-LTS-aarch64-dvd.iso'/>
-        <readonly/>
-        <target dev='sdb' bus='scsi'/>
-        <boot order='2'/>
-    </disk>
-    <interface type='bridge'>
-        <source bridge='br0'/>
-        <model type='virtio'/>
-    </interface>
-    <console type='pty'/>
+	<emulator>/usr/libexec/qemu-kvm</emulator>
+	<disk type='file' device='disk'>
+	    <driver name='qemu' type='qcow2' iothread="1"/>
+	    <source file='/mnt/openEuler-image.qcow2'/>
+	    <target dev='vda' bus='virtio'/>
+	    <boot order='1'/>
+	</disk>
+	<disk type='file' device='cdrom'>
+	    <driver name='qemu' type='raw'/>
+	    <source file='/mnt/openEuler-20.03-LTS-aarch64-dvd.iso'/>
+	    <readonly/>
+	    <target dev='sdb' bus='scsi'/>
+	    <boot order='2'/>
+	</disk>
+	<interface type='bridge'>
+	    <source bridge='br0'/>
+	    <model type='virtio'/>
+	</interface>
+	<console type='pty'/>
         <video>
            <model type='virtio'/>
         </video>
         <controller type='scsi' index='0' model='virtio-scsi'/>
-    <controller type='usb' model='ehci'/>
-    <input type='tablet' bus='usb'/>
-    <input type='keyboard' bus='usb'/>
-    <graphics type='vnc' listen='0.0.0.0' passwd='n8VfjbFK'/>
+	<controller type='usb' model='ehci'/>
+	<input type='tablet' bus='usb'/>
+	<input type='keyboard' bus='usb'/>
+	<graphics type='vnc' listen='0.0.0.0' passwd='n8VfjbFK'/>
     </devices>
 </domain>
 ```
@@ -137,3 +137,4 @@
   </devices>
 </domain>
 ```
+

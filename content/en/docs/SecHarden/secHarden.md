@@ -1,0 +1,1 @@
+This document describes how to perform security hardening for openEuler.
