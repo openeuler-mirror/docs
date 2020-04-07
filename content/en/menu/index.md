@@ -2,6 +2,19 @@
 headless: true
 ---
 
+- [Release Notes]({{< relref "./docs/Releasenotes/release_notes.md" >}})
+    - [Terms of Use]({{< relref "./docs/Releasenotes/terms-of-use.md" >}})
+    - [User Notice]({{< relref "./docs/Releasenotes/user-notice.md" >}})
+    - [Introduction]({{< relref "./docs/Releasenotes/introduction.md" >}})
+    - [Installing the OS]({{< relref "./docs/Releasenotes/installing-the-os.md" >}})
+    - [Key Features]({{< relref "./docs/Releasenotes/key-features.md" >}})
+    - [Known Issues]({{< relref "./docs/Releasenotes/known-issues.md" >}})
+    - [Resolved Issues]({{< relref "./docs/Releasenotes/resolved-issues.md" >}})
+    - [Common Vulnerabilities and Exposures \(CVE\)]({{< relref "./docs/Releasenotes/common-vulnerabilities-and-exposures-(cve).md" >}})
+    - [Source Code]({{< relref "./docs/Releasenotes/source-code.md" >}})
+    - [Contribution]({{< relref "./docs/Releasenotes/contribution.md" >}})
+    - [Acknowledgement]({{< relref "./docs/Releasenotes/acknowledgement.md" >}})
+
 - [Security Hardening Guide]({{< relref "./docs/SecHarden/secHarden.md" >}})
     - [Terms of Use]({{< relref "./docs/SecHarden/terms-of-use.md" >}})
     - [Preface]({{< relref "./docs/SecHarden/preface.md" >}})

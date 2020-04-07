@@ -14,6 +14,8 @@ headless: true
     - [参与贡献]({{< relref "./docs/Releasenotes/参与贡献.md" >}})
     - [致谢]({{< relref "./docs/Releasenotes/致谢.md" >}})
 
+- [快速入门]({{< relref "./docs/Quickstart/快速入门指南.md" >}})
+
 - [安装指南]({{< relref "./docs/Installation/installation.md" >}})
     - [法律声明]({{< relref "./docs/Installation/法律声明.md" >}})
     - [前言]({{< relref "./docs/Installation/前言.md" >}})
