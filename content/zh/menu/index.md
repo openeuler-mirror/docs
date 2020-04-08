@@ -1,8 +1,8 @@
 ---
 headless: true
 ---
+- [法律声明]({{< relref "./docs/Releasenotes/法律声明.md" >}})
 - [发行说明]({{< relref "./docs/Releasenotes/release_notes.md" >}})
-    - [法律声明]({{< relref "./docs/Releasenotes/法律声明.md" >}})
     - [用户须知]({{< relref "./docs/Releasenotes/用户须知.md" >}})
     - [简介]({{< relref "./docs/Releasenotes/简介.md" >}})
     - [系统安装]({{< relref "./docs/Releasenotes/系统安装.md" >}})
@@ -17,7 +17,6 @@ headless: true
 - [快速入门]({{< relref "./docs/Quickstart/快速入门指南.md" >}})
 
 - [安装指南]({{< relref "./docs/Installation/installation.md" >}})
-    - [法律声明]({{< relref "./docs/Installation/法律声明.md" >}})
     - [前言]({{< relref "./docs/Installation/前言.md" >}})
     - [安装准备]({{< relref "./docs/Installation/安装准备.md" >}})
         - [获取安装源]({{< relref "./docs/Installation/获取安装源.md" >}})
@@ -67,7 +66,6 @@ headless: true
         - [x86物理机UEFI模式由于security boot安全选项问题无法安装]({{< relref "./docs/Installation/x86物理机UEFI模式由于security-boot安全选项问题无法安装.md" >}})
 
 - [管理员指南]({{< relref "./docs/Administration/administration.md" >}})
-    - [法律声明]({{< relref "./docs/Administration/法律声明.md" >}})
     - [前言]({{< relref "./docs/Administration/前言.md" >}})
     - [基础配置]({{< relref "./docs/Administration/基础配置.md" >}})
         - [通过命令设置]({{< relref "./docs/Administration/通过命令设置.md" >}})
@@ -307,7 +305,6 @@ headless: true
         - [安装时出现软件包冲突、文件冲突或缺少软件包导致安装失败]({{< relref "./docs/Administration/安装时出现软件包冲突-文件冲突或缺少软件包导致安装失败.md" >}})
 
 - [安全加固指南]({{< relref "./docs/SecHarden/secHarden.md" >}})
-    - [法律声明]({{< relref "./docs/SecHarden/法律声明.md" >}})
     - [前言]({{< relref "./docs/SecHarden/前言.md" >}})
     - [操作系统加固概述]({{< relref "./docs/SecHarden/操作系统加固概述.md" >}})
         - [加固目的]({{< relref "./docs/SecHarden/加固目的.md" >}})
@@ -357,7 +354,6 @@ headless: true
         - [umask值含义]({{< relref "./docs/SecHarden/umask值含义.md" >}})
 
 - [虚拟化用户指南]({{< relref "./docs/Virtualization/virtualization.md" >}})
-    - [法律声明]({{< relref "./docs/Virtualization/法律声明.md" >}})
     - [前言]({{< relref "./docs/Virtualization/前言.md" >}})
     - [认识虚拟化]({{< relref "./docs/Virtualization/认识虚拟化.md" >}})
     - [安装指南]({{< relref "./docs/Virtualization/安装指南.md" >}})
@@ -453,7 +449,6 @@ headless: true
 
 
 - [容器用户指南]({{< relref "./docs/Container/container.md" >}})
-    - [法律声明]({{< relref "./docs/Container/法律声明.md" >}})
     - [前言]({{< relref "./docs/Container/前言.md" >}})
     - [iSula容器引擎]({{< relref "./docs/Container/iSula容器引擎.md" >}})
         - [概述]({{< relref "./docs/Container/概述.md" >}})
@@ -761,7 +756,6 @@ headless: true
                 - [version]({{< relref "./docs/Container/version.md" >}})
 
 - [A-Tune用户指南]({{< relref "./docs/A-Tune/A-Tune.md" >}})
-    - [法律申明]({{< relref "./docs/A-Tune/法律申明.md" >}})
     - [前言]({{< relref "./docs/A-Tune/前言.md" >}})
     - [认识A-Tune]({{< relref "./docs/A-Tune/认识A-Tune.md" >}})
         - [简介]({{< relref "./docs/A-Tune/简介.md" >}})
@@ -822,7 +816,6 @@ headless: true
 
 
 - [应用开发指南]({{< relref "./docs/ApplicationDev/application-development.md" >}})
-    - [法律声明]({{< relref "./docs/ApplicationDev/法律声明.md" >}})
     - [前言]({{< relref "./docs/ApplicationDev/前言.md" >}})
     - [开发环境准备]({{< relref "./docs/ApplicationDev/开发环境准备.md" >}})
         - [环境要求]({{< relref "./docs/ApplicationDev/环境要求.md" >}})
