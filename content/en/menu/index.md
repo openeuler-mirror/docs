@@ -1,9 +1,8 @@
 ---
 headless: true
 ---
-
+- [Terms of Use]({{< relref "./docs/Releasenotes/terms-of-use.md" >}})
 - [Release Notes]({{< relref "./docs/Releasenotes/release_notes.md" >}})
-    - [Terms of Use]({{< relref "./docs/Releasenotes/terms-of-use.md" >}})
     - [User Notice]({{< relref "./docs/Releasenotes/user-notice.md" >}})
     - [Introduction]({{< relref "./docs/Releasenotes/introduction.md" >}})
     - [Installing the OS]({{< relref "./docs/Releasenotes/installing-the-os.md" >}})
@@ -16,7 +15,6 @@ headless: true
     - [Acknowledgement]({{< relref "./docs/Releasenotes/acknowledgement.md" >}})
 
 - [Security Hardening Guide]({{< relref "./docs/SecHarden/secHarden.md" >}})
-    - [Terms of Use]({{< relref "./docs/SecHarden/terms-of-use.md" >}})
     - [Preface]({{< relref "./docs/SecHarden/preface.md" >}})
     - [OS Hardening Overview]({{< relref "./docs/SecHarden/os-hardening-overview.md" >}})
         - [Security Hardening Purpose]({{< relref "./docs/SecHarden/security-hardening-purpose.md" >}})
@@ -72,8 +70,6 @@ headless: true
 
 
 - [Virtualization User Guide]({{< relref "/docs/Virtualization/virtualization.md" >}})
-
-    - [Terms of Use]({{< relref "/docs/Virtualization/terms-of-use.md" >}})
     - [About This Document]({{< relref "/docs/Virtualization/about-this-document.md" >}})
     - [Introduction to Virtualization]({{< relref "/docs/Virtualization/introduction-to-virtualization.md" >}})
     - [Installation Guide]({{< relref "/docs/Virtualization/installation-guide.md" >}})
@@ -169,7 +165,6 @@ headless: true
 
 
 - [Container User Guide]({{< relref "./docs/Container/container.md" >}})
-    - [Terms of Use]({{< relref "./docs/Container/terms-of-use.md" >}})
     - [About This Document ]({{< relref "./docs/Container/about-this-document.md" >}})
     - [iSulad Container Engine]({{< relref "./docs/Container/isulad-container-engine.md" >}})
         - [Overview]({{< relref "./docs/Container/overview.md" >}})
@@ -477,7 +472,6 @@ headless: true
                 - [version]({{< relref "./docs/Container/version.md" >}})
     
 - [A-Tune User Guide]({{< relref "./docs/A-Tune/A-Tune.md" >}})
-    - [Legal Statement]({{< relref "./docs/A-Tune/legal-statement.md" >}})
     - [Preface]({{< relref "./docs/A-Tune/preface.md" >}})
     - [Getting to Know A-Tune]({{< relref "./docs/A-Tune/getting-to-know-a-tune.md" >}})
         - [Introduction]({{< relref "./docs/A-Tune/introduction.md" >}})
