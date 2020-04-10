@@ -18,10 +18,10 @@
 
     其中，各参数含义如下：
 
-    -   _imgFormat_：镜像格式，取值为raw, qcow2等。
-    -   _fileOption_：文件选项，用于设置镜像文件的特性，如指定后端镜像文件，压缩，加密等特性。
-    -   _f__ileName_：文件名称。
-    -   _diskSize_：磁盘大小，用于指定块磁盘设备的大小，支持的单位有K、M、G、T，分别代表KiB、MiB、GiB、TiB。
+    -   _imgFormat_  ：镜像格式，取值为raw, qcow2等。
+    -   _fileOption_  ：文件选项，用于设置镜像文件的特性，如指定后端镜像文件，压缩，加密等特性。
+    -   _f__ileName_  ：文件名称。
+    -   _diskSize_  ：磁盘大小，用于指定块磁盘设备的大小，支持的单位有K、M、G、T，分别代表KiB、MiB、GiB、TiB。
 
     例如，创建一个磁盘设备大小为32GB、格式为qcow2的镜像文件openEuler-imge.qcow2，命令和回显如下：
 
