@@ -1,16 +1,12 @@
-# Terms of Use<a name="EN-US_TOPIC_0216834831"></a>
+# Terms of Use<a name="EN-US_TOPIC_0229291204"></a>
 
 **Copyright © Huawei Technologies Co., Ltd. 2020. All rights reserved.**
 
 Your replication, use, modification, and distribution of this document are governed by the Creative Commons License Attribution-ShareAlike 4.0 International Public License \(CC BY-SA 4.0\). You can visit  [https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)  to view a human-readable summary of \(and not a substitute for\) CC BY-SA 4.0. For the complete CC BY-SA 4.0, visit  [https://creativecommons.org/licenses/by-sa/4.0/legalcode](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
-  
-
 **Trademarks and Permissions**
 
 openEuler is a trademark or registered trademark of Huawei Technologies Co., Ltd. All other trademarks and registered trademarks mentioned in this document are the property of their respective holders.
-
-  
 
 **Disclaimer**
 

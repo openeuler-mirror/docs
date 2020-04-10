@@ -1,10 +1,10 @@
-# Hardware Compatibility<a name="EN-US_TOPIC_0214071109"></a>
+# Hardware Compatibility<a name="EN-US_TOPIC_0229291190"></a>
 
-You need to take hardware compatibility into account during openEuler installation.  [Table 1](#table14948632047)  lists the types of supported servers.
+You need to take hardware compatibility into account during openEuler installation.  [Table 1](#table14948632047)  describes the types of supported servers.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >-   TaiShan 200 servers are backed by Huawei Kunpeng 920 processors.  
->-   Currently, only Huawei TaiShan servers are supported. More servers from other vendors will be supported in the future.  
+>-   Currently, only Huawei TaiShan and FusionServer Pro servers are supported. More servers from other vendors will be supported in the future.  
 
 **Table  1**  Supported servers
 
@@ -19,19 +19,18 @@ You need to take hardware compatibility into account during openEuler installati
 </thead>
 <tbody><tr id="row8949153348"><td class="cellrowborder" valign="top" width="26.369999999999997%" headers="mcps1.2.4.1.1 "><p id="p4893192424117"><a name="p4893192424117"></a><a name="p4893192424117"></a>Rack server</p>
 </td>
-<td class="cellrowborder" rowspan="3" valign="top" width="24%" headers="mcps1.2.4.1.2 "><p id="p02706012553"><a name="p02706012553"></a><a name="p02706012553"></a>TaiShan 200 servers</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.4.1.2 "><p id="p02706012553"><a name="p02706012553"></a><a name="p02706012553"></a>TaiShan 200</p>
 </td>
 <td class="cellrowborder" valign="top" width="49.63%" headers="mcps1.2.4.1.3 "><p id="p126551941225"><a name="p126551941225"></a><a name="p126551941225"></a>2280 balanced model</p>
 </td>
 </tr>
-<tr id="row8950193042"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p108949241418"><a name="p108949241418"></a><a name="p108949241418"></a>Rack server</p>
+<tr id="row104064391909"><td class="cellrowborder" valign="top" width="26.369999999999997%" headers="mcps1.2.4.1.1 "><p id="p54061539609"><a name="p54061539609"></a><a name="p54061539609"></a>Rack server</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p88941242413"><a name="p88941242413"></a><a name="p88941242413"></a>5280 storage model</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.4.1.2 "><p id="p9937105713311"><a name="p9937105713311"></a><a name="p9937105713311"></a>FusionServer Pro </p>
 </td>
-</tr>
-<tr id="row14950173545"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p295012310420"><a name="p295012310420"></a><a name="p295012310420"></a>High-density server</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p17894142434110"><a name="p17894142434110"></a><a name="p17894142434110"></a>X6000 high-density model</p>
+<td class="cellrowborder" valign="top" width="49.63%" headers="mcps1.2.4.1.3 "><p id="p154063394011"><a name="p154063394011"></a><a name="p154063394011"></a>FusionServer Pro 2288H V5</p>
+<div class="note" id="note2046771016316"><a name="note2046771016316"></a><a name="note2046771016316"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="p1646710101130"><a name="p1646710101130"></a><a name="p1646710101130"></a>The server must be configured with the Avago SAS3508 RAID controller card and the LOM-X722 NIC.</p>
+</div></div>
 </td>
 </tr>
 </tbody>

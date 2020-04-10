@@ -1,4 +1,4 @@
-# Failed to Reinstall openEuler When a Logical Volume Group That Cannot Be Activated Has Existed in openEuler<a name="EN-US_TOPIC_0214071184"></a>
+# Failed to Reinstall openEuler When a Logical Volume Group That Cannot Be Activated Has Existed in openEuler<a name="EN-US_TOPIC_0229291287"></a>
 
 ## Symptom<a name="en-us_topic_0151920834_sa51c76c49f1640a08b23bca0fe61f3cf"></a>
 
@@ -12,8 +12,8 @@ During the installation of openEuler, a logical volume group cannot be activated
 
 Before reinstalling openEuler, restore the abnormal logical volume group to the normal status or clear it. The following uses an example:
 
--   Restore the abnormal logical volume group to the normal status.
-    1.  Run the following command to clear the activation status of the abnormal logical volume group to ensure that the error message "Can't open /dev/sdc exclusively mounted filesystem" is not displayed:
+-   Restore the logical volume group.
+    1.  Run the following command to clear the active status of the abnormal logical volume group to ensure that the error message "Can't open /dev/sdc exclusively mounted filesystem" is not displayed:
 
         ```
          vgchange -a n testvg32947
@@ -38,7 +38,7 @@ Before reinstalling openEuler, restore the abnormal logical volume group to the 
         ```
 
 
--   Run the following commands to clear the abnormal logical volume group:
+-   Run the following commands to clear the logical volume group:
 
     ```
     vgchange -a n testvg32947
