@@ -1,10 +1,10 @@
-# How Do I Manually Enable the kdump Service?<a name="EN-US_TOPIC_0214071175"></a>
+# How Do I Manually Enable the kdump Service?<a name="EN-US_TOPIC_0229291218"></a>
 
 ## Symptom<a name="section0712504256"></a>
 
-Run the systemctl status kdump command. The following information is displayed, indicating that no memory is reserved.
+Run the  **systemctl status kdump**  command. The following information is displayed, indicating that no memory is reserved.
 
-![](figures/en-us_image_0216604776.png)
+![](figures/en-us_image_0229291280.png)
 
 ## Possible Cause<a name="section118871366253"></a>
 
@@ -24,7 +24,7 @@ For the scenario where the OS has been installed
 
     If the following information is displayed, the kdump status is  **active**, indicating that the kdump service is enabled. No further action is required.
 
-    ![](figures/en-us_image_0216604777.png)
+    ![](figures/en-us_image_0229291272.png)
 
 
 ## Parameter Description<a name="section13001529145412"></a>

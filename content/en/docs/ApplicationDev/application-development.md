@@ -1,0 +1,1 @@
+This document describes the common tools used for application development and guides users to develop applications based on openEuler.
