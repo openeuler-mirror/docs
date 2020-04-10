@@ -1,1 +1,1 @@
-This guide describes how to install Huawei openEuler 1.0 in graphical mode or text mode.
+This document describes how to obtain the openEuler installation package and install openEuler using different methods.

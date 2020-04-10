@@ -1,6 +1,5 @@
-# Installation Guideline<a name="EN-US_TOPIC_0214071128"></a>
+# Installation Guideline<a name="EN-US_TOPIC_0229291250"></a>
 
-This section describes how to install openEuler 1.0 by using the CD/DVD-ROM.
-
+This section describes how to install openEuler using a CD-ROM. The installation process is the same for other installation modes except the boot option.
 
 

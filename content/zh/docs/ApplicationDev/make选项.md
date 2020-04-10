@@ -6,7 +6,7 @@ make命令格式为：**make**  \[_option_\]... \[_targe_t\]...
 
 _option_：参数选项。
 
-_ftarget_：Makefile中指定的目标。
+_target_：Makefile中指定的目标。
 
 常用make的_option_取值如[表1](#table261872312343)所示。
 

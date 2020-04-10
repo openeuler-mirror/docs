@@ -1,4 +1,4 @@
-# Setting the Keyboard Layout<a name="EN-US_TOPIC_0214071179"></a>
+# Setting the Keyboard Layout<a name="EN-US_TOPIC_0229291198"></a>
 
 On the  **INSTALLATION SUMMARY**  page, click  **KEYBOARD**. You can add or delete multiple keyboard layouts in the system.
 
