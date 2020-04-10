@@ -295,7 +295,7 @@ After entering the GUI installation page, perform the following operations to in
 
 ## Viewing System Information<a name="section133115101667"></a>
 
-After the system is installed and restarted, the system CLI login page is displayed. Enter the username and password set during the installation to log in to openEuler OS and view the following system information. For details about system management and configuration, see the  [openEuler 20.03 LTS Administrator Guide](https://openeuler.org/zh/docs/20.03_LTS/docs/Administration/administration.html).
+After the system is installed and restarted, the system CLI login page is displayed. Enter the username and password set during the installation to log in to openEuler OS and view the following system information. For details about system management and configuration, see the  [openEuler 20.03 LTS Administrator Guide](https://openeuler.org/en/docs/20.03_LTS/docs/Administration/administration.html).
 
 -   Run the following command to view the system information:
 
