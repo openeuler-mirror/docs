@@ -363,7 +363,7 @@ headless: true
     - [Permissions on Files and Directories]({{< relref "./docs/SecHarden/permissions-on-files-and-directories.md" >}})
     - [umask Values]({{< relref "./docs/SecHarden/umask-values.md" >}})
 
-- [Virtualization User Guide]({{< relref "/docs/Virtualization/virtualization.md" >}})
+- [Virtualization User Guide]({{< relref "./docs/Virtualization/virtualization.md" >}})
 
   - [About This Document]({{< relref "./docs/Virtualization/about-this-document.md" >}})
   - [Introduction to Virtualization]({{< relref "./docs/Virtualization/introduction-to-virtualization.md" >}})
