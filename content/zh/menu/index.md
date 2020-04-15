@@ -14,19 +14,11 @@ headless: true
     - [参与贡献]({{< relref "./docs/Releasenotes/参与贡献.md" >}})
     - [致谢]({{< relref "./docs/Releasenotes/致谢.md" >}})
 
-- [快速入门]({{< relref "./docs/Quickstart/快速入门指南.md" >}})
+- [快速入门]({{< relref "./docs/Quickstart/快速入门.md" >}})
 
 - [安装指南]({{< relref "./docs/Installation/installation.md" >}})
     - [前言]({{< relref "./docs/Installation/前言.md" >}})
     - [安装准备]({{< relref "./docs/Installation/安装准备.md" >}})
-        - [获取安装源]({{< relref "./docs/Installation/获取安装源.md" >}})
-        - [发布包完整性校验]({{< relref "./docs/Installation/发布包完整性校验.md" >}})
-        - [物理机的安装要求]({{< relref "./docs/Installation/物理机的安装要求.md" >}})
-            - [硬件兼容支持]({{< relref "./docs/Installation/硬件兼容支持.md" >}})
-            - [最小硬件要求]({{< relref "./docs/Installation/最小硬件要求.md" >}})
-        - [虚拟机的安装要求]({{< relref "./docs/Installation/虚拟机的安装要求.md" >}})
-            - [虚拟化平台兼容性]({{< relref "./docs/Installation/虚拟化平台兼容性.md" >}})
-            - [最小虚拟化空间要求]({{< relref "./docs/Installation/最小虚拟化空间要求.md" >}})
     - [安装方式介绍]({{< relref "./docs/Installation/安装方式介绍.md" >}})
         - [通过光盘安装]({{< relref "./docs/Installation/通过光盘安装.md" >}})
         - [通过USB盘安装]({{< relref "./docs/Installation/通过USB盘安装.md" >}})
@@ -401,13 +393,13 @@ headless: true
             - [应用场景]({{< relref "./docs/Virtualization/应用场景.md" >}})
             - [注意事项和约束限制]({{< relref "./docs/Virtualization/注意事项和约束限制.md" >}})
             - [热迁移操作]({{< relref "./docs/Virtualization/热迁移操作.md" >}})
-    
+        
         - [管理系统资源]({{< relref "./docs/Virtualization/管理系统资源.md" >}})
             - [管理虚拟CPU]({{< relref "./docs/Virtualization/管理虚拟CPU.md" >}})
                 - [CPU份额]({{< relref "./docs/Virtualization/CPU份额.md" >}})
                 - [绑定QEMU进程至物理CPU]({{< relref "./docs/Virtualization/绑定QEMU进程至物理CPU.md" >}})
                 - [调整虚拟CPU绑定关系]({{< relref "./docs/Virtualization/调整虚拟CPU绑定关系.md" >}})
-    
+        
             - [管理虚拟内存]({{< relref "./docs/Virtualization/管理虚拟内存.md" >}})
                 - [NUMA简介]({{< relref "./docs/Virtualization/NUMA简介.md" >}})
                 - [配置Host NUMA]({{< relref "./docs/Virtualization/配置Host-NUMA.md" >}})
@@ -422,13 +414,13 @@ headless: true
             - [管理设备直通]({{< relref "./docs/Virtualization/管理设备直通.md" >}})
                 - [PCI直通]({{< relref "./docs/Virtualization/PCI直通.md" >}})
                 - [SR-IOV直通]({{< relref "./docs/Virtualization/SR-IOV直通.md" >}})
-    
+        
             - [管理虚拟机USB]({{< relref "./docs/Virtualization/管理虚拟机USB.md" >}})
                 - [配置USB控制器]({{< relref "./docs/Virtualization/配置USB控制器.md" >}})
                 - [配置USB直通设备]({{< relref "./docs/Virtualization/配置USB直通设备.md" >}})
-    
+        
             - [存储快照]({{< relref "./docs/Virtualization/存储快照.md" >}})
-    
+        
         - [最佳实践]({{< relref "./docs/Virtualization/最佳实践.md" >}})
             - [性能最佳实践]({{< relref "./docs/Virtualization/性能最佳实践.md" >}})
                 - [halt-polling]({{< relref "./docs/Virtualization/halt-polling.md" >}})
@@ -436,7 +428,7 @@ headless: true
                 - [裸设备映射]({{< relref "./docs/Virtualization/裸设备映射.md" >}})
                 - [kworker隔离绑定]({{< relref "./docs/Virtualization/kworker隔离绑定.md" >}})
                 - [内存大页]({{< relref "./docs/Virtualization/内存大页.md" >}})
-    
+        
             - [安全最佳实践]({{< relref "./docs/Virtualization/安全最佳实践.md" >}})
                 - [Libvirt鉴权]({{< relref "./docs/Virtualization/Libvirt鉴权.md" >}})
                 - [qemu-ga]({{< relref "./docs/Virtualization/qemu-ga.md" >}})
@@ -545,7 +537,7 @@ headless: true
     
     
                 - [约束]({{< relref "./docs/Container/约束.md" >}})
-    
+        
             - [镜像管理]({{< relref "./docs/Container/镜像管理.md" >}})
                 - [docker镜像管理]({{< relref "./docs/Container/docker镜像管理.md" >}})
                     - [登录到镜像仓库]({{< relref "./docs/Container/登录到镜像仓库.md" >}})
@@ -556,7 +548,7 @@ headless: true
                     - [列出镜像]({{< relref "./docs/Container/列出镜像.md" >}})
                     - [检视镜像]({{< relref "./docs/Container/检视镜像.md" >}})
                     - [双向认证]({{< relref "./docs/Container/双向认证.md" >}})
-    
+        
                 - [embedded镜像管理]({{< relref "./docs/Container/embedded镜像管理.md" >}})
                     - [加载镜像]({{< relref "./docs/Container/加载镜像-3.md" >}})
                     - [列出镜像]({{< relref "./docs/Container/列出镜像-4.md" >}})
@@ -569,22 +561,22 @@ headless: true
                 - [配置方法]({{< relref "./docs/Container/配置方法.md" >}})
                 - [检查规则]({{< relref "./docs/Container/检查规则.md" >}})
                 - [使用限制]({{< relref "./docs/Container/使用限制-8.md" >}})
-    
+        
             - [查询信息]({{< relref "./docs/Container/查询信息.md" >}})
                 - [查询服务版本信息]({{< relref "./docs/Container/查询服务版本信息.md" >}})
                 - [查询系统级信息]({{< relref "./docs/Container/查询系统级信息.md" >}})
-    
+        
             - [安全特性]({{< relref "./docs/Container/安全特性.md" >}})
                 - [seccomp安全配置场景]({{< relref "./docs/Container/seccomp安全配置场景.md" >}})
                     - [场景说明]({{< relref "./docs/Container/场景说明-9.md" >}})
                     - [使用限制]({{< relref "./docs/Container/使用限制-10.md" >}})
                     - [使用指导]({{< relref "./docs/Container/使用指导-11.md" >}})
-    
+        
                 - [capabilities安全配置场景]({{< relref "./docs/Container/capabilities安全配置场景.md" >}})
                     - [场景说明]({{< relref "./docs/Container/场景说明-12.md" >}})
                     - [使用限制]({{< relref "./docs/Container/使用限制-13.md" >}})
                     - [使用指导]({{< relref "./docs/Container/使用指导-14.md" >}})
-    
+        
                 - [SELinux安全配置场景]({{< relref "./docs/Container/SELinux安全配置场景.md" >}})
                     - [场景说明]({{< relref "./docs/Container/场景说明-15.md" >}})
                     - [使用限制]({{< relref "./docs/Container/使用限制-16.md" >}})
@@ -648,17 +640,17 @@ headless: true
                 - [停止安全容器]({{< relref "./docs/Container/停止安全容器.md" >}})
                 - [删除安全容器]({{< relref "./docs/Container/删除安全容器.md" >}})
                 - [在容器中执行一条新的命令]({{< relref "./docs/Container/在容器中执行一条新的命令.md" >}})
-    
+        
             - [为安全容器配置资源]({{< relref "./docs/Container/为安全容器配置资源.md" >}})
                 - [资源的共享]({{< relref "./docs/Container/资源的共享-27.md" >}})
                 - [限制CPU资源]({{< relref "./docs/Container/限制CPU资源.md" >}})
                 - [限制内存资源]({{< relref "./docs/Container/限制内存资源.md" >}})
                 - [限制Blkio资源]({{< relref "./docs/Container/限制Blkio资源.md" >}})
                 - [限制文件描述符资源]({{< relref "./docs/Container/限制文件描述符资源.md" >}})
-    
+        
             - [为安全容器配置网络]({{< relref "./docs/Container/为安全容器配置网络.md" >}})
             - [监控安全容器]({{< relref "./docs/Container/监控安全容器.md" >}})
-    
+        
         - [附录]({{< relref "./docs/Container/附录-28.md" >}})
             - [configuration.toml配置说明]({{< relref "./docs/Container/configuration-toml配置说明.md" >}})
             - [接口列表]({{< relref "./docs/Container/接口列表.md" >}})
@@ -703,12 +695,12 @@ headless: true
             - [停止与删除容器]({{< relref "./docs/Container/停止与删除容器.md" >}})
             - [容器信息查询]({{< relref "./docs/Container/容器信息查询.md" >}})
             - [修改操作]({{< relref "./docs/Container/修改操作.md" >}})
-    
+        
         - [镜像管理]({{< relref "./docs/Container/镜像管理-34.md" >}})
             - [创建镜像]({{< relref "./docs/Container/创建镜像.md" >}})
             - [查看镜像]({{< relref "./docs/Container/查看镜像.md" >}})
             - [删除镜像]({{< relref "./docs/Container/删除镜像-35.md" >}})
-    
+        
         - [命令行参考]({{< relref "./docs/Container/命令行参考.md" >}})
             - [容器引擎]({{< relref "./docs/Container/容器引擎.md" >}})
             - [容器管理]({{< relref "./docs/Container/容器管理-36.md" >}})
@@ -734,7 +726,7 @@ headless: true
                 - [top]({{< relref "./docs/Container/top.md" >}})
                 - [update]({{< relref "./docs/Container/update.md" >}})
                 - [wait]({{< relref "./docs/Container/wait.md" >}})
-    
+        
             - [镜像管理]({{< relref "./docs/Container/镜像管理-37.md" >}})
                 - [build]({{< relref "./docs/Container/build.md" >}})
                 - [history]({{< relref "./docs/Container/history.md" >}})
@@ -749,7 +741,7 @@ headless: true
                 - [save]({{< relref "./docs/Container/save.md" >}})
                 - [search]({{< relref "./docs/Container/search.md" >}})
                 - [tag]({{< relref "./docs/Container/tag.md" >}})
-    
+        
             - [统计信息]({{< relref "./docs/Container/统计信息.md" >}})
                 - [events]({{< relref "./docs/Container/events.md" >}})
                 - [info]({{< relref "./docs/Container/info.md" >}})
