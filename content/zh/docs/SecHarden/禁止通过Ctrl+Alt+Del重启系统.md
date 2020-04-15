@@ -1,4 +1,4 @@
-# 禁止通过CTRL+ALT+DEL重启系统<a name="ZH-CN_TOPIC_0192977559"></a>
+# 禁止通过Ctrl+Alt+Del重启系统<a name="ZH-CN_TOPIC_0192977559"></a>
 
 ## 说明<a name="zh-cn_topic_0152100184_s1cfc95ad48354d7c99b199b3b2195eb0"></a>
 
