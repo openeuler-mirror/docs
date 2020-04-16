@@ -1,4 +1,4 @@
----
+﻿---
 headless: true
 ---
 - [法律声明]({{< relref "./docs/Releasenotes/法律声明.md" >}})
@@ -20,11 +20,6 @@ headless: true
     - [前言]({{< relref "./docs/Installation/前言.md" >}})
     - [安装准备]({{< relref "./docs/Installation/安装准备.md" >}})
     - [安装方式介绍]({{< relref "./docs/Installation/安装方式介绍.md" >}})
-        - [通过光盘安装]({{< relref "./docs/Installation/通过光盘安装.md" >}})
-        - [通过USB盘安装]({{< relref "./docs/Installation/通过USB盘安装.md" >}})
-        - [使用PXE通过网络安装]({{< relref "./docs/Installation/使用PXE通过网络安装.md" >}})
-        - [通过qcow2镜像安装]({{< relref "./docs/Installation/通过qcow2镜像安装.md" >}})
-        - [通过私有镜像安装]({{< relref "./docs/Installation/通过私有镜像安装.md" >}})
     - [安装指导]({{< relref "./docs/Installation/安装指导.md" >}})
         - [启动安装]({{< relref "./docs/Installation/启动安装.md" >}})
         - [通过图形化模式安装]({{< relref "./docs/Installation/通过图形化模式安装.md" >}})
@@ -320,7 +315,7 @@ headless: true
             - [加固内核参数]({{< relref "./docs/SecHarden/加固内核参数.md" >}})
         - [授权认证]({{< relref "./docs/SecHarden/授权认证.md" >}})
             - [设置网络远程登录的警告信息]({{< relref "./docs/SecHarden/设置网络远程登录的警告信息.md" >}})
-            - [禁止通过CTRL+ALT+DEL重启系统]({{< relref "./docs/SecHarden/禁止通过CTRL+ALT+DEL重启系统.md" >}})
+            - [禁止通过Ctrl+Alt+Del重启系统]({{< relref "./docs/SecHarden/禁止通过Ctrl+Alt+Del重启系统.md" >}})
             - [设置终端的自动退出时间]({{< relref "./docs/SecHarden/设置终端的自动退出时间.md" >}})
             - [设置用户的默认umask值为077]({{< relref "./docs/SecHarden/设置用户的默认umask值为077.md" >}})
             - [设置GRUB2加密口令]({{< relref "./docs/SecHarden/设置GRUB2加密口令.md" >}})
