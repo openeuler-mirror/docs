@@ -6,16 +6,19 @@ By default, you can restart the OS by holding down  **Ctrl**,  **Alt**, and  **D
 
 ## Implementation<a name="en-us_topic_0152100184_s5f42085a686a409c9100b25f21d2490d"></a>
 
-Shield the  **Ctrl+Alt+Del**  response function of the kernel keyboard.
+To disable the feature of restarting the system by holding down  **Ctrl**,  **Alt**, and  **Delete**, perform the following steps:
 
-```
-rm -f /etc/systemd/system/ctrl-alt-del.target
-rm -f /usr/lib/systemd/system/ctrl-alt-del.target
-```
+1.  Run the following commands to delete the two  **ctrl-alt-del.target**  files:
 
-  
+    ```
+    rm -f /etc/systemd/system/ctrl-alt-del.target
+    rm -f /usr/lib/systemd/system/ctrl-alt-del.target
+    ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->The following file is reserved because the Xen driver needs to be invoked and the system cannot respond to the  **Ctrl+Alt+Del**  operation. Therefore, there is no impact.  
->/usr/lib/systemd/system/ctrl-alt-del.target  
+2.  Change  **\#CtrlAltDelBurstAction=reboot-force**  to  **CtrlAltDelBurstAction=none**  in the  **/etc/systemd/system.conf**  file.
+3.  Run the following command to restart systemd for the modification to take effect:
+
+    ```
+    systemctl daemon-reexec
+    ```
 

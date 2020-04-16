@@ -320,7 +320,7 @@ headless: true
             - [加固内核参数]({{< relref "./docs/SecHarden/加固内核参数.md" >}})
         - [授权认证]({{< relref "./docs/SecHarden/授权认证.md" >}})
             - [设置网络远程登录的警告信息]({{< relref "./docs/SecHarden/设置网络远程登录的警告信息.md" >}})
-            - [禁止通过CTRL+ALT+DEL重启系统]({{< relref "./docs/SecHarden/禁止通过CTRL+ALT+DEL重启系统.md" >}})
+            - [禁止通过Ctrl+Alt+Del重启系统]({{< relref "./docs/SecHarden/禁止通过Ctrl+Alt+Del重启系统.md" >}})
             - [设置终端的自动退出时间]({{< relref "./docs/SecHarden/设置终端的自动退出时间.md" >}})
             - [设置用户的默认umask值为077]({{< relref "./docs/SecHarden/设置用户的默认umask值为077.md" >}})
             - [设置GRUB2加密口令]({{< relref "./docs/SecHarden/设置GRUB2加密口令.md" >}})
