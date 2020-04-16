@@ -46,8 +46,9 @@ Installation wizard options are described as follows:
     -   **Install openEuler 20.03-LTS in basic graphics mode**: Basic graphics installation mode. In this mode, the video driver is not started before the system starts and runs.
     -   **Rescue the openEuler system**: Rescue mode, which is used to restore the system. In rescue mode, the installation process is printed in the VNC or BMC, and the serial port is unavailable.
 
-
 On the installation wizard screen, press  **e**  to go to the parameter editing screen of the selected option, and press  **c**  to go to the command-line interface \(CLI\). 
+
+## Installation in GUI Mode
 
 On the installation wizard page, select  **Test this media & install openEuler 20.03 LTS**  to enter the GUI installation mode.
 
