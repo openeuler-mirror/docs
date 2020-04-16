@@ -1,4 +1,4 @@
----
+﻿---
 headless: true
 ---
 - [法律声明]({{< relref "./docs/Releasenotes/法律声明.md" >}})
@@ -20,11 +20,6 @@ headless: true
     - [前言]({{< relref "./docs/Installation/前言.md" >}})
     - [安装准备]({{< relref "./docs/Installation/安装准备.md" >}})
     - [安装方式介绍]({{< relref "./docs/Installation/安装方式介绍.md" >}})
-        - [通过光盘安装]({{< relref "./docs/Installation/通过光盘安装.md" >}})
-        - [通过USB盘安装]({{< relref "./docs/Installation/通过USB盘安装.md" >}})
-        - [使用PXE通过网络安装]({{< relref "./docs/Installation/使用PXE通过网络安装.md" >}})
-        - [通过qcow2镜像安装]({{< relref "./docs/Installation/通过qcow2镜像安装.md" >}})
-        - [通过私有镜像安装]({{< relref "./docs/Installation/通过私有镜像安装.md" >}})
     - [安装指导]({{< relref "./docs/Installation/安装指导.md" >}})
         - [启动安装]({{< relref "./docs/Installation/启动安装.md" >}})
         - [通过图形化模式安装]({{< relref "./docs/Installation/通过图形化模式安装.md" >}})
