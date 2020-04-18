@@ -25,7 +25,7 @@ Access the BIOS, set  **secure boot**  to  **disabled**, and reinstall the openE
 
 3.  Set  **Enforce Secure Boot**  to  **Disabled**.
 
-    ![](figures/选择.png)
+    ![](figures/enforce-secure-boot.png)
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >After  **Enforce Secure Boot**  is set to  **Disabled**, save the settings, and exit. Then, reinstall the system.  
