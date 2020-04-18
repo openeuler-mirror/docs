@@ -169,6 +169,6 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
 2.  The automatic installation window is displayed.
 3.  Verify that the installation is complete.
 
-    ![](figures/安装完成1-0.png)
+    ![](figures/completing-the-automatic-installation.png)
 
 
