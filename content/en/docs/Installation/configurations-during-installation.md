@@ -65,5 +65,5 @@ After configuration, click  **Done**  in the left-upper corner to switch back to
 
 Click  **Finish**. The configuration of openEuler is complete.
 
-![](figures/结束配置-new-en.png)
+![](figures/completing-the-configuration.png)
 
