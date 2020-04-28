@@ -6,7 +6,7 @@ Your replication, use, modification, and distribution of this document are gover
 
 **Trademarks and Permissions**
 
-A-Tune and openEuler are trademarks or registered trademarks of Huawei Technologies Co., Ltd. All other trademarks and registered trademarks mentioned in this document are the property of their respective holders.
+openEuler is a trademark of Huawei Technologies Co., Ltd. All other trademarks and registered trademarks mentioned in this document are the property of their respective holders.
 
 **Disclaimer**
 
