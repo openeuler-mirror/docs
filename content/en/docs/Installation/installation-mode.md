@@ -1,18 +1,37 @@
-# Installation Mode<a name="EN-US_TOPIC_0229291193"></a>
+# Installation Mode
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   Only TaiShan 200 and FusionServer Pro servers are supported. For details about the supported server models, see [Installation Preparations](installation-preparations.html). Only a virtualization platform created by the virtualization components \(openEuler as the host OS and QEMU and KVM provided in the release package\) of openEuler and the x86 virtualization platform of Huawei public cloud are supported.  
->-   Currently, only installation modes such as CD-ROM, USB flash drive, network, QCOW2 image, and private image are supported. In addition, only the x86 virtualization platform of Huawei public cloud supports the private image installation mode.  
+>-   Only TaiShan 200 and FusionServer Pro servers are supported. For details about the supported server models, see [Hardware Compatibility](installation-preparations.html#hardware-compatibility). Only a virtualization platform created by the virtualization components \(openEuler as the host OS and QEMU and KVM provided in the release package\) of openEuler and the x86 virtualization platform of Huawei public cloud are supported.  
+>-   Currently, only installation modes such as CD-ROM, USB flash drive, network, QCOW2 image, and private image are supported. In addition, only the x86 virtualization platform of Huawei public cloud supports the private image installation mode. 
 
-## Installation Through a CD/DVD-ROM<a name="EN-US_TOPIC_0229291241"></a>
+<!-- TOC -->
+
+- [Installation Mode](#installation-mode)
+  - [Installation Through a CD/DVD-ROM](#installation-through-a-cddvd-rom)
+    - [Preparing the Installation Source](#preparing-the-installation-source)
+    - [Starting the Installation](#starting-the-installation)
+  - [Installation Through a USB Flash Drive](#installation-through-a-usb-flash-drive)
+    - [Preparing the Installation Source](#preparing-the-installation-source-1)
+    - [Starting the Installation](#starting-the-installation-1)
+  - [Installation Through the Network Using PXE](#installation-through-the-network-using-pxe)
+  - [Installation Through a QCOW2 Image](#installation-through-a-qcow2-image)
+    - [Creating a QCOW2 Image](#creating-a-qcow2-image)
+    - [Starting the Installation](#starting-the-installation-2)
+  - [Installation Through a Private Image](#installation-through-a-private-image)
+    - [Creating a Private Image](#creating-a-private-image)
+    - [Starting the Installation](#starting-the-installation-3)
+
+<!-- /TOC -->
+
+## Installation Through a CD/DVD-ROM
 
 This section describes how to create or use a CD/DVD-ROM to install the openEuler.
 
-### Preparing the Installation Source<a name="en-us_topic_0022605796_en-us_topic_0016259799_section66369966101113"></a>
+### Preparing the Installation Source
 
 If you have obtained a CD/DVD-ROM, install the OS using the CD/DVD-ROM. If you have obtained an ISO file, record the ISO file to a DVD and install the OS using the obtained DVD.
 
-### Starting the Installation<a name="en-us_topic_0022605796_en-us_topic_0016259799_section47344128153516"></a>
+### Starting the Installation
 
 Perform the following operations to start the installation:
 
@@ -26,11 +45,11 @@ Perform the following operations to start the installation:
 
 After a short delay, a graphical wizard page is displayed, which contains different boot options. If you do not perform any operation within one minute, the installation starts automatically with the default options.
 
-## Installation Through a USB Flash Drive<a name="EN-US_TOPIC_0229291281"></a>
+## Installation Through a USB Flash Drive
 
 This section describes how to create or use a USB flash drive to install the openEuler.
 
-### Preparing the Installation Source<a name="en-us_topic_0022605797_en-us_topic_0018374843_section16523819201222"></a>
+### Preparing the Installation Source
 
 Pay attention to the capacity of the USB flash drive. The USB flash drive must have sufficient space to store the entire image. It is recommended that the USB flash drive has more than 16 GB space.
 
@@ -90,7 +109,7 @@ Pay attention to the capacity of the USB flash drive. The USB flash drive must h
     No progress is displayed during the image write process. When the number sign \(\#\) appears again, the write is complete. Exit the  **root**  account and remove the USB flash drive. In this case, you can use the USB flash drive as the installation source of the system.
 
 
-### Starting the Installation<a name="en-us_topic_0022605797_en-us_topic_0018374843_section61839653201222"></a>
+### Starting the Installation
 
 Perform the following operations to start the installation:
 
@@ -104,7 +123,7 @@ Perform the following operations to start the installation:
 
 After a short delay, a graphical wizard page is displayed, which contains different boot options. If you do not perform any operation within one minute, the installation program automatically starts the installation.
 
-## Installation Through the Network Using PXE<a name="EN-US_TOPIC_0229291253"></a>
+## Installation Through the Network Using PXE
 
 To boot with PXE, you need to properly configure the server and your computer's network interface to support PXE.
 
@@ -113,13 +132,13 @@ If the target hardware is installed with a PXE-enabled NIC, we can configure it 
 For installation through the network using PXE, the client uses a PXE-enabled NIC to send a broadcast request for DHCP information and IP address to the network. The DHCP server provides the client with an IP address and other network information, such as the IP address or host name of the DNS and FTP server \(which provides the files required for starting the installation program\), and the location of the files on the server.
 
 >![](C:/Users/Administrator/Downloads/openDocs/docs/content/en/docs/Installation/public_sys-resources/icon-note.gif) **NOTE:**   
->The TFTP, DHCP, and HTTP server configurations are not described here. For details, see  [Full-automatic Installation Guide](full-automatic-installation-guide.html).  
+>The TFTP, DHCP, and HTTP server configurations are not described here. For details, see  [Full-automatic Installation Guide](using-kickstart-for-automatic-installation.html#full-automatic-installation-guide).  
 
-## Installation Through a QCOW2 Image<a name="EN-US_TOPIC_0229424318"></a>
+## Installation Through a QCOW2 Image
 
 This section describes how to create or use a QCOW2 image to install the openEuler.
 
-### Creating a QCOW2 Image<a name="en-us_topic_0022605796_en-us_topic_0016259799_section66369966101113"></a>
+### Creating a QCOW2 Image
 
 1.  Install the  **qemu-img**  software package.
 
@@ -148,7 +167,7 @@ This section describes how to create or use a QCOW2 image to install the openEul
     ```
 
 
-### Starting the Installation<a name="en-us_topic_0022605796_en-us_topic_0016259799_section47344128153516"></a>
+### Starting the Installation
 
 Perform the following operations to start the installation:
 
@@ -161,15 +180,15 @@ Perform the following operations to start the installation:
 
 For details, see the  [*openEuler 20.03 LTS Virtualization User Guide*](../Virtualization/virtualization.html).
 
-## Installation Through a Private Image<a name="EN-US_TOPIC_0229424319"></a>
+## Installation Through a Private Image
 
 This section describes how to create or use a private image to install the openEuler.
 
-### Creating a Private Image<a name="en-us_topic_0022605796_en-us_topic_0016259799_section66369966101113"></a>
+### Creating a Private Image
 
 For instructions about how to create a private image, see [*Image Management Service User Guide*](https://support.huaweicloud.com/intl/en-us/usermanual-ims/en-us_topic_0013901628.html).
 
-### Starting the Installation<a name="en-us_topic_0022605796_en-us_topic_0016259799_section47344128153516"></a>
+### Starting the Installation
 
 For details about how to start the x86 virtualization platform of Huawei public cloud, see  [Elastic Cloud Server User Guide](https://support.huaweicloud.com/intl/en-us/wtsnew-ims/index.html).
 

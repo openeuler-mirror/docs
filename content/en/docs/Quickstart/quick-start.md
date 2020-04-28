@@ -1,8 +1,19 @@
-# Quick Start<a name="EN-US_TOPIC_0234821063"></a>
+# Quick Start
 
 This document uses openEuler 20.03 LTS installed on the TaiShan 200 server as an example to describe how to quickly install and use openEuler OS. For details about the installation requirements and methods, see  [openEuler 20.03 LTS Installation Guide](https://openeuler.org/en/docs/20.03_LTS/docs/Installation/Installation.html).
+<!-- TOC -->
 
-## Installation Preparations<a name="section961619421432"></a>
+- [Quick Start](#quick-start)
+  - [Installation Preparations](#installation-preparations)
+  - [Obtaining the Installation Source](#obtaining-the-installation-source)
+  - [Release Package Integrity Check](#release-package-integrity-check)
+  - [Starting the Installation](#starting-the-installation)
+  - [Installation](#installation)
+  - [Viewing System Information](#viewing-system-information)
+
+<!-- /TOC -->
+
+## Installation Preparations
 
 -   Hardware Compatibility
 
@@ -85,7 +96,7 @@ This document uses openEuler 20.03 LTS installed on the TaiShan 200 server as an
     </table>
 
 
-## Obtaining the Installation Source<a name="section762313431042"></a>
+## Obtaining the Installation Source
 
 Perform the following operations to obtain the openEuler release package:
 
@@ -111,7 +122,7 @@ Perform the following operations to obtain the openEuler release package:
 
 
 
-## Release Package Integrity Check<a name="section96991524572"></a>
+## Release Package Integrity Check
 
 To prevent incomplete download of the software package due to network or storage device problems during the transmission, you can perform the following steps to check the integrity of the obtained openEuler software package:
 
@@ -134,7 +145,7 @@ To prevent incomplete download of the software package due to network or storage
     If the verification values are consistent, the .iso file is not damaged. If they are inconsistent, you can confirm that the file is damaged and you need to obtain the file again.
 
 
-## Starting the Installation<a name="section12166235520"></a>
+## Starting the Installation
 
 1.  Log in to the iBMC WebUI.
 
@@ -179,7 +190,7 @@ To prevent incomplete download of the software package due to network or storage
 
 9.  On the installation wizard page, press  **Enter**  to select the default option  **Test this media & install openEuler 20.03 LTS**  to enter the GUI installation page.
 
-## Installation<a name="section713616341651"></a>
+## Installation
 
 After entering the GUI installation page, perform the following operations to install the system:
 
@@ -291,7 +302,7 @@ After entering the GUI installation page, perform the following operations to in
     <img src="figures/completing-the-installation.png" title="completing-the-installation"  />
 
 
-## Viewing System Information<a name="section133115101667"></a>
+## Viewing System Information
 
 After the system is installed and restarted, the system CLI login page is displayed. Enter the username and password set during the installation to log in to openEuler OS and view the following system information. For details about system management and configuration, see the  [openEuler 20.03 LTS Administrator Guide](https://openeuler.org/en/docs/20.03_LTS/docs/Administration/administration.html).
 

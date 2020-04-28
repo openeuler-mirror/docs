@@ -1,8 +1,25 @@
-# Installation Preparations<a name="EN-US_TOPIC_0229291279"></a>
+# Installation Preparations
 
 This section describes the compatibility of the hardware and software and the related configurations and preparations required for the installation.
 
-## Obtaining the Installation Source<a name="EN-US_TOPIC_0229291237"></a>
+<!-- TOC -->
+
+- [Installation Preparations](#installation-preparations)
+  - [Obtaining the Installation Source](#obtaining-the-installation-source)
+  - [Release Package Integrity Check](#release-package-integrity-check)
+    - [Introduction](#introduction)
+    - [Prerequisites](#prerequisites)
+    - [Procedure](#procedure)
+  - [Installation Requirements for PMs](#installation-requirements-for-pms)
+    - [Hardware Compatibility](#hardware-compatibility)
+    - [Minimum Hardware Specifications](#minimum-hardware-specifications)
+  - [Installation Requirements for VMs](#installation-requirements-for-vms)
+    - [Virtualization Platform Compatibility](#virtualization-platform-compatibility)
+    - [Minimum Virtualization Space](#minimum-virtualization-space)
+
+<!-- /TOC -->
+
+## Obtaining the Installation Source
 
 Obtain the openEuler release package and verification file before the installation.
 
@@ -28,18 +45,18 @@ Perform the following operations to obtain the openEuler release package:
         2.  Click  **openEuler-20.03-LTS-x86\_64-dvd.iso**  to download the openEuler release package to the local host.
         3.  Click  **openEuler-20.03-LTS-x86\_64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
 
-## Release Package Integrity Check<a name="EN-US_TOPIC_0229291245"></a>
+## Release Package Integrity Check
 
 >![](C:/Users/Administrator/Downloads/openDocs/docs/content/en/docs/Installation/public_sys-resources/icon-note.gif) **NOTE:**   
 >This section describes how to verify the integrity of the release package in the AArch64 architecture. The procedure for verifying the integrity of the release package in the x86\_64 architecture is the same.  
 
-### Introduction<a name="section544295081513"></a>
+### Introduction
 
 To prevent the software package from being incompletely downloaded due to network or storage device faults during transmission, you need to verify the integrity of the software package after obtaining it. Only the software packages that pass the verification can be installed.
 
 Compare the verification value recorded in the verification file with the .iso file verification value calculated manually to check whether the software package passes the verification. If the verification values are consistent, the .iso file is not damaged. If they are inconsistent, you can confirm that the file is damaged and you need to obtain the file again.
 
-### Prerequisites<a name="section1839292418149"></a>
+### Prerequisites
 
 Before verifying the integrity of the release package, you need to prepare the following files:
 
@@ -47,7 +64,7 @@ ISO file:  **openEuler-20.03-LTS-aarch64-dvd.iso**
 
 Verification file:  **openEuler-20.03-LTS-aarch64-dvd.iso.sha256sum**
 
-### Procedure<a name="section3301113671818"></a>
+### Procedure
 
 To verify the file integrity, perform the following operations:
 
@@ -69,11 +86,11 @@ To verify the file integrity, perform the following operations:
 
     If the verification values are consistent, the .iso file is not damaged. If they are inconsistent, you can confirm that the file is damaged and you need to obtain the file again.
 
-## Installation Requirements for PMs<a name="EN-US_TOPIC_0229409544"></a>
+## Installation Requirements for PMs
 
 To install the openEuler OS on a PM, the PM must meet the following hardware compatibility and minimum hardware requirements.
 
-### Hardware Compatibility<a name="EN-US_TOPIC_0229291190"></a>
+### Hardware Compatibility
 
 You need to take hardware compatibility into account during openEuler installation.  [Table 1](#table14948632047)  describes the types of supported servers.
 
@@ -113,7 +130,7 @@ You need to take hardware compatibility into account during openEuler installati
 </tbody>
 </table>
 
-### Minimum Hardware Specifications<a name="EN-US_TOPIC_0229291228"></a>
+### Minimum Hardware Specifications
 
 [Table 2](#tff48b99c9bf24b84bb602c53229e2541)  lists the minimum hardware specifications supported by openEuler.
 
@@ -160,18 +177,18 @@ You need to take hardware compatibility into account during openEuler installati
 </tbody>
 </table>
 
-## Installation Requirements for VMs<a name="EN-US_TOPIC_0229409545"></a>
+## Installation Requirements for VMs
 
 To install the openEuler OS on a VM, the VM must meet the following hardware compatibility and minimum hardware requirements.
 
-### Virtualization Platform Compatibility<a name="EN-US_TOPIC_0229409546"></a>
+### Virtualization Platform Compatibility
 
 When installing openEuler, pay attention to the compatibility of the virtualization platform. Currently, the following virtualization platforms are supported:
 
 -   A virtualization platform created by the virtualization components \(openEuler as the host OS and QEMU and KVM provided in the release package\) of openEuler
 -   x86 virtualization platform of Huawei public cloud
 
-### Minimum Virtualization Space<a name="EN-US_TOPIC_0229409547"></a>
+### Minimum Virtualization Space
 
 [Table 3](#tff48b99c9bf24b84bb602c53229e2541)  lists the minimum virtualization space required by openEuler.
 
