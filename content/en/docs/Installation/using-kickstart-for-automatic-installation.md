@@ -9,7 +9,7 @@
     - [Semi-automatic Installation Guide](#semi-automatic-installation-guide)
         - [Environment Requirements](#environment-requirements)
         - [Procedure](#procedure)
-        - [Full-automatic Installation Guide](#full-automatic-installation-guide)
+    - [Full-automatic Installation Guide](#full-automatic-installation-guide)
         - [Environment Requirements](#environment-requirements-1)
         - [Procedure](#procedure-1)
 
