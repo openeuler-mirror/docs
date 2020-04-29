@@ -7,19 +7,19 @@
 <!-- TOC -->
 
 - [Installation Mode](#installation-mode)
-  - [Installation Through a CD/DVD-ROM](#installation-through-a-cddvd-rom)
-    - [Preparing the Installation Source](#preparing-the-installation-source)
-    - [Starting the Installation](#starting-the-installation)
-  - [Installation Through a USB Flash Drive](#installation-through-a-usb-flash-drive)
-    - [Preparing the Installation Source](#preparing-the-installation-source-1)
-    - [Starting the Installation](#starting-the-installation-1)
-  - [Installation Through the Network Using PXE](#installation-through-the-network-using-pxe)
-  - [Installation Through a QCOW2 Image](#installation-through-a-qcow2-image)
-    - [Creating a QCOW2 Image](#creating-a-qcow2-image)
-    - [Starting the Installation](#starting-the-installation-2)
-  - [Installation Through a Private Image](#installation-through-a-private-image)
-    - [Creating a Private Image](#creating-a-private-image)
-    - [Starting the Installation](#starting-the-installation-3)
+    - [Installation Through a CD/DVD-ROM](#installation-through-a-cddvd-rom)
+        - [Preparing the Installation Source](#preparing-the-installation-source)
+        - [Starting the Installation](#starting-the-installation)
+    - [Installation Through a USB Flash Drive](#installation-through-a-usb-flash-drive)
+        - [Preparing the Installation Source](#preparing-the-installation-source-1)
+        - [Starting the Installation](#starting-the-installation-1)
+    - [Installation Through the Network Using PXE](#installation-through-the-network-using-pxe)
+    - [Installation Through a QCOW2 Image](#installation-through-a-qcow2-image)
+        - [Creating a QCOW2 Image](#creating-a-qcow2-image)
+        - [Starting the Installation](#starting-the-installation-2)
+    - [Installation Through a Private Image](#installation-through-a-private-image)
+        - [Creating a Private Image](#creating-a-private-image)
+        - [Starting the Installation](#starting-the-installation-3)
 
 <!-- /TOC -->
 
