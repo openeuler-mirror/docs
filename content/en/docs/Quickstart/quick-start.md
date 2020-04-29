@@ -4,12 +4,12 @@ This document uses openEuler 20.03 LTS installed on the TaiShan 200 server as an
 <!-- TOC -->
 
 - [Quick Start](#quick-start)
-  - [Installation Preparations](#installation-preparations)
-  - [Obtaining the Installation Source](#obtaining-the-installation-source)
-  - [Release Package Integrity Check](#release-package-integrity-check)
-  - [Starting the Installation](#starting-the-installation)
-  - [Installation](#installation)
-  - [Viewing System Information](#viewing-system-information)
+    - [Installation Preparations](#installation-preparations)
+    - [Obtaining the Installation Source](#obtaining-the-installation-source)
+    - [Release Package Integrity Check](#release-package-integrity-check)
+    - [Starting the Installation](#starting-the-installation)
+    - [Installation](#installation)
+    - [Viewing System Information](#viewing-system-information)
 
 <!-- /TOC -->
 

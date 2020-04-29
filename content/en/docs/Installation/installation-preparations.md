@@ -5,17 +5,17 @@ This section describes the compatibility of the hardware and software and the re
 <!-- TOC -->
 
 - [Installation Preparations](#installation-preparations)
-  - [Obtaining the Installation Source](#obtaining-the-installation-source)
-  - [Release Package Integrity Check](#release-package-integrity-check)
-    - [Introduction](#introduction)
-    - [Prerequisites](#prerequisites)
-    - [Procedure](#procedure)
-  - [Installation Requirements for PMs](#installation-requirements-for-pms)
-    - [Hardware Compatibility](#hardware-compatibility)
-    - [Minimum Hardware Specifications](#minimum-hardware-specifications)
-  - [Installation Requirements for VMs](#installation-requirements-for-vms)
-    - [Virtualization Platform Compatibility](#virtualization-platform-compatibility)
-    - [Minimum Virtualization Space](#minimum-virtualization-space)
+    - [Obtaining the Installation Source](#obtaining-the-installation-source)
+    - [Release Package Integrity Check](#release-package-integrity-check)
+        - [Introduction](#introduction)
+        - [Prerequisites](#prerequisites)
+        - [Procedure](#procedure)
+    - [Installation Requirements for PMs](#installation-requirements-for-pms)
+        - [Hardware Compatibility](#hardware-compatibility)
+        - [Minimum Hardware Specifications](#minimum-hardware-specifications)
+    - [Installation Requirements for VMs](#installation-requirements-for-vms)
+        - [Virtualization Platform Compatibility](#virtualization-platform-compatibility)
+        - [Minimum Virtualization Space](#minimum-virtualization-space)
 
 <!-- /TOC -->
 
