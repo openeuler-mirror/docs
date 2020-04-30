@@ -320,5 +320,3 @@ x86物理机安装系统时，由于设置了BIOS选项security boot 为enable�
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >设置security boot为disable之后，保存退出，重新安装即可。  
 
-
-
