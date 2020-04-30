@@ -1,4 +1,4 @@
-# Viewing System Information<a name="EN-US_TOPIC_0229622705"></a>
+# Viewing System Information
 
 -   Run the following command to view the system information:
 
