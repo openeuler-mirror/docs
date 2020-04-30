@@ -1,1 +1,4 @@
-This document describes common administrator operations in the openEuler system.
+# Administrator Guide
+
+This document provides common administrator operations of the openEuler system to help administrators better use the system.
+This document is intended for all administrators who use openEuler.

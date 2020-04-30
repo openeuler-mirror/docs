@@ -320,5 +320,3 @@ Access the BIOS, set  **secure boot**  to  **disabled**, and reinstall the openE
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >After  **Enforce Secure Boot**  is set to  **Disabled**, save the settings, and exit. Then, reinstall the system.  
 
-
-
