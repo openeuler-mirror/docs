@@ -66,10 +66,10 @@ For example, if you want to use Simplified Chinese as the locale, run the follow
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
->After the modification, log in again or run the following command to update the configuration file for the modification to take effect:  
+>After the modification, log in again or run the following command to update the configuration file for the modification to take effect:
 >```  
 >source /etc/locale.conf  
->```  
+>```
 
 ## Setting the Keyboard Layout
 

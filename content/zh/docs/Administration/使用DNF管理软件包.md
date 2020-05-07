@@ -275,7 +275,7 @@ dnf list all
 要列出系统中特定的RPM包信息，使用命令如下：
 
 ```
-dnf list glob_expression…
+dnf list glob_expression...
 ```
 
 示例如下：
@@ -291,7 +291,7 @@ httpd.aarch64              2.4.34-8.h5.oe1           Local
 要显示一个或者多个RPM包信息，使用命令如下：
 
 ```
-dnf info package_name…
+dnf info package_name...
 ```
 
 例如搜索，命令如下：
@@ -323,7 +323,7 @@ dnf install package_name
 您也可以通过添加软件包名字同时安装多个软件包。配置文件/etc/dnf/dnf.conf添加参数strict=False，运行dnf命令参数添加\-\-setopt=strict=0。请在root权限下执行如下命令：
 
 ```
-dnf install package_name package_name… --setopt=strict=0
+dnf install package_name package_name... --setopt=strict=0
 ```
 
 示例如下：
@@ -360,7 +360,7 @@ dnf download --resolve package_name
 要卸载软件包以及相关的依赖软件包，请在root权限下执行如下命令：
 
 ```
-dnf remove package_name…
+dnf remove package_name...
 ```
 
 示例如下：
@@ -421,7 +421,7 @@ Available Groups:
 要列出包含在一个软件包组中必须安装的包和可选包，使用命令如下：
 
 ```
-dnf group info glob_expression…
+dnf group info glob_expression...
 ```
 
 例如显示Development Tools信息，示例如下：
