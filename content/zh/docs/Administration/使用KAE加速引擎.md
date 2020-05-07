@@ -246,7 +246,7 @@ export OPENSSL_ENGINES=/usr/local/lib/engines-1.1
 
 执行**rpm -qa**命令查看加速器引擎软件包是否安装成功。
 
-打印信息中包含“_软件包名_-_版本号-_”表示该软件包安装成功。示例如下。
+打印信息中包含“ _软件包名-版本号-_ ”表示该软件包安装成功。示例如下。
 
 ```
 rpm -qa|grep -E "hisi|uacce|libwd|libkae"

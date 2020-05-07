@@ -745,7 +745,7 @@ In the preceding information:
 -   _databasename_: database name. If this parameter is not specified, the environment variable  **PGDATABASE**  is used. If that environment variable is not specified, use the username that initiates the connection.
 -   _outfile_: database backup file.
 -   _option_: parameter option of the  **pg\_dump**  command. Multiple parameters can be separated by spaces. The common parameters of the  **pg\_dump**  command are as follows:
-    -   **-f **_filename_**, \-\-file**= _filename_: specified output file. If this parameter is ignored, the standard output is used.
+    -   **-f, \-\-file**= _filename_: specified output file. If this parameter is ignored, the standard output is used.
     -   **-d, \-\-dbname**= _databasename_: database to be dumped.
     -   **-h, \-\-host**= _hostname_: specifies the hostname.
     -   **-p, \-\-port**= _portnumber_: port number.
@@ -774,7 +774,7 @@ In the preceding information:
 -   _username_: name of a user.
 -   _infile_:  **outfile**  parameter in the  **pg\_dump**  command.
 -   _option_: parameter option of the  **psql**  command. Multiple parameters can be separated by spaces. The common parameters of the  **psql**  command are as follows:
-    -   **-f **_filename_**, \-\-file**= _filename_: specified output file. If this parameter is ignored, the standard output is used.
+    -   **-f, \-\-file**= _filename_: specified output file. If this parameter is ignored, the standard output is used.
     -   **-d, \-\-dbname**= _databasename_: database to be dumped.
     -   **-h, \-\-host**= _hostname_: specifies the hostname.
     -   **-p, \-\-port**= _portnumber_: port number.
