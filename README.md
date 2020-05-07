@@ -2,7 +2,7 @@
 
 ### Brief Introduction
 
-Docs maintains openEuler documentaions which is integrated by online website. Now we are under developing.
+Docs maintains openEuler documentations which is integrated by online website. Now we are under developing.
 you are welcome to join us.
 
 ### Installation
@@ -14,6 +14,11 @@ docker build -t docs:v0.0.1 .
 ```
 
 note: here ```docs``` is the image name, you can change it as you need.
+
+> TO THOSE WHO MAY CONCERN:
+> If you are working behind proxy, use `--build-arg` option to tell `docker build` about it:
+>	docker build --build-arg http_proxy="http://username:password@your.proxy.com:port" -t docs:v0.0.1 .
+> `--build-arg` can be specified many times, like `http_proxy`, `https_proxy`, `HTTP_PROXY`, `HTTPS_PROXY` and so on.
 
 2. Running in container
 
@@ -46,5 +51,3 @@ Please refer to [CONTRIBUTING](./CONTRIBUTING.md) for more guide.
 
 - IRC: #openeuler-doc
 - MAIL: dev@openeuler.org
-
-
