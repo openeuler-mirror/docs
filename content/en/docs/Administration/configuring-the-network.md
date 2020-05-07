@@ -542,7 +542,7 @@ To change the host name in a remote system, run the  **hostnamectl**  command wi
 # hostnamectl set-hostname -H [username]@hostname new_hostname
 ```
 
-In the preceding command,  _hostname_  indicates the name of the remote host to be configured,  _username _indicates the user-defined name, and  _new\_hostname_  indicates the new host name.  **hostnamectl**  is used to connect to the remote system through SSH.
+In the preceding command,  _hostname_  indicates the name of the remote host to be configured,  _username_ indicates the user-defined name, and  *new\_hostname*  indicates the new host name.  **hostnamectl**  is used to connect to the remote system through SSH.
 
 ### Configuring a Host Name by Running the nmcli Command
 
