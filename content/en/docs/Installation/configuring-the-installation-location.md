@@ -5,6 +5,8 @@ Enter  **5**  on the installation overview page and press  **Enter**  to configu
 **Figure  1**  Installation destination<a name="fig62936221559"></a>  
 ![](figures/installation-destination.png "installation-destination")
 
+Enter **2** and press **Enter** to select **Use All Space**, then enter **c** to specify the partition scheme configuration. Enter **1** to select **Standard Partition**. The parameters are described as follows:
+
 -   **Partitioning options**
     1.  Replace existing Linux system\(s\): Replace the existing system. Only the space occupied by the existing system is used. The existing system data will be overwritten.
     2.  Use All Space: Use all space. Clear all data in the system disk. All system disk space is used for the installation of the system.

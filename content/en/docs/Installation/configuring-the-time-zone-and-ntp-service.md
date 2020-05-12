@@ -13,16 +13,13 @@ Enter  **1**  and press  **Enter**  to configure the system time zone, as shown 
 
 When you select a city, the cities will be displayed in the paging mode if a large number of cities exist in the system. When the message  **Press ENTER to continue**  is displayed, press  **Enter**  to display all cities.
 
-**Figure  2**  Cities<a name="fig7667103717316"></a>  
-![](figures/cities.png "cities")
-
 ## Setting the NTP Service<a name="en-us_topic_0155778951_section1434589596"></a>
 
-After the time zone is configured, return to the main installation interface \(as shown in the  **Installation**  overview\), enter  **2**, and press** Enter**. The interface for configuring the time zone and NTP service is displayed.
+After the time zone is configured, return to the main installation interface \(as shown in the  **Installation**  overview\), enter  **2**, and press **Enter**. The interface for configuring the time zone and NTP service is displayed.
 
 Enter  **2**  and press  **Enter**  to configure the NTP service.
 
-**Figure  3**  Configuring the NTP server<a name="en-us_topic_0155778951_fig147741931111610"></a>  
+**Figure  2**  Configuring the NTP server<a name="en-us_topic_0155778951_fig147741931111610"></a>  
 ![](figures/configuring-the-ntp-server.png "configuring-the-ntp-server")
 
   

@@ -8,8 +8,8 @@ After all mandatory items are configured on the installation overview page, the 
 **Figure  2**  Pressing  **Enter**  to restart the system after the installation is complete<a name="fig9722125434418"></a>  
 ![](figures/pressing-enter-to-restart-the-system-after-the-installation-is-complete.png "pressing-enter-to-restart-the-system-after-the-installation-is-complete")
 
-**Figure  3**  Entering the login page after the installation is complete<a name="fig12380105124511"></a>  
-![](figures/entering-the-login-page-after-the-installation-is-complete.png "entering-the-login-page-after-the-installation-is-complete")
+-   If the physical DVD-ROM is used to install the OS and the DVD-ROM drive is not automatically ejected during the restart, manually remove the DVD-ROM. Then, the openEuler CLI login page is displayed.
+-   If the virtual DVD-ROM drive is used to install the OS, change the server boot option to  **Hard Disk**  and restart the server. Then, the openEuler CLI login page is displayed.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >-   Because the BIOS reserves memory, the total memory \(indicated by  **MemTotal**\) is slightly different before and after the system restart.  

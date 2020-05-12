@@ -4,10 +4,12 @@ Enter  **4**  on the installation overview page, and then press  **Enter**  to s
 
 -   Minimal Install: Minimum environment. Provide basic functions of openEuler. By default, openEuler is installed in the minimum environment mode.
 
-You need to select an appropriate installation environment based on service requirements. After entering  **c**  on the installation environment interface, you can select the software packages to be installed by selecting  **Add-ons**, as shown in the following figure.
+After entering  **c**  on the installation environment interface, you can select the software packages to be installed by selecting  **Add-ons**, as shown in the following figure.
 
 **Figure  1**  Installing software<a name="fig159711956247"></a>  
 ![](figures/installing-software.png "installing-software")
+
+Enter **1** and press **Enter** to select **Standard**, then enter **c** to return to the installation overview page.
 
 The optional  **Add-ons**  packages vary depending on the installation environment.
 
