@@ -12,6 +12,8 @@ headless: true
 
     - [Installation Mode]({{< relref "./docs/Installation/installation-mode.md" >}})
         - [Installation Through the CD/DVD-ROM]({{< relref "./docs/Installation/installation-through-the-cd-dvd-rom.md" >}})
+        - [Installation Through a USB Flash Drive]({{< relref "./docs/Installation/installation-through-a-usb-flash-drive.md" >}})
+        - [Installation Through the Network Using PXE]({{< relref "./docs/Installation/installation-through-the-network-using-pxe.md" >}})
 
     - [Installation Guideline]({{< relref "./docs/Installation/installation-guideline.md" >}})
         - [Starting the Installation]({{< relref "./docs/Installation/starting-the-installation.md" >}})
@@ -45,6 +47,11 @@ headless: true
 
             - [Completing the Installation]({{< relref "./docs/Installation/completing-the-installation-3.md" >}})
 
+    - [Using Kickstart for Automatic Installation]({{< relref "./docs/Installation/using-kickstart-for-automatic-installation.md" >}})
+        - [Introduction]({{< relref "./docs/Installation/introduction.md" >}})
+        - [Semi-automatic Installation Guide]({{< relref "./docs/Installation/semi-automatic-installation-guide.md" >}})
+        - [Full-automatic Installation Guide]({{< relref "./docs/Installation/full-automatic-installation-guide.md" >}})
+
 
     - [FAQs]({{< relref "./docs/Installation/faqs.md" >}})
         - [Why Does openEuler Fail to Start After I Install It to the Second Disk?]({{< relref "./docs/Installation/why-does-openeuler-fail-to-start-after-i-install-it-to-the-second-disk.md" >}})
@@ -52,8 +59,6 @@ headless: true
         - [Why Does openEuler Enter Emergency Mode After It Is Powered On?]({{< relref "./docs/Installation/why-does-openeuler-enter-emergency-mode-after-it-is-powered-on.md" >}})
         - [Failed to Reinstall openEuler When a Logical Volume Group That Cannot Be Activated Has Existed in openEuler]({{< relref "./docs/Installation/failed-to-reinstall-openeuler-when-a-logical-volume-group-that-cannot-be-activated-has-existed-in-op.md" >}})
         - [An Exception Occurs During the Selection of the Installation Source]({{< relref "./docs/Installation/an-exception-occurs-during-the-selection-of-the-installation-source.md" >}})
-            - [Software Dependency]({{< relref "./docs/Installation/software-dependency.md" >}})
-
         - [How Do I Manually Enable the kdump Service?]({{< relref "./docs/Installation/how-do-i-manually-enable-the-kdump-service.md" >}})
 
 
