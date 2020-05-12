@@ -1,6 +1,6 @@
 # Using GUI Mode for Installation<a name="EN-US_TOPIC_0214071154"></a>
 
-On the installation wizard page, select  **Install openEuler 1.0 with GUI mode**  to enter the GUI mode.
+On the installation wizard page, select  **Test this media & Install openEuler 1.0 with GUI mode**  to enter the GUI mode.
 
 Perform graphical installation operations using a keyboard.
 

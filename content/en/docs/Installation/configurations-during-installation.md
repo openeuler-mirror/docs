@@ -62,4 +62,8 @@ Click  **User Creation**.  [Figure 3](#en-us_topic_0186390266_en-us_topic_012214
 ![](figures/advanced-user-configuration.png "advanced-user-configuration")
 
 After configuration, click  **Done**  in the left-upper corner to switch back to the installation process interface.
+Click  **Finish**. The configuration of openEuler is complete.
+
+![](figures/completing-the-configuration.png)
+
 

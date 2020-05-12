@@ -26,5 +26,8 @@ NIC configuration description
 7.  Connect automatically after reboot: Automatically connect to the network after the reboot.
 8.  Apply configuration in installer: Apply the configuration in the installation program.
 
+>![](public_sys-resources/icon-note.gif) **说明：**   
+>**Apply configuration in installer** is only recommended when the installation source is **Network**. If **Apply configuration in installer** is selected, the installation software needs to be reselected.
+
 After the configuration is complete, enter  **c**  to return to the installation overview page.
 

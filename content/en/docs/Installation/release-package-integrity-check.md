@@ -10,9 +10,9 @@ Compare the verification value recorded in the verification file with the .iso f
 
 Before verifying the integrity of the release package, you need to prepare the following files:
 
-.iso file:  **openEuler-1.0-aarch64-dvd.iso**
+.iso file:  **openEuler-1.0-base-aarch64-dvd.iso**
 
-Verification file:  **openEuler-1.0-aarch64-dvd.iso.sha256sum**
+Verification file:  **openEuler-1.0-base-aarch64-dvd.iso.sha256sum**
 
 ## Procedure<a name="section3301113671818"></a>
 
@@ -21,13 +21,13 @@ To verify the file integrity, perform the following operations:
 1.  Run the following command to obtain the verification value in the verification file:
 
     ```
-    #cat openEuler-1.0-aarch64-dvd.iso.sha256sum 
+    #cat openEuler-1.0-base-aarch64-dvd.iso.sha256sum 
     ```
 
 2.  Run the following command to calculate the SHA256 verification value of the file:
 
     ```
-    #sha256sum openEuler-1.0-aarch64-dvd.iso
+    #sha256sum openEuler-1.0-base-aarch64-dvd.iso
     ```
 
     After the command is run, the verification value is displayed.
