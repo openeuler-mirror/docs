@@ -8,7 +8,7 @@ headless: true
         - [Obtaining the Installation Source]({{< relref "./docs/Installation/obtaining-the-installation-source.md" >}})
         - [Release Package Integrity Check]({{< relref "./docs/Installation/release-package-integrity-check.md" >}})
         - [Hardware Compatibility]({{< relref "./docs/Installation/hardware-compatibility.md" >}})
-        - [Minimal Hardware Specifications]({{< relref "./docs/Installation/minimal-hardware-specifications.md" >}})
+        - [Minimum Hardware Specifications]({{< relref "./docs/Installation/minimum-hardware-specifications.md" >}})
 
     - [Installation Mode]({{< relref "./docs/Installation/installation-mode.md" >}})
         - [Installation Through the CD/DVD-ROM]({{< relref "./docs/Installation/installation-through-the-cd-dvd-rom.md" >}})
