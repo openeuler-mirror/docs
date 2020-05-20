@@ -836,9 +836,9 @@ Both IPv6 and IPv4 addresses can be obtained through DHCP. There are configurati
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   <Enterprise-ID number\>: a 32-digit integer, indicating the enterprise ID. The enterprise is registered through the IANA.  
-    >-   <vendor class string length\>: a 16-digit integer, indicating the length of the vendor class string.  
-    >-   <vendor class string\>: character string of the vendor class to be set, for example, HWHW.  
+    >-   \<Enterprise-ID number\>: a 32-digit integer, indicating the enterprise ID. The enterprise is registered through the IANA.  
+    >-   \<vendor class string length\>: a 16-digit integer, indicating the length of the vendor class string.  
+    >-   \<vendor class string\>: character string of the vendor class to be set, for example, HWHW.  
 
     On the client:
 
