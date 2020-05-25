@@ -647,7 +647,6 @@ You have obtained the  **root**  permission, and have configured a repo source f
         ```
         [general]
         apiurl = http://openeuler-build.huawei.com/
-        no_verify = 1
         [http://openeuler-build.huawei.com/]
         user=userName
         pass=passWord

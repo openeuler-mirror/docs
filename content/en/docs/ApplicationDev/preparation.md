@@ -149,7 +149,8 @@ You can configure a repo source by directly obtaining the repo source file or by
 
     enabled=1
 
-    gpgcheck=0
+    gpgcheck=1
+	gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/RPM-GPG-KEY-openEuler
 
 
 ### Configuring a Repo Source by Mounting an ISO File

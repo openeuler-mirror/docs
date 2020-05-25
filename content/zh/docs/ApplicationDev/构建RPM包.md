@@ -644,7 +644,6 @@ RPM软件包构建完成后，通过网页端获取对应RPM软件包的方法�
         ```
         [general]
         apiurl = http://openeuler-build.huawei.com/
-        no_verify = 1
         [http://openeuler-build.huawei.com/]
         user=userName
         pass=passWord
