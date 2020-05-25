@@ -49,7 +49,7 @@ DNF 的主要配置文件是 /etc/dnf/dnf.conf，该文件中“main”部分保
 
 ```
 [main]
-gpgcheck=0
+gpgcheck=1
 installonly_limit=3
 clean_requirements_on_remove=True
 best=True
