@@ -1,6 +1,6 @@
-# SELinux配置<a name="ZH-CN_TOPIC_0229953911"></a>
+# SELinux配置
 
-## 概述<a name="section1424754533418"></a>
+## 概述
 
 自由访问控制DAC（Discretionary Access Control）基于用户、组和其他权限，决定一个资源是否能被访问的因素是某个资源是否拥有对应用户的权限，它不能使系统管理员创建全面和细粒度的安全策略。SELinux（Security-Enhanced Linux）是Linux内核的一个模块，也是Linux的一个安全子系统。SELinux的实现了强制访问控制MAC（Mandatory Access Control ），每个进程和系统资源都有一个特殊的安全标签，资源能否被访问除了DAC规定的原则外，还需要判断每一类进程是否拥有对某一类资源的访问权限。
 
@@ -10,8 +10,7 @@ openEuler默认使用SELinux提升系统安全性。SELinux分为三种模式：
 -   enforcing：SELinux安全策略被强制执行。
 -   disabled：不加载SELinux安全策略。
 
-## 配置说明<a name="section99503416549"></a>
-
+## 配置说明
 openEuler默认开启SELinux，且默认模式为enforcing，用户可以通过修改/etc/selinux/config中配置项SELINUX的值变更SELinux模式。
 
 -   关闭SELinux策略的配置如下：
@@ -33,7 +32,7 @@ openEuler默认开启SELinux，且默认模式为enforcing，用户可以通过�
 ># reboot  
 >```  
 
-## SELinux相关命令<a name="section13619018912"></a>
+## SELinux相关命令
 
 -   查询SELinux模式。例如下述查询的SELinux模式为Permissive：
 
