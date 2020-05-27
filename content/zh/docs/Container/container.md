@@ -1,4 +1,4 @@
-## 概述<a name="section4537382116410"></a>
+## 概述
 
 openEuler软件包中同时提供了轻量化容器引擎iSulad与docker engine两种容器引擎。
 
@@ -10,7 +10,7 @@ openEuler软件包中同时提供了轻量化容器引擎iSulad与docker engine�
 
 本文档提供容器引擎的安装和使用方法以及各个容器形态的部署使用方法。
 
-## 读者对象<a name="section4378592816410"></a>
+## 读者对象
 
 本文档主要适用于使用openEuler并需要安装容器的用户。用户需要具备以下经验和技能：
 

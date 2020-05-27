@@ -1,10 +1,10 @@
-# 通过systemd启动容器<a name="ZH-CN_TOPIC_0184808018"></a>
+# 通过systemd启动容器
 
-## 功能描述<a name="zh-cn_topic_0182200831_section3582020171916"></a>
+## 功能描述
 
-系统容器与普通容器最大的差异就在于容器启动的init进程，普通容器无法通过systemd启动系统服务，而系统容器具备这个能力，通过在启动容器时指定 --system-contianer参数可以使能systemd服务。
+系统容器与普通容器最大的差异就在于容器启动的init进程，普通容器无法通过systemd启动系统服务，而系统容器具备这个能力，通过在启动容器时指定\--system-contianer参数可以使能systemd服务。
 
-## 参数说明<a name="zh-cn_topic_0182200831_section3103441141912"></a>
+## 参数说明
 
 <a name="zh-cn_topic_0182200831_table1869210387418"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0182200831_row1569373816419"><th class="cellrowborder" valign="top" width="14.04%" id="mcps1.1.4.1.1"><p id="zh-cn_topic_0182200831_p106936387415"><a name="zh-cn_topic_0182200831_p106936387415"></a><a name="zh-cn_topic_0182200831_p106936387415"></a>命令</p>
@@ -25,19 +25,19 @@
 </tbody>
 </table>
 
-## 约束限制<a name="zh-cn_topic_0182200831_section186731325112013"></a>
+## 约束限制
 
 -   systemd服务需要调用一些特殊系统调用，包括mount、umount2、unshare、reboot以及name\_to\_handle\_at，所以在不开启特权容器标签的情况下，系统容器打开了调用上述接口的权限。
 -   系统容器都是init启动，init进程不响应表示正常退出的SIGTERM信号，stop默认在10s之后才会强制杀死容器。如果需要快速结束，可以手动指定stop的超时时间。
--   --system-container必须配合--external-rootfs参数一起使用。
+-   \--system-container必须配合\--external-rootfs参数一起使用。
 -   系统容器内支持运行各类服务，服务的启停通过systemctl来管理，服务之间可能会出现相互依赖关系导致异常情况下某些服务进程出现D/Z状态，使得容器无法正常退出。
 -   系统容器内的某些服务进程可能会影响其它操作结果，例如容器内若运行了NetworkManager服务，可能会影响向容器添加网卡的行为（网卡添加成功然后被NetworkManger停掉），导致不可预期的结果。
 -   系统容器和主机暂时无法实现udev事件隔离，所以fstab配置也暂不支持。
 -   systemd服务可能和libcgroup提供的cgconfig服务在功能上出现冲突，建议在容器内去掉libcgroup相关的包或者配置cgconfig服务的Delegate值为no。
 
-## 使用示例<a name="zh-cn_topic_0182200831_section55579413204"></a>
+## 使用示例
 
--   指定--system-container和--external-rootfs参数启动系统容器。
+-   指定\--system-container和\--external-rootfs参数启动系统容器。
 
     ```
     [root@localhost ~]# isula run -tid -n systest01 --system-container --external-rootfs /root/myrootfs none init
