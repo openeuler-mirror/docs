@@ -1,10 +1,9 @@
-# cgroup路径可配置<a name="ZH-CN_TOPIC_0184808020"></a>
+# cgroup路径可配置
+## 功能描述
 
-## 功能描述<a name="zh-cn_topic_0182200835_section260316324238"></a>
+系统容器提供在宿主机上进行容器资源隔离和预留的能力。通过\--cgroup-parent参数，可以将容器使用的cgroup目录指定到某个特定目录下，从而达到灵活分配宿主机资源的目的。例如可以设置容器a、b、c的cgroup父路径为/lxc/cgroup1，容器d、e、f的cgroup父路径为/lxc/cgroup2，这样通过cgroup路径将容器分为两个group，实现容器cgroup组层面的资源隔离。
 
-系统容器提供在宿主机上进行容器资源隔离和预留的能力。通过--cgroup-parent参数，可以将容器使用的cgroup目录指定到某个特定目录下，从而达到灵活分配宿主机资源的目的。例如可以设置容器a、b、c的cgroup父路径为/lxc/cgroup1，容器d、e、f的cgroup父路径为/lxc/cgroup2，这样通过cgroup路径将容器分为两个group，实现容器cgroup组层面的资源隔离。
-
-## 参数说明<a name="zh-cn_topic_0182200835_section9477144472316"></a>
+## 参数说明
 
 <a name="zh-cn_topic_0182200835_table1869210387418"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0182200835_row1569373816419"><th class="cellrowborder" valign="top" width="21.09%" id="mcps1.1.4.1.1"><p id="zh-cn_topic_0182200835_p106936387415"><a name="zh-cn_topic_0182200835_p106936387415"></a><a name="zh-cn_topic_0182200835_p106936387415"></a>命令</p>
@@ -46,12 +45,12 @@
 </tbody>
 </table>
 
-## 约束限制<a name="zh-cn_topic_0182200835_section948115902011"></a>
+## 约束限制
 
--   如果daemon端和客户端都设置了cgroup parent参数，最终以客户端指定的--cgroup-parent生效。
+-   如果daemon端和客户端都设置了cgroup parent参数，最终以客户端指定的\--cgroup-parent生效。
 -   如果已启动容器A，然后启动容器B，容器B的cgroup父路径指定为容器A的cgroup路径，在删除容器的时候需要先删除容器B再删除容器A，否则会导致cgroup资源残留。
 
-## 使用示例<a name="zh-cn_topic_0182200835_section495911542237"></a>
+## 使用示例
 
 启动系统容器，指定--cgroup-parent参数：
 
