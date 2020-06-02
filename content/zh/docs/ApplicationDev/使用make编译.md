@@ -277,16 +277,18 @@ Makefile文件结构表明了输出的目标，输出目标的依赖对象和生
 
 ### 使用Makefile实现编译的示例
 
-1.  cd到代码目录，此处以用户“/home/code”进行举例。
+1.  cd到代码目录，此处以用户“~/code”进行举例。
 
     ```
-    cd /home/code
+    $ cd ~/code
     ```
 
-2.  创建1个头文件hello.h和2个函数hello.c、main.c。
+2. 创建1个头文件hello.h和2个函数hello.c、main.c。
 
     ```
-    cd /home/code/
+    $ vi hello.h
+    $ vi hello.c
+    $ vi main.c
     ```
 
     hello.h代码内容示例：
@@ -328,7 +330,7 @@ Makefile文件结构表明了输出的目标，输出目标的依赖对象和生
 3.  创建Makefile文件。
 
     ```
-    vi Makefile
+    $ vi Makefile
     ```
 
     Makefile文件内容示例：
@@ -347,7 +349,7 @@ Makefile文件结构表明了输出的目标，输出目标的依赖对象和生
 4.  执行make命令。
 
     ```
-    make
+    $ make
     ```
 
     命令执行后，会打印Makefile中执行的命令。如果不需要打印该信息，可以在执行make命令是加上参数-s。
@@ -361,7 +363,7 @@ Makefile文件结构表明了输出的目标，输出目标的依赖对象和生
 5.  执行./main目标。
 
     ```
-    ./main
+    $ ./main
     ```
 
     命令执行后，打印如下信息：

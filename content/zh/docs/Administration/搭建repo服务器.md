@@ -114,7 +114,7 @@ Packages为rpm包所在的目录，repodata为repo源元数据所在的目录，
     >文档中的配置内容仅供参考，请用户根据实际情况（例如安全加固需要）进行配置。  
 
     ```
-    user  openEuler;
+    user  nginx;
     worker_processes  auto;                          # 建议设置为core-1
     error_log  /var/log/nginx/error.log  warn;       # log存放位置
     pid        /var/run/nginx.pid;
