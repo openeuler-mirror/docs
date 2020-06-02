@@ -397,16 +397,16 @@ java类库是以包的形式实现的，包是类和接口的集合。java编译
 
 ### 编译不带包的java程序示例
 
-1.  cd到代码目录，此处以用户“/home/code”进行举例。如下所示：
+1.  cd到代码目录，此处以用户“~/code”进行举例。如下所示：
 
     ```
-    # cd /home/code 
+    $ cd ~/code 
     ```
 
 2.  编写Hello World程序，保存为HelloWorld.java，此处以编译Hello World程序进行举例说明。示例如下：
 
     ```
-    # vi HelloWorld.java
+    $ vi HelloWorld.java
     ```
 
     代码内容示例：
@@ -422,7 +422,7 @@ java类库是以包的形式实现的，包是类和接口的集合。java编译
 3.  在代码目录，执行编译，使用命令：
 
     ```
-    # javac HelloWorld.java 
+    $ javac HelloWorld.java 
     ```
 
     编译执行未报错，表明执行通过。
@@ -430,28 +430,27 @@ java类库是以包的形式实现的，包是类和接口的集合。java编译
 4.  编译完成后，会生成 HelloWorld.class 文件，通过java命令可执行查看结果，示例如下：
 
     ```
-    # java HelloWorld
+    $ java HelloWorld
     Hello World
     ```
 
 
 ### 编译带包的java程序示例
 
-1.  cd到代码目录，此处以用户“/home/code”进行举例。并在该目录下创建“/home/code/Test/my/example”、“/home/code/Hello/world/developers”、“/home/code/Hi/openos/openeuler”子目录，分别用于存放源文件。
+1.  cd到代码目录，此处以用户“~/code”进行举例。并在该目录下创建“~/code/Test/my/example”、“~/code/Hello/world/developers”、“~/code/Hi/openos/openeuler”子目录，分别用于存放源文件。
 
     ```
-    cd /home/code
+    $ cd ~/code
+    $ mkdir -p Test/my/example
+    $ mkdir -p Hello/world/developers
+    $ mkdir -p Hi/openos/openeuler
+    ```
     
-    mkdir -p Test/my/example
-    mkdir -p Hello/world/developers
-    mkdir -p Hi/openos/openeuler
-    ```
-
-2.  cd到/home/code/Test/my/example目录，创建Test.java。
+2.  cd到~/code/Test/my/example目录，创建Test.java。
 
     ```
-    cd /home/code/Test/my/example
-    vi Test.java
+    $ cd ~/code/Test/my/example
+    $ vi Test.java
     ```
 
     Test.java代码内容示例：
@@ -470,11 +469,11 @@ java类库是以包的形式实现的，包是类和接口的集合。java编译
     }
     ```
 
-3.  cd到/home/code/Hello/world/developers目录，创建Hello.java。
+3.  cd到~/code/Hello/world/developers目录，创建Hello.java。
 
     ```
-    cd /home/code/Hello/world/developers
-    vi Hello.java
+    $ cd ~/code/Hello/world/developers
+    $ vi Hello.java
     ```
 
     Hello.java代码内容示例：
@@ -488,11 +487,11 @@ java类库是以包的形式实现的，包是类和接口的集合。java编译
     }
     ```
 
-4.  cd到/home/code/Hi/openos/openeuler目录，创建Hi.java。
+4.  ~/code/Hi/openos/openeuler目录，创建Hi.java。
 
     ```
-    cd /home/code/Hi/openos/openeuler
-    vi Hi.java
+    $ cd ~/code/Hi/openos/openeuler
+    $ vi Hi.java
     ```
 
     Hi.java代码内容示例：
@@ -506,20 +505,20 @@ java类库是以包的形式实现的，包是类和接口的集合。java编译
     }
     ```
 
-5.  cd到/home/code，使用javac编译源文件。
+5.  cd到~/code，使用javac编译源文件。
 
     ```
-    cd /home/code
-    javac -classpath Hello:Hi Test/my/example/Test.java
+    $ cd ~/code
+    $ javac -classpath Hello:Hi Test/my/example/Test.java
     ```
 
-    执行完命令后，会在“/home/code/Test/my/example”、“/home/code/Hello/world/developers”、“/home/code/Hi/openos/openeuler”目录下分别生成Test.class、Hello.class、Hi.class文件。
+    执行完命令后，会在“~/code/Test/my/example”、“~/code/Hello/world/developers”、“~/code/Hi/openos/openeuler”目录下分别生成Test.class、Hello.class、Hi.class文件。
 
-6.  cd到/home/code，使用java运行Test程序。
+6.  cd到~/code，使用java运行Test程序。
 
     ```
-    cd /home/code
-    java -classpath Test:Hello:Hi my/example/Test
+    $ cd ~/code
+    $ java -classpath Test:Hello:Hi my/example/Test
     ```
 
     执行结果如下所示：

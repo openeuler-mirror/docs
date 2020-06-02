@@ -238,7 +238,7 @@ GCC是一个功能强大的编译器，其 _options_ 参数取值很多，但有
     示例：将test1.c和tes2.c分别编译后链接成test可执行文件。
 
     ```
-    gcc test1.c test2.c -o test
+    $ gcc test1.c test2.c -o test
     ```
 
 -   分别编译各个源文件，之后对编译后输出的目标文件链接。编译时只重新编译修改的文件，未修改的文件不用重新编译。
@@ -246,9 +246,9 @@ GCC是一个功能强大的编译器，其 _options_ 参数取值很多，但有
     示例：分别编译test1.c，test2.c，在将二者的目标文件test1.o，test2.o链接成test可执行文件。
 
     ```
-    gcc -c test1.c
-    gcc -c test2.c
-    gcc -o test1.o test2.o -o test
+    $ gcc -c test1.c
+    $ gcc -c test2.c
+    $ gcc -o test1.o test2.o -o test
     ```
 
 
@@ -284,14 +284,14 @@ GCC是一个功能强大的编译器，其 _options_ 参数取值很多，但有
 示例1：从源文件生成动态链接库。
 
 ```
-gcc -fPIC -shared test.c -o libtest.so
+$ gcc -fPIC -shared test.c -o libtest.so
 ```
 
 示例2：从目标文件生成动态链接库。
 
 ```
-gcc -fPIC -c test.c -o test.o
-gcc -shared test.o -o libtest.so
+$ gcc -fPIC -c test.c -o test.o
+$ gcc -shared test.o -o libtest.so
 ```
 
 将一个动态库链接到可执行文件，需要在命令行中列出动态库的名称。
@@ -299,7 +299,7 @@ gcc -shared test.o -o libtest.so
 示例：将main.c和libtest.so一起编译成 app.out，当 app.out 运行时，会动态地加载链接库 libtest.so。
 
 ```
-gcc main.c libtest.so -o app.out
+$ gcc main.c libtest.so -o app.out
 ```
 
 这种方式是直接指定使用当前目录下的libtest.so文件。
@@ -309,7 +309,7 @@ gcc main.c libtest.so -o app.out
 -   将动态库保存在标准目录下，例如 /usr/lib。
 -   把动态库所在路径libaryDIR增加到环境变量LD\_LIBRARY\_PATH中
 
-    export LD\_LIBRARY\_PATH=libraryDIR:$LD\_LIBRARY\_PATH
+    $ export LD\_LIBRARY\_PATH=libraryDIR:$LD\_LIBRARY\_PATH
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >LD\_LIBRARY\_PATH为动态库的环境变量。当运行动态库时，若动态库不在缺省文件夹（/lib 和/usr/lib）下，则需要指定环境变量LD\_LIBRARY\_PATH。  
@@ -317,8 +317,8 @@ gcc main.c libtest.so -o app.out
 -   把动态库所在路径libaryDIR增加 /etc/ld.so.conf中然后执行ldconfig或者以动态库所在路径libaryDIR为参数执行ldconfig。
 
 ```
-gcc main.c -L libraryDIR -ltest -o app.out
-export LD_LIBRARY_PATH=libraryDIR:$LD_LIBRARY_PATH
+$ gcc main.c -L libraryDIR -ltest -o app.out
+$ export LD_LIBRARY_PATH=libraryDIR:$LD_LIBRARY_PATH
 ```
 
 ### 静态链接库
@@ -328,8 +328,8 @@ export LD_LIBRARY_PATH=libraryDIR:$LD_LIBRARY_PATH
 示例：将源文件test1.c，test2.c，test3.c编译并打包成静态库。
 
 ```
-gcc -c test1.c test2.c test3.c
-ar rcs libtest.a test1.o test2.o test3.o
+$ gcc -c test1.c test2.c test3.c
+$ ar rcs libtest.a test1.o test2.o test3.o
 ```
 
 其中ar是一个备份压缩命令，可以将多个文件打包成一个备份文件（也叫归档文件），也可以从备份文件中提取成员文件。ar最常见的用法是将目标文件打包为静态链接库。
@@ -347,7 +347,7 @@ ar rcs  _Sllfilename_ _Targetfilelist_
 示例：创建一个main.c文件来使用静态库
 
 ```
-gcc main.c -L libraryDIR -ltest -o test.out
+$ gcc main.c -L libraryDIR -ltest -o test.out
 ```
 
 其中libraryDIR为libtest.a库的路径。
@@ -357,16 +357,16 @@ gcc main.c -L libraryDIR -ltest -o test.out
 
 ### 使用GCC编译C程序示例
 
-1.  cd到代码目录，此处以用户“/home/code”进行举例。如下所示：
+1.  cd到代码目录，此处以用户“~/code”进行举例。如下所示：
 
     ```
-    cd /home/code 
+    $ cd ~/code 
     ```
 
 2.  编写Hello World程序，保存为helloworld.c，此处以编译Hello World程序进行举例说明。示例如下：
 
     ```
-    vi helloworld.c
+    $ vi helloworld.c
     ```
 
     代码内容示例：
@@ -383,7 +383,7 @@ gcc main.c -L libraryDIR -ltest -o test.out
 3.  在代码目录，执行编译，使用命令：
 
     ```
-    gcc helloworld.c -o helloworld
+    $ gcc helloworld.c -o helloworld
     ```
 
     编译执行未报错，表明执行通过。
@@ -391,28 +391,26 @@ gcc main.c -L libraryDIR -ltest -o test.out
 4.  编译完成后，会生成helloworld文件，查看编译结果，示例如下：
 
     ```
-    # ./helloworld
+    $ ./helloworld
     Hello World!
     ```
 
 
 ### 使用GCC创建和使用动态链接库示例
 
-1.  cd到代码目录，此处以用户“/home/code”进行举例。并在该目录下创建src，lib，include子目录，分别用于存放源文件，动态库文件和头文件。
+1.  cd到代码目录，此处以用户“~/code”进行举例。并在该目录下创建src，lib，include子目录，分别用于存放源文件，动态库文件和头文件。
 
     ```
-    cd /home/code
-    mkdir src
-    mkdir lib
-    mkdir include
+    $ cd ~/code
+    $ mkdir src lib include
     ```
-
-2.  cd到/home/code/src目录，创建2个函数add.c、sub.c，分别实现加、减。
+    
+2.  cd到~/code/src目录，创建2个函数add.c、sub.c，分别实现加、减。
 
     ```
-    cd /home/code/src
-    vi add.c
-    vi sub.c
+    $ cd ~/code/src
+    $ vi add.c
+    $ vi sub.c
     ```
 
     add.c代码内容示例：
@@ -435,17 +433,17 @@ gcc main.c -L libraryDIR -ltest -o test.out
     }
     ```
 
-3.  将add.c、sub.c源文件创建为动态库libmath.so，并将该动态库存放在/home/code/lib目录。
+3.  将add.c、sub.c源文件创建为动态库libmath.so，并将该动态库存放在~/code/lib目录。
 
     ```
-    gcc -fPIC -shared add.c sub.c -o /home/code/lib/libmath.so
+    $ gcc -fPIC -shared add.c sub.c -o ~/code/lib/libmath.so
     ```
 
-4.  cd到/home/code/include目录，创建1个头文件math.h，声明函数的头文件。
+4.  cd到~/code/include目录，创建1个头文件math.h，声明函数的头文件。
 
     ```
-    cd /home/code/include
-    vi math.h
+    $ cd ~/code/include
+    $ vi math.h
     ```
 
     math.h代码内容示例：
@@ -458,11 +456,11 @@ gcc main.c -L libraryDIR -ltest -o test.out
     #endif
     ```
 
-5.  cd到/home/code/src目录，创建一个调用add\(\)和sub\(\)的main.c函数。
+5.  cd到~/code/src目录，创建一个调用add\(\)和sub\(\)的main.c函数。
 
     ```
-    cd /home/code/src
-    vi main.c
+    $ cd ~/code/src
+    $ vi main.c
     ```
 
     math.c代码内容示例：
@@ -484,19 +482,19 @@ gcc main.c -L libraryDIR -ltest -o test.out
 6.  将main.c和libmath.so一起编译成math.out。
 
     ```
-    gcc main.c -I /home/code/include -L /home/code/lib -lmath -o math.out
+    $ gcc main.c -I ~/code/include -L ~/code/lib -lmath -o math.out
     ```
 
 7.  将动态链接库所在的路径加入到环境变量中。
 
     ```
-    export LD_LIBRARY_PATH=/home/code/lib:$LD_LIBRARY_PATH
+    $ export LD_LIBRARY_PATH=~/code/lib:$LD_LIBRARY_PATH
     ```
 
 8.  执行math.out。
 
     ```
-    ./math.out
+    $ ./math.out
     ```
 
     执行结果如下所示：
@@ -511,21 +509,19 @@ gcc main.c -L libraryDIR -ltest -o test.out
 
 ### 使用GCC创建和使用静态链接库示例
 
-1.  cd到代码目录，此处以用户“/home/code”进行举例。并在该目录下创建src，lib，include子目录，分别用于存放源文件，静态库文件和头文件。
+1.  cd到代码目录，此处以用户“~/code”进行举例。并在该目录下创建src，lib，include子目录，分别用于存放源文件，静态库文件和头文件。
 
     ```
-    cd /home/code
-    mkdir src
-    mkdir lib
-    mkdir include
+    $ cd ~/code
+    $ mkdir src lib include
     ```
-
-2.  cd到/home/code/src目录，创建2个函数add.c、sub.c，分别实现加、减。
+    
+2.  cd到~/code/src目录，创建2个函数add.c、sub.c，分别实现加、减。
 
     ```
-    cd /home/code/src
-    vi add.c
-    vi sub.c
+    $ cd ~/code/src
+    $ vi add.c
+    $ vi sub.c
     ```
 
     add.c代码内容示例：
@@ -551,20 +547,20 @@ gcc main.c -L libraryDIR -ltest -o test.out
 3.  将add.c、sub.c源文件编译为目标文件add.o、sub.o。
 
     ```
-    gcc -c add.c sub.c
+    $ gcc -c add.c sub.c
     ```
 
-4.  将add.o、sub.o目标文件通过ar命令打包成静态库libmath.a，并将该动态库存放在/home/code/lib目录。
+4.  将add.o、sub.o目标文件通过ar命令打包成静态库libmath.a，并将该动态库存放在~/code/lib目录。
 
     ```
-    ar rcs /home/code/lib/libmath.a add.o sub.o
+    $ ar rcs ~/code/lib/libmath.a add.o sub.o
     ```
 
-5.  cd到/home/code/include目录，创建1个头文件math.h，声明函数的头文件。
+5.  cd到~/code/include目录，创建1个头文件math.h，声明函数的头文件。
 
     ```
-    cd /home/code/include
-    vi math.h
+    $ cd ~/code/include
+    $ vi math.h
     ```
 
     math.h代码内容示例：
@@ -577,11 +573,11 @@ gcc main.c -L libraryDIR -ltest -o test.out
     #endif
     ```
 
-6.  cd到/home/code/src目录，创建一个调用add\(\)和sub\(\)的main.c函数。
+6.  cd到~/code/src目录，创建一个调用add\(\)和sub\(\)的main.c函数。
 
     ```
-    cd /home/code/src
-    vi main.c
+    $ cd ~/code/src
+    $ vi main.c
     ```
 
     math.c代码内容示例：
@@ -603,13 +599,13 @@ gcc main.c -L libraryDIR -ltest -o test.out
 7.  将main.c和libmath.a一起编译成math.out。
 
     ```
-    gcc main.c -I /home/code/include -L /home/code/lib -lmath -o math.out
+    $ gcc main.c -I ~/code/include -L ~/code/lib -lmath -o math.out
     ```
 
 8.  执行math.out。
 
     ```
-    ./math.out
+    $ ./math.out
     ```
 
     执行结果如下所示：

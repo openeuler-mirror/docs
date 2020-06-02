@@ -74,7 +74,7 @@ To use the vsftpd service, you need to install the vsftpd software. If the yum s
 ### Service Management
 To start, stop, or restart the vsftpd service, run the corresponding command as the root user.
 
--   Starting vsftpd services
+- Starting vsftpd services
 
     ```
     # systemctl start vsftpd
@@ -88,10 +88,7 @@ To start, stop, or restart the vsftpd service, run the corresponding command as 
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >If the netstat command does not exist, run the following command to install the netstat command and then run the netstat command:  
-    >```  
-    >dnf install net-tools  
-    >```  
+    >If the **netstat** command does not exist, run the **dnf install net-tools** command to install the **net-tools** software and then run the **netstat** command.  
 
 -   Stopping the vsftpd services
 
@@ -146,7 +143,7 @@ You can modify the vsftpd configuration file to control user permissions.  [Tabl
 <td class="cellrowborder" valign="top" width="73.83999999999999%" headers="mcps1.2.3.1.2 "><p id="p897451702311"><a name="p897451702311"></a><a name="p897451702311"></a>List of users who are allowed or not allowed to log in to the vsftpd server. Whether the file takes effect depends on the following parameters in the main configuration file vsftpd.conf:</p>
 <p id="p235712118232"><a name="p235712118232"></a><a name="p235712118232"></a>userlist_enable: indicates whether to enable the userlist mechanism. The value YES indicates that the userlist mechanism is enabled. In this case, the userlist_deny configuration is valid. The value NO indicates that the userlist mechanism is disabled.</p>
 <p id="p38688486536"><a name="p38688486536"></a><a name="p38688486536"></a>userlist_deny: indicates whether to forbid users in the user list to log in. YES indicates that users in the user list are forbidden to log in. NO indicates that users in the command are allowed to log in.</p>
-<p id="p15866735202619"><a name="p15866735202619"></a><a name="p15866735202619"></a>For example, if userlist_enable is set to YES and userlist_deny is set to NO, all users in the user list cannot log in.</p>
+<p id="p15866735202619"><a name="p15866735202619"></a><a name="p15866735202619"></a>For example, if userlist_enable is set to YES and userlist_deny is set to YES, all users in the user list cannot log in.</p>
 </td>
 </tr>
 <tr id="row9535948142112"><td class="cellrowborder" valign="top" width="26.16%" headers="mcps1.2.3.1.1 "><p id="p17719134152118"><a name="p17719134152118"></a><a name="p17719134152118"></a>/etc/vsftpd/chroot_list</p>
@@ -170,6 +167,7 @@ You can modify the vsftpd configuration file to control user permissions.  [Tabl
 </tbody>
 </table>
 
+
 ### Default Configuration Description
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
@@ -178,7 +176,7 @@ You can modify the vsftpd configuration file to control user permissions.  [Tabl
 In the openEuler system, vsftpd does not open to anonymous users by default. Run the vim command to view the main configuration file. The content is as follows:
 
 ```
-# vim /etc/vsftpd/vsftpd.conf
+$ vim /etc/vsftpd/vsftpd.conf
 anonymous_enable=NO
 local_enable=YES
 write_enable=YES
@@ -278,7 +276,7 @@ userlist_enable=YES
 In the openEuler system, vsftpd uses the Greenwich Mean Time \(GMT\) time by default, which may be different from the local time. For example, the GMT time is 8 hours later than the Beijing time. You need to change the GMT time to the local time. Otherwise, the server time and client time are inconsistent, which may cause errors during file upload and download.
 
 #### Setting Method
-To set the vsftpd time to the local time, perform the following steps:
+To set the vsftpd time to the local time, perform the following steps as the **root** user:
 
 1.  Open the vsftpd.conf file and change the value of use\_localtime to  **YES**. Run the following command:
 
@@ -307,7 +305,7 @@ To set the vsftpd time to the local time, perform the following steps:
 
 ### Configuring Welcome Information
 
-To use the vsftpd service normally, the welcome information file must exist. To configure the welcome.txt file of the vsftp service, perform the following steps:
+To use the vsftpd service normally, the welcome information file must exist. To configure the welcome.txt file of the vsftp service, perform the following steps as the **root** user:
 
 1.  Open the vsftpd.conf configuration file, add the welcome information to the file, save the file, and exit.
 
@@ -345,12 +343,12 @@ Two files are used to restrict the login of system accounts. The default files a
 
 Both files must exist and have the same content. You can write the accounts whose UIDs are smaller than 500 to the two files by referring to the /etc/passwd. Each line indicates an account.
 
-To restrict the login of system accounts, add the accounts to /etc/vsftpd/ftpusers and /etc/vsftpd/user\_list.
+To restrict the login of system accounts, add the accounts to /etc/vsftpd/ftpusers and /etc/vsftpd/user\_list as the **root** user.
 
 Open the user\_list file to view the account information in the current file. The command and output are as follows:
 
 ```
-# vim /etc/vsftpd/user_list
+$ vim /etc/vsftpd/user_list
 root
 bin
 daemon
@@ -372,8 +370,7 @@ nobody
 You can use the FTP client provided by openEuler for verification. The command and output are as follows. Enter the user name \(an existing user in the system\) and password as prompted. If the message "Login successful" is displayed, the FTP server is successfully set up.
 
 ```
-# dnf install ftp
-# ftp localhost
+$ ftp localhost
 Trying 127.0.0.1...
 Connected to localhost (127.0.0.1).
 220-Welcome to this FTP server!
@@ -388,9 +385,12 @@ ftp> bye
 221 Goodbye.
 ```
 
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>If the **ftp** command does not exist, run the **dnf install ftp** command as the **root** user to install the **ftp** software and then run the **ftp** command.  
+
 ## Configuring a Firewall
 
-To open the FTP service to the Internet, you need to configure the firewall and SElinux.
+To open the FTP service to the Internet, you need to configure the firewall and SElinux as the **root** user.
 
 ```
 # firewall-cmd --add-service=ftp --permanent
@@ -417,7 +417,7 @@ This section describes how to transfer files after the vsftpd service is started
 Run the following command on the command-line interface \(CLI\) of the openEuler OS:
 
 ```
-ftp ip-address
+$ ftp ip-address
 ```
 
 Enter the user name and password as prompted. If the following information is displayed after the authentication is successful, the FTP connection is successful. In this case, you have accessed the directory of the connected server.
@@ -428,7 +428,7 @@ ftp>
 
 At this prompt, you can enter different commands to perform related operations.
 
--   Display the current IP address of the server.
+-   Display the current path of the server.
 
     ```
     ftp>pwd
@@ -457,10 +457,10 @@ Generally, the get or mget command is used to download files.
 
     _remote-file_  indicates a remote file, and  _local-file_  indicates a local file.
 
--   For example, to obtain the /usr/your/openEuler.htm file on the remote server, run the following command:
+-   For example, run the following command to obtain the /home/openEuler/openEuler.htm file on the remote server to the local directory /home/myopenEuler/ and change the file name to myopenEuler.htm
 
     ```
-    ftp> get /usr/your/openEuler.htm
+    ftp> get /home/openEuler/openEuler.htm /home/myopenEuler/myopenEuler.htm
     ```
 
 
@@ -471,16 +471,16 @@ Generally, the get or mget command is used to download files.
 
     _remote-file_  indicates a remote file.
 
--   For example, to obtain all files in the /usr/your/ directory on the server, run the following command:
+-   For example, to obtain all files in the /home/openEuler/ directory on the server, run the following command:
 
     ```
-    ftp> cd /usr/your/
+    ftp> cd /home/openEuler/
     ftp> mget *.*
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >-   In this case, a message is displayed each time a file is downloaded. To block the prompt information, run the  **prompt off**  command before running the  **mget \*.\***  command.  
-    >-   The files are downloaded to the current directory on the Linux host. For example, if you run the ftp command in /usr/my/, all files are downloaded to /usr/my/.  
+    >-   The files are downloaded to the current directory on the Linux host. For example, if you run the ftp command in /home/myopenEuler/, all files are downloaded to /home/myopenEuler/.  
 
 
 ### Uploading a file
@@ -493,10 +493,10 @@ Generally, the put or mput command is used to upload files.
 
     _remote-file_  indicates a remote file, and  _local-file_  indicates a local file.
 
--   For example, run the following command to transfer the local Euler.htm file to the remote host /usr/your/ and change the file name to openEuler.htm:
+-   For example, run the following command to transfer the local myopenEuler.htm file to the remote host /home/openEuler/ and change the file name to openEuler.htm:
 
     ```
-    ftp> put Euler.htm /usr/your/openEuler.htm
+    ftp> put myopenEuler.htm /home/openEuler/openEuler.htm
     ```
 
 
@@ -507,10 +507,10 @@ Generally, the put or mput command is used to upload files.
 
     _local-file_  indicates a local file.
 
--   For example, run the following command to upload all HTM files in the local directory to the /usr/your/ directory on the server:
+-   For example, run the following command to upload all HTM files in the local directory to the /home/openEuler/ directory on the server:
 
     ```
-    ftp> cd /usr/your
+    ftp> cd /home/openEuler/
     ftp> mput *.htm
     ```
 
@@ -525,10 +525,11 @@ Generally, the  **delete**  or  **mdelete**  command is used to delete a file.
 
     _remote-file_  indicates a remote file.
 
--   For example, to delete the openFile from the remote server, run the following command:
+-   For example, to delete the /home/openEuler/openEuler.htm from the remote server, run the following command:
 
     ```
-    ftp> delete openFile
+    ftp> cd /home/openEuler/
+    ftp> delete openEuler.htm
     ```
 
 
@@ -539,9 +540,10 @@ Generally, the  **delete**  or  **mdelete**  command is used to delete a file.
 
     _remote-file_  indicates a remote file.
 
--   For example, to delete all files whose names start with  **a**, run the following command:
+-   For example, to delete all files whose names start with  **a** from the /home/openEuler/ directory on the remote server, run the following command:
 
     ```
+    ftp> cd /home/openEuler/
     ftp> mdelete a*
     ```
 

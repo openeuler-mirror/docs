@@ -67,32 +67,32 @@ When disks are managed using LVM, file systems are distributed on multiple disks
 2.  Clear the cache.
 
     ```
-    #dnf clean all
+    $ dnf clean all
     ```
 
 3.  Create a cache.
 
     ```
-    #dnf makecache
+    $ dnf makecache
     ```
 
-4.  Install the LVM.
+4.  Install the LVM as the **root** user.
 
     ```
-    #dnf install lvm2
+    # dnf install lvm2
     ```
 
 5.  Check the installed RPM package.
 
     ```
-    #rpm -qa | grep lvm2
+    $ rpm -qa | grep lvm2
     ```
 
 
 ## Managing PVs
 
 ### Creating a PV
-Run the  **pvcreate**  command to create a PV.
+Run the  **pvcreate**  command as the **root** user to create a PV.
 
 ```
 pvcreate [option] devname ...
@@ -110,17 +110,17 @@ In the preceding information:
 Example 1: Create PVs based on  **/dev/sdb**  and  **/dev/sdc**.
 
 ```
-pvcreate /dev/sdb /dev/sdc
+# pvcreate /dev/sdb /dev/sdc
 ```
 
 Example 2: Create PVs based on  **/dev/sdb1**  and  **/dev/sdb2**.
 
 ```
-pvcreate /dev/sdb1 /dev/sdb2
+# pvcreate /dev/sdb1 /dev/sdb2
 ```
 
 ### Viewing a PV
-Run the  **pvdisplay**  command to view PV information, including PV name, VG to which the PV belongs, PV size, PE size, total number of PEs, number of available PEs, number of allocated PEs, and UUID.
+Run the  **pvdisplay**  command as the **root** user to view PV information, including PV name, VG to which the PV belongs, PV size, PE size, total number of PEs, number of available PEs, number of allocated PEs, and UUID.
 
 ```
 pvdisplay [option] devname
@@ -137,11 +137,11 @@ In the preceding information:
 Example: Run the following command to display the basic information about the PV  **/dev/sdb**:
 
 ```
-pvdisplay /dev/sdb
+# pvdisplay /dev/sdb
 ```
 
 ### Modifying PV Attributes
-Run the  **pvchange**  command to modify the attributes of a PV.
+Run the  **pvchange**  command as the **root** user to modify the attributes of a PV.
 
 ```
 pvchange [option] pvname ...
@@ -158,11 +158,11 @@ In the preceding information:
 Example: Run the following command to prohibit PEs on the PV  **/dev/sdb**  from being allocated.
 
 ```
-pvchange -x n /dev/sdb
+# pvchange -x n /dev/sdb
 ```
 
 ### Deleting a PV
-Run the  **pvremove**  command to delete a PV.
+Run the  **pvremove**  command as the **root** user to delete a PV.
 
 ```
 pvremove [option] pvname ...
@@ -179,13 +179,13 @@ In the preceding information:
 Example: Run the following command to delete the PV  **/dev/sdb**:
 
 ```
-pvremove /dev/sdb
+# pvremove /dev/sdb
 ```
 
 ## Managing VGs
 
 ### Creating a VG
-Run the  **vgcreate**  command to create a VG.
+Run the  **vgcreate**  command as the **root** user to create a VG.
 
 ```
 vgcreate [option] vgname pvname ...
@@ -204,11 +204,11 @@ In the preceding information:
 Example: Run the following command to create VG  **vg1**  and add the PVs  **/dev/sdb**  and  **/dev/sdc**  to the VG.
 
 ```
-vgcreate vg1 /dev/sdb /dev/sdc  
+# vgcreate vg1 /dev/sdb /dev/sdc  
 ```
 
 ### Viewing a VG
-Run the  **vgdisplay**  command to view VG information.
+Run the  **vgdisplay**  command as the **root** user to view VG information.
 
 ```
 vgdisplay [option] [vgname]
@@ -225,11 +225,11 @@ In the preceding information:
 Example: Run the following command to display the basic information about VG  **vg1**:
 
 ```
-vgdisplay vg1
+# vgdisplay vg1
 ```
 
 ### Modifying VG Attributes
-Run the  **vgchange**  command to modify the attributes of a VG.
+Run the  **vgchange**  command as the **root** user to modify the attributes of a VG.
 
 ```
 vgchange [option] vgname
@@ -245,11 +245,11 @@ In the preceding information:
 Example: Run the following command to change the status of  **vg1**  to active.
 
 ```
-vgchange -ay vg1
+# vgchange -ay vg1
 ```
 
 ### Extending a VG
-Run the  **vgextend**  command to dynamically extend a VG. In this way, the VG size is extended by adding PVs to the VG.
+Run the  **vgextend**  command as the **root** user to dynamically extend a VG. In this way, the VG size is extended by adding PVs to the VG.
 
 ```
 vgextend [option] vgname pvname ...
@@ -267,11 +267,11 @@ In the preceding information:
 Example: Run the following command to add PV  **/dev/sdb**  to VG  **vg1**:
 
 ```
-vgextend vg1 /dev/sdb
+# vgextend vg1 /dev/sdb
 ```
 
 ### Shrinking a VG
-Run the  **vgreduce**  command to delete PVs from a VG to reduce the VG size. A VG must contain at least one PV.
+Run the  **vgreduce**  command as the **root** user to delete PVs from a VG to reduce the VG size. A VG must contain at least one PV.
 
 ```
 vgreduce [option] vgname pvname ...
@@ -289,11 +289,11 @@ In the preceding information:
 Example: Run the following command to remove PV  **/dev/sdb2**  from VG  **vg1**:
 
 ```
-vgreduce vg1 /dev/sdb2
+# vgreduce vg1 /dev/sdb2
 ```
 
 ### Deleting a VG
-Run the  **vgremove**  command to delete a VG.
+Run the  **vgremove**  command as the **root** user to delete a VG.
 
 ```
 vgremove [option] vgname
@@ -309,13 +309,13 @@ In the preceding information:
 Example: Run the following command to delete VG  **vg1**.
 
 ```
-vgremove vg1
+# vgremove vg1
 ```
 
 ## Managing LVs
 
 ### Creating an LV
-Run the  **lvcreate**  command to create an LV.
+Run the  **lvcreate**  command as the **root** user to create an LV.
 
 ```
 lvcreate [option] vgname
@@ -334,17 +334,17 @@ In the preceding information:
 Example 1: Run the following command to create a 10 GB LV in VG  **vg1**.
 
 ```
-lvcreate -L 10G vg1
+# lvcreate -L 10G vg1
 ```
 
-Example 1: Run the following command to create a 200 MB LV in VG  **vg1**  and name the LV  **lv1**.
+Example 2: Run the following command to create a 200 MB LV in VG  **vg1**  and name the LV  **lv1**.
 
 ```
-lvcreate -L 200M -n lv1 vg1
+# lvcreate -L 200M -n lv1 vg1
 ```
 
 ### Viewing an LV
-Run the  **lvdisplay**  command to view the LV information, including the size of the LV, its read and write status, and snapshot information.
+Run the  **lvdisplay**  command as the **root** user to view the LV information, including the size of the LV, its read and write status, and snapshot information.
 
 ```
 lvdisplay [option] [lvname]
@@ -353,8 +353,9 @@ lvdisplay [option] [lvname]
 In the preceding information:
 
 -   _option_: command parameter options. Common parameter options are as follows:
-    -   **-v**: displays the mapping from LEs to PEs.
-
+    
+-   **-v**: displays the mapping from LEs to PEs.
+    
 -   _lvname_: device file corresponding to the LV whose attributes are to be displayed. If this option is not set, attributes of all LVs are displayed.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
@@ -364,11 +365,11 @@ In the preceding information:
 Example: Run the following command to display the basic information about LV  **lv1**:
 
 ```
-lvdisplay /dev/vg1/lv1
+# lvdisplay /dev/vg1/lv1
 ```
 
 ### Adjusting the LV Size
-Run the  **lvresize**  command to increase or reduce the size of an LVM LV. This may cause data loss. Therefore, exercise caution when running this command.
+Run the  **lvresize**  command as the **root** user to increase or reduce the size of an LVM LV. This may cause data loss. Therefore, exercise caution when running this command.
 
 ```
 lvresize [option] vgname
@@ -386,17 +387,17 @@ In the preceding information:
 Example 1: Run the following command to increase the size of LV  **/dev/vg1/lv1**  by 200 MB.
 
 ```
-lvresize -L +200 /dev/vg1/lv1
+# lvresize -L +200 /dev/vg1/lv1
 ```
 
 Example 2: Run the following command to reduce the size of LV  **/dev/vg1/lv1**  by 200 MB.
 
 ```
-lvresize -L -200 /dev/vg1/lv1
+# lvresize -L -200 /dev/vg1/lv1
 ```
 
 ### Extending an LV
-Run the  **lvextend**  command to dynamically extend the size of an LV online without interrupting the access of applications to the LV.
+Run the  **lvextend**  command as the **root** user to dynamically extend the size of an LV online without interrupting the access of applications to the LV.
 
 ```
 lvextend [option] lvname
@@ -414,11 +415,11 @@ In the preceding information:
 Example: Run the following command to increase the size of LV  **/dev/vg1/lv1**  by 100 MB.
 
 ```
-lvextend -L +100M /dev/vg1/lv1
+# lvextend -L +100M /dev/vg1/lv1
 ```
 
 ### Shrinking an LV
-Run the  **lvreduce**  command to reduce the size of an LV. This may delete existing data on the LV. Therefore, confirm whether the data can be deleted before running the command.
+Run the  **lvreduce**  command as the **root** user to reduce the size of an LV. This may delete existing data on the LV. Therefore, confirm whether the data can be deleted before running the command.
 
 ```
 lvreduce [option] lvname
@@ -436,11 +437,11 @@ In the preceding information:
 Example: Run the following command to reduce the space of LV  **/dev/vg1/lvl**  by 100 MB:
 
 ```
-lvreduce -L -100M /dev/vg1/lv1
+# lvreduce -L -100M /dev/vg1/lv1
 ```
 
 ### Deleting an LV
-Run the  **lvremove**  command to delete an LV. If the LV has been mounted by running the  **mount**  command, you need to run the  **umount**  command to unmount the LV before running the  **lvremove**  command.
+Run the  **lvremove**  command as the **root** user to delete an LV. If the LV has been mounted by running the  **mount**  command, you need to run the  **umount**  command to unmount the LV before running the  **lvremove**  command.
 
 ```
 lvremove [option] vgname
@@ -456,7 +457,7 @@ In the preceding information:
 Example: Run the following command to delete LV  **/dev/vg1/lv1**.
 
 ```
-lvremove /dev/vg1/lv1
+# lvremove /dev/vg1/lv1
 ```
 
 ## Creating and Mounting a File System
@@ -464,7 +465,7 @@ lvremove /dev/vg1/lv1
 After creating an LV, you need to create a file system on the LV and mount the file system to the corresponding directory.
 
 ### Creating a File System
-Run the  **mkfs**  command to create a file system.
+Run the  **mkfs**  command as the **root** user to create a file system.
 
 ```
 mkfs [option] lvname
@@ -480,13 +481,13 @@ In the preceding information:
 Example: Run the following command to create the  **ext4**  file system on LV  **/dev/vg1/lv1**:
 
 ```
-mkfs -t ext4 /dev/vg1/lv1
+# mkfs -t ext4 /dev/vg1/lv1
 ```
 
 ### Manually Mounting a File System
 The file system that is manually mounted is not valid permanently. It does not exist after the OS is restarted.
 
-Run the  **mount**  command to mount a file system.
+Run the  **mount**  command as the **root** user to mount a file system.
 
 ```
 mount lvname mntpath
@@ -500,16 +501,16 @@ In the preceding information:
 Example: Run the following command to mount LV  **/dev/vg1/lv1**  to the directory  **/mnt/data**.
 
 ```
-mount /dev/vg1/lv1 /mnt/data
+# mount /dev/vg1/lv1 /mnt/data
 ```
 
 ### Automatically Mounting a File System
-A file system that is automatically mounted does not exist after the OS is restarted. You need to manually mount the file system again. If you perform the following steps after manually mounting the file system, the file system can be automatically mounted after the OS is restarted.
+A file system that is automatically mounted does not exist after the OS is restarted. You need to manually mount the file system again. If you perform the following steps as the **root** user after manually mounting the file system, the file system can be automatically mounted after the OS is restarted.
 
 1.  <a name="li65701520154311"></a>Run the  **blkid**  command to query the UUID of an LV. The following uses LV  **/dev/vg1/lv1**  as an example:
 
     ```
-    blkid /dev/vg1/lv1
+    # blkid /dev/vg1/lv1
     ```
 
     Check the command output. It contains the following information in which  _uuidnumber_  is a string of digits, indicating the UUID, and  _fstype_  indicates the file system type.
@@ -535,19 +536,19 @@ A file system that is automatically mounted does not exist after the OS is resta
     1.  Run the  **umount**  command to unmount the file system. The following uses LV  **/dev/vg1/lv1**  as an example:
 
         ```
-        umount /dev/vg1/lv1
+        # umount /dev/vg1/lv1
         ```
 
     2.  Run the following command to reload all content in the  **/etc/fstab**  file:
 
         ```
-        mount -a
+        # mount -a
         ```
 
     3.  Run the following command to query the file system mounting information \(**/mnt/data**  is used as an example\):
 
         ```
-        mount | grep /mnt/data
+        # mount | grep /mnt/data
         ```
 
         Check the command output. If the command output contains the following information, the automatic mounting function takes effect:

@@ -238,7 +238,7 @@ There are two methods provided for compiling multiple source files.
     Example: Compile  **test1.c**  and  **test2.c**  and link them to the executable file  **test**.
 
     ```
-    gcc test1.c test2.c -o test
+    $ gcc test1.c test2.c -o test
     ```
 
 -   Compile each source file, and then link the target files generated after compilation. During compilation, only modified files need to be recompiled.
@@ -246,9 +246,9 @@ There are two methods provided for compiling multiple source files.
     For example, compile  **test1.c**  and  **test2.c**, and link the target files  **test1.o**  and  **test2.o**  to the executable file  **test**.
 
     ```
-    gcc -c test1.c
-    gcc -c test2.c
-    gcc -o test1.o test2.o -o test
+    $ gcc -c test1.c
+    $ gcc -c test2.c
+    $ gcc -o test1.o test2.o -o test
     ```
 
 
@@ -285,14 +285,14 @@ You can use the  **-shared**  and  **-fPIC**  options to create a dynamic link l
 Example 1: Generate a DLL from the source file.
 
 ```
-gcc -fPIC -shared test.c -o libtest.so
+$ gcc -fPIC -shared test.c -o libtest.so
 ```
 
 Example 2: Generate a DLL from the target file.
 
 ```
-gcc -fPIC -c test.c -o test.o
-gcc -shared test.o -o libtest.so
+$ gcc -fPIC -c test.c -o test.o
+$ gcc -shared test.o -o libtest.so
 ```
 
 To link a DLL to an executable file, you need to list the name of the DLL in the command line.
@@ -300,7 +300,7 @@ To link a DLL to an executable file, you need to list the name of the DLL in the
 Example: Compile  **main.c**  and  **libtest.so**  into  **app.out**. When  **app.out**  is running, the link library  **libtest.so**  is dynamically loaded.
 
 ```
-gcc main.c libtest.so -o app.out
+$ gcc main.c libtest.so -o app.out
 ```
 
 In this mode, the  **libtest.so**  file in the current directory is used.
@@ -310,7 +310,7 @@ If you choose to search for a DLL, to ensure that the DLL can be linked when the
 -   Save the DLL to a standard directory, for example,  **/usr/lib**.
 -   Add the DLL path  **libaryDIR**  to the environment variable  **LD\_LIBRARY\_PATH**.
 
-    export LD\_LIBRARY\_PATH=libraryDIR:$LD\_LIBRARY\_PATH
+    $ export LD\_LIBRARY\_PATH=libraryDIR:$LD\_LIBRARY\_PATH
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >**LD\_LIBRARY\_PATH**  is an environment variable of the DLL. If the DLL is not in the default directories \(**/lib**  and  **/usr/lib**\), you need to specify the environment variable  **LD\_LIBRARY\_PATH**.  
@@ -318,8 +318,8 @@ If you choose to search for a DLL, to ensure that the DLL can be linked when the
 -   Add the DLL path  **libaryDIR**  to  **/etc/ld.so.conf**  and run  **ldconfig**, or use the DLL path  **libaryDIR**  as a parameter to run  **ldconfig**.
 
 ```
-gcc main.c -L libraryDIR -ltest -o app.out
-export LD_LIBRARY_PATH=libraryDIR:$LD_LIBRARY_PATH
+$ gcc main.c -L libraryDIR -ltest -o app.out
+$ export LD_LIBRARY_PATH=libraryDIR:$LD_LIBRARY_PATH
 ```
 
 ### Static Link Library
@@ -329,8 +329,8 @@ To create a static link library \(SLL\), you need to compile the source file to 
 Example: Compile and compress source files  **test1.c**,  **test2.c**, and  **test3.c**  into an SLL.
 
 ```
-gcc -c test1.c test2.c test3.c
-ar rcs libtest.a test1.o test2.o test3.o
+$ gcc -c test1.c test2.c test3.c
+$ ar rcs libtest.a test1.o test2.o test3.o
 ```
 
 The  **ar**  command is a backup compression command. You can compress multiple files into a backup file \(also called an archive file\) or extract member files from the backup file. The most common use of  **ar**  is to compress the target files into an SLL.
@@ -348,7 +348,7 @@ ar rcs  _Sllfilename_ _Targetfilelist_
 Example: Create a main.c file to use the SLL.
 
 ```
-gcc main.c -L libraryDIR -ltest -o test.out
+$ gcc main.c -L libraryDIR -ltest -o test.out
 ```
 
 In the preceding command,  **libraryDIR**  indicates the path of the libtest.a library.
@@ -359,16 +359,16 @@ In the preceding command,  **libraryDIR**  indicates the path of the libtest.a l
 
 ### Example for Using GCC to Compile C Programs
 
-1.  Run the  **cd**  command to go to the code directory. The  **/home/code**  directory is used as an example. The command is as follows:
+1.  Run the  **cd**  command to go to the code directory. The  **~/code**  directory is used as an example. The command is as follows:
 
     ```
-    cd /home/code 
+    $ cd ~/code 
     ```
 
 2.  Compile the Hello World program and save it as  **helloworld.c**. The following uses the Hello World program as an example. The command is as follows:
 
     ```
-    vi helloworld.c
+    $ vi helloworld.c
     ```
 
     Code example:
@@ -385,7 +385,7 @@ In the preceding command,  **libraryDIR**  indicates the path of the libtest.a l
 3.  Run the following command to compile the code in the code directory:
 
     ```
-    gcc helloworld.c -o helloworld
+    $ gcc helloworld.c -o helloworld
     ```
 
     If no error is reported, the execution is successful.
@@ -393,28 +393,26 @@ In the preceding command,  **libraryDIR**  indicates the path of the libtest.a l
 4.  After the compilation is complete, the helloworld file is generated. Check the compilation result. The following is an example:
 
     ```
-    # ./helloworld
+    $ ./helloworld
     Hello World!
     ```
 
 
 ### Example for Creating and Using a DLL Using GCC
 
-1.  Run the  **cd**  command to go to the code directory. The  **/home/code**  directory is used as an example. Create the  **src**,  **lib**, and  **include**  subdirectories in the directory to store the source file, DLL file, and header file, respectively.
+1.  Run the  **cd**  command to go to the code directory. The  **~/code**  directory is used as an example. Create the  **src**,  **lib**, and  **include**  subdirectories in the directory to store the source file, DLL file, and header file, respectively.
 
     ```
-    cd /home/code
-    mkdir src
-    mkdir lib
-    mkdir include
+    $ cd ~/code
+    $ mkdir src lib include
     ```
-
-2.  Run the  **cd**  command to go to the  **/home/code/src**  directory and create two functions  **add.c**  and  **sub.c**  to implement addition and subtraction, respectively.
+    
+2.  Run the  **cd**  command to go to the  **~/code/src**  directory and create two functions  **add.c**  and  **sub.c**  to implement addition and subtraction, respectively.
 
     ```
-    cd /home/code/src
-    vi add.c
-    vi sub.c
+    $ cd ~/code/src
+    $ vi add.c
+    $ vi sub.c
     ```
 
     The following is an example of the  **add.c**  code:
@@ -437,17 +435,17 @@ In the preceding command,  **libraryDIR**  indicates the path of the libtest.a l
     }
     ```
 
-3.  Compile the source files add.c and sub.c into the DLL libmath.so, and store the DLL in the  **/home/code/lib**  directory.
+3.  Compile the source files add.c and sub.c into the DLL libmath.so, and store the DLL in the  **~/code/lib**  directory.
 
     ```
-    gcc -fPIC -shared add.c sub.c -o /home/code/lib/libmath.so
+    $ gcc -fPIC -shared add.c sub.c -o ~/code/lib/libmath.so
     ```
 
-4.  Go to the  **/home/code/include**  directory, create a header file  **math.h**, and declare the header file of the function.
+4.  Go to the  **~/code/include**  directory, create a header file  **math.h**, and declare the header file of the function.
 
     ```
-    cd /home/code/include
-    vi math.h
+    $ cd ~/code/include
+    $ vi math.h
     ```
 
     The following is an example of the  **math.h**  code:
@@ -460,11 +458,11 @@ In the preceding command,  **libraryDIR**  indicates the path of the libtest.a l
     #endif
     ```
 
-5.  Run the  **cd**  command to go to the  **/home/code/src**  directory and create a  **main.c**  function that invokes add\(\) and sub\(\).
+5.  Run the  **cd**  command to go to the  **~/code/src**  directory and create a  **main.c**  function that invokes add\(\) and sub\(\).
 
     ```
-    cd /home/code/src
-    vi main.c
+    $ cd ~/code/src
+    $ vi main.c
     ```
 
     The following is an example of the  **math.c**  code:
@@ -486,19 +484,19 @@ In the preceding command,  **libraryDIR**  indicates the path of the libtest.a l
 6.  Compile  **main.c**  and  **libmath.so**  into  **math.out**.
 
     ```
-    gcc main.c -I /home/code/include -L /home/code/lib -lmath -o math.out
+    $ gcc main.c -I ~/code/include -L ~/code/lib -lmath -o math.out
     ```
 
 7.  Add the path of the DLL to the environment variable.
 
     ```
-    export LD_LIBRARY_PATH=/home/code/lib:$LD_LIBRARY_PATH
+    $ export LD_LIBRARY_PATH=~/code/lib:$LD_LIBRARY_PATH
     ```
 
 8.  Run the following command to execute  **math.out**:
 
     ```
-    ./math.out
+    $ ./math.out
     ```
 
     The command output is as follows:
@@ -513,21 +511,19 @@ In the preceding command,  **libraryDIR**  indicates the path of the libtest.a l
 
 ### Example for Creating and Using an SLL Using GCC
 
-1.  Run the  **cd**  command to go to the code directory. The  **/home/code**  directory is used as an example. Create the  **src**,  **lib**, and  **include**  subdirectories in the directory to store the source file, SLL file, and header file respectively.
+1.  Run the  **cd**  command to go to the code directory. The  **~/code**  directory is used as an example. Create the  **src**,  **lib**, and  **include**  subdirectories in the directory to store the source file, SLL file, and header file respectively.
 
     ```
-    cd /home/code
-    mkdir src
-    mkdir lib
-    mkdir include
+    $ cd ~/code
+    $ mkdir src lib include
     ```
-
-2.  Run the  **cd**  command to go to the  **/home/code/src**  directory and create two functions  **add.c**  and  **sub.c**  to implement addition and subtraction, respectively.
+    
+2.  Run the  **cd**  command to go to the  **~/code/src**  directory and create two functions  **add.c**  and  **sub.c**  to implement addition and subtraction, respectively.
 
     ```
-    cd /home/code/src
-    vi add.c
-    vi sub.c
+    $ cd ~/code/src
+    $ vi add.c
+    $ vi sub.c
     ```
 
     The following is an example of the  **add.c**  code:
@@ -553,20 +549,20 @@ In the preceding command,  **libraryDIR**  indicates the path of the libtest.a l
 3.  Compile the source files  **add.c**  and  **sub.c**  into the target files  **add.o**  and  **sub.o**.
 
     ```
-    gcc -c add.c sub.c
+    $ gcc -c add.c sub.c
     ```
 
-4.  Run the  **ar**  command to compress the  **add.o**  and  **sub.o**  target files into the SLL  **libmath.a**  and save the SLL to the  **/home/code/lib**  directory.
+4.  Run the  **ar**  command to compress the  **add.o**  and  **sub.o**  target files into the SLL  **libmath.a**  and save the SLL to the  **~/code/lib**  directory.
 
     ```
-    ar rcs /home/code/lib/libmath.a add.o sub.o
+    $ ar rcs ~/code/lib/libmath.a add.o sub.o
     ```
 
-5.  Go to the  **/home/code/include**  directory, create a header file  **math.h**, and declare the header file of the function.
+5.  Go to the  **~/code/include**  directory, create a header file  **math.h**, and declare the header file of the function.
 
     ```
-    cd /home/code/include
-    vi math.h
+    $ cd ~/code/include
+    $ vi math.h
     ```
 
     The following is an example of the  **math.h**  code:
@@ -579,11 +575,11 @@ In the preceding command,  **libraryDIR**  indicates the path of the libtest.a l
     #endif
     ```
 
-6.  Run the  **cd**  command to go to the  **/home/code/src**  directory and create a  **main.c**  function that invokes add\(\) and sub\(\).
+6.  Run the  **cd**  command to go to the  **~/code/src**  directory and create a  **main.c**  function that invokes add\(\) and sub\(\).
 
     ```
-    cd /home/code/src
-    vi main.c
+    $ cd ~/code/src
+    $ vi main.c
     ```
 
     The following is an example of the  **math.c**  code:
@@ -605,13 +601,13 @@ In the preceding command,  **libraryDIR**  indicates the path of the libtest.a l
 7.  Compile  **main.c**  and  **libmath.a**  into  **math.out**.
 
     ```
-    gcc main.c -I /home/code/include -L /home/code/lib -lmath -o math.out
+    $ gcc main.c -I ~/code/include -L ~/code/lib -lmath -o math.out
     ```
 
 8.  Run the following command to execute  **math.out**:
 
     ```
-    ./math.out
+    $ ./math.out
     ```
 
     The command output is as follows:

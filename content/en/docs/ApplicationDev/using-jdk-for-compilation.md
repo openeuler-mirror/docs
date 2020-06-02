@@ -399,16 +399,16 @@ In Java, there are two methods to use the common classes in the package provided
 
 ### Compiling a Java Program Without a Package
 
-1.  Run the  **cd**  command to go to the code directory. The  **/home/code**  directory is used as an example. The command is as follows:
+1.  Run the  **cd**  command to go to the code directory. The  **~/code**  directory is used as an example. The command is as follows:
 
     ```
-    # cd /home/code 
+    $ cd ~/code 
     ```
 
 2.  Compile the Hello World program and save it as  **HelloWorld.java**. The following uses the Hello World program as an example. The command is as follows:
 
     ```
-    # vi HelloWorld.java
+    $ vi HelloWorld.java
     ```
 
     Code example:
@@ -424,7 +424,7 @@ In Java, there are two methods to use the common classes in the package provided
 3.  Run the following command to compile the code in the code directory:
 
     ```
-    # javac HelloWorld.java 
+    $ javac HelloWorld.java 
     ```
 
     If no error is reported, the execution is successful.
@@ -432,28 +432,27 @@ In Java, there are two methods to use the common classes in the package provided
 4.  After the compilation is complete, the HelloWorld.class file is generated. You can run the  **java**  command to view the result. The following is an example:
 
     ```
-    # java HelloWorld
+    $ java HelloWorld
     Hello World
     ```
 
 
 ### Compiling a Java Program with a Package
 
-1.  Run the  **cd**  command to go to the code directory. The  **/home/code**  directory is used as an example. Create the  **/home/code/Test/my/example**,  **/home/code/Hello/world/developers**, and  **/home/code/Hi/openos/openeuler**  subdirectories in the directory to store source files.
+1.  Run the  **cd**  command to go to the code directory. The  **~/code**  directory is used as an example. Create the  **~/code/Test/my/example**,  **~/code/Hello/world/developers**, and  **~/code/Hi/openos/openeuler**  subdirectories in the directory to store source files.
 
     ```
-    cd /home/code
+    $ cd ~/code
+    $ mkdir -p Test/my/example
+    $ mkdir -p Hello/world/developers
+    $ mkdir -p Hi/openos/openeuler
+    ```
     
-    mkdir -p Test/my/example
-    mkdir -p Hello/world/developers
-    mkdir -p Hi/openos/openeuler
-    ```
-
-2.  Run the  **cd**  command to go to the  **/home/code/Test/my/example**  directory and create  **Test.java**.
+2.  Run the  **cd**  command to go to the  **~/code/Test/my/example**  directory and create  **Test.java**.
 
     ```
-    cd /home/code/Test/my/example
-    vi Test.java
+    $ cd ~/code/Test/my/example
+    $ vi Test.java
     ```
 
     The following is an example of the Test.java code:
@@ -472,11 +471,11 @@ In Java, there are two methods to use the common classes in the package provided
     }
     ```
 
-3.  Run the  **cd**  command to go to the  **/home/code/Hello/world/developers**  directory and create  **Hello.java**.
+3.  Run the  **cd**  command to go to the  **~/code/Hello/world/developers**  directory and create  **Hello.java**.
 
     ```
-    cd /home/code/Hello/world/developers
-    vi Hello.java
+    $ cd ~/code/Hello/world/developers
+    $ vi Hello.java
     ```
 
     The following is an example of the Hello.java code:
@@ -490,11 +489,11 @@ In Java, there are two methods to use the common classes in the package provided
     }
     ```
 
-4.  Run the  **cd**  command to go to the  **/home/code/Hi/openos/openeuler**  directory and create  **Hi.java**.
+4.  Run the  **cd**  command to go to the  **~/code/Hi/openos/openeuler**  directory and create  **Hi.java**.
 
     ```
-    cd /home/code/Hi/openos/openeuler
-    vi Hi.java
+    $ cd ~/code/Hi/openos/openeuler
+    $ vi Hi.java
     ```
 
     The following is an example of the Hi.java code:
@@ -508,20 +507,20 @@ In Java, there are two methods to use the common classes in the package provided
     }
     ```
 
-5.  Run the  **cd**  command to go to the  **/home/code**  directory and use javac to compile the source file.
+5.  Run the  **cd**  command to go to the **~/code**  directory and use javac to compile the source file.
 
     ```
-    cd /home/code
-    javac -classpath Hello:Hi Test/my/example/Test.java
+    $ cd ~/code
+    $ javac -classpath Hello:Hi Test/my/example/Test.java
     ```
 
-    After the command is executed, the  **Test.class**,  **Hello.class**, and  **Hi.class**  files are generated in the  **/home/code/Test/my/example**,  **/home/code/Hello/world/developers**, and  **/home/code/Hi/openos/openeuler**  directories.
+    After the command is executed, the  **Test.class**,  **Hello.class**, and  **Hi.class**  files are generated in the  **~/code/Test/my/example**,  **~/code/Hello/world/developers**, and  **~/code/Hi/openos/openeuler**  directories.
 
-6.  Run the  **cd**  command to go to the  **/home/code**  directory and run the  **Test**  program using Java.
+6.  Run the  **cd**  command to go to the  **~/code**  directory and run the  **Test**  program using Java.
 
     ```
-    cd /home/code
-    java -classpath Test:Hello:Hi my/example/Test
+    $ cd ~/code
+    $ java -classpath Test:Hello:Hi my/example/Test
     ```
 
     The command output is as follows:

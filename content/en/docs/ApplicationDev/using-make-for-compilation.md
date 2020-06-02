@@ -277,16 +277,18 @@ A makefile file consists of the following contents:
 
 ### Example of Using Makefile to Implement Compilation
 
-1.  Run the  **cd**  command to go to the code directory. The  **/home/code**  directory is used as an example.
+1.  Run the  **cd**  command to go to the code directory. The  **~/code**  directory is used as an example.
 
     ```
-    cd /home/code
+    $ cd ~/code
     ```
 
-2.  Create a header file  **hello.h**  and two functions  **hello.c**  and  **main.c**.
+2. Create a header file  **hello.h**  and two functions  **hello.c**  and  **main.c**.
 
     ```
-    cd /home/code/
+    $ vi hello.h
+    $ vi hello.c
+    $ vi main.c
     ```
 
     The following is an example of the  **hello.h**  code:
@@ -328,7 +330,7 @@ A makefile file consists of the following contents:
 3.  Create the makefile.
 
     ```
-    vi Makefile
+    $ vi Makefile
     ```
 
     The following provides an example of the makefile content:
@@ -347,7 +349,7 @@ A makefile file consists of the following contents:
 4.  Run the  **make**  command.
 
     ```
-    make
+    $ make
     ```
 
     After the command is executed, the commands executed in makefile are printed. If you do not need to print the information, add the  **-s**  option to the  **make**  command.
@@ -361,7 +363,7 @@ A makefile file consists of the following contents:
 5.  Execute the ./main target.
 
     ```
-    ./main
+    $ ./main
     ```
 
     After the command is executed, the following information is displayed:
