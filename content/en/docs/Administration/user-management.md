@@ -1,4 +1,4 @@
-# User Management
+# User and User Group Management
 
 In Linux, each common user has an account, including the user name, password, and home directory. There are also special users created for specific purposes, and the most important special user is the admin account whose default user name is root. In addition, Linux provides user groups so that each user belongs to at least one group, facilitating permission management.
 
@@ -21,17 +21,18 @@ The control of users and user groups is a core element of openEuler security man
 
 <!-- /TOC -->
 
+## Managing Users
 
-## Adding a User
+### Adding a User
 
-### useradd Command
-Run the  **useradd**  command as the user  **root**  to add user information to the system. In the command,  _options_  indicates related parameters and  _user\_name_  indicates the user name.
+#### useradd Command
+Run the  **useradd**  command as the user  **root**  to add user information to the system. In the command,  _options_  indicates related parameters and  _username_  indicates the user name.
 
 ```
-useradd [options] user_name
+useradd [options] username
 ```
 
-### User Information Files
+#### User Information Files
 The following files contain user account information:
 
 -   /etc/passwd: user account information
@@ -41,11 +42,11 @@ The following files contain user account information:
 -   /etc/login.defs: system wide settings
 -   /etc/skel: default directory that holds initial configuration files
 
-### Example
-For example, to create a user named user\_example, run the following command as the user  **root**:
+#### Example
+For example, to create a user named userexample, run the following command as the user  **root**:
 
 ```
-# useradd user_example
+# useradd userexample
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
@@ -54,21 +55,21 @@ For example, to create a user named user\_example, run the following command as 
 To view information about the new user, run the  **id**  command:
 
 ```
-# id user_example
-uid=502(user_example)    gid=502(user_example)    groups=502(user_example)
+# id userexample
+uid=502(userexample)    gid=502(userexample)    groups=502(userexample)
 ```
 
-To change the password of the user\_example, run the following command:
+To change the password of the userexample, run the following command:
 
 ```
-# passwd user_example
+# passwd userexample
 ```
 
 Then, enter the password and confirm it as prompted:
 
 ```
-# passwd user_example
-Changing password for user user_example.
+# passwd userexample
+Changing password for user userexample.
 New password:
 Retype new password:
 passwd: all authentication tokens updated successfully.
@@ -77,27 +78,27 @@ passwd: all authentication tokens updated successfully.
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >If the command output contains **BAD PASSWORD: The password fails the dictionary check - it is too simplistic/sytematic**, the password is too simple and needs to be reset.  
 
-## Modifying a User Account
+### Modifying a User Account
 
-### Changing a Password
+#### Changing a Password
 Common users can change their passwords using the  **passwd**  command. Only the admin is allowed to use the  **passwd username**  command to change passwords for other users.
 
-### Changing User's Login Shell
+#### Changing User's Login Shell
 Common users can use the  **chsh**  command to change their login shell. Only the admin is allowed to run the  **chsh username**  command to change login shell for other users.
 
-Users can also run the  **usermod**  command as the user  **root**  to modify the shell information. In the command,  _new\_shell\_path_  indicates the target shell path, and  _username_  indicates the user name to be modified. Change them based on the site requirements.
+Users can also run the  **usermod**  command as the user  **root**  to modify the shell information. In the command,  _new_shell_path_  indicates the target shell path, and  _username_  indicates the user name to be modified. Change them based on the site requirements.
 
 ```
 usermod -s new_shell_path username
 ```
 
-For example, to change the shell of user\_example to csh, run the following command:
+For example, to change the shell of userexample to csh, run the following command:
 
 ```
-# usermod -s /bin/csh user_example
+# usermod -s /bin/csh userexample
 ```
 
-### Changing the Home Directory
+#### Changing the Home Directory
 -   To change the home directory, run the following command as the user  **root**. In the command,  _new\_home\_directory_  indicates the created target home directory, and  _username_  indicates the user name to be changed. Change them based on the site requirements.
 
     ```
@@ -111,7 +112,7 @@ For example, to change the shell of user\_example to csh, run the following comm
     ```
 
 
-### Changing a UID
+#### Changing a UID
 To change the user ID, run the following command as the user  **root**. In the command,  _UID_  indicates the target user ID and  _username_  indicates the user name. Change them based on the site requirements.
 
 ```
@@ -120,14 +121,14 @@ usermod -u UID username
 
 The usermod command can change a user's UID in all files and directories under the user's home directory. However, for files outside the user's home directory, their owners can only be changed using the  **chown**  command.
 
-### Changing Account Expiry Date
+#### Changing Account Expiry Date
 If the shadow password is used, run the following command as the user  **root**  to change the validity period of an account. In the command,  _MM_,  _DD_, and  _YY_  indicate the month, day, and year, respectively, and  _username_  indicates the user name. Change them based on the site requirements.
 
 ```
 usermod -e MM/DD/YY username
 ```
 
-## Deleting Users
+### Deleting a User
 
 Run the  **userdel**  command as the user  **root**  to delete an existing user.
 
@@ -140,9 +141,9 @@ For example, run the following command to delete user Test:
 If you also need to delete the user's home directory and all contents in the directory, run the  **userdel**  command with the -r option to delete them recursively.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
->You are not advised to directly delete a user who has logged in to the system. To forcibly delete a user, run the  **userdel -f** _Test_  command.  
+>You are not advised to directly delete a user who has logged in to the system. To forcibly delete a user, run the  **userdel -f** _Test_ command.  
 
-## Granting Rights to a Common User
+### Granting Rights to a Common User
 
 The  **sudo**  command allows common users to execute commands that can be executed only by administrator accounts.
 
@@ -223,3 +224,83 @@ In the preceding information:
 
     POWERUSER can run all commands except the  **su**  command as the user  **root**  on all hosts.
 
+
+## Managing User Groups
+
+### Adding a User Group
+
+#### groupadd Command
+Run the  **groupadd**  command as the **root** user to add user group information to the system. In the command,  _options_  indicates related parameters and  _groupname_  indicates the group name.
+
+```
+groupadd [options] groupname
+```
+
+#### User Group Information Files
+The following files contain user group information:
+
+-   /etc/gshadow file: user group encryption information
+-   /etc/group file: group information
+-   /etc/login.defs: system wide settings
+
+#### Example
+For example, to create a user group named groupexample, run the following command as the **root** user:
+
+```
+# groupadd groupexample
+```
+
+### Modifying a User Group
+
+#### Changing a GID
+To change the user group ID, run the following command as the **root** user. In the command, _GID_  indicates the target user group ID and  _groupname_  indicates the user group name. Change them based on the site requirements.
+
+```
+groupmod -g GID groupname
+```
+
+#### Changing a User Group Name
+To change the user group name, run the following command as the **root** user. In the command, _newgroupname_  indicates the user group new name and  _oldgroupname_  indicates the user group name. Change them based on the site requirements.
+
+```
+groupmod -n newgroupname oldgroupname
+```
+
+### Deleting a User Group
+
+Run the  **groupdel**  command as the **root** user to delete an existing user group.
+
+For example, run the following command to delete user group Test:
+
+```
+# groupdel Test
+```
+
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>The user's primary group cannot be directly deleted. To forcibly delete a user's primary group, run the  **groupdel -f** _Test_  command.  
+
+### Adding a User to a Group or Removing a User from a Group
+
+Run the  **gpasswd**  command as the **root** user to add a user to a group or remove a user from a group.
+
+For example, run the following command to add the user userexample to the user group Test:
+
+```
+# gpasswd -a userexample Test
+```
+
+For example, run the following command to remove the user userexample from the user group Test:
+
+```
+# gpasswd -d userexample Test
+```
+
+### Changing the Current Group of a User to a Specified Group
+
+When a user belongs to more than one user group at the same time, run the **newgrp** command to change the current group of the user to other user groups, so as to have the permissions of other user groups.
+
+For example, run the following command to change the current group of the user userexample to the user group Test:
+
+```
+$ newgrp Test
+```

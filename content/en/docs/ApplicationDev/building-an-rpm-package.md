@@ -518,7 +518,7 @@ This section describes how to build an RPM software package online on OBS.
 
 To modify the source code of the existing software and build the modified source file into an RPM software package on the OBS web client, perform the following steps:
 
-1.  Log in to OBS at  [http://openeuler-build.huawei.com/](http://openeuler-build.huawei.com/).
+1.  Log in to OBS at  [https://build.openeuler.org/](https://build.openeuler.org/).
 2.  Click  **All Projects**. The  **All Projects**  page is displayed.
 3.  Click the project to be modified. The project details page is displayed. For example, click  **openEuler:Mainline**.
 4.  On the project details page, search for the software package to be modified and click the software package name. The software package details page is displayed.
@@ -642,12 +642,12 @@ You have obtained the  **root**  permission, and have configured a repo source f
         $ vi ~/.oscrc
         ```
 
-    2.  Add the  **user**  and  **pass**  fields to  **\~/.oscrc**. The values of  _userName_  and  _passWord_  are the account and password registered on the OBS website \([http://openeuler-build.huawei.com/](http://openeuler-build.huawei.com/)\).
+    2.  Add the  **user**  and  **pass**  fields to  **\~/.oscrc**. The values of  _userName_  and  _passWord_  are the account and password registered on the OBS website \([https://build.openeuler.org/](https://build.openeuler.org/)\).
 
         ```
         [general]
-        apiurl = http://openeuler-build.huawei.com/
-        [http://openeuler-build.huawei.com/]
+        apiurl = https://build.openeuler.org/
+        [https://build.openeuler.org/]
         user=userName
         pass=passWord
         ```
