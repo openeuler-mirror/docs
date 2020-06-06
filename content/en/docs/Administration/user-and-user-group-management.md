@@ -5,19 +5,18 @@ In Linux, each common user has an account, including the user name, password, an
 The control of users and user groups is a core element of openEuler security management. This topic introduces the user and group management commands and explains how to assign privileges to common users in graphical user interface and on command lines.
 <!-- TOC -->
 
-- [User Management](#user-management)
-    - [Adding a User](#adding-a-user)
-        - [useradd Command](#useradd-command)
-        - [User Information Files](#user-information-files)
-        - [Example](#example)
-    - [Modifying a User Account](#modifying-a-user-account)
-        - [Changing a Password](#changing-a-password)
-        - [Changing User's Login Shell](#changing-users-login-shell)
-        - [Changing the Home Directory](#changing-the-home-directory)
-        - [Changing a UID](#changing-a-uid)
-        - [Changing Account Expiry Date](#changing-account-expiry-date)
-    - [Deleting Users](#deleting-users)
-    - [Granting Rights to a Common User](#granting-rights-to-a-common-user)
+- [User and User Group Management](#user-and-user-group-management)
+     - [Managing Users](#managing-users)
+        - [Adding a User](#adding-a-user)
+        - [Modifying a User Account](#modifying-a-user-account)
+        - [Deleting a User](#deleting-a-user)
+        - [Granting Rights to a Common User](#granting-rights-to-a-common-user)
+     - [Managing User Groups](#managing-user-groups)
+        - [Adding a User Group](#adding-a-user-group)
+        - [Modifying a User Group](#modifying-a-user-group)
+        - [Deleting a User Group](#deleting-a-user-group)
+        - [Adding a User to a Group or Removing a User from a Group](#adding-a-user-to-a-group-or-removing-a-user-from-a-group)
+        - [Changing the Current Group of a User to a Specified Group](#changing-the-current-group-of-a-user-to-a-specified-group)
 
 <!-- /TOC -->
 
@@ -64,6 +63,28 @@ To change the password of the userexample, run the following command:
 ```
 # passwd userexample
 ```
+
+
+The password of the user must meet the password complexity requirements. The password complexity requirements are as follows:
+
+1.  A password must contain at least eight characters.
+2.  A password must contain at least three of the following types: uppercase letters, lowercase letters, digits, and special characters.
+3.  A password must be different from the account name.
+4.  A password cannot contain words in the dictionary.
+    -   Querying a dictionary
+        In the installed openEuler environment, you can run the following command to export the dictionary library file  **dictionary.txt**, and then check whether the password is in the dictionary.
+        ```
+        cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt
+        ```
+    -   Modifying a dictionary
+        1.  Modify the exported dictionary library file, and then run the following command to update the dictionary library:
+            ```
+            # create-cracklib-dict dictionary.txt
+            ```
+        2.  Run the following command to add another dictionary file  **custom.txt**  to the original dictionary library.
+            ```
+            # create-cracklib-dict dictionary.txt custom.txt
+            ```
 
 Then, enter the password and confirm it as prompted:
 
