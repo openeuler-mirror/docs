@@ -318,7 +318,7 @@ For example, run the following command to remove the user userexample from the u
 
 ### Changing the Current Group of a User to a Specified Group
 
-When a user belongs to more than one user group at the same time, run the **newgrp** command to change the current group of the user to other user groups, so as to have the permissions of other user groups.
+If a user belongs to multiple user groups, run the **newgrp** command to switch the user to another user group after logging in to the system. Then, the user has the permission of other user groups.
 
 For example, run the following command to change the current group of the user userexample to the user group Test:
 
