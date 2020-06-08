@@ -26,7 +26,7 @@ headless: true
 - [管理员指南]({{< relref "./docs/Administration/administration.md" >}})
     - [查看系统信息]({{< relref "./docs/Administration/查看系统信息.md" >}})
     - [基础配置]({{< relref "./docs/Administration/基础配置.md" >}})
-    - [管理用户]({{< relref "./docs/Administration/管理用户.md" >}})
+    - [管理用户和用户组]({{< relref "./docs/Administration/管理用户和用户组.md" >}})
     - [使用DNF管理软件包]({{< relref "./docs/Administration/使用DNF管理软件包.md" >}})
     - [管理服务]({{< relref "./docs/Administration/管理服务.md" >}})
     - [管理进程]({{< relref "./docs/Administration/管理进程.md" >}})
