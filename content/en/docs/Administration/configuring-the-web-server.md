@@ -282,7 +282,7 @@ After the web server is set up, perform the following operations to check whethe
         Run the following command to check whether the web page can be accessed. If the service is successfully set up, the web page can be accessed.
 
         ```
-        $ curl https://192.168.1.60
+        $ curl http://192.168.1.60
         ```
 
         Run the following command to check whether the command output is 0. If the command output is 0, the httpd server is successfully set up.
@@ -295,11 +295,11 @@ After the web server is set up, perform the following operations to check whethe
 
         Open the browser and enter the following address in the address box. If the web page can be accessed, the httpd server is successfully set up.
 
-        https://192.168.1.60_
+        http://192.168.1.60
 
         If the port number is changed, enter the address in the following format:
 
-        https://192.168.1.60: port number_
+        http://192.168.1.60: port number
 
 
 
@@ -538,8 +538,8 @@ After the web server is set up, perform the following operations to check whethe
 
         Open the browser and enter the following address in the address box. If the web page can be accessed, the Nginx server is successfully set up.
 
-        http://192.168.1.60_
+        http://192.168.1.60
 
         If the port number is changed, enter the address in the following format:
 
-        http://192.168.1.60: port number_
+        http://192.168.1.60: port number

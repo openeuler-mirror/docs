@@ -515,7 +515,7 @@ OBS使用工程组织软件包。基础的权限控制、相关的存仓库和�
 
 使用OBS网页端，修改已有软件的源代码，并将修改后的源文件构建为RPM软件包的操作方法如下：
 
-1.  登录OBS界面，地址为：[http://openeuler-build.huawei.com/](http://openeuler-build.huawei.com/)。
+1.  登录OBS界面，地址为：[https://build.openeuler.org/](https://build.openeuler.org/)。
 2.  单击“All Projects”进入所有工程页面。
 3.  单击需要修改的对应工程，进入该工程的详情页面，例如单击“openEuler:Mainline”。
 4.  在工程详情页面的搜索框查找需要修改的软件包，然后单击该软件包包名，进入该软件包详请页面。
@@ -639,12 +639,12 @@ RPM软件包构建完成后，通过网页端获取对应RPM软件包的方法�
         $ vi ~/.oscrc
         ```
 
-    2.  在\~/.oscrc中添加user和pass字段，如下所示，它们的取值  _userName_ 和 _passWord_  分别是用户在OBS网页（[http://openeuler-build.huawei.com/](http://openeuler-build.huawei.com/)）上已经注册的账号和密码。
+    2.  在\~/.oscrc中添加user和pass字段，如下所示，它们的取值  _userName_ 和 _passWord_  分别是用户在OBS网页（[https://build.openeuler.org/](https://build.openeuler.org/)）上已经注册的账号和密码。
 
         ```
         [general]
-        apiurl = http://openeuler-build.huawei.com/
-        [http://openeuler-build.huawei.com/]
+        apiurl = https://build.openeuler.org/
+        [https://build.openeuler.org/]
         user=userName
         pass=passWord
         ```

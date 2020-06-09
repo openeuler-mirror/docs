@@ -28,7 +28,7 @@ headless: true
 - [Administrator Guide]({{< relref "./docs/Administration/administration.md" >}})
     - [Viewing System Information]({{< relref "./docs/Administration/viewing-system-information.md" >}})
     - [Basic Configuration]({{< relref "./docs/Administration/basic-configuration.md" >}})
-    - [User Management]({{< relref "./docs/Administration/user-management.md" >}})
+    - [User and User Group Management]({{< relref "./docs/Administration/user-and-user-group-management.md" >}})
     - [Using the DNF to Manage Software Packages]({{< relref "./docs/Administration/using-the-dnf-to-manage-software-packages.md" >}})
     - [Service Management]({{< relref "./docs/Administration/service-management.md" >}})
     - [Process Management]({{< relref "./docs/Administration/process-management.md" >}})

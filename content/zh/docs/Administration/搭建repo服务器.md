@@ -139,7 +139,7 @@ Packages为rpm包所在的目录，repodata为repo源元数据所在的目录，
             listen       80;
             server_name  localhost;                 # 服务器名（url）
             client_max_body_size 4G;
-            root         /home/openEuler/srv/repo;                 # 服务默认目录
+            root         /usr/share/nginx/repo;                 # 服务默认目录
     
             location / {
                 autoindex            on;            # 开启访问目录下层文件
@@ -168,19 +168,19 @@ Packages为rpm包所在的目录，repodata为repo源元数据所在的目录，
     $ systemctl status nginx
     ```
 
-    -   [图1](#zh-cn_topic_0151920971_fd25e3f1d664b4087ae26631719990a71)表示nginx服务启动成功
+    - [图1](#zh-cn_topic_0151920971_fd25e3f1d664b4087ae26631719990a71)表示nginx服务启动成功
 
-    **图 1**  nginx服务启动成功<a name="zh-cn_topic_0151920971_fd25e3f1d664b4087ae26631719990a71"></a>  
-    ![](figures/nginx服务启动成功.png "nginx服务启动成功")
+        **图 1**  nginx服务启动成功<a name="zh-cn_topic_0151920971_fd25e3f1d664b4087ae26631719990a71"></a>  
+        ![](figures/nginx服务启动成功.png "nginx服务启动成功")
 
-    -   若nginx服务启动失败，查看错误信息：
+    - 若nginx服务启动失败，查看错误信息：
 
     ```
     $ systemctl status nginx.service --full
     ```
 
-    **图 2**  nginx服务启动失败<a name="zh-cn_topic_0151920971_f1f9f3d086e454b9cba29a7cae96a4c54"></a>  
-    ![](figures/nginx服务启动失败.png "nginx服务启动失败")
+        **图 2**  nginx服务启动失败<a name="zh-cn_topic_0151920971_f1f9f3d086e454b9cba29a7cae96a4c54"></a>  
+        ![](figures/nginx服务启动失败.png "nginx服务启动失败")
 
     如[图2](#zh-cn_topic_0151920971_f1f9f3d086e454b9cba29a7cae96a4c54)所示nginx服务创建失败，是由于目录/var/spool/nginx/tmp/client\_body创建失败，在root权限下手动进行创建，类似的问题也这样处理：
 
@@ -195,20 +195,17 @@ Packages为rpm包所在的目录，repodata为repo源元数据所在的目录，
 
 ### repo源部署
 
-1.  创建nginx配置文件/etc/nginx/nginx.conf中指定的目录/home/openEuler/srv/repo：
+1.  在root权限下创建nginx配置文件/etc/nginx/nginx.conf中指定的目录/usr/share/nginx/repo：
 
     ```
-    $ mkdir -p /home/openEuler/srv/repo
+    # mkdir -p /usr/share/nginx/repo
     ```
 
-2.  在root权限下将SELinux设置为宽容模式：
+2.  在root权限下修改目录/usr/share/nginx/repo的权限：
 
     ```
-    # setenforce permissive
+    # chmod -R 755 /usr/share/nginx/repo
     ```
-
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >repo server重启后，需要重新设置。  
 
 3.  设置防火墙规则，开启nginx设置的端口（此处为80端口），在root权限下通过firewall设置端口开启：
 
@@ -234,25 +231,26 @@ Packages为rpm包所在的目录，repodata为repo源元数据所在的目录，
     **图 3**  nginx部署成功<a name="zh-cn_topic_0151921017_fig1880404110396"></a>  
     ![](figures/nginx部署成功.png "nginx部署成功")
 
-5.  通过下面几种方式将repo源放入到/home/openEuler/srv/repo下：
-    -   拷贝镜像中相关文件至在/home/openEuler/srv/repo下
+5.  通过下面几种方式将repo源放入到/usr/share/nginx/repo下：
+    - 在root权限下拷贝镜像中相关文件至/usr/share/nginx/repo下，并修改目录权限。
 
         ```
         # mount /home/openEuler/openEuler-20.03-LTS-aarch64-dvd.iso  /mnt/
-        $ cp -r /mnt/Packages /home/openEuler/srv/repo/
-        $ cp -r /mnt/repodata /home/openEuler/srv/repo/
-        $ cp -r /mnt/RPM-GPG-KEY-openEuler /home/openEuler/srv/repo/
+        # cp -r /mnt/Packages /usr/share/nginx/repo
+        # cp -r /mnt/repodata /usr/share/nginx/repo
+        # cp -r /mnt/RPM-GPG-KEY-openEuler /usr/share/nginx/repo
+        # chmod -R 755 /usr/share/nginx/repo
         ```
-
+    
         openEuler-20.03-LTS-aarch64-dvd.iso存放在/home/openEuler目录下。
-
-    -   在/home/openEuler/srv/repo下创建repo源的软链接
-
+    
+    - 使用root在/usr/share/nginx/repo下创建repo源的软链接。
+    
         ```
-        $ ln -s /home/openEuler/os /home/openEuler/srv/repo/os
+        # ln -s /mnt /usr/share/nginx/repo/os
         ```
-
-        /home/openEuler/os为已经创建好的repo源，/home/openEuler/srv/repo/os将指向/home/openEuler/os。
+    
+        /mnt为已经创建好的repo源，/usr/share/nginx/repo/os将指向/mnt。
 
 
 
@@ -287,14 +285,14 @@ repo可配置为yum源，yum（全称为 Yellow dog Updater, Modified）是一�
     ```
     [base]
     name=base
-    baseurl=http://192.168.1.2/
+    baseurl=http://192.168.139.209/
     enabled=1
     gpgcheck=1
-    gpgkey=http://192.168.1.2/RPM-GPG-KEY-openEuler
+    gpgkey=http://192.168.139.209/RPM-GPG-KEY-openEuler
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
-    >“192.168.1.2”为示例地址，请用户根据实际情况进行配置。  
+    >“192.168.139.209”为示例地址，请用户根据实际情况进行配置。  
 
 
 ### repo优先级
@@ -304,11 +302,11 @@ repo可配置为yum源，yum（全称为 Yellow dog Updater, Modified）是一�
 ```
 [base]
 name=base
-baseurl=http://192.168.1.2/
+baseurl=http://192.168.139.209/
 enabled=1
 priority=2
 gpgcheck=1
-gpgkey=http://192.168.1.2/RPM-GPG-KEY-openEuler
+gpgkey=http://192.168.139.209/RPM-GPG-KEY-openEuler
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
