@@ -349,7 +349,7 @@ You can use the systemctl tool to manage the Nginx service, including starting, 
 
     For more information about service management, see  [Service Management](service-management.html).
 
--   To start, stop, and restart the httpd service, you must have the  **root**  permission.
+-   To start, stop, and restart the Nginx service, you must have the  **root**  permission.
 
 #### Starting a Service
 -   Run the following command to start and run the Nginx service:
@@ -371,7 +371,7 @@ You can use the systemctl tool to manage the Nginx service, including starting, 
 >If the running Nginx server functions as a secure server, a password is required after the system is started. The password is an encrypted private SSL key.  
 
 #### Stopping the Service
--   Run the following command to stop the httpd service:
+-   Run the following command to stop the Nginx service:
 
     ```
     # systemctl stop nginx
