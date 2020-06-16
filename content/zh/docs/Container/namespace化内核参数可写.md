@@ -1,6 +1,6 @@
-# namespace化内核参数可写<a name="ZH-CN_TOPIC_0184808021"></a>
+# namespace化内核参数可写
 
-## 功能描述<a name="zh-cn_topic_0182200836_section231043418358"></a>
+## 功能描述
 
 对于运行在容器内的业务，如数据库，大数据，包括普通应用，有对部分内核参数进行设置和调整的需求，以满足最佳的业务运行性能和可靠性。内核参数要么不允许修改，要么全部允许修改（特权容器）：
 
@@ -12,7 +12,7 @@
 
 系统容器提供--ns-change-opt参数，可以指定namespace化的内核参数在容器内动态设置，当前仅支持net、ipc。
 
-## 参数说明<a name="zh-cn_topic_0182200836_section342514469355"></a>
+## 参数说明
 
 <a name="zh-cn_topic_0182200836_table1869210387418"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0182200836_row1569373816419"><th class="cellrowborder" valign="top" width="20.96%" id="mcps1.1.4.1.1"><p id="zh-cn_topic_0182200836_p106936387415"><a name="zh-cn_topic_0182200836_p106936387415"></a><a name="zh-cn_topic_0182200836_p106936387415"></a>命令</p>
@@ -48,11 +48,11 @@
 </tbody>
 </table>
 
-## 约束限制<a name="zh-cn_topic_0182200836_section07049182379"></a>
+## 约束限制
 
 -   如果容器启动同时指定了--privileged（特权容器）和--ns-change-opt，则--ns-change-opt不生效。
 
-## 使用示例<a name="zh-cn_topic_0182200836_section3576812123619"></a>
+## 使用示例
 
 启动容器， 指定--ns-change-opt=net：
 

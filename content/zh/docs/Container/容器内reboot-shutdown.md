@@ -1,10 +1,10 @@
-# 容器内reboot/shutdown<a name="ZH-CN_TOPIC_0184808019"></a>
+# 容器内reboot/shutdown
 
-## 功能描述<a name="zh-cn_topic_0182200832_section13899173716205"></a>
+## 功能描述
 
 系统容器支持在容器内执行reboot和shutdown命令。执行reboot命令效果同重启容器一致；执行shutdown命令效果同停止容器一致。
 
-## 参数说明<a name="zh-cn_topic_0182200832_section1293894622012"></a>
+## 参数说明
 
 <a name="zh-cn_topic_0182200832_table1869210387418"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0182200832_row1569373816419"><th class="cellrowborder" valign="top" width="14.29%" id="mcps1.1.4.1.1"><p id="zh-cn_topic_0182200832_p106936387415"><a name="zh-cn_topic_0182200832_p106936387415"></a><a name="zh-cn_topic_0182200832_p106936387415"></a>命令</p>
@@ -27,14 +27,14 @@
 </tbody>
 </table>
 
-## 约束限制<a name="zh-cn_topic_0182200832_section4739162012118"></a>
+## 约束限制
 
 -   shutdown功能，依赖于不同的OS，以实际容器运行环境对应OS为准。
 -   执行“shutdown -h now”命令关闭系统时，不能多次占用console。例如“isula run -ti”命令打开一个console，在另一个host bash中isula attach该容器，会打开另一个console，此时执行shutdown会失败。
 
-## 使用示例<a name="zh-cn_topic_0182200832_section1518772182111"></a>
+## 使用示例
 
--   容器启动时指定--restart on-reboot参数，示例如下：
+-   容器启动时指定\--restart on-reboot参数，示例如下：
 
     ```
     [root@localhost ~]# isula run -tid --restart on-reboot --system-container --external-rootfs /root/myrootfs none init
