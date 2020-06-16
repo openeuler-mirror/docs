@@ -1095,7 +1095,7 @@ A new user has few permissions and can perform only operations that do not requi
 \#Create a user whose password is 123456, username is userexample2, and hostname is 192.168.1.100.
 
 ```
-> CREATE USER 'userexample2'@'192.168.1.100' IDENDIFIED BY '123456';
+> CREATE USER 'userexample2'@'192.168.1.100' IDENTIFIED BY '123456';
 ```
 
 #### Viewing Users
@@ -1408,7 +1408,7 @@ In the preceding information:
 \#Back up only the data of the db1 database of the user  **root**  on the host  **192.168.202.144**  through port  **3306** to the  **db1.sql**  file.
 
 ```
-# mysqldump -h 192.168.202.144 -P 3306 -uroot -p123456 -t db1 > db1.sq
+# mysqldump -h 192.168.202.144 -P 3306 -uroot -p123456 -t db1 > db1.sql
 ```
 
 #### Restoring a Database
@@ -1843,7 +1843,7 @@ A new user has few permissions and can perform only operations that do not requi
 \#Create a user whose password is  **123456**, username is  **userexample2**, and hostname is  **192.168.1.100**.
 
 ```
-> CREATE USER 'userexample2'@'192.168.1.100' IDENDIFIED BY '123456';
+> CREATE USER 'userexample2'@'192.168.1.100' IDENTIFIED BY '123456';
 ```
 
 #### Viewing Users
@@ -2152,7 +2152,7 @@ In the preceding information:
 \#Back up only the table structure of the db1 database of user  **root**  on port  **3306**  of the host whose IP address is  **192.168.202.144**  to the  **db1.sql**  file.
 
 ```
-# mysqldump -h 192.168.202.144 -P 3306 -uroot -p123456 -t db1 > db1.sq
+# mysqldump -h 192.168.202.144 -P 3306 -uroot -p123456 -t db1 > db1.sql
 ```
 
 #### Restoring a Database

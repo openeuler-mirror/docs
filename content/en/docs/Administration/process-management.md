@@ -26,7 +26,7 @@ The who command is used to display system user information. For example, before 
 The following is an example output of the who command, where system users and their status are displayed: The use of the  **who**  command is as follows:
 
 ```
-# who
+$ who
 admin     tty1         Jul 28 15:55
 admin     pts/0        Aug  5 15:46 (192.168.0.110)
 admin     pts/2        Jul 29 19:52 (192.168.0.110)
@@ -97,7 +97,7 @@ A common scenario is using the ps command to monitor background processes, which
 For example, to list all processes on a terminal, run the following command:
 
 ```
-# ps -a
+$ ps -a
   PID TTY          TIME CMD
 12175 pts/6    00:00:00 bash
 24526 pts/0    00:00:00 vsftpd
@@ -127,7 +127,7 @@ kill -l [signal]
 
 The process ID is retrieved from the ps command. The  **-s**  option indicates the signal sent to specified program. The signal details can be viewed by running the  **kill -l**  command. The  **-p**  option indicates the specified process IDs.
 
-For example, to terminate the process with ID 1409, run the following command:
+For example, to terminate the process with ID 1409, run the following command as the **root** user:
 
 ```
 # kill -9 1409
@@ -136,7 +136,7 @@ For example, to terminate the process with ID 1409, run the following command:
 Example output of the kill command with the -l option
 
 ```
-# kill -l
+$ kill -l
  1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL       5) SIGTRAP
  6) SIGABRT      7) SIGBUS       8) SIGFPE       9) SIGKILL     10) SIGUSR1
 11) SIGSEGV     12) SIGUSR2     13) SIGPIPE     14) SIGALRM     15) SIGTERM
@@ -197,7 +197,7 @@ Although you can select any of the preceding examples according to your preferen
 #### Privileges
 Only commands from standard input or from the file specified by the -f option can be scheduled by the at command to be executed. If the su command is executed to switch the operating system from user A to user B and then the at command is executed at the shell prompt of user B, the at command execution result is sent to user B. whereas emails \(if any\) are sent to user A.
 
-For example, to run the slocate -u command at 10 am on June 8, 2019, perform the following steps:
+For example, to run the slocate -u command at 10 am on June 8, 2019, perform the following steps as the **root** user:
 
 ```
 # at  10:00  6/8/19
@@ -215,7 +215,7 @@ The administrator is authorized to run the at command unconditionally. For other
 The at command can run commands at the scheduled time but only once. It means that after the running command is specified, the system completes the task at the specified time. If you need to run commands repeatedly, the cron service is a good helper.
 
 #### Cron Service
-The  **cron**  service searches the  **/var/spool/cron**  directory for  **crontab**  files named by the user name in the /etc/passwd file and loads the search results into memory to execute the commands in the  **crontab**  files. Each user has a crontab file, with the file name being the same as the user name. For example, the  **crontab**  file of the  **globus**  user is  **/var/spool/cron/globus**.
+The  **cron**  service searches the  **/var/spool/cron**  directory for  **crontab**  files named by the user name in the /etc/passwd file and loads the search results into memory to execute the commands in the  **crontab**  files. Each user has a crontab file, with the file name being the same as the user name. For example, the  **crontab**  file of the  **userexample**  user is  **/var/spool/cron/userexample**.
 
 The  **cron**  service also reads the cron configuration file  **/etc/crontab**  every minute, which can be edited in various formats. If no crontab files are found, the  **cron**  service enters sleep mode and releases system resources. One minute later, the  **cron**  service is awoken to repeat the search work and command execution. Therefore, the background process occupies few resources and is wakened up every minute to check whether there are commands to be executed.
 
@@ -234,7 +234,7 @@ Here are common crontab command options:
 For example, to list cron service settings of the user  **root**, run the following command:
 
 ```
-crontab -u root -l
+# crontab -u root -l
 ```
 
 #### crontab Files
@@ -298,17 +298,17 @@ For example, to allow the operating system to add sleepy to the /tmp/test.txt fi
 
 Each time the cron service settings of a user are edited, the cron service generates in the /var/spool/cron directory a crontab file named after the user. The crontab file can be edited only using the crontab -e command. Alternatively, the user can create a file and run the crontab  _filename_  command to import its cron settings into the new file.
 
-For example, to create a crontab file for the globus user, perform the following steps: The procedure is as follows:
+For example, to create a crontab file for the userexample user, perform the following steps: The procedure is as follows:
 
-1.  Create a file using any text editor. Add the commands that need to be executed periodically and the command execution interval to the new file. In this example, the new file is  **\~/globus.cron**.
-2.  Run the following command to install the new file as the crontab file of the globus user: run the following command:
+1.  Create a file using any text editor. Add the commands that need to be executed periodically and the command execution interval to the new file. In this example, the new file is  **\~/userexample.cron**.
+2.  Run the following command as the **root** user to install the new file as the crontab file of the userexample user:
 
     ```
-    crontab  globus. ~/globus.cron
+    # crontab -u userexample ~/userexample.cron
     ```
 
 
-After the new file is installed, you will find a file named globus in the  **/var/spool/cron**  directory. This file is the required crontab file.
+After the new file is installed, you will find a file named userexample in the  **/var/spool/cron**  directory. This file is the required crontab file.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >Do not restart the cron service after a crontab file is modified, because the cron service, once started, reads the crontab file every minute to check whether there are commands that need to be executed periodically. You do not need to restart the  **cron**  service after modifying the  **crontab**  file.  
