@@ -42,7 +42,7 @@
 In the preceding command,  **OBJECT**  can be one of the following options:  **general**,  **networking**,  **radio**,  **connection**, and  **device**.  **OPTIONS**  can be optional options, such as  **-t**,  **\-\-terse**  \(for script processing\),**-p**,  **\-\-pretty**  \(for human-readable output\),  **-h**, and  **\-\-help**. For more information, run the  **nmcli help**  command.
 
 ```
-# nmcli help
+$ nmcli help
 ```
 
 Common commands are listed as follows:
@@ -50,33 +50,32 @@ Common commands are listed as follows:
 -   To display the general status of NetworkManager, run the following command:
 
     ```
-    nmcli general status
+    $ nmcli general status
     ```
 
 -   To display all connections, run the following command:
 
     ```
-    nmcli connection show
+    $ nmcli connection show
     ```
 
 -   To display the current active connections only, add the  **-a**  or  **\-\-active**  option as follows:
 
     ```
-    nmcli connection show --active
+    $ nmcli connection show --active
     ```
 
 -   To display the device identified by NetworkManager and its connection status, run the following command:
 
     ```
-    nmcli device status
+    $ nmcli device status
     ```
 
--   To start or stop network interfaces, for example, run the nmcli commands:
+-   To start or stop network interfaces, for example, run the nmcli commands as the **root** user:
 
     ```
-    
-    nmcli connection up id enp3s0
-    nmcli device disconnect enp3s0
+    # nmcli connection up id enp3s0
+    # nmcli device disconnect enp3s0
     ```
 
 
@@ -85,7 +84,7 @@ Common commands are listed as follows:
 Run the following command to display all the available network connections:
 
 ```
-# nmcli con show
+$ nmcli con show
 
 
 NAME    UUID                                  TYPE      DEVICE
@@ -100,7 +99,7 @@ virbr0  ba552da6-f014-49e3-91fa-ec9c388864fa  bridge    virbr0
 After a network connection is added, the corresponding configuration file is generated and associated with the corresponding device. To check for available devices, run the following command:
 
 ```
-# nmcli dev status
+$ nmcli dev status
 
 DEVICE      TYPE      STATE      CONNECTION
 enp3s0      ethernet  connected  enp3s0
@@ -121,7 +120,7 @@ When DHCP is used to allocate a network, run the following command to add a netw
 nmcli connection add type ethernet con-name connection-name ifname interface-name
 ```
 
-For example, to create a dynamic connection configuration file named  **net-test**, run the following command:
+For example, to create a dynamic connection configuration file named  **net-test**, run the following command as the **root** user:
 
 ```
 # nmcli connection add type ethernet con-name net-test ifname enp3s0
@@ -131,7 +130,7 @@ Connection 'net-test' (a771baa0-5064-4296-ac40-5dc8973967ab) successfully added.
 The NetworkManager sets  **connection.autoconnect**  to  **yes**  and saves the setting to the  **/etc/sysconfig/network-scripts/ifcfg-net-test**  file. In the  **/etc/sysconfig/network-scripts/ifcfg-net-test**  file,  **ONBOOT**  is set to  **yes**.
 
 ###### Activating a Connection and Checking Device Connection Status
-Run the following command to activate a network connection:
+Run the following command as the **root** user to activate a network connection:
 
 ```
 # nmcli con up net-test 
@@ -141,7 +140,7 @@ Connection successfully activated (D-Bus active path:/org/freedesktop/NetworkMan
 Run the following command to check the connection status of devices:
 
 ```
-# nmcli device status
+$ nmcli device status
 
 DEVICE      TYPE      STATE      CONNECTION
 enp4s0      ethernet  connected  enp4s0
@@ -163,7 +162,7 @@ nmcli connection add type ethernet con-name connection-name ifname interface-nam
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >To add an IPv6 address and related gateway information, use the  **ip6**  and  **gw6**  options.  
 
-For example, to create a static connection configuration file named  **net-static**, run the following command:
+For example, to create a static connection configuration file named  **net-static**, run the following command as the **root** user:
 
 ```
 # nmcli con add type ethernet con-name net-static ifname enp3s0 ip4 192.168.0.10/24 gw4 192.168.0.254
@@ -178,20 +177,20 @@ Connection 'net-static' (63aa2036-8665-f54d-9a92-c3035bad03f7) successfully adde
 
 The NetworkManager sets the internal parameter  **ipv4.method**  to  **manual**,  **connection.autoconnect**  to  **yes**, and writes the setting to the  **/etc/sysconfig/network-scripts/ifcfg-my-office**  file. In the file,  **BOOTPROTO**  is set to  **none**, and  **ONBOOT**  is set to  **yes**.
 
-Run the following command to set IPv4 addresses of two DNS servers:
+Run the following command as the **root** user to set IPv4 addresses of two DNS servers:
 
 ```
 # nmcli con mod net-static ipv4.dns "*.*.*.* *.*.*.*"
 ```
 
-Run the following command to set IPv6 addresses of two DNS servers:
+Run the following command as the **root** user to set IPv6 addresses of two DNS servers:
 
 ```
 # nmcli con mod net-static ipv6.dns "2001:4860:4860::**** 2001:4860:4860::****"
 ```
 
 ###### Activating a Connection and Checking Device Connection Status
-Run the following command to activate a network connection:
+Run the following command as the **root** user to activate a network connection:
 
 ```
 # nmcli con up net-static ifname enp3s0
@@ -201,7 +200,7 @@ Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkMa
 Run the following command to check the connection status of devices:
 
 ```
-# nmcli device status
+$ nmcli device status
 
 DEVICE      TYPE      STATE      CONNECTION
 enp4s0      ethernet  connected  enp4s0
@@ -214,7 +213,7 @@ virbr0-nic  tun       unmanaged  --
 Run the following command to view the connection details \(with the  **-p**  and  **\-\-pretty**  options to add the title and segment to the output\):
 
 ```
-# nmcli -p con show net-static 
+$ nmcli -p con show net-static 
 ===============================================================================
 Connection profile details (net-static )
 ===============================================================================
@@ -248,26 +247,26 @@ connection.llmnr:                       -1 (default)
 Run the following command to check for available Wi-Fi access points:
 
 ```
-# nmcli dev wifi list
+$ nmcli dev wifi list
 ```
 
 Run the following command to generate a static IP address configuration that allows Wi-Fi connections automatically allocated by the DNS:
 
 ```
-# nmcli con add con-name Wifi ifname wlan0 type wifi ssid MyWifi ip4 192.168.100.101/24 gw4 192.168.100.1
+$ nmcli con add con-name Wifi ifname wlan0 type wifi ssid MyWifi ip4 192.168.100.101/24 gw4 192.168.100.1
 ```
 
 Run the following command to set a WPA2 password, for example,  **answer**:
 
 ```
-# nmcli con modify Wifi wifi-sec.key-mgmt wpa-psk
-# nmcli con modify Wifi wifi-sec.psk answer
+$ nmcli con modify Wifi wifi-sec.key-mgmt wpa-psk
+$ nmcli con modify Wifi wifi-sec.psk answer
 ```
 
 Run the following command to change the Wi-Fi status:
 
 ```
-# nmcli radio wifi [ on | off ]
+$ nmcli radio wifi [ on | off ]
 ```
 
 ##### Modifying Attributes
@@ -275,20 +274,20 @@ Run the following command to change the Wi-Fi status:
 Run the following command to check a specific attribute, for example, mtu:
 
 ```
-# nmcli connection show id 'Wifi ' | grep mtu
+$ nmcli connection show id 'Wifi ' | grep mtu
 802-11-wireless.mtu: auto
 ```
 
 Run the following command to modify the attribute:
 
 ```
-# nmcli connection modify id 'Wifi ' 802-11-wireless.mtu 1350
+$ nmcli connection modify id 'Wifi ' 802-11-wireless.mtu 1350
 ```
 
 Run the following command to confirm the modification:
 
 ```
-# nmcli connection show id 'Wifi ' | grep mtu
+$ nmcli connection show id 'Wifi ' | grep mtu
 802-11-wireless.mtu: 1350
 ```
 
@@ -297,14 +296,14 @@ Run the following command to confirm the modification:
 -   Run the nmcli command to configure a static route for a network connection:
 
     ```
-    # nmcli connection modify enp3s0 +ipv4.routes "192.168.122.0/24 10.10.10.1"
+    $ nmcli connection modify enp3s0 +ipv4.routes "192.168.122.0/24 10.10.10.1"
     ```
 
 
 -   Run the following command to configure the static route using the editor:
 
     ```
-    # nmcli con edit type ethernet con-name enp3s0
+    $ nmcli con edit type ethernet con-name enp3s0
     ===| nmcli interactive connection editor |===
     Adding a new '802-3-ethernet' connection
     Type 'help' or '?' for available commands.
@@ -336,13 +335,13 @@ ip addr [ add | del ] address dev interface-name
 ```
 
 ##### Configuring a Static IP Address
-Run the following command as the user  **root**  to configure an IP address:
+Run the following command as the **root** user to configure an IP address:
 
 ```
 # ip address add 192.168.0.10/24 dev enp3s0
 ```
 
-Run the following command to view the configuration result:
+Run the following command as the **root** user to view the configuration result:
 
 ```
 # ip addr show dev enp3s0
@@ -357,7 +356,7 @@ Run the following command to view the configuration result:
 ```
 
 ##### Configuring Multiple IP Addresses
-The  **ip**  command can be used to assign multiple IP addresses to an interface. You can run the  **ip**  command multiple times to assign IP addresses to an interface. The following is an example:
+The  **ip**  command can be used to assign multiple IP addresses to an interface. You can run the  **ip**  command multiple times as the **root** user to assign IP addresses to an interface. The following is an example:
 
 ```
 # ip address add 192.168.2.223/24 dev enp4s0
@@ -384,7 +383,7 @@ To add a static route to the routing table, run the **ip route add**  command. T
 ip route [ add | del | change | append | replace ] destination-address
 ```
 
-To display the current IP routing table, run the  **ip route**  command. The following is an example:
+To display the current IP routing table, run the  **ip route**  command as the **root** user. The following is an example:
 
 ```
 # ip route
@@ -396,7 +395,7 @@ default via 192.168.0.1 dev enp4s0 proto dhcp metric 101
 192.168.122.0/24 dev virbr0 proto kernel scope link src 192.168.122.1 linkdown
 ```
 
-To add a static route to the host address, run the following command as the user  **root**:
+To add a static route to the host address, run the following command as the **root** user:
 
 ```
 ip route add 192.168.2.1 via 10.0.0.1 [dev interface-name]
@@ -404,7 +403,7 @@ ip route add 192.168.2.1 via 10.0.0.1 [dev interface-name]
 
 In the preceding command,  **192.168.2.1**  is the IP address in the dot-decimal notation,  **10.0.0.1**  is the next hop, and  _interface-name_  is the exit interface for entering the next hop.
 
-To add a static route to the network, that is, an IP address that represents an IP address range, run the following command as the user  **root**:
+To add a static route to the network, that is, an IP address that represents an IP address range, run the following command as the **root** user:
 
 ```
 ip route add 192.168.2.0/24 via 10.0.0.1 [dev interface-name]
@@ -415,10 +414,10 @@ In the preceding command,  **192.168.2.1**  is the IP address of the target netw
 ### Configuring the Network Through the ifcfg File
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
->The network configured in the  **ifcfg**  file does not take effect immediately. You need to run the  **systemctl reload NetworkManager**  command to restart the network service for the configuration to take effect.  
+>The network configured in the  **ifcfg**  file does not take effect immediately. You need to run the  **systemctl reload NetworkManager**  command as the **root** user to restart the network service for the configuration to take effect.  
 
 #### Configuring a Static Network
-The following uses the  **enp4s0**  network interface as an example to describe how to configure a static network by modifying the  **ifcfg**  file. The  **ifcfg-enp4s0**  file is generated in the  **/etc/sysconfig/network-scripts/**  directory. Modify the following parameters in the file:
+The following uses the  **enp4s0**  network interface as an example to describe how to configure a static network by modifying the  **ifcfg**  file as the **root** user. The  **ifcfg-enp4s0**  file is generated in the  **/etc/sysconfig/network-scripts/**  directory. Modify the following parameters in the file:
 
 ```
 TYPE=Ethernet
@@ -496,21 +495,21 @@ There are three types of host names:  **static**,  **transient**, and  **pretty*
 Run the following command to view the current host name:
 
 ```
-# hostnamectl status
+$ hostnamectl status
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >If no option is specified in the command, the  **status**  option is used by default.  
 
 #### Setting All Host Names
-Run the following command as the  **root**  user to set all host names:
+Run the following command as the **root** user to set all host names:
 
 ```
 # hostnamectl set-hostname name
 ```
 
 #### Setting a Specific Host Name
-Run the following command as the  **root**  user to set a specific host name:
+Run the following command as the **root** user to set a specific host name:
 
 ```
 # hostnamectl set-hostname name [option...]
@@ -527,7 +526,7 @@ When setting a host name of the  **pretty**  type, use quotation marks if the ho
 ```
 
 #### Clearing a Specific Host Name
-To clear a specific host name and restore it to the default format, run the following command as the  **root**  user:
+To clear a specific host name and restore it to the default format, run the following command as the **root** user:
 
 ```
 # hostnamectl set-hostname "" [option...]
@@ -536,7 +535,7 @@ To clear a specific host name and restore it to the default format, run the foll
 In the preceding command,  **""**  is a blank character string, and the  _option_  may be one or more of  **\-\-pretty**,  **\-\-static**, and  **\-\-transient**.
 
 #### Remotely Changing a Host Name
-To change the host name in a remote system, run the  **hostnamectl**  command with the  **-H**  or  **\-\-host**  option.
+To change the host name in a remote system, run the  **hostnamectl**  command as the **root** user with the  **-H**  or  **\-\-host**  option.
 
 ```
 # hostnamectl set-hostname -H [username]@hostname new_hostname
@@ -549,16 +548,16 @@ In the preceding command,  _hostname_  indicates the name of the remote host to 
 To query a static host name, run the following command:
 
 ```
-# nmcli general hostname
+$ nmcli general hostname
 ```
 
-To name a static host as  **host-server**, run the following command as user root:
+To name a static host as  **host-server**, run the following command as **root** user:
 
 ```
 # nmcli general hostname host-server
 ```
 
-To enable the system to detect the change of the static host name, run the following command as the  **root**  user to restart the hostnamed service:
+To enable the system to detect the change of the static host name, run the following command as the **root** user to restart the hostnamed service:
 
 ```
 # systemctl restart systemd-hostnamed
@@ -573,38 +572,38 @@ To enable the system to detect the change of the static host name, run the follo
 -   To create a bond named  **mybond0**, run the following command: 
 
     ```
-    # nmcli con add type bond con-name mybond0 ifname mybond0 mode active-backup
+    $ nmcli con add type bond con-name mybond0 ifname mybond0 mode active-backup
     ```
 
 -   To add a slave interface, run the following command:
 
     ```
-    # nmcli con add type bond-slave ifname enp3s0 master mybond0
+    $ nmcli con add type bond-slave ifname enp3s0 master mybond0
     ```
 
     To add another slave interface, repeat the preceding command with the new interface name:
 
     ```
-    # nmcli con add type bond-slave ifname enp4s0 master mybond0
+    $ nmcli con add type bond-slave ifname enp4s0 master mybond0
     Connection 'bond-slave-enp4s0' (05e56afc-b953-41a9-b3f9-0791eb49f7d3) successfully added.
     ```
 
 -   To enable a bond, run the following command to enable the slave interface first:
 
     ```
-    # nmcli con up bond-slave-enp3s0
+    $ nmcli con up bond-slave-enp3s0
     Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/14)
     ```
 
     ```
-    # nmcli con up bond-slave-enp4s0
+    $ nmcli con up bond-slave-enp4s0
     Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/15)
     ```
 
     Then, run the following command to enable the bond:
 
     ```
-    # nmcli con up bond-mybond0
+    $ nmcli con up mybond0
     Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/16)
     ```
 
@@ -613,23 +612,23 @@ To enable the system to detect the change of the static host name, run the follo
 
 #### Checking Whether the Bonding Kernel Module Is Installed
 
-By default, the bonding kernel module is loaded. To load this module, run the following command as the **root**  user:
+By default, the bonding kernel module is loaded. To load this module, run the following command as the **root** user:
 
 ```
 # modprobe --first-time bonding
 ```
 
-Run the following command to display the information about the module:
+Run the following command as the **root** user to display the information about the module:
 
 ```
 # modinfo bonding
 ```
 
-For more commands, run the modprobe \-\-help command.
+For more commands, run the modprobe \-\-help command as the **root** user.
 
 #### Creating a Channel Bonding Interface
 
-To create a channel bonding interface, you can create a file named  **ifcfg-bondN**  in the  **/etc/sysconfig/network-scripts/**  directory \(replacing N with the actual interface number, for example, 0\).
+To create a channel bonding interface, you can create a file named  **ifcfg-bondN**  in the  **/etc/sysconfig/network-scripts/**  directory as the **root** user \(replacing N with the actual interface number, for example, 0\).
 
 Write the corresponding content to the configuration file according to the type of the interface to be bonded, for example, network interface. An example of the interface configuration file is as follows:
 
@@ -673,7 +672,7 @@ SLAVE=yes
 
 #### Activating Channel Bonding
 
-To activate channel bonding, you need to enable all the slave interfaces. Run the following command as the  **root**  user:
+To activate channel bonding, you need to enable all the slave interfaces. Run the following command as the  **root** user:
 
 ```
 # ifup enp3s0
@@ -690,13 +689,13 @@ Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkMa
 
 After that, enable all the slave interfaces to enable the bonding \(do not set them to  **Down**\).
 
-To enable the NetworkManager to detect the modifications made by the system, run the following command as user  **root**  user after each modification:
+To enable the NetworkManager to detect the modifications made by the system, run the following command as the **root**  user after each modification:
 
 ```
 # nmcli con load /etc/sysconfig/network-scripts/ifcfg-device
 ```
 
-Run the following command to check the status of the bonded interface:
+Run the following command as the **root** user to check the status of the bonded interface:
 
 ```
 # ip link show
@@ -754,7 +753,7 @@ In this example, replace N with the number of the bonded interface. For example,
 In an IPv6 scenario, the minimum MTU value of the entire routing path is used as the PMTU value of the current link. The source end determines whether to fragment packets based on the PMTU value. Other devices on the entire path do not need to fragment packets. This reduces the load of intermediate routing devices. The minimum value of IPv6 PMTU is 1280.
 
 ##### Setting the MTU of the Interface Device
-If the MTU of an interface configured with an IPv6 address is set to a value smaller than  **1280**  \(the minimum value of the IPv6 PMTU\), the IPv6 address of the interface will be deleted and cannot be added again. Therefore, in IPv6 scenarios, the MTU of the interface device must be greater than or equal to 1280. The details are as follows: 
+If the MTU of an interface configured with an IPv6 address is set to a value smaller than  **1280**  \(the minimum value of the IPv6 PMTU\), the IPv6 address of the interface will be deleted and cannot be added again. Therefore, in IPv6 scenarios, the MTU of the interface device must be greater than or equal to 1280. Run the following commands as the **root** user to view the details: 
 
 ```
 # ip addr show enp3s0
@@ -803,7 +802,7 @@ RTNETLINK answers: No buffer space available
 #### Stateful IPv6 Address Autoconfiguration
 
 ##### Overview
-Both IPv6 and IPv4 addresses can be obtained through DHCP. There are configuration methods for IPv6 address: stateless autoconfiguration and stateful autoconfiguration.
+Both IPv6 and IPv4 addresses can be obtained through DHCP as the **root** user. There are configuration methods for IPv6 address: stateless autoconfiguration and stateful autoconfiguration.
 
 -   Stateless autoconfiguration
 
@@ -954,6 +953,8 @@ PERSISTENT_DHCLIENT=yes|no|1|0
 
 ##### Overview
 IPv4 and IPv6 are two different protocol standards. Therefore, the iproute commands are different in usage. This section describes the differences between IPv4 and IPv6 commands in the iproute package.
+
+To run the iproute commands, you must have the root permission.  
 
 ##### Lifecycle of an IPv6 Address
 <a name="en-us_topic_0161841798_en-us_topic_0159090633_table2076913233253"></a>
@@ -1290,7 +1291,7 @@ When both IPv4 and IPv6 addresses are configured in the configuration file of th
 The delay is caused by the buffer queue mechanism of rsyslog. By default, rsyslog writes data to a file only when the number of buffer queues reaches a specified value.
 
 ##### Solution
-You can disable the buffer queue mechanism by configuring the Direct mode. Add the following information at the beginning of the new remote transmission configuration file in the /etc/rsyslog.d directory on the rsyslog remote transmission server:
+You can disable the buffer queue mechanism by configuring the Direct mode as the **root** user. Add the following information at the beginning of the new remote transmission configuration file in the /etc/rsyslog.d directory on the rsyslog remote transmission server:
 
 ```
 $ActionQueueType Direct

@@ -130,13 +130,13 @@ You can configure a repo source by directly obtaining the repo source file or by
 1.  Go to the yum source directory.
 
     ```
-    cd /etc/yum.repos.d
+    $ cd /etc/yum.repos.d
     ```
 
-2.  Create and edit the  **local.repo**  file. Configure the repo source file as the yum source.
+2.  Create and edit the  **local.repo**  file as the **root** user. Configure the repo source file as the yum source.
 
     ```
-    vi local.repo
+    # vi local.repo
     ```
 
     Edit the  **local.repo**  file as follows:
@@ -149,7 +149,8 @@ You can configure a repo source by directly obtaining the repo source file or by
 
     enabled=1
 
-    gpgcheck=0
+    gpgcheck=1
+	gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/RPM-GPG-KEY-openEuler
 
 
 ### Configuring a Repo Source by Mounting an ISO File
@@ -171,10 +172,10 @@ You can configure a repo source by directly obtaining the repo source file or by
         6.  Click  **aarch64**.
         7.  Click  **openEuler-20.03-LTS-aarch64-dvd.iso**  to download the openEuler release package to the local host.
         8.  Click  **openEuler-20.03-LTS-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
-        9.  Log in to the openEuler OS and create a directory for storing the release package and verification file, for example,  **/home/iso**.
+        9.  Log in to the openEuler OS and create a directory for storing the release package and verification file, for example,  ~/iso**.
 
             ```
-            mkdir /home/iso
+            $ mkdir ~/iso
             ```
 
         10. Use a cross-platform file transfer tool \(such as WinSCP\) to upload the local openEuler release package and verification file to the target openEuler OS.
@@ -192,18 +193,18 @@ You can configure a repo source by directly obtaining the repo source file or by
         6.  Click  **aarch64**.
         7.  <a name="li62369349505"></a>Right-click  **openEuler-20.03-LTS-aarch64-dvd.iso**  and choose  **Copy URL**  from the shortcut menu to copy the address of the openEuler release package.
         8.  <a name="li9236203405015"></a>Right-click  **openEuler-20.03-LTS-aarch64-dvd.iso.sha256sum**  and choose  **Copy URL**  from the shortcut menu to copy the address of the openEuler verification file.
-        9.  Log in to the openEuler OS, create a directory \(for example,  **/home/iso**\) for storing the release package and verification file, and switch to the directory.
+        9.  Log in to the openEuler OS, create a directory \(for example,  **~/iso**\) for storing the release package and verification file, and switch to the directory.
 
             ```
-            mkdir /home/iso
-            cd /home/iso
+            $ mkdir ~/iso
+            $ cd ~/iso
             ```
 
         10. Run the  **wget**  command to remotely download the release package and verification file. In the command,  **ipaddriso**  and  **ipaddrisosum**  are the addresses copied in  [1.g](#li62369349505)  and  [1.h](#li9236203405015).
 
             ```
-            wget ipaddriso
-            wget ipaddrisosum
+            $ wget ipaddriso
+            $ wget ipaddrisosum
             ```
 
 
@@ -211,13 +212,13 @@ You can configure a repo source by directly obtaining the repo source file or by
     1.  Obtain the verification value in the verification file.
 
         ```
-        cat openEuler-20.03-LTS-aarch64-dvd.iso.sha256sum
+        $ cat openEuler-20.03-LTS-aarch64-dvd.iso.sha256sum
         ```
 
     2.  Calculate the SHA256 verification value of the openEuler release package.
 
         ```
-        sha256sum openEuler-20.03-LTS-aarch64-dvd.iso 
+        $ sha256sum openEuler-20.03-LTS-aarch64-dvd.iso 
         ```
 
         After the command is run, the verification value is displayed.
@@ -228,7 +229,7 @@ You can configure a repo source by directly obtaining the repo source file or by
 
 3.  Mount the ISO image file and configure it as a repo source.
 
-    Run the  **mount**  command to mount the image file.
+    Run the  **mount**  command as the  **root** user to mount the image file.
 
     The following is an example:
 
@@ -285,7 +286,7 @@ Install the software required for development. The software required varies in d
 1.  Run the  **dnf list installed | grep jdk**  command to check whether the JDK software is installed.
 
     ```
-    dnf list installed | grep jdk
+    $ dnf list installed | grep jdk
     ```
 
     Check the command output. If the command output contains "jdk", the JDK has been installed. If no such information is displayed, the software is not installed.
@@ -293,33 +294,33 @@ Install the software required for development. The software required varies in d
 2.  Clear the cache.
 
     ```
-    dnf clean all
+    $ dnf clean all
     ```
 
 3.  Create a cache.
 
     ```
-    dnf makecache
+    $ dnf makecache
     ```
 
 4.  Query the JDK software package that can be installed.
 
     ```
-    dnf search jdk | grep jdk
+    $ dnf search jdk | grep jdk
     ```
 
     View the command output and install the  **java-x.x.x-openjdk-devel.aarch64**  software package.  **x.x.x**  indicates the version number.
 
-5.  Install the JDK software package. The following uses the  **java-1.8.0-openjdk-devel**  software package as an example.
+5.  Install the JDK software package as the **root** user. The following uses the  **java-1.8.0-openjdk-devel**  software package as an example.
 
     ```
-    dnf install java-1.8.0-openjdk-devel.aarch64
+    # dnf install java-1.8.0-openjdk-devel.aarch64
     ```
 
 6.  Query information about the JDK software.
 
     ```
-    java -version
+    $ java -version
     ```
 
     Check the command output. If the command output contains "openjdk version "1.8.0\_232"", the JDK has been correctly installed. In the command output,  **1.8.0\_232**  indicates the JDK version.
@@ -330,7 +331,7 @@ Install the software required for development. The software required varies in d
 1.  Run the  **dnf list installed | grep rpm-build**  command to check whether the rpm-build software is installed.
 
     ```
-    dnf list installed | grep rpm-build
+    $ dnf list installed | grep rpm-build
     ```
 
     Check the command output. If the command output contains "rpm-build", the software has been installed. If no such information is displayed, the software is not installed.
@@ -338,25 +339,25 @@ Install the software required for development. The software required varies in d
 2.  Clear the cache.
 
     ```
-    dnf clean all
+    $ dnf clean all
     ```
 
 3.  Create a cache.
 
     ```
-    dnf makecache
+    $ dnf makecache
     ```
 
-4.  Install the rpm-build package.
+4.  Install the rpm-build package as the **root** user.
 
     ```
-    dnf install rpm-build
+    # dnf install rpm-build
     ```
 
 5.  Query the rpm-build software version.
 
     ```
-    rpmbuild --version
+    $ rpmbuild --version
     ```
 
 
@@ -383,35 +384,35 @@ Before setting JAVA\_HOME, you need to find the installation path of the JDK. Yo
 Run the following command to view the Java path:
 
 ```
-# which java
+$ which java
 /usr/bin/java
 ```
 
 Run the following command to check the directory to which the soft link points:
 
 ```
-# ls -la /usr/bin/java
+$ ls -la /usr/bin/java
 lrwxrwxrwx. 1 root root  22 Mar 6 20:28 /usr/bin/java -> /etc/alternatives/java
-# ls -la /etc/alternatives/java
+$ ls -la /etc/alternatives/java
 lrwxrwxrwx. 1 root root  83 Mar 6 20:28 /etc/alternatives/java -> /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.232.b09-1.h2.aarch64/jre/bin/java
 ```
 
 The actual path is  **/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.232.b09-1.h2.aarch64**. Run the following command to set  **JAVA\_HOME**  and  **PATH**:
 
 ```
-# export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.232.b09-1.h2.aarch64
-# export PATH=$JAVA_HOME/bin:$PATH
+$ export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.232.b09-1.h2.aarch64
+$ export PATH=$JAVA_HOME/bin:$PATH
 ```
 
 ### Downloading and Installing the GTK Library
 
-Ensure that you have the  **root**  permission and run the following command:
+Run the following command:
 
 ```
-# dnf list installed | grep gtk
+$ dnf list installed | grep gtk
 ```
 
-If  **gtk2**  or  **gtk3**  is displayed, the GTK library has been installed. In this case, skip this step. Otherwise, run the following command to automatically download and install the GTK library:
+If  **gtk2**  or  **gtk3**  is displayed, the GTK library has been installed. In this case, skip this step. Otherwise, run the following command as the **root** user to automatically download and install the GTK library:
 
 ```
 # dnf -y install gtk2 libXtst libXrender  xauth
@@ -422,13 +423,13 @@ If  **gtk2**  or  **gtk3**  is displayed, the GTK library has been installed. In
 Switch to the SSHD configuration directory.
 
 ```
-# cd ~/.ssh
+$ cd ~/.ssh
 ```
 
 If the directory does not exist, run the following command to create the directory and then switch to the directory:
 
 ```
-# mkdir ~/.ssh
+$ mkdir ~/.ssh
 ```
 
 Edit the configuration file in the  **.ssh**  directory and save the file.
@@ -436,7 +437,7 @@ Edit the configuration file in the  **.ssh**  directory and save the file.
 1.  Run the  **vim**  command to open the configuration file.
 
     ```
-    # vim config
+    $ vim config
     ```
 
 2.  Add the following content to the end of the file and save the file:
@@ -453,12 +454,12 @@ Edit the configuration file in the  **.ssh**  directory and save the file.
 After the preceding environment configuration is complete, you can download and run the IntelliJ IDEA. The latest version of IntelliJ IDEA is incompatible with openEuler in some functions. You are advised to click  [here](https://www.jetbrains.com/idea/download/other.html)  and download the Linux package of the 2018 version. Move the downloaded package to the directory where you want to install the software and decompress the package.
 
 ```
-# tar xf ideaIC-2018.3.tar.gz
+$ tar xf ideaIC-2018.3.tar.gz
 ```
 
 Decompress the package, switch to the IntelliJ IDEA directory, and run the IntelliJ IDEA.
 
 ```
-# cd ./idea-IC-183.4284.148
-# bin/idea.sh &
+$ cd ./idea-IC-183.4284.148
+$ bin/idea.sh &
 ```

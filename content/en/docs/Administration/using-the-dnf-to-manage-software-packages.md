@@ -48,7 +48,7 @@ The /etc/dnf/dnf.conf file contains the  **main**  part. The following is an exa
 
 ```
 [main]
-gpgcheck=0
+gpgcheck=1
 installonly_limit=3
 clean_requirements_on_remove=True
 best=True

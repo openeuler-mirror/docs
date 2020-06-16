@@ -119,16 +119,16 @@
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >It is recommended that firewall be disabled in the test environment to prevent network impact. Configure the firewall based on actual requirements.  
 
-1.  Stop the firewall service.
+1.  Stop the firewall service as the **root** user.
 
     ```
-    #systemctl stop firewalld
+    # systemctl stop firewalld
     ```
 
-2.  Disable the firewall service.
+2.  Disable the firewall service as the **root** user.
 
     ```
-    #systemctl disable firewalld
+    # systemctl disable firewalld
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
@@ -137,10 +137,10 @@
 
 #### Disabling SELinux
 
-1.  Modify the configuration file.
+1.  Modify the configuration file as the **root** user.
 
     ```
-    #sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+    # sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
     ```
 
 
@@ -149,17 +149,17 @@
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >In the server environment, independent users are assigned to each process to implement permission isolation for security purposes. The user group and user are created for the OS, not for the database.  
 
-1.  Create a PostgreSQL user or user group.
+1.  Create a PostgreSQL user or user group as the **root** user.
 
     ```
-    #groupadd  postgres
+    # groupadd  postgres
     ```
 
     ```
-    #useradd  -g postgres postgres
+    # useradd  -g postgres postgres
     ```
 
-2.  Set the postgres user password. \(Enter the password twice for confirmation.\)
+2.  Set the postgres user password as the **root** user. \(Enter the password twice for confirmation.\)
 
     ```
     #passwd postgres
@@ -170,34 +170,34 @@
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >-   When testing the ultimate performance, you are advised to attach NVMe SSDs with better I/O performance to create PostgreSQL test instances to avoid the impact of disk I/O on the performance test result. This section uses NVMe SSDs as an example. For details, see Step 1 to Step 4.  
->-   In a non-performance test, run the following command to create a data directory. Then skip this section.  
->    \#mkdir /data  
+>-   In a non-performance test, run the following command as the **root** user to create a data directory. Then skip this section.  
+>    \# mkdir /data  
 
-1.  Create a file system \(xfs is used as an example. Create the file system based on the site requirements.\). If a file system has been created for a disk, an error will be reported when you run this command. You can use the  **-f**  parameter to forcibly create a file system.
+1.  Create a file system \(xfs is used as an example as the **root** user. Create the file system based on the site requirements.\). If a file system has been created for a disk, an error will be reported when you run this command. You can use the  **-f**  parameter to forcibly create a file system.
 
     ```
-    #mkfs.xfs /dev/nvme0n1
+    # mkfs.xfs /dev/nvme0n1
     ```
 
 2.  Create a data directory.
 
     ```
-    #mkdir /data
+    # mkdir /data
     ```
 
 3.  Mount disks.
 
     ```
-    #mount -o noatime,nobarrier /dev/nvme0n1 /data
+    # mount -o noatime,nobarrier /dev/nvme0n1 /data
     ```
 
 
 #### Data Directory Authorization
 
-1.  Modify the directory permission.
+1.  Modify the directory permission as the **root** user.
 
     ```
-    #chown -R postgres:postgres /data/
+    # chown -R postgres:postgres /data/
     ```
 
 
@@ -210,16 +210,16 @@
 2.  Clear the cache.
 
     ```
-    #dnf clean all
+    $ dnf clean all
     ```
 
 3.  Create a cache.
 
     ```
-    #dnf makecache
+    $ dnf makecache
     ```
 
-4.  Install the PostgreSQL server.
+4.  Install the PostgreSQL server as the **root** user.
 
     ```
     #dnf install postgresql-server
@@ -228,7 +228,7 @@
 5.  Check the installed RPM package.
 
     ```
-    #rpm -qa | grep postgresql
+    $ rpm -qa | grep postgresql
     ```
 
 
@@ -244,13 +244,13 @@
 1.  Switch to the created PostgreSQL user.
 
     ```
-    #su - postgres
+    # su - postgres
     ```
 
 2.  Initialize the database. In the command,  **/usr/bin**  is the directory where the  **initdb**  command is located.
 
     ```
-    $/usr/bin/initdb -D /data/
+    $ /usr/bin/initdb -D /data/
     ```
 
 
@@ -259,13 +259,13 @@
 1.  Enable the PostgreSQL database.
 
     ```
-    $/usr/bin/pg_ctl -D /data/ -l /data/logfile start
+    $ /usr/bin/pg_ctl -D /data/ -l /data/logfile start
     ```
 
 2.  Check whether the PostgreSQL database process is started properly.
 
     ```
-    $ps -ef | grep postgres
+    $ ps -ef | grep postgres
     ```
 
     If the following information is displayed, the PostgreSQL processes have been started.
@@ -278,7 +278,7 @@
 1.  Log in to the database.
 
     ```
-    $/usr/bin/psql -U postgres
+    $ /usr/bin/psql -U postgres
     ```
 
     ![](figures/登录.png)
@@ -303,7 +303,7 @@
 1.  Run  **\\q**  to exit from the database.
 
     ```
-    postgres=#\q
+    postgres=# \q
     ```
 
 
@@ -321,13 +321,13 @@
 1.  Stop the database as the postgres user.
 
     ```
-    $/usr/bin/pg_ctl -D /data/ -l /data/logfile stop
+    $ /usr/bin/pg_ctl -D /data/ -l /data/logfile stop
     ```
 
 2.  Run the  **dnf remove postgresql-server**  command as the user  **root**  to uninstall the PostgreSQL database.
 
     ```
-    #dnf remove postgresql-server
+    # dnf remove postgresql-server
     ```
 
 
@@ -428,7 +428,7 @@ In the preceding information:
 \#Change the role name  **roleexample1**  to  **roleexapme2**.
 
 ```
-# ALTER ROLE roleexample1 RENAME TO roleexample2;
+postgres=# ALTER ROLE roleexample1 RENAME TO roleexample2;
 ```
 
 ##### Modifying a User Password
@@ -447,7 +447,7 @@ In the preceding information:
 \#Modify the password of  **roleexample1**  to  **456789**.
 
 ```
-# ALTER ROLE roleexample1 WITH PASSWORD '456789';
+postgres=# ALTER ROLE roleexample1 WITH PASSWORD '456789';
 ```
 
 #### Deleting a Role
@@ -551,13 +551,13 @@ In the preceding information:
 \#Grant the CREATE permission on database1 to userexample.
 
 ```
-# GRANT CREATE ON DATABASE database1 TO userexample; 
+postgres=# GRANT CREATE ON DATABASE database1 TO userexample; 
 ```
 
 \#Grant all permissions on table1 to all users.
 
 ```
-# GRANT ALL PRIVILEGES ON TABLE table1 TO PUBLIC; 
+postgres=# GRANT ALL PRIVILEGES ON TABLE table1 TO PUBLIC; 
 ```
 
 #### Deleting User Permissions
@@ -636,13 +636,13 @@ In the preceding information:
 \#Grant the CREATE permission on database1 to userexample.
 
 ```
-# GRANT CREATE ON DATABASE database1 TO userexample; 
+postgres=# GRANT CREATE ON DATABASE database1 TO userexample; 
 ```
 
 \#Grant all permissions on table1 to all users.
 
 ```
-# GRANT ALL PRIVILEGES ON TABLE table1 TO PUBLIC; 
+postgres=# GRANT ALL PRIVILEGES ON TABLE table1 TO PUBLIC; 
 ```
 
 ### Managing Databases
@@ -686,7 +686,7 @@ In the preceding command,  **databasename**  indicates the database name.
 \#Select the  **databaseexample**  database.
 
 ```
-# \c databaseexample;
+postgres=# \c databaseexample;
 ```
 
 #### Viewing a Database
@@ -701,7 +701,7 @@ Use the  **\\l**  statement to view the database.
 \#View all databases.
 
 ```
-# \l;
+postgres=# \l;
 ```
 
 #### Deleting a Database
@@ -729,7 +729,7 @@ The  **DROP DATABASE**  statement deletes the system directory items of the data
 \#Delete the  **databaseexample**  database.
 
 ```
-# DROP DATABASE databaseexample;
+postgres=# DROP DATABASE databaseexample;
 ```
 
 #### Backing Up a Database
@@ -757,7 +757,7 @@ In the preceding information:
 \#Back up the database1 database of user  **postgres**  on port  **3306**  of the host whose IP address is  **192.168.202.144**  to the  **db1.sql**  file.
 
 ```
-$ pg_dump -h 192.168.202.144 -p 3306 -U postgres -W database1 > db1.sql
+[postgres@localhost ~]$ pg_dump -h 192.168.202.144 -p 3306 -U postgres -W database1 > db1.sql
 ```
 
 #### Restoring a Database
@@ -788,8 +788,8 @@ The  **psql**  command cannot be used to automatically create the  **databasenam
 \#Import the  **db1.sql**  script file to the newdb database of the postgres user on the host  **192.168.202.144**  through port  **3306**.
 
 ```
-$ createdb newdb
-$ psql -h 192.168.202.144 -p 3306 -U postgres -W -d newdb < db1.sql
+[postgres@localhost ~]$ createdb newdb
+[postgres@localhost ~]$ psql -h 192.168.202.144 -p 3306 -U postgres -W -d newdb < db1.sql
 ```
 
 ## MariaDB Server
@@ -834,16 +834,16 @@ Each storage engine manages and stores data in different ways, and supports diff
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >It is recommended that firewall be disabled in the test environment to prevent network impact. Configure the firewall based on actual requirements.  
 
-1.  Stop the firewall service.
+1.  Stop the firewall service as the **root** user.
 
     ```
-    #systemctl stop firewalld
+    # systemctl stop firewalld
     ```
 
-2.  Disable the firewall service.
+2.  Disable the firewall service as the **root** user.
 
     ```
-    #systemctl disable firewalld
+    # systemctl disable firewalld
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
@@ -852,10 +852,10 @@ Each storage engine manages and stores data in different ways, and supports diff
 
 #### Disabling SELinux
 
-1.  Modify the configuration file.
+1.  Modify the configuration file as the **root** user.
 
     ```
-    #sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+    # sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
     ```
 
 
@@ -864,20 +864,20 @@ Each storage engine manages and stores data in different ways, and supports diff
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >In the server environment, independent users are assigned to each process to implement permission isolation for security purposes. The user group and user are created for the OS, not for the database.  
 
-1.  Create a MySQL user or user group.
+1.  Create a MySQL user or user group as the **root** user.
 
     ```
-    #groupadd mysql
+    # groupadd mysql
     ```
 
     ```
-    #useradd -g mysql mysql
+    # useradd -g mysql mysql
     ```
 
-2.  Set the user password.
+2.  Set the user password as the **root** user.
 
     ```
-    #passwd mysql
+    # passwd mysql
     ```
 
     Enter the password twice for confirmation.
@@ -887,14 +887,14 @@ Each storage engine manages and stores data in different ways, and supports diff
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >-   If a performance test needs to be performed, an independent drive is required for the data directory. You need to format and mount the drive. For details, see Method 1 or Method 2.  
->-   In a non-performance test, run the following command to create a data directory. Then skip this section.  
->    \#mkdir /data  
+>-   In a non-performance test, run the following command as the **root** user to create a data directory. Then skip this section.  
+>    \# mkdir /data  
 
-##### Method 1: Using fdisk for Drive Management
+##### Method 1: Using fdisk for Drive Management as the **root** user
 1.  Create a partition, for example,  **/dev/sdb**.
 
     ```
-    #fdisk /dev/sdb
+    # fdisk /dev/sdb
     ```
 
 2.  Enter  **n**  and press  **Enter**.
@@ -906,17 +906,17 @@ Each storage engine manages and stores data in different ways, and supports diff
 8.  Create a file system, for example,  **xfs**.
 
     ```
-    #mkfs.xfs /dev/sdb1
+    # mkfs.xfs /dev/sdb1
     ```
 
 9.  Mount the partition to  **/data**  for the OS.
 
     ```
-    #mkdir /data
+    # mkdir /data
     ```
 
     ```
-    #mount /dev/sdb1 /data
+    # mount /dev/sdb1 /data
     ```
 
 10. Run the  **vi /etc/fstab**  command and edit the  **/etc/fstab**  file to enable the data drive to be automatically mounted after the system is restarted. For example, add the content in the last line, as shown in the following figure.
@@ -926,45 +926,45 @@ Each storage engine manages and stores data in different ways, and supports diff
     ![](figures/搭建数据盘.png)
 
 
-##### Method 2: Using LVM for Drive Management
+##### Method 2: Using LVM for Drive Management as the **root** user
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >Install the LVM2 package in the image as follows:  
 >1.  Configure the local yum source. For details, see  [Configuring the Repo Server](configuring-the-repo-server.html). If the repository has been configured, skip this step.  
 >2.  Install LVM2.  
->    **\#yum install lvm2**  
+>    **\# yum install lvm2**  
 
 1.  Create a physical volume, for example,  **sdb**.
 
     ```
-    #pvcreate /dev/sdb
+    # pvcreate /dev/sdb
     ```
 
 2.  Create a physical volume group, for example,  **datavg**.
 
     ```
-    #vgcreate datavg  /dev/sdb
+    # vgcreate datavg  /dev/sdb
     ```
 
 3.  Create a logical volume, for example,  **datalv**  of 600 GB.
 
     ```
-    #lvcreate -L 600G -n datalv datavg
+    # lvcreate -L 600G -n datalv datavg
     ```
 
 4.  Create a file system.
 
     ```
-    #mkfs.xfs /dev/datavg/datalv
+    # mkfs.xfs /dev/datavg/datalv
     ```
 
 5.  Create a data directory and mount it.
 
     ```
-    #mkdir /data
+    # mkdir /data
     ```
 
     ```
-    #mount /dev/datavg/datalv /data
+    # mount /dev/datavg/datalv /data
     ```
 
 6.  Run the  **vi /etc/fstab**  command and edit the  **/etc/fstab**  file to enable the data drive to be automatically mounted after the system is restarted. For example, add the content in the last line, as shown in the following figure.
@@ -976,13 +976,13 @@ Each storage engine manages and stores data in different ways, and supports diff
 
 #### Creating a Database Directory and Granting Permissions
 
-1.  In the created data directory  **/data**, create directories for processes and grant permissions to the MySQL group or user created.
+1.  In the created data directory  **/data**, create directories for processes and grant permissions to the MySQL group or user created as the **root** user.
 
     ```
-    #mkdir -p /data/mariadb
-    #cd /data/mariadb
-    #mkdir data tmp run log
-    #chown -R mysql:mysql /data
+    # mkdir -p /data/mariadb
+    # cd /data/mariadb
+    # mkdir data tmp run log
+    # chown -R mysql:mysql /data
     ```
 
 
@@ -995,40 +995,40 @@ Each storage engine manages and stores data in different ways, and supports diff
 2.  Clear the cache.
 
     ```
-    #dnf clean all
+    $ dnf clean all
     ```
 
 3.  Create a cache.
 
     ```
-    #dnf makecache
+    $ dnf makecache
     ```
 
 4.  Install the MariaDB server.
 
     ```
-    #dnf install mariadb-server
+    # dnf install mariadb-server
     ```
 
 5.  Check the installed RPM package.
 
     ```
-    #rpm -qa | grep mariadb
+    $ rpm -qa | grep mariadb
     ```
 
 
 #### Running MariaDB Server
 
-1.  Start the MariaDB server.
+1.  Start the MariaDB server as the **root** user.
 
     ```
-    #systemctl start mariadb
+    # systemctl start mariadb
     ```
 
-2.  <a name="li197143190587"></a>Initialize the database.
+2.  <a name="li197143190587"></a>Initialize the database as the **root** user.
 
     ```
-    #/usr/bin/mysql_secure_installation
+    # /usr/bin/mysql_secure_installation
     ```
 
     During the command execution, you need to enter the password of the database user  **root**. If no password is set, press  **Enter**. Then, set the password as prompted.
@@ -1036,7 +1036,7 @@ Each storage engine manages and stores data in different ways, and supports diff
 3.  Log in to the database.
 
     ```
-    # mysql -u root -p
+    $ mysql -u root -p
     ```
 
     After the command is executed, the system prompts you to enter the password. The password is the one set in  [2](#li197143190587).
@@ -1047,17 +1047,17 @@ Each storage engine manages and stores data in different ways, and supports diff
 
 #### Uninstalling MariaDB
 
-1.  Stop the database process.
+1.  Stop the database process as the **root** user.
 
     ```
-    #ps -ef | grep mysql
-    #kill -9 PID
+    $ ps -ef | grep mysql
+    # kill -9 PID
     ```
 
-2.  Run the  **dnf remove mariadb-server**  command to uninstall MariaDB.
+2.  Run the  **dnf remove mariadb-server**  command as the **root** user to uninstall MariaDB.
 
     ```
-    #dnf remove mariadb-server
+    # dnf remove mariadb-server
     ```
 
 
@@ -1095,7 +1095,7 @@ A new user has few permissions and can perform only operations that do not requi
 \#Create a user whose password is 123456, username is userexample2, and hostname is 192.168.1.100.
 
 ```
-> CREATE USER 'userexample2'@'192.168.1.100' IDENDIFIED BY '123456';
+> CREATE USER 'userexample2'@'192.168.1.100' IDENTIFIED BY '123456';
 ```
 
 #### Viewing Users
@@ -1345,7 +1345,7 @@ To use  **DROP DATABASE**, you need the  **DROP**  permission on the database.
 
 #### Backing Up a Database
 
-Run the  **mysqldump**  command to back up the database.
+Run the  **mysqldump**  command as the **root** user to back up the database.
 
 Back up one or more tables.
 
@@ -1408,12 +1408,12 @@ In the preceding information:
 \#Back up only the data of the db1 database of the user  **root**  on the host  **192.168.202.144**  through port  **3306** to the  **db1.sql**  file.
 
 ```
-# mysqldump -h 192.168.202.144 -P 3306 -uroot -p123456 -t db1 > db1.sq
+# mysqldump -h 192.168.202.144 -P 3306 -uroot -p123456 -t db1 > db1.sql
 ```
 
 #### Restoring a Database
 
-Run the  **mysqldump**  command to restore the database.
+Run the  **mysql**  command as the **root** user to restore the database.
 
 Back up one or more tables:
 
@@ -1461,16 +1461,16 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >It is recommended that firewall be disabled in the test environment to prevent network impact. Configure the firewall based on actual requirements.  
 
-1.  Stop the firewall service.
+1.  Stop the firewall service as the **root** user.
 
     ```
-    #systemctl stop firewalld
+    # systemctl stop firewalld
     ```
 
-2.  Disable the firewall service.
+2.  Disable the firewall service as the **root** user.
 
     ```
-    #systemctl disable firewalld
+    # systemctl disable firewalld
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
@@ -1479,10 +1479,10 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
 
 #### Disabling SELinux
 
-1.  Modify the configuration file.
+1.  Modify the configuration file as the **root** user.
 
     ```
-    #sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+    # sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
     ```
 
 
@@ -1491,20 +1491,20 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >In the server environment, independent users are assigned to each process to implement permission isolation for security purposes. The user group and user are created for the OS, not for the database.  
 
-1.  Create a MySQL user or user group.
+1.  Create a MySQL user or user group as the **root** user.
 
     ```
-    #groupadd mysql
+    # groupadd mysql
     ```
 
     ```
-    #useradd -g mysql mysql
+    # useradd -g mysql mysql
     ```
 
-2.  Set the user password.
+2.  Set the user password as the **root** user.
 
     ```
-    #passwd mysql
+    # passwd mysql
     ```
 
     Enter the password twice for confirmation.
@@ -1514,14 +1514,14 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >-   If a performance test needs to be performed, an independent drive is required for the data directory. You need to format and mount the drive. For details, see Method 1 or Method 2.  
->-   In a non-performance test, run the following command to create a data directory. Then skip this section.  
->    \#mkdir /data  
+>-   In a non-performance test, run the following command as the **root** user to create a data directory. Then skip this section.  
+>    \# mkdir /data  
 
-##### Method 1: Using fdisk for Drive Management
+##### Method 1: Using fdisk for Drive Management as the **root** user
 1.  Create a partition, for example,  **/dev/sdb**.
 
     ```
-    #fdisk /dev/sdb
+    # fdisk /dev/sdb
     ```
 
 2.  Enter  **n**  and press  **Enter**.
@@ -1533,17 +1533,17 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
 8.  Create a file system, for example,  **xfs**.
 
     ```
-    #mkfs.xfs /dev/sdb1
+    # mkfs.xfs /dev/sdb1
     ```
 
 9.  Mount the partition to  **/data**  for the OS.
 
     ```
-    #mkdir /data
+    # mkdir /data
     ```
 
     ```
-    #mount /dev/sdb1 /data
+    # mount /dev/sdb1 /data
     ```
 
 10. Run the  **vi /etc/fstab**  command and edit the  **/etc/fstab**  file to enable the data drive to be automatically mounted after the system is restarted. For example, add the content in the last line, as shown in the following figure.
@@ -1553,41 +1553,41 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
     ![](figures/搭建数据盘-0.png)
 
 
-##### Method 2: Using LVM for Drive Management
+##### Method 2: Using LVM for Drive Management as the **root** user
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >Install the LVM2 package in the image as follows:  
 >1.  Configure the local yum source. For details, see  [Configuring the Repo Server](configuring-the-repo-server.html). If the repository has been configured, skip this step.  
 >2.  Install LVM2.  
->    **\#yum install lvm2**  
+>    **\# yum install lvm2**  
 
 1.  Create a PV, for example,  **sdb**.
 
     ```
-    #pvcreate /dev/sdb
+    # pvcreate /dev/sdb
     ```
 
 2.  Create a physical VG, for example,  **datavg**.
 
     ```
-    #vgcreate  datavg  /dev/sdb
+    # vgcreate  datavg  /dev/sdb
     ```
 
 3.  Create an LV, for example,  **datalv**  of 600 GB.
 
     ```
-    #lvcreate -L 600G -n datalv datavg
+    # lvcreate -L 600G -n datalv datavg
     ```
 
 4.  Create a file system.
 
     ```
-    #mkfs.xfs /dev/datavg/datalv
+    # mkfs.xfs /dev/datavg/datalv
     ```
 
 5.  Create a data directory and mount it.
 
     ```
-    #mkdir /data
+    # mkdir /data
     ```
 
     ```
@@ -1603,13 +1603,13 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
 
 #### Creating a Database Directory and Granting Permissions
 
-1.  In the created data directory  **/data**, create directories for processes and grant permissions to the MySQL group or user created.
+1.  In the created data directory  **/data**, create directories for processes and grant permissions to the MySQL group or user created as the **root** user.
 
     ```
-    #mkdir -p /data/mysql
-    #cd /data/mysql
-    #mkdir data tmp run log
-    #chown -R mysql:mysql /data
+    # mkdir -p /data/mysql
+    # cd /data/mysql
+    # mkdir data tmp run log
+    # chown -R mysql:mysql /data
     ```
 
 
@@ -1623,35 +1623,35 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
 2.  Clear the cache.
 
     ```
-    #dnf clean all
+    $ dnf clean all
     ```
 
 3.  Create a cache.
 
     ```
-    #dnf makecache
+    $ dnf makecache
     ```
 
-4.  Install the MySQL server.
+4.  Install the MySQL server as the **root** user.
 
     ```
-    #dnf install mysql
+    # dnf install mysql
     ```
 
 5.  Check the installed RPM package.
 
     ```
-    #rpm -qa | grep mysql
+    $ rpm -qa | grep mysql
     ```
 
 
 #### Running MySQL
 
 1.  Modify the configuration file.
-    1.  Create the  **my.cnf**  file and change the file paths \(including the software installation path  **basedir**  and data path  **datadir**\) based on the actual situation.
+    1.  Create the  **my.cnf**  file as the **root** user and change the file paths \(including the software installation path  **basedir**  and data path  **datadir**\) based on the actual situation.
 
         ```
-        #vi /etc/my.cnf
+        # vi /etc/my.cnf
         ```
 
         Edit the  **my.cnf**  file as follows:
@@ -1679,7 +1679,7 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
     2.  Ensure that the  **my.cnf**  file is correctly modified.
 
         ```
-        #cat /etc/my.cnf
+        $ cat /etc/my.cnf
         ```
 
         ![](figures/en-us_image_0231563132.png)
@@ -1687,35 +1687,35 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
         >![](public_sys-resources/icon-caution.gif) **CAUTION:**   
         >In the configuration file,  **basedir**  specifies the software installation path. Change it based on actual situation.  
 
-    3.  Change the group and user of the  **/etc/my.cnf**  file to  **mysql:mysql**.
+    3.  Change the group and user of the  **/etc/my.cnf**  file to  **mysql:mysql** as the **root** user.
 
         ```
-        #chown mysql:mysql /etc/my.cnf
+        # chown mysql:mysql /etc/my.cnf
         ```
 
 2.  Configure environment variables.
-    1.  Add the path of the MySQL binary files to the  **PATH**  parameter.
+    1.  Add the path of the MySQL binary files to the  **PATH**  parameter as the **root** user.
 
         ```
-        #echo export  PATH=$PATH:/usr/local/mysql/bin  >> /etc/profile
+        # echo export  PATH=$PATH:/usr/local/mysql/bin  >> /etc/profile
         ```
 
         >![](public_sys-resources/icon-caution.gif) **CAUTION:**   
         >In the command,  **/usr/local/mysql/bin**  is the absolute path of the  **bin**  files in the MySQL software installation directory. Change it based on actual situation.  
 
-    2.  Run the following command to make the environment variables take effect:
+    2.  Run the following command as the **root** user to make the environment variables take effect:
 
         ```
-        #source /etc/profile
+        # source /etc/profile
         ```
 
-3.  <a name="li15634560582"></a>Initialize the database.
+3.  <a name="li15634560582"></a>Initialize the database as the **root** user.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >The second line from the bottom contains the initial password, which will be used when you log in to the database.  
 
     ```
-    #mysqld --defaults-file=/etc/my.cnf --initialize
+    # mysqld --defaults-file=/etc/my.cnf --initialize
     2020-03-18T03:27:13.702385Z 0 [System] [MY-013169] [Server] /usr/local/mysql/bin/mysqld (mysqld 8.0.17) initializing of server in progress as process 34014
     2020-03-18T03:27:24.112453Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: iNat=)#V2tZu
     2020-03-18T03:27:28.576003Z 0 [System] [MY-013170] [Server] /usr/local/mysql/bin/mysqld (mysqld 8.0.17) initializing of server has completed
@@ -1728,24 +1728,24 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
     >![](public_sys-resources/icon-caution.gif) **CAUTION:**   
     >Start MySQL as user  **mysql**  if it is the first time to start the database service. If you start MySQL as user  **root**, a message will be displayed indicating that the  **mysql.log**  file is missing. If you start MySQL as user  **mysql**, the  **mysql.log**  file will be generated in the  **/data/mysql/log**  directory. No error will be displayed if you start the database as user  **root**  again.  
 
-    1.  Modify the file permission.
+    1.  Modify the file permission as the **root** user.
 
         ```
-        #chmod 777 /usr/local/mysql/support-files/mysql.server
+        # chmod 777 /usr/local/mysql/support-files/mysql.server
         ```
 
-    2.  Start MySQL.
+    2.  Start MySQL as the **root** user.
 
         ```
-        #cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql
-        #chkconfig mysql on
+        # cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql
+        # chkconfig mysql on
         ```
 
         Start MySQL as user  **mysql**.
 
         ```
-        #su - mysql
-        $service mysql start
+        # su - mysql
+        $ service mysql start
         ```
 
 5.  Log in to the database.
@@ -1755,7 +1755,7 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
     >-   If MySQL is installed by using an RPM package obtained from the official website, the  **mysqld**  file is located in the  **/usr/sbin**  directory. Ensure that the directory specified in the command is correct.  
 
     ```
-    $/usr/local/mysql/bin/mysql -uroot -p  -S /data/mysql/run/mysql.sock
+    $ /usr/local/mysql/bin/mysql -uroot -p  -S /data/mysql/run/mysql.sock
     ```
 
     ![](figures/en-us_image_0231563134.png)
@@ -1795,17 +1795,17 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
 
 #### Uninstalling MySQL
 
-1.  Stop the database process.
+1.  Stop the database process as the **root** user.
 
     ```
-    #ps -ef | grep mysql
-    #kill -9 PID
+    $ ps -ef | grep mysql
+    # kill -9 PID
     ```
 
-2.  Run the  **dnf remove mysql**  command to uninstall MySQL.
+2.  Run the  **dnf remove mysql**  command as the **root** user to uninstall MySQL.
 
     ```
-    #dnf remove mysql
+    # dnf remove mysql
     ```
 
 
@@ -1843,7 +1843,7 @@ A new user has few permissions and can perform only operations that do not requi
 \#Create a user whose password is  **123456**, username is  **userexample2**, and hostname is  **192.168.1.100**.
 
 ```
-> CREATE USER 'userexample2'@'192.168.1.100' IDENDIFIED BY '123456';
+> CREATE USER 'userexample2'@'192.168.1.100' IDENTIFIED BY '123456';
 ```
 
 #### Viewing Users
@@ -2089,7 +2089,7 @@ To use  **DROP DATABASE**, you need the  **DROP**  permission on the database.
 
 #### Backing Up a Database
 
-Run the  **mysqldump**  command to back up the database.
+Run the  **mysqldump**  command as the **root** user to back up the database.
 
 Back up one or more tables:
 
@@ -2152,12 +2152,12 @@ In the preceding information:
 \#Back up only the table structure of the db1 database of user  **root**  on port  **3306**  of the host whose IP address is  **192.168.202.144**  to the  **db1.sql**  file.
 
 ```
-# mysqldump -h 192.168.202.144 -P 3306 -uroot -p123456 -t db1 > db1.sq
+# mysqldump -h 192.168.202.144 -P 3306 -uroot -p123456 -t db1 > db1.sql
 ```
 
 #### Restoring a Database
 
-Run the  **mysqldump**  command to restore the database.
+Run the  **mysql**  command as the **root** user to restore the database.
 
 Back up one or more tables:
 

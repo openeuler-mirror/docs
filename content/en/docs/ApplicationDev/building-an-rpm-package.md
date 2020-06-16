@@ -25,13 +25,13 @@ This section describes how to build an RPM software package on a local PC or usi
 During RPM packaging, the source code needs to be compiled. The compiled configuration files and binary command files need to be placed in proper positions. The RPM packages need to be tested as required. A workspace is required for these operations. The  **rpmbuild**  command uses a set of standard workspaces.
 
 ```
-# rpmdev-setuptree
+$ rpmdev-setuptree
 ```
 
 The  **rpmdev-setuptree**  command is used to install rpmdevtools. After the command is executed, the  **rpmbuild**  folder is generated in the  **/root**  directory \(or the  **/home/**_username_  directory for non-root users\). The directory structure is as follows:
 
 ```
-# tree rpmbuild
+$ tree rpmbuild
 rpmbuild
 ├── BUILD
 ├── RPMS
@@ -388,8 +388,8 @@ The following uses the packaging process of the GNU Hello World project as an ex
 Run the following command to download the source code of the official example:
 
 ```
-# cd ~/rpmbuild/SOURCES
-# wget http://ftp.gnu.org/gnu/hello/hello-2.10.tar.gz
+$ cd ~/rpmbuild/SOURCES
+$ wget http://ftp.gnu.org/gnu/hello/hello-2.10.tar.gz
 ```
 
 #### Editing the SPEC File
@@ -397,7 +397,7 @@ Run the following command to download the source code of the official example:
 Run the following command to create the .spec file:
 
 ```
-# vi hello.spec 
+$ vi hello.spec 
 ```
 
 Write the corresponding content to the file and save the file. The following is an example of the file content. Modify the corresponding fields based on the actual requirements.
@@ -470,13 +470,13 @@ fi
 Run the following command in the directory where the .spec file is located to build the source code, binary files, and software packages that contain debugging information:
 
 ```
-# rpmbuild -ba hello.spec 
+$ rpmbuild -ba hello.spec 
 ```
 
 Run the following command to view the execution result:
 
 ```
-# tree ~/rpmbuild/*RPMS
+$ tree ~/rpmbuild/*RPMS
 
 /home/testUser/rpmbuild/RPMS
 └── aarch64
@@ -518,7 +518,7 @@ This section describes how to build an RPM software package online on OBS.
 
 To modify the source code of the existing software and build the modified source file into an RPM software package on the OBS web client, perform the following steps:
 
-1.  Log in to OBS at  [http://openeuler-build.huawei.com/](http://openeuler-build.huawei.com/).
+1.  Log in to OBS at  [https://build.openeuler.org/](https://build.openeuler.org/).
 2.  Click  **All Projects**. The  **All Projects**  page is displayed.
 3.  Click the project to be modified. The project details page is displayed. For example, click  **openEuler:Mainline**.
 4.  On the project details page, search for the software package to be modified and click the software package name. The software package details page is displayed.
@@ -639,16 +639,15 @@ You have obtained the  **root**  permission, and have configured a repo source f
     1.  Run the following command to open the  **\~/.oscrc**  file:
 
         ```
-        # vi ~/.oscrc
+        $ vi ~/.oscrc
         ```
 
-    2.  Add the  **user**  and  **pass**  fields to  **\~/.oscrc**. The values of  _userName_  and  _passWord_  are the account and password registered on the OBS website \([http://openeuler-build.huawei.com/](http://openeuler-build.huawei.com/)\).
+    2.  Add the  **user**  and  **pass**  fields to  **\~/.oscrc**. The values of  _userName_  and  _passWord_  are the account and password registered on the OBS website \([https://build.openeuler.org/](https://build.openeuler.org/)\).
 
         ```
         [general]
-        apiurl = http://openeuler-build.huawei.com/
-        no_verify = 1
-        [http://openeuler-build.huawei.com/]
+        apiurl = https://build.openeuler.org/
+        [https://build.openeuler.org/]
         user=userName
         pass=passWord
         ```
@@ -661,7 +660,7 @@ You have obtained the  **root**  permission, and have configured a repo source f
 1.  You can copy an existing project to create a subproject of your own. For example, to copy the  **zlib**  software package in the  **openEuler:Mainline**  project to the new branch, run the following command:
 
     ```
-    # osc branch openEuler:Mainline zlib
+    $ osc branch openEuler:Mainline zlib
     ```
 
     If the following information is displayed, a new branch project  **home:testUser:branches:openEuler:Mainline**  is created for user  **testUser**.
@@ -674,7 +673,7 @@ You have obtained the  **root**  permission, and have configured a repo source f
 2.  Download the configuration file \(for example,  **\_service**\) of the software package to be modified to the local directory. In the preceding command,  _testUser_  indicates the account name configured in the  **\~/.oscrc**  configuration file. Change it based on the actual requirements.
 
     ```
-    # osc co home:testUser:branches:openEuler:Mainline/zlib
+    $ osc co home:testUser:branches:openEuler:Mainline/zlib
     ```
 
     Information similar to the following is displayed:
@@ -688,8 +687,8 @@ You have obtained the  **root**  permission, and have configured a repo source f
 3.  Go to the local subproject directory and synchronize the remote code of the software package to the local host.
 
     ```
-    # cd home:testUser:branches:openEuler:Mainline/zlib
-    # osc up -S
+    $ cd home:testUser:branches:openEuler:Mainline/zlib
+    $ osc up -S
     ```
 
     Information similar to the following is displayed:
@@ -710,26 +709,26 @@ You have obtained the  **root**  permission, and have configured a repo source f
 1.  Rename the source file and add the renamed source file to the temporary storage of OBS.
 
     ```
-    # rm -f _service;for file in `ls | grep -v .osc`;do new_file=${file##*:};mv $file $new_file;done
-    # osc addremove *
+    $ rm -f _service;for file in `ls | grep -v .osc`;do new_file=${file##*:};mv $file $new_file;done
+    $ osc addremove *
     ```
 
 2.  Modify the source code and .spec file, and synchronize all modifications of the corresponding software package to the OBS server. The following is a command example. The information after the  **-m**  parameter is the commission record.
 
     ```
-    # osc ci -m "commit log"
+    $ osc ci -m "commit log"
     ```
 
 3.  Run the following command to obtain the repository name and architecture of the current project:
 
     ```
-    # osc repos home:testUser:branches:openEuler:Mainline
+    $ osc repos home:testUser:branches:openEuler:Mainline
     ```
 
 4.  After the modification is committed, OBS automatically compiles the software package. You can run the following command to view the compilation logs of the corresponding repository. In the command, *standard\_aarch64*  and  _aarch64_  indicate the repository name and architecture obtained in the command output.
 
     ```
-    # osc buildlog standard_aarch64  aarch64
+    $ osc buildlog standard_aarch64  aarch64
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
@@ -745,22 +744,22 @@ To use the OSC tool of OBS to add a new software package, perform the following 
 1.  Create a project based on the dependency of the new software package and a proper project. For example, to create a project based on  **zlib**  of the  **openEuler:Mainline**  project, run the following command \(**zlib**  is any software package in the project\):
 
     ```
-    # osc branch openEuler:Mainline zlib
+    $ osc branch openEuler:Mainline zlib
     ```
 
 2.  Delete unnecessary software packages added during project creation. For example, to delete the  **zlib**  software package, run the following command:
 
     ```
-    # cd home:testUser:branches:openEuler:Mainline
-    # osc rm zlib
-    # osc commit -m "commit log"
+    $ cd home:testUser:branches:openEuler:Mainline
+    $ osc rm zlib
+    $ osc commit -m "commit log"
     ```
 
 3.  Create a software package in your own project. For example, to add the  **my-first-obs-package**  software package, run the following command:
 
     ```
-    # mkdir my-first-obs-package 
-    # cd my-first-obs-package
+    $ mkdir my-first-obs-package 
+    $ cd my-first-obs-package
     ```
 
 
@@ -770,22 +769,22 @@ To use the OSC tool of OBS to add a new software package, perform the following 
 2.  Modify the source code and .spec file, and upload all files of the corresponding software package to the OBS server. The following is a command example. The information after the  **-m**  parameter is the commission record.
 
     ```
-    # cd home:testUser:branches:openEuler:Mainline
-    # osc add my-first-obs-package
-    # osc ci -m "commit log"
+    $ cd home:testUser:branches:openEuler:Mainline
+    $ osc add my-first-obs-package
+    $ osc ci -m "commit log"
     ```
 
 3.  Run the following command to obtain the repository name and architecture of the current project:
 
     ```
-    # osc repos home:testUser:branches:openEuler:Mainline
+    $ osc repos home:testUser:branches:openEuler:Mainline
     ```
 
 4.  After the modification is committed, OBS automatically compiles the software package. You can run the following command to view the compilation logs of the corresponding repository. In the command,  _standard\_aarch64_  and  _aarch64_  indicate the repository name and architecture obtained in the command output.
 
     ```
-    # cd home:testUser:branches:openEuler:Mainline/my-first-obs-package
-    # osc buildlog standard_aarch64  aarch64
+    $ cd home:testUser:branches:openEuler:Mainline/my-first-obs-package
+    $ osc buildlog standard_aarch64  aarch64
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
@@ -797,7 +796,7 @@ To use the OSC tool of OBS to add a new software package, perform the following 
 After the RPM software package is built, run the following command to obtain the RPM software package using the OSC:
 
 ```
-# osc getbinaries home:testUser:branches:openEuler:Mainline my-first-obs-package standard_aarch64 aarch64
+$ osc getbinaries home:testUser:branches:openEuler:Mainline my-first-obs-package standard_aarch64 aarch64
 ```
 
 The parameters in the command are described as follows. You can modify the parameters according to the actual situation.

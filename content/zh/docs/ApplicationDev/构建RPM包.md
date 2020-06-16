@@ -24,13 +24,13 @@
 RPM打包的时候需要编译源码，需要把编译好的配置文件、二进制命令文件等放到合适的位置，还要根据需要对RPM的包进行测试，这些都需要先有一个“工作空间”。rpmbuild命令使用一套标准化的“工作空间”：
 
 ```
-# rpmdev-setuptree
+$ rpmdev-setuptree
 ```
 
 rpmdev-setuptree这个命令就是安装 rpmdevtools 带来的。可以看到运行了这个命令之后，在“/root“目录（非root用户为“/home/用户名“目录）下多了一个 rpmbuild 的文件夹，目录结构如下：
 
 ```
-# tree rpmbuild
+$ tree rpmbuild
 rpmbuild
 ├── BUILD
 ├── RPMS
@@ -378,7 +378,7 @@ rpmbuild命令格式为：rpmbuild \[_option_...\]
 
 ### 创建Hello World RPM包
 
-这里以GNU“Hello World” 项目的打包过程作为示例，包含了典型的FOSS（Free and Open Source Software） 软件项目相关的最常用的外围组件，其中包括配置/编译/安装环境、文档、国际化等等。
+这里以GNU “Hello World” 项目的打包过程作为示例，包含了典型的FOSS（Free and Open Source Software） 软件项目相关的最常用的外围组件，其中包括配置/编译/安装环境、文档、国际化等等。
 
 
 #### 下载源码
@@ -386,8 +386,8 @@ rpmbuild命令格式为：rpmbuild \[_option_...\]
 我们直接下载官方例子的源码，使用如下命令：
 
 ```
-# cd ~/rpmbuild/SOURCES
-# wget http://ftp.gnu.org/gnu/hello/hello-2.10.tar.gz
+$ cd ~/rpmbuild/SOURCES
+$ wget http://ftp.gnu.org/gnu/hello/hello-2.10.tar.gz
 ```
 
 #### 编辑SPEC文件
@@ -395,7 +395,7 @@ rpmbuild命令格式为：rpmbuild \[_option_...\]
 新建spec文件，参考命令如下：
 
 ```
-# vi hello.spec 
+$ vi hello.spec 
 ```
 
 在文件中写入对应内容后保存文件。文件内容示例如下，请根据实际情况修改相应字段。
@@ -468,13 +468,13 @@ fi
 构建源码、二进制和包含调试信息的软件包，在spec文件所在目录执行如下命令：
 
 ```
-# rpmbuild -ba hello.spec 
+$ rpmbuild -ba hello.spec 
 ```
 
 执行成功后，查看结果，使用如下命令：
 
 ```
-# tree ~/rpmbuild/*RPMS
+$ tree ~/rpmbuild/*RPMS
 
 /home/testUser/rpmbuild/RPMS
 └── aarch64
@@ -515,7 +515,7 @@ OBS使用工程组织软件包。基础的权限控制、相关的存仓库和�
 
 使用OBS网页端，修改已有软件的源代码，并将修改后的源文件构建为RPM软件包的操作方法如下：
 
-1.  登录OBS界面，地址为：[http://openeuler-build.huawei.com/](http://openeuler-build.huawei.com/)。
+1.  登录OBS界面，地址为：[https://build.openeuler.org/](https://build.openeuler.org/)。
 2.  单击“All Projects”进入所有工程页面。
 3.  单击需要修改的对应工程，进入该工程的详情页面，例如单击“openEuler:Mainline”。
 4.  在工程详情页面的搜索框查找需要修改的软件包，然后单击该软件包包名，进入该软件包详请页面。
@@ -636,16 +636,15 @@ RPM软件包构建完成后，通过网页端获取对应RPM软件包的方法�
     1.  打开\~/.oscrc，命令如下：
 
         ```
-        # vi ~/.oscrc
+        $ vi ~/.oscrc
         ```
 
-    2.  在\~/.oscrc中添加user和pass字段，如下所示，它们的取值  _userName_ 和 _passWord_  分别是用户在OBS网页（[http://openeuler-build.huawei.com/](http://openeuler-build.huawei.com/)）上已经注册的账号和密码。
+    2.  在\~/.oscrc中添加user和pass字段，如下所示，它们的取值  _userName_ 和 _passWord_  分别是用户在OBS网页（[https://build.openeuler.org/](https://build.openeuler.org/)）上已经注册的账号和密码。
 
         ```
         [general]
-        apiurl = http://openeuler-build.huawei.com/
-        no_verify = 1
-        [http://openeuler-build.huawei.com/]
+        apiurl = https://build.openeuler.org/
+        [https://build.openeuler.org/]
         user=userName
         pass=passWord
         ```
@@ -658,7 +657,7 @@ RPM软件包构建完成后，通过网页端获取对应RPM软件包的方法�
 1.  通过拷贝已有工程，创建属于用户自己的子工程。例如将openEuler:Mainline工程下的zlib软件包到新分支，参考命令如下：
 
     ```
-    # osc branch openEuler:Mainline zlib
+    $ osc branch openEuler:Mainline zlib
     ```
 
     回显如下所示，说明在用户testUser下创建了新的分支工程home:testUser:branches:openEuler:Mainline。
@@ -671,7 +670,7 @@ RPM软件包构建完成后，通过网页端获取对应RPM软件包的方法�
 2.  将需要修改软件包的相关配置文件（例如\_service）下载到本地当前路径。其中  _testUser_  为\~/.oscrc配置文件中配置的账户名称，请根据实际情况修改。
 
     ```
-    # osc co home:testUser:branches:openEuler:Mainline/zlib
+    $ osc co home:testUser:branches:openEuler:Mainline/zlib
     ```
 
     回显如下所示：
@@ -685,8 +684,8 @@ RPM软件包构建完成后，通过网页端获取对应RPM软件包的方法�
 3.  进入本地子工程目录，并将软件包远程代码同步到本地。
 
     ```
-    # cd home:testUser:branches:openEuler:Mainline/zlib
-    # osc up -S
+    $ cd home:testUser:branches:openEuler:Mainline/zlib
+    $ osc up -S
     ```
 
     回显如下所示：
@@ -707,26 +706,26 @@ RPM软件包构建完成后，通过网页端获取对应RPM软件包的方法�
 1.  重命名源文件，然后将重命名后的源文件添加到OBS暂存中。
 
     ```
-    # rm -f _service;for file in `ls | grep -v .osc`;do new_file=${file##*:};mv $file $new_file;done
-    # osc addremove *
+    $ rm -f _service;for file in `ls | grep -v .osc`;do new_file=${file##*:};mv $file $new_file;done
+    $ osc addremove *
     ```
 
 2.  修改源代码和spec文件，并将对应软件包的所有修改同步到OBS服务器。参考命令如下，-m参数后的信息为提交记录。
 
     ```
-    # osc ci -m "commit log"
+    $ osc ci -m "commit log"
     ```
 
 3.  获取当前工程的仓库名称和架构，参考命令如下：
 
     ```
-    # osc repos home:testUser:branches:openEuler:Mainline
+    $ osc repos home:testUser:branches:openEuler:Mainline
     ```
 
 4.  修改提交成功后，OBS会自动开始编译软件包。可以通过如下命令，查看对应仓库的编译日志，其中 _standard_aarch64_ 、 _aarch64_ 分别为查询所得仓库名称和架构。
 
     ```
-    # osc buildlog standard_aarch64  aarch64
+    $ osc buildlog standard_aarch64  aarch64
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
@@ -742,22 +741,22 @@ RPM软件包构建完成后，通过网页端获取对应RPM软件包的方法�
 1.  根据新增软件包的依赖情况，基于合适的工程，创建属于用户自己的个人工程。例如基于  _openEuler:Mainline_  工程的 zlib 创建工程的参考命令如下，zlib 为工程下的任一软件包。
 
     ```
-    # osc branch openEuler:Mainline zlib
+    $ osc branch openEuler:Mainline zlib
     ```
 
 2.  删除创建工程时新增的无用软件包。例如删除zlib软件包的参考命令如下：
 
     ```
-    # cd home:testUser:branches:openEuler:Mainline
-    # osc rm zlib
-    # osc commit -m "commit log"
+    $ cd home:testUser:branches:openEuler:Mainline
+    $ osc rm zlib
+    $ osc commit -m "commit log"
     ```
 
 3.  在个人工程下创建新增的软件包。例如新增软件包 my-first-obs-package命令如下：
 
     ```
-    # mkdir my-first-obs-package 
-    # cd my-first-obs-package
+    $ mkdir my-first-obs-package 
+    $ cd my-first-obs-package
     ```
 
 
@@ -767,22 +766,22 @@ RPM软件包构建完成后，通过网页端获取对应RPM软件包的方法�
 2.  修改源代码和spec文件，并将对应软件包的所有文件上传到OBS服务器。参考命令如下，-m 参数后的信息为提交记录。
 
     ```
-    # cd home:testUser:branches:openEuler:Mainline
-    # osc add my-first-obs-package
-    # osc ci -m "commit log"
+    $ cd home:testUser:branches:openEuler:Mainline
+    $ osc add my-first-obs-package
+    $ osc ci -m "commit log"
     ```
 
 3.  获取当前工程的仓库名称和架构，参考命令如下：
 
     ```
-    # osc repos home:testUser:branches:openEuler:Mainline
+    $ osc repos home:testUser:branches:openEuler:Mainline
     ```
 
 4.  修改提交成功后，OBS会自动开始编译软件包。可以通过如下命令，查看对应仓库的编译日志，其中 _standard_aarch64_ 、 _aarch64_ 分别为查询所得仓库名称和架构。
 
     ```
-    # cd home:testUser:branches:openEuler:Mainline/my-first-obs-package
-    # osc buildlog standard_aarch64  aarch64
+    $ cd home:testUser:branches:openEuler:Mainline/my-first-obs-package
+    $ osc buildlog standard_aarch64  aarch64
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
@@ -794,7 +793,7 @@ RPM软件包构建完成后，通过网页端获取对应RPM软件包的方法�
 RPM软件包构建完成后，使用osc获取对应RPM软件包的命令如下：
 
 ```
-# osc getbinaries home:testUser:branches:openEuler:Mainline my-first-obs-package standard_aarch64 aarch64
+$ osc getbinaries home:testUser:branches:openEuler:Mainline my-first-obs-package standard_aarch64 aarch64
 ```
 
 命令中的各参数含义如下，请用户根据实际情况修改：

@@ -35,7 +35,7 @@ The web server version in the openEuler system is Apache HTTP server 2.4, that i
 You can use the systemctl tool to manage the httpd service, including starting, stopping, and restarting the service, and viewing the service status. This section describes how to manage the Apache HTTP service.
 
 #### Prerequisites
--   To use the Apache HTTP service, ensure that the rpm package of the httpd service has been installed in your system. The installation command is as follows:
+-   To use the Apache HTTP service, ensure that the rpm package of the httpd service has been installed in your system. Run the following command as the **root** user to install the rpm package:
 
     ```
     # dnf install httpd
@@ -111,7 +111,7 @@ You can restart the service in any of the following ways:
 Check whether the httpd service is running.
 
 ```
-# systemctl is-active httpd
+$ systemctl is-active httpd
 ```
 
 If active is displayed in the command output, the service is running.
@@ -143,7 +143,7 @@ After the httpd service is started, it reads the configuration file shown in  [T
 </tbody>
 </table>
 
-Although the default configuration can be used in most cases, you need to be familiar with some important configuration items. After the configuration file is modified, run the following command to check the syntax errors that may occur in the configuration file:
+Although the default configuration can be used in most cases, you need to be familiar with some important configuration items. After the configuration file is modified, run the following command as the **root** user to check the syntax errors that may occur in the configuration file:
 
 ```
 # apachectl configtest
@@ -169,19 +169,19 @@ To load a special DSO module, you can use the load module indication in the conf
 
 For example, to load the asis DSO module, perform the following steps:
 
-1.  In the /etc/httpd/conf.modules.d/00-optional.conf file, uncomment the following configuration line:
+1.  In the /etc/httpd/conf.modules.d/00-optional.conf file, uncomment the following configuration line as the **root** user:
 
     ```
     LoadModule asis_module modules/mod_asis.so
     ```
 
-2.  After the loading is complete, restart the httpd service to reload the configuration file.
+2.  After the loading is complete, restart the httpd service as the **root** user to reload the configuration file.
 
     ```
     # systemctl restart httpd
     ```
 
-3.  After the loading is complete, run the httpd -M command to check whether the asis DSO module is loaded.
+3.  After the loading is complete, run the httpd -M command as the **root** user to check whether the asis DSO module is loaded.
 
     ```
     # httpd -M | grep asis
@@ -203,19 +203,19 @@ For example, to load the asis DSO module, perform the following steps:
 #### Introduction to SSL
 Secure Sockets Layer \(SSL\) is an encryption protocol that allows secure communication between the server and client. The Transport Layer Security \(TLS\) protocol ensures security and data integrity for network communication. openEuler supports Mozilla Network Security Services \(NSS\) as the security protocol TLS. To load the SSL, perform the following steps:
 
-1.  Install the  **mod\_ssl**  RPM package.
+1.  Install the  **mod\_ssl**  RPM package as the **root** user.
 
     ```
     # dnf install mod_ssl
     ```
 
-2.  After the loading is complete, restart the httpd service to reload the configuration file.
+2.  After the loading is complete, restart the httpd service as the **root** user to reload the configuration file.
 
     ```
     # systemctl restart httpd
     ```
 
-3.  After the loading is complete, run the  **httpd -M**  command to check whether the SSL is loaded.
+3.  After the loading is complete, run the  **httpd -M**  command as the **root** user to check whether the SSL is loaded.
 
     ```
     # httpd -M | grep ssl
@@ -232,7 +232,7 @@ Secure Sockets Layer \(SSL\) is an encryption protocol that allows secure commun
 
 After the web server is set up, perform the following operations to check whether the web server is set up successfully:
 
-1.  Run the following command to check the IP address of the server:
+1.  Run the following command as the **root** user to check the IP address of the server:
 
     ```
     # ifconfig
@@ -267,7 +267,7 @@ After the web server is set up, perform the following operations to check whethe
     TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
     ```
 
-2.  Configure the firewall.
+2.  Configure the firewall as the **root** user.
 
     ```
     # firewall-cmd --add-service=http --permanent
@@ -282,24 +282,24 @@ After the web server is set up, perform the following operations to check whethe
         Run the following command to check whether the web page can be accessed. If the service is successfully set up, the web page can be accessed.
 
         ```
-        curl https://192.168.1.60
+        $ curl http://192.168.1.60
         ```
 
         Run the following command to check whether the command output is 0. If the command output is 0, the httpd server is successfully set up.
 
         ```
-        echo $?
+        $ echo $?
         ```
 
     -   Using the Windows OS
 
         Open the browser and enter the following address in the address box. If the web page can be accessed, the httpd server is successfully set up.
 
-        https://_192.168.1.60_
+        http://192.168.1.60
 
         If the port number is changed, enter the address in the following format:
 
-        https://_192.168.1.60: port number_
+        http://192.168.1.60: port number
 
 
 
@@ -317,25 +317,25 @@ Nginx is a lightweight web server which also acts as a reverse proxy server and 
 2.  Clear the cache.
 
     ```
-    #dnf clean all
+    $ dnf clean all
     ```
 
 3.  Create a cache.
 
     ```
-    #dnf makecache
+    $ dnf makecache
     ```
 
-4.  Install the MariaDB server.
+4.  Install the Nginx server as the **root** user.
 
     ```
-    #dnf install nginx
+    # dnf install nginx
     ```
 
 5.  Check the installed RPM package.
 
     ```
-    dnf list all | grep nginx
+    $ dnf list all | grep nginx
     ```
 
 
@@ -349,7 +349,7 @@ You can use the systemctl tool to manage the Nginx service, including starting, 
 
     For more information about service management, see  [Service Management](service-management.html).
 
--   To start, stop, and restart the httpd service, you must have the  **root**  permission.
+-   To start, stop, and restart the Nginx service, you must have the  **root**  permission.
 
 #### Starting a Service
 -   Run the following command to start and run the Nginx service:
@@ -371,7 +371,7 @@ You can use the systemctl tool to manage the Nginx service, including starting, 
 >If the running Nginx server functions as a secure server, a password is required after the system is started. The password is an encrypted private SSL key.  
 
 #### Stopping the Service
--   Run the following command to stop the httpd service:
+-   Run the following command to stop the Nginx service:
 
     ```
     # systemctl stop nginx
@@ -399,7 +399,7 @@ You can restart the service in any of the following ways:
 -   Reload the configuration.
 
     ```
-    # systemctl reload httpd
+    # systemctl reload nginx
     ```
 
     This command causes the running Nginx service to reload its configuration file. Any requests that are currently being processed will be interrupted, causing the client browser to display an error message or re-render some pages.
@@ -414,10 +414,10 @@ You can restart the service in any of the following ways:
 
 
 #### Verifying the Service Status
-Check whether the httpd service is running.
+Check whether the Nginx service is running.
 
 ```
-# systemctl is-active nginx
+$ systemctl is-active nginx
 ```
 
 If  **active** is displayed in the command output, the service is running.
@@ -449,10 +449,10 @@ After the Nginx service is started, it reads the configuration file shown in  [T
 </tbody>
 </table>
 
-Although the default configuration can be used in most cases, you need to be familiar with some important configuration items. After the configuration file is modified, run the following command to check the syntax errors that may occur in the configuration file:
+Although the default configuration can be used in most cases, you need to be familiar with some important configuration items. After the configuration file is modified, run the following command as the **root** user to check the syntax errors that may occur in the configuration file:
 
 ```
-# /usr/sbin/nginx -t
+# nginx -t
 ```
 
 If the command output contains  **syntax is ok**, the syntax of the configuration file is correct.
@@ -475,7 +475,7 @@ The DSO is automatically loaded when the  **dnf install nginx**  command is used
 
 After the web server is set up, perform the following operations to check whether the web server is set up successfully:
 
-1.  Run the following command to check the IP address of the server:
+1.  Run the following command as the **root** user to check the IP address of the server:
 
     ```
     # ifconfig
@@ -510,7 +510,7 @@ After the web server is set up, perform the following operations to check whethe
     TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
     ```
 
-2.  Configure the firewall.
+2.  Configure the firewall as the **root** user.
 
     ```
     # firewall-cmd --add-service=http --permanent
@@ -525,21 +525,21 @@ After the web server is set up, perform the following operations to check whethe
         Run the following command to check whether the web page can be accessed. If the service is successfully set up, the web page can be accessed.
 
         ```
-        curl http://192.168.1.60
+        $ curl http://192.168.1.60
         ```
 
         Run the following command to check whether the command output is  **0**. If the command output is  **0**, the Nginx server is successfully set up.
 
         ```
-        echo $?
+        $ echo $?
         ```
 
     -   Using the Windows OS
 
         Open the browser and enter the following address in the address box. If the web page can be accessed, the Nginx server is successfully set up.
 
-        http://_192.168.1.60_
+        http://192.168.1.60
 
         If the port number is changed, enter the address in the following format:
 
-        http://_192.168.1.60: port number_
+        http://192.168.1.60: port number
