@@ -9,7 +9,7 @@
 2.  Install dependent packages of system containers.
 
     ```
-    # yum install isulad-tools authz isulad-lxcfs-toolkit lxcfs
+    # yum install syscontainer-tools authz lxcfs-tools lxcfs
     ```
 
 3.  Run the following command to check whether iSulad is started:

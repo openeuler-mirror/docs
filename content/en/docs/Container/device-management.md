@@ -2,12 +2,12 @@
 
 ## Function Description<a name="en-us_topic_0182200846_section330116084614"></a>
 
-isulad-tools allows you to add block devices \(such as disks and logical volume managers\) or character devices \(such as GPUs, binners, and FUSEs\) on the host to a container. The devices can be used in the container. For example, you can run the  **fdisk**  command to format the disk and write data to the file system. If the devices are not required, isulad-tools allows you to delete them from the container and return them to the host.
+syscontainer-tools allows you to add block devices \(such as disks and logical volume managers\) or character devices \(such as GPUs, binners, and FUSEs\) on the host to a container. The devices can be used in the container. For example, you can run the  **fdisk**  command to format the disk and write data to the file system. If the devices are not required, syscontainer-tools allows you to delete them from the container and return them to the host.
 
 ## Command Format<a name="en-us_topic_0182200846_section9239248135514"></a>
 
 ```
-isulad-tools [COMMADN][OPTIONS] <container_id> [ARG...]
+syscontainer-tools [COMMADN][OPTIONS] <container_id> [ARG...]
 ```
 
 In the preceding format:
@@ -87,16 +87,16 @@ In the preceding format:
 
 -   You can add or delete devices when container instances are not running. After the operation is complete, you can start the container to view the device status. You can also dynamically add a device when the container is running.
 -   Do not concurrently run the  **fdisk**  command to format disks in a container and on the host. Otherwise, the container disk usage will be affected.
--   When you run the  **add-device**  command to add a disk to a specific directory of a container, if the parent directory in the container is a multi-level directory \(for example,  **/dev/a/b/c/d/e**\) and the directory level does not exist, isulad-tools will automatically create the corresponding directory in the container. When the disk is deleted, the created parent directory is not deleted. If you run the  **add-device**  command to add a device to this parent directory again, a message is displayed, indicating that a device already exists and cannot be added.
+-   When you run the  **add-device**  command to add a disk to a specific directory of a container, if the parent directory in the container is a multi-level directory \(for example,  **/dev/a/b/c/d/e**\) and the directory level does not exist, syscontainer-tools will automatically create the corresponding directory in the container. When the disk is deleted, the created parent directory is not deleted. If you run the  **add-device**  command to add a device to this parent directory again, a message is displayed, indicating that a device already exists and cannot be added.
 -   When you run the** add-device**  command to add a disk or update disk parameters, you need to configure the disk QoS. Do not set the write or read rate limit for the block device \(I/O/s or byte/s\) to a small value. If the value is too small, the disk may be unreadable \(the actual reason is the speed is too slow\), affecting service functions.
 -   When you run the  **--blkio-weight-device**  command to limit the weight of a specified block device, if the block device supports only the BFQ mode, an error may be reported, prompting you to check whether the current OS environment supports setting the weight of the BFQ block device.
 
 ## Example<a name="en-us_topic_0182200846_section7148193464616"></a>
 
--   Start a system container, and set  **hook spec**  to the isulad hook execution script.
+-   Start a system container, and set  **hook spec**  to the syscontainer hook execution script.
 
     ```
-    [root@localhost ~]# isula run -tid --hook-spec /etc/isulad-tools/hookspec.json --system-container --external-rootfs /root/root-fs none init
+    [root@localhost ~]# isula run -tid --hook-spec /etc/syscontainer-tools/hookspec.json --system-container --external-rootfs /root/root-fs none init
     eed1096c8c7a0eca6d92b1b3bc3dd59a2a2adf4ce44f18f5372408ced88f8350
     ```
 
@@ -104,7 +104,7 @@ In the preceding format:
 -   Add a block device to a container.
 
     ```
-    [root@localhost ~]# isulad-tools add-device ee /dev/sdb:/dev/sdb123
+    [root@localhost ~]# syscontainer-tools add-device ee /dev/sdb:/dev/sdb123
     Add device (/dev/sdb) to container(ee,/dev/sdb123) done.
     [root@localhost ~]# isula exec ee fdisk -l /dev/sdb123
     Disk /dev/sdb123: 50 GiB, 53687091200 bytes, 104857600 sectors
@@ -122,14 +122,14 @@ In the preceding format:
 -   Update the device information.
 
     ```
-    [root@localhost ~]# isulad-tools update-device --device-read-bps /dev/sdb:10m ee
+    [root@localhost ~]# syscontainer-tools update-device --device-read-bps /dev/sdb:10m ee
     Update read bps for device (/dev/sdb,10485760) done.
     ```
 
 -   Delete a device.
 
     ```
-    [root@localhost ~]# isulad-tools remove-device ee /dev/sdb:/dev/sdb123
+    [root@localhost ~]# syscontainer-tools remove-device ee /dev/sdb:/dev/sdb123
     Remove device (/dev/sdb) from container(ee,/dev/sdb123) done.
     Remove read bps for device (/dev/sdb) done.
     ```

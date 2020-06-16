@@ -2,12 +2,12 @@
 
 ## Function Description<a name="en-us_topic_0182200847_section65051811194713"></a>
 
-isulad-tools allows you to insert physical or virtual NICs on the host to a container. If the NICs are not required, isulad-tools allows you to delete them from the container and return them to the host. In addition, the NIC configurations can be dynamically modified. To insert a physical NIC, add the NIC on the host to the container. To insert a virtual NIC, create a veth pair and insert its one end to the container.
+syscontainer-tools allows you to insert physical or virtual NICs on the host to a container. If the NICs are not required, syscontainer-tools allows you to delete them from the container and return them to the host. In addition, the NIC configurations can be dynamically modified. To insert a physical NIC, add the NIC on the host to the container. To insert a virtual NIC, create a veth pair and insert its one end to the container.
 
 ## Command Format<a name="en-us_topic_0182200847_section9239248135514"></a>
 
 ```
-isulad-tools [COMMADN][OPTIONS] <container_id>
+syscontainer-tools [COMMADN][OPTIONS] <container_id>
 ```
 
 In the preceding format:
@@ -69,18 +69,18 @@ In the preceding format:
 -   Physical NICs \(eth\) and virtual NICs \(veth\) can be added.
 -   When adding a NIC, you can also configure the NIC. The configuration parameters include  **--ip**,  **--mac**,  **--bridge**,  **--mtu**,  **--qlen**.
 -   A maximum of eight physical NICs can be added to a container.
--   If you run the  **isulad-tools add-nic**  command to add an eth NIC to a container and do not add a hook, you must manually delete the NIC before the container exits. Otherwise, the name of the eth NIC on the host will be changed to the name of that in the container.
+-   If you run the  **syscontainer-tools add-nic**  command to add an eth NIC to a container and do not add a hook, you must manually delete the NIC before the container exits. Otherwise, the name of the eth NIC on the host will be changed to the name of that in the container.
 -   For a physical NIC \(except 1822 VF NIC\), use the original MAC address when running the  **add-nic**  command. Do not change the MAC address in the container, or when running the  **update-nic**  command.
--   When using the  **isulad-tools add-nic**  command, set the MTU value. The value range depends on the NIC model.
--   When using isulad-tools to add NICs and routes to containers, you are advised to run the  **add-nic**  command to add NICs and then run the  **add-route**  command to add routes. When using isulad-tools to delete NICs and routes from a container, you are advised to run the  **remove-route**  command to delete routes and then run the  **remove-nic**  command to delete NICs.
--   When using isulad-tools to add NICs, add a NIC to only one container.
+-   When using the  **syscontainer-tools add-nic**  command, set the MTU value. The value range depends on the NIC model.
+-   When using syscontainer-tools to add NICs and routes to containers, you are advised to run the  **add-nic**  command to add NICs and then run the  **add-route**  command to add routes. When using syscontainer-tools to delete NICs and routes from a container, you are advised to run the  **remove-route**  command to delete routes and then run the  **remove-nic**  command to delete NICs.
+-   When using syscontainer-tools to add NICs, add a NIC to only one container.
 
 ## Example<a name="en-us_topic_0182200847_section189257450475"></a>
 
--   Start a system container, and set  **hook spec**  to the isulad hook execution script.
+-   Start a system container, and set  **hook spec**  to the syscontainer hook execution script.
 
     ```
-    [root@localhost ~]# isula run -tid --hook-spec /etc/isulad-tools/hookspec.json --system-container --external-rootfs /root/root-fs none init
+    [root@localhost ~]# isula run -tid --hook-spec /etc/syscontainer-tools/hookspec.json --system-container --external-rootfs /root/root-fs none init
     2aaca5c1af7c872798dac1a468528a2ccbaf20b39b73fc0201636936a3c32aa8
     ```
 
@@ -88,14 +88,14 @@ In the preceding format:
 -   Add a virtual NIC to a container.
 
     ```
-    [root@localhost ~]# isulad-tools add-nic --type "veth" --name abc2:bcd2 --ip 172.17.28.5/24 --mac 00:ff:48:13:xx:xx --bridge docker0 2aaca5c1af7c
+    [root@localhost ~]# syscontainer-tools add-nic --type "veth" --name abc2:bcd2 --ip 172.17.28.5/24 --mac 00:ff:48:13:xx:xx --bridge docker0 2aaca5c1af7c
     Add network interface to container 2aaca5c1af7c (bcd2,abc2) done  
     ```
 
 -   Add a physical NIC to a container.
 
     ```
-    [root@localhost ~]# isulad-tools add-nic --type "eth" --name eth3:eth1 --ip 172.17.28.6/24  --mtu 1300  --qlen 2100 2aaca5c1af7c
+    [root@localhost ~]# syscontainer-tools add-nic --type "eth" --name eth3:eth1 --ip 172.17.28.6/24  --mtu 1300  --qlen 2100 2aaca5c1af7c
     Add network interface to container 2aaca5c1af7c (eth3,eth1) done
     ```
 

@@ -2,12 +2,12 @@
 
 ## Function Description<a name="en-us_topic_0182200849_section1519142210555"></a>
 
-In a common container, you can set the  **--volume**  parameter during container creation to mount directories or volumes of the host to the container for resource sharing. However, during container running, you cannot unmount directories or volumes that are mounted to the container, or mount directories or volumes of the host to the container. Only the system container can use the isulad-tools tool to dynamically mount directories or volumes of the host to the container and unmount directories or volumes from the container.
+In a common container, you can set the  **--volume**  parameter during container creation to mount directories or volumes of the host to the container for resource sharing. However, during container running, you cannot unmount directories or volumes that are mounted to the container, or mount directories or volumes of the host to the container. Only the system container can use the syscontainer-tools tool to dynamically mount directories or volumes of the host to the container and unmount directories or volumes from the container.
 
 ## Command Format<a name="en-us_topic_0182200849_section9239248135514"></a>
 
 ```
-isulad-tools [COMMADN][OPTIONS] <container_id> [ARG...]
+syscontainer-tools [COMMADN][OPTIONS] <container_id> [ARG...]
 ```
 
 In the preceding format:
@@ -83,18 +83,18 @@ In the preceding format:
 
 ## Example<a name="en-us_topic_0182200849_section1217704995514"></a>
 
--   Start a system container, and set  **hook spec**  to the isulad hook execution script.
+-   Start a system container, and set  **hook spec**  to the syscontainer hook execution script.
 
     ```
-    [root@localhost ~]# isula run -tid --hook-spec /etc/isulad-tools/hookspec.json --system-container --external-rootfs /root/root-fs none init
+    [root@localhost ~]# isula run -tid --hook-spec /etc/syscontainer-tools/hookspec.json --system-container --external-rootfs /root/root-fs none init
     e45970a522d1ea0e9cfe382c2b868d92e7b6a55be1dd239947dda1ee55f3c7f7
     ```
 
 
--   Use isulad-tools to mount a directory on the host to a container, implementing resource sharing.
+-   Use syscontainer-tools to mount a directory on the host to a container, implementing resource sharing.
 
     ```
-    [root@localhost ~]# isulad-tools add-path e45970a522d1 /home/test123:/home/test123
+    [root@localhost ~]# syscontainer-tools add-path e45970a522d1 /home/test123:/home/test123
     Add path (/home/test123) to container(e45970a522d1,/home/test123) done.
     ```
 
@@ -107,10 +107,10 @@ In the preceding format:
     hello world
     ```
 
--   Use isulad-tools to delete the mount directory from the container.
+-   Use syscontainer-tools to delete the mount directory from the container.
 
     ```
-    [root@localhost ~]# isulad-tools remove-path e45970a522d1 /home/test123:/home/test123
+    [root@localhost ~]# syscontainer-tools remove-path e45970a522d1 /home/test123:/home/test123
     Remove path (/home/test123) from container(e45970a522d1,/home/test123) done
     [root@localhost ~]# isula exec e45970a522d1 bash
     [root@localhost /]# ls /home/test123/helloworld
