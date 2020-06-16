@@ -1,10 +1,10 @@
-# 指定rootfs创建容器<a name="ZH-CN_TOPIC_0184808017"></a>
+# 指定rootfs创建容器
 
-## 功能描述<a name="zh-cn_topic_0182200826_section1190891216312"></a>
+## 功能描述
 
-系统容器不同于普通容器，普通容器需要指定一个容器镜像来启动，而系统容器通过参数 --external-rootfs 指定一个本地的根文件系统rootfs（Root File System）来启动，rootfs包含了容器运行时依赖的操作系统环境。
+系统容器不同于普通容器，普通容器需要指定一个容器镜像来启动，而系统容器通过参数 \--external-rootfs 指定一个本地的根文件系统rootfs（Root File System）来启动，rootfs包含了容器运行时依赖的操作系统环境。
 
-## 参数说明<a name="zh-cn_topic_0182200826_section1311019112521"></a>
+## 参数说明
 
 <a name="zh-cn_topic_0182200826_table99231016135214"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0182200826_row13923616125218"><th class="cellrowborder" valign="top" width="15.2%" id="mcps1.1.4.1.1"><p id="zh-cn_topic_0182200826_p1692351613529"><a name="zh-cn_topic_0182200826_p1692351613529"></a><a name="zh-cn_topic_0182200826_p1692351613529"></a>命令</p>
@@ -25,7 +25,7 @@
 </tbody>
 </table>
 
-## 约束限制<a name="zh-cn_topic_0182200826_section3459165364019"></a>
+## 约束限制
 
 -   参数--external-rootfs指定的rootfs目录必须为绝对路径，不能为相对路径。
 -   参数--external-rootfs指定的rootfs目录必须为一个完整运行的操作系统环境，否则容器会启动失败。
@@ -33,7 +33,7 @@
 -   不支持在x86环境上运行基于arm rootfs的容器，也不支持在arm环境上运行基于x86 rootfs的容器。
 -   同一份rootfs，不建议启动多个容器实例，即同一份rootfs只供一个生命周期内的容器实例使用。
 
-## 使用示例<a name="zh-cn_topic_0182200826_section330518513408"></a>
+## 使用示例
 
 假设本地rootfs的路径为/root/myrootfs，那么启动一个系统容器的命令如下：
 
