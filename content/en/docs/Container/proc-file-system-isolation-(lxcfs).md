@@ -6,12 +6,12 @@ Container virtualization is lightweight and efficient, and can be quickly deploy
 
 ## API Description<a name="en-us_topic_0182200844_section571216114417"></a>
 
-A system container provides two tool packages: lxcfs and lxcfs-toolkit, which are used together. Lxcfs resides on the host as the daemon process. lxcfs-toolkit mounts the lxcfs file system of the host to containers through the hook mechanism.
+A system container provides two tool packages: lxcfs and lxcfs-tools, which are used together. Lxcfs resides on the host as the daemon process. lxcfs-tools mounts the lxcfs file system of the host to containers through the hook mechanism.
 
-The command line of lxcfs-toolkit is as follows:
+The command line of lxcfs-tools is as follows:
 
 ```
-lxcfs-toolkit [OPTIONS] COMMAND [COMMAND_OPTIONS]
+lxcfs-tools [OPTIONS] COMMAND [COMMAND_OPTIONS]
 ```
 
 <a name="en-us_topic_0182200844_table1869210387418"></a>
@@ -76,10 +76,10 @@ lxcfs-toolkit [OPTIONS] COMMAND [COMMAND_OPTIONS]
 
 ## Example<a name="en-us_topic_0182200844_section8108617154414"></a>
 
-1.  Install the lxcfs and lxcfs-toolkit packages and start the lxcfs service.
+1.  Install the lxcfs and lxcfs-tools packages and start the lxcfs service.
 
     ```
-    [root@localhost ~]# yum install lxcfs lxcfs-toolkit 
+    [root@localhost ~]# yum install lxcfs lxcfs-tools 
     [root@localhost ~]# systemctl start lxcfs
     ```
 

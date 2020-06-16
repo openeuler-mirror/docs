@@ -2,12 +2,12 @@
 
 ## Function Description<a name="en-us_topic_0182200848_section14614727134812"></a>
 
-isulad-tools can be used to dynamically add or delete routing tables for system containers.
+syscontainer-tools can be used to dynamically add or delete routing tables for system containers.
 
 ## Command Format<a name="en-us_topic_0182200848_section9239248135514"></a>
 
 ```
-isulad-tools [COMMADN][OPTIONS] <container_id> [ARG...]
+syscontainer-tools [COMMADN][OPTIONS] <container_id> [ARG...]
 ```
 
 In the preceding format:
@@ -74,31 +74,31 @@ In the preceding format:
 
 ## Constraints<a name="en-us_topic_0182200848_section161147375512"></a>
 
--   When using isulad-tools to add NICs and routes to containers, you are advised to run the  **add-nic**  command to add NICs and then run the  **add-route**  command to add routes. When using isulad-tools to delete NICs and routes from a container, you are advised to run the  **remove-route**  command to delete routes and then run the  **remove-nic**  command to delete NICs.
+-   When using syscontainer-tools to add NICs and routes to containers, you are advised to run the  **add-nic**  command to add NICs and then run the  **add-route**  command to add routes. When using syscontainer-tools to delete NICs and routes from a container, you are advised to run the  **remove-route**  command to delete routes and then run the  **remove-nic**  command to delete NICs.
 -   When adding a routing rule to a container, ensure that the added routing rule does not conflict with existing routing rules in the container.
 
 ## Example<a name="en-us_topic_0182200848_section1936515521548"></a>
 
--   Start a system container, and set  **hook spec**  to the isulad hook execution script.
+-   Start a system container, and set  **hook spec**  to the syscontainer hook execution script.
 
     ```
-    [root@localhost ~]# isula run -tid --hook-spec /etc/isulad-tools/hookspec.json --system-container --external-rootfs /root/root-fs none init
+    [root@localhost ~]# isula run -tid --hook-spec /etc/syscontainer-tools/hookspec.json --system-container --external-rootfs /root/root-fs none init
     0d2d68b45aa0c1b8eaf890c06ab2d008eb8c5d91e78b1f8fe4d37b86fd2c190b
     ```
 
 
--   Use isulad-tools to add a physical NIC to the system container.
+-   Use syscontainer-tools to add a physical NIC to the system container.
 
     ```
-    [root@localhost ~]# isulad-tools add-nic --type "eth" --name enp4s0:eth123 --ip 172.17.28.6/24  --mtu 1300  --qlen 2100 0d2d68b45aa0
+    [root@localhost ~]# syscontainer-tools add-nic --type "eth" --name enp4s0:eth123 --ip 172.17.28.6/24  --mtu 1300  --qlen 2100 0d2d68b45aa0
     Add network interface (enp4s0) to container (0d2d68b45aa0,eth123) done
     ```
 
 
--   isulad-tools adds a routing rule to the system container. Format example:  **\[\{"dest":"default", "gw":"192.168.10.1"\},\{"dest":"192.168.0.0/16","dev":"eth0","src":"192.168.1.2"\}\]**. If  **dest**  is left blank, its value will be  **default**.
+-   syscontainer-tools adds a routing rule to the system container. Format example:  **\[\{"dest":"default", "gw":"192.168.10.1"\},\{"dest":"192.168.0.0/16","dev":"eth0","src":"192.168.1.2"\}\]**. If  **dest**  is left blank, its value will be  **default**.
 
     ```
-    [root@localhost ~]# isulad-tools add-route 0d2d68b45aa0 '[{"dest":"172.17.28.0/32", "gw":"172.17.28.5","dev":"eth123"}]'
+    [root@localhost ~]# syscontainer-tools add-route 0d2d68b45aa0 '[{"dest":"172.17.28.0/32", "gw":"172.17.28.5","dev":"eth123"}]'
     Add route to container 0d2d68b45aa0, route: {dest:172.17.28.0/32,src:,gw:172.17.28.5,dev:eth123} done
     ```
 
