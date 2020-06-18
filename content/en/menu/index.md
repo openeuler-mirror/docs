@@ -504,7 +504,7 @@ headless: true
     - [Getting to Know A-Tune]({{< relref "./docs/A-Tune/getting-to-know-a-tune.md" >}})
     - [Installation and Deployment]({{< relref "./docs/A-Tune/installation-and-deployment.md" >}})
     - [Application Scenarios]({{< relref "./docs/A-Tune/application-scenarios.md" >}})
-    - [FAQs]({{< relref "./docs/NewA-Tune/faqs.md" >}})
+    - [FAQs]({{< relref "./docs/A-Tune/faqs.md" >}})
     - [Appendixes]({{< relref "./docs/A-Tune/appendixes.md" >}})
 
 
