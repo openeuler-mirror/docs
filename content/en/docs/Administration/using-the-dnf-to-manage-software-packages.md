@@ -9,7 +9,7 @@ DNF is a Linux software package management tool used to manage RPM software pack
 
 - [Using the DNF to Manage Software Packages](#using-the-dnf-to-manage-software-packages)
     - [Configuring the DNF](#configuring-the-dnf)
-        - [Modifying the Configuration File](#modifying-the-configuration-file)
+        - [The DNF Configuration File](#the-dnf-configuration-file)
         - [Creating a Local Software Repository](#creating-a-local-software-repository)
         - [Adding, Enabling, and Disabling Software Sources](#adding-enabling-and-disabling-software-sources)
     - [Managing Software Package](#managing-software-package)
@@ -35,15 +35,19 @@ DNF is a Linux software package management tool used to manage RPM software pack
 
 
 
-### Modifying the Configuration File
+### The DNF Configuration File
 
-The main configuration file of the DNF is /etc/dnf/dnf.conf. The  **main**  part in the file stores the global settings of the DNF. You can add one or more  **repository**  sections to the file to set the location of the software source to be installed.
+The main configuration file of the DNF is /etc/dnf/dnf.conf which consists of two parts:
 
-In addition, the /etc/yum.repos.d directory stores one or more repo source files, which define different repositories.
+-   The  **main**  part in the file stores the global settings of the DNF. 
 
-You can configure a software source by either directly configuring the /etc/dnf/dnf.conf file or adding the .repo file to the /etc/yum.repos.d directory.
+-   The **repository** part in the file stores the settings of the software source. You can add one or more  **repository**  sections to the file. 
 
-#### Modify the main Part
+In addition, the /etc/yum.repos.d directory stores one or more repo source files, which define different repositories. 
+	
+You can configure a software source by either directly configuring the /etc/dnf/dnf.conf file or configuring the .repo file in the /etc/yum.repos.d directory.
+
+#### Configuring the main Part
 The /etc/dnf/dnf.conf file contains the  **main**  part. The following is an example of the configuration file:
 
 ```
@@ -99,7 +103,6 @@ Common options are as follows:
 </td>
 <td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921080_addb19525458847cd90f1d1390b966701"><a name="en-us_topic_0151921080_addb19525458847cd90f1d1390b966701"></a><a name="en-us_topic_0151921080_addb19525458847cd90f1d1390b966701"></a>The options are <strong id="b12591163015816"><a name="b12591163015816"></a><a name="b12591163015816"></a>1</strong> and <strong id="b1614713618582"><a name="b1614713618582"></a><a name="b1614713618582"></a>0</strong>, indicating whether to perform GPG verification. The default value is <strong id="b14552491581"><a name="b14552491581"></a><a name="b14552491581"></a>1</strong>, indicating that verification is required.</p>
 </td>
-</tr>
 <tr id="en-us_topic_0151921080_ra0a9a346638c4a1bb007bbbe59eaeea7"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921080_af01afb28195145988ff4ba218bfad29b"><a name="en-us_topic_0151921080_af01afb28195145988ff4ba218bfad29b"></a><a name="en-us_topic_0151921080_af01afb28195145988ff4ba218bfad29b"></a>plugins</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921080_a093f5fa9735a4e27a6bdbd2e1d59faee"><a name="en-us_topic_0151921080_a093f5fa9735a4e27a6bdbd2e1d59faee"></a><a name="en-us_topic_0151921080_a093f5fa9735a4e27a6bdbd2e1d59faee"></a>The options are <strong id="b198826584589"><a name="b198826584589"></a><a name="b198826584589"></a>1</strong> and <strong id="b207705014591"><a name="b207705014591"></a><a name="b207705014591"></a>0</strong>, indicating that the DNF plug-in is enabled or disabled. The default value is <strong id="b1835715503011"><a name="b1835715503011"></a><a name="b1835715503011"></a>1</strong>, indicating that the DNF plug-in is enabled.</p>
@@ -113,40 +116,71 @@ Common options are as follows:
 </tbody>
 </table>
 
-#### Modify the repository Part
-The repository part allows you to customize software source repositories. The name of each repository must be unique. Otherwise, conflicts may occur. The following is a minimum configuration example of the \[repository\] section:
+#### Configuring the repository Part
 
-```
-[repository]
-name=repository_name
-baseurl=repository_url
-```
+The repository part allows you to customize software source repositories. The name of each repository must be unique. Otherwise, conflicts may occur. You can configure a software source by either directly configuring the /etc/dnf/dnf.conf file or configuring the .repo file in the /etc/yum.repos.d directory.
 
-Common options are as follows:
+-   Configuring the /etc/dnf/dnf.conf file
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->openEuler provides an online image source at  [https://repo.openeuler.org/](https://repo.openeuler.org/). For example, if the openEuler 20.03 version is aarch64, the  **baseurl**  can be set to  [https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/](https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/).  
+    The following is a minimum configuration example of the \[repository\] section:
 
-**Table  2**  repository parameter description <a name="en-us_topic_0151921080_t2df9dceb0ff64b2f8db8ec5cd779792a"></a>
-<table><thead align="left"><tr id="en-us_topic_0151921080_r9162be1b9c5b451f8a7ff1466f5b8430"><th class="cellrowborder" valign="top" width="31.580000000000002%" id="mcps1.2.3.1.1"><p id="en-us_topic_0151921080_af95a9e18156646249707de3f94ac1b3c"><a name="en-us_topic_0151921080_af95a9e18156646249707de3f94ac1b3c"></a><a name="en-us_topic_0151921080_af95a9e18156646249707de3f94ac1b3c"></a>Parameter</p>
-</th>
-<th class="cellrowborder" valign="top" width="68.42%" id="mcps1.2.3.1.2"><p id="en-us_topic_0151921080_a8cc2e976bc794e86a279d3bae8f901c4"><a name="en-us_topic_0151921080_a8cc2e976bc794e86a279d3bae8f901c4"></a><a name="en-us_topic_0151921080_a8cc2e976bc794e86a279d3bae8f901c4"></a>Description</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="en-us_topic_0151921080_rbfa3a638cbc24c73ab13529149b75bb1"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921080_a4a0b069bbf624b09be3bdd08567c0445"><a name="en-us_topic_0151921080_a4a0b069bbf624b09be3bdd08567c0445"></a><a name="en-us_topic_0151921080_a4a0b069bbf624b09be3bdd08567c0445"></a>name=repository_name</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921080_a21ddbd0f48924c1eb7475cc34de2dc32"><a name="en-us_topic_0151921080_a21ddbd0f48924c1eb7475cc34de2dc32"></a><a name="en-us_topic_0151921080_a21ddbd0f48924c1eb7475cc34de2dc32"></a>Name string of a software repository.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151921080_r00b7f4067dc94647941026719cd6f293"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921080_af53cdfe5f204471f956cdab7c466fa40"><a name="en-us_topic_0151921080_af53cdfe5f204471f956cdab7c466fa40"></a><a name="en-us_topic_0151921080_af53cdfe5f204471f956cdab7c466fa40"></a>baseurl=repository_url</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921080_aa17154cd42524a1a8075e6414160a153"><a name="en-us_topic_0151921080_aa17154cd42524a1a8075e6414160a153"></a><a name="en-us_topic_0151921080_aa17154cd42524a1a8075e6414160a153"></a>Address of the software repository.</p>
-<a name="en-us_topic_0151921080_ued0c249b843549a79bfa68170539c91e"></a><a name="en-us_topic_0151921080_ued0c249b843549a79bfa68170539c91e"></a><ul id="en-us_topic_0151921080_ued0c249b843549a79bfa68170539c91e"><li>Network location using the HTTP protocol, for example, http://path/to/repo</li><li>Network location using the FTP protocol, for example, ftp://path/to/repo</li><li>Local path: for example, file:///path/to/local/repo</li></ul>
-</td>
-</tr>
-</tbody>
-</table>
+    ```
+    [repository]
+    name=repository_name
+    baseurl=repository_url
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >openEuler provides an online image source at  [https://repo.openeuler.org/](https://repo.openeuler.org/). For example, if the openEuler 20.03 version is aarch64, the  **baseurl**  can be set to  [https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/](https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/).  
+
+    Common options are as follows:
+
+    **Table  2**  repository parameter description <a name="en-us_topic_0151921080_t2df9dceb0ff64b2f8db8ec5cd779792a"></a>
+    <table><thead align="left"><tr id="en-us_topic_0151921080_r9162be1b9c5b451f8a7ff1466f5b8430"><th class="cellrowborder" valign="top" width="31.580000000000002%" id="mcps1.2.3.1.1"><p id="en-us_topic_0151921080_af95a9e18156646249707de3f94ac1b3c"><a name="en-us_topic_0151921080_af95a9e18156646249707de3f94ac1b3c"></a><a name="en-us_topic_0151921080_af95a9e18156646249707de3f94ac1b3c"></a>Parameter</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="68.42%" id="mcps1.2.3.1.2"><p id="en-us_topic_0151921080_a8cc2e976bc794e86a279d3bae8f901c4"><a name="en-us_topic_0151921080_a8cc2e976bc794e86a279d3bae8f901c4"></a><a name="en-us_topic_0151921080_a8cc2e976bc794e86a279d3bae8f901c4"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="en-us_topic_0151921080_rbfa3a638cbc24c73ab13529149b75bb1"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921080_a4a0b069bbf624b09be3bdd08567c0445"><a name="en-us_topic_0151921080_a4a0b069bbf624b09be3bdd08567c0445"></a><a name="en-us_topic_0151921080_a4a0b069bbf624b09be3bdd08567c0445"></a>name=repository_name</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921080_a21ddbd0f48924c1eb7475cc34de2dc32"><a name="en-us_topic_0151921080_a21ddbd0f48924c1eb7475cc34de2dc32"></a><a name="en-us_topic_0151921080_a21ddbd0f48924c1eb7475cc34de2dc32"></a>Name string of a software repository.</p>
+    </td>
+    </tr>
+    <tr id="en-us_topic_0151921080_r00b7f4067dc94647941026719cd6f293"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921080_af53cdfe5f204471f956cdab7c466fa40"><a name="en-us_topic_0151921080_af53cdfe5f204471f956cdab7c466fa40"></a><a name="en-us_topic_0151921080_af53cdfe5f204471f956cdab7c466fa40"></a>baseurl=repository_url</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921080_aa17154cd42524a1a8075e6414160a153"><a name="en-us_topic_0151921080_aa17154cd42524a1a8075e6414160a153"></a><a name="en-us_topic_0151921080_aa17154cd42524a1a8075e6414160a153"></a>Address of the software repository.</p>
+    <a name="en-us_topic_0151921080_ued0c249b843549a79bfa68170539c91e"></a><a name="en-us_topic_0151921080_ued0c249b843549a79bfa68170539c91e"></a><ul id="en-us_topic_0151921080_ued0c249b843549a79bfa68170539c91e"><li>Network location using the HTTP protocol, for example, http://path/to/repo</li><li>Network location using the FTP protocol, for example, ftp://path/to/repo</li><li>Local path: for example, file:///path/to/local/repo</li></ul>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+
+-   Configuring the .repo file in the /etc/yum.repos.d directory
+
+
+    openEuler provides multiple repo source files. This section uses the OS repo source of the AArch64 architecture as an example. 
+
+    For example, run the following command as the **root** user to add the openeuler repo source to the openEuler_aarch64.repo file. 
+
+    ```
+    # vi /etc/yum.repos.d/openEuler_aarch64.repo
+    ```
+
+    ```
+    [base]
+    name=openEuler base
+    baseurl=https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/
+    enabled=1
+    gpgcheck=1
+    gpgkey=https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/RPM-GPG-KEY-openEuler
+
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:**    
+    >**gpgkey** is the public key used to verify the signature.
+
 
 #### Displays the Current Configuration
 -   To display the current configuration information, run the following command:
@@ -477,7 +511,7 @@ For example, to delete the software package group of Development Tools, run the 
 
 You can use the DNF to check whether any software package in your system needs to be updated. You can use the DNF to list the software packages to be updated. You can choose to update all packages at a time or update only specified packages.
 
-### Checking For Update
+### Checking for Update
 To list all currently available updates, run the following command:
 
 ```

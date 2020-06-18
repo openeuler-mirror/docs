@@ -276,7 +276,7 @@ repo可配置为yum源，yum（全称为 Yellow dog Updater, Modified）是一�
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >gpgcheck可设置为1或0，1表示进行gpg（GNU Private Guard）校验，0表示不进行gpg校验，gpgcheck可以确定rpm包的来源是有效和安全的。  
-    >gpgkey为签名公钥的存放路径。  
+    >gpgkey为验证签名用的公钥。  
 
 -   配置http服务器yum源
 

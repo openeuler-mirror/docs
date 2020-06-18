@@ -392,9 +392,10 @@ $ wget http://ftp.gnu.org/gnu/hello/hello-2.10.tar.gz
 
 #### 编辑SPEC文件
 
-新建spec文件，参考命令如下：
+在**~/rpmbuild/SPECS**目录下新建spec文件，参考命令如下：
 
 ```
+$ cd ~/rpmbuild/SPECS
 $ vi hello.spec 
 ```
 
