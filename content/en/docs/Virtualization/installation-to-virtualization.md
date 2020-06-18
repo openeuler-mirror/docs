@@ -1,4 +1,58 @@
-# Verifying the Installation<a name="EN-US_TOPIC_0183154308"></a>
+# Installation Guide
+
+This chapter describes how to install virtualization components in openEuler.
+
+- [Installation Guide](#installation-guide)
+    - [Minimum Hardware Requirements](#minimum-hardware-requirements)
+    - [Installing Core Virtualization Components](#installing-core-virtualization-components)
+        - [Installation Methods](#installation-methods)
+        - [Verifying the Installation](#verifying-the-installation)
+
+
+## Minimum Hardware Requirements
+
+The minimum hardware requirements for installing virtualization components on openEuler are as follows:
+
+-   AArch64 processor architecture: ARMv8 or later, supporting virtualization expansion
+-   x86\_64 processor architecture, supporting VT-x
+-   2-core CPU
+-   4 GB memory
+-   16 GB available disk space
+
+## Installing Core Virtualization Components
+
+### Installation Methods
+
+#### Prerequisites
+
+-   The yum source has been configured. For details, see  _openEuler 20.03 LTS Administrator Guide_.
+-   Only the administrator has permission to perform the installation.
+
+#### Procedure
+
+1.  Install the QEMU component.
+
+    ```
+    # yum install -y qemu
+    ```
+
+2.  Install the libvirt component.
+
+    ```
+    # yum install -y libvirt
+    ```
+
+3.  Start the libvirtd service.
+
+    ```
+    # systemctl start libvirtd
+    ```
+
+
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>The KVM module is integrated in the openEuler kernel and does not need to be installed separately.  
+
+### Verifying the Installation
 
 1.  Check whether the kernel supports KVM virtualization, that is, check whether the  **/dev/kvm**  and  **/sys/module/kvm**  files exist. The command and output are as follows:
 
