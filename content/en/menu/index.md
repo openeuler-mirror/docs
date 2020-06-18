@@ -53,7 +53,8 @@ headless: true
         - [Kernel Parameters]({{< relref "./docs/SecHarden/kernel-parameters.md" >}})
         - [SELinux Configuration]({{< relref "./docs/SecHarden/selinux-configuration.md" >}})
     - [Security Hardening Tools]({{< relref "./docs/SecHarden/security-hardening-tools.md" >}})
-    - [Appendix]({{< relref "./docs/SecHarden/appendix.md" >}}
+    - [Appendix]({{< relref "./docs/SecHarden/appendix.md" >}})
+
 
 - [Virtualization User Guide]({{< relref "./docs/Virtualization/virtualization.md" >}})
     - [Introduction to Virtualization]({{< relref "./docs/Virtualization/introduction-to-virtualization.md" >}})
@@ -66,41 +67,6 @@ headless: true
     - [Managing Devices]({{< relref "./docs/Virtualization/managing-devices.md" >}})
     - [Best Practices]({{< relref "./docs/Virtualization/best-practices.md" >}})
     - [Appendix]({{< relref "./docs/Virtualization/appendix.md" >}})
-
-
-
-- [Security Hardening Guide]({{< relref "./docs/NewSecHarden/secHarden.md" >}})
-    - [OS Hardening Overview]({{< relref "./docs/NewSecHarden/os-hardening-overview.md" >}})
-    - [Security Hardening Guide]({{< relref "./docs/NewSecHarden/security-hardening-guide.md" >}})
-        - [Account Passwords]({{< relref "./docs/NewSecHarden/account-passwords.md" >}})
-        - [Authentication and Authorization]({{< relref "./docs/NewSecHarden/authentication-and-authorization.md" >}})
-        - [System Services]({{< relref "./docs/NewSecHarden/system-services.md" >}})
-        - [File Permissions]({{< relref "./docs/NewSecHarden/file-permissions.md" >}})
-        - [Kernel Parameters]({{< relref "./docs/NewSecHarden/kernel-parameters.md" >}})
-        - [SELinux Configuration]({{< relref "./docs/NewSecHarden/selinux-configuration.md" >}})
-    - [Security Hardening Tools]({{< relref "./docs/NewSecHarden/security-hardening-tools.md" >}})
-    - [Appendix]({{< relref "./docs/NewSecHarden/appendix.md" >}})
-
-
-- [A-Tune User Guide]({{< relref "./docs/NewA-Tune/A-Tune.md" >}})
-    - [Getting to Know A-Tune]({{< relref "./docs/NewA-Tune/getting-to-know-a-tune.md" >}})
-    - [Installation and Deployment]({{< relref "./docs/NewA-Tune/installation-and-deployment.md" >}})
-    - [Application Scenarios]({{< relref "./docs/NewA-Tune/application-scenarios.md" >}})
-    - [FAQs]({{< relref "./docs/NewA-Tune/faqs.md" >}})
-    - [Appendixes]({{< relref "./docs/NewA-Tune/appendixes.md" >}})
-
-
-- [Virtualization User Guide]({{< relref "./docs/NewVirtualization/virtualization.md" >}})
-    - [Introduction to Virtualization]({{< relref "./docs/NewVirtualization/introduction-to-virtualization.md" >}})
-    - [Installation to Virtualization]({{< relref "./docs/NewVirtualization/installation-to-virtualization.md" >}})
-    - [Environment Preparation]({{< relref "./docs/NewVirtualization/environment-preparation.md" >}})
-    - [VM Configuration]({{< relref "./docs/NewVirtualization/vm-configuration.md" >}})
-    - [Managing VMs]({{< relref "./docs/NewVirtualization/managing-vms.md" >}})
-    - [VM Live Migration]({{< relref "./docs/NewVirtualization/vm-live-migration.md" >}})
-    - [System Resource Management]({{< relref "./docs/NewVirtualization/system-resource-management.md" >}})
-    - [Managing Devices]({{< relref "./docs/NewVirtualization/managing-devices.md" >}})
-    - [Best Practices]({{< relref "./docs/NewVirtualization/best-practices.md" >}})
-    - [Appendix]({{< relref "./docs/NewVirtualization/appendix.md" >}})
 
 
 - [Container User Guide]({{< relref "./docs/Container/container.md" >}})
