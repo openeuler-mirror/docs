@@ -1,15 +1,15 @@
-# Introduction to Virtualization<a name="EN-US_TOPIC_0183148763"></a>
+# Introduction to Virtualization
 
-## Overview<a name="section126211249171720"></a>
+## Overview
 
 In computer technologies, virtualization is a resource management technology. It abstracts various physical resources \(such as processors, memory, disks, and network adapters\) of a computer, converts the resources, and presents the resources for segmentation and combination into one or more computer configuration environments. This resource management technology breaks the inseparable barrier of the physical structure, and makes these resources not restricted by the architecture, geographical or physical configuration of the existing resources after virtualization. In this way, users can better leverage the computer hardware resources and maximize the resource utilization.
 
 Virtualization enables multiple virtual machines \(VMs\) to run on a physical server. The VMs share the processor, memory, and I/O resources of the physical server, but are logically isolated from each other. In the virtualization technology, the physical server is called a host machine, the VM running on the host machine is called a guest, and the operating system \(OS\) running on the VM is called a guest OS. A layer of software, called the virtualization layer, exists between a host machine and a VM to simulate virtual hardware. This virtualization layer is called a VM monitor, as shown in the following figure.
 
-**Figure  1**  Virtualized architecture<a name="fig19543114124914"></a>  
+**Figure  1**  Virtualized architecture 
 ![](figures/virtualized-architecture.png "virtualized-architecture")
 
-## Virtualized Architecture<a name="section144411991041"></a>
+## Virtualized Architecture
 
 Currently, mainstream virtualization technologies are classified into two types based on the implementation structure of the Virtual Machine Monitor \(VMM\):
 
@@ -24,10 +24,10 @@ Currently, mainstream virtualization technologies are classified into two types 
 
 Kernel-based Virtual Machine \(KVM\) is a kernel module of Linux. It makes Linux a hypervisor.  [Figure 2](#fig310953013541)  shows the KVM architecture. KVM does not simulate any hardware device. It is used to enable virtualization capabilities provided by the hardware, such as Intel VT-x, AMD-V, Arm virtualization extensions. The user-mode QEMU simulates the mainboard, memory, and I/O devices. The user-mode QEMU works with the kernel KVM module to simulate VM hardware. The guest OS runs on the hardware simulated by the QEMU and KVM.
 
-**Figure  2**  KVM architecture<a name="fig310953013541"></a>  
+**Figure  2**  KVM architecture
 ![](figures/kvm-architecture.png "kvm-architecture")
 
-## Virtualization Components<a name="section1490453843"></a>
+## Virtualization Components
 
 Virtualization components provided in the openEuler software package:
 
@@ -36,7 +36,7 @@ Virtualization components provided in the openEuler software package:
 -   Libvirt: provides a tool set for managing VMs, including unified, stable, and open application programming interfaces \(APIs\), daemon process \(libvirtd\), and default command line management tool \(virsh\).
 -   Open vSwitch: provides a virtual network tool set for VMs, supports programming extension and standard management interfaces and protocols \(such as NetFlow, sFlow, IPFIX, RSPAN, CLI, LACP, and 802.1ag\).
 
-## Virtualization Characteristics<a name="section13541312953"></a>
+## Virtualization Characteristics
 
 Virtualization has the following characteristics:
 
@@ -60,7 +60,7 @@ Virtualization has the following characteristics:
     After being abstracted by the virtualization layer, VMs are not directly bound to underlying hardware and can run on other servers without being modified.
 
 
-## Virtualization Advantages<a name="section66766387514"></a>
+## Virtualization Advantages
 
 Virtualization brings the following benefits to infrastructure of the data center:
 
@@ -84,7 +84,7 @@ Virtualization brings the following benefits to infrastructure of the data cente
     Virtualization supports dynamic sharing of physical resources and resource pools, improving resource utilization.
 
 
-## openEuler Virtualization<a name="section63081214665"></a>
+## openEuler Virtualization
 
 openEuler provides KVM virtualization components that support the AArch64 and x86\_64 processor architectures.
 
