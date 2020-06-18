@@ -1,27 +1,30 @@
-# Monitoring Secure Containers<a name="EN-US_TOPIC_0184808185"></a>
+# Monitoring Secure Containers
 
-## Description<a name="en-us_topic_0182219839_section113372116274"></a>
+- [Monitoring Secure Containers](#monitoring-secure-containers)
+
+
+## Description
 
 The  **kata events**  command is used to view the status information of a specified container. The information includes but is not limited to the container memory, CPU, PID, Blkio, hugepage memory, and network information.
 
-## Usage<a name="en-us_topic_0182219839_section161682347278"></a>
+## Usage
 
 ```
 kata-runtime events [command options] <container-id>
 ```
 
-## Parameters<a name="en-us_topic_0182219839_section55331254202920"></a>
+## Parameters
 
 -   **-- interval value**: specifies the query period. If this parameter is not specified, the default query period is 5 seconds.
 -   **--stats**: displays container information and exits the query.
 
-## Prerequisites<a name="en-us_topic_0182219839_section1972642919301"></a>
+## Prerequisites
 
 The container to be queried must be in the  **running**  state. Otherwise, the following error message will be displayed: "Container ID \(<container\_id\>\) does not exist".
 
 This command can be used to query the status of only one container.
 
-## Example<a name="en-us_topic_0182219839_section595663810312"></a>
+## Example
 
 -   The container status is displayed every three seconds.
 

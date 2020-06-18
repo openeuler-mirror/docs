@@ -1,12 +1,15 @@
-# Shared Memory Channels<a name="EN-US_TOPIC_0184808022"></a>
+# Shared Memory Channels
 
-## Function Description<a name="en-us_topic_0182200837_section17345803370"></a>
+- [Shared Memory Channels](#shared-memory-channels)
+
+
+## Function Description
 
 System containers enable the communication between container and host processes through shared memory. You can set the  **--host-channel**  parameter when creating a container to allow the host to share the same tmpfs with the container so that they can communicate with each other.
 
-## Parameter Description<a name="en-us_topic_0182200837_section12656610153716"></a>
+## Parameter Description
 
-<a name="en-us_topic_0182200837_table1869210387418"></a>
+
 <table><thead align="left"><tr id="en-us_topic_0182200837_row1569373816419"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.4.1.1"><p id="en-us_topic_0182200837_p106936387415"><a name="en-us_topic_0182200837_p106936387415"></a><a name="en-us_topic_0182200837_p106936387415"></a><strong id="en-us_topic_0182200837_b198081211366"><a name="en-us_topic_0182200837_b198081211366"></a><a name="en-us_topic_0182200837_b198081211366"></a>Command</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="18.25%" id="mcps1.1.4.1.2"><p id="en-us_topic_0182200837_p15693173814112"><a name="en-us_topic_0182200837_p15693173814112"></a><a name="en-us_topic_0182200837_p15693173814112"></a>Parameter</p>
@@ -30,13 +33,13 @@ System containers enable the communication between container and host processes 
 </tbody>
 </table>
 
-## Constraints<a name="en-us_topic_0182200837_section19832164817371"></a>
+## Constraints
 
 -   The lifecycle of tmpfs mounted on the host starts from the container startup to the container deletion. After a container is deleted and its occupied space is released, the space is removed.
 -   When a container is deleted, the path to which tmpfs is mounted on the host is deleted. Therefore, an existing directory on the host cannot be used as the mount path.
 -   To ensure that processes running by non-root users on the host can communicate with containers, the permission for tmpfs mounted on the host is 1777.
 
-## Example<a name="en-us_topic_0182200837_section1677183517372"></a>
+## Example
 
 Specify the  **--host-channel**  parameter when creating a container.
 

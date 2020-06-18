@@ -1,12 +1,15 @@
-# Dynamically Loading the Kernel Module<a name="EN-US_TOPIC_0184808023"></a>
+Dynamically Loading the Kernel Module
 
-## Function Description<a name="en-us_topic_0182200838_section12374522153810"></a>
+- [Dynamically Loading the Kernel Module](#dynamically-loading-the-kernel-module)
 
-Services in a container may depend on some kernel modules. You can set environment variables to dynamically load the kernel modules required by services in the container to the host before the system container starts. This feature must be used together with syscontainer-hooks. For details, see  [Dynamically Managing Container Resources \(syscontainer-tools\)](dynamically-managing-container-resources-(syscontainer-tools).md).
 
-## Parameter Description<a name="en-us_topic_0182200838_section20744834163815"></a>
+## Function Description
 
-<a name="en-us_topic_0182200838_table1869210387418"></a>
+Services in a container may depend on some kernel modules. You can set environment variables to dynamically load the kernel modules required by services in the container to the host before the system container starts. This feature must be used together with isulad-hooks. For details, see  [Dynamically Managing Container Resources \(syscontainer-tools\)](dynamically-managing-container-resources-(syscontainer-tools).md).
+
+## Parameter Description
+
+
 <table><thead align="left"><tr id="en-us_topic_0182200838_row1569373816419"><th class="cellrowborder" valign="top" width="20.22%" id="mcps1.1.4.1.1"><p id="en-us_topic_0182200838_p106936387415"><a name="en-us_topic_0182200838_p106936387415"></a><a name="en-us_topic_0182200838_p106936387415"></a><strong id="b1777818525556"><a name="b1777818525556"></a><a name="b1777818525556"></a>Command</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="51.910000000000004%" id="mcps1.1.4.1.2"><p id="en-us_topic_0182200838_p15693173814112"><a name="en-us_topic_0182200838_p15693173814112"></a><a name="en-us_topic_0182200838_p15693173814112"></a><strong id="b143109549554"><a name="b143109549554"></a><a name="b143109549554"></a>Parameter</strong></p>
@@ -25,19 +28,19 @@ Services in a container may depend on some kernel modules. You can set environme
 </tbody>
 </table>
 
-## Constraints<a name="en-us_topic_0182200838_section17200718133916"></a>
+## Constraints
 
 -   If loaded kernel modules are not verified or conflict with existing modules on the host, an unpredictable error may occur on the host. Therefore, exercise caution when loading kernel modules.
--   Dynamic kernel module loading transfers kernel modules to be loaded to containers. This function is implemented by capturing environment variables for container startup using syscontainer-tools. Therefore, this function relies on the proper installation and deployment of syscontainer-tools.
+-   Dynamic kernel module loading transfers kernel modules to be loaded to containers. This function is implemented by capturing environment variables for container startup using isulad-tools. Therefore, this function relies on the proper installation and deployment of isulad-tools.
 -   Loaded kernel modules need to be manually deleted.
 
-## Example<a name="en-us_topic_0182200838_section13614433911"></a>
+## Example
 
 When starting a system container, specify the  **-e KERNEL\_MODULES**  parameter. After the system container is started, the ip\_vs module is successfully loaded to the kernel.
 
 ```
 [root@localhost ~]# lsmod | grep ip_vs
-[root@localhost ~]# isula run -tid -e KERNEL_MODULES=ip_vs,ip_vs_wrr --hook-spec /etc/syscontainer-tools/hookspec.json --system-container --external-rootfs /root/myrootfs none init
+[root@localhost ~]# isula run -tid -e KERNEL_MODULES=ip_vs,ip_vs_wrr --hook-spec /etc/isulad-tools/hookspec.json --system-container --external-rootfs /root/myrootfs none init
 ae18c4281d5755a1e153a7bff6b3b4881f36c8e528b9baba8a3278416a5d0980
 [root@localhost ~]# lsmod | grep ip_vs
 ip_vs_wrr              16384  0
@@ -48,6 +51,6 @@ libcrc32c              16384  3 nf_conntrack,nf_nat,ip_vs
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   syscontainer-tools must be installed on the host.  
->-   **--hooks-spec**  must be set to  **syscontainer hooks**.  
+>-   isulad-tools must be installed on the host.  
+>-   **--hooks-spec**  must be set to  **isulad hooks**.  
 

@@ -1,4 +1,4 @@
-# Upgrade Methods<a name="EN-US_TOPIC_0231648871"></a>
+# Upgrade Methods
 
 -   For an upgrade between patch versions of a major version, for example, upgrading 2.x.x to 2.x.x, run the following command:
 
