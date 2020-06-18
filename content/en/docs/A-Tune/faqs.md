@@ -1,12 +1,14 @@
-# FAQs<a name="EN-US_TOPIC_0230017281"></a>
+# FAQs
 
-Q1: An error occurs when the  **train **command is used to train a model, and the message "training data failed" is displayed.
+## Q1: An error occurs when the  **train** command is used to train a model, and the message "training data failed" is displayed.
 
 Cause: Only one type of data is collected by using the  **collection **command.
 
 Solution: Collect data of at least two data types for training.
 
-Q2: The atune-adm cannot connect to the atuned service.
+
+
+## Q2: The atune-adm cannot connect to the atuned service.
 
 Possible cause:
 
@@ -43,7 +45,7 @@ Solution:
     ```
 
 
-Q3: The atuned service cannot be started, and the message "Job for atuned.service failed because a timeout was exceeded." is displayed.
+## Q3: The atuned service cannot be started, and the message "Job for atuned.service failed because a timeout was exceeded." is displayed.
 
 Cause: The hosts file does not contain the localhost information.
 
