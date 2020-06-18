@@ -1,4 +1,4 @@
-# Uninstallation<a name="EN-US_TOPIC_0184808050"></a>
+# Uninstallation
 
 To uninstall iSulad, perform the following operations:
 

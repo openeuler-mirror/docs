@@ -1,12 +1,15 @@
-# Configurable Cgroup Path<a name="EN-US_TOPIC_0184808020"></a>
+# Configurable Cgroup Path
 
-## Function Description<a name="en-us_topic_0182200835_section260316324238"></a>
+- [Configurable Cgroup Path](#configurable-cgroup-path)
+
+
+## Function Description
 
 System containers provide the capabilities of isolating and reserving container resources on hosts. You can use the  **--cgroup-parent**  parameter to specify the cgroup directory used by a container to another directory, thereby flexibly allocating host resources. For example, if the cgroup parent path of containers A, B, and C is set to  **/lxc/cgroup1**, and the cgroup parent path of containers D, E, and F is set to  **/lxc/cgroup2**, the containers are divided into two groups through the cgroup paths, implementing resource isolation at the cgroup level.
 
-## Parameter Description<a name="en-us_topic_0182200835_section9477144472316"></a>
+## Parameter Description
 
-<a name="en-us_topic_0182200835_table1869210387418"></a>
+
 <table><thead align="left"><tr id="en-us_topic_0182200835_row1569373816419"><th class="cellrowborder" valign="top" width="21.09%" id="mcps1.1.4.1.1"><p id="en-us_topic_0182200835_p106936387415"><a name="en-us_topic_0182200835_p106936387415"></a><a name="en-us_topic_0182200835_p106936387415"></a><strong id="en-us_topic_0182200835_b925451112420"><a name="en-us_topic_0182200835_b925451112420"></a><a name="en-us_topic_0182200835_b925451112420"></a>Command</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="34.03%" id="mcps1.1.4.1.2"><p id="en-us_topic_0182200835_p15693173814112"><a name="en-us_topic_0182200835_p15693173814112"></a><a name="en-us_topic_0182200835_p15693173814112"></a>Parameter</p>
@@ -46,12 +49,12 @@ In addition to specifying the cgroup parent path for a system container using co
 </tbody>
 </table>
 
-## Constraints<a name="en-us_topic_0182200835_section948115902011"></a>
+## Constraints
 
 -   If the  **cgroup parent**  parameter is set on both the daemon and client, the value specified on the client takes effect.
 -   If container A is started before container B, the cgroup parent path of container B is specified as the cgroup path of container A. When deleting a container, you need to delete container B and then container A. Otherwise, residual cgroup resources exist.
 
-## Example<a name="en-us_topic_0182200835_section495911542237"></a>
+## Example
 
 Start a system container and specify the  **--cgroup-parent**  parameter.
 

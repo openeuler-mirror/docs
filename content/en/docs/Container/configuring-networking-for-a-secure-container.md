@@ -1,6 +1,9 @@
-# Configuring Networking for a Secure Container<a name="EN-US_TOPIC_0216616133"></a>
+# Configuring Networking for a Secure Container
 
-## TAP-based Network Support<a name="en-us_topic_0182219836_section25241548181515"></a>
+- [Configuring Networking for a Secure Container](#configuring-networking-for-a-secure-container)
+
+
+## TAP-based Network Support
 
 The secure container technology is implemented based on QEMU VMs. For a physical machine system, a secure container is equivalent to a VM. Therefore, the secure container may connect the VM to an external network in the Neutron network by using the test access point \(TAP\) technology. You do not need to pay attention to TAP device creation and bridging. You only need to hot add the specified TAP device \(with an existing host\) to the VM in the pause container and update the NIC information.
 
@@ -33,7 +36,7 @@ Related commands are as follows:
 
     The fields in the JSON file are described as follows:
 
-    <a name="en-us_topic_0182219836_table19254101817513"></a>
+
     <table><thead align="left"><tr id="en-us_topic_0182219836_row1254161815116"><th class="cellrowborder" valign="top" width="20.14%" id="mcps1.1.4.1.1"><p id="en-us_topic_0182219836_p1254171865115"><a name="en-us_topic_0182219836_p1254171865115"></a><a name="en-us_topic_0182219836_p1254171865115"></a>Field</p>
     </th>
     <th class="cellrowborder" valign="top" width="20.68%" id="mcps1.1.4.1.2"><p id="en-us_topic_0182219836_p5437983523"><a name="en-us_topic_0182219836_p5437983523"></a><a name="en-us_topic_0182219836_p5437983523"></a>Mandatory/Optional</p>
@@ -260,9 +263,9 @@ Related commands are as follows:
 
 
 
-The preceding are common commands. For details about the command line interfaces, see  [APIs](apis-32.md#EN-US_TOPIC_0184808188).
+The preceding are common commands. For details about the command line interfaces, see  [APIs](#apis-32.md#EN-US_TOPIC_0184808188).
 
-## Kata IPVS Subsystem<a name="en-us_topic_0182219836_section135961247151620"></a>
+## Kata IPVS Subsystem
 
 The secure container provides an API for adding the  **ipvs**  command and setting the IPVS rule for the container. The functions include adding, editing, and deleting virtual services, adding, editing, and deleting real servers, querying IPVS service information, setting connection timeout, clearing the system connection cache, and importing rules in batches.
 
@@ -338,6 +341,6 @@ The secure container provides an API for adding the  **ipvs**  command and setti
     >1.  Each container supports a maximum of 20000 iptables rules \(5000 services and three servers/services\). Both add-service and add-server are rules.  
     >2.  Before importing rules in batches, you need to clear existing rules.  
     >3.  No concurrent test scenario exists.  
-    >4.  The preceding are common commands. For details about the command line interfaces, see  [APIs](apis-32.md#EN-US_TOPIC_0184808188).  
+    >4.  The preceding are common commands. For details about the command line interfaces, see  [APIs](#apis-32.md#EN-US_TOPIC_0184808188).  
 
 

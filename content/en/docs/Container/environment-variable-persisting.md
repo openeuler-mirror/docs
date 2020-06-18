@@ -1,12 +1,15 @@
-# Environment Variable Persisting<a name="EN-US_TOPIC_0184808024"></a>
+# Environment Variable Persisting
 
-## Function Description<a name="en-us_topic_0182200839_section1370217374269"></a>
+- [Environment Variable Persisting](#environment-variable-persisting)
+
+
+## Function Description
 
 In a system container, you can make the  **env**  variable persistent to the configuration file in the rootfs directory of the container by specifying the  **--env-target-file**  interface parameter.
 
-## Parameter Description<a name="en-us_topic_0182200839_section74521848162617"></a>
+## Parameter Description
 
-<a name="en-us_topic_0182200839_table1869210387418"></a>
+
 <table><thead align="left"><tr id="en-us_topic_0182200839_row1569373816419"><th class="cellrowborder" valign="top" width="16.28%" id="mcps1.1.4.1.1"><p id="en-us_topic_0182200839_p106936387415"><a name="en-us_topic_0182200839_p106936387415"></a><a name="en-us_topic_0182200839_p106936387415"></a><strong id="en-us_topic_0182200839_b74709155016"><a name="en-us_topic_0182200839_b74709155016"></a><a name="en-us_topic_0182200839_b74709155016"></a>Command</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="19.73%" id="mcps1.1.4.1.2"><p id="en-us_topic_0182200839_p15693173814112"><a name="en-us_topic_0182200839_p15693173814112"></a><a name="en-us_topic_0182200839_p15693173814112"></a>Parameter</p>
@@ -25,13 +28,13 @@ In a system container, you can make the  **env**  variable persistent to the con
 </tbody>
 </table>
 
-## Constraints<a name="en-us_topic_0182200839_section817314318153"></a>
+## Constraints
 
 -   If the target file specified by  **--env-target-file**  exists, the size cannot exceed 10 MB.
 -   The parameter specified by  **--env-target-file**  must be an absolute path in the rootfs directory.
 -   If the value of  **--env**  conflicts with that of  **env**  in the target file, the value of  **--env**  prevails.
 
-## Example<a name="en-us_topic_0182200839_section12309315278"></a>
+## Example
 
 Start a system container and specify the  **env**  environment variable and  **--env-target-file**  parameter.
 
