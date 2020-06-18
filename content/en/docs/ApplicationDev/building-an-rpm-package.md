@@ -394,10 +394,10 @@ $ wget http://ftp.gnu.org/gnu/hello/hello-2.10.tar.gz
 
 #### Editing the SPEC File
 
-Run the following command to create the .spec file in the **~/rpmbuild/SOURCES** directory:
+Run the following command to create the .spec file in the **~/rpmbuild/SPECS** directory:
 
 ```
-$ cd ~/rpmbuild/SOURCES
+$ cd ~/rpmbuild/SPECS
 $ vi hello.spec 
 ```
 
