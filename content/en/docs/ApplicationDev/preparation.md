@@ -151,6 +151,13 @@ You can configure a repo source by directly obtaining the repo source file or by
 
     gpgcheck=1
 	gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/RPM-GPG-KEY-openEuler
+	
+	
+    ****
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >-   **gpgcheck** indicates whether to enable the GNU privacy guard \(GPG\) to check the validity and security of the source of RPM packages.  **1**  indicates that the GPG check is enabled.  **0**  indicates that the GPG check is disabled. If this option is not specified, the GPG check is enabled by default.  
+    >-   **gpgkey** is the public key used to verify the signature.
 
 
 ### Configuring a Repo Source by Mounting an ISO File
@@ -267,12 +274,7 @@ You can configure a repo source by directly obtaining the repo source file or by
     gpgcheck=1
     gpgkey=file:///mnt/RPM-GPG-KEY-openEuler
     ```
-
-    ****
-
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   **gpgcheck**  indicates whether to enable the GNU privacy guard \(GPG\) to check the validity and security of the source of RPM packages.  **1**  indicates that the GPG check is enabled.  **0**  indicates that the GPG check is disabled. If this option is not specified, the GPG check is enabled by default.  
-    >-   **gpgkey**  is the storage path of the signed public key.  
+ 
 
 
 ## Installing the Software Package

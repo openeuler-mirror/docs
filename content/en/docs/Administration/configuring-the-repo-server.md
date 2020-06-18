@@ -283,8 +283,8 @@ You can configure the built repo as the yum source and create the \*\*\*.repo co
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    > _gpgcheck_  indicates whether to enable the GNU privacy guard \(GPG\) to check the validity and security of sources of RPM packages.  **1**  indicates GPG check is enabled.  **0**  indicates the GPG check is disabled. If this option is not specified, the GPG check is enabled by default.  
-    > _gpgkey_  is the storage path of the signature public key.  
+    > **gpgcheck** indicates whether to enable the GNU privacy guard \(GPG\) to check the validity and security of sources of RPM packages.  **1**  indicates GPG check is enabled.  **0**  indicates the GPG check is disabled. If this option is not specified, the GPG check is enabled by default.  
+    > **gpgkey** is the public key used to verify the signature.  
 
 -   Configuring the yum source for the HTTP server
 
