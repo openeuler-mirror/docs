@@ -66,7 +66,7 @@ Each line in the  **usr-security.conf**  file indicates a configuration item. Th
     Example: If the execution ID is  **201**, replace lines starting with  **size**  in the  **/etc/audit/hzqtest**  file with  **size 2048**.
 
     ```
-    201@sm@/etc/audit/hzqtest@size @2048
+    201@sm@/etc/audit/hzqtest@size@ 2048
     ```
 
 
@@ -91,7 +91,7 @@ Each line in the  **usr-security.conf**  file indicates a configuration item. Th
     Example: If the execution ID is  **218**, stop the  **cups.service**. This provides the same function as running the  **systemctl stop cups.service**  command.
 
     ```
-    218@systemctl @cups.service@stop
+    218@systemctl@cups.service@stop
     ```
 
       
