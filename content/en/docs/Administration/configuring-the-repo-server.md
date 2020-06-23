@@ -1,7 +1,7 @@
 # Configuring the Repo Server
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
->This section uses the  **openEuler-20.03-LTS-aarch64-dvd.iso**  image file as an example. Modify the image file as required.  
+>This section uses the  **openEuler-20.03-LTS-aarch64-dvd.iso**  file as an example. Modify the ISO file as required.  
 <!-- TOC -->
 
 - [Configuring the Repo Server](#configuring-the-repo-server)
@@ -25,27 +25,27 @@
 
 ## Overview
 
-Create the  **openEuler-20.03-LTS-aarch64-dvd.iso**  image provided by openEuler as the repo source. The following uses Nginx as an example to describe how to deploy the repo source and provide the HTTP service.
+Create the  **openEuler-20.03-LTS-aarch64-dvd.iso**  file provided by openEuler as the repo source. The following uses Nginx as an example to describe how to deploy the repo source and provide the HTTP service.
 
 ## Creating or Updating a Local Repo Source
 
-Mount the openEuler image  **openEuler-20.03-LTS-aarch64-dvd.iso**  to create and update a repo source.
+Mount the openEuler ISO file  **openEuler-20.03-LTS-aarch64-dvd.iso**  to create and update a repo source.
 
 
-### Obtaining the ISO Image File
+### Obtaining the ISO File
 
 Obtain the openEuler software package from the following website:
 
-[https://openeuler.org/zh/download.html](https://openeuler.org/zh/download.html)
+[https://repo.openeuler.org/openEuler-20.03-LTS/ISO/](https://repo.openeuler.org/openEuler-20.03-LTS/ISO/)
 
 ### Mounting an ISO File to Create a Repo Source
 
-Run the mount command as the **root** user to mount the image file.
+Run the mount command as the **root** user to mount the ISO file.
 
 The following is an example:
 
 ```
-# mount /home/openEuler/openEuler-20.03-LTS-aarch64-dvd.iso  /mnt/
+# mount /home/openEuler/openEuler-20.03-LTS-aarch64-dvd.iso /mnt/
 ```
 
 The mounted mnt directory is as follows:
@@ -66,7 +66,7 @@ In the preceding command,  **Packages**  indicates the directory where the RPM p
 
 ### Creating a Local Repo Source
 
-You can copy related files in the image to a local directory to create a local repo source. The following is an example:
+You can copy related files in the ISO file to a local directory to create a local repo source. The following is an example:
 
 ```
 # mount /home/openEuler/openEuler-20.03-LTS-aarch64-dvd.iso  /mnt/
@@ -91,7 +91,7 @@ The local repo directory is as follows:
 
 You can update the repo source in either of the following ways:
 
--   Use the ISO file of the new version to update the existing repo source. The method is the same as that for creating a repo source. That is, mount the image or copy the image to the local directory.
+-   Use the ISO file of the new version to update the existing repo source. The method is the same as that for creating a repo source. That is, mount the ISO file or copy the ISO file to the local directory.
 -   Add rpm packages to the Packages directory of the repo source and update the repo source. You can run the createrepo command to update the repo source.
 
     ```
