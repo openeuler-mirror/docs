@@ -260,7 +260,7 @@ Packages为rpm包所在的目录，repodata为repo源元数据所在的目录，
 repo可配置为yum源，yum（全称为 Yellow dog Updater, Modified）是一个Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载和安装。
 ### repo配置为yum源（软件源）
 
-构建好的rep可以配置为yum源使用，在/etc/yum.repos.d/目录下使用root权限创建\*\*\*.repo的配置文件（必须以.repo为扩展名），分为本地和http服务器配置yum源两种方式：
+构建好的repo可以配置为yum源使用，在/etc/yum.repos.d/目录下使用root权限创建\*\*\*.repo的配置文件（必须以.repo为扩展名），分为本地和http服务器配置yum源两种方式：
 
 -   配置本地yum源
 
