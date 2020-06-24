@@ -185,15 +185,6 @@ To harden a client, perform the following steps:
     <td class="cellrowborder" valign="top" width="25.09%" headers="mcps1.2.5.1.4 "><p id="p17860112452519"><a name="p17860112452519"></a><a name="p17860112452519"></a>Yes</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0152100390_r5fa86572bd6149d3b21b8dc653025cb9"><td class="cellrowborder" valign="top" width="16.56%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0152100390_a23550e88309242d0a5f0457aebb2a2e2"><a name="en-us_topic_0152100390_a23550e88309242d0a5f0457aebb2a2e2"></a><a name="en-us_topic_0152100390_a23550e88309242d0a5f0457aebb2a2e2"></a>ClientAliveInterval</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="45.34%" headers="mcps1.2.5.1.2 "><p id="p2145317132612"><a name="p2145317132612"></a><a name="p2145317132612"></a>Timeout period of the system (in seconds). If no response from the client is received in the specific period, the server automatically disconnects from the client.</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="13.01%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0152100390_ae90c439bad0a4428b2bb1fc7fd52b8d7"><a name="en-us_topic_0152100390_ae90c439bad0a4428b2bb1fc7fd52b8d7"></a><a name="en-us_topic_0152100390_ae90c439bad0a4428b2bb1fc7fd52b8d7"></a>300</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="25.09%" headers="mcps1.2.5.1.4 "><p id="p158601524142519"><a name="p158601524142519"></a><a name="p158601524142519"></a>No</p>
-    </td>
-    </tr>
     <tr id="en-us_topic_0152100390_r58aef0c769124e4faef4dbcc9fba6289"><td class="cellrowborder" valign="top" width="16.56%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0152100390_a71358cf17e6643e79098ebe8b6e4d5f3"><a name="en-us_topic_0152100390_a71358cf17e6643e79098ebe8b6e4d5f3"></a><a name="en-us_topic_0152100390_a71358cf17e6643e79098ebe8b6e4d5f3"></a>ClientAliveCountMax</p>
     </td>
     <td class="cellrowborder" valign="top" width="45.34%" headers="mcps1.2.5.1.2 "><p id="p151453173265"><a name="p151453173265"></a><a name="p151453173265"></a>Timeout count. After the server sends a request, if the number of times that the client does not respond reaches a specified value, the server automatically disconnects from the client.</p>
