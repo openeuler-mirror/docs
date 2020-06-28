@@ -9,7 +9,7 @@
 **运行时和中间件**
 -   包括Runtime && sig-ai-bigdata && sig-ROS && DB
 
-**虚拟化和容器（）**
+**虚拟化和容器**
 -   包括Virt && oVirt && iSulad && Docker && sig-android-middleware
   
 **集群管理**
