@@ -1,13 +1,14 @@
 # 搭建repo服务器
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
->本章节中以openEuler-20.03-LTS-aarch64-dvd.iso镜像文件为例，请根据实际需要的镜像文件进行修改。
+>openEuler提供了多种repo源供用户在线使用，各repo源含义可参考[系统安装]({{< relref "../Releasenotes/系统安装.md" >}})。若用户无法在线获取openEuler repo源，则可使用openEuler提供的ISO发布包创建为本地openEuler repo源。本章节中以openEuler-20.03-LTS-aarch64-dvd.iso发布包为例，请根据实际需要的ISO发布包进行修改。
+
 <!-- TOC -->
 
 - [搭建repo服务器](#搭建repo服务器)
     - [概述](#概述)
     - [创建/更新本地repo源](#创建更新本地repo源)
-        - [获取ISO镜像](#获取iso镜像)
+        - [获取ISO发布包](#获取iso发布包)
         - [挂载ISO创建repo源](#挂载iso创建repo源)
         - [创建本地repo源](#创建本地repo源)
         - [更新repo源](#更新repo源)
@@ -16,7 +17,7 @@
         - [启动nginx服务](#启动nginx服务)
         - [repo源部署](#repo源部署)
     - [使用repo源](#使用repo源)
-        - [repo配置为yum源](#repo配置为yum源)
+        - [repo配置为yum源（软件源）](#repo配置为yum源软件源)
         - [repo优先级](#repo优先级)
         - [dnf相关命令](#dnf相关命令)
 
@@ -24,25 +25,25 @@
 
 ## 概述
 
-将openEuler提供的镜像openEuler-20.03-LTS-aarch64-dvd.iso创建为repo源，如下以使用nginx进行repo源部署，提供http服务为例进行说明。
+将openEuler提供的ISO发布包openEuler-20.03-LTS-aarch64-dvd.iso创建为repo源，如下以使用nginx进行repo源部署，提供http服务为例进行说明。
 
 ## 创建/更新本地repo源
 
-使用mount挂载，将openEuler的镜像openEuler-20.03-LTS-aarch64-dvd.iso创建为repo源，并能够对repo源进行更新。
-### 获取ISO镜像
+使用mount挂载，将openEuler的ISO发布包openEuler-20.03-LTS-aarch64-dvd.iso创建为repo源，并能够对repo源进行更新。
+### 获取ISO发布包
 
-请从如下网址获取openEuler软件包：
+请从如下网址获取openEuler的ISO发布包：
 
-[https://openeuler.org/zh/download.html](https://openeuler.org/zh/download.html)
+[https://repo.openeuler.org/openEuler-20.03-LTS/ISO/](https://repo.openeuler.org/openEuler-20.03-LTS/ISO/)
 
 ### 挂载ISO创建repo源
 
-在root权限下使用mount命令挂载镜像文件。
+在root权限下使用mount命令挂载ISO发布包。
 
 示例如下：
 
 ```
-# mount /home/openEuler/openEuler-20.03-LTS-aarch64-dvd.iso  /mnt/
+# mount /home/openEuler/openEuler-20.03-LTS-aarch64-dvd.iso /mnt/
 ```
 
 挂载好的mnt目录如下：
@@ -63,10 +64,10 @@
 
 ### 创建本地repo源
 
-可以拷贝镜像中相关文件至本地目录以创建本地repo源，示例如下：
+可以拷贝ISO发布包中相关文件至本地目录以创建本地repo源，示例如下：
 
 ```
-# mount /home/openEuler/openEuler-20.03-LTS-aarch64-dvd.iso  /mnt/
+# mount /home/openEuler/openEuler-20.03-LTS-aarch64-dvd.iso /mnt/
 $ mkdir -p ~/srv/repo/
 $ cp -r /mnt/Packages ~/srv/repo/
 $ cp -r /mnt/repodata ~/srv/repo/
@@ -88,9 +89,9 @@ Packages为rpm包所在的目录，repodata为repo源元数据所在的目录，
 
 更新repo源有两种方式：
 
-- 通过新版本的ISO更新已有的repo源，与创建repo源的方式相同，即挂载镜像或者重新拷贝镜像至本地目录
+-   通过新版本的ISO更新已有的repo源，与创建repo源的方式相同，即挂载ISO发布包或重新拷贝ISO发布包至本地目录。
 
--   在repo源的Packages目录下添加rpm包，然后更新repo源，可通过createrepo命令更新repo源
+-   在repo源的Packages目录下添加rpm包，然后通过createrepo命令更新repo源
 
     ```
     $ createrepo --update --workers=10 ~/srv/repo
@@ -257,13 +258,13 @@ Packages为rpm包所在的目录，repodata为repo源元数据所在的目录，
 ## 使用repo源
 
 repo可配置为yum源，yum（全称为 Yellow dog Updater, Modified）是一个Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载和安装。
-### repo配置为yum源
+### repo配置为yum源（软件源）
 
 构建好的repo可以配置为yum源使用，在/etc/yum.repos.d/目录下使用root权限创建\*\*\*.repo的配置文件（必须以.repo为扩展名），分为本地和http服务器配置yum源两种方式：
 
 -   配置本地yum源
 
-    在/etc/yum.repos.d目录下创建openEuler.repo文件，使用构建的本地repo作为yum源，openEuler.repo的内容如下：
+    在/etc/yum.repos.d目录下创建openEuler.repo文件，使用构建的本地repo源作为yum源，openEuler.repo的内容如下：
 
     ```
     [base]
@@ -275,24 +276,42 @@ repo可配置为yum源，yum（全称为 Yellow dog Updater, Modified）是一�
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
-    >gpgcheck可设置为1或0，1表示进行gpg（GNU Private Guard）校验，0表示不进行gpg校验，gpgcheck可以确定rpm包的来源是有效和安全的。  
-    >gpgkey为验证签名用的公钥。  
+    > - \[*repoid*\]中的repoid为软件仓库（repository）的ID号，所有.repo配置文件中的各repoid不能重复，必须唯一。示例中repoid设置为**base**。
+	> - name为软件仓库描述的字符串。
+	> - baseurl为软件仓库的地址。
+	> - enabled为是否启用该软件源仓库，可选值为1和0。默认值为1，表示启用该软件源仓库。
+	> - gpgcheck可设置为1或0，1表示进行gpg（GNU Private Guard）校验，0表示不进行gpg校验，gpgcheck可以确定rpm包的来源是有效和安全的。  
+    > - gpgkey为验证签名用的公钥。  
 
 -   配置http服务器yum源
 
-    在/etc/yum.repos.d目录下创建openEuler.repo文件，使用http服务端的repo作为yum源，openEuler.repo的内容如下：
+    在/etc/yum.repos.d目录下创建openEuler.repo文件。
+	
+	-   若使用用户部署的http服务端的repo源作为yum源，openEuler.repo的内容如下：
 
-    ```
-    [base]
-    name=base
-    baseurl=http://192.168.139.209/
-    enabled=1
-    gpgcheck=1
-    gpgkey=http://192.168.139.209/RPM-GPG-KEY-openEuler
-    ```
+        ```
+        [base]
+        name=base
+        baseurl=http://192.168.139.209/
+        enabled=1
+        gpgcheck=1
+        gpgkey=http://192.168.139.209/RPM-GPG-KEY-openEuler
+        ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >“192.168.139.209”为示例地址，请用户根据实际情况进行配置。  
+        >![](public_sys-resources/icon-note.gif) **说明：**   
+        >“192.168.139.209”为示例地址，请用户根据实际情况进行配置。  
+
+	-   若使用openEuler提供的哦openEuler repo源作为yum源，以AArch64架构的OS repo源为例，openEuler.repo的内容如下：
+	
+        ```
+        [base]
+        name=base
+        baseurl=http://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/
+        enabled=1
+        gpgcheck=1
+        gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/RPM-GPG-KEY-openEuler
+        ```
+
 
 
 ### repo优先级
@@ -308,10 +327,6 @@ priority=2
 gpgcheck=1
 gpgkey=http://192.168.139.209/RPM-GPG-KEY-openEuler
 ```
-
->![](public_sys-resources/icon-note.gif) **说明：**   
->gpgcheck可设置为1或0，1表示进行gpg（GNU Private Guard）校验，0表示不进行gpg校验，gpgcheck可以确定rpm 包的来源是有效和安全的。  
->gpgkey为签名公钥的存放路径。  
 
 ### dnf相关命令
 
