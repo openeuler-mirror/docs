@@ -35,7 +35,6 @@
 
 **桌面**
 -   包括Desktop && sig-mate-desktop && sig-UKUI && xfce && GNOME && sig-DDE
-    -   特性说明
 
 **系统工具**
 -   包括System-tool && A-Tune && dev-utils && sig-EasyLife
