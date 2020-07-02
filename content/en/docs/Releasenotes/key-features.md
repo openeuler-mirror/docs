@@ -22,5 +22,8 @@
     -   Optimizes the IOVA page table lookup and release algorithms to improve the performance of the IOMMU subsystem.
     -   Optimizes the implementation of CRC32 and checksum based on ARM64 instructions and pipeline features, greatly improving data verification performance.
     -   Supports ARM v8.4 Memory System Resource Partitioning and Monitoring \(MPAM\).
-
+-   virtualization feature  enhancement
+    -   Interruption virtualization optimization: The process for an IRQfd to inject an interrupt is optimized, greatly improving the performance of high-performance passthrough devices (sush as  NICs and SSDs).
+    -   Memory virtualization optimization: The Kunpeng hardware feature is used to improve the memory loading speed during VM startup.
+    -   Storage virtualization optimization: NUMA affinity self-binding is optimized for the iSCSI module **kworker** to improve the I/O performance of IP SAN disks.
 
