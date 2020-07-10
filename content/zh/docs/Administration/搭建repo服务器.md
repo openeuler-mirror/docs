@@ -1,7 +1,7 @@
 # 搭建repo服务器
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
->openEuler提供了多种repo源供用户在线使用，各repo源含义可参考[系统安装]({{< relref "../Releasenotes/系统安装.md" >}})。若用户无法在线获取openEuler repo源，则可使用openEuler提供的ISO发布包创建为本地openEuler repo源。本章节中以openEuler-20.03-LTS-aarch64-dvd.iso发布包为例，请根据实际需要的ISO发布包进行修改。
+>openEuler提供了多种repo源供用户在线使用，各repo源含义可参考[系统安装](../Releasenotes/系统安装.md)。若用户无法在线获取openEuler repo源，则可使用openEuler提供的ISO发布包创建为本地openEuler repo源。本章节中以openEuler-20.03-LTS-aarch64-dvd.iso发布包为例，请根据实际需要的ISO发布包进行修改。
 
 <!-- TOC -->
 
@@ -277,10 +277,10 @@ repo可配置为yum源，yum（全称为 Yellow dog Updater, Modified）是一�
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
     > - \[*repoid*\]中的repoid为软件仓库（repository）的ID号，所有.repo配置文件中的各repoid不能重复，必须唯一。示例中repoid设置为**base**。
-	> - name为软件仓库描述的字符串。
-	> - baseurl为软件仓库的地址。
-	> - enabled为是否启用该软件源仓库，可选值为1和0。默认值为1，表示启用该软件源仓库。
-	> - gpgcheck可设置为1或0，1表示进行gpg（GNU Private Guard）校验，0表示不进行gpg校验，gpgcheck可以确定rpm包的来源是有效和安全的。  
+    > - name为软件仓库描述的字符串。
+    > - baseurl为软件仓库的地址。
+    > - enabled为是否启用该软件源仓库，可选值为1和0。默认值为1，表示启用该软件源仓库。
+    > - gpgcheck可设置为1或0，1表示进行gpg（GNU Private Guard）校验，0表示不进行gpg校验，gpgcheck可以确定rpm包的来源是有效和安全的。  
     > - gpgkey为验证签名用的公钥。  
 
 -   配置http服务器yum源
@@ -301,7 +301,7 @@ repo可配置为yum源，yum（全称为 Yellow dog Updater, Modified）是一�
         >![](public_sys-resources/icon-note.gif) **说明：**   
         >“192.168.139.209”为示例地址，请用户根据实际情况进行配置。  
 
-	-   若使用openEuler提供的哦openEuler repo源作为yum源，以AArch64架构的OS repo源为例，openEuler.repo的内容如下：
+	-   若使用openEuler提供的openEuler repo源作为yum源，以AArch64架构的OS repo源为例，openEuler.repo的内容如下：
 	
         ```
         [base]
