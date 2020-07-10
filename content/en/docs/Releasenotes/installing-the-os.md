@@ -2,163 +2,88 @@
 
 ## Release Package<a name="section19865103114280"></a>
 
-The openEuler release package contains  [ISO files](http://repo.openeuler.org/openEuler-20.03-LTS/ISO/),  [VM images](http://repo.openeuler.org/openEuler-20.03-LTS/virtual_machine_img/),  [container images](http://repo.openeuler.org/openEuler-20.03-LTS/docker_img/), and  [repo sources](http://repo.openeuler.org/openEuler-20.03-LTS/).  [Table 1](#table8396719144315)  lists the ISO files in the release package.  [Table 3](#table1276911538154)  lists the container images. Repo sources can be used online.  [Table 4](#table953512211576)  lists the repo source directories.
+The following table lists the [openEuler release files](http://repo.openeuler.org/openEuler-20.03-LTS/), including the ISO release package, container image, VM image, and repo source that is used online.
 
-**Table  1**  ISO files
+**Table 1**  openEuler release files<a name="table001"></a>
 
-<a name="table8396719144315"></a>
-<table><thead align="left"><tr id="row19396819194314"><th class="cellrowborder" valign="top" width="38.53%" id="mcps1.2.3.1.1"><p id="p999543016432"><a name="p999543016432"></a><a name="p999543016432"></a>ISO File</p>
-</th>
-<th class="cellrowborder" valign="top" width="61.47%" id="mcps1.2.3.1.2"><p id="p7396719104315"><a name="p7396719104315"></a><a name="p7396719104315"></a>Description</p>
-</th>
+<table>
+<thead>
+<tr>
+	<th>Directory</th>
+	<th>Type</th>
+	<th>Description</th>
 </tr>
 </thead>
-<tbody><tr id="row739615199431"><td class="cellrowborder" valign="top" width="38.53%" headers="mcps1.2.3.1.1 "><p id="p16396111912430"><a name="p16396111912430"></a><a name="p16396111912430"></a>openEuler-20.03-LTS-aarch64-dvd.iso</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.47%" headers="mcps1.2.3.1.2 "><p id="p177033394133"><a name="p177033394133"></a><a name="p177033394133"></a>Basic installation ISO file of the AArch64 architecture, including the core components for running the minimum system.</p>
-</td>
+<tr>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/ISO/">ISO</a></td>
+	<td id="table001row001">ISO release package</td>
+	<td>The directory differentiates the ISO release packages for the AArch64, x86, and source, respectively. The details are as follows:
+		<ul>
+			<li><strong>openEuler-20.03-LTS-aarch64-dvd.iso</strong> and <strong>openEuler-20.03-LTS-x86_64-dvd.iso</strong> are the openEuler basic installation software package ISO files for the AArch64 and x86 architectures, respectively. The ISO files contain basic components running on the openEuler OS and meet the basic requirements of developers.</li>
+			<li><strong>openEuler-20.03-LTS-everything-aarch64-dvd.iso</strong> and <strong>openEuler-20.03-LTS-everything-x86_64-dvd.iso</strong> are the openEuler full software package ISO files for the AArch64 and x86 architectures, respectively. In addition to all software in the openEuler basic installation software package, the ISO files also contain the software packages that have been verified in the openEuler community, which meet the advanced requirements of developers.</li>
+			<li><strong>openEuler-20.03-LTS-debuginfo-aarch64-dvd.iso</strong> and <strong>openEuler-20.03-LTS-debuginfo-x86_64-dvd.iso</strong> are the openEuler debugging software package ISO files for the AArch64 and x86 architectures, respectively. The ISO files contain the symbol table information required for debugging and are used for debugging software functions and performance.</li>
+			<li><strong>openEuler-20.03-LTS-source-dvd.iso</strong> is the ISO file that contains all source code software packages of the openEuler community, which is used offline by developers.</li>
+		</ul>
+		<div><span class="notetitle">Note:</span>
+			<div class="notebody"><p>Each ISO release package has its own verification file, which is used to verify the integrity of the ISO release package.</p></div>
+		</div>
+	</td>
 </tr>
-<tr id="row83961519184313"><td class="cellrowborder" valign="top" width="38.53%" headers="mcps1.2.3.1.1 "><p id="p153964194439"><a name="p153964194439"></a><a name="p153964194439"></a>openEuler-20.03-LTS-everything-aarch64-dvd.iso</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.47%" headers="mcps1.2.3.1.2 "><p id="p1765163817452"><a name="p1765163817452"></a><a name="p1765163817452"></a>Full installation ISO file of the AArch64 architecture, including all components for running the entire system.</p>
-</td>
+<tr>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/docker_img/">docker_img</a></td>
+	<td id="table001row002">Container image</td>
+	<td>The openEuler container image, which provides only the basic bash environment, is used as the basic container image. The directory differentiates the container images for the AArch64 and x86 architectures, respectively.
+		<div><span class="notetitle">Note:</span>
+			<div class="notebody"><p>Each container image has its own verification file, which is used to verify the integrity of the container image.</p></div>
+		</div>
+	</td>
 </tr>
-<tr id="row83968192435"><td class="cellrowborder" valign="top" width="38.53%" headers="mcps1.2.3.1.1 "><p id="p19396319184313"><a name="p19396319184313"></a><a name="p19396319184313"></a>openEuler-20.03-LTS-debuginfo-aarch64-dvd.iso</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.47%" headers="mcps1.2.3.1.2 "><p id="p0157139181912"><a name="p0157139181912"></a><a name="p0157139181912"></a>ISO file for openEuler debugging in the AArch64 architecture, including the symbol table information required for debugging.</p>
-</td>
+<tr>
+	<td id="table001row003"><a href="http://repo.openeuler.org/openEuler-20.03-LTS/virtual_machine_img/">virtual_machine_img</a></td>
+	<td>VM image</td>
+	<td><p>The openEuler VM image provides only the basic running environment to shorten the VM deployment time. The directory differentiates the VM images for the AArch64 and x86 architectures, respectively.</p>
+		<div><span class="notetitle">说明：</span>
+			<div class="notebody">
+				<ul>
+					<li>The default password of the root user of the VM image is openEuler12#$. Change the password upon the first login.</li>
+					<li>Each VM image has its own verification file, which is used to verify the integrity of the VM image.</li>
+				</ul>
+			</div>
+		</div>
+	</td>
 </tr>
-<tr id="row521955165312"><td class="cellrowborder" valign="top" width="38.53%" headers="mcps1.2.3.1.1 "><p id="p92191359537"><a name="p92191359537"></a><a name="p92191359537"></a>openEuler-20.03-LTS-x86_64-dvd.iso</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.47%" headers="mcps1.2.3.1.2 "><p id="p6846145114195"><a name="p6846145114195"></a><a name="p6846145114195"></a>Basic installation ISO file of the x86_64 architecture, including the core components for running the minimum system.</p>
-</td>
+<tr>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/EPOL/">EPOL</a></td>
+	<td rowspan="7" id="table001row004">Repo source</td>
+	<td>The repo sources of the openEuler third-party software package are mainly contributed by third parties and communities, and are maintained by the providers. The directory differentiates the repo sources for the AArch64 and x86 architectures, respectively.</td>
 </tr>
-<tr id="row1964171015310"><td class="cellrowborder" valign="top" width="38.53%" headers="mcps1.2.3.1.1 "><p id="p3964710125311"><a name="p3964710125311"></a><a name="p3964710125311"></a>openEuler-20.03-LTS-everything-x86_64-dvd.iso</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.47%" headers="mcps1.2.3.1.2 "><p id="p101571442012"><a name="p101571442012"></a><a name="p101571442012"></a>Full installation ISO file of the x86_64 architecture, including all components for running the entire system.</p>
-</td>
+<tr>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/OS/">OS</a></td>
+	<td>The repo source of the openEuler basic installation software package provides the offline version upgrade function. The content of the software package is the same as that of the basic installation software package ISO in the ISO release package. The directory differentiates the repo sources for the AArch64 and x86 architectures, respectively.</td>
 </tr>
-<tr id="row342917865317"><td class="cellrowborder" valign="top" width="38.53%" headers="mcps1.2.3.1.1 "><p id="p242914815315"><a name="p242914815315"></a><a name="p242914815315"></a>openEuler-20.03-LTS-debuginfo-x86_64-dvd.iso</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.47%" headers="mcps1.2.3.1.2 "><p id="p6680177162617"><a name="p6680177162617"></a><a name="p6680177162617"></a>ISO file for openEuler debugging in the x86_64 architecture, including the symbol table information required for debugging.</p>
-</td>
+<tr>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/debuginfo/">debuginfo</a></td>
+	<td>The repo source of the openEuler debugging software package provides the online download function. The content of the software package is the same as that of the debugging software package ISO in the ISO release package. The directory differentiates the repo sources for the AArch64 and x86 architectures, respectively.</td>
 </tr>
-<tr id="row34221536125311"><td class="cellrowborder" valign="top" width="38.53%" headers="mcps1.2.3.1.1 "><p id="p13423336175314"><a name="p13423336175314"></a><a name="p13423336175314"></a>openEuler-20.03-LTS-source-dvd.iso</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.47%" headers="mcps1.2.3.1.2 "><p id="p108431625162112"><a name="p108431625162112"></a><a name="p108431625162112"></a>ISO file of openEuler source code.</p>
-</td>
+<tr>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/everything/">everything</a></td>
+	<td>The repo source of the openEuler full software package provides the online download and version upgrade functions. The content of the software package is the same as that of the full software package ISO in the ISO release package. The directory differentiates the repo sources for the AArch64 and x86 architectures, respectively.</td>
 </tr>
-</tbody>
+<tr>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/extras/">extras</a></td>
+	<td>The repo source of the openEuler extended software package is used to release new software packages with added features. The directory differentiates the repo sources for the AArch64 and x86 architectures, respectively.</td>
+</tr>
+<tr>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/source/">source</a></td>
+	<td>The repo source of all source code software packages in the openEuler community, which is used online by developers.</td>
+</tr>
+<tr>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/update/">update</a></td>
+	<td>The repo source of the openEuler upgrade software package, which is used to fix bugs and common vulnerabilities and exposures (CVE) in released versions and to update and release software with enhancements. It provides online download and software upgrade functions. The directory differentiates the repo sources for the AArch64 and x86 architectures, respectively.</td>
+</tr>
 </table>
 
-**Table  2**  VM images
 
-<a name="table1995101714610"></a>
-<table><thead align="left"><tr id="row149511174464"><th class="cellrowborder" valign="top" width="36.9%" id="mcps1.2.3.1.1"><p id="p2095111718462"><a name="p2095111718462"></a><a name="p2095111718462"></a>Image File</p>
-</th>
-<th class="cellrowborder" valign="top" width="63.1%" id="mcps1.2.3.1.2"><p id="p129511177462"><a name="p129511177462"></a><a name="p129511177462"></a>Description</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row11951121712462"><td class="cellrowborder" valign="top" width="36.9%" headers="mcps1.2.3.1.1 "><p id="p151011740115214"><a name="p151011740115214"></a><a name="p151011740115214"></a>openEuler-20.03-LTS.aarch64.qcow2.xz</p>
-</td>
-<td class="cellrowborder" valign="top" width="63.1%" headers="mcps1.2.3.1.2 "><p id="p9865159194813"><a name="p9865159194813"></a><a name="p9865159194813"></a>openEuler VM image in the AArch64 architecture.</p>
-</td>
-</tr>
-<tr id="row1695171774614"><td class="cellrowborder" valign="top" width="36.9%" headers="mcps1.2.3.1.1 "><p id="p10510154855215"><a name="p10510154855215"></a><a name="p10510154855215"></a>openEuler-20.03-LTS.x86_64.qcow2.xz</p>
-</td>
-<td class="cellrowborder" valign="top" width="63.1%" headers="mcps1.2.3.1.2 "><p id="p1895111177468"><a name="p1895111177468"></a><a name="p1895111177468"></a>openEuler VM image in the x86_64 architecture.</p>
-</td>
-</tr>
-</tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->The default password of user  **root**  of the VM image is  **openEuler12\#$**. Change the password upon the first login.  
-
-**Table  3**  Container images
-
-<a name="table1276911538154"></a>
-<table><thead align="left"><tr id="row1777075317151"><th class="cellrowborder" valign="top" width="31.509999999999998%" id="mcps1.2.3.1.1"><p id="p1277018533152"><a name="p1277018533152"></a><a name="p1277018533152"></a>Image File</p>
-</th>
-<th class="cellrowborder" valign="top" width="68.49%" id="mcps1.2.3.1.2"><p id="p677015331515"><a name="p677015331515"></a><a name="p677015331515"></a>Description</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row1277035311157"><td class="cellrowborder" valign="top" width="31.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p17686637201813"><a name="p17686637201813"></a><a name="p17686637201813"></a>openEuler-docker.aarch64.tar.xz</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.49%" headers="mcps1.2.3.1.2 "><p id="p3770165314159"><a name="p3770165314159"></a><a name="p3770165314159"></a>openEuler container image in the AArch64 architecture.</p>
-</td>
-</tr>
-<tr id="row1277055310150"><td class="cellrowborder" valign="top" width="31.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p2686337111816"><a name="p2686337111816"></a><a name="p2686337111816"></a>openEuler-docker.x86_64.tar.xz</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.49%" headers="mcps1.2.3.1.2 "><p id="p9770135311518"><a name="p9770135311518"></a><a name="p9770135311518"></a>openEuler container image in the x86_64 architecture.</p>
-</td>
-</tr>
-</tbody>
-</table>
-
-**Table  4**  Repo sources
-
-<a name="table953512211576"></a>
-<table><thead align="left"><tr id="row95351027573"><th class="cellrowborder" valign="top" width="28.000000000000004%" id="mcps1.2.3.1.1"><p id="p1753512213572"><a name="p1753512213572"></a><a name="p1753512213572"></a>Directory</p>
-</th>
-<th class="cellrowborder" valign="top" width="72%" id="mcps1.2.3.1.2"><p id="p253520295717"><a name="p253520295717"></a><a name="p253520295717"></a>Description</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row115351221577"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p95359213577"><a name="p95359213577"></a><a name="p95359213577"></a>ISO</p>
-</td>
-<td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p553512125711"><a name="p553512125711"></a><a name="p553512125711"></a>Stores ISO images.</p>
-</td>
-</tr>
-<tr id="row155369225718"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p1453620295717"><a name="p1453620295717"></a><a name="p1453620295717"></a>OS</p>
-</td>
-<td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p1953614214577"><a name="p1953614214577"></a><a name="p1953614214577"></a>Stores basic software package sources.</p>
-</td>
-</tr>
-<tr id="row8536142115720"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p169307504113"><a name="p169307504113"></a><a name="p169307504113"></a>debuginfo</p>
-</td>
-<td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p893085010119"><a name="p893085010119"></a><a name="p893085010119"></a>Stores debugging package sources.</p>
-</td>
-</tr>
-<tr id="row1834462641115"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p13344026151113"><a name="p13344026151113"></a><a name="p13344026151113"></a>docker_img</p>
-</td>
-<td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p1534415264118"><a name="p1534415264118"></a><a name="p1534415264118"></a>Stores container images.</p>
-</td>
-</tr>
-<tr id="row16791828125815"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p137919284589"><a name="p137919284589"></a><a name="p137919284589"></a>virtual_machine_img</p>
-</td>
-<td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p479117286581"><a name="p479117286581"></a><a name="p479117286581"></a>Stores VM images.</p>
-</td>
-</tr>
-<tr id="row157551217215"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p108641479116"><a name="p108641479116"></a><a name="p108641479116"></a>everything</p>
-</td>
-<td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p168641547816"><a name="p168641547816"></a><a name="p168641547816"></a>Stores full software package sources.</p>
-</td>
-</tr>
-<tr id="row2053613245715"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p19239377410"><a name="p19239377410"></a><a name="p19239377410"></a>extras</p>
-</td>
-<td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p2923113716419"><a name="p2923113716419"></a><a name="p2923113716419"></a>Stores the extended software package sources.</p>
-</td>
-</tr>
-<tr id="row17445193315911"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p644543385918"><a name="p644543385918"></a><a name="p644543385918"></a>source</p>
-</td>
-<td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p19445733115918"><a name="p19445733115918"></a><a name="p19445733115918"></a>Stores source code software sources.</p>
-</td>
-</tr>
-<tr id="row153622185717"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p85361024579"><a name="p85361024579"></a><a name="p85361024579"></a>update</p>
-</td>
-<td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p125364285717"><a name="p125364285717"></a><a name="p125364285717"></a>Stores upgrade software package sources.</p>
-</td>
-</tr>
-<tr id="row20986143316493"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p5184193919496"><a name="p5184193919496"></a><a name="p5184193919496"></a>EPOL</p>
-</td>
-<td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p1018423974917"><a name="p1018423974917"></a><a name="p1018423974917"></a>Stores the openEuler extended packages.</p>
-</td>
-</tr>
-</tbody>
-</table>
 
 ## Minimal Hardware Specifications<a name="en-us_topic_0182825778_section1542202114014"></a>
 
