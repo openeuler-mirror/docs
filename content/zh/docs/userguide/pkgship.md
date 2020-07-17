@@ -131,12 +131,11 @@ pkgshipd stop
      ```
 其他参数:
 
-    -dbs 指定数据库优先级。
+     -dbs 指定数据库优先级。
 
     ``` 
     示例:pkgship selfbuild binaryName -dbs dbName1 dbName2 
     ```
-    
     -s 是否查询自编译依赖。其中0表示不查询自编译依赖，1表示查询自编译依赖，默认为0，可以指定1。
     
     ``` 
