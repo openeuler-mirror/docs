@@ -129,23 +129,23 @@ pkgshipd stop
      ``` 
      pkgship selfbuild sourceName -t source
      ```
-其他参数:
+     其他参数:
 
      -dbs 指定数据库优先级。
 
-    ``` 
-    示例:pkgship selfbuild binaryName -dbs dbName1 dbName2 
-    ```
-    -s 是否查询自编译依赖。其中0表示不查询自编译依赖，1表示查询自编译依赖，默认为0，可以指定1。
+     ``` 
+     示例:pkgship selfbuild binaryName -dbs dbName1 dbName2 
+     ```
+     -s 是否查询自编译依赖。其中0表示不查询自编译依赖，1表示查询自编译依赖，默认为0，可以指定1。
+     
+     ``` 
+     查询自编译示例:pkgship selfbuild sourceName -t source -s 1
+     ```
+     -w 是否查询对应包的子包。其中0表示不查询对应子包，1表示查询对应子包，默认为0，可以指定1。
     
-    ``` 
-    查询自编译示例:pkgship selfbuild sourceName -t source -s 1
-    ```
-    -w 是否查询对应包的子包。其中0表示不查询对应子包，1表示查询对应子包，默认为0，可以指定1。
-    
-    ``` 
-    查询子包示例:pkgship selfbuild binaryName -w 1
-    ```
+     ``` 
+     查询子包示例:pkgship selfbuild binaryName -w 1
+     ```
     
 7. 被依赖查询。
     查询源码包(sourceName)在某数据库(dbName)中被哪些包所依赖，查询结果默认不包含对应二进制包的子包 。
