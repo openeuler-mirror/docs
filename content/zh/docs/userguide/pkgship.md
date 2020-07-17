@@ -33,7 +33,6 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
     ```
 
 # 配置参数
----
 1. 在配置文件中对相应参数进行配置，系统的默认配置文件存放在 /etc/pkgship/packge.ini，请根据实际情况进行配置更改。
 
     ```
@@ -64,7 +63,6 @@ pkgshipd start
 pkgshipd stop
 ```
 # 工具使用
----
 1. 数据库初始化。
 
     ```
@@ -134,9 +132,11 @@ pkgshipd stop
 其他参数:
 
     -dbs 指定数据库优先级。
+
     ``` 
     示例:pkgship selfbuild binaryName -dbs dbName1 dbName2 
     ```
+    
     -s 是否查询自编译依赖。其中0表示不查询自编译依赖，1表示查询自编译依赖，默认为0，可以指定1。
     
     ``` 
