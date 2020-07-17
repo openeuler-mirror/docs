@@ -15,7 +15,7 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 ---
 工具安装可通过以下两种方式实现。
 
-* 执行如下命令使用dnf挂载pkgship软件在所在repo源（其中”xxx”表示版本号，请用实际情况代替），直接下载以及安装pkgship及其依赖。
+* 使用dnf挂载pkgship软件在所在repo源（其中”xxx”表示版本号，请用实际情况代替），直接下载以及安装pkgship及其依赖。
 
     ```
     dnf install pkgship-xxx
