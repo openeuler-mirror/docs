@@ -183,9 +183,9 @@ pkgshipd stop
 9. 数据库删除。
     删除指定数据库(dbName)。
 
-  ```
-  pkgship rm db dbName
-  ```
+    ```
+    pkgship rm db dbName
+    ```
 
 
 
