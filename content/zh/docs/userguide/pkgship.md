@@ -12,7 +12,6 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 
 
 # 安装工具
----
 工具安装可通过以下两种方式实现。
 
 * 使用dnf挂载pkgship软件在所在repo源（其中”xxx”表示版本号，请用实际情况代替），直接下载以及安装pkgship及其依赖。
@@ -57,8 +56,7 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 > 如需更改存放路径，请更改package.ini下的 init_conf_path 选项
 
 
-# 工具启动和停止
----
+# 服务启动和停止
 pkgship使用uWSGI web服务器,启动和停止命令如下所示。
 ```
 pkgshipd start
