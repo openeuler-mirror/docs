@@ -763,6 +763,7 @@ An XML configuration file of AArch64 VM, which contains basic elements. The foll
 	<input type='keyboard' bus='usb'/>
 	<graphics type='vnc' listen='0.0.0.0' passwd='n8VfjbFK'/>
     </devices>
+    <seclabel type='dynamic' model='dac' relabel='yes'/>
 </domain>
 ```
 
