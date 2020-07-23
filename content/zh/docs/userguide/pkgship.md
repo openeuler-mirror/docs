@@ -2,34 +2,38 @@ pkgship
 ===
 
 # 介绍
-pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系完整图谱的查询工具，pkgship提供软件包依赖、生命周期管理、补丁查询等功能。
+pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系完整图谱的查询工具，pkgship提供软件包依赖查询、生命周期管理、补丁查询等功能。
 1. 软件包依赖：方便社区人员在软件包引入、更新和删除的时候了解软件的影响范围。
 2. 生命周期管理：跟踪上游软件包发布状态，方便维护人员了解当前软件状态，及时升级到合理的版本。
 3. 补丁查询：方便社区人员了解openEuler软件包的补丁情况以及提取补丁内容。
 
 # 架构
-系统采用flask-restful开发，使用SQLAlchemy ORM查询框架，同时支持mysql和sqlite数据库，通过配置文件的形式进行更改。
+系统采用flask-restful开发，使用SQLAlchemy ORM查询框架，同时支持mysql和sqlite两种数据库，可以通过配置文件的更改使用哪种数据库。
 
+# 软件下载
+* Repo源挂载地址：https://repo.openeuler.org/
+* 源码获取地址：https://gitee.com/openeuler/openEuler-Advisor/tree/master/packageship
+* rpm包获取地址：https://117.78.1.88/project/show/openEuler:Mainline
 
 # 安装工具
 工具安装可通过以下两种方式实现。
 
-* 使用dnf挂载pkgship软件在所在repo源（其中”xxx”表示版本号，请用实际情况代替），直接下载以及安装pkgship及其依赖。
+* 先使用dnf挂载pkgship软件在所在repo源，然后执行如下指令下载以及安装pkgship及其依赖。
 
     ```
-    dnf install pkgship-xxx
+    dnf install pkgship
     ```
 
-* 先下载pkgship的rpm包，然后执行如下命令进行安装（其中”xxx”表示版本号，请用实际情况代替）。
+* 先下载pkgship的rpm包，然后执行如下命令进行安装（其中“x.x-x”表示版本号，请用实际情况代替）。
 
     ```
-    rpm -ivh pkgship.rpm
+    rpm -ivh pkgship-x.x-x.oe1.noarch.rpm
     ```
 
     或者
 
     ```
-    dnf install pkgship-xxx
+    dnf install pkgship-x.x-x.oe1.noarch.rpm
     ```
 
 # 配置参数
@@ -77,7 +81,7 @@ pkgshipd stop
     pkgship single sourceName
     ```
 
-     查询当前包(sourceName)在指定数据库(dbName)中的信息。
+     查询当前源码包(sourceName)在指定数据库(dbName)中的信息。
     ```
      pkgship single sourceName -db dbName
     ```
