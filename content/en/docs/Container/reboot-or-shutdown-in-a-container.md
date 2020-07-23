@@ -1,12 +1,15 @@
-# Reboot or Shutdown in a Container<a name="EN-US_TOPIC_0184808019"></a>
+# Reboot or Shutdown in a Container
 
-## Function Description<a name="en-us_topic_0182200832_section13899173716205"></a>
+- [Reboot or Shutdown in a Container](#reboot-or-shutdown-in-a-container)
+
+
+## Function Description
 
 The  **reboot**  and  **shutdown**  commands can be executed in a system container. You can run the  **reboot**  command to restart a container, and run the  **shutdown**  command to stop a container.
 
-## Parameter Description<a name="en-us_topic_0182200832_section1293894622012"></a>
+## Parameter Description
 
-<a name="en-us_topic_0182200832_table1869210387418"></a>
+
 <table><thead align="left"><tr id="en-us_topic_0182200832_row1569373816419"><th class="cellrowborder" valign="top" width="14.29%" id="mcps1.1.4.1.1"><p id="en-us_topic_0182200832_p106936387415"><a name="en-us_topic_0182200832_p106936387415"></a><a name="en-us_topic_0182200832_p106936387415"></a><strong id="en-us_topic_0182200832_b77698409110"><a name="en-us_topic_0182200832_b77698409110"></a><a name="en-us_topic_0182200832_b77698409110"></a>Command</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="39.47%" id="mcps1.1.4.1.2"><p id="en-us_topic_0182200832_p113841447182213"><a name="en-us_topic_0182200832_p113841447182213"></a><a name="en-us_topic_0182200832_p113841447182213"></a>Parameter</p>
@@ -27,12 +30,12 @@ The  **reboot**  and  **shutdown**  commands can be executed in a system contain
 </tbody>
 </table>
 
-## Constraints<a name="en-us_topic_0182200832_section4739162012118"></a>
+## Constraints
 
 -   The shutdown function relies on the actual OS of the container running environment.
 -   When you run the  **shutdown -h now**  command to shut down the system, do not open multiple consoles. For example, if you run the  **isula run -ti**  command to open a console and run the  **isula attach**  command for the container in another host bash, another console is opened. In this case, the  **shutdown**  command fails to be executed.
 
-## Example<a name="en-us_topic_0182200832_section1518772182111"></a>
+## Example
 
 -   Specify the  **--restart on-reboot**  parameter when starting a container. For example:
 

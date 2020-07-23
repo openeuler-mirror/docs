@@ -1,4 +1,4 @@
-# Installation Guideline<a name="EN-US_TOPIC_0184808015"></a>
+# Installation Guideline
 
 1.  Install the container engine iSulad.
 

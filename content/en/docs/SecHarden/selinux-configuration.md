@@ -1,6 +1,6 @@
-# SELinux Configuration<a name="EN-US_TOPIC_0229953911"></a>
+# SELinux Configuration
 
-## Overview<a name="section1424754533418"></a>
+## Overview
 
 Discretionary access control \(DAC\) determines whether a resource can be accessed based on users, groups, and other permissions. It does not allow the system administrator to create comprehensive and fine-grained security policies. SELinux \(Security-Enhanced Linux\) is a module of the Linux kernel and a security subsystem of Linux. SELinux implements mandatory access control \(MAC\). Each process and system resource has a special security label. In addition to the principles specified by the DAC, the SELinux needs to determine whether each type of process has the permission to access a type of resource.
 
@@ -10,7 +10,7 @@ By default, openEuler uses SELinux to improve system security. SELinux has three
 -   **enforcing**: The SELinux security policy is forcibly executed.
 -   **disabled**: The SELinux security policy is not loaded.
 
-## Configuration Description<a name="section99503416549"></a>
+## Configuration Description
 
 SELinux is enabled for openEuler by default and the default mode is enforcing. You can change the SELinux mode by changing the value of  **SELINUX**  in  **/etc/selinux/config**.
 
@@ -33,7 +33,7 @@ SELinux is enabled for openEuler by default and the default mode is enforcing. Y
 ># reboot  
 >```  
 
-## SELinux Commands<a name="section13619018912"></a>
+## SELinux Commands
 
 -   Query the SELinux mode. For example, the following shows that the SELinux mode is permissive.
 

@@ -1,10 +1,13 @@
-# Specifying Rootfs to Create a Container<a name="EN-US_TOPIC_0184808017"></a>
+# Specifying Rootfs to Create a Container
 
-## Function Description<a name="en-us_topic_0182200826_section1190891216312"></a>
+- [Specifying Rootfs to Create a Container](#specifying-rootfs-to-create-a-container)
+
+
+## Function Description
 
 Different from a common container that needs to be started by specifying a container image, a system container is started by specifying a local root file system \(rootfs\) through the  **--external-rootfs**  parameter. Rootfs contains the operating system environment on which the container depends during running.
 
-## Parameter Description<a name="en-us_topic_0182200826_section1311019112521"></a>
+## Parameter Description
 
 <a name="en-us_topic_0182200826_table99231016135214"></a>
 <table><thead align="left"><tr id="en-us_topic_0182200826_row13923616125218"><th class="cellrowborder" valign="top" width="15.2%" id="mcps1.1.4.1.1"><p id="en-us_topic_0182200826_p1692351613529"><a name="en-us_topic_0182200826_p1692351613529"></a><a name="en-us_topic_0182200826_p1692351613529"></a><strong id="b84235270693550"><a name="b84235270693550"></a><a name="b84235270693550"></a>Command</strong></p>
@@ -25,7 +28,7 @@ Different from a common container that needs to be started by specifying a conta
 </tbody>
 </table>
 
-## Constraints<a name="en-us_topic_0182200826_section3459165364019"></a>
+## Constraints
 
 -   The rootfs directory specified by the  **--external-rootfs**  parameter must be an absolute path.
 -   The rootfs directory specified by the  **--external-rootfs**  parameter must be a complete OS environment. Otherwise, the container fails to be started.
@@ -33,7 +36,7 @@ Different from a common container that needs to be started by specifying a conta
 -   Containers based on ARM rootfs cannot run on x86 servers. Containers based on x86 rootfs cannot run on ARM servers.
 -   You are not advised to start multiple container instances by using the same rootfs. That is, one rootfs is used only by container instances in the same lifecycle.
 
-## Example<a name="en-us_topic_0182200826_section330518513408"></a>
+## Example
 
 If the local rootfs path is  **/root/myrootfs**, run the following command to start a system container:
 

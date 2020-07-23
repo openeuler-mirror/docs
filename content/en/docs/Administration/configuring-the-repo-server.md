@@ -40,12 +40,12 @@ Obtain the openEuler software package from the following website:
 
 ### Mounting an ISO File to Create a Repo Source
 
-Run the mount command to mount the image file.
+Run the mount command as the **root** user to mount the image file.
 
 The following is an example:
 
 ```
-mount /home/openEuler/openEuler-20.03-LTS-aarch64-dvd.iso  /mnt/
+# mount /home/openEuler/openEuler-20.03-LTS-aarch64-dvd.iso  /mnt/
 ```
 
 The mounted mnt directory is as follows:
@@ -69,11 +69,11 @@ In the preceding command,  **Packages**  indicates the directory where the RPM p
 You can copy related files in the image to a local directory to create a local repo source. The following is an example:
 
 ```
-mount /home/openEuler/openEuler-20.03-LTS-aarch64-dvd.iso  /mnt/
-mkdir -p /srv/repo/
-cp -r /mnt/Packages /srv/repo/
-cp -r /mnt/repodata /srv/repo/
-cp -r /mnt/RPM-GPG-KEY-openEuler /srv/repo/
+# mount /home/openEuler/openEuler-20.03-LTS-aarch64-dvd.iso  /mnt/
+$ mkdir -p ~/srv/repo/
+$ cp -r /mnt/Packages ~/srv/repo/
+$ cp -r /mnt/repodata ~/srv/repo/
+$ cp -r /mnt/RPM-GPG-KEY-openEuler ~/srv/repo/
 ```
 
 The local repo directory is as follows:
@@ -95,11 +95,14 @@ You can update the repo source in either of the following ways:
 -   Add rpm packages to the Packages directory of the repo source and update the repo source. You can run the createrepo command to update the repo source.
 
     ```
-    dnf install createrepo
-    createrepo --update --workers=10 /srv/repo
+    $ createrepo --update --workers=10 ~/srv/repo
     ```
+    
 
-    In this command, \-\-update indicates the update, and \-\-workers indicates the number of threads, which can be customized.
+In this command, \-\-update indicates the update, and \-\-workers indicates the number of threads, which can be customized.
+    
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>If the command output contains "createrepo: command not found", run the **dnf install createrepo** command as the **root** user to install the **createrepo** softeware.  
 
 
 ## Deploying the Remote Repo Source
@@ -110,14 +113,14 @@ Install openEuler OS and deploy the repo source using Nginx on openEuler OS.
 
 ### Installing and Configuring Nginx
 
-1.  Download the Nginx tool and install it.
-2.  After installing Nginx, configure /etc/nginx/nginx.conf.
+1.  Download the Nginx tool and install it as the **root** user.
+2.  After installing Nginx, configure /etc/nginx/nginx.conf as the **root** user.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >The configuration content in this document is for reference only. You can configure the content based on the site requirements \(for example, security hardening requirements\).  
 
     ```
-    user  root;
+    user  nginx;
     worker_processes auto;                             # You are advised to set this parameter to core-1.
     error_log /var/log/nginx/error.log warn;            # log storage location
     pid        /var/run/nginx.pid;
@@ -140,12 +143,12 @@ Install openEuler OS and deploy the repo source using Nginx on openEuler OS.
     
         server {
             listen       80;
-    server_name localhost;                         #Server name (URL)
+    		server_name localhost;                         #Server name (URL)
             client_max_body_size 4G;
-    root /srv/repo;                              #Default service directory
+    		root /usr/share/nginx/repo;                 #Default service directory
     
             location / {
-    autoindex on;                                    # Enable the access to lower-layer files in the directory.
+    			autoindex on;	# Enable the access to lower-layer files in the directory.
                 autoindex_exact_size on;
                 autoindex_localtime  on; 
             }
@@ -158,78 +161,75 @@ Install openEuler OS and deploy the repo source using Nginx on openEuler OS.
 
 ### Starting Nginx
 
-1.  Run the systemd command to start the Nginx service.
+1.  Run the systemd command as the **root** user to start the Nginx service.
 
     ```
-    systemctl enable nginx
-    systemctl start nginx
+    # systemctl enable nginx
+    # systemctl start nginx
     ```
 
 2.  You can run the following command to check whether the Nginx is started successfully:
 
     ```
-    systemctl status nginx
+    $ systemctl status nginx
     ```
 
-    -   [Figure 1](#en-us_topic_0151920971_fd25e3f1d664b4087ae26631719990a71)  indicates that the Nginx service is started successfully.
+    - [Figure 1](#en-us_topic_0151920971_fd25e3f1d664b4087ae26631719990a71)  indicates that the Nginx service is started successfully.
 
-    **Figure  1**  The Nginx service is successfully started.<a name="en-us_topic_0151920971_fd25e3f1d664b4087ae26631719990a71"></a>  
-    ![](figures/the-nginx-service-is-successfully-started.png "the-nginx-service-is-successfully-started")
+        **Figure  1**  The Nginx service is successfully started.<a name="en-us_topic_0151920971_fd25e3f1d664b4087ae26631719990a71"></a>  
+        ![](figures/the-nginx-service-is-successfully-started.png "the-nginx-service-is-successfully-started")
 
-    -   If the Nginx service fails to be started, view the error information.
-
-    ```
-    systemctl status nginx.service --full
-    ```
-
-    **Figure  2**  Nginx startup failure<a name="en-us_topic_0151920971_f1f9f3d086e454b9cba29a7cae96a4c54"></a>  
-    ![](figures/nginx-startup-failure.png "nginx-startup-failure")
-
-    As shown in  [Figure 2](#en-us_topic_0151920971_f1f9f3d086e454b9cba29a7cae96a4c54), the Nginx service fails to be created because the /var/spool/nginx/tmp/client\_body directory fails to be created. You need to manually create the directory. Similar problems are solved as follows:
+    - If the Nginx service fails to be started, view the error information.
 
     ```
-    mkdir -p /var/spool/nginx/tmp/client_body
-    mkdir -p /var/spool/nginx/tmp/proxy
-    mkdir -p /var/spool/nginx/tmp/fastcgi
-    mkdir -p /usr/share/nginx/uwsgi_temp
-    mkdir -p /usr/share/nginx/scgi_temp
+    $ systemctl status nginx.service --full
+    ```
+
+        **Figure  2**  Nginx startup failure<a name="en-us_topic_0151920971_f1f9f3d086e454b9cba29a7cae96a4c54"></a>  
+        ![](figures/nginx-startup-failure.png "nginx-startup-failure")
+
+    As shown in  [Figure 2](#en-us_topic_0151920971_f1f9f3d086e454b9cba29a7cae96a4c54), the Nginx service fails to be created because the /var/spool/nginx/tmp/client\_body directory fails to be created. You need to manually create the directory as the **root** user. Similar problems are solved as follows:
+
+    ```
+    # mkdir -p /var/spool/nginx/tmp/client_body
+    # mkdir -p /var/spool/nginx/tmp/proxy
+    # mkdir -p /var/spool/nginx/tmp/fastcgi
+    # mkdir -p /usr/share/nginx/uwsgi_temp
+    # mkdir -p /usr/share/nginx/scgi_temp
     ```
 
 
 ### Deploying the Repo Source
 
-1.  Run the following command to create the /srv/repo directory specified in the Nginx configuration file /etc/nginx/nginx.conf:
+1.  Run the following command as the **root** user to create the /usr/share/nginx/repo directory specified in the Nginx configuration file /etc/nginx/nginx.conf:
 
     ```
-    mkdir -p /srv/repo
+    # mkdir -p /usr/share/nginx/repo
     ```
 
-2.  Set the SELinux working mode to the permissive mode:
+2.  Run the followding command as the **root** user to modify the /usr/share/nginx/repo directory permission:
 
     ```
-    setenforce permissive
+    # chmod -R 755 /usr/share/nginx/repo
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >After the repo server is restarted, you need to configure the repo server again.  
-
-3.  Configure firewall rules to enable the port \(port 80\) configured for Nginx.
+3.  Configure firewall rules as the **root** user to enable the port \(port 80\) configured for Nginx.
 
     ```
-    firewall-cmd --add-port=80/tcp --permanent
-    firewall-cmd --reload
+    # firewall-cmd --add-port=80/tcp --permanent
+    # firewall-cmd --reload
     ```
 
-    Check whether port 80 is enabled. If the output is **yes**, port 80 is enabled.
+    Check whether port 80 is enabled as the **root** user. If the output is **yes**, port 80 is enabled.
 
     ```
-    firewall-cmd --query-port=80/tcp
+    # firewall-cmd --query-port=80/tcp
     ```
 
-    You can also enable port 80 using iptables.
+    You can also enable port 80 using iptables as the **root** user.
 
     ```
-    iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+    # iptables -I INPUT -p tcp --dport 80 -j ACCEPT
     ```
 
 4.  After the Nginx service is configured, you can use the IP address to access the web page, as shown in  [Figure 3](#en-us_topic_0151921017_fig1880404110396).
@@ -237,25 +237,26 @@ Install openEuler OS and deploy the repo source using Nginx on openEuler OS.
     **Figure  3**  Nginx deployment succeeded<a name="en-us_topic_0151921017_fig1880404110396"></a>  
     ![](figures/nginx-deployment-succeeded.png "nginx-deployment-succeeded")
 
-5.  Use either of the following methods to add the repo source to the /srv/repo directory:
-    -   Copy related files in the image to the /srv/repo directory.
+5.  Use either of the following methods to add the repo source to the /usr/share/nginx/repo directory:
+    -   Copy related files in the image to the /usr/share/nginx/repo directory as the **root** user.
 
         ```
-        mount /home/openEuler/openEuler-20.03-LTS-aarch64-dvd.iso  /mnt/
-        cp -r /mnt/Packages /srv/repo/
-        cp -r /mnt/repodata /srv/repo/
-        cp -r /mnt/RPM-GPG-KEY-openEuler /srv/repo/
+        # mount /home/openEuler/openEuler-20.03-LTS-aarch64-dvd.iso  /mnt/
+        # cp -r /mnt/Packages /usr/share/nginx/repo/
+        # cp -r /mnt/repodata /usr/share/nginx/repo/
+        # cp -r /mnt/RPM-GPG-KEY-openEuler /usr/share/nginx/repo/
+        # chmod -R 755 /usr/share/nginx/repo
         ```
 
         The  **openEuler-20.03-LTS-aarch64-dvd.iso**  file is stored in the  **/home/openEuler**  directory.
 
-    -   Create a soft link for the repo source in the /srv/repo directory.
+    -   Create a soft link for the repo source in the /usr/share/nginx/repo directory as the **root** user.
 
         ```
-        ln -s /home/openEuler/os /srv/repo/os
+        # ln -s /mnt /usr/share/nginx/repo/os
         ```
 
-        /home/openEuler/os is the created repo source, and /srv/repo/os points to /home/openEuler/os.
+        /mnt is the created repo source, and /usr/share/nginx/repo/os points to /mnt.
 
 
 
@@ -266,7 +267,7 @@ The repo source can be configured as a yum source. Yellow dog Updater,Modified \
 
 ### Configuring repo as the yum Source
 
-You can configure the built repo as the yum source and create the \*\*\*.repo configuration file \(the extension .repo is mandatory\) in the /etc/yum.repos.d/ directory. You can configure the yum source on the local host or HTTP server.
+You can configure the built repo as the yum source and create the \*\*\*.repo configuration file \(the extension .repo is mandatory\) in the /etc/yum.repos.d/ directory as the **root** user. You can configure the yum source on the local host or HTTP server.
 
 -   Configuring the local yum source.
 
@@ -275,15 +276,15 @@ You can configure the built repo as the yum source and create the \*\*\*.repo co
     ```
     [base]
     name=base
-    baseurl=file:///srv/repo
+    baseurl=file:///home/openEuler/srv/repo
     enabled=1
     gpgcheck=1
-    gpgkey=file:///srv/repo/RPM-GPG-KEY-openEuler
+    gpgkey=file:///home/openEuler/srv/repo/RPM-GPG-KEY-openEuler
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    > _gpgcheck_  indicates whether to enable the GNU privacy guard \(GPG\) to check the validity and security of sources of RPM packages.  **1**  indicates GPG check is enabled.  **0**  indicates the GPG check is disabled. If this option is not specified, the GPG check is enabled by default.  
-    > _gpgkey_  is the storage path of the signature public key.  
+    > **gpgcheck** indicates whether to enable the GNU privacy guard \(GPG\) to check the validity and security of sources of RPM packages.  **1**  indicates GPG check is enabled.  **0**  indicates the GPG check is disabled. If this option is not specified, the GPG check is enabled by default.  
+    > **gpgkey** is the public key used to verify the signature.  
 
 -   Configuring the yum source for the HTTP server
 
@@ -292,14 +293,14 @@ You can configure the built repo as the yum source and create the \*\*\*.repo co
     ```
     [base]
     name=base
-    baseurl=http://192.168.1.2/
+    baseurl=http://192.168.139.209/
     enabled=1
     gpgcheck=1
-    gpgkey=http://192.168.1.2/RPM-GPG-KEY-openEuler
+    gpgkey=http://192.168.139.209/RPM-GPG-KEY-openEuler
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >192.168.1.2 is an example. Replace it with the actual IP address.  
+    >192.168.139.209 is an example. Replace it with the actual IP address.  
 
 
 ### repo Priority
@@ -309,11 +310,11 @@ If there are multiple repo sources, you can set the repo priority in the .repo f
 ```
 [base]
 name=base
-baseurl=http://192.168.1.2/
+baseurl=http://192.168.139.209/
 enabled=1
 priority=2
 gpgcheck=1
-gpgkey=http://192.168.1.2/RPM-GPG-KEY-openEuler
+gpgkey=http://192.168.139.209/RPM-GPG-KEY-openEuler
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
@@ -330,62 +331,72 @@ dnf <command> <packages name>
 
 Common commands are as follows:
 
--   Installation
+- Installation
+
+    Run the following command as the **root** user.
 
     ```
-    dnf install <packages name>
+    # dnf install <packages name>
     ```
 
--   Upgrade
+- Upgrade
+
+    Run the following command as the **root** user.
 
     ```
-    dnf update <packages name>
+    # dnf update <packages name>
     ```
 
--   Rollback
+- Rollback
+
+    Run the following command as the **root** user.
 
     ```
-    dnf downgrade <packages name>
+    # dnf downgrade <packages name>
     ```
 
 -   Checking for update
 
     ```
-    dnf check-update
+    $ dnf check-update
     ```
 
--   Uninstallation
+- Uninstallation
+
+    Run the following command as the **root** user.
 
     ```
-    dnf remove <packages name>
+    # dnf remove <packages name>
     ```
 
 -   Query
 
     ```
-    dnf search <packages name>
+    $ dnf search <packages name>
     ```
 
--   Local installation
+- Local installation
+
+    Run the following command as the **root** user.
 
     ```
-    dnf localinstall <absolute path to package name>
+    # dnf localinstall <absolute path to package name>
     ```
 
 -   Viewing historical records
 
     ```
-    dnf history
+    $ dnf history
     ```
 
 -   Clearing cache records
 
     ```
-    dnf clean all
+    $ dnf clean all
     ```
 
 -   Updating cache
 
     ```
-    dnf makecache
+    $ dnf makecache
     ```

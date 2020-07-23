@@ -3,13 +3,13 @@
 -   Run the following command to view the system information:
 
     ```
-    cat /etc/os-release
+    $ cat /etc/os-release
     ```
 
     For example, the command and output are as follows:
 
     ```
-    # cat /etc/os-release
+    $ cat /etc/os-release
     NAME="openEuler"
     VERSION="20.03 (LTS)"
     ID="openEuler"
@@ -24,19 +24,19 @@
     Run the following command to view the CPU information:
 
     ```
-    lscpu
+    $ lscpu
     ```
 
     Run the following command to view the memory information:
 
     ```
-    free
+    $ free
     ```
 
     Run the following command to view the disk information:
 
     ```
-    fdisk -l
+    $ fdisk -l
     ```
 
 

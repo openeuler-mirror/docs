@@ -1,6 +1,9 @@
-# Writable Namespace Kernel Parameters<a name="EN-US_TOPIC_0184808021"></a>
+# Writable Namespace Kernel Parameters
 
-## Function Description<a name="en-us_topic_0182200836_section231043418358"></a>
+- [Writable Namespace Kernel Parameters](#writable-namespace-kernel-parameters)
+
+
+## Function Description
 
 For services running in containers, such as databases, big data, and common applications, some kernel parameters need to be set and adjusted to obtain the optimal performance and reliability. The modification permission of all kernel parameters must be disabled or enabled simultaneously \(by using privileged container\).
 
@@ -12,9 +15,9 @@ When the modification permission is enabled, some kernel parameters are globally
 
 System containers provide the  **--ns-change-opt**  parameter, which can be used to dynamically set namespace kernel parameters in a container. The parameter value can be  **net**  or  **ipc**.
 
-## Parameter Description<a name="en-us_topic_0182200836_section342514469355"></a>
+## Parameter Description
 
-<a name="en-us_topic_0182200836_table1869210387418"></a>
+
 <table><thead align="left"><tr id="en-us_topic_0182200836_row1569373816419"><th class="cellrowborder" valign="top" width="20.96%" id="mcps1.1.4.1.1"><p id="en-us_topic_0182200836_p106936387415"><a name="en-us_topic_0182200836_p106936387415"></a><a name="en-us_topic_0182200836_p106936387415"></a><strong id="en-us_topic_0182200836_b440818461613"><a name="en-us_topic_0182200836_b440818461613"></a><a name="en-us_topic_0182200836_b440818461613"></a>Command</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="20.47%" id="mcps1.1.4.1.2"><p id="en-us_topic_0182200836_p15693173814112"><a name="en-us_topic_0182200836_p15693173814112"></a><a name="en-us_topic_0182200836_p15693173814112"></a>Parameter</p>
@@ -48,11 +51,11 @@ System containers provide the  **--ns-change-opt**  parameter, which can be used
 </tbody>
 </table>
 
-## Constraints<a name="en-us_topic_0182200836_section07049182379"></a>
+## Constraints
 
 -   If both  **--privileged**  \(privileged container\) and  **--ns-change-opt**  are specified during container startup,  **--ns-change-opt**  does not take effect.
 
-## Example<a name="en-us_topic_0182200836_section3576812123619"></a>
+## Example
 
 Start a container and set  **--ns-change-opt**  to  **net**.
 

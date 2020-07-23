@@ -9,7 +9,7 @@ DNF是一款Linux软件包管理工具，用于管理RPM软件包。DNF可以查
 
 - [使用DNF管理软件包](#使用dnf管理软件包)
     - [配置DNF](#配置dnf)
-        - [修改配置文件](#修改配置文件)
+        - [DNF配置文件](#dnf配置文件)
         - [创建本地软件源仓库](#创建本地软件源仓库)
         - [添加、启用和禁用软件源](#添加启用和禁用软件源)
     - [管理软件包](#管理软件包)
@@ -35,21 +35,25 @@ DNF是一款Linux软件包管理工具，用于管理RPM软件包。DNF可以查
 
 
 
-### 修改配置文件
+### DNF配置文件
 
-DNF 的主要配置文件是 /etc/dnf/dnf.conf，该文件中“main”部分保存着 DNF 的全局设置；用户可以在该文件中通过添加一个或者多个“repository”部分的方式来设置需要安装的软件源位置。
+DNF 的主要配置文件是 /etc/dnf/dnf.conf，该文件包含两部分：
 
-另外，在/etc/yum.repos.d 目录中保存着一个或多个repo 源相关文件，它们定义了不同的“repository”。
+-   “main”部分保存着DNF的全局设置。
 
-软件源的配置一般有两种方式，一种是直接配置  /etc/dnf/dnf.conf 文件，另外一种是在 /etc/yum.repos.d 目录下增加 .repo 文件。
+-   “repository”部分保存着软件源的设置，可以有一个或多个“repository”。
 
-#### 修改main部分
+另外，在/etc/yum.repos.d 目录中保存着一个或多个repo源相关文件，它们也可以定义不同的“repository”。
 
-/etc/dnf/dnf.conf 文件包含的“main”部分，配置文件示例如下：
+所以openEuler软件源的配置一般有两种方式，一种是直接配置/etc/dnf/dnf.conf文件中的“repository”部分，另外一种是在/etc/yum.repos.d目录下增加.repo文件。
+
+#### 配置main部分
+
+/etc/dnf/dnf.conf 文件包含的“main”部分，配置示例如下：
 
 ```
 [main]
-gpgcheck=0
+gpgcheck=1
 installonly_limit=3
 clean_requirements_on_remove=True
 best=True
@@ -114,42 +118,68 @@ best=True
 </tbody>
 </table>
 
-#### 修改repository部分
+#### 配置repository部分
 
-repository部分允许您定义定制化的软件源仓库，各个仓库的名称不能相同，否则会引起冲突。下面是\[repository\]部分的一个最小配置示例：
+repository部分允许您定义定制化的openEuler软件源仓库，各个仓库的名称不能相同，否则会引起冲突。配置repository部分有两种方式，一种是直接配置/etc/dnf/dnf.conf文件中的“repository”部分，另外一种是配置/etc/yum.repos.d目录下的.repo文件。
 
-```
-[repository]
-name=repository_name
-baseurl=repository_url
-```
+-   直接配置/etc/dnf/dnf.conf文件中的“repository”部分
 
-选项说明：
+    下面是\[repository\]部分的一个最小配置示例：
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->openEuler提供在线的镜像源，地址：[https://repo.openeuler.org/](https://repo.openeuler.org/)。以 openEuler 20.03的aarch64版本为例，baseurl可配置为[https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/](https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/)。  
+    ```
+    [repository]
+    name=repository_name
+    baseurl=repository_url
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >openEuler提供在线的镜像源，地址：[https://repo.openeuler.org/](https://repo.openeuler.org/)。以 openEuler 20.03的aarch64版本为例，baseurl可配置为[https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/](https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/)。  
+
+    选项说明：
+
+    **表 2**  repository参数说明
+    <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="31.580000000000002%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0151921080_af95a9e18156646249707de3f94ac1b3c"><a name="zh-cn_topic_0151921080_af95a9e18156646249707de3f94ac1b3c"></a><a name="zh-cn_topic_0151921080_af95a9e18156646249707de3f94ac1b3c"></a>参数</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="68.42%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0151921080_a8cc2e976bc794e86a279d3bae8f901c4"><a name="zh-cn_topic_0151921080_a8cc2e976bc794e86a279d3bae8f901c4"></a><a name="zh-cn_topic_0151921080_a8cc2e976bc794e86a279d3bae8f901c4"></a>说明</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="zh-cn_topic_0151921080_rbfa3a638cbc24c73ab13529149b75bb1"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_a4a0b069bbf624b09be3bdd08567c0445"><a name="zh-cn_topic_0151921080_a4a0b069bbf624b09be3bdd08567c0445"></a><a name="zh-cn_topic_0151921080_a4a0b069bbf624b09be3bdd08567c0445"></a>name=repository_name</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a21ddbd0f48924c1eb7475cc34de2dc32"><a name="zh-cn_topic_0151921080_a21ddbd0f48924c1eb7475cc34de2dc32"></a><a name="zh-cn_topic_0151921080_a21ddbd0f48924c1eb7475cc34de2dc32"></a>软件仓库（repository ）描述的字符串。</p>
+    </td>
+    </tr>
+    <tr id="zh-cn_topic_0151921080_r00b7f4067dc94647941026719cd6f293"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_af53cdfe5f204471f956cdab7c466fa40"><a name="zh-cn_topic_0151921080_af53cdfe5f204471f956cdab7c466fa40"></a><a name="zh-cn_topic_0151921080_af53cdfe5f204471f956cdab7c466fa40"></a>baseurl=repository_url</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_aa17154cd42524a1a8075e6414160a153"><a name="zh-cn_topic_0151921080_aa17154cd42524a1a8075e6414160a153"></a><a name="zh-cn_topic_0151921080_aa17154cd42524a1a8075e6414160a153"></a>软件仓库（repository ）的地址。</p>
+    <a name="zh-cn_topic_0151921080_ued0c249b843549a79bfa68170539c91e"></a><a name="zh-cn_topic_0151921080_ued0c249b843549a79bfa68170539c91e"></a><ul id="zh-cn_topic_0151921080_ued0c249b843549a79bfa68170539c91e"><li>使用http协议的网络位置：例如 http://path/to/repo</li><li>使用ftp协议的网络位置：例如 ftp://path/to/repo</li><li>本地位置：例如 file:///path/to/local/repo</li></ul>
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
 
-**表 2**  repository参数说明 <a name="zh-cn_topic_0151921080_t2df9dceb0ff64b2f8db8ec5cd779792a"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0151921080_r9162be1b9c5b451f8a7ff1466f5b8430"><th class="cellrowborder" valign="top" width="31.580000000000002%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0151921080_af95a9e18156646249707de3f94ac1b3c"><a name="zh-cn_topic_0151921080_af95a9e18156646249707de3f94ac1b3c"></a><a name="zh-cn_topic_0151921080_af95a9e18156646249707de3f94ac1b3c"></a>参数</p>
-</th>
-<th class="cellrowborder" valign="top" width="68.42%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0151921080_a8cc2e976bc794e86a279d3bae8f901c4"><a name="zh-cn_topic_0151921080_a8cc2e976bc794e86a279d3bae8f901c4"></a><a name="zh-cn_topic_0151921080_a8cc2e976bc794e86a279d3bae8f901c4"></a>说明</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="zh-cn_topic_0151921080_rbfa3a638cbc24c73ab13529149b75bb1"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_a4a0b069bbf624b09be3bdd08567c0445"><a name="zh-cn_topic_0151921080_a4a0b069bbf624b09be3bdd08567c0445"></a><a name="zh-cn_topic_0151921080_a4a0b069bbf624b09be3bdd08567c0445"></a>name=repository_name</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a21ddbd0f48924c1eb7475cc34de2dc32"><a name="zh-cn_topic_0151921080_a21ddbd0f48924c1eb7475cc34de2dc32"></a><a name="zh-cn_topic_0151921080_a21ddbd0f48924c1eb7475cc34de2dc32"></a>软件仓库（repository ）描述的字符串。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0151921080_r00b7f4067dc94647941026719cd6f293"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_af53cdfe5f204471f956cdab7c466fa40"><a name="zh-cn_topic_0151921080_af53cdfe5f204471f956cdab7c466fa40"></a><a name="zh-cn_topic_0151921080_af53cdfe5f204471f956cdab7c466fa40"></a>baseurl=repository_url</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_aa17154cd42524a1a8075e6414160a153"><a name="zh-cn_topic_0151921080_aa17154cd42524a1a8075e6414160a153"></a><a name="zh-cn_topic_0151921080_aa17154cd42524a1a8075e6414160a153"></a>软件仓库（repository ）的地址。</p>
-<a name="zh-cn_topic_0151921080_ued0c249b843549a79bfa68170539c91e"></a><a name="zh-cn_topic_0151921080_ued0c249b843549a79bfa68170539c91e"></a><ul id="zh-cn_topic_0151921080_ued0c249b843549a79bfa68170539c91e"><li>使用http协议的网络位置：例如 http://path/to/repo</li><li>使用ftp协议的网络位置：例如 ftp://path/to/repo</li><li>本地位置：例如 file:///path/to/local/repo</li></ul>
-</td>
-</tr>
-</tbody>
-</table>
+-   配置/etc/yum.repos.d目录下的.repo文件
+
+    openEuler提供了多种repo源，以AArch64架构的OS repo源为例。使用root权限在openEuler_aarch64.repo文件中添加openEuler repo源，示例如下：
+
+    ```
+    # vi /etc/yum.repos.d/openEuler_aarch64.repo
+    ```
+
+    ```
+    [base]
+    name=openEuler base
+    baseurl=https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/
+    enabled=1
+    gpgcheck=1
+    gpgkey=https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/RPM-GPG-KEY-openEuler
+
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >gpgkey为验证签名用的公钥。
+	
 
 #### 显示当前配置
 

@@ -1,12 +1,15 @@
-# Maximum Number of Handles<a name="EN-US_TOPIC_0184808025"></a>
+# Maximum Number of Handles
 
-## Function Description<a name="en-us_topic_0182200840_section976415526246"></a>
+- [Maximum Number of Handles](#maximum-number-of-handles)
+
+
+## Function Description
 
 System containers support limit on the number of file handles. File handles include common file handles and network sockets. When starting a container, you can specify the  **--files-limit**  parameter to limit the maximum number of handles opened in the container.
 
-## Parameter Description<a name="en-us_topic_0182200840_section14494191892512"></a>
+## Parameter Description
 
-<a name="en-us_topic_0182200840_table1869210387418"></a>
+
 <table><thead align="left"><tr id="en-us_topic_0182200840_row1569373816419"><th class="cellrowborder" valign="top" width="16.77%" id="mcps1.1.4.1.1"><p id="en-us_topic_0182200840_p106936387415"><a name="en-us_topic_0182200840_p106936387415"></a><a name="en-us_topic_0182200840_p106936387415"></a><strong id="en-us_topic_0182200840_b98071954400"><a name="en-us_topic_0182200840_b98071954400"></a><a name="en-us_topic_0182200840_b98071954400"></a>Command</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="38.47%" id="mcps1.1.4.1.2"><p id="en-us_topic_0182200840_p15693173814112"><a name="en-us_topic_0182200840_p15693173814112"></a><a name="en-us_topic_0182200840_p15693173814112"></a>Parameter</p>
@@ -26,12 +29,12 @@ System containers support limit on the number of file handles. File handles incl
 </tbody>
 </table>
 
-## Constraints<a name="en-us_topic_0182200840_section11526131712"></a>
+## Constraints
 
 -   If the value of  **--files-limit**  is too small, the system container may fail to run the  **exec**  command and the error "open temporary files" is reported. Therefore, you are advised to set the parameter to a large value.
 -   File handles include common file handles and network sockets.
 
-## Example<a name="en-us_topic_0182200840_section193833162512"></a>
+## Example
 
 To use  **--files-limit**  to limit the number of file handles opened in a container, run the following command to check whether the kernel supports files cgroup:
 

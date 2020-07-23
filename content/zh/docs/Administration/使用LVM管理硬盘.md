@@ -68,25 +68,25 @@ LVM是逻辑卷管理（Logical Volume Manager）的简称，它是Linux环境�
 2.  清除缓存。
 
     ```
-    #dnf clean all
+    $ dnf clean all
     ```
 
 3.  创建缓存。
 
     ```
-    #dnf makecache
+    $ dnf makecache
     ```
 
-4.  安装LVM。
+4.  在root权限下安装LVM。
 
     ```
-    #dnf install lvm2
+    # dnf install lvm2
     ```
 
 5.  查看安装后的rpm包。
 
     ```
-    #rpm -qa | grep lvm2
+    $ rpm -qa | grep lvm2
     ```
 
 
@@ -94,7 +94,7 @@ LVM是逻辑卷管理（Logical Volume Manager）的简称，它是Linux环境�
 
 ### 创建物理卷
 
-可通过pvcreate命令创建物理卷。
+可在root权限下通过pvcreate命令创建物理卷。
 
 ```
 pvcreate [option] devname ...
@@ -113,18 +113,18 @@ pvcreate [option] devname ...
 示例1：将/dev/sdb、/dev/sdc创建为物理卷。
 
 ```
-pvcreate /dev/sdb /dev/sdc
+# pvcreate /dev/sdb /dev/sdc
 ```
 
 示例2：将/dev/sdb1、/dev/sdb2创建为物理卷。
 
 ```
-pvcreate /dev/sdb1 /dev/sdb2
+# pvcreate /dev/sdb1 /dev/sdb2
 ```
 
 ### 查看物理卷
 
-可通过pvdisplay命令查看物理卷的信息，包括：物理卷名称、所属的卷组、物理卷大小、PE大小、总PE数、可用PE数、已分配的PE数和UUID。
+可在root权限通过pvdisplay命令查看物理卷的信息，包括：物理卷名称、所属的卷组、物理卷大小、PE大小、总PE数、可用PE数、已分配的PE数和UUID。
 
 ```
 pvdisplay [option] devname
@@ -141,12 +141,12 @@ pvdisplay [option] devname
 示例：显示物理卷/dev/sdb的基本信息。
 
 ```
-pvdisplay /dev/sdb
+# pvdisplay /dev/sdb
 ```
 
 ### 修改物理卷属性
 
-可通过pvchange命令修改物理卷的属性。
+可在root权限下通过pvchange命令修改物理卷的属性。
 
 ```
 pvchange [option] pvname ...
@@ -163,12 +163,12 @@ pvchange [option] pvname ...
 示例：禁止分配/dev/sdb物理卷上的PE。
 
 ```
-pvchange -x n /dev/sdb
+# pvchange -x n /dev/sdb
 ```
 
 ### 删除物理卷
 
-可通过pvremove命令删除物理卷。
+可在root权限下通过pvremove命令删除物理卷。
 
 ```
 pvremove [option] pvname ...
@@ -185,14 +185,14 @@ pvremove [option] pvname ...
 示例：删除物理卷/dev/sdb。
 
 ```
-pvremove /dev/sdb
+# pvremove /dev/sdb
 ```
 
 ## 管理卷组
 
 ### 创建卷组
 
-可通过vgcreate命令创建卷组。
+可在root权限下通过vgcreate命令创建卷组。
 
 ```
 vgcreate [option] vgname pvname ...
@@ -211,12 +211,12 @@ vgcreate [option] vgname pvname ...
 示例：创建卷组 vg1，并且将物理卷/dev/sdb和/dev/sdc添加到卷组中。
 
 ```
-vgcreate vg1 /dev/sdb /dev/sdc  
+# vgcreate vg1 /dev/sdb /dev/sdc  
 ```
 
 ### 查看卷组
 
-可通过vgdisplay命令查看卷组的信息。
+可在root权限下通过vgdisplay命令查看卷组的信息。
 
 ```
 vgdisplay [option] [vgname]
@@ -233,12 +233,12 @@ vgdisplay [option] [vgname]
 示例：显示卷组vg1的基本信息。
 
 ```
-vgdisplay vg1
+# vgdisplay vg1
 ```
 
 ### 修改卷组属性
 
-可通过vgchange命令修改卷组的属性。
+可在root权限下通过vgchange命令修改卷组的属性。
 
 ```
 vgchange [option] vgname
@@ -254,12 +254,12 @@ vgchange [option] vgname
 示例：将卷组vg1状态修改为活动。
 
 ```
-vgchange -ay vg1
+# vgchange -ay vg1
 ```
 
 ### 扩展卷组
 
-可通过vgextend命令动态扩展卷组。它通过向卷组中添加物理卷来增加卷组的容量。
+可在root权限下通过vgextend命令动态扩展卷组。它通过向卷组中添加物理卷来增加卷组的容量。
 
 ```
 vgextend [option] vgname pvname ...
@@ -277,12 +277,12 @@ vgextend [option] vgname pvname ...
 示例：将卷组vg1中添加物理卷/dev/sdb。
 
 ```
-vgextend vg1 /dev/sdb
+# vgextend vg1 /dev/sdb
 ```
 
 ### 收缩卷组
 
-可通过vgreduce命令删除卷组中的物理卷来减少卷组容量。不能删除卷组中剩余的最后一个物理卷。
+可在root权限下通过vgreduce命令删除卷组中的物理卷来减少卷组容量。不能删除卷组中剩余的最后一个物理卷。
 
 ```
 vgreduce [option] vgname pvname ...
@@ -300,12 +300,12 @@ vgreduce [option] vgname pvname ...
 示例：从卷组vg1中移除物理卷/dev/sdb2。
 
 ```
-vgreduce vg1 /dev/sdb2
+# vgreduce vg1 /dev/sdb2
 ```
 
 ### 删除卷组
 
-可通过vgremove命令删除卷组。
+可在root权限下通过vgremove命令删除卷组。
 
 ```
 vgremove [option] vgname
@@ -321,14 +321,14 @@ vgremove [option] vgname
 示例：删除卷组vg1。
 
 ```
-vgremove vg1
+# vgremove vg1
 ```
 
 ## 管理逻辑卷
 
 ### 创建逻辑卷
 
-可通过lvcreate命令创建逻辑卷。
+可在root权限下通过lvcreate命令创建逻辑卷。
 
 ```
 lvcreate [option] vgname
@@ -347,18 +347,18 @@ lvcreate [option] vgname
 示例1：在卷组vg1中创建10G大小的逻辑卷。
 
 ```
-lvcreate -L 10G vg1
+# lvcreate -L 10G vg1
 ```
 
-示例1：在卷组vg1中创建200M的逻辑卷，并命名为lv1。
+示例2：在卷组vg1中创建200M的逻辑卷，并命名为lv1。
 
 ```
-lvcreate -L 200M -n lv1 vg1
+# lvcreate -L 200M -n lv1 vg1
 ```
 
 ### 查看逻辑卷
 
-可通过lvdisplay命令查看逻辑卷的信息，包括逻辑卷空间大小、读写状态和快照信息等属性。
+可在root权限下通过lvdisplay命令查看逻辑卷的信息，包括逻辑卷空间大小、读写状态和快照信息等属性。
 
 ```
 lvdisplay [option] [lvname]
@@ -367,8 +367,9 @@ lvdisplay [option] [lvname]
 其中：
 
 -   option：命令参数选项。常用的参数选项有：
-    -   -v：显示LE到PE的映射
-
+    
+-   -v：显示LE到PE的映射
+    
 -   lvname：指定要显示属性的逻辑卷对应的设备文件。如果省略，则显示所有的逻辑卷属性。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
@@ -378,12 +379,12 @@ lvdisplay [option] [lvname]
 示例：显示逻辑卷lv1的基本信息。
 
 ```
-lvdisplay /dev/vg1/lv1
+# lvdisplay /dev/vg1/lv1
 ```
 
 ### 调整逻辑卷大小
 
-可通过lvresize命令调整LVM逻辑卷的空间大小，可以增大空间和缩小空间。使用lvresize命令调整逻辑卷空间大小和缩小空间时需要谨慎，因为有可能导致数据丢失。
+可在root权限下通过lvresize命令调整LVM逻辑卷的空间大小，可以增大空间和缩小空间。使用lvresize命令调整逻辑卷空间大小和缩小空间时需要谨慎，因为有可能导致数据丢失。
 
 ```
 lvresize [option] vgname
@@ -401,18 +402,18 @@ lvresize [option] vgname
 示例1：为逻辑卷/dev/vg1/lv1增加200M空间。
 
 ```
-lvresize -L +200 /dev/vg1/lv1
+# lvresize -L +200 /dev/vg1/lv1
 ```
 
 示例2：为逻辑卷/dev/vg1/lv1减少200M空间。
 
 ```
-lvresize -L -200 /dev/vg1/lv1
+# lvresize -L -200 /dev/vg1/lv1
 ```
 
 ### 扩展逻辑卷
 
-可通过lvextend命令动态在线扩展逻辑卷的空间大小，而不中断应用程序对逻辑卷的访问。
+可在root权限下通过lvextend命令动态在线扩展逻辑卷的空间大小，而不中断应用程序对逻辑卷的访问。
 
 ```
 lvextend [option] lvname
@@ -430,12 +431,12 @@ lvextend [option] lvname
 示例：为逻辑卷/dev/vg1/lv1增加100M空间。
 
 ```
-lvextend -L +100M /dev/vg1/lv1
+# lvextend -L +100M /dev/vg1/lv1
 ```
 
 ### 收缩逻辑卷
 
-可通过lvreduce命令减少逻辑卷占用的空间大小。使用lvreduce命令收缩逻辑卷的空间大小有可能会删除逻辑卷上已有的数据，所以在操作前必须进行确认。
+可在root权限下通过lvreduce命令减少逻辑卷占用的空间大小。使用lvreduce命令收缩逻辑卷的空间大小有可能会删除逻辑卷上已有的数据，所以在操作前必须进行确认。
 
 ```
 lvreduce [option] lvname
@@ -453,12 +454,12 @@ lvreduce [option] lvname
 示例：将逻辑卷/dev/vg1/lv1的空间减少100M。
 
 ```
-lvreduce -L -100M /dev/vg1/lv1
+# lvreduce -L -100M /dev/vg1/lv1
 ```
 
 ### 删除逻辑卷
 
-可通过lvremove命令删除逻辑卷。如果逻辑卷已经使用mount命令加载，则不能使用lvremove命令删除。必须使用umount命令卸载后，逻辑卷方可被删除。
+可在root权限下通过lvremove命令删除逻辑卷。如果逻辑卷已经使用mount命令加载，则不能使用lvremove命令删除。必须使用umount命令卸载后，逻辑卷方可被删除。
 
 ```
 lvremove [option] vgname
@@ -474,7 +475,7 @@ lvremove [option] vgname
 示例：删除逻辑卷/dev/vg1/lv1。
 
 ```
-lvremove /dev/vg1/lv1
+# lvremove /dev/vg1/lv1
 ```
 
 ## 创建并挂载文件系统
@@ -483,7 +484,7 @@ lvremove /dev/vg1/lv1
 
 ### 创建文件系统
 
-可通过mkfs命令创建文件系统。
+可在root权限下通过mkfs命令创建文件系统。
 
 ```
 mkfs [option] lvname
@@ -499,14 +500,14 @@ mkfs [option] lvname
 示例：在逻辑卷/dev/vg1/lv1上创建ext4文件系统。
 
 ```
-mkfs -t ext4 /dev/vg1/lv1
+# mkfs -t ext4 /dev/vg1/lv1
 ```
 
 ### 手动挂载文件系统
 
 手动挂载的文件系统仅在当时有效，一旦操作系统重启则会不存在。
 
-可通过mount命令挂载文件系统。
+可在root权限下通过mount命令挂载文件系统。
 
 ```
 mount lvname mntpath
@@ -520,17 +521,17 @@ mount lvname mntpath
 示例：将逻辑卷/dev/vg1/lv1挂载到/mnt/data目录。
 
 ```
-mount /dev/vg1/lv1 /mnt/data
+# mount /dev/vg1/lv1 /mnt/data
 ```
 
 ### 自动挂载文件系统
 
-手动挂载的文件系统在操作系统重启之后会不存在，需要重新手动挂载文件系统。但若在手动挂载文件系统后进行如下设置，可以实现操作系统重启后文件系统自动挂载文件系统。
+手动挂载的文件系统在操作系统重启之后会不存在，需要重新手动挂载文件系统。但若在手动挂载文件系统后在root权限下进行如下设置，可以实现操作系统重启后文件系统自动挂载文件系统。
 
 1.  <a name="li65701520154311"></a>执行blkid命令查询逻辑卷的UUID，逻辑卷以/dev/vg1/lv1为例。
 
     ```
-    blkid /dev/vg1/lv1
+    # blkid /dev/vg1/lv1
     ```
 
     查看打印信息，打印信息中包含如下内容，其中  _uuidnumber_  是一串数字，为UUID，  _fstype_  为文件系统。
@@ -556,19 +557,19 @@ mount /dev/vg1/lv1 /mnt/data
     1.  执行umount命令卸载文件系统，逻辑卷以/dev/vg1/lv1为例。
 
         ```
-        umount /dev/vg1/lv1
+        # umount /dev/vg1/lv1
         ```
 
     2.  执行如下命令，将/etc/fstab文件所有内容重新加载。
 
         ```
-        mount -a
+        # mount -a
         ```
 
     3.  执行如下命令，查询文件系统挂载信息，挂载目录以/mnt/data为例。
 
         ```
-        mount | grep /mnt/data
+        # mount | grep /mnt/data
         ```
 
         查看打印信息，若信息中包含如下信息表示自动挂载功能生效。

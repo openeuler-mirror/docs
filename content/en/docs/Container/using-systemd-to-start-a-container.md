@@ -1,10 +1,13 @@
-# Using systemd to Start a Container<a name="EN-US_TOPIC_0184808018"></a>
+# Using systemd to Start a Container
 
-## Function Description<a name="en-us_topic_0182200831_section3582020171916"></a>
+- [Using systemd to Start a Container](#using-systemd-to-start-a-container)
+
+
+## Function Description
 
 The init process started in system containers differs from that in common containers. Common containers cannot start system services through systemd. However, system containers have this capability. You can enable the systemd service by specifying the  **--system-contianer**  parameter when starting a system container.
 
-## Parameter Description<a name="en-us_topic_0182200831_section3103441141912"></a>
+## Parameter Description
 
 <a name="en-us_topic_0182200831_table1869210387418"></a>
 <table><thead align="left"><tr id="en-us_topic_0182200831_row1569373816419"><th class="cellrowborder" valign="top" width="14.04%" id="mcps1.1.4.1.1"><p id="en-us_topic_0182200831_p106936387415"><a name="en-us_topic_0182200831_p106936387415"></a><a name="en-us_topic_0182200831_p106936387415"></a><strong id="b84235270693550"><a name="b84235270693550"></a><a name="b84235270693550"></a>Command</strong></p>
@@ -25,7 +28,7 @@ The init process started in system containers differs from that in common contai
 </tbody>
 </table>
 
-## Constraints<a name="en-us_topic_0182200831_section186731325112013"></a>
+## Constraints
 
 -   The systemd service needs to call some special system APIs, including mount, umount2, unshare, reboot, and name\_to\_handle\_at. Therefore, permissions to call the preceding APIs are enabled for system containers when the privileged container tag is disabled.
 -   All system containers are started by the init process. The init process does not respond to the SIGTERM signal which indicates normal exit. By default, the  **stop**  command forcibly kills the container 10 seconds later. If you need a quicker stop, you can manually specify the timeout duration of the  **stop**  command.
@@ -35,7 +38,7 @@ The init process started in system containers differs from that in common contai
 -   Currently, system containers and hosts cannot be isolated by using udev events. Therefore, the  **fstab**  file cannot be configured.
 -   The systemd service may conflict with the cgconfig service provided by libcgroup. You are advised to delete the libcgroup-related packages from a container or set  **Delegate**  of the cgconfig service to  **no**.
 
-## Example<a name="en-us_topic_0182200831_section55579413204"></a>
+## Example
 
 -   Specify the  **--system-container**  and  **--external-rootfs**  parameters to start a system container.
 

@@ -33,7 +33,7 @@ openEuler系统中的web服务器版本是Apache HTTP服务器2.4版本，即htt
 
 #### 前提条件
 
--   为了能够使用Apache HTTP服务，请确保您的系统中已经安装httpd服务的rpm包。安装命令如下：
+-   为了能够使用Apache HTTP服务，请确保您的系统中已经安装httpd服务的rpm包。在root权限下执行如下命令进行安装：
 
     ```
     # dnf install httpd
@@ -113,7 +113,7 @@ openEuler系统中的web服务器版本是Apache HTTP服务器2.4版本，即htt
 验证httpd服务是否正在运行
 
 ```
-# systemctl is-active httpd
+$ systemctl is-active httpd
 ```
 
 回显为“active”说明服务处于运行状态。
@@ -145,7 +145,7 @@ openEuler系统中的web服务器版本是Apache HTTP服务器2.4版本，即htt
 </tbody>
 </table>
 
-虽然默认配置可以适用于多数情况，但是用户至少需要熟悉里面的一些重要配置项。配置文件修改完成后，可以使用如下命令检查配置文件可能出现的语法错误。
+虽然默认配置可以适用于多数情况，但是用户至少需要熟悉里面的一些重要配置项。配置文件修改完成后，可以在root权限下使用如下命令检查配置文件可能出现的语法错误。
 
 ```
 # apachectl configtest
@@ -173,19 +173,19 @@ httpd服务是一个模块化的应用，它和许多动态共享对象DSO（Dyn
 
 例如，加载asis DSO模块的操作步骤如下：
 
-1.  在/etc/httpd/conf.modules.d/00-optional.conf文件中，取消注释如下配置行。
+1.  在/etc/httpd/conf.modules.d/00-optional.conf文件中，使用root权限取消注释如下配置行。
 
     ```
     LoadModule asis_module modules/mod_asis.so
     ```
 
-2.  加载完成后，请重启httpd服务以便于重新加载配置文件。
+2.  加载完成后，请使用root权限重启httpd服务以便于重新加载配置文件。
 
     ```
     # systemctl restart httpd
     ```
 
-3.  加载完成后，使用httpd -M的命令查看是否已经加载了asis DSO模块。
+3.  加载完成后，在root权限下使用httpd -M的命令查看是否已经加载了asis DSO模块。
 
     ```
     # httpd -M | grep asis
@@ -200,6 +200,7 @@ httpd服务是一个模块化的应用，它和许多动态共享对象DSO（Dyn
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >**httpd 的常用命令**  
+>
 >-   httpd -v : 查看httpd的版本号。  
 >-   httpd -l：查看编译进httpd程序的静态模块。  
 >-   httpd -M：查看已经编译进httpd程序的静态模块和已经加载的动态模块。  
@@ -208,19 +209,19 @@ httpd服务是一个模块化的应用，它和许多动态共享对象DSO（Dyn
 
 安全套接层SSL（Secure Sockets Layer）是一个允许服务端和客户端之间进行安全通信的加密协议。其中，传输层安全性协议TLS（Transport Layer Security）为网络通信提供了安全性和数据完整性保障。openEuler支持Mozilla NSS（Network Security Services）作为安全性协议TLS进行配置。加载SSL的操作步骤如下：
 
-1.  安装mod\_ssl的rpm包。
+1.  在root权限下安装mod\_ssl的rpm包。
 
     ```
     # dnf install mod_ssl
     ```
 
-2.  安装完成后，请重启httpd服务以便于重新加载配置文件。
+2.  安装完成后，请在root权限下重启httpd服务以便于重新加载配置文件。
 
     ```
     # systemctl restart httpd
     ```
 
-3.  加载完成后，使用httpd -M的命令查看是否已经加载了SSL。
+3.  加载完成后，在root权限下使用httpd -M的命令查看是否已经加载了SSL。
 
     ```
     # httpd -M | grep ssl
@@ -237,7 +238,7 @@ httpd服务是一个模块化的应用，它和许多动态共享对象DSO（Dyn
 
 Web服务器搭建完成后，可以通过如下方式验证是否搭建成功。
 
-1.  查看服务器的IP地址，命令如下：
+1.  在root权限下查看服务器的IP地址，命令如下：
 
     ```
     # ifconfig
@@ -272,7 +273,7 @@ Web服务器搭建完成后，可以通过如下方式验证是否搭建成功�
     TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
     ```
 
-2.  配置防火墙：
+2.  在root权限下配置防火墙：
 
     ```
     # firewall-cmd --add-service=http --permanent
@@ -287,24 +288,24 @@ Web服务器搭建完成后，可以通过如下方式验证是否搭建成功�
         执行如下命令，查看是否可以访问网页信息，服务搭建成功时，该网页可以正常访问。
 
         ```
-        curl https://192.168.1.60
+        $ curl http://192.168.1.60
         ```
 
         执行如下命令，查看命令返回值是否为0，返回值为0，说明httpd服务器搭建成功。
 
         ```
-        echo $?
+        $ echo $?
         ```
 
     -   使用Windows系统验证
 
         打开浏览器，在地址栏输入如下地址，如果能正常访问网页，说明httpd服务器搭建成功。
 
-        https://_192.168.1.60_
+        http://192.168.1.60
 
         如果修改了端口号，输入地址格式如下：
 
-        https://_192.168.1.60:端口号_
+        http://192.168.1.60:端口号
 
 
 
@@ -319,25 +320,25 @@ Nginx 是一款轻量级的 Web 服务器/反向代理服务器及电子邮件�
 2.  清除缓存。
 
     ```
-    #dnf clean all
+    $ dnf clean all
     ```
 
 3.  创建缓存。
 
     ```
-    #dnf makecache
+    $ dnf makecache
     ```
 
-4.  安装nginx服务。
+4.  在root权限下安装nginx服务。
 
     ```
-    #dnf install nginx
+    # dnf install nginx
     ```
 
 5.  查看安装后的rpm包。
 
     ```
-    dnf list all | grep nginx
+    $ dnf list all | grep nginx
     ```
 
 
@@ -353,7 +354,7 @@ Nginx 是一款轻量级的 Web 服务器/反向代理服务器及电子邮件�
 
     更多关于管理服务的内容，请参见[管理服务](管理服务.html)。
 
--   启动、停止和重启httpd服务，需要使用root权限。
+-   启动、停止和重启nginx服务，需要使用root权限。
 
 #### 启动服务
 
@@ -377,7 +378,7 @@ Nginx 是一款轻量级的 Web 服务器/反向代理服务器及电子邮件�
 
 #### 停止服务
 
--   停止运行的httpd服务，命令如下：
+-   停止运行的nginx服务，命令如下：
 
     ```
     # systemctl stop nginx
@@ -406,7 +407,7 @@ Nginx 是一款轻量级的 Web 服务器/反向代理服务器及电子邮件�
 -   重新加载配置
 
     ```
-    # systemctl reload httpd
+    # systemctl reload nginx
     ```
 
     该命令会使运行的nginx服务重新加载它的配置文件。任何当前正在处理的请求将会被中断，从而造成客户端浏览器显示一个错误消息或者重新渲染部分页面。
@@ -422,10 +423,10 @@ Nginx 是一款轻量级的 Web 服务器/反向代理服务器及电子邮件�
 
 #### 验证服务状态
 
-验证httpd服务是否正在运行
+验证nginx服务是否正在运行
 
 ```
-# systemctl is-active nginx
+$ systemctl is-active nginx
 ```
 
 回显为“active”说明服务处于运行状态。
@@ -457,10 +458,10 @@ Nginx 是一款轻量级的 Web 服务器/反向代理服务器及电子邮件�
 </tbody>
 </table>
 
-虽然默认配置可以适用于多数情况，但是用户至少需要熟悉里面的一些重要配置项。配置文件修改完成后，可以使用如下命令检查配置文件可能出现的语法错误。
+虽然默认配置可以适用于多数情况，但是用户至少需要熟悉里面的一些重要配置项。配置文件修改完成后，可以在root权限下使用如下命令检查配置文件可能出现的语法错误。
 
 ```
-# /usr/sbin/nginx -t
+# nginx -t
 ```
 
 如果回显信息中有“syntax is ok”，说明配置文件语法正确。
@@ -485,7 +486,7 @@ nginx服务是一个模块化的应用，它和许多动态共享对象DSO（Dyn
 
 Web服务器搭建完成后，可以通过如下方式验证是否搭建成功。
 
-1.  查看服务器的IP地址，命令如下：
+1.  在root权限下查看服务器的IP地址，命令如下：
 
     ```
     # ifconfig
@@ -520,7 +521,7 @@ Web服务器搭建完成后，可以通过如下方式验证是否搭建成功�
     TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
     ```
 
-2.  配置防火墙：
+2.  在root权限下配置防火墙：
 
     ```
     # firewall-cmd --add-service=http --permanent
@@ -535,23 +536,23 @@ Web服务器搭建完成后，可以通过如下方式验证是否搭建成功�
         执行如下命令，查看是否可以访问网页信息，服务搭建成功时，该网页可以正常访问。
 
         ```
-        curl http://192.168.1.60
+        $ curl http://192.168.1.60
         ```
 
         执行如下命令，查看命令返回值是否为0，返回值为0，说明nginx服务器搭建成功。
 
         ```
-        echo $?
+        $ echo $?
         ```
 
     -   使用Windows系统验证
 
         打开浏览器，在地址栏输入如下地址，如果能正常访问网页，说明nginx服务器搭建成功。
 
-        http://_192.168.1.60_
+        http://192.168.1.60
 
         如果修改了端口号，输入地址格式如下：
 
-        http://_192.168.1.60:端口号_
+        http://192.168.1.60:端口号
 
 

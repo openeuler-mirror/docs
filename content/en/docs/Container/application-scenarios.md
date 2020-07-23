@@ -1,5 +1,5 @@
-# Application Scenarios<a name="EN-US_TOPIC_0184808051"></a>
+# Application Scenarios
 
-
+This section describes how to use the iSulad.
 
 
