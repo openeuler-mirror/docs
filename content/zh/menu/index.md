@@ -40,18 +40,6 @@ headless: true
         - [搭建数据库服务器]({{< relref "./docs/Administration/搭建数据库服务器.md" >}})
     - [FAQ]({{< relref "./docs/Administration/FAQ-54.md" >}})
 
-- [安全加固指南]({{< relref "./docs/SecHarden/secHarden.md" >}})
-    - [操作系统加固概述]({{< relref "./docs/SecHarden/操作系统加固概述.md" >}})
-    - [加固指导]({{< relref "./docs/SecHarden/加固指导.md" >}})
-        - [账户口令]({{< relref "./docs/SecHarden/账户口令.md" >}})
-        - [授权认证]({{< relref "./docs/SecHarden/授权认证.md" >}})
-        - [系统服务]({{< relref "./docs/SecHarden/系统服务.md" >}})
-        - [文件权限]({{< relref "./docs/SecHarden/文件权限.md" >}})
-        - [内核参数]({{< relref "./docs/SecHarden/内核参数.md" >}})
-        - [SELinux配置]({{< relref "./docs/SecHarden/SELinux配置.md" >}})
-    - [安全加固工具]({{< relref "./docs/SecHarden/安全加固工具.md" >}})
-    - [附录]({{< relref "./docs/SecHarden/附录.md" >}})
-
 
 - [虚拟化用户指南]({{< relref "./docs/Virtualization/virtualization.md" >}})
     - [认识虚拟化]({{< relref "./docs/Virtualization/认识虚拟化.md" >}})
