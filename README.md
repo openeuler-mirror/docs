@@ -1,56 +1,26 @@
-# openEuler website
+# openEuler 文档
 
-### Brief Introduction
+### 介绍
 
-Docs maintains openEuler documentations which is integrated by online website. Now we are under developing.
-you are welcome to join us.
+Docs包含了openEuler社区的所有文档，包括发行说明、操作系统安装，管理员指南，虚拟化和容器的使用指导，A-Tune使用指导，应用开发指导等内容。
+### 如何在Docs中查找文档
 
-### Installation
+打开“content”文件夹，该文件夹包含了中文（“zh”文件夹）和英文（“en”文件夹）两种语言文档，以中文文档举例进行说明。
+在“zh”文件夹中，“docs”文件夹包含了具体文档的内容，“menu”包含了文档的大纲内容。
+打开“docs”文件夹，各手册和文件夹对应关系如下。
+* A-Tune文件夹对应：A-Tune用户指南
+* Adminnistration文件夹对应手册为：管理员指南
+* ApplicationDev文件夹对应手册为：应用开发指南
+* Container文件夹对应手册为：容器用户指南
+* Installation文件夹对应手册为：安装指南
+* Quickstart文件夹对应手册为：快速入门
+* Releasenotes文件夹对应手册为：发行说明
+* SecHarden文件夹对应手册为：安全加固指南
+* Virtualization文件夹对应手册为：虚拟化应用指南
 
-1. Build Image
+### 如何修改文档
 
-```
-docker build -t docs:v0.0.1 .
-```
+当openEuler版本信息有刷新时，这里文档也需要刷新。很感谢您愿意提供刷新内容。
+请阅读[资料开发流程指导](https://gitee.com/lss410313/docs/wikis/Home)进行操作参考。
 
-note: here ```docs``` is the image name, you can change it as you need.
-
-> TO THOSE WHO MAY CONCERN:
->
-> If you are working behind proxy, use `--build-arg` option to tell `docker build` about it:
->
->    ```docker build --build-arg http_proxy="http://username:password@your.proxy.com:port" -t docs:v0.0.1 .```
->
-> `--build-arg` can be specified many times, like `http_proxy`, `https_proxy`, `HTTP_PROXY`, `HTTPS_PROXY` and so on.
-
-2. Running in container
-
-```
-docker run -p 80:80 -d docs:v0.0.1 > docs.pid
-```
-
-The website will serving on http://your-server-ip:80
-
-The defalut language(en) will serving on http://your-server-ip/
-Other language(zh) will serving on http://your-server-ip/zh
-
-3. Stopping the container
-
-```
-docker rm -f `cat docs.pid` && rm -f docs.pid
-```
-
-
-### Contribution
-
-1. Fork the repository
-2. Create Feature_xxx branch
-3. Commit your code
-4. Create Pull Request
-
-Please refer to [CONTRIBUTING](./CONTRIBUTING.md) for more guide.
-
-### Get Help
-
-- IRC: #openeuler-doc
-- MAIL: dev@openeuler.org
+### 如何查看版本分支对应关系
