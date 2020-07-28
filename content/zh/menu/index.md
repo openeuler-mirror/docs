@@ -116,9 +116,13 @@ headless: true
     - [附录]({{< relref "./docs/A-Tune/附录.md" >}})
 
 
-- [应用开发指南]({{< relref "./docs/ApplicationDev/application-development.md" >}})
+- [应用开发指南]({{< relref "./docs/ApplicationDev/application-development.md" >}})userguide
     - [开发环境准备]({{< relref "./docs/ApplicationDev/开发环境准备.md" >}})
     - [使用GCC编译]({{< relref "./docs/ApplicationDev/使用GCC编译.md" >}})
     - [使用make编译]({{< relref "./docs/ApplicationDev/使用make编译.md" >}})
     - [使用JDK编译]({{< relref "./docs/ApplicationDev/使用JDK编译.md" >}})
     - [构建RPM包]({{< relref "./docs/ApplicationDev/构建RPM包.md" >}})
+
+- [openEuler工具集用户指南]({{< relref "./docs/userguide/概述.md" >}})
+    - [补丁工具]({{< relref "./docs/userguide/补丁工具.md" >}})
+    - [pkgship]({{< relref "./docs/userguide/pkgship.md" >}})
