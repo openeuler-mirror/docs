@@ -137,4 +137,4 @@ headless: true
 
 - [openEuler工具集用户指南]({{< relref "./docs/userguide/概述.md" >}})
     - [补丁工具]({{< relref "./docs/userguide/补丁工具.md" >}})
-    - [包管理工具]({{< relref "./docs/userguide/包管理工具.md" >}})
+    - [pkgship]({{< relref "./docs/userguide/pkgship.md" >}})
