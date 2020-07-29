@@ -34,8 +34,7 @@ Docs包含了如下3个分支：
  SIG 组基本信息位于[doc](https://gitee.com/openeuler/community/tree/master/sig/doc)。  
 建立或回复 issue：欢迎通过建立或回复 issue 来讨论。
 提交PR：欢迎通过提交PR的方式参与SIG。具体操作方法可参考[docs wiki](https://gitee.com/openeuler/docs/wikis/Web%E6%96%B9%E5%BC%8F%E4%BF%AE%E6%94%B9%E8%B5%84%E6%96%99?sort_id=2204396)。  
-提交评论：欢迎在issue或PR中提交评论。  
-每周 SIG 组会议：是否有，目前是没有。  
+提交评论：欢迎在issue或PR中提交评论。   
 重要的事说三遍：欢迎提交 PR！欢迎提交 PR！欢迎提交 PR！
 
 ### 成员
