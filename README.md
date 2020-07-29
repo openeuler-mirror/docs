@@ -47,4 +47,3 @@ Docs包含了如下3个分支：
 ### 如何联系我们
 邮件列表: dev@openeuler.org  
 IRC: #openeuler-doc  
-Zoom 公开会议 MeetID: 是否有？目前是没有。
