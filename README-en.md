@@ -1,47 +1,47 @@
-# openEuler 文档
+# openEuler DOCS
 
-### 介绍
+### Introduction
 
-Docs包含了openEuler社区的所有文档，包括发行说明、操作系统安装，管理员指南，虚拟化和容器的使用指导，A-Tune使用指导，应用开发指导等内容。
-### 如何在Docs中查找文档
+DOCS contains all documents of the openEuler community, including the release notes, OS installation guide, administrator guide, virtualization, container, and A-Tune user guides, and application development guide.
 
-打开“content”文件夹，该文件夹包含了中文（“zh”文件夹）和英文（“en”文件夹）两种语言文档，以中文文档举例进行说明。 
-在“zh”文件夹中，“docs”文件夹包含了具体文档的内容，“menu”包含了文档的大纲内容。  
-打开“docs”文件夹，各手册和文件夹对应关系如下。  
-* A-Tune文件夹对应：A-Tune用户指南
-* Adminnistration文件夹对应手册为：管理员指南
-* ApplicationDev文件夹对应手册为：应用开发指南
-* Container文件夹对应手册为：容器用户指南
-* Installation文件夹对应手册为：安装指南
-* Quickstart文件夹对应手册为：快速入门
-* Releasenotes文件夹对应手册为：发行说明
-* SecHarden文件夹对应手册为：安全加固指南
-* Virtualization文件夹对应手册为：虚拟化应用指南
+### Searching for a Document in DOCS
+
+Open the **content** folder. The folder contains documents in Chinese (**zh** folder) and English (**en** folder). The English document is used as an example. In the **en** folder, the **docs** folder contains the content of a specific document, and the **menu** folder contains the overview of the document.   
+Open the **docs** folder. The relationship between guides and folders is as follows:  
+* **A-Tune**: *A-Tune User Guide*
+* **Administrator**: *Administrator Guide*
+* **ApplicationDev**: *Application Development Guide*
+* **Container**: *Container User Guide*
+* **Installation**: *Installation Guide*
+* **Quickstart**: *Quick Start*
+* **Releasenotes**: *Release Notes*
+* **SecHarden**: *Security Hardening Guide*
+* **Virtualization**: *Virtualization Application Guide*
 
 
-### 如何修改文档
+### Modifying a Document
 
-当openEuler版本信息有刷新时，这里文档也需要刷新。很感谢您愿意提供刷新内容。
-请阅读[资料开发流程指导](https://gitee.com/lss410313/docs/wikis/Home)进行操作参考。
+When the openEuler version information is updated, the documents herein also need to be updated. Thank you for providing updates.
 
-### 如何查看版本分支对应关系
-Docs包含了如下3个分支：
-* master：开发分支，为默认分支。
-* stable-1.0_Base：1.0 Base版本分支，分支内容呈现在[openEuler社区](https://openeuler.org/)网站“文档->1.0 BASE。
-* stable-20.03_LTS：20.03 LTS版本分支，分支内容呈现在[openEuler社区](https://openeuler.org/)网站“文档->20.03 LTS”。
+### Checking the Relationship Between Versions and Branches
+The DOCS contains the following three branches:
 
-### 如何参与SIG
-建立或回复 issue：欢迎通过建立或回复 issue 来讨论。
-提交PR：欢迎通过提交PR的方式参与SIG。具体操作方法可参考[PR提交指南](https://gitee.com/openeuler/community/blob/master/zh/contributors/pull-request.md)。  
-提交评论：欢迎在issue或PR中提交评论。   
-重要的事说三遍：欢迎提交 PR！欢迎提交 PR！欢迎提交 PR！
+* **master**: development branch, which is the default branch
+* **stable-1.0\_Base**: 1.0 Base version branch, which is displayed in **DOCS** > **1.0 BASE** on the [openEuler community website](https://openeuler.org/)
+* **stable-20.03\_LTS**: 20.03 LTS version branch, which is displayed in **DOCS** > **20.03 LTS** on the [openEuler community website](https://openeuler.org/)
 
-### 成员
-#### Maintainer 列表
+### Participating in SIG
+Create or reply to an issue: You can discuss an issue by creating or replying to an issue.
+Submit a Pull Request (PR): You can participate in SIG by submitting a PR.
+Submit comments: You can submit comments on issues or PRs.   
+We are always pleased to receive PRs from you.
+
+### Member
+#### Maintainer List
 - Rudy_Tan(@rudy_tan)
 - amyMaYun(@amy_mayun)
 - fhxing(@fhxing168)
 
-### 如何联系我们
-邮件列表: dev@openeuler.org  
-IRC: #openeuler-doc  
+###  Contacting Us
+E-mails: dev@openeuler.org  
+IRC: #openeuler-doc 
