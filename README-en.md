@@ -31,16 +31,16 @@ The DOCS contains the following three branches:
 * **stable-20.03\_LTS**: 20.03 LTS version branch, which is displayed in **DOCS** > **20.03 LTS** on the [openEuler community website](https://openeuler.org/)
 
 ### Participating in SIG
-Create or reply to an issue: You can discuss an issue by creating or replying to an issue.
-Submit a Pull Request (PR): You can participate in SIG by submitting a PR.
+Create or reply to an issue: You can discuss an issue by creating or replying to an issue.  
+Submit a Pull Request (PR): You can participate in SIG by submitting a PR.  
 Submit comments: You can submit comments on issues or PRs.   
 We are always pleased to receive PRs from you.
 
 ### Member
 #### Maintainer List
-- Rudy_Tan(@rudy_tan)
-- amyMaYun(@amy_mayun)
-- fhxing(@fhxing168)
+- Rudy_Tan (@rudy_tan)
+- amyMaYun (@amy_mayun)
+- fhxing (@fhxing168)
 
 ###  Contacting Us
 E-mails: dev@openeuler.org  
