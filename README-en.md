@@ -15,7 +15,6 @@ Open the **docs** folder. The relationship between guides and folders is as foll
 * **Installation**: *Installation Guide*
 * **Quickstart**: *Quick Start*
 * **Releasenotes**: *Release Notes*
-* **SecHarden**: *Security Hardening Guide*
 * **Virtualization**: *Virtualization Application Guide*
 
 
