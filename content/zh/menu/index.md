@@ -17,7 +17,7 @@ headless: true
 - [快速入门]({{< relref "./docs/Quickstart/quick-start.md" >}})
 
 - [安装指南]({{< relref "./docs/Installation/installation.md" >}})
-    - [安装在服务器]({{< relref "./docs/Installation/安装准在服务器.md" >}})
+    - [安装在服务器]({{< relref "./docs/Installation/安装在服务器.md" >}})
         - [安装准备]({{< relref "./docs/Installation/安装准备.md" >}})
         - [安装方式介绍]({{< relref "./docs/Installation/安装方式介绍.md" >}})
         - [安装指导]({{< relref "./docs/Installation/安装指导.md" >}})
