@@ -23,6 +23,13 @@ headless: true
         - [安装指导]({{< relref "./docs/Installation/安装指导.md" >}})
         - [使用kickstart自动化安装]({{< relref "./docs/Installation/使用kickstart自动化安装.md" >}})
         - [FAQ]({{< relref "./docs/Installation/FAQ.md" >}})
+    - [安装在树莓派]({{< relref "./docs/Installation/安装在树莓派.md" >}})
+        - [安装准备]({{< relref "./docs/Installation/安装准备-1.md" >}})
+        - [安装方式介绍]({{< relref "./docs/Installation/安装方式介绍-1.md" >}})
+        - [安装指导]({{< relref "./docs/Installation/安装指导-1.md" >}})
+        - [FAQ]({{< relref "./docs/Installation/FAQ-1.md" >}})
+        - [更多资源]({{< relref "./docs/Installation/更多资源.md" >}})
+
 
 - [管理员指南]({{< relref "./docs/Administration/administration.md" >}})
     - [查看系统信息]({{< relref "./docs/Administration/查看系统信息.md" >}})
