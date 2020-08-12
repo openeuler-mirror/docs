@@ -42,7 +42,62 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
     ```
     vim /etc/pkgship/package.ini
     ```
+    ```ini
+    [系统配置]
 
+    ; 初始化数据库时导入的yaml文件存放位置，该yaml中记录导入的sqlite文件位置
+    init_conf_path=/etc/pkgship/conf.yaml
+
+    ; 存放成功导入的sqlite文件的地址
+    data_base_path=/var/run/pkgship_dbs
+
+    ; 写接口
+    write_port=8080
+
+    ; 读接口
+    query_port=8090
+
+    ; 写权限访问ip
+    write_ip_addr=127.0.0.1
+
+    ; 读权限访问ip
+    query_ip_addr=127.0.0.1
+    ; 远程服务的地址，命令行可以直接调用远程服务来完成数据请求, 只需在每个命令行后加 --remote参数
+    remote_host=https://api.openeuler.org/pkgmanage
+
+    [数据库配置]
+    ; 若使用mysql数据库，需要填写
+    user_name=
+    password=
+    host=
+    port=
+    database=
+    ; 支持mysql和sqlite
+    dbtype=sqlite
+
+    [LOG]
+
+    ; 日志存放路径
+    log_path=/var/log/pkgship/
+
+    ; 打印日志级别，支持如下：
+    ; INFO DEBUG WARNING ERROR CRITICAL
+    log_level=INFO
+
+    ; 日志名称
+    log_name=log_info.log
+
+    [UWSGI服务配置]
+    ; uwsgi 日志路径
+    daemonize=/var/log/uwsgi.log
+    ; 前后端传输数据大小
+    buffer-size=65536
+    ; HTTP Connection time
+    http-timeout=600
+    ; Server response time
+    harakiri=600
+
+    ```
 2. 创建初始化数据库的yaml配置文件：
     conf.yaml 文件默认存放在 /etc/pkgship/ 路径下，pkgship会通过该配置读取要建立的数据库名称以及需要导入的sqlite文件。conf.yaml 示例如下所示。
 
@@ -72,7 +127,7 @@ pkgshipd stop
     ```
     pkgship init
     ```
-    
+> 使用场景：服务启动后，为了能查询对应的版本库（比如mainline， openEuler-LTS-20.03）中的包信息及包依赖关系，需要将这些版本库通过createrepo生成的sqlite（分为源码库和二进制库）导入进服务内。
 2. 单包查询。
 
     查询源码包(sourceName)在所有数据库中的信息 。
@@ -80,24 +135,24 @@ pkgshipd stop
     ```
     pkgship single sourceName
     ```
-
+> 使用场景： 用户想要查询某个具体的源码包的信息，不区分该包在哪个版本库。
      查询当前源码包(sourceName)在指定数据库(dbName)中的信息。
     ```
      pkgship single sourceName -db dbName
     ```
-    
+> 使用场景： 用户想要查询某个具体的源码包的信息，区分该包某个具体版本库。   
 3. 所有包查询。
     查询所有数据库下包含的所有包的信息。
     
     ```
      pkgship list
     ```
-
+> 使用场景： 用户想要查询关联的所有版本库下所有软件包的信息。
     查询指定数据库(dbName)下的所有包的信息。
     ```
     pkgship list -db dbName
     ```
-    
+> 使用场景： 用户想要查询关联的某个具体版本库下所有软件包的信息。    
 4. 安装依赖查询。
     查询二进制包(binaryName)的安装依赖，按照默认优先级查询数据库。
     
