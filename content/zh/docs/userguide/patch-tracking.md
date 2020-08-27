@@ -1,4 +1,4 @@
-补丁跟踪
+patch-tracking
 ===
 
 
@@ -12,7 +12,7 @@
 
 ## C/S架构
 
-补丁跟踪采用 C/S 架构。
+patch-tracking采用 C/S 架构。
 
 服务端(patch-tracking) ：负责执行补丁跟踪任务，包括：维护跟踪项，识别上游仓库分支代码变更并形成补丁文件，向 Gitee 提交 issue 及 PR，同时 patch-tracking 提供 RESTful 接口，用于对跟踪项进行增删改查操作。
 
