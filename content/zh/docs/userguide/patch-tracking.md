@@ -18,7 +18,7 @@ patch-tracking采用 C/S 架构。
 
 客户端：即命令行工具（patch-tracking-cli），通过调用 patch-tracking 的 RESTful 接口，实现对跟踪项的增删改查操作。 
 ## 软件下载
-rpm包版本获取地址：https://117.78.1.88/package/show/openEuler:Mainline/patch-tracking
+rpm包获取地址：https://117.78.1.88/package/show/openEuler:Mainline/patch-tracking
 
 ## 核心流程
 
