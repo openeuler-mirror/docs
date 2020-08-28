@@ -17,6 +17,8 @@ patch-tracking采用 C/S 架构。
 服务端(patch-tracking) ：负责执行补丁跟踪任务，包括：维护跟踪项，识别上游仓库分支代码变更并形成补丁文件，向 Gitee 提交 issue 及 PR，同时 patch-tracking 提供 RESTful 接口，用于对跟踪项进行增删改查操作。
 
 客户端：即命令行工具（patch-tracking-cli），通过调用 patch-tracking 的 RESTful 接口，实现对跟踪项的增删改查操作。 
+## 软件下载
+rpm包版本获取地址：https://117.78.1.88/package/show/openEuler:Mainline/patch-tracking
 
 ## 核心流程
 
