@@ -67,16 +67,6 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
     ; 远程服务的地址，命令行可以直接调用远程服务来完成数据请求, 只需在每个命令行后加 --remote参数
     remote_host=https://api.openeuler.org/pkgmanage
 
-    [数据库配置]
-    ; 若使用mysql数据库，需要填写
-    user_name=
-    password=
-    host=
-    port=
-    database=
-    ; 支持mysql和sqlite
-    dbtype=sqlite
-
     [LOG]
 
     ; 日志存放路径
@@ -131,38 +121,39 @@ pkgshipd stop
 2. 单包查询。 
 
     查询源码包(sourceName)在数据库中的信息。
-    > 使用场景：当命令后不带配置参数[-db]和[dbName]时，可查询源码包在所有数据库中信息；当命令后带配置参数[-db]和[dbName]时，可查询源码包在具体指定数据库中信息。
+    > 使用场景：[-db dbName]为可选参数，dbName为具体指定的数据库名称。当命令后不带配置参数[-db dbName]时，可查询源码包在所有数据库中信息；当命令后带配置参数[-db dbName]时，可查询源码包在具体指定数据库中信息。  
 
     ```
-    pkgship single sourceName [-db] [dbName]
-    ```   
+    pkgship single sourceName [-db dbName]
+    ``` 
+
 3. 所有包查询。
     查询数据库下包含的所有包的信息。
-    > 使用场景：当命令后不带配置参数[-db]和[dbName]，可查询所有数据库下包含的所有软件包信息；当命令后带配置参数[-db]和[dbName]时，可查询指定数据库下的所有包信息。
+    > 使用场景：[-db dbName]为可选参数，dbName为具体指定的数据库名称。当命令后不带配置参数[-db dbName]，可查询所有数据库下包含的所有软件包信息；当命令后带配置参数[-db dbName]时，可查询指定数据库下的所有包信息。
     
     ```
-    pkgship list [-db] [dbName]
-    ```  
+    pkgship list [-db dbName]
+    ``` 
 4. 安装依赖查询。
     查询二进制包(binaryName)的安装依赖。
-    > 使用场景：用户需要安装某个二进制包A时，需要将该二进制包A的安装依赖B，及B的安装依赖C等等，直至所有的安装依赖全部安装到系统才能成功安装二进制包A。因此，在用户安装二进制包A之前，可能会需要查询二进制包A的所有安装依赖。该命令提供了此功能，当命令后不带配置参数[-dbs] [dbName1] [dbName2]时，允许用户根据平台默认的优先级在多个数据库之间进行查询，当命令后带配置参数[-dbs] [dbName1] [dbName2]，用户可以自定义 数据库查询优先级。   
+    > 使用场景：[-dbs dbName1 dbName2...]为可选参数，dbName1，dbName2...为具体指定的数据库名称。用户需要安装某个二进制包A时，需要将该二进制包A的安装依赖B，及B的安装依赖C等等，直至所有的安装依赖全部安装到系统才能成功安装二进制包A。因此，在用户安装二进制包A之前，可能会需要查询二进制包A的所有安装依赖。该命令提供了此功能，当命令后不带配置参数[-dbs dbName1 dbName2...]时，允许用户根据平台默认的优先级在多个数据库之间进行查询;当命令后带配置参数[-dbs dbName1 dbName2...]，用户可以自定义数据库查询优先级。   
     ```
-    pkgship installdep binaryName [-dbs] [dbName1] [dbName2]...
+    pkgship installdep binaryName [-dbs dbName1 dbName2...]
     ```
    
 5. 编译依赖查询。
     查询源码包(sourceName)的所有编译依赖。
-    > 使用场景：用户要编译某个源码包A的时候，需要安装源码包A的编译依赖B, 要成功安装编译依赖B需要获取B的所有安装依赖。因此，在用户编译源码包A之前，可能会需要查询源码包的编译依赖以及这些编译依赖的所有安装依赖。该命令提供了此功能，当命令后不带配置参数[-dbs] [dbName1] [dbName2]时，允许用户根据平台默认的优先级在多个数据库之间进行查询，当命令后带配置参数[-dbs] [dbName1] [dbName2]，用户可以自定义 数据库查询优先级。
+    > 使用场景：[-dbs dbName1 dbName2...]为可选参数，dbName1，dbName2...为具体指定的数据库名称。用户要编译某个源码包A的时候，需要安装源码包A的编译依赖B, 要成功安装编译依赖B需要获取B的所有安装依赖。因此，在用户编译源码包A之前，可能会需要查询源码包的编译依赖以及这些编译依赖的所有安装依赖。该命令提供了此功能，当命令后不带配置参数[-dbs dbName1 dbName2...]时，允许用户根据平台默认的优先级在多个数据库之间进行查询;当命令后带配置参数[-dbs dbName1 dbName2...]，用户可以自定义 数据库查询优先级。
     ```
-    pkgship builddep sourceName [-dbs] [dbName1] [dbName2]...
+    pkgship builddep sourceName [-dbs dbName1 dbName2...]
     ```
    
 6. 自编译自安装依赖查询。
    > 使用场景：如果开发者想在现有的版本库的基础上引入新的软件包，应同时引入该软件包的所有编译、安装依赖。该命令提供开发者一个同时查询这两种依赖关系的功能，能让开发者知晓该软件包会引入哪些其他的包，该命令支持查询二进制包和源码包。  
     
-    查询二进制包(binaryName)或源码包(sourceName )的安装和编译依赖，按照默认优先级查询数据库，其中[pkgName]为查询的二进制包或者源码包的名称。当查询二进制包时，可以查询到该二进制包的所有安装依赖以及该二进制包对应的源码包的编译依赖，及这些编译依赖的所有安装依赖；当查询源码包，并且命令后带配置参数[-t] [source]时，可以查询该源码包的编译依赖，及这些编译依赖的所有安装依赖，并且查询该源码包生成的所有二进制包的所有安装依赖。
+    查询二进制包(binaryName)或源码包(sourceName )的安装和编译依赖，按照默认优先级查询数据库，其中[pkgName]为查询的二进制包或者源码包的名称。当查询二进制包时，可以查询到该二进制包的所有安装依赖以及该二进制包对应的源码包的编译依赖，及这些编译依赖的所有安装依赖；当查询源码包，并且命令后带配置参数[-t source]时，可以查询该源码包的编译依赖，及这些编译依赖的所有安装依赖，并且查询该源码包生成的所有二进制包的所有安装依赖。
     ```
-     pkgship selfbuild [pkgName] [-t] [source]
+     pkgship selfbuild [pkgName] [-t source]
     ```
      其他参数含义:
 
@@ -184,10 +175,10 @@ pkgshipd stop
     
 7. 被依赖查询。
     查询源码包(sourceName)在某数据库(dbName)中被哪些包所依赖。
-    > 使用场景：使用场景：针对软件源码包A，在升级或删除的情况下会影响哪些软件包，可通过该命令查询。该命令会显示源码包A生成的所有二进制包被哪些源码包（比如B）编译依赖，被哪些二进制包（比如C1）安装依赖；以及B生成的二进制包及C1被哪些源码包（比如D）编译依赖，被哪些二进制包（比如E1）安装依赖，以此类推，遍历这些二进制包的被依赖。 当命令后不带配置参数[-w] [1] 时，查询结果默认不包含对应二进制包的子包；当命令后不带配置参数[-w] [1] 时，不仅会查询二进制包C1的被依赖关系，还会进一步去查询C1对应的源码包C生成的其他二进制包（比如：C2,C3）的被依赖关系。
+    > 使用场景：针对软件源码包A，在升级或删除的情况下会影响哪些软件包，可通过该命令查询。该命令会显示源码包A生成的所有二进制包被哪些源码包（比如B）编译依赖，被哪些二进制包（比如C1）安装依赖；以及B生成的二进制包及C1被哪些源码包（比如D）编译依赖，被哪些二进制包（比如E1）安装依赖，以此类推，遍历这些二进制包的被依赖。 当命令后不带配置参数[-w 1] 时，查询结果默认不包含对应二进制包的子包；当命令后不带配置参数[-w 1] 时，不仅会查询二进制包C1的被依赖关系，还会进一步去查询C1对应的源码包C生成的其他二进制包（比如：C2,C3）的被依赖关系。
     
     ```
-     pkgship bedepend sourceName -db dbName [-w] [1] 
+     pkgship bedepend sourceName -db dbName [-w 1] 
     ```
     
 8. 包信息记录修改。
@@ -196,11 +187,19 @@ pkgshipd stop
     ```
     pkgship updatepkg sourceName db [-m] [-l]
     ```
+    变更数据库中(dbName)源码包(sourceName)的maintainer为Newmaintainer使用示例：  
+    ```
+     pkgship updatepkg sourceName db dbName -m Newmaintainer 
+    ```
+    变更数据库中(dbName)源码包(sourceName)的maintainlevel为Newmaintainlevel使用示例：  
+    ```
+     pkgship updatepkg sourceName db dbName -l Newmaintainlevel
+    ```
 9. 数据库删除。
     删除指定数据库(dbName)。
 
     ```
-    pkgship rm db dbName
+    pkgship rm [db dbName]
     ```
 
 
