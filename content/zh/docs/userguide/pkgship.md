@@ -222,13 +222,13 @@ pkgshipd stop
 
     > -m 表示变更数据库中(dbName)源码包(sourceName)的maintainer为Newmaintainer
 
+    > -l 表示变更数据库中(dbName)源码包(sourceName)的maintainlevel为Newmaintainlevel，值在1～4之间
+
     变更数据库中(dbName)源码包(sourceName)的maintainer为Newmaintainer使用示例：  
 
     ```bash
      pkgship updatepkg sourceName db dbName -m Newmaintainer
     ```
-
-    > -l 表示变更数据库中(dbName)源码包(sourceName)的maintainlevel为Newmaintainlevel，值在1～4之间
 
     变更数据库中(dbName)源码包(sourceName)的maintainlevel为Newmaintainlevel使用示例：  
 
