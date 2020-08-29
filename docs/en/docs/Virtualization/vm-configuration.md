@@ -97,11 +97,33 @@ This section describes how to configure the vCPU and virtual memory.
 
 -   **cpu**: The mode of the virtual processor.
 
-    **mode**: The mode of the vCPU. The  **host-passthrough**  indicates that the architecture and features of the virtual CPU are the same as those of the host.
+    **mode**: The mode of the vCPU.
+
+    -   **host-passthrough**: indicates that the architecture and features of the virtual CPU are the same as those of the host.
+
+    -   **custom**: indicates that the architecture and features of the virtual CPU are configured by the **cpu** element.
 
     Sub-element  **topology**: A sub-element of the element cpu, used to describe the topology structure of a vCPU mode.
 
     -   The attributes  **socket**,  **cores**, and  **threads**  of the sub-element topology describe the number of CPU sockets of a VM, the number of processor cores included in each CPU socket, and the number of hyperthreads included in each processor core, respectively. The attribute value is a positive integer, and a product of the three values is equal to the number of of vCPUs.
+
+    Sub-element  **model**: A sub-element of the element cpu, used to describe the CPU model when **mode** is custom.
+
+    Sub-element  **feature**: A sub-element of the element cpu, used to enable/disable a CPU feature when **mode** is custom.  The attribute **name** describes the name of the CPU feature.  And whether enable the CPU feature is controlled by the attribute **policy**:
+
+    -   **force**: force enable the CPU feature regardless of it being supported by host CPU.
+
+    -   **require**: enable the CPU feature.
+
+    -   **optional**: the CPU feature will be enabled if and only if it is supported by host CPU.
+
+    -   **disable**: disable the CPU feature.
+
+    -   **forbid**: disable the CPU feature and guest creation will fail if the feature is supported by host CPU.
+
+    >![](./public_sys-resources/icon-note.gif) **NOTE:**
+    >
+    >The display of user-mode CPU features in VM (e.g. the 'Flags' field of the 'lscpu' command) needs the support of the VM kernel.  If you use old kernel in VM, some CPU features may not be displayed.
 
 
 ### Configuration Example
@@ -117,6 +139,21 @@ For example, if the number of vCPUs is 4, the processing mode is host-passthroug
         <topology sockets='2' cores='2' threads='1'/>
     </cpu>
 ...
+</domain>
+```
+
+If the virtual memory is 8 GiB, the number of vCPUs is 4, the processing mode is custom, the CPU model is Kunpeng-920, and pmull is disabled, the configuration is as follows:
+
+```
+<domain type='kvm'>
+    ...
+    <vcpu>4</vcpu>
+    <memory unit='GiB'>8</memory>
+    <cpu mode='custom'>
+        <model>Kunpeng-920</model>
+        <feature policy='disable' name='pmull'/>
+    </cpu>
+    ...
 </domain>
 ```
 
