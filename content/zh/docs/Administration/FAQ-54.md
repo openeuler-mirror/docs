@@ -177,33 +177,3 @@ Error:
         ```
 
 3.  重新进行升级操作。
-
-## 通过dnf update 默认方式升级openssh软件包时无法安装openssh相关包
-
-### 问题现象
-
-通过dnf update 默认方式升级openssh软件包时会出现无法安装openssh相关包，提示如下：
-
-
- ```
- cannot install both openssh-7.8p1-8.oe1.aarch64 and openssh-8.2p1-5.oe1.aarch64
- cannot install both openssh-7.8p1-8.oe1.aarch64 and openssh-8.2p1-4.oe1.aarch64
- cannot install the best update condidate for package openssh-clients-8.2p1-5.oe1.aarch64
- cannot install the best update condidate for package openssh-8.2p1-5.oe1.aarch64
-
- ```
-
-### 原因分析
-
-DNF 默认情况下会启用DNF包管理器的“best”模式（对应的参数为--best），该默认选型将始终尝试将升级的包升级到可用的最高版本，即使最高版本无法完全满足它需要的依赖关系。如果使用默认启用的DNF best模式，将提醒用户更新的软件包版本可用但不能满足依赖性。如果出现问题，DNF会提示用户相关依赖问题，以便用户知道。openEuler社区开发人员正在寻求进行此默认更改，以防由于依赖性问题导致无法进行安全修复程序包升级，在当前前提下，它可能会被默默忽略而用户不会意识到。此外，使用DNF最佳模式将迅速提醒开发人员升级路径中的问题。  
-
-### 解决方案
-
-DNF的--nobest选项可用于覆盖/关闭默认的“best”行为，以使用户需要升级的包存在依赖问题的场景下可以正常进行安全修改程序包的升级。  
-本次openEuler 20.03-LTS版本中开发人员已识别到在openssh包安全修复版本升级过程中会存在该场景，建议用户了解上面的分析的情况下，选择合理的升级方式，openEuler同步给出具体升级示例操作：  
-
-
- ```
- dnf update –y –nobest openssh
- 
- ```
