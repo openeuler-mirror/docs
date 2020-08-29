@@ -182,7 +182,7 @@ pkgshipd stop
     > 使用场景：如果开发者想在现有的版本库的基础上引入新的软件包，应同时引入该软件包的所有编译、安装依赖。该命令提供开发者一个同时查询这两种依赖关系的功能，能让开发者知晓该软件包会引入哪些其他的包，该命令支持查询二进制包和源码包。
 
     ```bash
-     pkgship selfbuild [pkgName]
+     pkgship selfbuild [pkgName] [-dbs dbName1 dbName2 ] [-t source] [-s 1] [-w 1]
     ```
 
     > -dbs dbName1 dbName2... 指定数据库优先级,dbName为具体的数据库名称
