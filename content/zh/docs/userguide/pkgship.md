@@ -139,7 +139,8 @@ pkgshipd stop
     pkgship single sourceName [-db dbName]
     ```
 
-    > -db dbName 指定具体的数据库名称
+    > 参数说明：  
+    > -db dbName 指定具体的数据库，其中dbName为数据库名称。
 
 3. 所有包查询。
 
@@ -150,7 +151,8 @@ pkgshipd stop
     pkgship list [-db dbName]
     ```
 
-    > -db dbName 指定具体的数据库名称
+    > 参数说明：  
+    > -db dbName 指定具体的数据库，其中dbName为数据库名称。
 4. 安装依赖查询。
 
     查询二进制包(binaryName)的安装依赖。
@@ -160,7 +162,8 @@ pkgshipd stop
     pkgship installdep binaryName [-dbs dbName1 dbName2...]
     ```
 
-   > -dbs dbName1 dbName2... 具体指定查询数据库的顺序优先级；dbName为具体的数据库名称
+   > 参数说明：  
+   > -dbs dbName1 dbName2... 具体指定查询数据库的顺序优先级，dbName为具体的数据库名称。
 
 5. 编译依赖查询。
 
@@ -171,13 +174,12 @@ pkgshipd stop
     pkgship builddep sourceName [-dbs dbName1 dbName2...]
     ```
 
-   > -dbs dbName1 dbName2... 具体指定查询数据库的顺序优先级；dbName为具体的数据库名称
+   > 参数说明：  
+   > -dbs dbName1 dbName2... 具体指定查询数据库的顺序优先级，dbName为具体的数据库名称。
 
 6. 自编译自安装依赖查询。
 
-    查询指定二进制包(binaryName)或源码包(sourceName )的安装及编译依赖，其中[pkgName]为查询的二进制包或者源码包的名称。当查询二进制包时，可以查询到该二进制包的所有安装依赖以及该二进制包对应的源码包的编译依赖，及这些编译依赖的所有安装依赖；当查询源码包时，可以查询该源码包的编译依赖，及这些编译依赖的所有安装依赖，并且查询该源码包生成的所有二进制包的所有安装依赖。
-
-    同时，配合对应参数使用，该命令也支持查询软件包的自编译依赖查询，和包含子包的依赖查询
+    查询指定二进制包(binaryName)或源码包(sourceName )的安装及编译依赖，其中[pkgName]为查询的二进制包或者源码包的名称。当查询二进制包时，可以查询到该二进制包的所有安装依赖以及该二进制包对应的源码包的编译依赖，及这些编译依赖的所有安装依赖；当查询源码包时，可以查询该源码包的编译依赖，及这些编译依赖的所有安装依赖，并且查询该源码包生成的所有二进制包的所有安装依赖。同时，配合对应参数使用，该命令也支持查询软件包的自编译依赖查询，和包含子包的依赖查询
 
     > 使用场景：如果开发者想在现有的版本库的基础上引入新的软件包，应同时引入该软件包的所有编译、安装依赖。该命令提供开发者一个同时查询这两种依赖关系的功能，能让开发者知晓该软件包会引入哪些其他的包，该命令支持查询二进制包和源码包。
 
@@ -185,24 +187,25 @@ pkgshipd stop
      pkgship selfbuild [pkgName] [-dbs dbName1 dbName2 ] [-t source] [-s 1] [-w 1]
     ```
 
-    > -dbs dbName1 dbName2... 指定数据库优先级,dbName为具体的数据库名称
+    > 参数说明：  
+    > -dbs dbName1 dbName2... 指定数据库优先级,dbName为具体的数据库名称，使用示例如下。  
 
-     ``` bash
-     示例:pkgship selfbuild pkgName -dbs dbName1 dbName2 
-     ```
+    >  ``` bash
+    > 示例:pkgship selfbuild pkgName -dbs dbName1 dbName2 
+    >  ```
 
-    > -t source/binary 指定查询包名pkgnName为二进制包还是源码包，不加-t时，默认为二进制包
-    >-s 增加该参数表示查询软件包的所有安装依赖和所有编译依赖（即编译依赖的源码包的编译依赖），以及所有编译依赖的安装依赖。其中-s参数后面的0表示不查询自编译依赖，1表示查询自编译依赖，默认为0，可以指定1。如果不增加-s参数表示只查询软件包的所有安装依赖和一层编译依赖，以及一层编译依赖的所有安装依赖。
+    > -t source/binary 指定查询包名pkgName为二进制包还是源码包，不加-t时，默认为二进制包。  
+    > -s 增加该参数表示查询软件包的所有安装依赖和所有编译依赖（即编译依赖的源码包的编译依赖），以及所有编译依赖的安装依赖。其中-s参数后面的0表示不查询自编译依赖，1表示查询自编译依赖，默认为0，可以指定1。如果不增加-s参数表示只查询软件包的所有安装依赖和一层编译依赖，以及一层编译依赖的所有安装依赖。
 
-     ```bash
-     查询自编译示例:pkgship selfbuild sourceName -t source -s 1
-     ```
+    > ```bash
+    > 查询自编译示例:pkgship selfbuild pkgName -t source -s 1
+    > ```
 
     > -w 增加该参数表示引入某个二进制包的时候，查询结果会显示出该二进制包对应的源码包以及该源码包生成的所有二进制包。其中-w参数后面的0表示不查询对应子包，1表示查询对应子包，默认为0，可以指定1。如果不增加-w参数表示引入某个二进制包的时候，查询结果只显示对应的源码包。
 
-     ```bash
-     查询子包示例:pkgship selfbuild binaryName -w 1
-     ```
+    > ```bash
+    > 查询子包示例:pkgship selfbuild pkgName -w 1
+    > ```
 
 7. 被依赖查询。
     查询源码包(sourceName)在某数据库(dbName)中被哪些包所依赖。
@@ -212,7 +215,8 @@ pkgshipd stop
      pkgship bedepend sourceName dbName [-w 1]
     ```
 
-    > -w 进一步查询受影响的二进制包对应源码包生成的其他二进制包的被依赖关系。
+    > 参数说明：  
+    > -w 表示进一步查询受影响的二进制包对应源码包生成的其他二进制包的被依赖关系。
 
 8. 包信息记录修改。
 
@@ -220,17 +224,17 @@ pkgshipd stop
     pkgship updatepkg sourceName db [-m] [-l]
     ```
 
-    > -m 表示变更数据库中(dbName)源码包(sourceName)的maintainer为Newmaintainer
+    > 参数说明：  
+    > -m 表示变更数据库中(dbName)源码包(sourceName)的maintainer为Newmaintainer。  
+    > -l 表示变更数据库中(dbName)源码包(sourceName)的maintainlevel为Newmaintainlevel，值在1～4之间。
 
-    > -l 表示变更数据库中(dbName)源码包(sourceName)的maintainlevel为Newmaintainlevel，值在1～4之间
-
-    变更数据库中(dbName)源码包(sourceName)的maintainer为Newmaintainer使用示例：  
+    变更数据库中(dbName)源码包(sourceName)的maintainer为Newmaintainer使用示例如下。  
 
     ```bash
      pkgship updatepkg sourceName db dbName -m Newmaintainer
     ```
 
-    变更数据库中(dbName)源码包(sourceName)的maintainlevel为Newmaintainlevel使用示例：  
+    变更数据库中(dbName)源码包(sourceName)的maintainlevel为Newmaintainlevel使用示例如下。  
 
     ```bash
      pkgship updatepkg sourceName db dbName -l Newmaintainlevel
