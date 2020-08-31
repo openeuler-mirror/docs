@@ -246,8 +246,7 @@ patch-tracking-cli add --server 127.0.0.1:5001 --user admin --password Test@123 
 >--server ：必选参数，启动Patch Tracking服务的URL，例如：127.0.0.1:5001 \
 --table ：必选参数，需要查询的表 \
 --repo ：可选参数，需要查询的repo；如果没有该参数查询表中所有内容 \
---branch ：可选参数，需要查询的branch，必须和--repo同时查询，没有--repo不允许单独查询该参数
-
+--branch ：可选参数，需要查询的branch
 ```shell script
 patch-tracking-cli query --server <LISTEN> --table tracking
 ```
@@ -265,6 +264,19 @@ patch-tracking-cli query --server <LISTEN> --table issue
 ```shell script
 patch-tracking-cli query --server 127.0.0.1:5001 --table issue
 ```
+
+## 删除跟踪项
+
+```shell script
+patch-tracking-cli delete --server SERVER --user USER --password PWD --table TABLE --repo REPO [--branch BRANCH]
+```
+例如：
+```shell script
+patch-tracking-cli delete --server 127.0.0.1:5001 --user admin --password Test@123 --repo testPatchTrack/testPatch1 --branch master
+```
+
+> 可以删除指定repo和branch的单条数据；也可直接删除指定repo下所有branch的数据。
+
 
 ## 码云查看 issue 及 PR
 
