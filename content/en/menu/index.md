@@ -43,6 +43,19 @@ headless: true
     - [FAQs]({{< relref "./docs/Administration/faqs.md" >}})
 
 
+- [Security Hardening Guide]({{< relref "./docs/SecHarden/secHarden.md" >}})
+    - [OS Hardening Overview]({{< relref "./docs/SecHarden/os-hardening-overview.md" >}})
+    - [Security Hardening Guide]({{< relref "./docs/SecHarden/security-hardening-guide.md" >}})
+        - [Account Passwords]({{< relref "./docs/SecHarden/account-passwords.md" >}})
+        - [Authentication and Authorization]({{< relref "./docs/SecHarden/authentication-and-authorization.md" >}})
+        - [System Services]({{< relref "./docs/SecHarden/system-services.md" >}})
+        - [File Permissions]({{< relref "./docs/SecHarden/file-permissions.md" >}})
+        - [Kernel Parameters]({{< relref "./docs/SecHarden/kernel-parameters.md" >}})
+        - [SELinux Configuration]({{< relref "./docs/SecHarden/selinux-configuration.md" >}})
+    - [Security Hardening Tools]({{< relref "./docs/SecHarden/security-hardening-tools.md" >}})
+    - [Appendix]({{< relref "./docs/SecHarden/appendix.md" >}})
+
+
 - [Virtualization User Guide]({{< relref "./docs/Virtualization/virtualization.md" >}})
     - [Introduction to Virtualization]({{< relref "./docs/Virtualization/introduction-to-virtualization.md" >}})
     - [Installation to Virtualization]({{< relref "./docs/Virtualization/installation-to-virtualization.md" >}})
