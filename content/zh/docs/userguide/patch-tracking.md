@@ -77,7 +77,7 @@ rpm包获取地址：https://117.78.1.88/package/show/openEuler:Mainline/patch-t
 
 ```shell script
 yum install -y gcc gcc-c++ python3-devel openssl-devel
-pip3 install flask flask-sqlalchemy flask-apscheduler requests flask_httpauth pandas
+pip3 install flask flask-sqlalchemy flask-apscheduler requests flask_httpauth pandas numpy==1.16.5
 pip3 install -I uwsgi
 ```
 
@@ -186,17 +186,17 @@ pbkdf2:sha256:150000$w38eLeRm$ebb5069ba3b4dda39a698bd1d9d7f5f848af3bd93b11e0cde2
 --branch ：需要进行跟踪的仓库的分支名称 \
 --scm_repo ：被跟踪的上游仓库的仓库名称，github格式：组织/仓库 \
 --scm_branch： 被跟踪的上游仓库的仓库的分支 \
---enable ：是否自动跟踪该仓库
+--enabled ：是否自动跟踪该仓库
 
 例如：
 ```shell script
-patch-tracking-cli add --server 127.0.0.1:5001 --user admin --password Test@123 --version_control github --repo testPatchTrack/testPatch1 --branch master --scm_repo BJMX/testPatch01 --scm_branch test  --enable true
+patch-tracking-cli add --server 127.0.0.1:5001 --user admin --password Test@123 --version_control github --repo testPatchTrack/testPatch1 --branch master --scm_repo BJMX/testPatch01 --scm_branch test  --enabled true
 ```
 
 ### 指定文件添加
 
 参数含义：
->--server ：启动Patch Tracking服务的URL，例如：127.0.0.1:5001 \ 
+>--server ：启动Patch Tracking服务的URL，例如：127.0.0.1:5001 \
 --user ：POST接口需要进行认证的用户名，同settings.conf中的USER参数 \
 --password ：POST接口需要进行认证的口令，为settings.conf中的PASSWORD哈希值对应的实际的口令字符串 \
 --file ：yaml文件路径
@@ -224,7 +224,7 @@ scm_repo ：被跟踪的上游仓库的仓库名称，github格式：组织/仓�
 scm_branch ：被跟踪的上游仓库的仓库的分支 \
 repo ：需要进行跟踪的仓库名称，格式：组织/仓库 \
 branch ：需要进行跟踪的仓库的分支名称 \
-enable ：是否自动跟踪该仓库
+enabled ：是否自动跟踪该仓库
 
 ### 指定目录添加
 
@@ -268,7 +268,7 @@ patch-tracking-cli query --server 127.0.0.1:5001 --table issue
 ## 删除跟踪项
 
 ```shell script
-patch-tracking-cli delete --server SERVER --user USER --password PWD --table TABLE --repo REPO [--branch BRANCH]
+patch-tracking-cli delete --server SERVER --user USER --password PWD --repo REPO [--branch BRANCH]
 ```
 例如：
 ```shell script
