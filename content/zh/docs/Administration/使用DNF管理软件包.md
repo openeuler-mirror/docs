@@ -92,12 +92,12 @@ best=True
 </tr>
 <tr id="zh-cn_topic_0151921080_r096417e2f0524024b93c722dab0113cd"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_p11584914871"><a name="zh-cn_topic_0151921080_p11584914871"></a><a name="zh-cn_topic_0151921080_p11584914871"></a>best</p>
 </td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a406b4dd56fb7483ea43c7231aa2a7499"><a name="zh-cn_topic_0151921080_a406b4dd56fb7483ea43c7231aa2a7499"></a><a name="zh-cn_topic_0151921080_a406b4dd56fb7483ea43c7231aa2a7499"></a>升级包时，总是尝试安装其最高版本，如果最高版本无法安装，则提示无法安装的原因并停止安装。  默认值为True。</p>
+<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a406b4dd56fb7483ea43c7231aa2a7499"><a name="zh-cn_topic_0151921080_a406b4dd56fb7483ea43c7231aa2a7499"></a><a name="zh-cn_topic_0151921080_a406b4dd56fb7483ea43c7231aa2a7499"></a>升级包时，总是尝试安装其最高版本，如果最高版本无法安装，则提示无法安装的原因并停止安装。默认值为True。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0151921080_r447c1e6abe344a719dd9e8b109c799fa"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_a6befc61e1a58499b96ecdcc96b0489d4"><a name="zh-cn_topic_0151921080_a6befc61e1a58499b96ecdcc96b0489d4"></a><a name="zh-cn_topic_0151921080_a6befc61e1a58499b96ecdcc96b0489d4"></a>obsoletes</p>
 </td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a581b6f9d8f9b4ad7b62734f86f6d556e"><a name="zh-cn_topic_0151921080_a581b6f9d8f9b4ad7b62734f86f6d556e"></a><a name="zh-cn_topic_0151921080_a581b6f9d8f9b4ad7b62734f86f6d556e"></a>可选值1和0，设置是否允许更新陈旧的RPM包。认值为1，表示允许更新。</p>
+<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a581b6f9d8f9b4ad7b62734f86f6d556e"><a name="zh-cn_topic_0151921080_a581b6f9d8f9b4ad7b62734f86f6d556e"></a><a name="zh-cn_topic_0151921080_a581b6f9d8f9b4ad7b62734f86f6d556e"></a>可选值1和0，设置是否允许更新陈旧的RPM包。默认值为1，表示允许更新。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0151921080_r30106389463d4ba0bf505a6b78034b23"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_a51da18882a5b41ff8a5a328f73d186dd"><a name="zh-cn_topic_0151921080_a51da18882a5b41ff8a5a328f73d186dd"></a><a name="zh-cn_topic_0151921080_a51da18882a5b41ff8a5a328f73d186dd"></a>gpgcheck</p>
@@ -161,15 +161,15 @@ repository部分允许您定义定制化的openEuler软件源仓库，各个仓�
 
 -   配置/etc/yum.repos.d目录下的.repo文件
 
-    openEuler提供了多种repo源，以AArch64架构的OS repo源为例。使用root权限在openEuler_aarch64.repo文件中添加openEuler repo源，示例如下：
+    openEuler提供了多种repo源供用户在线使用，各repo源含义可参考[系统安装]({{< relref "../Releasenotes/系统安装.md" >}})，以AArch64架构的OS repo源为例。使用root权限在openEuler_aarch64.repo文件中添加openEuler repo源，示例如下：
 
     ```
     # vi /etc/yum.repos.d/openEuler_aarch64.repo
     ```
 
     ```
-    [base]
-    name=openEuler base
+    [osrepo]
+    name=osrepo
     baseurl=https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/
     enabled=1
     gpgcheck=1
@@ -178,7 +178,8 @@ repository部分允许您定义定制化的openEuler软件源仓库，各个仓�
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
-    >gpgkey为验证签名用的公钥。
+    > - enabled为是否启用该软件源仓库，可选值为1和0。默认值为1，表示启用该软件源仓库。
+	> - gpgkey为验证签名用的公钥。
 	
 
 #### 显示当前配置

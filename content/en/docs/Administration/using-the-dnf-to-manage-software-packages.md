@@ -25,7 +25,7 @@ DNF is a Linux software package management tool used to manage RPM software pack
         - [Installation Software Package Group](#installation-software-package-group)
         - [Deleting a Software Package Group](#deleting-a-software-package-group)
     - [Check and Update](#check-and-update)
-        - [Checking For Update](#checking-for-update)
+        - [Checking for Update](#checking-for-update)
         - [Upgrade](#upgrade)
         - [Updating All Packages and Their Dependencies](#updating-all-packages-and-their-dependencies)
 
@@ -118,7 +118,7 @@ Common options are as follows:
 
 #### Configuring the repository Part
 
-The repository part allows you to customize software source repositories. The name of each repository must be unique. Otherwise, conflicts may occur. You can configure a software source by either directly configuring the /etc/dnf/dnf.conf file or configuring the .repo file in the /etc/yum.repos.d directory.
+The repository part allows you to customize openEuler software source repositories. The name of each repository must be unique. Otherwise, conflicts may occur. You can configure a software source by either directly configuring the /etc/dnf/dnf.conf file or configuring the .repo file in the /etc/yum.repos.d directory.
 
 -   Configuring the /etc/dnf/dnf.conf file
 
@@ -160,7 +160,7 @@ The repository part allows you to customize software source repositories. The na
 -   Configuring the .repo file in the /etc/yum.repos.d directory
 
 
-    openEuler provides multiple repo source files. This section uses the OS repo source of the AArch64 architecture as an example. 
+    openEuler provides multiple repo sources for users online. For details about the repo sources, see [System Installation](../Releasenotes/installing-the-os.md.html). This section uses the OS repo source of the AArch64 architecture as an example. 
 
     For example, run the following command as the **root** user to add the openeuler repo source to the openEuler_aarch64.repo file. 
 
@@ -169,8 +169,8 @@ The repository part allows you to customize software source repositories. The na
     ```
 
     ```
-    [base]
-    name=openEuler base
+    [osrepo]
+    name=osrepo
     baseurl=https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/
     enabled=1
     gpgcheck=1
@@ -179,7 +179,8 @@ The repository part allows you to customize software source repositories. The na
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**    
-    >**gpgkey** is the public key used to verify the signature.
+	> - **enabled** indicates whether to enable the software source repository. The value can be **1** or **0**. The default value is **1**, indicating that the software source repository is enabled.
+    > - **gpgkey** is the public key used to verify the signature.
 
 
 #### Displays the Current Configuration

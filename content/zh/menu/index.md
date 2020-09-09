@@ -17,11 +17,19 @@ headless: true
 - [快速入门]({{< relref "./docs/Quickstart/quick-start.md" >}})
 
 - [安装指南]({{< relref "./docs/Installation/installation.md" >}})
-    - [安装准备]({{< relref "./docs/Installation/安装准备.md" >}})
-    - [安装方式介绍]({{< relref "./docs/Installation/安装方式介绍.md" >}})
-    - [安装指导]({{< relref "./docs/Installation/安装指导.md" >}})
-    - [使用kickstart自动化安装]({{< relref "./docs/Installation/使用kickstart自动化安装.md" >}})
-    - [FAQ]({{< relref "./docs/Installation/FAQ.md" >}})
+    - [安装在服务器]({{< relref "./docs/Installation/安装在服务器.md" >}})
+        - [安装准备]({{< relref "./docs/Installation/安装准备.md" >}})
+        - [安装方式介绍]({{< relref "./docs/Installation/安装方式介绍.md" >}})
+        - [安装指导]({{< relref "./docs/Installation/安装指导.md" >}})
+        - [使用kickstart自动化安装]({{< relref "./docs/Installation/使用kickstart自动化安装.md" >}})
+        - [FAQ]({{< relref "./docs/Installation/FAQ.md" >}})
+    - [安装在树莓派]({{< relref "./docs/Installation/安装在树莓派.md" >}})
+        - [安装准备]({{< relref "./docs/Installation/安装准备-1.md" >}})
+        - [安装方式介绍]({{< relref "./docs/Installation/安装方式介绍-1.md" >}})
+        - [安装指导]({{< relref "./docs/Installation/安装指导-1.md" >}})
+        - [FAQ]({{< relref "./docs/Installation/FAQ-1.md" >}})
+        - [更多资源]({{< relref "./docs/Installation/更多资源.md" >}})
+
 
 - [管理员指南]({{< relref "./docs/Administration/administration.md" >}})
     - [查看系统信息]({{< relref "./docs/Administration/查看系统信息.md" >}})
@@ -39,18 +47,6 @@ headless: true
         - [搭建web服务器]({{< relref "./docs/Administration/搭建web服务器.md" >}})
         - [搭建数据库服务器]({{< relref "./docs/Administration/搭建数据库服务器.md" >}})
     - [FAQ]({{< relref "./docs/Administration/FAQ-54.md" >}})
-
-- [安全加固指南]({{< relref "./docs/SecHarden/secHarden.md" >}})
-    - [操作系统加固概述]({{< relref "./docs/SecHarden/操作系统加固概述.md" >}})
-    - [加固指导]({{< relref "./docs/SecHarden/加固指导.md" >}})
-        - [账户口令]({{< relref "./docs/SecHarden/账户口令.md" >}})
-        - [授权认证]({{< relref "./docs/SecHarden/授权认证.md" >}})
-        - [系统服务]({{< relref "./docs/SecHarden/系统服务.md" >}})
-        - [文件权限]({{< relref "./docs/SecHarden/文件权限.md" >}})
-        - [内核参数]({{< relref "./docs/SecHarden/内核参数.md" >}})
-        - [SELinux配置]({{< relref "./docs/SecHarden/SELinux配置.md" >}})
-    - [安全加固工具]({{< relref "./docs/SecHarden/安全加固工具.md" >}})
-    - [附录]({{< relref "./docs/SecHarden/附录.md" >}})
 
 
 - [虚拟化用户指南]({{< relref "./docs/Virtualization/virtualization.md" >}})
@@ -118,6 +114,7 @@ headless: true
             - [容器管理]({{< relref "./docs/Container/容器管理-4.md" >}})
             - [镜像管理]({{< relref "./docs/Container/镜像管理-4.md" >}})
             - [统计信息]({{< relref "./docs/Container/统计信息-4.md" >}})
+    - [isula-build构建工具]({{< relref "./docs/Container/isula-build构建工具.md" >}})
 
 
 - [A-Tune用户指南]({{< relref "./docs/A-Tune/A-Tune.md" >}})
@@ -128,9 +125,13 @@ headless: true
     - [附录]({{< relref "./docs/A-Tune/附录.md" >}})
 
 
-- [应用开发指南]({{< relref "./docs/ApplicationDev/application-development.md" >}})
+- [应用开发指南]({{< relref "./docs/ApplicationDev/application-development.md" >}})userguide
     - [开发环境准备]({{< relref "./docs/ApplicationDev/开发环境准备.md" >}})
     - [使用GCC编译]({{< relref "./docs/ApplicationDev/使用GCC编译.md" >}})
     - [使用make编译]({{< relref "./docs/ApplicationDev/使用make编译.md" >}})
     - [使用JDK编译]({{< relref "./docs/ApplicationDev/使用JDK编译.md" >}})
     - [构建RPM包]({{< relref "./docs/ApplicationDev/构建RPM包.md" >}})
+
+- [openEuler工具集用户指南]({{< relref "./docs/userguide/概述.md" >}})
+    - [补丁工具]({{< relref "./docs/userguide/补丁工具.md" >}})
+    - [pkgship]({{< relref "./docs/userguide/pkgship.md" >}})
