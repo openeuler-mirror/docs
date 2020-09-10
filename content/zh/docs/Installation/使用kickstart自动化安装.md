@@ -315,7 +315,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
     
     ### BEGIN /etc/grub.d/10_linux ###
     menuentry 'Install openEuler 20.09-beta' --class red --class gnu-linux --class gnu --class os {
-            set root=(tftp,192.168.1.1)
+            set root=(tftp,192.168.122.1)
             linux /vmlinuz ro inst.geoloc=0 console=ttyAMA0 console=tty0 rd.iscsi.waitnet=0 inst.ks=http://192.168.122.1/ks/openEuler-ks.cfg
             initrd /initrd.img
     }

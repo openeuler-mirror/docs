@@ -270,10 +270,7 @@ The password of the  **root**  user or the password of the new user must meet th
 4.  A password cannot contain words in the dictionary.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    > In the installed openEuler environment, you can run the following command to export the dictionary library file  **dictionary.txt**, and then check whether the password is in the dictionary.
-    ```
-    cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt
-    ```
+    > In the installed openEuler environment, you can run the `cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt` command to export the dictionary library file  **dictionary.txt**, and then check whether the password is in the dictionary.
 
 ### Setting the Root User Password
 

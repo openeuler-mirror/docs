@@ -262,10 +262,7 @@ After entering the GUI installation page, perform the following operations to in
     -   A password cannot contain words in the dictionary.
     
             >![](public_sys-resources/icon-note.gif) **NOTE:**   
-            > In the installed openEuler environment, you can run the following command to export the dictionary library file  **dictionary.txt**, and then check whether the password is in the dictionary.
-            ```
-            cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt
-            ```
+            > In the installed openEuler environment, you can run the `cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt` command to export the dictionary library file  **dictionary.txt**, and then check whether the password is in the dictionary.
     
     **Figure  11**  Password of the  **root**  account<a name="en-us_topic_0186390266_en-us_topic_0122145909_fig1323165793018"></a>  
     <img src="figures/password-of-the-root-account.png" title="password-of-the-root-account"  />

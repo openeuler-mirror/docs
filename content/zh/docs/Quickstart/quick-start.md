@@ -265,11 +265,7 @@
         4. 口令不能使用字典词汇。
 
             >![](public_sys-resources/icon-note.gif) **说明：**   
-            > 在已装好的openEuler环境中，可以通过如下命令导出字典库文件dictionary.txt，用户可以查询密码是否在该字典中。
-            ```
-            cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt
-            ```
-
+            > 在已装好的openEuler环境中，可以通过`cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt`命令导出字典库文件dictionary.txt，用户可以查询密码是否在该字典中。
 
         **图 10**  root密码<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018"></a>  
         ![](figures/root密码.png "root密码")
