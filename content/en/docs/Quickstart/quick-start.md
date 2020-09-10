@@ -223,10 +223,12 @@ After entering the GUI installation page, perform the following operations to in
 
     2.  Select  **Installation Destination**  to set configuration items.
 
-        On the  **INSTALLATION DESTINATION**  page, select a local storage device or click  **Add a disk**  to add a specified additional device or network device. You also need to configure the storage to partition the system. You can either manually configure partitions or select  **Automatic**  to automatically configure partitioning. Select  **Automatic**  if the software is installed in a new storage device or the data in the storage device is not required, as shown in  [Figure 9](#fig153381468101).
+        On the  **INSTALLATION DESTINATION**  page, select a local storage device. 
 
         >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
         >When selecting the device to be installed, you are advised not to use the NVMe SSD storage medium as the OS installation disk.  
+
+        You also need to configure the storage to partition the system. You can either manually configure partitions or select  **Automatic**  to automatically configure partitioning. Select  **Automatic**  if the software is installed in a new storage device or the data in the storage device is not required, as shown in  [Figure 9](#fig153381468101).
 
         **Figure  9**  Setting the installation destination<a name="fig153381468101"></a>  
         <img src="figures/setting-the-installation-destination.png" title="setting-the-installation-destination"  />
@@ -258,26 +260,9 @@ After entering the GUI installation page, perform the following operations to in
     -   A password must contain at least three of the following types: uppercase letters, lowercase letters, digits, and special characters.
     -   A password must be different from the account name.
     -   A password cannot contain words in the dictionary.
-        -   Querying a dictionary
-
-            In the installed openEuler environment, you can run the following command to export the dictionary library file  **dictionary.txt**, and then check whether the password is in the dictionary.
-
-            ```
-            cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt
-            ```
-
-        -   Modifying a dictionary
-            -   Modify the exported dictionary library file, and then run the following command to update the dictionary library:
-
-                ```
-                create-cracklib-dict dictionary.txt
-                ```
-
-            -   Run the following command to add another dictionary file  **custom.txt**  to the original dictionary library.
-
-                ```
-                create-cracklib-dict dictionary.txt custom.txt
-                ```
+    
+        >![](public_sys-resources/icon-note.gif) **NOTE:**   
+        > In the installed openEuler environment, you can run the `cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt` command to export the dictionary library file  **dictionary.txt**, and then check whether the password is in the dictionary.
     
     **Figure  11**  Password of the  **root**  account<a name="en-us_topic_0186390266_en-us_topic_0122145909_fig1323165793018"></a>  
     <img src="figures/password-of-the-root-account.png" title="password-of-the-root-account"  />
@@ -317,10 +302,10 @@ After the system is installed and restarted, the system CLI login page is displa
     ```
     # cat /etc/os-release
     NAME="openEuler"
-    VERSION="20.03 (LTS)"
+    VERSION="20.09"
     ID="openEuler"
-    VERSION_ID="20.03"
-    PRETTY_NAME="openEuler 20.03 (LTS)"
+    VERSION_ID="20.09"
+    PRETTY_NAME="openEuler 20.09"
     ANSI_COLOR="0;31"
     ```
 

@@ -106,7 +106,7 @@ To use kickstart to perform semi-automatic installation of openEuler, perform th
 
     ```
     # mkdir /var/www/html/ks
-    #vim /var/www/html/ks/openEuler-ks.cfg ===>The file can be obtained by modifying the anaconda-ks.cfg file automatically generated from openEuler, or can be created using the system-config-kickstart tool.
+    #vim /var/www/html/ks/openEuler-ks.cfg ===>The file can be obtained by modifying the anaconda-ks.cfg file automatically generated from openEuler.
     ====================================
     ***Modify the following information as required.***
     #version=DEVEL
@@ -271,7 +271,7 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
     # System language
     lang zh_CN.UTF-8
     #Use http installation source
-    url  --url=//192.168.122.1/openEuler/
+    url  --url=http://192.168.122.1/openEuler/
     %post
     #enable kdump
     sed  -i "s/ ro / ro crashkernel=1024M,high /" /boot/efi/EFI/openEuler/grub.cfg
@@ -315,7 +315,7 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
     
     ### BEGIN /etc/grub.d/10_linux ###
     menuentry 'Install openEuler 20.03 LTS' --class red --class gnu-linux --class gnu --class os {
-            set root=(tftp,192.168.1.1)
+            set root=(tftp,192.168.122.1)
             linux /vmlinuz ro inst.geoloc=0 console=ttyAMA0 console=tty0 rd.iscsi.waitnet=0 inst.ks=http://192.168.122.1/ks/openEuler-ks.cfg
             initrd /initrd.img
     }
@@ -336,7 +336,7 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
     filename "grubaa64.efi";  # pxelinux location of the startup file;
     next-server 192.168.122.1;     # (IMPORTANT) TFTP server IP address;
     subnet 192.168.122.0 netmask 255.255.255.0 {
-    option routers 192.168.111.1; # Gateway address
+    option routers 192.168.122.1; # Gateway address
     option subnet-mask 255.255.255.0; # Subnet mask
     range dynamic-bootp 192.168.122.50 192.168.122.200; # Dynamic IP address range
     default-lease-time 21600;

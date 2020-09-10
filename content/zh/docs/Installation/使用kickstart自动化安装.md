@@ -80,7 +80,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
 
 -   物理机/虚拟机（虚拟机创建可参考对应厂商的资料）。包括使用kickstart工具进行自动化安装的计算机和被安装的计算机。
 -   httpd：存放kickstart文件。
--   ISO： openEuler-20.03-LTS-aarch64-dvd.iso
+-   ISO： openEuler-20.09-beta-aarch64-dvd.iso
 
 ### 操作步骤
 
@@ -106,7 +106,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
 
     ```
     # mkdir /var/www/html/ks
-    # vim /var/www/html/ks/openEuler-ks.cfg ===>根据已安装openEuler系统自动生成的anaconda-ks.cfg修改得到，也可以使用system-config-kickstart工具做成
+    # vim /var/www/html/ks/openEuler-ks.cfg ===>根据已安装openEuler系统自动生成的anaconda-ks.cfg修改得到
     ====================================
     ***以下内容需要根据实际需求进行修改***
     #version=DEVEL
@@ -175,7 +175,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
 **安装系统**
 
 1.  启动系统进入安装选择界面。
-    1.  在“[启动安装](安装指导.html#启动安装)”中的“安装引导界面”中选择“Install openEuler 20.03 LTS”，并按下“e”键。
+    1.  在“[启动安装](安装指导.html#启动安装)”中的“安装引导界面”中选择“Install openEuler 20.09-beta”，并按下“e”键。
     2.  启动参数中追加“inst.ks=http://server ip/ks/openEuler-ks.cfg”。
 
         ![](figures/半自动-new.png)
@@ -199,7 +199,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
 -   httpd：存放kickstart文件。
 -   tftp：提供vmlinuz和initrd文件。
 -   dhcpd/pxe：提供DHCP服务。
--   ISO：openEuler-20.03-LTS-aarch64-dvd.iso。
+-   ISO：openEuler-20.09-beta-aarch64-dvd.iso。
 
 ### 操作步骤
 
@@ -249,7 +249,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
 3.  <a name="zh-cn_topic_0151920754_l1692f6b9284e493683ffa2ef804bc7ca"></a>安装源的制作。
 
     ```
-    # mount openEuler-20.03-LTS-aarch64-dvd.iso /mnt
+    # mount openEuler-20.09-beta-aarch64-dvd.iso /mnt
     # cp -r /mnt/* /var/www/html/openEuler/
     ```
 
@@ -271,7 +271,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
     # System language
     lang zh_CN.UTF-8
     #Use http installation source
-    url  --url=//192.168.122.1/openEuler/
+    url  --url=http://192.168.122.1/openEuler/
     %post
     #enable kdump
     sed  -i "s/ ro / ro crashkernel=1024M,high /" /boot/efi/EFI/openEuler/grub.cfg
@@ -314,8 +314,8 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
     
     
     ### BEGIN /etc/grub.d/10_linux ###
-    menuentry 'Install openEuler 20.03 LTS' --class red --class gnu-linux --class gnu --class os {
-            set root=(tftp,192.168.1.1)
+    menuentry 'Install openEuler 20.09-beta' --class red --class gnu-linux --class gnu --class os {
+            set root=(tftp,192.168.122.1)
             linux /vmlinuz ro inst.geoloc=0 console=ttyAMA0 console=tty0 rd.iscsi.waitnet=0 inst.ks=http://192.168.122.1/ks/openEuler-ks.cfg
             initrd /initrd.img
     }
@@ -336,7 +336,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
     filename "grubaa64.efi"; 　　 # pxelinux 启动文件位置;
     next-server 192.168.122.1;　　# (重要)TFTP Server 的IP地址;
     subnet 192.168.122.0 netmask 255.255.255.0 {
-    option routers 192.168.111.1; # 网关地址
+    option routers 192.168.122.1; # 网关地址
     option subnet-mask 255.255.255.0; # 子网掩码
     range dynamic-bootp 192.168.122.50 192.168.122.200; # 动态ip范围
     default-lease-time 21600;
