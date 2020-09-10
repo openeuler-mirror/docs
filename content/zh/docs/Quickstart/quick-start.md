@@ -221,9 +221,9 @@
 
         设置完成后，请单击左上角“完成”返回“安装概览”页面。
 
-    2. 选择“安装位置”，设置“安装位置”配置项。
+    2. 选择“安装目的地”，设置“安装目的地”配置项。
 
-        在安装位置页面中，您可以选择计算机中的本地可用存储设备，也可以通过单击“添加磁盘”，添加指定的附加设备或者网络设备。
+        在安装位置页面中，您可以选择计算机中的本地可用存储设备。
 
         >![](public_sys-resources/icon-notice.gif) **须知：**   
         >在选择您需要安装的设备时，建议不要选择NVMe SSD存储介质作为操作系统的安装磁盘。  
@@ -272,20 +272,6 @@
                 cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt
                 ```
 
-            - 修改字典
-
-                1. 修改上面导出的字典文件，执行如下命令更新系统字典库。
-
-                    ```
-                    # create-cracklib-dict dictionary.txt
-                    ```
-
-                2. 在原字典库基础上新增其他字典内容custom.txt。
-
-                    ```
-                    # create-cracklib-dict dictionary.txt custom.txt
-                    ```
-
         **图 10**  root密码<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018"></a>  
         ![](figures/root密码.png "root密码")
 
@@ -333,7 +319,7 @@
     ```
     $ cat /etc/os-release
     NAME="openEuler"
-    VERSION="20.09 (LTS)"
+    VERSION="20.09"
     ID="openEuler"
     VERSION_ID="20.09"
     PRETTY_NAME="openEuler 20.09"
