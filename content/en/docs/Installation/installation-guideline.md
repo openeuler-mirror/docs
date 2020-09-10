@@ -192,7 +192,7 @@ After the setting is complete, click  **Done**  in the upper left corner to go b
 
 On the  **INSTALLATION SUMMARY**  page, click  **INSTALLATION DESTINATION**  to select the OS installation disk and partition.
 
-You can view available local storage devices in  [Figure 13](#fig1195417125015). You can also add an attached device or a network disk specified by clicking  **Add a disk**.
+You can view available local storage devices in  [Figure 13](#fig1195417125015). 
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
 >When selecting the device to be installed, you are advised not to use the NVMe SSD storage medium as the OS installation disk.  
@@ -268,28 +268,10 @@ The password of the  **root**  user or the password of the new user must meet th
 2.  A password must contain at least three of the following types: uppercase letters, lowercase letters, digits, and special characters.
 3.  A password must be different from the account name.
 4.  A password cannot contain words in the dictionary.
-    -   Querying a dictionary
 
-        In the installed openEuler environment, you can run the following command to export the dictionary library file  **dictionary.txt**, and then check whether the password is in the dictionary.
-
-        ```
-        cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt
-        ```
-
-    -   Modifying a dictionary
-        1.  Modify the exported dictionary library file, and then run the following command to update the dictionary library:
-
-            ```
-            # create-cracklib-dict dictionary.txt
-            ```
-
-        2.  Run the following command to add another dictionary file  **custom.txt**  to the original dictionary library.
-
-            ```
-            # create-cracklib-dict dictionary.txt custom.txt
-            ```
-
-
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    > In the installed openEuler environment, you can run the following command to export the dictionary library file  **dictionary.txt**, and then check whether the password is in the dictionary.
+    > `cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt`
 
 
 ### Setting the Root User Password
