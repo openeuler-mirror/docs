@@ -73,29 +73,29 @@ rpm 包获取地址：https://build.openeuler.org/package/show/openEuler:20.09/p
 
 ## 安装工具
 
-#### 方法1：从 `repo源` 安装
+#### 方法1：从repo源安装
 
-* 使用 `dnf` 挂载 `repo源`（需要 20.09 或更新的 repo 源，具体方法参考[应用开发指南](https://openeuler.org/zh/docs/20.03_LTS/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装pkgship及其依赖。
+1. 使用 dnf 挂载 repo源（需要 20.09 或更新的 repo 源，具体方法参考[应用开发指南](https://openeuler.org/zh/docs/20.03_LTS/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装pkgship及其依赖。
 
-* 执行以下命令安装 `patch-tracking`
+2. 执行以下命令安装`patch-tracking`。
 
-```shell script
-dnf install patch-tracking
-```
+   ```shell script
+   dnf install patch-tracking
+   ```
 
-#### 方法2：直接使用 `rpm` 安装
+#### 方法2：直接使用rpm安装
 
-* 首先安装相关依赖
+1. 首先安装相关依赖。
 
-```shell script
-dnf install python3-uWSGI python3-flask python3-Flask-SQLAlchemy python3-Flask-APScheduler python3-Flask-Httpauth python3-requests python3-pandas
-```
+   ```shell script
+   dnf install python3-uWSGI python3-flask python3-Flask-SQLAlchemy python3-Flask-APScheduler python3-Flask-Httpauth python3-requests python3-pandas
+   ```
 
-* 以 `patch-tracking-1.0.0-1.oe1.noarch.rpm` 为例，执行如下命令安装
+2. 以 `patch-tracking-1.0.0-1.oe1.noarch.rpm` 为例，执行如下命令安装。
 
-```shell script
-rpm -ivh patch-tracking-1.0.0-1.oe1.noarch.rpm
-```
+   ```shell script
+   rpm -ivh patch-tracking-1.0.0-1.oe1.noarch.rpm
+   ```
 
 
 ## 生成证书
