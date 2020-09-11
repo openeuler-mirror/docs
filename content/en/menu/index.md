@@ -125,6 +125,8 @@ headless: true
             - [Image Management]({{< ref "./docs/Container/image-management-2.md" >}})
             - [Statistics]({{< ref "./docs/Container/statistics.md" >}})
 
+    - [Image Building]({{< relref "./docs/Container/isula-build.md" >}})
+
 
 - [A-Tune User Guide]({{< relref "./docs/A-Tune/A-Tune.md" >}})
     - [Getting to Know A-Tune]({{< relref "./docs/A-Tune/getting-to-know-a-tune.md" >}})
