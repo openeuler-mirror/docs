@@ -17,8 +17,6 @@ patch-tracking采用 C/S 架构。
 服务端(patch-tracking) ：负责执行补丁跟踪任务，包括：维护跟踪项，识别上游仓库分支代码变更并形成补丁文件，向 Gitee 提交 issue 及 PR，同时 patch-tracking 提供 RESTful 接口，用于对跟踪项进行增删改查操作。
 
 客户端：即命令行工具（patch-tracking-cli），通过调用 patch-tracking 的 RESTful 接口，实现对跟踪项的增删改查操作。 
-## 软件下载
-rpm包获取地址：https://117.78.1.88/package/show/openEuler:Mainline/patch-tracking
 
 ## 核心流程
 
@@ -66,24 +64,34 @@ rpm包获取地址：https://117.78.1.88/package/show/openEuler:Mainline/patch-t
 
 # 工具部署
 
-## 环境要求
+## 软件下载
 
->* 安装 Python 3.7及以上版本
->* 已安装 pip3。
+Repo 源挂载正式发布地址：https://repo.openeuler.org/
 
-## 安装依赖
+rpm 包获取地址：https://build.openeuler.org/package/show/openEuler:20.09/patch-tracking
 
-执行如下命令安装依赖包。
-
-```shell script
-yum install -y gcc gcc-c++ python3-devel openssl-devel
-pip3 install flask flask-sqlalchemy flask-apscheduler requests flask_httpauth pandas numpy==1.16.5
-pip3 install -I uwsgi
-```
 
 ## 安装工具
 
-以`patch-tracking-1.0.0-1.oe1.noarch.rpm` 为例，执行如下命令安装工具。
+#### 方法1：从 `repo源` 安装
+
+* 使用 `dnf` 挂载 `repo源`（需要 20.09 或更新的 repo 源，具体方法参考[应用开发指南](https://openeuler.org/zh/docs/20.03_LTS/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装pkgship及其依赖。
+
+* 执行以下命令安装 `patch-tracking`
+
+```shell script
+dnf install patch-tracking
+```
+
+#### 方法2：直接使用 `rpm` 安装
+
+* 首先安装相关依赖
+
+```shell script
+dnf install python3-uWSGI python3-flask python3-Flask-SQLAlchemy python3-Flask-APScheduler python3-Flask-Httpauth python3-requests python3-pandas
+```
+
+* 以 `patch-tracking-1.0.0-1.oe1.noarch.rpm` 为例，执行如下命令安装
 
 ```shell script
 rpm -ivh patch-tracking-1.0.0-1.oe1.noarch.rpm
