@@ -88,7 +88,7 @@ rpm 包获取地址：https://build.openeuler.org/package/show/openEuler:20.09/p
 1. 首先安装相关依赖。
 
    ```shell script
-   dnf install python3-uWSGI python3-flask python3-Flask-SQLAlchemy python3-Flask-APScheduler python3-Flask-Httpauth python3-requests python3-pandas
+   dnf install python3-uWSGI python3-flask python3-Flask-SQLAlchemy python3-Flask-APScheduler python3-Flask-HTTPAuth python3-requests python3-pandas
    ```
 
 2. 以`patch-tracking-1.0.0-1.oe1.noarch.rpm`为例，执行如下命令安装。
