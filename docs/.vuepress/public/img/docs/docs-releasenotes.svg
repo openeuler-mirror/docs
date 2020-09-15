@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="26px" viewBox="0 0 22 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Outlined/UI/paper</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="200" height="60" rx="8"></rect>
+        <filter x="-24.0%" y="-70.0%" width="148.0%" height="260.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="文档_学习路径_20.03-LTS" transform="translate(-430.000000, -587.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1920" height="1464"></rect>
+            <g id="学习路径" transform="translate(409.000000, 500.000000)">
+                <g id="了解" transform="translate(0.000000, 70.000000)">
+                    <g id="发行说明">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Base">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <g id="openEuler/icons/paper" mask="url(#mask-2)" fill="#252C32">
+                            <g transform="translate(16.000000, 14.000000)" id="Style">
+                                <path d="M20.41,2.99999996 L27,9.58999998 L27,26 C27,27.6568543 25.6568543,29 24,29 L24,29 L7.99999997,29 C6.34314572,29 4.99999997,27.6568543 4.99999997,26 L4.99999997,26 L4.99999997,2.99999996 L20.41,2.99999996 Z M18,4.99999997 L6.99999997,4.99999997 L6.99999997,26 C6.99999997,26.5522848 7.44771522,27 7.99999997,27 L7.99999997,27 L24,27 C24.5522848,27 25,26.5522848 25,26 L25,26 L25,12 L21,12 C19.3431458,12 18,10.6568542 18,8.99999997 L18,8.99999997 L18,4.99999997 Z M16,19 L16,21 L11,21 L11,19 L16,19 Z M21,15 L21,17 L11,17 L11,15 L21,15 Z M20,5.40999997 L20,8.99999998 C20,9.55228473 20.4477153,9.99999998 21,9.99999998 L21,9.99999998 L24.59,9.99999998 L20,5.40999997 Z"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

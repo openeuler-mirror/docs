@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="16px" viewBox="0 0 8 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape</title>
+    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LandingPage" transform="translate(-540.000000, -1378.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1920" height="5239"></rect>
+            <g id="Workshop排期备份" transform="translate(0.000000, 1081.000000)">
+                <g id="活动日历" transform="translate(400.000000, 285.000000)">
+                    <rect id="矩形" fill="#FFFFFF" x="140" y="0" width="980" height="44"></rect>
+                    <g id="ic/arrow_left/white" transform="translate(140.000000, 12.000000)" fill="#002FA7" fill-rule="nonzero">
+                        <g id="ic_arrow_left_24px">
+                            <polygon id="Shape" points="8 0 0 8 8 16"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

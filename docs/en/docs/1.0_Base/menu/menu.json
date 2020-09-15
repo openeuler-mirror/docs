@@ -1,0 +1,199 @@
+[
+    {
+    "label": "Installation Guide",
+    "path": "docs/Installation/Installation",
+    "children": [{
+        "label": "Terms of Use",
+        "path": "docs/Installation/terms-of-use",
+        "children": []
+    }, {
+        "label": "Preface",
+        "path": "docs/Installation/preface",
+        "children": []
+    }, {
+        "label": "Installation Preparations",
+        "path": "docs/Installation/installation-preparations",
+        "children": [{
+            "label": "Obtaining the Installation Source",
+            "path": "docs/Installation/obtaining-the-installation-source",
+            "children": []
+        }, {
+            "label": "Release Package Integrity Check",
+            "path": "docs/Installation/release-package-integrity-check",
+            "children": []
+        }, {
+            "label": "Hardware Compatibility",
+            "path": "docs/Installation/hardware-compatibility",
+            "children": []
+        }, {
+            "label": "Minimum Hardware Specifications",
+            "path": "docs/Installation/minimum-hardware-specifications",
+            "children": []
+        }]
+    }, {
+        "label": "Installation Mode",
+        "path": "docs/Installation/installation-mode",
+        "children": [{
+            "label": "Installation Through the CD/DVD-ROM",
+            "path": "docs/Installation/installation-through-the-cd-dvd-rom",
+            "children": []
+        }, {
+            "label": "Installation Through a USB Flash Drive",
+            "path": "docs/Installation/installation-through-a-usb-flash-drive",
+            "children": []
+        }, {
+            "label": "Installation Through the Network Using PXE",
+            "path": "docs/Installation/installation-through-the-network-using-pxe",
+            "children": []
+        }]
+    }, {
+        "label": "Installation Guideline",
+        "path": "docs/Installation/installation-guideline",
+        "children": [{
+            "label": "Starting the Installation",
+            "path": "docs/Installation/starting-the-installation",
+            "children": []
+        }, {
+            "label": "Using GUI Mode for Installation",
+            "path": "docs/Installation/using-gui-mode-for-installation",
+            "children": [{
+                "label": "Configuring an Installation Program Language",
+                "path": "docs/Installation/configuring-an-installation-program-language",
+                "children": []
+            }, {
+                "label": "Entering the Installation Interface",
+                "path": "docs/Installation/entering-the-installation-interface",
+                "children": []
+            }, {
+                "label": "Setting Installation Parameters",
+                "path": "docs/Installation/setting-installation-parameters",
+                "children": [{
+                    "label": "Setting the Keyboard Layout",
+                    "path": "docs/Installation/setting-the-keyboard-layout",
+                    "children": []
+                }, {
+                    "label": "Setting a System Language",
+                    "path": "docs/Installation/setting-a-system-language",
+                    "children": []
+                }, {
+                    "label": "Setting Date and Time",
+                    "path": "docs/Installation/setting-date-and-time",
+                    "children": []
+                }, {
+                    "label": "Setting the Installation Source",
+                    "path": "docs/Installation/setting-the-installation-source",
+                    "children": []
+                }, {
+                    "label": "Selecting Installation Software",
+                    "path": "docs/Installation/selecting-installation-software",
+                    "children": []
+                }]
+            }, {
+                "label": "Starting Installation",
+                "path": "docs/Installation/starting-installation",
+                "children": []
+            }, {
+                "label": "Configurations During Installation",
+                "path": "docs/Installation/configurations-during-installation",
+                "children": []
+            }, {
+                "label": "Completing the Installation",
+                "path": "docs/Installation/completing-the-installation",
+                "children": []
+            }]
+        }, {
+            "label": "Using Text Mode for Installation",
+            "path": "docs/Installation/using-text-mode-for-installation",
+            "children": [{
+                "label": "Entering the Installation Interface",
+                "path": "docs/Installation/entering-the-installation-interface-0",
+                "children": []
+            }, {
+                "label": "Setting Installation Parameters",
+                "path": "docs/Installation/setting-installation-parameters-1",
+                "children": [{
+                    "label": "Configuring the System Language",
+                    "path": "docs/Installation/configuring-the-system-language",
+                    "children": []
+                }, {
+                    "label": "Configuring the Time Zone and NTP Service",
+                    "path": "docs/Installation/configuring-the-time-zone-and-ntp-service",
+                    "children": []
+                }, {
+                    "label": "Configuring the Installation Source",
+                    "path": "docs/Installation/configuring-the-installation-source",
+                    "children": []
+                }, {
+                    "label": "Selecting Installation Software",
+                    "path": "docs/Installation/selecting-installation-software-2",
+                    "children": []
+                }, {
+                    "label": "Configuring the Installation Location",
+                    "path": "docs/Installation/configuring-the-installation-location",
+                    "children": []
+                }, {
+                    "label": "Configuring the Network",
+                    "path": "docs/Installation/configuring-the-network",
+                    "children": []
+                }, {
+                    "label": "Setting the root User Password",
+                    "path": "docs/Installation/setting-the-root-user-password",
+                    "children": []
+                }, {
+                    "label": "Creating a User",
+                    "path": "docs/Installation/creating-a-user",
+                    "children": []
+                }]
+            }, {
+                "label": "Completing the Installation",
+                "path": "docs/Installation/completing-the-installation-3",
+                "children": []
+            }]
+        }]
+    }, {
+        "label": "Using Kickstart for Automatic Installation",
+        "path": "docs/Installation/using-kickstart-for-automatic-installation",
+        "children": [{
+            "label": "Introduction",
+            "path": "docs/Installation/introduction",
+            "children": []
+        }, {
+            "label": "Semi-automatic Installation Guide",
+            "path": "docs/Installation/semi-automatic-installation-guide",
+            "children": []
+        }, {
+            "label": "Full-automatic Installation Guide",
+            "path": "docs/Installation/full-automatic-installation-guide",
+            "children": []
+        }]
+    }, {
+        "label": "FAQs",
+        "path": "docs/Installation/faqs",
+        "children": [{
+            "label": "Why Does openEuler Fail to Start After I Install It to the Second Disk?",
+            "path": "docs/Installation/why-does-openeuler-fail-to-start-after-i-install-it-to-the-second-disk",
+            "children": []
+        }, {
+            "label": "What Are the Constraints on Network Configurations?",
+            "path": "docs/Installation/what-are-the-constraints-on-network-configurations",
+            "children": []
+        }, {
+            "label": "Why Does openEuler Enter Emergency Mode After It Is Powered On?",
+            "path": "docs/Installation/why-does-openeuler-enter-emergency-mode-after-it-is-powered-on",
+            "children": []
+        }, {
+            "label": "Failed to Reinstall openEuler When a Logical Volume Group That Cannot Be Activated Has Existed in openEuler",
+            "path": "docs/Installation/failed-to-reinstall-openeuler-when-a-logical-volume-group-that-cannot-be-activated-has-existed-in-op",
+            "children": []
+        }, {
+            "label": "An Exception Occurs During the Selection of the Installation Source",
+            "path": "docs/Installation/an-exception-occurs-during-the-selection-of-the-installation-source",
+            "children": []
+        }, {
+            "label": "How Do I Manually Enable the kdump Service?",
+            "path": "docs/Installation/how-do-i-manually-enable-the-kdump-service",
+            "children": []
+        }]
+    }]
+}
+]
