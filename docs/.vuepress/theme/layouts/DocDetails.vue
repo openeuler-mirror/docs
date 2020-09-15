@@ -268,7 +268,7 @@ export default {
     },
     getVersionArr(){
         let timer = setTimeout(() => {
-            let allVersions = require("../../../" + this.$lang + "/path/path.json");
+            let allVersions = require("../../../" + this.$lang + "/docs/path/path.json");
             for(let i of allVersions){
                 this.versionArr.push(i.value);
             }
