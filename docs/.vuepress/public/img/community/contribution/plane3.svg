@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="73px" height="61px" viewBox="0 0 73 61" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组备份 14</title>
+    <defs>
+        <polygon id="path-1" points="0.819689618 0.886777501 43.6382896 0.886777501 43.6382896 34.4685775 0.819689618 34.4685775"></polygon>
+        <polygon id="path-3" points="0.922389618 0.884577501 51.6382896 0.884577501 51.6382896 30.4685775 0.922389618 30.4685775"></polygon>
+        <polygon id="path-5" points="0.921889618 0.158377501 51.6382896 0.158377501 51.6382896 25.4683775 0.921889618 25.4683775"></polygon>
+        <polygon id="path-7" points="0.843489618 0.157977501 61.6382896 0.157977501 61.6382896 25.4687775 0.843489618 25.4687775"></polygon>
+    </defs>
+    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="社区_贡献攻略切图" transform="translate(-1000.000000, -997.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1920" height="1291"></rect>
+            <g id="编组备份-4" transform="translate(1035.793031, 1027.621210) rotate(27.000000) translate(-1035.793031, -1027.621210) translate(1004.793031, 1009.621210)">
+                <g id="编组" transform="translate(18.000000, 0.582100)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M43.6386896,34.4685775 C42.6906896,33.2985775 7.07568962,0.886577501 7.07568962,0.886577501 L0.819689618,4.8845775 L43.6386896,34.4685775 Z" id="Fill-1" fill="#AFCBEA" mask="url(#mask-2)"></path>
+                </g>
+                <g id="编组" transform="translate(10.000000, 4.582100)">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <g id="Clip-4"></g>
+                    <polygon id="Fill-3" fill="#3D84C6" mask="url(#mask-4)" points="8.81938962 0.884577501 0.922389618 20.1645775 51.6383896 30.4685775"></polygon>
+                </g>
+                <g id="编组" transform="translate(10.000000, 9.582100)">
+                    <mask id="mask-6" fill="white">
+                        <use xlink:href="#path-5"></use>
+                    </mask>
+                    <g id="Clip-6"></g>
+                    <polygon id="Fill-5" fill="#7FA9DA" mask="url(#mask-6)" points="0.921889618 15.1643775 51.6388896 25.4683775 1.19188962 0.158377501"></polygon>
+                </g>
+                <g id="编组" transform="translate(-0.000000, 9.582100)">
+                    <mask id="mask-8" fill="white">
+                        <use xlink:href="#path-7"></use>
+                    </mask>
+                    <g id="Clip-8"></g>
+                    <polygon id="Fill-7" fill="#AFCBEA" mask="url(#mask-8)" points="11.1914896 0.157977501 61.6384896 25.4689775 0.843489618 7.5639775"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

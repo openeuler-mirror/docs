@@ -1,0 +1,89 @@
+[
+    {
+        "value": "1.0_Base",
+        "name": "1.0 BASE",
+        "docs": [
+            {
+                "title": "Install",
+                "doc": [
+                    {
+                        "img": "/img/docs/docs-installation.svg",
+                        "path": "/docs/Installation/Installation.html",
+                        "name": "Installation Guide"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "value": "20.03_LTS",
+        "name": "20.03 LTS",
+        "docs": [
+            {
+                "title": "About",
+                "doc": [
+                    {
+                        "img": "/img/docs/docs-releasenotes.svg",
+                        "path": "/docs/Releasenotes/release_notes.html",
+                        "name": "Release Notes"
+                    }
+                ]
+            },
+            {
+                "title": "Install",
+                "doc": [
+                    {
+                        "img": "/img/docs/docs-quickstart.svg",
+                        "path": "/docs/Quickstart/quick-start.html",
+                        "name": "Quick Start"
+                    },
+                    {
+                        "img": "/img/docs/docs-installation.svg",
+                        "path": "/docs/Installation/Installation.html",
+                        "name": "Installation Guide"
+                    }
+                ]
+            },
+            {
+                "title": "Mgmt",
+                "doc": [
+                    {
+                        "img": "/img/docs/docs-administration.svg",
+                        "path": "/docs/Administration/administration.html",
+                        "name": "Administrator Guide"
+                    }
+                ]
+            },
+            {
+                "title": "Use",
+                "doc": [
+                    {
+                        "img": "/img/docs/docs-user.svg",
+                        "path": "/docs/Virtualization/virtualization.html",
+                        "name": "Virtualization User Guide"
+                    },
+                    {
+                        "img": "/img/docs/docs-user.svg",
+                        "path": "/docs/Container/container.html",
+                        "name": "Container User Guide"
+                    },
+                    {
+                        "img": "/img/docs/docs-user.svg",
+                        "path": "/docs/A-Tune/A-Tune.html",
+                        "name": "A-Tune User Guide"
+                    }
+                ]
+            },
+            {
+                "title": "Dev",
+                "doc": [
+                    {
+                        "img": "/img/docs/docs-application.svg",
+                        "path": "/docs/ApplicationDev/application-development.html",
+                        "name": "Application Development Guide"
+                    }
+                ]
+            }
+        ]
+    }
+]

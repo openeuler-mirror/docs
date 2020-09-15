@@ -1,0 +1,433 @@
+[{
+    "label": "Terms of Use",
+    "path": "docs/Releasenotes/terms-of-use",
+    "children": []
+}, {
+    "label": "Release Notes",
+    "path": "docs/Releasenotes/release_notes",
+    "children": [{
+        "label": "User Notice",
+        "path": "docs/Releasenotes/user-notice",
+        "children": []
+    }, {
+        "label": "Introduction",
+        "path": "docs/Releasenotes/introduction",
+        "children": []
+    }, {
+        "label": "Installing the OS",
+        "path": "docs/Releasenotes/installing-the-os",
+        "children": []
+    }, {
+        "label": "Key Features",
+        "path": "docs/Releasenotes/key-features",
+        "children": []
+    }, {
+        "label": "Known Issues",
+        "path": "docs/Releasenotes/known-issues",
+        "children": []
+    }, {
+        "label": "Resolved Issues",
+        "path": "docs/Releasenotes/resolved-issues",
+        "children": []
+    }, {
+        "label": "Common Vulnerabilities and Exposures \\(CVE\\)",
+        "path": "docs/Releasenotes/common-vulnerabilities-and-exposures-(cve)",
+        "children": []
+    }, {
+        "label": "Source Code",
+        "path": "docs/Releasenotes/source-code",
+        "children": []
+    }, {
+        "label": "Contribution",
+        "path": "docs/Releasenotes/contribution",
+        "children": []
+    }, {
+        "label": "Acknowledgement",
+        "path": "docs/Releasenotes/acknowledgement",
+        "children": []
+    }]
+}, {
+    "label": "Quick Start",
+    "path": "docs/Quickstart/quick-start",
+    "children": []
+}, {
+    "label": "Installation Guide",
+    "path": "docs/Installation/Installation",
+    "children": [{
+        "label": "Installation Preparations",
+        "path": "docs/Installation/installation-preparations",
+        "children": []
+    }, {
+        "label": "Installation Mode",
+        "path": "docs/Installation/installation-mode",
+        "children": []
+    }, {
+        "label": "Installation Guideline",
+        "path": "docs/Installation/installation-guideline",
+        "children": []
+    }, {
+        "label": "Using Kickstart for Automatic Installation",
+        "path": "docs/Installation/using-kickstart-for-automatic-installation",
+        "children": []
+    }, {
+        "label": "FAQs",
+        "path": "docs/Installation/faqs",
+        "children": []
+    }]
+}, {
+    "label": "Administrator Guide",
+    "path": "docs/Administration/administration",
+    "children": [{
+        "label": "Viewing System Information",
+        "path": "docs/Administration/viewing-system-information",
+        "children": []
+    }, {
+        "label": "Basic Configuration",
+        "path": "docs/Administration/basic-configuration",
+        "children": []
+    }, {
+        "label": "User and User Group Management",
+        "path": "docs/Administration/user-and-user-group-management",
+        "children": []
+    }, {
+        "label": "Using the DNF to Manage Software Packages",
+        "path": "docs/Administration/using-the-dnf-to-manage-software-packages",
+        "children": []
+    }, {
+        "label": "Service Management",
+        "path": "docs/Administration/service-management",
+        "children": []
+    }, {
+        "label": "Process Management",
+        "path": "docs/Administration/process-management",
+        "children": []
+    }, {
+        "label": "Configuring the Network",
+        "path": "docs/Administration/configuring-the-network",
+        "children": []
+    }, {
+        "label": "Managing Hard Disks Through LVM",
+        "path": "docs/Administration/managing-hard-disks-through-lvm",
+        "children": []
+    }, {
+        "label": "Using the KAE",
+        "path": "docs/Administration/using-the-kae",
+        "children": []
+    }, {
+        "label": "Configuring Services",
+        "path": "docs/Administration/configuring-services",
+        "children": [{
+            "label": "Configuring the Repo Server",
+            "path": "docs/Administration/configuring-the-repo-server",
+            "children": []
+        }, {
+            "label": "Configuring the FTP Server",
+            "path": "docs/Administration/configuring-the-ftp-server",
+            "children": []
+        }, {
+            "label": "Configuring the Web Server",
+            "path": "docs/Administration/configuring-the-web-server",
+            "children": []
+        }, {
+            "label": "Setting Up the Database Server",
+            "path": "docs/Administration/setting-up-the-database-server",
+            "children": []
+        }]
+    }, {
+        "label": "FAQs",
+        "path": "docs/Administration/faqs",
+        "children": []
+    }]
+}, {
+    "label": "Virtualization User Guide",
+    "path": "docs/Virtualization/virtualization",
+    "children": [{
+        "label": "Introduction to Virtualization",
+        "path": "docs/Virtualization/introduction-to-virtualization",
+        "children": []
+    }, {
+        "label": "Installation to Virtualization",
+        "path": "docs/Virtualization/installation-to-virtualization",
+        "children": []
+    }, {
+        "label": "Environment Preparation",
+        "path": "docs/Virtualization/environment-preparation",
+        "children": []
+    }, {
+        "label": "VM Configuration",
+        "path": "docs/Virtualization/vm-configuration",
+        "children": []
+    }, {
+        "label": "Managing VMs",
+        "path": "docs/Virtualization/managing-vms",
+        "children": []
+    }, {
+        "label": "VM Live Migration",
+        "path": "docs/Virtualization/vm-live-migration",
+        "children": []
+    }, {
+        "label": "System Resource Management",
+        "path": "docs/Virtualization/system-resource-management",
+        "children": []
+    }, {
+        "label": "Managing Devices",
+        "path": "docs/Virtualization/managing-devices",
+        "children": []
+    }, {
+        "label": "Best Practices",
+        "path": "docs/Virtualization/best-practices",
+        "children": []
+    }, {
+        "label": "Appendix",
+        "path": "docs/Virtualization/appendix",
+        "children": []
+    }]
+}, {
+    "label": "Container User Guide",
+    "path": "docs/Container/container",
+    "children": [{
+        "label": "iSulad Container Engine",
+        "path": "docs/Container/isulad-container-engine",
+        "children": [{
+            "label": "Installation, Upgrade and Uninstallation",
+            "path": "docs/Container/installation-upgrade-Uninstallation",
+            "children": [{
+                "label": "Installation and Configuration",
+                "path": "docs/Container/installation-configuration",
+                "children": []
+            }, {
+                "label": "Upgrade Methods",
+                "path": "docs/Container/upgrade-methods",
+                "children": []
+            }, {
+                "label": "Uninstallation",
+                "path": "docs/Container/uninstallation",
+                "children": []
+            }]
+        }, {
+            "label": "Application Scenarios",
+            "path": "docs/Container/application-scenarios",
+            "children": [{
+                "label": "Container Management",
+                "path": "docs/Container/container-management",
+                "children": []
+            }, {
+                "label": "Interconnection with the CNI Network",
+                "path": "docs/Container/interconnection-with-the-cni-network",
+                "children": []
+            }, {
+                "label": "Container Resource Management",
+                "path": "docs/Container/container-resource-management",
+                "children": []
+            }, {
+                "label": "Privileged Container",
+                "path": "docs/Container/privileged-container",
+                "children": []
+            }, {
+                "label": "CRI",
+                "path": "docs/Container/cri",
+                "children": []
+            }, {
+                "label": "Image Management",
+                "path": "docs/Container/image-management",
+                "children": []
+            }, {
+                "label": "Checking the Container Health Status",
+                "path": "docs/Container/checking-the-container-health-status",
+                "children": []
+            }, {
+                "label": "Querying Information",
+                "path": "docs/Container/querying-information",
+                "children": []
+            }, {
+                "label": "Security Features",
+                "path": "docs/Container/security-features",
+                "children": []
+            }, {
+                "label": "Supporting OCI hooks",
+                "path": "docs/Container/supporting-oci-hooks",
+                "children": []
+            }]
+        }, {
+            "label": "Appendix",
+            "path": "docs/Container/appendix",
+            "children": []
+        }]
+    }, {
+        "label": "System Container",
+        "path": "docs/Container/system-container",
+        "children": [{
+            "label": "Installation Guideline",
+            "path": "docs/Container/installation-guideline",
+            "children": []
+        }, {
+            "label": "Usage Guide",
+            "path": "docs/Container/usage-guide",
+            "children": [{
+                "label": "Specifying Rootfs to Create a Container",
+                "path": "docs/Container/specifying-rootfs-to-create-a-container",
+                "children": []
+            }, {
+                "label": "Using systemd to Start a Container",
+                "path": "docs/Container/using-systemd-to-start-a-container",
+                "children": []
+            }, {
+                "label": "Reboot or Shutdown in a Container",
+                "path": "docs/Container/reboot-or-shutdown-in-a-container",
+                "children": []
+            }, {
+                "label": "Configurable Cgroup Path",
+                "path": "docs/Container/configurable-cgroup-path",
+                "children": []
+            }, {
+                "label": "Writable Namespace Kernel Parameters",
+                "path": "docs/Container/writable-namespace-kernel-parameters",
+                "children": []
+            }, {
+                "label": "Shared Memory Channels",
+                "path": "docs/Container/shared-memory-channels",
+                "children": []
+            }, {
+                "label": "Dynamically Loading the Kernel Module",
+                "path": "docs/Container/dynamically-loading-the-kernel-module",
+                "children": []
+            }, {
+                "label": "Environment Variable Persisting",
+                "path": "docs/Container/environment-variable-persisting",
+                "children": []
+            }, {
+                "label": "Maximum Number of Handles",
+                "path": "docs/Container/maximum-number-of-handles",
+                "children": []
+            }, {
+                "label": "Security and Isolation",
+                "path": "docs/Container/security-and-isolation",
+                "children": []
+            }, {
+                "label": "Dynamically Managing Container Resources \\(syscontainer-tools\\)",
+                "path": "docs/Container/dynamically-managing-container-resources-(syscontainer-tools)",
+                "children": []
+            }]
+        }, {
+            "label": "Appendix",
+            "path": "docs/Container/appendix-1",
+            "children": []
+        }]
+    }, {
+        "label": "Secure Container",
+        "path": "docs/Container/secure-container",
+        "children": [{
+            "label": "Installation and Deployment",
+            "path": "docs/Container/installation-and-deployment-1",
+            "children": []
+        }, {
+            "label": "Application Scenarios",
+            "path": "docs/Container/application-scenarios-2",
+            "children": [{
+                "label": "Managing the Lifecycle of a Secure Container",
+                "path": "docs/Container/managing-the-lifecycle-of-a-secure-container",
+                "children": []
+            }, {
+                "label": "Configuring Resources for a Secure Container",
+                "path": "docs/Container/configuring-resources-for-a-secure-container",
+                "children": []
+            }, {
+                "label": "Configuring Networking for a Secure Container",
+                "path": "docs/Container/configuring-networking-for-a-secure-container",
+                "children": []
+            }, {
+                "label": "Monitoring Secure Containers",
+                "path": "docs/Container/monitoring-secure-containers",
+                "children": []
+            }]
+        }, {
+            "label": "Appendix",
+            "path": "docs/Container/appendix-2",
+            "children": []
+        }]
+    }, {
+        "label": "Docker Container",
+        "path": "docs/Container/docker-container",
+        "children": [{
+            "label": "Installation and Deployment",
+            "path": "docs/Container/installation-and-deployment-2",
+            "children": []
+        }, {
+            "label": "Container Management",
+            "path": "docs/Container/container-management-1",
+            "children": []
+        }, {
+            "label": "Image Management",
+            "path": "docs/Container/image-management-1",
+            "children": []
+        }, {
+            "label": "Command Reference",
+            "path": "docs/Container/command-reference",
+            "children": [{
+                "label": "Container Engine",
+                "path": "docs/Container/container-engine",
+                "children": []
+            }, {
+                "label": "Container Management",
+                "path": "docs/Container/container-management-2",
+                "children": []
+            }, {
+                "label": "Image Management",
+                "path": "docs/Container/image-management-2",
+                "children": []
+            }, {
+                "label": "Statistics",
+                "path": "docs/Container/statistics",
+                "children": []
+            }]
+        }]
+    }]
+}, {
+    "label": "A-Tune User Guide",
+    "path": "docs/A-Tune/A-Tune",
+    "children": [{
+        "label": "Getting to Know A-Tune",
+        "path": "docs/A-Tune/getting-to-know-a-tune",
+        "children": []
+    }, {
+        "label": "Installation and Deployment",
+        "path": "docs/A-Tune/installation-and-deployment",
+        "children": []
+    }, {
+        "label": "Application Scenarios",
+        "path": "docs/A-Tune/application-scenarios",
+        "children": []
+    }, {
+        "label": "FAQs",
+        "path": "docs/A-Tune/faqs",
+        "children": []
+    }, {
+        "label": "Appendixes",
+        "path": "docs/A-Tune/appendixes",
+        "children": []
+    }]
+}, {
+    "label": "Application Development Guide",
+    "path": "docs/ApplicationDev/application-development",
+    "children": [{
+        "label": "Preparation",
+        "path": "docs/ApplicationDev/preparation",
+        "children": []
+    }, {
+        "label": "Using GCC for Compilation",
+        "path": "docs/ApplicationDev/using-gcc-for-compilation",
+        "children": []
+    }, {
+        "label": "Using Make for Compilation",
+        "path": "docs/ApplicationDev/using-make-for-compilation",
+        "children": []
+    }, {
+        "label": "Using JDK for Compilation",
+        "path": "docs/ApplicationDev/using-jdk-for-compilation",
+        "children": []
+    }, {
+        "label": "Building an RPM Package",
+        "path": "docs/ApplicationDev/building-an-rpm-package",
+        "children": []
+    }]
+}]
