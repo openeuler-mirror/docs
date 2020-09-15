@@ -78,7 +78,7 @@ export default {
         this.targetLocale = this.$lang === "zh" ? "/zh/" : "/en/";
     },
     mounted() {
-        this.versions = require("../../../" + this.$lang + "/path/path.json");
+        this.versions = require("../../../" + this.$lang + "/docs/path/path.json");
         let versionLen = this.versions.length;
         this.currentDocs = this.versions[versionLen-1].docs;
         this.selectChange(this.versions[versionLen-1].value);
