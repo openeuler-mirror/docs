@@ -24,14 +24,13 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 工具安装可通过以下两种方式中的任意一种实现。
 
 * 方法一，通过dnf挂载repo源实现。  
-  先使用dnf挂载pkgship软件在所在repo源（具体方法可参考[应用开发指南](https://openeuler.org/zh/docs/20.03_LTS/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装pkgship及其依赖。
+ 先使用dnf挂载pkgship软件在所在repo源（具体方法可参考[应用开发指南](https://openeuler.org/zh/docs/20.03_LTS/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装pkgship及其依赖。
 
     ```bash
     dnf install pkgship
     ```
-
-* 方法二，通过安装rpm包实现。  
-  先下载pkgship的rpm包，然后执行如下命令进行安装（其中“x.x-x”表示版本号，请用实际情况代替）。
+* 方法二，通过安装rpm包实现。
+ 先下载pkgship的rpm包，然后执行如下命令进行安装（其中“x.x-x”表示版本号，请用实际情况代替）。
 
     ```bash
     rpm -ivh pkgship-x.x-x.oe1.noarch.rpm
@@ -71,7 +70,7 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 
     ; 读权限访问ip
     query_ip_addr=127.0.0.1
-    ; 远程服务的地址，命令行可以直接调用远程服务来完成数据请求, 只需在每个命令行后加 --remote参数
+    ; 远程服务的地址，命令行可以直接调用远程服务来完成数据请求, 只需在每个命令行后加 -remote参数
     remote_host=https://api.openeuler.org/pkgmanage
 
     [LOG]
@@ -86,6 +85,11 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
     ; 日志名称
     log_name=log_info.log
 
+    ; 日志文件大小达到上限后动态创建的日志的数量
+    backup_count=10
+    ; 每个日志文件的大小
+    max_bytes=314572800
+
     [UWSGI服务配置]
     ; uwsgi 日志路径
     daemonize=/var/log/uwsgi.log
@@ -96,63 +100,88 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
     ; Server response time
     harakiri=600
 
+    [TIMEDTASK]
+    ; 是否开启定时任务
+    open=True
+    ; 设定定时任务触发的时间
+    hour=3
+    minute=0
+
+    [LIFECYCLE]
+    ; 每个包的yaml地址的存储远程地址
+    warehouse_remote=https://gitee.com/openeuler/openEuler-Advisor/raw/master/upstream-info/
+
+    ; 在执行定时任务时，可以打开多线程执行，并且可以根据服务器的配置设置线程池中的线程数
+    pool_workers=10
+
+
+    ; 仓库的名字
+    warehouse=src-openeuler
+
     ```
 
 2. 创建初始化数据库的yaml配置文件：
     conf.yaml 文件默认存放在 /etc/pkgship/ 路径下，pkgship会通过该配置读取要建立的数据库名称以及需要导入的sqlite文件。conf.yaml 示例如下所示。
 
     ```yaml
-    - dbname:openEuler-20.03-LTS
-     src_db_file: /etc/pkgship/src.sqlite
-     bin_db_file: /etc/pkgship/bin.sqlite
-     status:enable
-     priority:1
+    - dbname: openEuler-20.03-LTS
+      src_db_file: /etc/pkgship/src.sqlite
+      bin_db_file: /etc/pkgship/bin.sqlite
+      lifecycle: enable
+      priority: 1
     ```
 
 > 如需更改存放路径，请更改package.ini下的 init_conf_path 选项
 
 # 服务启动和停止
 
-pkgship使用uWSGI web服务器,启动和停止命令如下所示。
+pkgship使用uWSGI web服务器,启动和停止命令如下所示,可指定只启动读（写）服务，或同时启动。
 
 ```bash
-pkgshipd start
+pkgshipd start [manage/selfpkg]
 
-pkgshipd stop
+pkgshipd stop [manage/selfpkg]
 ```
 
 # 工具使用
 
 1. 数据库初始化。  
-   > 使用场景：服务启动后，为了能查询对应的数据库（比如mainline， openEuler-LTS-20.03）中的包信息及包依赖关系，需要将这些数据库通过createrepo生成的sqlite（分为源码库和二进制库）导入进服务内。
+   > 使用场景：服务启动后，为了能查询对应的数据库（比如mainline， openEuler-LTS-20.03）中的包信息及包依赖关系，需要将这些数据库通过createrepo生成的sqlite（分为源码库和二进制库）导入进服务内，生成对应的db文件。当conf.yaml里配置数据库的参数项lifecycle声明为enable的时候，在lifecycle.db中会生成一张对应的表，用于记录数据库信息，后续需要读取数据库表名称(tablename)的操作会从此文件读取。可选参数[-filepath]。
 
     ```bash
-    pkgship init
+    pkgship init [-filepath path]
     ```
+
+    > 参数说明：
+    > -filepath 指定初始化配置文件的路径，可以使用相对路径和绝对路径，不带参数则使用默认配置初始化。
 
 2. 单包查询。
 
-    查询源码包(sourceName)在数据库中的信息。
-    > 使用场景：用户可查询具体源码包在所有数据库中信息；当命令后带配置参数[-db]时，可查询源码包在具体指定数据库中信息。  
+    用户可查询具体源码包(packagename)在指定数据库表（tablename）中的信息。
+    > 使用场景：用户可查询具体源码包在指定数据库中信息；必传参数packagename,tablename。  
 
     ```bash
-    pkgship single sourceName [-db dbName]
+    pkgship single packagename tablename
     ```
 
     > 参数说明：  
-    > -db dbName 指定具体的数据库，其中dbName为数据库名称。
+    > packagename  指定要查询的源码包名
+    > tablename  指定具体的数据库名称
 
 3. 所有包查询。
 
     查询数据库下包含的所有包的信息。
-    > 使用场景：用户可查询所有数据库下包含的所有软件包信息；当命令后带配置参数[-db]时，可查询指定数据库下的所有包信息。
+    > 使用场景：用户可查询指定数据库下包含的所有软件包信息；必传参数tablename，选传参数[-packagename],[-maintainer]
 
     ```bash
-    pkgship list [-db dbName]
+    pkgship list tablename [-packagename pkgName] [-maintainer maintainer]
     ```
 
     > 参数说明：  
-    > -db dbName 指定具体的数据库，其中dbName为数据库名称。
+    > tablename 指定具体的数据库名称
+    > -packagename 可以匹配到包名中包含参数字符串的包
+    > -maintainer  可以匹配到maintainer为参数的包
+
 4. 安装依赖查询。
 
     查询二进制包(binaryName)的安装依赖。
@@ -163,7 +192,7 @@ pkgshipd stop
     ```
 
    > 参数说明：  
-   > -dbs dbName1 dbName2... 具体指定查询数据库的顺序优先级，dbName为具体的数据库名称。
+   > -dbs 具体指定查询数据库的顺序优先级，dbName为具体的数据库名称。
 
 5. 编译依赖查询。
 
@@ -175,7 +204,7 @@ pkgshipd stop
     ```
 
    > 参数说明：  
-   > -dbs dbName1 dbName2... 具体指定查询数据库的顺序优先级，dbName为具体的数据库名称。
+   > -dbs 具体指定查询数据库的顺序优先级，dbName为具体的数据库名称。
 
 6. 自编译自安装依赖查询。
 
@@ -188,7 +217,7 @@ pkgshipd stop
     ```
 
     > 参数说明：  
-    > -dbs dbName1 dbName2... 指定数据库优先级,dbName为具体的数据库名称，使用示例如下。  
+    > -dbs 指定数据库优先级,dbName为具体的数据库名称，使用示例如下。  
 
     >  ``` bash
     > 示例:pkgship selfbuild pkgName -dbs dbName1 dbName2 
@@ -209,40 +238,115 @@ pkgshipd stop
 
 7. 被依赖查询。
     查询源码包(sourceName)在某数据库(dbName)中被哪些包所依赖。
-    > 使用场景：针对软件源码包A，在升级或删除的情况下会影响哪些软件包，可通过该命令查询。该命令会显示源码包A生成的所有二进制包被哪些源码包（比如B）编译依赖，被哪些二进制包（比如C1）安装依赖；以及B生成的二进制包及C1被哪些源码包（比如D）编译依赖，被哪些二进制包（比如E1）安装依赖，以此类推，遍历这些二进制包的被依赖。 当命令后不带配置参数[-w 1] 时，查询结果默认不包含对应二进制包的子包；当命令后带配置参数[-w 1] 时，不仅会查询二进制包C1的被依赖关系，还会进一步去查询C1对应的源码包C生成的其他二进制包（比如：C2,C3）的被依赖关系。
-
+    > 使用场景：针对软件源码包A，在升级或删除的情况下会影响哪些软件包，可通过该命令查询。该命令会显示源码包A生成的所有二进制包被哪些源码包（比如B）编译依赖，被哪些二进制包（比如C1）安装依赖；以及B生成的二进制包及C1被哪些源码包（比如D）编译依赖，被哪些二进制包（比如E1）安装依赖，以此类推，遍历这些二进制包的被依赖。可选参数[-w 0/1]
     ```bash
      pkgship bedepend sourceName dbName [-w 1]
     ```
 
-    > 参数说明：  
-    > -w 表示进一步查询受影响的二进制包对应源码包生成的其他二进制包的被依赖关系。
+    > 参数说明:  
+    > -w （0/1）  当命令后不带配置参数或者[-w 0] 时，查询结果默认不包含对应二进制包的子包；当命令后带配置参数[-w 1] 时，不仅会查询二进制包C1的被依赖关系，还会进一步去查询C1对应的源码包C生成的其他二进制包（比如：C2,C3）的被依赖关系。
 
 8. 包信息记录修改。
+    > 使用场景: 用户可以修改指定源码包的维护人和维护级别。可传参数：[-packagename],[-maintainer],[-maintainlevel],[-filefolder],[--batch]
 
+    当前有两种修改方式：
+    第一种，通过指定源码包名(packagename)，修改源码包的维护人(Newmaintainer)和维护级别(Newmaintainlevel)，示例如下：
     ```bash
-    pkgship updatepkg sourceName db [-m] [-l]
+    pkgship updatepkg [-packagename packagename] [-maintainer Newmaintainer] [-maintainlevel Newmaintainlevel]
     ```
-
-    > 参数说明：  
-    > -m 表示变更数据库中(dbName)源码包(sourceName)的maintainer为Newmaintainer。  
-    > -l 表示变更数据库中(dbName)源码包(sourceName)的maintainlevel为Newmaintainlevel，值在1～4之间。
-
-    变更数据库中(dbName)源码包(sourceName)的maintainer为Newmaintainer使用示例如下。  
-
-    ```bash
-     pkgship updatepkg sourceName db dbName -m Newmaintainer
+    > 参数说明:
+    > -packagename 指定需要维护的包名
+    > -maintainer 指定更新包的维护人
+    > -maintainlevel 指定更新包的维护级别，值在1～4之间，默认为1；
     ```
-
-    变更数据库中(dbName)源码包(sourceName)的maintainlevel为Newmaintainlevel使用示例如下。  
-
+    第二种，通过指定文件路径(path)，批量更新包的维护人和维护级别, 该命令必须指定添加--batch参数，示例如下：
     ```bash
-     pkgship updatepkg sourceName db dbName -l Newmaintainlevel
+    pkgship updatepkg [--batch] [-filefolder path]
+    ```
+    用户可以通过创建文件名A.yaml指定包名为A，指定yaml内容来修改包信息
+    包信息的yaml格式如下：
+    ```
+    maintainer：Newmaintainlevel
+    maintainlevel： Newmaintainlevel
     ```
 
 9. 数据库删除。
-    删除指定数据库(dbName)。
+    > 使用场景: 删除指定数据库(dbName)。
 
     ```bash
-    pkgship rm [db dbName]
+    pkgship rm dbName
+    ```
+
+10. 表信息查询。
+    > 使用场景: 查看当前生命周期数据库中存在的所有数据表。
+
+    ```bash
+     pkgship tables
+    ```
+
+11. issue查询。
+    > 使用场景: 查看所有的源码包下的所有issue的信息。可选参数[-packagename],[-issue_type],[-issue_status],[-maintainer],[-page N],[-pagesize pageSize]。
+
+    ```bash
+     pkgship issue [-packagename pkgName],[-issue_type issueType],[-issue_status issueStatus],[-maintainer maintainer],[-page N],[-pagesize pageSize]
+    ```
+
+    > 参数说明:  
+    > -packagename: 指定包名进行模糊查询。  
+    > -issue_type: 指定issue类型进行查询。  
+    > -issue_status: 指定issue状态进行查询。  
+    > -maintainer: 指定维护人进行查询。
+    > -page: 指定查询第N页的数据。  
+    > -pagesize: 指定每页显示的数据条目数pageSize。  
+
+    ```bash
+    指定包名进行模糊查询示例:
+    pkgship issue -packagename pkgName
+    ```
+
+    ```bash
+    指定issue类型进行查询示例:
+    pkgship issue -issue_type issueType
+    ```
+
+    ```bash
+    指定issue状态进行查询示例:
+    pkgship issue -issue_status issueStatus
+    ```
+
+    ```bash
+    指定维护人进行查询示例:
+    pkgship issue -maintainer maintainer
+    ```
+
+    ```bash
+    指定查询第N页的数据示例:
+    pkgship issue -page N
+    ```
+
+    ```bash
+    指定每页显示的数据条目数pageSize示例:
+    pkgship issue -pagesize pageSize
+    ```
+
+12. 更新软件包的生命周期。
+
+    > 使用场景: 用户可指定更新生命周期表中所有软件包的issue信息，维护人和维护级别。可选参数[--issue],[--package]。
+
+    ```bash
+    pkgship update [--issue],[--package]
+    ```
+
+    > 参数说明:  
+    > -issue: 指定更新生命周期表中所有软件包的issue信息，根据生命周期中表的软件包名去gitee爬取软件包对应的issue信息。  
+    > -package: 指定更新生命周期表中所有软件包的生命周期，维护人和维护级别。
+
+    ```bash
+    更新生命周期表中所有软件包的issue信息示例:
+    pkgship update --issue
+    ```
+
+    ```bash
+    更新生命周期表中所有软件包的生命周期，维护人和维护级别示例:
+    pkgship update --package
     ```
