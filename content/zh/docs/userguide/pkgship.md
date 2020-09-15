@@ -265,6 +265,7 @@ pkgshipd stop [manage/selfpkg]
     > -packagename：指定需要维护的包名。  
     > -maintainer：指定更新包的维护人。  
     > -maintainlevel：指定更新包的维护级别，值在1～4之间，默认为1。  
+  
     第二种，通过指定文件路径(path)，批量更新包的维护人和维护级别, 该命令必须指定添加--batch参数，示例如下。
     ```bash
     pkgship updatepkg [--batch] [-filefolder path]
@@ -301,7 +302,7 @@ pkgshipd stop [manage/selfpkg]
     > -packagename: 指定包名进行模糊查询。  
     > -issue_type: 指定issue类型进行查询。  
     > -issue_status: 指定issue状态进行查询。  
-    > -maintainer: 指定维护人进行查询。
+    > -maintainer: 指定维护人进行查询。  
     > -page: 指定查询第N页的数据。  
     > -pagesize: 指定每页显示的数据条目数pageSize。  
 
