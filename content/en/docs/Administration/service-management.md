@@ -115,13 +115,6 @@ In systemd, the targets of most actions are units, which are resources systemd k
 <td class="cellrowborder" valign="top" width="56.46%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0151921012_a060e385703ed49a0bbb993f60520a6dd"><a name="en-us_topic_0151921012_a060e385703ed49a0bbb993f60520a6dd"></a><a name="en-us_topic_0151921012_a060e385703ed49a0bbb993f60520a6dd"></a>A group of hierarchically organized units that manage system processes.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0151921012_r464fbcf4d5b04ed29b11f52b150531ab"><td class="cellrowborder" valign="top" width="23.18%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0151921012_a8c0ed4656ebb4a10b1fcbce2ce396683"><a name="en-us_topic_0151921012_a8c0ed4656ebb4a10b1fcbce2ce396683"></a><a name="en-us_topic_0151921012_a8c0ed4656ebb4a10b1fcbce2ce396683"></a>Snapshot unit</p>
-</td>
-<td class="cellrowborder" valign="top" width="20.36%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0151921012_a2815b0c797784a9e95de60f614a683a7"><a name="en-us_topic_0151921012_a2815b0c797784a9e95de60f614a683a7"></a><a name="en-us_topic_0151921012_a2815b0c797784a9e95de60f614a683a7"></a>.snapshot</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.46%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0151921012_adf4318e96e0d47efbad6c438a124d924"><a name="en-us_topic_0151921012_adf4318e96e0d47efbad6c438a124d924"></a><a name="en-us_topic_0151921012_adf4318e96e0d47efbad6c438a124d924"></a>A saved state of the systemd manager.</p>
-</td>
-</tr>
 <tr id="en-us_topic_0151921012_rf411a13d70a64af0913d1403098c35f4"><td class="cellrowborder" valign="top" width="23.18%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0151921012_a20f3e23c829a4337a8fb5fc64b628fda"><a name="en-us_topic_0151921012_a20f3e23c829a4337a8fb5fc64b628fda"></a><a name="en-us_topic_0151921012_a20f3e23c829a4337a8fb5fc64b628fda"></a>Socket unit</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.36%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0151921012_a4dde23a95c7f49649608dea395226e51"><a name="en-us_topic_0151921012_a4dde23a95c7f49649608dea395226e51"></a><a name="en-us_topic_0151921012_a4dde23a95c7f49649608dea395226e51"></a>.socket</p>

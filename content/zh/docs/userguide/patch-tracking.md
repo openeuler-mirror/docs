@@ -1,4 +1,4 @@
-补丁跟踪
+patch-tracking
 ===
 
 
@@ -12,7 +12,7 @@
 
 ## C/S架构
 
-补丁跟踪采用 C/S 架构。
+patch-tracking采用 C/S 架构。
 
 服务端(patch-tracking) ：负责执行补丁跟踪任务，包括：维护跟踪项，识别上游仓库分支代码变更并形成补丁文件，向 Gitee 提交 issue 及 PR，同时 patch-tracking 提供 RESTful 接口，用于对跟踪项进行增删改查操作。
 
@@ -29,7 +29,7 @@
 3. 创建临时分支，将获取到的补丁文件提交到临时分支。
 4. 自动提交issue到对应项目，并生成关联 issue 的 PR。
 
-<img src="images/PatchTracking.jpg" alt="PatchTracking"  />
+![PatchTracking](images/PatchTracking.jpg)
 
 * Maintainer对提交的补丁处理流程
 
@@ -64,28 +64,50 @@
 
 # 工具部署
 
-## 环境要求
+## 软件下载
 
->* 安装 Python 3.7及以上版本
->* 已安装 pip3。
+Repo 源挂载正式发布地址：https://repo.openeuler.org/
 
-## 安装依赖
+rpm 包获取地址：https://build.openeuler.org/package/show/openEuler:20.09/patch-tracking
 
-执行如下命令安装依赖包。
-
-```shell script
-yum install -y gcc python3-devel openssl-devel
-pip3 install flask flask-sqlalchemy flask-apscheduler requests flask_httpauth
-pip3 install -I uwsgi
-```
 
 ## 安装工具
 
-执行如下命令安装工具包（其中”x.x.x”表示版本号，请用实际情况代替）。
+#### 方法1：从repo源安装
+
+1. 使用 dnf 挂载 repo源（需要 20.09 或更新的 repo 源，具体方法参考[应用开发指南](https://openeuler.org/zh/docs/20.03_LTS/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装pkgship及其依赖。
+
+2. 执行以下命令安装`patch-tracking`。
+
+   ```shell script
+   dnf install patch-tracking
+   ```
+
+#### 方法2：直接使用rpm安装
+
+1. 首先安装相关依赖。
+
+   ```shell script
+   dnf install python3-uWSGI python3-flask python3-Flask-SQLAlchemy python3-Flask-APScheduler python3-Flask-HTTPAuth python3-requests python3-pandas
+   ```
+
+2. 以`patch-tracking-1.0.0-1.oe1.noarch.rpm`为例，执行如下命令安装。
+
+   ```shell script
+   rpm -ivh patch-tracking-1.0.0-1.oe1.noarch.rpm
+   ```
+
+
+## 生成证书
+执行如下命令生成证书。
 
 ```shell script
-rpm -ivh patch-tracking-xxx.rpm
+openssl req -x509 -days 3650 -subj "/CN=self-signed" \
+-nodes -newkey rsa:4096 -keyout self-signed.key -out self-signed.crt
 ```
+
+将生成的 `self-signed.key` 和 `self-signed.crt` 文件拷贝到 __/etc/patch-tracking__ 目录
+
 
 ##  配置参数
 
@@ -172,17 +194,17 @@ pbkdf2:sha256:150000$w38eLeRm$ebb5069ba3b4dda39a698bd1d9d7f5f848af3bd93b11e0cde2
 --branch ：需要进行跟踪的仓库的分支名称 \
 --scm_repo ：被跟踪的上游仓库的仓库名称，github格式：组织/仓库 \
 --scm_branch： 被跟踪的上游仓库的仓库的分支 \
---enable ：是否自动跟踪该仓库
+--enabled ：是否自动跟踪该仓库
 
 例如：
 ```shell script
-patch-tracking-cli --server 127.0.0.1:5001 --user admin --password Test@123 --version_control github --repo testPatchTrack/testPatch1 --branch master --scm_repo BJMX/testPatch01 --scm_branch test  --enable true
+patch-tracking-cli add --server 127.0.0.1:5001 --user admin --password Test@123 --version_control github --repo testPatchTrack/testPatch1 --branch master --scm_repo BJMX/testPatch01 --scm_branch test  --enabled true
 ```
 
 ### 指定文件添加
 
 参数含义：
->--server ：启动Patch Tracking服务的URL，例如：127.0.0.1:5001 \ 
+>--server ：启动Patch Tracking服务的URL，例如：127.0.0.1:5001 \
 --user ：POST接口需要进行认证的用户名，同settings.conf中的USER参数 \
 --password ：POST接口需要进行认证的口令，为settings.conf中的PASSWORD哈希值对应的实际的口令字符串 \
 --file ：yaml文件路径
@@ -191,7 +213,7 @@ patch-tracking-cli --server 127.0.0.1:5001 --user admin --password Test@123 --ve
 
 例如：
 ```shell script
-patch-tracking-cli --server 127.0.0.1:5001 --user admin --password Test@123 --file tracking.yaml
+patch-tracking-cli add --server 127.0.0.1:5001 --user admin --password Test@123 --file tracking.yaml
 ```
 
 yaml文件内容格式如下，冒号左边的内容不可修改，右边内容根据实际情况填写。
@@ -210,7 +232,7 @@ scm_repo ：被跟踪的上游仓库的仓库名称，github格式：组织/仓�
 scm_branch ：被跟踪的上游仓库的仓库的分支 \
 repo ：需要进行跟踪的仓库名称，格式：组织/仓库 \
 branch ：需要进行跟踪的仓库的分支名称 \
-enable ：是否自动跟踪该仓库
+enabled ：是否自动跟踪该仓库
 
 ### 指定目录添加
 
@@ -223,28 +245,46 @@ enable ：是否自动跟踪该仓库
 --dir ：存放yaml文件目录的路径
 
 ```shell script
-patch-tracking-cli --server 127.0.0.1:5001 --user admin --password Test@123 --dir /home/Work/test_yaml/
+patch-tracking-cli add --server 127.0.0.1:5001 --user admin --password Test@123 --dir /home/Work/test_yaml/
 ```
 
 ## 查询跟踪项
 
+参数含义：
+>--server ：必选参数，启动Patch Tracking服务的URL，例如：127.0.0.1:5001 \
+--table ：必选参数，需要查询的表 \
+--repo ：可选参数，需要查询的repo；如果没有该参数查询表中所有内容 \
+--branch ：可选参数，需要查询的branch
 ```shell script
-curl -k https://<LISTEN>/tracking
+patch-tracking-cli query --server <LISTEN> --table tracking
 ```
 例如：
 ```shell script
-curl -k https://127.0.0.1:5001/tracking
+patch-tracking-cli query --server 127.0.0.1:5001 --table tracking
 ```
 
-## 查询生成的 Issue 列表
+## 查询生成的 Issue
 
 ```shell script
-curl -k https://<LISTEN>/issue
+patch-tracking-cli query --server <LISTEN> --table issue
 ```
 例如：
 ```shell script
-curl -k https://127.0.0.1:5001/issue
+patch-tracking-cli query --server 127.0.0.1:5001 --table issue
 ```
+
+## 删除跟踪项
+
+```shell script
+patch-tracking-cli delete --server SERVER --user USER --password PWD --repo REPO [--branch BRANCH]
+```
+例如：
+```shell script
+patch-tracking-cli delete --server 127.0.0.1:5001 --user admin --password Test@123 --repo testPatchTrack/testPatch1 --branch master
+```
+
+> 可以删除指定repo和branch的单条数据；也可直接删除指定repo下所有branch的数据。
+
 
 ## 码云查看 issue 及 PR
 
