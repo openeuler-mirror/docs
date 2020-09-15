@@ -165,7 +165,7 @@ pkgshipd stop [manage/selfpkg]
 2. 单包查询。
 
     用户可查询具体源码包(packagename)在指定数据库表（tablename）中的信息。
-    > 使用场景：用户可查询具体源码包在指定数据库中信息，packagename,tablename为必传参数。  
+    > 使用场景：用户可查询具体源码包在指定数据库中信息，packagename,tablename为必选参数。  
 
     ```bash
     pkgship single packagename tablename
@@ -178,7 +178,7 @@ pkgshipd stop [manage/selfpkg]
 3. 所有包查询。
 
     查询数据库下包含的所有包的信息。
-    > 使用场景：用户可查询指定数据库下包含的所有软件包信息。其中tablename为必传参数，[-packagename],[-maintainer]为选传参数。
+    > 使用场景：用户可查询指定数据库下包含的所有软件包信息。其中tablename为必选参数，[-packagename],[-maintainer]为可选参数。
 
     ```bash
     pkgship list tablename [-packagename pkgName] [-maintainer maintainer]
