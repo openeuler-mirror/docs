@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 2备份 3</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="40" height="40"></rect>
+    </defs>
+    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LandingPage" transform="translate(-954.000000, -980.000000)">
+            <g id="Article-Big备份-12" transform="translate(794.000000, 932.000000)">
+                <g id="编组-2备份-3" transform="translate(160.000000, 48.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="矩形" fill="#FFFFFF" xlink:href="#path-1"></use>
+                    <g id="编组" mask="url(#mask-2)">
+                        <g transform="translate(7.000000, 9.000000)">
+                            <path d="M18.9363,6.562 L18.9363,6.556 C18.9363,3.074 16.1133,0.25 12.6303,0.25 C9.1473,0.25 6.3243,3.074 6.3243,6.556 L6.3243,6.562 C2.9603,6.62 0.2493,9.36 0.2493,12.737 C0.2493,16.15 3.0173,18.917 6.4303,18.917 L18.8303,18.917 C22.2433,18.917 25.0103,16.15 25.0103,12.737 C25.0103,9.36 22.3003,6.62 18.9363,6.562" id="Fill-1" stroke="none" fill="#FFFFFF" fill-rule="evenodd"></path>
+                            <path d="M18.9363,6.562 L18.9363,6.556 C18.9363,3.074 16.1133,0.25 12.6303,0.25 C9.1473,0.25 6.3243,3.074 6.3243,6.556 L6.3243,6.562 C2.9603,6.62 0.2493,9.36 0.2493,12.737 C0.2493,16.15 3.0173,18.917 6.4303,18.917 L18.8303,18.917 C22.2433,18.917 25.0103,16.15 25.0103,12.737 C25.0103,9.36 22.3003,6.62 18.9363,6.562 Z" id="Stroke-3" stroke="#000000" stroke-width="0.5" fill="none"></path>
+                            <path d="M18.2234,22.771 L7.0364,22.771 C5.6124,22.771 4.4564,21.616 4.4564,20.191 L4.4564,17.219 C4.4564,15.794 5.6124,14.639 7.0364,14.639 L18.2234,14.639 C19.6484,14.639 20.8034,15.794 20.8034,17.219 L20.8034,20.191 C20.8034,21.616 19.6484,22.771 18.2234,22.771" id="Fill-5" stroke="none" fill="#3165F0" fill-rule="evenodd"></path>
+                            <path d="M18.2234,22.771 L7.0364,22.771 C5.6124,22.771 4.4564,21.616 4.4564,20.191 L4.4564,17.219 C4.4564,15.794 5.6124,14.639 7.0364,14.639 L18.2234,14.639 C19.6484,14.639 20.8034,15.794 20.8034,17.219 L20.8034,20.191 C20.8034,21.616 19.6484,22.771 18.2234,22.771 Z" id="Stroke-7" stroke="#000000" stroke-width="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M19.1589,14.6392 L6.1009,14.6392 C5.1929,14.6392 4.4569,13.9042 4.4569,12.9952 L4.4569,12.5652 C4.4569,11.6572 5.1929,10.9212 6.1009,10.9212 L19.1589,10.9212 C20.0669,10.9212 20.8039,11.6572 20.8039,12.5652 L20.8039,12.9952 C20.8039,13.9042 20.0669,14.6392 19.1589,14.6392" id="Fill-9" stroke="none" fill="#FFFFFF" fill-rule="evenodd"></path>
+                            <path d="M19.1589,14.6392 L6.1009,14.6392 C5.1929,14.6392 4.4569,13.9042 4.4569,12.9952 L4.4569,12.5652 C4.4569,11.6572 5.1929,10.9212 6.1009,10.9212 L19.1589,10.9212 C20.0669,10.9212 20.8039,11.6572 20.8039,12.5652 L20.8039,12.9952 C20.8039,13.9042 20.0669,14.6392 19.1589,14.6392 Z" id="Stroke-11" stroke="#000000" stroke-width="0.5" fill="none"></path>
+                            <line x1="7.1286" y1="18.7056" x2="8.7006" y2="18.7056" id="Stroke-13" stroke="#FFFFFF" stroke-width="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line>
+                            <line x1="10.0837" y1="18.7056" x2="18.1317" y2="18.7056" id="Stroke-15" stroke="#FFFFFF" stroke-width="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line>
+                            <g id="编组" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(7.000000, 12.021100)">
+                                <line x1="0.1286" y1="0.7597" x2="1.7006" y2="0.7597" id="Fill-17" fill="#FFFFFF"></line>
+                                <line x1="0.1286" y1="0.7597" x2="1.7006" y2="0.7597" id="Stroke-19" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"></line>
+                            </g>
+                            <g id="编组" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(10.000000, 12.021100)">
+                                <line x1="0.0837" y1="0.7597" x2="8.1317" y2="0.7597" id="Fill-20" fill="#FFFFFF"></line>
+                                <line x1="0.0837" y1="0.7597" x2="8.1317" y2="0.7597" id="Stroke-22" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"></line>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
