@@ -6,7 +6,7 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 
 1. 软件包依赖查询：方便社区人员在软件包引入、更新和删除的时候了解软件的影响范围。
 2. 生命周期管理：跟踪上游软件包发布状态，方便维护人员了解当前软件状态，及时升级到合理的版本。
-3. 补丁查询：方便社区人员了解openEuler软件包的补丁情况以及提取补丁内容，详细内容请参见[patch-tracking]({{<relref "../patch-tracking.md>}})。
+3. 补丁查询：方便社区人员了解openEuler软件包的补丁情况以及提取补丁内容，详细内容请参见[patch-tracking](patch-tracking.md)。
 
 # 架构
 
@@ -153,13 +153,13 @@ pkgshipd stop [manage/selfpkg]
 # 工具使用
 
 1. 数据库初始化。  
-   > 使用场景：服务启动后，为了能查询对应的数据库（比如mainline， openEuler-LTS-20.03）中的包信息及包依赖关系，需要将这些数据库通过createrepo生成的sqlite（分为源码库和二进制库）导入进服务内，生成对应的db文件。当conf.yaml里配置数据库的参数项lifecycle声明为enable的时候，在lifecycle.db中会生成一张对应的表，用于记录数据库信息，后续需要读取数据库表名称(tablename)的操作会从此文件读取。可选参数[-filepath]。
+   > 使用场景：服务启动后，为了能查询对应的数据库（比如mainline， openEuler-LTS-20.03）中的包信息及包依赖关系，需要将这些数据库通过createrepo生成的sqlite（分为源码库和二进制库）导入进服务内，生成对应的db文件。当conf.yaml里配置数据库的参数项lifecycle声明为enable的时候，在lifecycle.db中会生成一张对应的表，用于记录数据库信息，后续需要读取数据库表名称(tablename)的操作会从此文件读取，[-filepath]为可选参数。
 
     ```bash
     pkgship init [-filepath path]
     ```
 
-    > 参数说明：
+    > 参数说明：  
     > -filepath：指定初始化配置文件的路径，可以使用相对路径和绝对路径，不带参数则使用默认配置初始化。
 
 2. 单包查询。
@@ -227,20 +227,20 @@ pkgshipd stop [manage/selfpkg]
     > -dbs 指定数据库优先级,dbName为具体的数据库名称，使用示例如下。  
 
     >  ``` bash
-    > 示例:pkgship selfbuild pkgName -dbs dbName1 dbName2 
+    > pkgship selfbuild pkgName -dbs dbName1 dbName2 
     >  ```
 
     > -t source/binary 指定查询包名pkgName为二进制包还是源码包，不加-t时，默认为二进制包。  
     > -s 增加该参数表示查询软件包的所有安装依赖和所有编译依赖（即编译依赖的源码包的编译依赖），以及所有编译依赖的安装依赖。其中-s参数后面的0表示不查询自编译依赖，1表示查询自编译依赖，默认为0，可以指定1。如果不增加-s参数表示只查询软件包的所有安装依赖和一层编译依赖，以及一层编译依赖的所有安装依赖，查询自编译使用示例如下。
 
     > ```bash
-    > 示例:pkgship selfbuild pkgName -t source -s 1
+    > pkgship selfbuild pkgName -t source -s 1
     > ```
 
     > -w 增加该参数表示引入某个二进制包的时候，查询结果会显示出该二进制包对应的源码包以及该源码包生成的所有二进制包。其中-w参数后面的0表示不查询对应子包，1表示查询对应子包，默认为0，可以指定1。如果不增加-w参数表示引入某个二进制包的时候，查询结果只显示对应的源码包，查询子包使用示例如下。
 
     > ```bash
-    > 示例:pkgship selfbuild pkgName -w 1
+    > pkgship selfbuild pkgName -w 1
     > ```
 
 7. 被依赖查询。  
