@@ -186,7 +186,7 @@ To prevent incomplete download of the software package due to network or storage
     >-   During PM installation, if you cannot use the arrow keys to select boot options and the system does not respond after you press  **Enter**, click  ![](figures/en-us_image_0229420473.png)  on the BMC page and configure  **Key & Mouse Reset**.  
 
     **Figure  5**  Installation Wizard<a name="fig1648754873314"></a>  
-    <img src="figures/installation-wizard.png" title="installation-wizard"  />
+    ![](./figures/installation-wizard.png)
 
 9.  On the installation wizard page, press  **Enter**  to select the default option  **Test this media & install openEuler 20.03 LTS**  to enter the GUI installation page.
 
@@ -197,7 +197,7 @@ After entering the GUI installation page, perform the following operations to in
 1.  Set an installation language. The default language is English. You can change the language based on the site requirements, as shown in  [Figure 6](#fig874344811484).
 
     **Figure  6**  Selecting a language<a name="fig874344811484"></a>  
-    <img src="figures/selecting-a-language.png" title="selecting-a-language"  />
+    ![](./figures/selecting-a-language.png)
 
 2.  On the  **INSTALLATION SUMMARY**  page, set configuration items based on the site requirements.
 
@@ -206,14 +206,14 @@ After entering the GUI installation page, perform the following operations to in
     -   You can click  **Begin Installation**  to install the system only when all alarms are cleared.
 
     **Figure  7**  Installation summary<a name="fig24261457656"></a>  
-    <img src="figures/installation-summary.png" title="installation-summary"  />
+    ![](./figures/installation-summary.png)
 
     1.  Select  **Software Selection**  to set configuration items.
 
         Based on the site requirements, select  **Minimal Install**  on the left box and select an add-on in the  **Add-Ons for Selected Environment**  area on the right, as shown in  [Figure 8](#fig1133717611109).
 
         **Figure  8**  Selecting installation software<a name="fig1133717611109"></a>  
-        <img src="figures/selecting-installation-software.png" title="selecting-installation-software"  />
+        ![](./figures/selecting-installation-software.png)
 
         >![](public_sys-resources/icon-note.gif) **NOTE:**   
         >-   In  **Minimal Install**  mode, not all packages in the installation source will be installed. If the required package is not installed, you can mount the installation source to the local PC and configure a repo source, and use DNF to install the package.  
@@ -231,7 +231,7 @@ After entering the GUI installation page, perform the following operations to in
         You also need to configure the storage to partition the system. You can either manually configure partitions or select  **Automatic**  to automatically configure partitioning. Select  **Automatic**  if the software is installed in a new storage device or the data in the storage device is not required, as shown in  [Figure 9](#fig153381468101).
 
         **Figure  9**  Setting the installation destination<a name="fig153381468101"></a>  
-        <img src="figures/setting-the-installation-destination.png" title="setting-the-installation-destination"  />
+        ![](./figures/setting-the-installation-destination.png)
 
         >![](public_sys-resources/icon-note.gif) **NOTE:**   
         >-   During partitioning, to ensure system security and performance, you are advised to divide the device into the following partitions:  **/boot**,  **/var**,  **/var/log**,  **/var/log/audit**,  **/home**, and  **/tmp**.  
@@ -245,7 +245,7 @@ After entering the GUI installation page, perform the following operations to in
 3.  Click  **Begin Installation**  to install the system, as shown in  [Figure 10](#fig1717019357392).
 
     **Figure  10**  Starting installation<a name="fig1717019357392"></a>  
-    <img src="figures/starting-installation.png" title="starting-installation"  />
+    ![](./figures/starting-installation.png)
 
 4.  Set the root user password.
 
@@ -265,17 +265,17 @@ After entering the GUI installation page, perform the following operations to in
         > In the installed openEuler environment, you can run the `cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt` command to export the dictionary library file  **dictionary.txt**, and then check whether the password is in the dictionary.
     
     **Figure  11**  Password of the  **root**  account<a name="en-us_topic_0186390266_en-us_topic_0122145909_fig1323165793018"></a>  
-    <img src="figures/password-of-the-root-account.png" title="password-of-the-root-account"  />
-    
+    ![](./figures/password-of-the-root-account.png)
+
 5.  Create a user.
 
     Click  **User Creation**.  [Figure 12](#en-us_topic_0186390266_en-us_topic_0122145909_fig1237715313319)  shows the page for creating a user. Enter a username and set a password. The password complexity requirements are the same as those of the user  **root**. By clicking  **Advanced**, you can also configure a home directory and a user group, as shown in  [Figure 13](#en-us_topic_0186390266_en-us_topic_0122145909_fig128716531312).
 
     **Figure  12**  Creating a user<a name="en-us_topic_0186390266_en-us_topic_0122145909_fig1237715313319"></a>  
-    <img src="figures/creating-a-user.png" title="creating-a-user"  />
+    ![](./figures/creating-a-user.png)
 
     **Figure  13**  Advanced user configuration<a name="en-us_topic_0186390266_en-us_topic_0122145909_fig128716531312"></a>  
-    <img src="figures/advanced-user-configuration.png" title="advanced-user-configuration" style="zoom:85%;" />
+    ![](./figures/advanced-user-configuration.png)
 
     After configuration, click  **Done**  in the left-upper corner to switch back to the installation process page.
 
@@ -284,7 +284,7 @@ After entering the GUI installation page, perform the following operations to in
     openEuler has been installed, as shown in  [Figure 14](#en-us_topic_0186390267_en-us_topic_0122145917_fig1429512116338). Click  **Reboot**  to restart the system.
 
     **Figure  14**  Completing the installation<a name="en-us_topic_0186390267_en-us_topic_0122145917_fig1429512116338"></a>  
-    <img src="figures/completing-the-installation.png" title="completing-the-installation"  />
+    ![](./figures/completing-the-installation.png)
 
 
 ## Viewing System Information
