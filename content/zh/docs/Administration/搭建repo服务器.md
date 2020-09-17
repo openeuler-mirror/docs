@@ -172,7 +172,7 @@ Packages为rpm包所在的目录，repodata为repo源元数据所在的目录，
     - [图1](#zh-cn_topic_0151920971_fd25e3f1d664b4087ae26631719990a71)表示nginx服务启动成功
 
         **图 1**  nginx服务启动成功<a name="zh-cn_topic_0151920971_fd25e3f1d664b4087ae26631719990a71"></a>  
-        ![](figures/nginx服务启动成功.png "nginx服务启动成功")
+        ![](figures/nginx_start_success.png)
 
     - 若nginx服务启动失败，查看错误信息：
 
@@ -181,7 +181,7 @@ Packages为rpm包所在的目录，repodata为repo源元数据所在的目录，
     ```
 
         **图 2**  nginx服务启动失败<a name="zh-cn_topic_0151920971_f1f9f3d086e454b9cba29a7cae96a4c54"></a>  
-        ![](figures/nginx服务启动失败.png "nginx服务启动失败")
+        ![](figures/nginx_start_failed.png)
 
     如[图2](#zh-cn_topic_0151920971_f1f9f3d086e454b9cba29a7cae96a4c54)所示nginx服务创建失败，是由于目录/var/spool/nginx/tmp/client\_body创建失败，在root权限下手动进行创建，类似的问题也这样处理：
 
@@ -230,7 +230,7 @@ Packages为rpm包所在的目录，repodata为repo源元数据所在的目录，
 4.  nginx服务设置好之后，即可通过ip直接访问网页，如[图3](#zh-cn_topic_0151921017_fig1880404110396)：
 
     **图 3**  nginx部署成功<a name="zh-cn_topic_0151921017_fig1880404110396"></a>  
-    ![](figures/nginx部署成功.png "nginx部署成功")
+    ![](figures/nginx_deployed_success.png)
 
 5.  通过下面几种方式将repo源放入到/usr/share/nginx/repo下：
     - 在root权限下拷贝镜像中相关文件至/usr/share/nginx/repo下，并修改目录权限。
