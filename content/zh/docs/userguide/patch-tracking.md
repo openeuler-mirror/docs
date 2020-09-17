@@ -29,7 +29,7 @@ patch-tracking采用 C/S 架构。
 3. 创建临时分支，将获取到的补丁文件提交到临时分支。
 4. 自动提交issue到对应项目，并生成关联 issue 的 PR。
 
-![PatchTracking](images/PatchTracking.jpg)
+![PatchTracking](./images/PatchTracking.jpg)
 
 * Maintainer对提交的补丁处理流程
 
@@ -37,7 +37,7 @@ patch-tracking采用 C/S 架构。
 1. Maintainer分析临时分支中的补丁文件，判断是否合入。
 2. 执行构建，构建成功后判断是否合入PR。
 
-![Maintainer](images/Maintainer.jpg)
+![Maintainer](./images/Maintainer.jpg)
 
 ## 数据结构
 
