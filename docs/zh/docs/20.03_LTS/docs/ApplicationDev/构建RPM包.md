@@ -523,7 +523,7 @@ OBS使用工程组织软件包。基础的权限控制、相关的存仓库和�
 5.  单击“Branch package”，在弹出的确认页面单击“Accept”确认创建子工程，如[图1](#fig77646143214)所示。
 
     **图 1**  Branch Confirmation页面<a name="fig77646143214"></a>  
-    ![](./figures/Branch-Confirmation页面.png "Branch-Confirmation页面")
+    ![](./figures/branch-confirmation-page.png)
 
 6.  单击“\_service”文件进入编辑页面，修改\_service内容后点击“Save”保存该文件。\_service内容示例如下，其中 _userCodeURL_、 _userCommitID_ 分别为用户代码托管路径、用户代码提交版本号或分支。
 
@@ -548,7 +548,7 @@ OBS使用工程组织软件包。基础的权限控制、相关的存仓库和�
     -   succeeded：构建成功。用户可以单击“succeeded”查看构建日志，如[图2](#fig10319114217337)所示。
 
         **图 2**  succeeded的页面<a name="fig10319114217337"></a>  
-        ![](./figures/succeeded的页面.png "succeeded的页面")
+        ![](./figures/succeeded-page.png)
 
     -   failed：构建失败。请单击“failed”查看错误日志进行问题定位后重新构建。
     -   unresolvable：未进行构建，可能由于缺失依赖。
@@ -567,7 +567,7 @@ OBS使用工程组织软件包。基础的权限控制、相关的存仓库和�
 5.  单击“Delete package”，删除新创建子工程中的软件包，如[图3](#fig18306181103615)所示。
 
     **图 3**  删除子工程中软件包<a name="fig18306181103615"></a>  
-    ![](./figures/删除子工程中软件包.png "删除子工程中软件包")
+    ![](./figures/deleting-a-software-package-from-a-subproject.png)
 
     >![](./public_sys-resources/icon-note.gif) **说明：**   
     >通过已有软件创建新工程是为了继承环境等依赖，而不需要实际的文件，所以这里需要把这些文件删除。  
@@ -575,15 +575,15 @@ OBS使用工程组织软件包。基础的权限控制、相关的存仓库和�
 6.  单击“Create Package”，在弹出的页面输入软件包名称、标题和软件包描述，然后单击“Create”创建软件包，分别如[图4](#fig6762111693811)、[图5](#fig18351153518389)所示。
 
     **图 4**  Create Package页面<a name="fig6762111693811"></a>  
-    ![](./figures/Create-Package页面.png "Create-Package页面")
+    ![](./figures/create-package-page.png)
 
     **图 5**  创建软件包信息填写页面<a name="fig18351153518389"></a>  
-    ![](./figures/创建软件包信息填写页面.png "创建软件包信息填写页面")
+    ![](./figures/creating-a-software-package.png)
 
 7.  在页面中单击“Add file”上传spec文件和需要编译的文件（在spec文件中指定），如[图6](#fig1475845284011)所示。
 
     **图 6**  Add file页面<a name="fig1475845284011"></a>  
-    ![](./figures/Add-file页面.png "Add-file页面")
+    ![](./figures/add-file-page.png)
 
 8.  文件上传成功后，OBS会自动开始构建RPM软件包。等待构建完成，并查看右侧状态栏的构建状态。
     -   succeed：构建成功。用户可以单击“succeeded”查看构建日志。
@@ -604,12 +604,12 @@ RPM软件包构建完成后，通过网页端获取对应RPM软件包的方法�
 1.  选择Repositories页签进入软件包的软件仓库管理页面，在Publish Flag中通过单击选择“Enable”开启（状态由![](./figures/zh-cn_image_0229243704.png)变为![](./figures/zh-cn_image_0229243702.png)）对应的RPM软件包下载功能，如[图7](#fig17480830144217)所示。
 
     **图 7**  Repositories页面<a name="fig17480830144217"></a>  
-    ![](./figures/Repositories页面.png "Repositories页面")
+    ![](./figures/repositories-page.png)
 
 2.  单击Repository列的构建工程名称，进入RPM软件包下载页面，单击RPM软件包右侧的“Download”即可下载对应RPM软件包，如[图8](#fig12152145615438)所示。
 
     **图 8**  RPM软件包下载页面<a name="fig12152145615438"></a>  
-    ![](./figures/RPM软件包下载页面.png "RPM软件包下载页面")
+    ![](./figures/rpm-software-package-download-page.png)
 
 
 ### 使用osc构建软件包
