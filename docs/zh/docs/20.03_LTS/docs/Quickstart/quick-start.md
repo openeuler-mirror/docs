@@ -153,7 +153,7 @@
     将“引导介质有效期”和“引导介质”分别设置为“单次有效”和“光驱”，并单击“保存”以保存配置。如[图1](#fig1011938131018)所示。
 
     **图 1**  设置系统启动项<a name="fig1011938131018"></a>  
-    ![](./figures/设置系统启动项.png "设置系统启动项")
+    ![](./figures/Setting_the_System_Boot_Option.png)
 
 3.  在上方标题栏中，选择“远程控制”，在左侧导航树中选择“远程控制”，显示“远程控制”界面。
 
@@ -162,19 +162,19 @@
 4.  在虚拟界面工具栏中，单击虚拟光驱工具如下图所示。
 
     **图 2**  光驱图标<a name="zh-cn_topic_0229291223_zh-cn_topic_0151920806_f6ff7658b349942ea87f4521c0256c32e"></a>  
-    ![](./figures/光驱图标.png "光驱图标")
+    ![](./figures/CD-ROM_drive_icon.png)
 
     弹出镜像对话框，如下图所示。
 
     **图 3**  镜像对话框<a name="zh-cn_topic_0229291223_zh-cn_topic_0151920806_fb74fb37f86cd423aacf34bddedd6841a"></a>  
-    ![](./figures/镜像对话框.png "镜像对话框")
+    ![](./figures/Image_dialog_box.png)
 
 5.  在镜像对话框中，选择“镜像文件”， 并单击“浏览”。弹出“打开”对话框。
 6.  选择镜像文件，单击“打开”。然后在镜像对话框中，单击“连接”。当“连接”显示为“断开”后，表示虚拟光驱已连接到服务器。
 7.  在工具栏中，单击重启工具重启设备，如下图所示。
 
     **图 4**  重启图标<a name="zh-cn_topic_0229291223_zh-cn_topic_0151920806_f0d1f4f5f96de47b48c64b3535b2b60d1"></a>  
-    ![](./figures/重启图标.png "重启图标")
+    ![](./figures/restarticon.png)
 
 8.  设备重启后进入到openEuler操作系统安装引导界面，如[图5](#fig1648754873314)所示。
 
@@ -183,7 +183,7 @@
     >-   安装物理机时，如果使用键盘上下键无法选择启动选项，按“Enter”键无响应，可以单击BMC界面上的鼠标控制图标“![](./figures/zh-cn_image_0229420473.png)”，设置“键鼠复位”。  
 
     **图 5**  安装引导界面<a name="fig1648754873314"></a>  
-    <img src="figures/安装引导界面.png" title="安装引导界面"  />
+    ![](./figures/Installation_wizard.png)
 
 9.  在安装引导界面，按“Enter”，进入默认选项“Test this media & install openEuler 20.03 LTS”的图形化安装界面。
 
@@ -194,7 +194,7 @@
 1.  设置安装语言，默认为英语，用户可根据实际情况进行调整，如[图6](#fig874344811484)所示，选择“中文”。
 
     **图 6**  选择语言<a name="fig874344811484"></a>  
-    <img src="figures/选择语言.png" title="选择语言"  />
+    ![](./figures/chooselanguage.png)
 
 2.  在安装概览界面，根据实际情况设置各配置项。
 
@@ -203,14 +203,14 @@
     -   所有配置项均无告警符号时用户才能单击“开始安装”进行系统安装。
 
     **图 7**  安装概览<a name="fig24261457656"></a>  
-    <img src="figures/安装概览.png" title="安装概览"  />
+    ![](./figures/Installation_Overview.png)
 
     1.  选择“软件选择”，设置“软件选择”配置项。
 
         用户需要根据实际的业务需求，在左侧选择一个“最小安装”，在右侧选择安装环境的附加选项，如[图8](#fig1133717611109)所示。
 
         **图 8**  软件选择<a name="fig1133717611109"></a>  
-        <img src="figures/软件选择.png" title="软件选择"  />
+        ![](./figures/choosesoftware.png)
 
         >![](./public_sys-resources/icon-note.gif) **说明：**   
         >-   在最小安装的环境下，并非安装源中所有的包都会安装。如果用户需要使用的包未安装，可将安装源挂载到本地制作repo源，通过DNF工具单独安装。  
@@ -226,7 +226,7 @@
         >在选择您需要安装的设备时，建议不要选择NVMe SSD存储介质作为操作系统的安装磁盘。  
 
         **图 9**  安装目标位置<a name="fig153381468101"></a>  
-        <img src="figures/安装目标位置.png" title="安装目标位置"  />
+        ![](./figures/Target_installation_position.png)
 
         >![](./public_sys-resources/icon-note.gif) **说明：**   
         >-   在进行分区时，出于系统性能和安全的考虑，建议您划分如下单独分区：/boot、/var、/var/log 、/var/log/audit、/home、/tmp。  
@@ -240,7 +240,7 @@
 3.  单击“开始安装”进行系统安装，如[图10](#fig1717019357392)所示。
 
     **图 10**  开始安装<a name="fig1717019357392"></a>  
-    <img src="figures/开始安装.png" title="开始安装"  />
+    ![](./figures/startinstall.png)
 
 4.  设置root密码。
 
@@ -277,17 +277,17 @@
                 ```
     
     **图 11**  root密码<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018"></a>  
-    <img src="figures/root密码.png" title="root密码"  />
+    ![](./figures/rootpassword.png)
     
 5.  创建用户。
 
     单击“创建用户”，弹出创建用户的界面如[图12](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319)所示。输入用户名，并设置密码，其中密码复杂度要求与root密码复杂度要求一致。另外您还可以通过“高级”选项设置用户主目录、用户组等，如[图13](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig128716531312)所示。
 
     **图 12**  创建用户<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319"></a>  
-    <img src="figures/创建用户.png" title="创建用户"  />
+    ![](./figures/createuser.png)
 
     **图 13**  高级用户配置<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig128716531312"></a>  
-    ![](./figures/高级用户配置.png "高级用户配置")
+    ![](./figures/Advanced_User_Configuration.png)
 
     完成设置后，单击左上角的“完成”返回安装过程界面。
 
@@ -296,7 +296,7 @@
     openEuler完成安装，如[图14](#zh-cn_topic_0186390267_zh-cn_topic_0122145917_fig1429512116338)所示。单击“重启”后，系统将重新启动。
 
     **图 14**  完成安装<a name="zh-cn_topic_0186390267_zh-cn_topic_0122145917_fig1429512116338"></a>  
-    <img src="figures/完成安装.png" title="完成安装"  />
+    ![](./figures/completeinstall.png)
 
 
 ## 查看系统信息
