@@ -16,7 +16,7 @@
     -   [图1](#zh-cn_topic_0151920971_fd25e3f1d664b4087ae26631719990a71)表示nginx服务启动成功
 
     **图 1**  nginx服务启动成功<a name="zh-cn_topic_0151920971_fd25e3f1d664b4087ae26631719990a71"></a>  
-    ![](./figures/nginx服务启动成功.png "nginx服务启动成功")
+    ![](./figures/nginx-start-success.png)
 
     -   若nginx服务启动失败，查看错误信息：
 
@@ -25,7 +25,7 @@
     ```
 
     **图 2**  nginx服务启动失败<a name="zh-cn_topic_0151920971_f1f9f3d086e454b9cba29a7cae96a4c54"></a>  
-    ![](./figures/nginx服务启动失败.png "nginx服务启动失败")
+    ![](./figures/nginx-start-failed.png)
 
     如[图2](#zh-cn_topic_0151920971_f1f9f3d086e454b9cba29a7cae96a4c54)所示nginx服务创建失败，是由于目录/var/spool/nginx/tmp/client\_body创建失败，手动进行创建，类似的问题也这样处理：
 

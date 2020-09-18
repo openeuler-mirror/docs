@@ -37,7 +37,7 @@
 4.  nginx服务设置好之后，即可通过ip直接访问网页，如[图1](#zh-cn_topic_0151921017_fig1880404110396)：
 
     **图 1**  nginx部署成功<a name="zh-cn_topic_0151921017_fig1880404110396"></a>  
-    ![](./figures/nginx部署成功.png "nginx部署成功")
+    ![](./figures/nginx-deploy-success.png)
 
 5.  通过下面几种方式将repo源放入到/srv/repo下：
     -   拷贝镜像中相关文件至在/srv/repo下
