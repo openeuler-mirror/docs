@@ -281,7 +281,7 @@
     $ /usr/bin/psql -U postgres
     ```
 
-    ![](./figures/登录.png)
+    ![](./figures/login.png)
 
     >![](./public_sys-resources/icon-note.gif) **NOTE:**   
     >You do not need to enter a password when logging in to the database for the first time.  
@@ -923,7 +923,7 @@ Each storage engine manages and stores data in different ways, and supports diff
 
     In the last line,  **/dev/nvme0n1p1**  is only an example.
 
-    ![](./figures/搭建数据盘.png)
+    ![](./figures/Creating_DataDisk.png)
 
 
 ##### Method 2: Using LVM for Drive Management as the **root** user
@@ -1550,7 +1550,7 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
 
     In the last line,  **/dev/nvme0n1p1**  is only an example.
 
-    ![](./figures/搭建数据盘-0.png)
+    ![](./figures/Creating_DataDisk-0.png)
 
 
 ##### Method 2: Using LVM for Drive Management as the **root** user
