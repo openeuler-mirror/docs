@@ -254,7 +254,7 @@ kdump内核预留内存参数说明如下：
 在安装系统时，如果之前的系统选择多块磁盘组成逻辑卷进行安装，再次安装时，如果只选择了其中的一块或几块磁盘，没有全部选择，在保存配置时提示配置错误，如[图1](#fig115949762617)所示。
 
 **图 1**  配置错误提示<a name="fig115949762617"></a>  
-![](./figures/配置错误提示.png "配置错误提示")
+![](./figures/Configuration_error_prompt.png)
 
 ### 原因分析
 
@@ -295,7 +295,7 @@ kdump内核预留内存参数说明如下：
 x86物理机安装系统时，由于设置了BIOS选项security boot 为enable（默认是disable），导致系统一直停留在“No bootable device”提示界面，无法继续安装，如[图2](#fig115949762617)所示。
 
 **图 2**  “No bootable device”提示界面<a name="fig115949762617"></a>  
-![](./figures/No-bootable-device-提示界面.png "No-bootable-device-提示界面")
+![](./figures/No-bootable-device.png)
 
 ### 原因分析
 
@@ -315,7 +315,7 @@ x86物理机安装系统时，由于设置了BIOS选项security boot 为enable�
 
 3.  设置Enforce Secure Boot为Disabled。
 
-    ![](./figures/选择.png)
+    ![](./figures/select.png)
 
     >![](./public_sys-resources/icon-note.gif) **说明：**   
     >设置security boot为disable之后，保存退出，重新安装即可。  
