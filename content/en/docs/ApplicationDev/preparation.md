@@ -181,7 +181,7 @@ Configure an online yum source by directly obtaining the online openEuler repo s
      
      3. Click the link provided after **Download ISO**. The download list is displayed.
      
-     4. Select the version to be downloaded, for example, openEuler 20.03 LTS. Then, click  **openEuler-20.09**. The download list is displayed.
+     4. Select the version to be downloaded, for example, openEuler 20.09. Then, click  **openEuler-20.09**. The download list is displayed.
      
      5. Click  **ISO**. The ISO download list is displayed.
         

@@ -75,7 +75,7 @@ rpm 包获取地址：https://build.openeuler.org/package/show/openEuler:20.09/p
 
 #### 方法1：从repo源安装
 
-1. 使用 dnf 挂载 repo源（需要 20.09 或更新的 repo 源，具体方法参考[应用开发指南](https://openeuler.org/zh/docs/20.03_LTS/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装pkgship及其依赖。
+1. 使用 dnf 挂载 repo源（需要 20.09 或更新的 repo 源，具体方法参考[应用开发指南](https://openeuler.org/zh/docs/20.09/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装pkgship及其依赖。
 
 2. 执行以下命令安装`patch-tracking`。
 
