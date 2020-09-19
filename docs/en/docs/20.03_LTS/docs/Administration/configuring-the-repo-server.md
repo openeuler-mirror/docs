@@ -180,7 +180,7 @@ The configuration content in this document is for reference only. You can config
    $ systemctl status nginx.service --full
    ```
    
-       **Figure  2**  Nginx startup failure<a name="en-us_topic_0151920971_f1f9f3d086e454b9cba29a7cae96a4c54"></a>  
+    **Figure  2**  Nginx startup failure<a name="en-us_topic_0151920971_f1f9f3d086e454b9cba29a7cae96a4c54"></a>  
        ![](./figures/nginx-startup-failure.png "nginx-startup-failure")
    
    As shown in  [Figure 2](#en-us_topic_0151920971_f1f9f3d086e454b9cba29a7cae96a4c54), the Nginx service fails to be created because the /var/spool/nginx/tmp/client\_body directory fails to be created. You need to manually create the directory as the **root** user. Similar problems are solved as follows:
