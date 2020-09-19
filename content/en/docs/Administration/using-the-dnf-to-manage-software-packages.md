@@ -131,7 +131,7 @@ The repository part allows you to customize openEuler software source repositori
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >openEuler provides an online image source at  [https://repo.openeuler.org/](https://repo.openeuler.org/). For example, if the openEuler 20.03 version is aarch64, the  **baseurl**  can be set to  [https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/](https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/).  
+    >openEuler provides an online image source at  [https://repo.openeuler.org/](https://repo.openeuler.org/). For example, if the openEuler 20.09 version is aarch64, the  **baseurl**  can be set to  [https://repo.openeuler.org/openEuler-20.09/OS/aarch64/](https://repo.openeuler.org/openEuler-20.09/OS/aarch64/).  
 
     Common options are as follows:
 
@@ -171,10 +171,10 @@ The repository part allows you to customize openEuler software source repositori
     ```
     [osrepo]
     name=osrepo
-    baseurl=https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/
+    baseurl=https://repo.openeuler.org/openEuler-20.09/OS/aarch64/
     enabled=1
     gpgcheck=1
-    gpgkey=https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/RPM-GPG-KEY-openEuler
+    gpgkey=https://repo.openeuler.org/openEuler-20.09/OS/aarch64/RPM-GPG-KEY-openEuler
 
     ```
 
