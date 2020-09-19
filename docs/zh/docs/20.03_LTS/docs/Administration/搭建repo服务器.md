@@ -181,7 +181,7 @@ Packages为rpm包所在的目录，repodata为repo源元数据所在的目录，
     ```
 
     **图 2**  nginx服务启动失败<a name="zh-cn_topic_0151920971_f1f9f3d086e454b9cba29a7cae96a4c54"></a>  
-    ![](./figures/nginx-start-fail.png "nginx服务启动失败")
+    ![](./figures/nginx-start-failed.png "nginx服务启动失败")
 
     如[图2](#zh-cn_topic_0151920971_f1f9f3d086e454b9cba29a7cae96a4c54)所示nginx服务创建失败，是由于目录/var/spool/nginx/tmp/client\_body创建失败，在root权限下手动进行创建，类似的问题也这样处理：
 
@@ -230,7 +230,7 @@ Packages为rpm包所在的目录，repodata为repo源元数据所在的目录，
 4.  nginx服务设置好之后，即可通过ip直接访问网页，如[图3](#zh-cn_topic_0151921017_fig1880404110396)：
 
     **图 3**  nginx部署成功<a name="zh-cn_topic_0151921017_fig1880404110396"></a>  
-    ![](./figures/nginx-start-success.png "nginx部署成功")
+    ![](./figures/nginx-deploy-success.png "nginx部署成功")
 
 5.  通过下面几种方式将repo源放入到/usr/share/nginx/repo下：
     - 在root权限下拷贝镜像中相关文件至/usr/share/nginx/repo下，并修改目录权限。
