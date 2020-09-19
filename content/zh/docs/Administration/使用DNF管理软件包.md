@@ -133,7 +133,7 @@ repository部分允许您定义定制化的openEuler软件源仓库，各个仓�
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
-    >openEuler提供在线的镜像源，地址：[https://repo.openeuler.org/](https://repo.openeuler.org/)。以 openEuler 20.03的aarch64版本为例，baseurl可配置为[https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/](https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/)。  
+    >openEuler提供在线的镜像源，地址：[https://repo.openeuler.org/](https://repo.openeuler.org/)。以 openEuler 20.09的aarch64版本为例，baseurl可配置为[https://repo.openeuler.org/openEuler-20.09/OS/aarch64/](https://repo.openeuler.org/openEuler-20.09/OS/aarch64/)。  
 
     选项说明：
 
@@ -170,10 +170,10 @@ repository部分允许您定义定制化的openEuler软件源仓库，各个仓�
     ```
     [osrepo]
     name=osrepo
-    baseurl=https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/
+    baseurl=https://repo.openeuler.org/openEuler-20.09/OS/aarch64/
     enabled=1
     gpgcheck=1
-    gpgkey=https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/RPM-GPG-KEY-openEuler
+    gpgkey=https://repo.openeuler.org/openEuler-20.09/OS/aarch64/RPM-GPG-KEY-openEuler
 
     ```
 

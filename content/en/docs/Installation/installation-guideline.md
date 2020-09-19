@@ -56,10 +56,10 @@ Load the ISO image of openEuler from the CD/DVD-ROM drive of the server and rest
 
 ### Installation Wizard
 
-A boot menu is displayed after the system is booted using the boot medium. In addition to options for starting the installation program, some other options are available on the boot menu. During system installation, the  **Test this media & install openEuler 20.03 LTS**  mode is used by default. Press the arrow keys on the keyboard to change the selection, and press  **Enter**  when the desired option is highlighted.
+A boot menu is displayed after the system is booted using the boot medium. In addition to options for starting the installation program, some other options are available on the boot menu. During system installation, the  **Test this media & install openEuler 20.09**  mode is used by default. Press the arrow keys on the keyboard to change the selection, and press  **Enter**  when the desired option is highlighted.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media & install openEuler 20.03 LTS**  and enters the installation page.  
+>-   If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media & install openEuler 20.09**  and enters the installation page.  
 >-   During PM installation, if you cannot use the arrow keys to select boot options and the system does not respond after you press  **Enter**, click  ![](figures/en-us_image_0229420473.png)  on the BMC page and configure  **Key & Mouse Reset**.  
 
 **Figure  4**  Installation Wizard<a name="fig1601161484619"></a>  
@@ -67,19 +67,19 @@ A boot menu is displayed after the system is booted using the boot medium. In ad
 
 Installation wizard options are described as follows:
 
--   **Install openEuler 20.03 LTS**: Install openEuler on your server in GUI mode.
+-   **Install openEuler 20.09**: Install openEuler on your server in GUI mode.
 
--   **Test this media & install openEuler 20.03 LTS**: Default option. Install openEuler on your server in GUI mode. The integrity of the installation medium is checked before the installation program is started.
+-   **Test this media & install openEuler 20.09**: Default option. Install openEuler on your server in GUI mode. The integrity of the installation medium is checked before the installation program is started.
 
 -   **Troubleshooting**: Troubleshooting mode, which is used when the system cannot be installed properly. In troubleshooting mode, the following options are available:
-    -   **Install openEuler 20.03-LTS in basic graphics mode**: Basic graphics installation mode. In this mode, the video driver is not started before the system starts and runs.
+    -   **Install openEuler 20.09 in basic graphics mode**: Basic graphics installation mode. In this mode, the video driver is not started before the system starts and runs.
     -   **Rescue the openEuler system**: Rescue mode, which is used to restore the system. In rescue mode, the installation process is printed in the VNC or BMC, and the serial port is unavailable.
 
 On the installation wizard screen, press  **e**  to go to the parameter editing screen of the selected option, and press  **c**  to go to the command-line interface \(CLI\). 
 
 ### Installation in GUI Mode
 
-On the installation wizard page, select  **Test this media & install openEuler 20.03 LTS**  to enter the GUI installation mode.
+On the installation wizard page, select  **Test this media & install openEuler 20.09**  to enter the GUI installation mode.
 
 Perform graphical installation operations using a keyboard.
 
@@ -192,7 +192,7 @@ After the setting is complete, click  **Done**  in the upper left corner to go b
 
 On the  **INSTALLATION SUMMARY**  page, click  **INSTALLATION DESTINATION**  to select the OS installation disk and partition.
 
-You can view available local storage devices in  [Figure 13](#fig1195417125015). You can also add an attached device or a network disk specified by clicking  **Add a disk**.
+You can view available local storage devices in  [Figure 13](#fig1195417125015). 
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
 >When selecting the device to be installed, you are advised not to use the NVMe SSD storage medium as the OS installation disk.  
@@ -268,29 +268,9 @@ The password of the  **root**  user or the password of the new user must meet th
 2.  A password must contain at least three of the following types: uppercase letters, lowercase letters, digits, and special characters.
 3.  A password must be different from the account name.
 4.  A password cannot contain words in the dictionary.
-    -   Querying a dictionary
 
-        In the installed openEuler environment, you can run the following command to export the dictionary library file  **dictionary.txt**, and then check whether the password is in the dictionary.
-
-        ```
-        cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt
-        ```
-
-    -   Modifying a dictionary
-        1.  Modify the exported dictionary library file, and then run the following command to update the dictionary library:
-
-            ```
-            # create-cracklib-dict dictionary.txt
-            ```
-
-        2.  Run the following command to add another dictionary file  **custom.txt**  to the original dictionary library.
-
-            ```
-            # create-cracklib-dict dictionary.txt custom.txt
-            ```
-
-
-
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    > In the installed openEuler environment, you can run the `cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt` command to export the dictionary library file  **dictionary.txt**, and then check whether the password is in the dictionary.
 
 ### Setting the Root User Password
 

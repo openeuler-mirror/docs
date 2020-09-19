@@ -1,6 +1,6 @@
 # Quick Start
 
-This document uses openEuler 20.03 LTS installed on the TaiShan 200 server as an example to describe how to quickly install and use openEuler OS. For details about the installation requirements and methods, see  [openEuler 20.03 LTS Installation Guide](https://openeuler.org/en/docs/20.03_LTS/docs/Installation/Installation.html).
+This document uses openEuler 20.09 installed on the TaiShan 200 server as an example to describe how to quickly install and use openEuler OS. For details about the installation requirements and methods, see  [openEuler 20.09 Installation Guide](https://openeuler.org/en/docs/20.09/docs/Installation/Installation.html).
 <!-- TOC -->
 
 - [Quick Start](#quick-start)
@@ -103,7 +103,7 @@ Perform the following operations to obtain the openEuler release package:
 1.  Log in to the  [openEuler Community](https://openeuler.org)  website.
 2.  Click  **Download**. 
 3.  Click the link provided after  **Download ISO**. The download list is displayed.
-4.  Click  **openEuler-20.03-LTS**. The openEuler 20.03 LTS version download list is displayed.
+4.  Click  **openEuler-20.09**. The openEuler 20.09 version download list is displayed.
 5.  Click  **ISO**. The ISO download list is displayed.
     -   **aarch64**: ISO image file of the AArch64 architecture
     -   **x86\_64**: ISO image file of the x86\_64 architecture
@@ -112,13 +112,13 @@ Perform the following operations to obtain the openEuler release package:
 6.  Select the openEuler release package and verification file to be downloaded based on the architecture of the environment to be installed.
     -   If the AArch64 architecture is used:
         1.  Click  **aarch64**.
-        2.  Click  **openEuler-20.03-LTS-aarch64-dvd.iso**  to download the openEuler release package to the local host.
-        3.  Click  **openEuler-20.03-LTS-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
+        2.  Click  **openEuler-20.09-aarch64-dvd.iso**  to download the openEuler release package to the local host.
+        3.  Click  **openEuler-20.09-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
 
     -   If the x86\_64 architecture is used:
         1.  Click  **x86\_64**.
-        2.  Click  **openEuler-20.03-LTS-x86\_64-dvd.iso**  to download the openEuler release package to the local host.
-        3.  Click  **openEuler-20.03-LTS-x86\_64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
+        2.  Click  **openEuler-20.09-x86\_64-dvd.iso**  to download the openEuler release package to the local host.
+        3.  Click  **openEuler-20.09-x86\_64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
 
 
 
@@ -129,13 +129,13 @@ To prevent incomplete download of the software package due to network or storage
 1.  Obtain the verification value in the verification file. Run the following command:
 
     ```
-    #cat openEuler-20.03-LTS-aarch64-dvd.iso.sha256sum 
+    #cat openEuler-20.09-aarch64-dvd.iso.sha256sum 
     ```
 
 2.  Calculate the SHA256 verification value of the file. Run the following command:
 
     ```
-    #sha256sum openEuler-20.03-LTS-aarch64-dvd.iso
+    #sha256sum openEuler-20.09-aarch64-dvd.iso
     ```
 
     After the command is run, the verification value is displayed.
@@ -182,13 +182,13 @@ To prevent incomplete download of the software package due to network or storage
 8.  A boot menu is displayed after the system restarts, as shown in  [Figure 5](#fig1648754873314).
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media & install openEuler 20.03 LTS**  and enters the installation page.  
+    >-   If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media & install openEuler 20.09**  and enters the installation page.  
     >-   During PM installation, if you cannot use the arrow keys to select boot options and the system does not respond after you press  **Enter**, click  ![](figures/en-us_image_0229420473.png)  on the BMC page and configure  **Key & Mouse Reset**.  
 
     **Figure  5**  Installation Wizard<a name="fig1648754873314"></a>  
-    <img src="figures/installation-wizard.png" title="installation-wizard"  />
+    ![](./figures/installation-wizard.png)
 
-9.  On the installation wizard page, press  **Enter**  to select the default option  **Test this media & install openEuler 20.03 LTS**  to enter the GUI installation page.
+9.  On the installation wizard page, press  **Enter**  to select the default option  **Test this media & install openEuler 20.09**  to enter the GUI installation page.
 
 ## Installation
 
@@ -197,7 +197,7 @@ After entering the GUI installation page, perform the following operations to in
 1.  Set an installation language. The default language is English. You can change the language based on the site requirements, as shown in  [Figure 6](#fig874344811484).
 
     **Figure  6**  Selecting a language<a name="fig874344811484"></a>  
-    <img src="figures/selecting-a-language.png" title="selecting-a-language"  />
+    ![](./figures/selecting-a-language.png)
 
 2.  On the  **INSTALLATION SUMMARY**  page, set configuration items based on the site requirements.
 
@@ -206,14 +206,14 @@ After entering the GUI installation page, perform the following operations to in
     -   You can click  **Begin Installation**  to install the system only when all alarms are cleared.
 
     **Figure  7**  Installation summary<a name="fig24261457656"></a>  
-    <img src="figures/installation-summary.png" title="installation-summary"  />
+    ![](./figures/installation-summary.png)
 
     1.  Select  **Software Selection**  to set configuration items.
 
         Based on the site requirements, select  **Minimal Install**  on the left box and select an add-on in the  **Add-Ons for Selected Environment**  area on the right, as shown in  [Figure 8](#fig1133717611109).
 
         **Figure  8**  Selecting installation software<a name="fig1133717611109"></a>  
-        <img src="figures/selecting-installation-software.png" title="selecting-installation-software"  />
+        ![](./figures/selecting-installation-software.png)
 
         >![](public_sys-resources/icon-note.gif) **NOTE:**   
         >-   In  **Minimal Install**  mode, not all packages in the installation source will be installed. If the required package is not installed, you can mount the installation source to the local PC and configure a repo source, and use DNF to install the package.  
@@ -223,13 +223,15 @@ After entering the GUI installation page, perform the following operations to in
 
     2.  Select  **Installation Destination**  to set configuration items.
 
-        On the  **INSTALLATION DESTINATION**  page, select a local storage device or click  **Add a disk**  to add a specified additional device or network device. You also need to configure the storage to partition the system. You can either manually configure partitions or select  **Automatic**  to automatically configure partitioning. Select  **Automatic**  if the software is installed in a new storage device or the data in the storage device is not required, as shown in  [Figure 9](#fig153381468101).
+        On the  **INSTALLATION DESTINATION**  page, select a local storage device. 
 
         >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
         >When selecting the device to be installed, you are advised not to use the NVMe SSD storage medium as the OS installation disk.  
 
+        You also need to configure the storage to partition the system. You can either manually configure partitions or select  **Automatic**  to automatically configure partitioning. Select  **Automatic**  if the software is installed in a new storage device or the data in the storage device is not required, as shown in  [Figure 9](#fig153381468101).
+
         **Figure  9**  Setting the installation destination<a name="fig153381468101"></a>  
-        <img src="figures/setting-the-installation-destination.png" title="setting-the-installation-destination"  />
+        ![](./figures/setting-the-installation-destination.png)
 
         >![](public_sys-resources/icon-note.gif) **NOTE:**   
         >-   During partitioning, to ensure system security and performance, you are advised to divide the device into the following partitions:  **/boot**,  **/var**,  **/var/log**,  **/var/log/audit**,  **/home**, and  **/tmp**.  
@@ -243,7 +245,7 @@ After entering the GUI installation page, perform the following operations to in
 3.  Click  **Begin Installation**  to install the system, as shown in  [Figure 10](#fig1717019357392).
 
     **Figure  10**  Starting installation<a name="fig1717019357392"></a>  
-    <img src="figures/starting-installation.png" title="starting-installation"  />
+    ![](./figures/starting-installation.png)
 
 4.  Set the root user password.
 
@@ -258,39 +260,22 @@ After entering the GUI installation page, perform the following operations to in
     -   A password must contain at least three of the following types: uppercase letters, lowercase letters, digits, and special characters.
     -   A password must be different from the account name.
     -   A password cannot contain words in the dictionary.
-        -   Querying a dictionary
-
-            In the installed openEuler environment, you can run the following command to export the dictionary library file  **dictionary.txt**, and then check whether the password is in the dictionary.
-
-            ```
-            cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt
-            ```
-
-        -   Modifying a dictionary
-            -   Modify the exported dictionary library file, and then run the following command to update the dictionary library:
-
-                ```
-                create-cracklib-dict dictionary.txt
-                ```
-
-            -   Run the following command to add another dictionary file  **custom.txt**  to the original dictionary library.
-
-                ```
-                create-cracklib-dict dictionary.txt custom.txt
-                ```
+    
+        >![](public_sys-resources/icon-note.gif) **NOTE:**   
+        > In the installed openEuler environment, you can run the `cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt` command to export the dictionary library file  **dictionary.txt**, and then check whether the password is in the dictionary.
     
     **Figure  11**  Password of the  **root**  account<a name="en-us_topic_0186390266_en-us_topic_0122145909_fig1323165793018"></a>  
-    <img src="figures/password-of-the-root-account.png" title="password-of-the-root-account"  />
-    
+    ![](./figures/password-of-the-root-account.png)
+
 5.  Create a user.
 
     Click  **User Creation**.  [Figure 12](#en-us_topic_0186390266_en-us_topic_0122145909_fig1237715313319)  shows the page for creating a user. Enter a username and set a password. The password complexity requirements are the same as those of the user  **root**. By clicking  **Advanced**, you can also configure a home directory and a user group, as shown in  [Figure 13](#en-us_topic_0186390266_en-us_topic_0122145909_fig128716531312).
 
     **Figure  12**  Creating a user<a name="en-us_topic_0186390266_en-us_topic_0122145909_fig1237715313319"></a>  
-    <img src="figures/creating-a-user.png" title="creating-a-user"  />
+    ![](./figures/creating-a-user.png)
 
     **Figure  13**  Advanced user configuration<a name="en-us_topic_0186390266_en-us_topic_0122145909_fig128716531312"></a>  
-    <img src="figures/advanced-user-configuration.png" title="advanced-user-configuration" style="zoom:85%;" />
+    ![](./figures/advanced-user-configuration.png)
 
     After configuration, click  **Done**  in the left-upper corner to switch back to the installation process page.
 
@@ -299,12 +284,12 @@ After entering the GUI installation page, perform the following operations to in
     openEuler has been installed, as shown in  [Figure 14](#en-us_topic_0186390267_en-us_topic_0122145917_fig1429512116338). Click  **Reboot**  to restart the system.
 
     **Figure  14**  Completing the installation<a name="en-us_topic_0186390267_en-us_topic_0122145917_fig1429512116338"></a>  
-    <img src="figures/completing-the-installation.png" title="completing-the-installation"  />
+    ![](./figures/completing-the-installation.png)
 
 
 ## Viewing System Information
 
-After the system is installed and restarted, the system CLI login page is displayed. Enter the username and password set during the installation to log in to openEuler OS and view the following system information. For details about system management and configuration, see the  [openEuler 20.03 LTS Administrator Guide](https://openeuler.org/en/docs/20.03_LTS/docs/Administration/administration.html).
+After the system is installed and restarted, the system CLI login page is displayed. Enter the username and password set during the installation to log in to openEuler OS and view the following system information. For details about system management and configuration, see the  [openEuler 20.09 Administrator Guide](https://openeuler.org/en/docs/20.09/docs/Administration/administration.html).
 
 -   Run the following command to view the system information:
 
@@ -317,10 +302,10 @@ After the system is installed and restarted, the system CLI login page is displa
     ```
     # cat /etc/os-release
     NAME="openEuler"
-    VERSION="20.03 (LTS)"
+    VERSION="20.09"
     ID="openEuler"
-    VERSION_ID="20.03"
-    PRETTY_NAME="openEuler 20.03 (LTS)"
+    VERSION_ID="20.09"
+    PRETTY_NAME="openEuler 20.09"
     ANSI_COLOR="0;31"
     ```
 

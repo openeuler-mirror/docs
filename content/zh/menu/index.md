@@ -17,11 +17,19 @@ headless: true
 - [快速入门]({{< relref "./docs/Quickstart/quick-start.md" >}})
 
 - [安装指南]({{< relref "./docs/Installation/installation.md" >}})
-    - [安装准备]({{< relref "./docs/Installation/安装准备.md" >}})
-    - [安装方式介绍]({{< relref "./docs/Installation/安装方式介绍.md" >}})
-    - [安装指导]({{< relref "./docs/Installation/安装指导.md" >}})
-    - [使用kickstart自动化安装]({{< relref "./docs/Installation/使用kickstart自动化安装.md" >}})
-    - [FAQ]({{< relref "./docs/Installation/FAQ.md" >}})
+    - [安装在服务器]({{< relref "./docs/Installation/安装在服务器.md" >}})
+        - [安装准备]({{< relref "./docs/Installation/安装准备.md" >}})
+        - [安装方式介绍]({{< relref "./docs/Installation/安装方式介绍.md" >}})
+        - [安装指导]({{< relref "./docs/Installation/安装指导.md" >}})
+        - [使用kickstart自动化安装]({{< relref "./docs/Installation/使用kickstart自动化安装.md" >}})
+        - [FAQ]({{< relref "./docs/Installation/FAQ.md" >}})
+    - [安装在树莓派]({{< relref "./docs/Installation/安装在树莓派.md" >}})
+        - [安装准备]({{< relref "./docs/Installation/安装准备-1.md" >}})
+        - [安装方式介绍]({{< relref "./docs/Installation/安装方式介绍-1.md" >}})
+        - [安装指导]({{< relref "./docs/Installation/安装指导-1.md" >}})
+        - [FAQ]({{< relref "./docs/Installation/FAQ-1.md" >}})
+        - [更多资源]({{< relref "./docs/Installation/更多资源.md" >}})
+
 
 - [管理员指南]({{< relref "./docs/Administration/administration.md" >}})
     - [查看系统信息]({{< relref "./docs/Administration/查看系统信息.md" >}})
@@ -106,6 +114,7 @@ headless: true
             - [容器管理]({{< relref "./docs/Container/容器管理-4.md" >}})
             - [镜像管理]({{< relref "./docs/Container/镜像管理-4.md" >}})
             - [统计信息]({{< relref "./docs/Container/统计信息-4.md" >}})
+    - [isula-build构建工具]({{< relref "./docs/Container/isula-build构建工具.md" >}})
 
 
 - [A-Tune用户指南]({{< relref "./docs/A-Tune/A-Tune.md" >}})
