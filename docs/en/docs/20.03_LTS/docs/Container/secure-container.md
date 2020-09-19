@@ -12,7 +12,7 @@ Secure containers are isolated by the virtualization layers. Containers on the s
 **Figure  1**  Secure container architecture<a name="en-us_topic_0182219818_fig48591425165914"></a>  
 
 
-![](./figures/安全容器框架1.png)
+![](./figures/sec-container.png)
 
 Secure containers are closely related to the concept of pod in Kubernetes. Kubernetes is the open-source ecosystem standard for the container scheduling management platform. It defines a group of container runtime interfaces \(CRIs\).
 
