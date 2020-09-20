@@ -1,1 +1,0 @@
-本文介绍 openEuler 1.0 Base 版本的发行说明。

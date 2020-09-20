@@ -186,7 +186,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
 
     系统安装完毕以后会自动重启，然后再次进入到安装界面，此时关闭计算机，调整启动顺序（优先从硬盘启动）。
 
-    ![](./figures/自动化安装完成.png)
+    ![](./figures/Automatic_installation_complete.png)
 
 
 ## 全自动化安装指导
