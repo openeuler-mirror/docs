@@ -24,18 +24,18 @@ patch-tracking采用 C/S 架构。
 
 **主要步骤：**
 
-1. 命令行工具写入跟踪项。
-2. 自动从跟踪项配置的上游仓库（例如Github）获取补丁文件。
+1. 通过命令行工具添加跟踪项。
+2. 自动从跟踪项配置的上游仓库（例如GitHub）获取补丁文件。
 3. 创建临时分支，将获取到的补丁文件提交到临时分支。
-4. 自动提交issue到对应项目，并生成关联 issue 的 PR。
+4. 自动提交 issue 到对应仓库，并生成关联 issue 的 PR。
 
 ![PatchTracking](./images/PatchTracking.jpg)
 
 * Maintainer对提交的补丁处理流程
 
 **主要步骤：**
-1. Maintainer分析临时分支中的补丁文件，判断是否合入。
-2. 执行构建，构建成功后判断是否合入PR。
+1. Maintainer 分析 PR。
+2. 执行 CI，执行成功后判断是否合入 PR。
 
 ![Maintainer](./images/Maintainer.jpg)
 
@@ -66,7 +66,7 @@ patch-tracking采用 C/S 架构。
 
 ## 软件下载
 
-Repo 源挂载正式发布地址：https://repo.openeuler.org/
+Repo 源地址：https://repo.openeuler.org/
 
 rpm 包获取地址：https://build.openeuler.org/package/show/openEuler:20.09/patch-tracking
 
@@ -256,7 +256,7 @@ patch-tracking-cli add --server 127.0.0.1:5001 --user admin --password Test@123 
 --repo ：可选参数，需要查询的repo；如果没有该参数查询表中所有内容 \
 --branch ：可选参数，需要查询的branch
 ```shell script
-patch-tracking-cli query --server <LISTEN> --table tracking
+patch-tracking-cli query --server SERVER --table tracking
 ```
 例如：
 ```shell script
@@ -266,7 +266,7 @@ patch-tracking-cli query --server 127.0.0.1:5001 --table tracking
 ## 查询生成的 Issue
 
 ```shell script
-patch-tracking-cli query --server <LISTEN> --table issue
+patch-tracking-cli query --server SERVER --table issue
 ```
 例如：
 ```shell script
