@@ -184,7 +184,7 @@ To use kickstart to perform semi-automatic installation of openEuler, perform th
 
 2.  Verify that the installation is complete.
 
-    After the installation is complete, the system automatically restarts. if the system boots from the CD-ROM drive first, the installation page will be displayed again. Shut down the computer and change startup option to start from the hard disk preferentially.
+    After the installation is complete, the system automatically boots. if the first boot option of the system is set to the CD-ROM drive, the installation screen will be displayed again. Shut down the computer and change startup option to start from the hard disk preferentially.
 
     ![](figures/completing-the-automatic-installation.png)
 
