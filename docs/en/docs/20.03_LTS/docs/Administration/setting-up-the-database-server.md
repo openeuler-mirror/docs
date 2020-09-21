@@ -1619,15 +1619,17 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
 
 #### Installing MySQL
 >![](./public_sys-resources/icon-note.gif) **NOTE:**   
-> For 20.03 LTS, if you run the **rpm -Uvh XXX** command (XXX indicates the version, for example, mysql-8.0.21-1.oe1.aarch64.rpm) to upgrade mysql-8.0.17-3.oe1 to the latest version, the functions are unavailable after the upgrade. You can use either of the following methods to upgrade the version. The following uses the upgrade from mysql-8.0.17-3.oe1 to mysql-8.0.21-1.oe1 as an example: 
+> For 20.03 LTS, if you run the **rpm -Uvh XXX** command (XXX indicates the version, for example, mysql-8.0.21-1.oe1.aarch64.rpm) to upgrade mysql-8.0.17-3.oe1 to the latest version, the functions are unavailable after the upgrade. You can use either of the following methods to upgrade the version. The following uses the upgrade from mysql-8.0.17-3.oe1 to mysql-8.0.21-1.oe1 as an example:   
+>  
 >- Method 1: Run the following upgrade command:   
 >   ``` 
->   # rpm -Uvh mysql-8.0.21-1.oe1.aarch64.rpm --noscripts 
+>   # rpm -Uvh mysql-8.0.21-1.oe1.aarch64.rpm --noscripts   
 >   ```
->-  Method 2: Run the following commands to uninstall the MySQL of the earlier version and then install the MySQL of the new version:
+>    
+>-  Method 2: Run the following commands to uninstall the MySQL of the earlier version and then install the MySQL of the new version:  
 >    ```
->    # rpm -e mysql-8.0.17-3.oe1       
->    # rpm -ivh mysql-8.0.21-1.oe1.aarch64.rpm
+>    # rpm -e mysql-8.0.17-3.oe1         
+>    # rpm -ivh mysql-8.0.21-1.oe1.aarch64.rpm  
 >    ``` 
 
 1.  Configure the local yum source. For details, see  [Configuring the Repo Server](./configuring-the-repo-server.html).
