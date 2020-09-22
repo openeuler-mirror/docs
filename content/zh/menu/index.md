@@ -134,5 +134,5 @@ headless: true
     - [构建RPM包]({{< relref "./docs/ApplicationDev/构建RPM包.md" >}})
 
 - [openEuler工具集用户指南]({{< relref "./docs/userguide/概述.md" >}})
-    - [补丁工具]({{< relref "./docs/userguide/补丁工具.md" >}})
+    - [补丁工具]({{< relref "./docs/userguide/patch-tracking.md" >}})
     - [pkgship]({{< relref "./docs/userguide/pkgship.md" >}})

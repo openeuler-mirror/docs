@@ -1,6 +1,6 @@
 # 快速入门
 
-本文档以TaiShan 200服务器上安装openEuler 20.03 LTS为例，旨在指导用户快速地安装和使用openEuler操作系统，更详细的安装要求和安装方法请参考《[openEuler 20.03 LTS 安装指南](https://openeuler.org/zh/docs/20.03_LTS/docs/Installation/installation.html)》。
+本文档以TaiShan 200服务器上安装openEuler 20.09 beta为例，旨在指导用户快速地安装和使用openEuler操作系统，更详细的安装要求和安装方法请参考《[openEuler 20.09 beta 安装指南](../Installation/installation.html)》。
 <!-- TOC -->
 
 - [快速入门](#快速入门)
@@ -100,10 +100,13 @@
 
 请按以下步骤获取openEuler的发布包和校验文件：
 
+> ![](public_sys-resources/icon-note.gif) **说明：**   
+> AArch64架构的发布包支持UEFI模式，x86\_64架构的发布包支持UEFI模式和Legacy模式。
+
 1.  登录[openEuler社区](https://openeuler.org)网站。
 2.  单击“下载”。
 3.  单击“获取ISO：”后面的“Link”，显示版本列表。
-4.  单击“openEuler-20.03-LTS”，进入openEuler 20.03 LTS版本下载列表。
+4.  单击“openEuler-20.09-beta”，进入openEuler 20.09 beta版本下载列表。
 5.  单击“ISO”，进入ISO下载列表。
     -   aarch64：AArch64架构的ISO。
     -   x86\_64：x86\_64架构的ISO。
@@ -112,13 +115,13 @@
 6.  根据实际待安装环境的架构选择需要下载的openEuler的发布包和校验文件。
     -   若为AArch64架构。
         1.  单击“aarch64”。
-        2.  单击“openEuler-20.03-LTS-aarch64-dvd.iso”，将openEuler发布包下载到本地。
-        3.  单击“openEuler-20.03-LTS-aarch64-dvd.iso.sha256sum”，将openEuler校验文件下载到本地。
+        2.  单击“openEuler-20.09-beta-aarch64-dvd.iso”，将openEuler发布包下载到本地。
+        3.  单击“openEuler-20.09-beta-aarch64-dvd.iso.sha256sum”，将openEuler校验文件下载到本地。
 
     -   若为x86\_64架构。
         1.  单击“x86\_64”。
-        2.  单击“openEuler-20.03-LTS-x86\_64-dvd.iso”，将openEuler发布包下载到本地。
-        3.  单击“openEuler-20.03-LTS-x86\_64-dvd.iso.sha256sum”，将openEuler校验文件下载到本地。
+        2.  单击“openEuler-20.09-beta-x86\_64-dvd.iso”，将openEuler发布包下载到本地。
+        3.  单击“openEuler-20.09-beta-x86\_64-dvd.iso.sha256sum”，将openEuler校验文件下载到本地。
 
 
 
@@ -129,13 +132,13 @@
 1.  获取校验文件中的校验值。执行命令如下：
 
     ```
-    #cat openEuler-20.03-LTS-aarch64-dvd.iso.sha256sum 
+    $ cat openEuler-20.09-beta-aarch64-dvd.iso.sha256sum 
     ```
 
 2.  计算文件的sha256校验值。执行命令如下：
 
     ```
-    #sha256sum openEuler-20.03-LTS-aarch64-dvd.iso
+    $ sha256sum openEuler-20.09-beta-aarch64-dvd.iso
     ```
 
     命令执行完成后，输出校验值。
@@ -153,7 +156,7 @@
     将“引导介质有效期”和“引导介质”分别设置为“单次有效”和“光驱”，并单击“保存”以保存配置。如[图1](#fig1011938131018)所示。
 
     **图 1**  设置系统启动项<a name="fig1011938131018"></a>  
-    ![](figures/设置系统启动项.png "设置系统启动项")
+    ![](figures/Setting_the_System_Boot_Option.png)
 
 3.  在上方标题栏中，选择“远程控制”，在左侧导航树中选择“远程控制”，显示“远程控制”界面。
 
@@ -162,30 +165,30 @@
 4.  在虚拟界面工具栏中，单击虚拟光驱工具如下图所示。
 
     **图 2**  光驱图标<a name="zh-cn_topic_0229291223_zh-cn_topic_0151920806_f6ff7658b349942ea87f4521c0256c32e"></a>  
-    ![](figures/光驱图标.png "光驱图标")
+    ![](figures/CD-ROM_drive_icon.png)
 
     弹出镜像对话框，如下图所示。
 
     **图 3**  镜像对话框<a name="zh-cn_topic_0229291223_zh-cn_topic_0151920806_fb74fb37f86cd423aacf34bddedd6841a"></a>  
-    ![](figures/镜像对话框.png "镜像对话框")
+    ![](figures/Image_dialog_box.png "镜像对话框")
 
 5.  在镜像对话框中，选择“镜像文件”， 并单击“浏览”。弹出“打开”对话框。
 6.  选择镜像文件，单击“打开”。然后在镜像对话框中，单击“连接”。当“连接”显示为“断开”后，表示虚拟光驱已连接到服务器。
 7.  在工具栏中，单击重启工具重启设备，如下图所示。
 
     **图 4**  重启图标<a name="zh-cn_topic_0229291223_zh-cn_topic_0151920806_f0d1f4f5f96de47b48c64b3535b2b60d1"></a>  
-    ![](figures/重启图标.png "重启图标")
+    ![](figures/restarticon.png)
 
 8.  设备重启后进入到openEuler操作系统安装引导界面，如[图5](#fig1648754873314)所示。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   如果60秒内未按任何键，系统将从默认选项“Test this media & install openEuler 20.03 LTS”自动进入安装界面。  
+    >-   如果60秒内未按任何键，系统将从默认选项“Test this media & install openEuler 20.09-beta”自动进入安装界面。  
     >-   安装物理机时，如果使用键盘上下键无法选择启动选项，按“Enter”键无响应，可以单击BMC界面上的鼠标控制图标“![](figures/zh-cn_image_0229420473.png)”，设置“键鼠复位”。  
 
     **图 5**  安装引导界面<a name="fig1648754873314"></a>  
-    <img src="figures/安装引导界面.png" title="安装引导界面"  />
+    ![](./figures/Installation_wizard.png)
 
-9.  在安装引导界面，按“Enter”，进入默认选项“Test this media & install openEuler 20.03 LTS”的图形化安装界面。
+9.  在安装引导界面，按“Enter”，进入默认选项“Test this media & install openEuler 20.09-beta”的图形化安装界面。
 
 ## 安装
 
@@ -194,23 +197,23 @@
 1.  设置安装语言，默认为英语，用户可根据实际情况进行调整，如[图6](#fig874344811484)所示，选择“中文”。
 
     **图 6**  选择语言<a name="fig874344811484"></a>  
-    <img src="figures/选择语言.png" title="选择语言"  />
+    ![](./figures/chooselanguage.png)
 
-2.  在安装概览界面，根据实际情况设置各配置项。
+2. 在安装概览界面，根据实际情况设置各配置项。
 
     -   配置项有告警符号的，表示用户必须完成该选项配置后，告警符号消失，才能进行下一步操作。
     -   配置项无告警符号的，表示该配置项已有默认配置。
     -   所有配置项均无告警符号时用户才能单击“开始安装”进行系统安装。
 
     **图 7**  安装概览<a name="fig24261457656"></a>  
-    <img src="figures/安装概览.png" title="安装概览"  />
+    ![](./figures/Installation_Overview.png)
 
     1.  选择“软件选择”，设置“软件选择”配置项。
 
         用户需要根据实际的业务需求，在左侧选择一个“最小安装”，在右侧选择安装环境的附加选项，如[图8](#fig1133717611109)所示。
 
         **图 8**  软件选择<a name="fig1133717611109"></a>  
-        <img src="figures/软件选择.png" title="软件选择"  />
+        ![](./figures/selectsoftware.png)
 
         >![](public_sys-resources/icon-note.gif) **说明：**   
         >-   在最小安装的环境下，并非安装源中所有的包都会安装。如果用户需要使用的包未安装，可将安装源挂载到本地制作repo源，通过DNF工具单独安装。  
@@ -218,15 +221,19 @@
 
         设置完成后，请单击左上角“完成”返回“安装概览”页面。
 
-    2.  选择“安装位置”，设置“安装位置”配置项。
+    2. 选择“安装目的地”，设置“安装目的地”配置项。
 
-        在安装位置页面中，您可以选择计算机中的本地可用存储设备，也可以通过单击“添加磁盘”，添加指定的附加设备或者网络设备。您还需要进行存储配置以便对系统分区。您可以手动配置分区，也可以选择让安装程序自动分区。如果是在未使用过的存储设备中执行全新安装，或者不需要保留该存储设备中任何数据，建议选择“自动”进行自动分区。如[图9](#fig153381468101)所示。
+        在安装位置页面中，您可以选择计算机中的本地可用存储设备。
 
         >![](public_sys-resources/icon-notice.gif) **须知：**   
         >在选择您需要安装的设备时，建议不要选择NVMe SSD存储介质作为操作系统的安装磁盘。  
+        
+        您还需要进行存储配置以便对系统分区。您可以手动配置分区，也可以选择让安装程序自动分区。如果是在未使用过的存储设备中执行全新安装，或者不需要保留该存储设备中任何数据，建议选择“自动”进行自动分区。如[图9](#fig153381468101)所示。
+        
+        若您需要对数据进行加密，若您选择“自动”进行自动分区时，则可以在“安装目标位置”界面选择“加密我的数据”；若您选择“自定义”进行手动分区时，则可以在“手动分区”界面中单击需要加密的挂载点并在“设备类型”区域中选择“加密”。然后单击左上角“完成”，设置磁盘加密口令。磁盘加密口令需要符合密码复杂度，具体请参考[密码复杂度](#密码复杂度)。
 
         **图 9**  安装目标位置<a name="fig153381468101"></a>  
-        <img src="figures/安装目标位置.png" title="安装目标位置"  />
+        ![](./figures/Target_installation_position.png)
 
         >![](public_sys-resources/icon-note.gif) **说明：**   
         >-   在进行分区时，出于系统性能和安全的考虑，建议您划分如下单独分区：/boot、/var、/var/log 、/var/log/audit、/home、/tmp。  
@@ -235,73 +242,66 @@
 
         设置完成后，请单击左上角“完成”返回“安装概览”页面。
 
-    3.  设置其他配置项，其他配置项可以使用默认配置。
+    3. 选择“根密码”，设置“根密码”配置项。
 
-3.  单击“开始安装”进行系统安装，如[图10](#fig1717019357392)所示。
+        在“ROOT密码”页面中，如[图10](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018)所示，根据[密码复杂度](#密码复杂度)输入密码并再次输入密码进行确认。
 
-    **图 10**  开始安装<a name="fig1717019357392"></a>  
-    <img src="figures/开始安装.png" title="开始安装"  />
+        >![](public_sys-resources/icon-note.gif) **说明：**   
+        >
+        >- root帐户是用来执行关键系统管理任务，不建议您在日常工作及系统访问时使用root帐户。
+        >
+        >- 在“ROOT密码”界面若选择“锁定root帐户”则root帐户将禁用。  
 
-4.  设置root密码。
+        **密码复杂度** <a name = "密码复杂度"></a>
 
-    单击“root密码”，弹出设置密码界面如[图11](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018)所示，输入密码并再次输入密码进行确认。
+        用户设置的root用户密码或新创建用户的密码均需要满足密码复杂度要求，否则会导致密码设置或用户创建失败。设置密码的复杂度的要求如下：
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >root密码需要在安装软件包的同时进行配置，如果不配置该密码则无法完成安装。root账户是用来执行关键系统管理任务，不建议您在日常工作及系统访问时使用root账户。  
+        1. 口令长度至少8个字符。
 
-    用户设置的root密码需要满足如下密码复杂度要求，否则会导致密码设置或用户创建失败。
+        2. 口令至少包含大写字母、小写字母、数字和特殊字符中的任意3种。
 
-    -   口令长度至少8个字符。
-    -   口令至少包含大写字母、小写字母、数字和特殊字符中的任意3种。
-    -   口令不能和账号一样。
-    -   口令不能使用字典词汇。
-        -   查询字典
+        3. 口令不能和账号一样。
 
-            在已装好的openEuler环境中，可以通过如下命令导出字典库文件dictionary.txt，用户可以查询密码是否在该字典中。
+        4. 口令不能使用字典词汇。
 
-            ```
-            cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt
-            ```
+            >![](public_sys-resources/icon-note.gif) **说明：**   
+            > 在已装好的openEuler环境中，可以通过`cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt`命令导出字典库文件dictionary.txt，用户可以查询密码是否在该字典中。
 
-        -   修改字典
-            -   修改上面导出的字典文件，执行如下命令更新系统字典库。
+        **图 10**  root密码<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018"></a>  
+        ![](figures/rootpassword.png)
 
-                ```
-                create-cracklib-dict dictionary.txt
-                ```
+        设置完成后，单击左上角的“完成”返回“安装概览”页面。
 
-            -   在原字典库基础上新增其他字典内容custom.txt。
+    4. 选择“创建用户”，设置“创建用户”配置项。
 
-                ```
-                create-cracklib-dict dictionary.txt custom.txt
-                ```
-    
-    **图 11**  root密码<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018"></a>  
-    <img src="figures/root密码.png" title="root密码"  />
-    
-5.  创建用户。
+        在创建用户的界面如[图11](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319)所示。输入用户名，并设置密码，其中密码复杂度要求与root密码复杂度要求一致。另外您还可以通过“高级”选项设置用户主目录、用户组等，如[图12](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig128716531312)所示。
 
-    单击“创建用户”，弹出创建用户的界面如[图12](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319)所示。输入用户名，并设置密码，其中密码复杂度要求与root密码复杂度要求一致。另外您还可以通过“高级”选项设置用户主目录、用户组等，如[图13](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig128716531312)所示。
+        **图 11**  创建用户<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319"></a>  
+        ![](./figures/createuser.png)
 
-    **图 12**  创建用户<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319"></a>  
-    <img src="figures/创建用户.png" title="创建用户"  />
+        **图 12**  高级用户配置<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig128716531312"></a>  
+        ![](figures/Advanced_User_Configuration.png "高级用户配置")
 
-    **图 13**  高级用户配置<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig128716531312"></a>  
-    ![](figures/高级用户配置.png "高级用户配置")
+        完成设置后，单击左上角的“完成”返回“安装概览”页面。
 
-    完成设置后，单击左上角的“完成”返回安装过程界面。
+    5. 设置其他配置项，其他配置项可以使用默认配置。
+
+3.  单击“开始安装”进行系统安装，如[图13](#fig1717019357392)所示。
+
+    **图 13**  开始安装<a name="fig1717019357392"></a>  
+    ![](./figures/startinstall.png)
 
 6.  安装完成后重启系统。
 
     openEuler完成安装，如[图14](#zh-cn_topic_0186390267_zh-cn_topic_0122145917_fig1429512116338)所示。单击“重启”后，系统将重新启动。
 
     **图 14**  完成安装<a name="zh-cn_topic_0186390267_zh-cn_topic_0122145917_fig1429512116338"></a>  
-    <img src="figures/完成安装.png" title="完成安装"  />
+    ![](./figures/completeinstall.png)
 
 
 ## 查看系统信息
 
-系统安装完成并重启后直接进入系统命令行登录界面，输入安装过程中设置的用户和密码，进入openEuler操作系统，查看如下系统信息。若需要进行系统管理和配置操作，请参考《[openEuler 20.03 LTS 管理员指南](https://openeuler.org/zh/docs/20.03_LTS/docs/Administration/administration.html)》。
+系统安装完成并重启后直接进入系统命令行登录界面，输入安装过程中设置的用户和密码，进入openEuler操作系统，查看如下系统信息。若需要进行系统管理和配置操作，请参考《[openEuler 20.09 beta 管理员指南](../Administration/administration.html)》。
 
 -   查看系统信息，命令如下：
 
@@ -312,12 +312,12 @@
     例如，命令和输出如下：
 
     ```
-    # cat /etc/os-release
+    $ cat /etc/os-release
     NAME="openEuler"
-    VERSION="20.03 (LTS)"
+    VERSION="20.09"
     ID="openEuler"
-    VERSION_ID="20.03"
-    PRETTY_NAME="openEuler 20.03 (LTS)"
+    VERSION_ID="20.09"
+    PRETTY_NAME="openEuler 20.09"
     ANSI_COLOR="0;31"
     ```
 

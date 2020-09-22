@@ -80,7 +80,7 @@ The environment requirements for semi-automatic installation of openEuler using 
 
 -   PM/VM \(for details about how to create VMs, see the documents from corresponding vendors\): includes the computer where kickstart is used for automatic installation and the computer where the kickstart tool is installed.
 -   Httpd: stores the kickstart file.
--   ISO: openEuler-20.03-LTS-aarch64-dvd.iso
+-   ISO: openEuler-20.09-aarch64-dvd.iso
 
 ### Procedure
 
@@ -106,7 +106,7 @@ To use kickstart to perform semi-automatic installation of openEuler, perform th
 
     ```
     # mkdir /var/www/html/ks
-    #vim /var/www/html/ks/openEuler-ks.cfg ===>The file can be obtained by modifying the anaconda-ks.cfg file automatically generated from openEuler, or can be created using the system-config-kickstart tool.
+    #vim /var/www/html/ks/openEuler-ks.cfg ===>The file can be obtained by modifying the anaconda-ks.cfg file automatically generated from openEuler.
     ====================================
     ***Modify the following information as required.***
     #version=DEVEL
@@ -175,7 +175,7 @@ To use kickstart to perform semi-automatic installation of openEuler, perform th
 **Installing the System**
 
 1.  The installation selection dialog box is displayed. 
-    1.  On the installation wizard page in [Starting the Installation](installation-guideline.html#starting-the-installation), select  **Install openEuler 20.03 LTS**  and press  **e**.
+    1.  On the installation wizard page in [Starting the Installation](installation-guideline.html#starting-the-installation), select  **Install openEuler 20.09**  and press  **e**.
     2.  Add  **inst.ks=http://server ip/ks/openEuler-ks.cfg**  to the startup parameters.
 
         ![](figures/semi-automatic-installation.png)
@@ -199,7 +199,7 @@ The environment requirements for full-automatic installation of openEuler using 
 -   Httpd: stores the kickstart file.
 -   TFTP: provides vmlinuz and initrd files.
 -   DHCPD/PXE: provides the DHCP service.
--   ISO: openEuler-20.03-LTS-aarch64-dvd.iso
+-   ISO: openEuler-20.09-aarch64-dvd.iso
 
 ### Procedure
 
@@ -249,7 +249,7 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
 3.  <a name="en-us_topic_0229291289_l1692f6b9284e493683ffa2ef804bc7ca"></a>Run the following commands to prepare the installation source:
 
     ```
-    # mount openEuler-20.03-LTS-aarch64-dvd.iso /mnt
+    # mount openEuler-20.09-aarch64-dvd.iso /mnt
     # cp -r /mnt/* /var/www/html/openEuler/
     ```
 
@@ -271,7 +271,7 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
     # System language
     lang zh_CN.UTF-8
     #Use http installation source
-    url  --url=//192.168.122.1/openEuler/
+    url  --url=http://192.168.122.1/openEuler/
     %post
     #enable kdump
     sed  -i "s/ ro / ro crashkernel=1024M,high /" /boot/efi/EFI/openEuler/grub.cfg
@@ -314,8 +314,8 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
     
     
     ### BEGIN /etc/grub.d/10_linux ###
-    menuentry 'Install openEuler 20.03 LTS' --class red --class gnu-linux --class gnu --class os {
-            set root=(tftp,192.168.1.1)
+    menuentry 'Install openEuler 20.09' --class red --class gnu-linux --class gnu --class os {
+            set root=(tftp,192.168.122.1)
             linux /vmlinuz ro inst.geoloc=0 console=ttyAMA0 console=tty0 rd.iscsi.waitnet=0 inst.ks=http://192.168.122.1/ks/openEuler-ks.cfg
             initrd /initrd.img
     }
@@ -336,7 +336,7 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
     filename "grubaa64.efi";  # pxelinux location of the startup file;
     next-server 192.168.122.1;     # (IMPORTANT) TFTP server IP address;
     subnet 192.168.122.0 netmask 255.255.255.0 {
-    option routers 192.168.111.1; # Gateway address
+    option routers 192.168.122.1; # Gateway address
     option subnet-mask 255.255.255.0; # Subnet mask
     range dynamic-bootp 192.168.122.50 192.168.122.200; # Dynamic IP address range
     default-lease-time 21600;
