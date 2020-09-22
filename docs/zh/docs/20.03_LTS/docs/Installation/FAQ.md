@@ -3,7 +3,6 @@
 
 - [FAQ](#faq)
     - [安装openEuler时选择第二盘位为安装目标，操作系统无法启动](#安装openeuler时选择第二盘位为安装目标操作系统无法启动)
-    - [网络配置约束限制](#网络配置约束限制)
     - [openEuler开机后进入emergency模式](#openeuler开机后进入emergency模式)
     - [系统中存在无法激活的逻辑卷组时，重装系统失败](#系统中存在无法激活的逻辑卷组时重装系统失败)
     - [选择安装源出现异常](#选择安装源出现异常)
@@ -34,30 +33,6 @@
 
 -   当系统处于安装过程中，在选择磁盘（选择第一块或者两块都选择）后，指定引导程序安装到第一块盘sda中。
 -   当系统已经安装完成，若BIOS支持选择从哪个磁盘启动，则可以通过修改BIOS中磁盘启动顺序，尝试重新启动系统。
-
-## 网络配置约束限制
-
-NetworkManager、network两个服务均是网络服务管理包，两个服务之间存在部分功能重叠。
-
--   如果使用NetworkManager管理服务，则必须使用nmcli命令或修改配置文件来配置网络（如IP、路由等），而不能使用ip/ifconfig/route命令来配置。
-
-    >![](./public_sys-resources/icon-note.gif) **说明：**   
-    >在开启NetworkManager服务的场景下，使用ip/ifconfig/route等命令配置网络，则一段时间后配置会被NetworkManager覆盖，导致 ip/ifconfig/route配置不生效。  
-
-    查看NetworkManager 服务是否开启：
-
-    ```
-    systemctl status NetworkManager
-    ```
-
-    >![](./public_sys-resources/icon-note.gif) **说明：**   
-    >nmcli命令使用参考“nmcli \--help”或者“man  nmcli”。  
-
--   如果要使用ip/ifconfig/route等命令来管理网络，请先关闭NetworkManager服务，使用如下命令：
-
-    ```
-    systemctl stop NetworkManager
-    ```
 
 
 ## openEuler开机后进入emergency模式
