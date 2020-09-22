@@ -291,4 +291,10 @@ patch-tracking-cli delete --server 127.0.0.1:5001 --user admin --password Test@1
 登录Gitee上进行跟踪的软件项目，在该项目的Issues和Pull Requests页签下，可以查看到名为`[patch tracking] TIME`，例如` [patch tracking] 20200713101548`的条目，该条目即是刚生成的补丁文件的issue和对应PR。
 
 
+# FAQ
+
+* 访问 `api.github.com` Connection refused 异常
+
+patch-tracking 运行过程中，可能会出现如下报错 `9月 21 22:00:10 localhost.localdomain patch-tracking[36358]: 2020-09-21 22:00:10,812 - patch_tracking.util.github_api - WARNING - HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /user (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xfffe19d35820>: Failed to establish a new connection: [Errno 111] Connection refused'))`，原因是 patch-tracking 与 GitHub API 服务之间网络访问不稳定导致。
+请确保在与 GitHub API 服务之间网络稳定的环境中（如华为云香港区域）运行 patch-tracking。
 
