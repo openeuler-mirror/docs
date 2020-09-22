@@ -3,7 +3,6 @@
 
 - [FAQs](#faqs)
     - [Why Does openEuler Fail to Start After I Install It to the Second Disk?](#why-does-openeuler-fail-to-start-after-i-install-it-to-the-second-disk)
-    - [What Are the Constraints on Network Configurations?](#what-are-the-constraints-on-network-configurations)
     - [Why Does openEuler Enter Emergency Mode After It Is Powered On?](#why-does-openeuler-enter-emergency-mode-after-it-is-powered-on)
     - [Failed to Reinstall openEuler When a Logical Volume Group That Cannot Be Activated Has Existed in openEuler](#failed-to-reinstall-openeuler-when-a-logical-volume-group-that-cannot-be-activated-has-existed-in-openeuler)
     - [An Exception Occurs During the Selection of the Installation Source](#an-exception-occurs-during-the-selection-of-the-installation-source)
@@ -34,30 +33,6 @@ This problem can be solved using either of the following two methods:
 
 -   During the installation of openEuler, select the first disk or both disks, and install the boot loader on the first disk  **sda**.
 -   After installing openEuler, restart it by modifying the boot option on the BIOS window.
-
-## What Are the Constraints on Network Configurations?
-
-The NetworkManager and network services are network service management tools. Some functions of the two services overlap.
-
--   If the NetworkManager service is used, run the  **nmcli**  command or modify the configuration file to configure the network \(such as the IP address and route\). Do not run the  **ip**,  **ifconfig**, or  **route**  command to configure the network.
-
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >When the NetworkManager service is enabled and you run commands such as  **ip**,  **ifconfig**, and  **route**  to configure the network, the configurations will be overwritten by NetworkManager.  
-
-    To check whether NetworkManager is enabled, run the following command:
-
-    ```
-    systemctl status NetworkManager
-    ```
-
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >For details about the use of the  **nmcli**  command, see the execution result of the  **nmcli --help**  or  **man nmcli**  command.  
-
--   If you want to run commands such as  **ip**,  **ifconfig**, and  **route**  commands to manage network information, run the following command to disable the NetworkManager service:
-
-    ```
-    systemctl stop NetworkManager
-    ```
 
 
 ## Why Does openEuler Enter Emergency Mode After It Is Powered On?
