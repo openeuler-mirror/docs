@@ -20,6 +20,12 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 * 源码获取地址：<https://gitee.com/openeuler/openEuler-Advisor/tree/master/packageship>
 * rpm包beta版本获取地址：<https://117.78.1.88/project/show/openEuler:Mainline>
 
+# 运行环境
+
+* 可用内存700M以上
+* python版本 3.8及以上
+* sqlite版本 3.32及以上
+
 # 安装工具
 工具安装可通过以下两种方式中的任意一种实现。
 
@@ -165,7 +171,7 @@ pkgshipd stop [manage/selfpkg]
 2. 单包查询。
 
     用户可查询具体源码包(packagename)在指定数据库表（tablename）中的信息。
-    > 使用场景：用户可查询具体源码包在指定数据库中信息，packagename,tablename为必选参数。  
+    > 使用场景：用户可查询具体源码包在指定数据库中的信息，packagename,tablename为必选参数。  
 
     ```bash
     pkgship single packagename tablename
@@ -230,7 +236,7 @@ pkgshipd stop [manage/selfpkg]
     > pkgship selfbuild pkgName -dbs dbName1 dbName2 
     >  ```
 
-    > -t source/binary 指定查询包名pkgName为二进制包还是源码包，不加-t时，默认为二进制包。  
+    > -t source/binary 指定查询包名pkgName为源码包还是二进制包，不加-t时，默认为二进制包。  
     > -s 增加该参数表示查询软件包的所有安装依赖和所有编译依赖（即编译依赖的源码包的编译依赖），以及所有编译依赖的安装依赖。其中-s参数后面的0表示不查询自编译依赖，1表示查询自编译依赖，默认为0，可以指定1。如果不增加-s参数表示只查询软件包的所有安装依赖和一层编译依赖，以及一层编译依赖的所有安装依赖，查询自编译使用示例如下。
 
     > ```bash
@@ -261,7 +267,7 @@ pkgshipd stop [manage/selfpkg]
     ```bash
     pkgship updatepkg [-packagename packagename] [-maintainer Newmaintainer] [-maintainlevel Newmaintainlevel]
     ```
-    > 参数说明:
+    > 参数说明:    
     > -packagename：指定需要维护的包名。  
     > -maintainer：指定更新包的维护人。  
     > -maintainlevel：指定更新包的维护级别，值在1～4之间，默认为1。  
@@ -270,6 +276,10 @@ pkgshipd stop [manage/selfpkg]
     ```bash
     pkgship updatepkg [--batch] [-filefolder path]
     ```
+    > 参数说明:    
+    > -filefolder: 指定存放包信息的yaml文件，指定的目录仅能包含更新的yaml文件。    
+    > --batch：指定批量更新，需要和[-filefolder]参数项一起使用。      
+
     用户可以通过创建文件名A.yaml指定包名为A，指定yaml内容来修改包信息。  
     包信息的yaml格式如下：
     ```
@@ -345,8 +355,8 @@ pkgshipd stop [manage/selfpkg]
     ```
 
     > 参数说明:  
-    > -issue: 指定更新生命周期表中所有软件包的issue信息，根据生命周期中表的软件包名去gitee爬取软件包对应的issue信息。  
-    > -package: 指定更新生命周期表中所有软件包的生命周期，维护人和维护级别。
+    > --issue: 指定更新生命周期表中所有软件包的issue信息，根据生命周期中表的软件包名去gitee爬取软件包对应的issue信息。  
+    > --package: 指定更新生命周期表中所有软件包的生命周期，维护人和维护级别。
 
     ```bash
     更新生命周期表中所有软件包的issue信息示例:

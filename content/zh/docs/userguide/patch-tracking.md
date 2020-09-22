@@ -24,20 +24,20 @@ patch-tracking采用 C/S 架构。
 
 **主要步骤：**
 
-1. 命令行工具写入跟踪项。
-2. 自动从跟踪项配置的上游仓库（例如Github）获取补丁文件。
+1. 通过命令行工具添加跟踪项。
+2. 自动从跟踪项配置的上游仓库（例如GitHub）获取补丁文件。
 3. 创建临时分支，将获取到的补丁文件提交到临时分支。
-4. 自动提交issue到对应项目，并生成关联 issue 的 PR。
+4. 自动提交 issue 到对应仓库，并生成关联 issue 的 PR。
 
-![PatchTracking](images/PatchTracking.jpg)
+![PatchTracking](./images/PatchTracking.jpg)
 
 * Maintainer对提交的补丁处理流程
 
 **主要步骤：**
-1. Maintainer分析临时分支中的补丁文件，判断是否合入。
-2. 执行构建，构建成功后判断是否合入PR。
+1. Maintainer 分析 PR。
+2. 执行 CI，执行成功后判断是否合入 PR。
 
-![Maintainer](images/Maintainer.jpg)
+![Maintainer](./images/Maintainer.jpg)
 
 ## 数据结构
 
@@ -66,7 +66,7 @@ patch-tracking采用 C/S 架构。
 
 ## 软件下载
 
-Repo 源挂载正式发布地址：https://repo.openeuler.org/
+Repo 源地址：https://repo.openeuler.org/
 
 rpm 包获取地址：https://build.openeuler.org/package/show/openEuler:20.09/patch-tracking
 
@@ -75,7 +75,7 @@ rpm 包获取地址：https://build.openeuler.org/package/show/openEuler:20.09/p
 
 #### 方法1：从repo源安装
 
-1. 使用 dnf 挂载 repo源（需要 20.09 或更新的 repo 源，具体方法参考[应用开发指南](https://openeuler.org/zh/docs/20.09/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装pkgship及其依赖。
+1. 使用 dnf 挂载 repo源（需要 20.09 或更新的 repo 源，具体方法参考[应用开发指南](https://openeuler.org/zh/docs/20.03_LTS/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装 patch-tracking 及其依赖。
 
 2. 执行以下命令安装`patch-tracking`。
 
@@ -256,7 +256,7 @@ patch-tracking-cli add --server 127.0.0.1:5001 --user admin --password Test@123 
 --repo ：可选参数，需要查询的repo；如果没有该参数查询表中所有内容 \
 --branch ：可选参数，需要查询的branch
 ```shell script
-patch-tracking-cli query --server <LISTEN> --table tracking
+patch-tracking-cli query --server SERVER --table tracking
 ```
 例如：
 ```shell script
@@ -266,7 +266,7 @@ patch-tracking-cli query --server 127.0.0.1:5001 --table tracking
 ## 查询生成的 Issue
 
 ```shell script
-patch-tracking-cli query --server <LISTEN> --table issue
+patch-tracking-cli query --server SERVER --table issue
 ```
 例如：
 ```shell script
@@ -290,5 +290,20 @@ patch-tracking-cli delete --server 127.0.0.1:5001 --user admin --password Test@1
 
 登录Gitee上进行跟踪的软件项目，在该项目的Issues和Pull Requests页签下，可以查看到名为`[patch tracking] TIME`，例如` [patch tracking] 20200713101548`的条目，该条目即是刚生成的补丁文件的issue和对应PR。
 
+
+# FAQ
+
+### 访问 api.github.com Connection refused 异常  
+
+#### 问题描述  
+
+patch-tracking 运行过程中，可能会出现如下报错：
+```
+ 9月 21 22:00:10 localhost.localdomain patch-tracking[36358]: 2020-09-21 22:00:10,812 - patch_tracking.util.github_api - WARNING - HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /user (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xfffe19d35820>: Failed to establish a new connection: [Errno 111] Connection refused'))   
+```
+
+#### 原因分析  
+
+以上问题是 patch-tracking 与 GitHub API 服务之间网络访问不稳定导致，请确保在与 GitHub API 服务之间网络稳定的环境中（如华为云香港区域）运行 patch-tracking。
 
 
