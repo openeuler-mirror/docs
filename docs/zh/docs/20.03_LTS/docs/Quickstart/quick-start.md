@@ -1,6 +1,6 @@
 # 快速入门
 
-本文档以TaiShan 200服务器上安装openEuler 20.03 LTS为例，旨在指导用户快速地安装和使用openEuler操作系统，更详细的安装要求和安装方法请参考《[openEuler 20.03 LTS 安装指南](https://openeuler.org/zh/docs/20.03_LTS/docs/Installation/installation.html)》。
+本文档以TaiShan 200服务器上安装openEuler 20.03 LTS为例，旨在指导用户快速地安装和使用openEuler操作系统，更详细的安装要求和安装方法请参考《[openEuler 20.03 LTS 安装指南](./../Installation/installation.html)》。
 <!-- TOC -->
 
 - [快速入门](#快速入门)

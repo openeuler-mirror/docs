@@ -1,6 +1,6 @@
 # Quick Start
 
-This document uses openEuler 20.03 LTS installed on the TaiShan 200 server as an example to describe how to quickly install and use openEuler OS. For details about the installation requirements and methods, see  [openEuler 20.03 LTS Installation Guide](https://openeuler.org/en/docs/20.03_LTS/docs/Installation/Installation.html).
+This document uses openEuler 20.03 LTS installed on the TaiShan 200 server as an example to describe how to quickly install and use openEuler OS. For details about the installation requirements and methods, see  [openEuler 20.03 LTS Installation Guide](./../Installation/Installation.html).
 <!-- TOC -->
 
 - [Quick Start](#quick-start)
