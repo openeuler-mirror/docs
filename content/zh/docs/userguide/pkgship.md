@@ -20,6 +20,12 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 * 源码获取地址：<https://gitee.com/openeuler/openEuler-Advisor/tree/master/packageship>
 * rpm包beta版本获取地址：<https://117.78.1.88/project/show/openEuler:Mainline>
 
+# 运行环境
+
+* 可用内存700M以上
+* python版本 3.8及以上
+* sqlite版本 3.32及以上
+
 # 安装工具
 工具安装可通过以下两种方式中的任意一种实现。
 
