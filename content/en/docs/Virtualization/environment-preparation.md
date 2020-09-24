@@ -172,7 +172,6 @@ If the Open vSwitch is used to provide virtual network, you need to install the 
 1.  Install the Open vSwitch component.
 
     ```
-    # yum install -y openvswitch-kmod
     # yum install -y openvswitch
     ```
 
@@ -185,35 +184,9 @@ If the Open vSwitch is used to provide virtual network, you need to install the 
 
 **2. Check whether the installation is successful.**
 
-Check whether the Open vSwitch components, openvswitch-kmod and openvswitch, are successfully installed.
+Check whether the Open vSwitch components.
 
-1.  Check whether the openvswitch-kmod component is successfully installed. If the installation is successful, the software package information is displayed. The command and output are as follows:
-
-    ```
-    # rpm -qi openvswitch-kmod
-    Name        : openvswitch-kmod
-    Version     : 2.11.1
-    Release     : 1.oe3
-    Architecture: aarch64
-    Install Date: Thu 15 Aug 2019 05:07:49 PM CST
-    Group       : System Environment/Daemons
-    Size        : 15766774
-    License     : GPLv2
-    Signature   : (none)
-    Source RPM  : openvswitch-kmod-2.11.1-1.oe3.src.rpm
-    Build Date  : Thu 08 Aug 2019 04:33:08 PM CST
-    Build Host  : armbuild10b175b113b44
-    Relocations : (not relocatable)
-    Vendor      : OpenSource Security Ralf Spenneberg <ralf@os-s.net>
-    URL         : http://www.openvswitch.org/
-    Summary     : Open vSwitch Kernel Modules
-    Description :
-    Open vSwitch provides standard network bridging functions augmented with
-    support for the OpenFlow protocol for remote per-flow control of
-    traffic. This package contains the kernel modules.
-    ```
-
-2.  Check whether the openvswitch component is successfully installed. If the installation is successful, the software package information is displayed. The command and output are as follows:
+1.  Check whether the openvswitch component is successfully installed. If the installation is successful, the software package information is displayed. The command and output are as follows:
 
     ```
     # rpm -qi openvswitch
@@ -239,7 +212,7 @@ Check whether the Open vSwitch components, openvswitch-kmod and openvswitch, are
     traffic.
     ```
 
-3.  Check whether the Open vSwitch service is started successfully. If the service is in the  **Active**  state, the service is started successfully. You can use the command line tool provided by the Open vSwitch. The command and output are as follows:
+2.  Check whether the Open vSwitch service is started successfully. If the service is in the  **Active**  state, the service is started successfully. You can use the command line tool provided by the Open vSwitch. The command and output are as follows:
 
     ```
     # systemctl status openvswitch
