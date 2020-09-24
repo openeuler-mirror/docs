@@ -252,7 +252,7 @@
           },
           {
             "label": "加固指导",
-            "path": "docs/SecHarden加固指导",
+            "path": "docs/SecHarden/加固指导",
             "children": [
                 {
                     "label": "账户口令",
