@@ -72,6 +72,7 @@ headless: true
     - [管理系统资源]({{< relref "./docs/Virtualization/管理系统资源.md" >}})
     - [管理设备]({{< relref "./docs/Virtualization/管理设备.md" >}})
     - [最佳实践]({{< relref "./docs/Virtualization/最佳实践.md" >}})
+    - [工具使用指南]({{< relref "./docs/Virtualization/工具使用指南.md" >}})
     - [附录]({{< relref "./docs/Virtualization/附录.md" >}})
 
 
