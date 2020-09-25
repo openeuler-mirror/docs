@@ -243,27 +243,40 @@ connection.llmnr:                       -1 (default)
 ```
 
 ##### Adding a Wi-Fi Connection
+You can add the Wi-Fi connection using either of the following methods:  
 
-Run the following command to check for available Wi-Fi access points:
+**Method 1: Connect to the Wi-Fi network using a network port.**  
+
+Connect to the Wi-Fi network specified by the SSID or BSSID. Run the following command to find a matching connection or create a connection, and then activate the connection on the device.  
+
+```
+$ nmcli device wifi connect "$SSID" password
+$ PASSWORD" ifname "$IFNAME"
+$ nmcli --ask device wifi connect "$SSID" 
+```
+
+**Method 2: Connect to the Wi-Fi network using the configuration file.**
+
+1，Run the following command to check for available Wi-Fi access points:
 
 ```
 $ nmcli dev wifi list
 ```
 
-Run the following command to generate a static IP address configuration that allows Wi-Fi connections automatically allocated by the DNS:
+2，Run the following command to generate a static IP address configuration that allows Wi-Fi connections automatically allocated by the DNS:
 
 ```
 $ nmcli con add con-name Wifi ifname wlan0 type wifi ssid MyWifi ip4 192.168.100.101/24 gw4 192.168.100.1
 ```
 
-Run the following command to set a WPA2 password, for example,  **answer**:
+3，Run the following command to set a WPA2 password, for example,  **answer**:
 
 ```
 $ nmcli con modify Wifi wifi-sec.key-mgmt wpa-psk
 $ nmcli con modify Wifi wifi-sec.psk answer
 ```
 
-Run the following command to change the Wi-Fi status:
+4，Run the following command to change the Wi-Fi status:
 
 ```
 $ nmcli radio wifi [ on | off ]
