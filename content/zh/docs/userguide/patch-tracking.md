@@ -1,16 +1,13 @@
-patch-tracking
-===
-
-
-# 简介
+# patch-tracking
+## 简介
 
 在 openEuler 发行版开发过程，需要及时更新上游社区各个软件包的最新代码，修改功能 bug 及安全问题，确保发布的 openEuler 发行版尽可能避免缺陷和漏洞。
 
 本工具对软件包进行补丁管理，主动监控上游社区提交，自动生成补丁，并自动提交 issue 给对应的 maintainer，同时自动验证补丁基础功能，减少验证工作量支持 maintainer 快速决策。
 
-# 架构
+## 架构
 
-## C/S架构
+### C/S架构
 
 patch-tracking采用 C/S 架构。
 
@@ -18,11 +15,11 @@ patch-tracking采用 C/S 架构。
 
 客户端：即命令行工具（patch-tracking-cli），通过调用 patch-tracking 的 RESTful 接口，实现对跟踪项的增删改查操作。 
 
-## 核心流程
+### 核心流程
 
-* 补丁跟踪服务流程
+1， 补丁跟踪服务流程
 
-**主要步骤：**
+主要步骤： 
 
 1. 通过命令行工具添加跟踪项。
 2. 自动从跟踪项配置的上游仓库（例如GitHub）获取补丁文件。
@@ -31,15 +28,15 @@ patch-tracking采用 C/S 架构。
 
 ![PatchTracking](./images/PatchTracking.jpg)
 
-* Maintainer对提交的补丁处理流程
+2， Maintainer对提交的补丁处理流程
 
-**主要步骤：**
+主要步骤：  
 1. Maintainer 分析 PR。
 2. 执行 CI，执行成功后判断是否合入 PR。
 
 ![Maintainer](./images/Maintainer.jpg)
 
-## 数据结构
+### 数据结构
 
 * Tracking表
 
@@ -62,18 +59,18 @@ patch-tracking采用 C/S 架构。
 | 2 | repo | 包源码在Gitee的仓库地址 | String | - | NO |
 | 3 | branch | 包源码在Gitee的仓库分支 | String | - | NO |
 
-# 工具部署
+## 工具部署
 
-## 软件下载
+### 软件下载
 
 Repo 源地址：https://repo.openeuler.org/
 
 rpm 包获取地址：https://build.openeuler.org/package/show/openEuler:20.09/patch-tracking
 
 
-## 安装工具
+### 安装工具
 
-#### 方法1：从repo源安装
+方法1：从repo源安装
 
 1. 使用 dnf 挂载 repo源（需要 20.09 或更新的 repo 源，具体方法参考[应用开发指南](https://openeuler.org/zh/docs/20.03_LTS/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装 patch-tracking 及其依赖。
 
@@ -83,7 +80,7 @@ rpm 包获取地址：https://build.openeuler.org/package/show/openEuler:20.09/p
    dnf install patch-tracking
    ```
 
-#### 方法2：直接使用rpm安装
+方法2：直接使用rpm安装
 
 1. 首先安装相关依赖。
 
@@ -98,7 +95,7 @@ rpm 包获取地址：https://build.openeuler.org/package/show/openEuler:20.09/p
    ```
 
 
-## 生成证书
+### 生成证书
 执行如下命令生成证书。
 
 ```shell script
@@ -106,10 +103,10 @@ openssl req -x509 -days 3650 -subj "/CN=self-signed" \
 -nodes -newkey rsa:4096 -keyout self-signed.key -out self-signed.crt
 ```
 
-将生成的 `self-signed.key` 和 `self-signed.crt` 文件拷贝到 __/etc/patch-tracking__ 目录
+将生成的 `self-signed.key` 和 `self-signed.crt` 文件拷贝到 __/etc/patch-tracking__ 目录。
 
 
-##  配置参数
+###  配置参数
 
 在配置文件中对相应参数进行配置，配置文件路径为 `/etc/patch-tracking/settings.conf`。
 
@@ -149,19 +146,19 @@ openssl req -x509 -days 3650 -subj "/CN=self-signed" \
 
 ​     执行如下指令，获取口令的哈希值，其中Test@123为设置的口令。
 
-```
-[root]# generate_password Test@123
-pbkdf2:sha256:150000$w38eLeRm$ebb5069ba3b4dda39a698bd1d9d7f5f848af3bd93b11e0cde2b28e9e34bfbbae
-```
+  ```
+  [root]# generate_password Test@123
+  pbkdf2:sha256:150000$w38eLeRm$ebb5069ba3b4dda39a698bd1d9d7f5f848af3bd93b11e0cde2b28e9e34bfbbae
+  ```
 
-> `口令值`需要满足如下复杂度要求：
->
-> * 长度大于等于6个字符
-> * 必须包含大写字母、小写字母、数字、特殊字符（~!@#%^*-_=+）
+  > `口令值`需要满足如下复杂度要求：
+  >
+  > * 长度大于等于6个字符
+  > * 必须包含大写字母、小写字母、数字、特殊字符（~!@#%^*-_=+）
 
- 将口令的哈希值`pbkdf2:sha256:150000$w38eLeRm$ebb5069ba3b4dda39a698bd1d9d7f5f848af3bd93b11e0cde2b28e9e34bfbbae`配置到`PASSWORD = ""`引号中。
+  将口令的哈希值`pbkdf2:sha256:150000$w38eLeRm$ebb5069ba3b4dda39a698bd1d9d7f5f848af3bd93b11e0cde2b28e9e34bfbbae`配置到`PASSWORD = ""`引号中。
 
-## 启动补丁跟踪服务
+### 启动补丁跟踪服务
 
 可以使用以下两种方式启动服务。
 
@@ -177,13 +174,13 @@ pbkdf2:sha256:150000$w38eLeRm$ebb5069ba3b4dda39a698bd1d9d7f5f848af3bd93b11e0cde2
     /usr/bin/patch-tracking
     ```
 
-# 工具使用
+## 工具使用
 
-## 添加跟踪项
+1，添加跟踪项
 
 将需要跟踪的软件仓库和分支与其上游开源软件仓库与分支关联起来，可以通过以下三种方式实现。
 
-### 命令行直接添加
+* 命令行直接添加
 
 参数含义：
 >--user ：POST接口需要进行认证的用户名，同settings.conf中的USER参数 \
@@ -201,7 +198,7 @@ pbkdf2:sha256:150000$w38eLeRm$ebb5069ba3b4dda39a698bd1d9d7f5f848af3bd93b11e0cde2
 patch-tracking-cli add --server 127.0.0.1:5001 --user admin --password Test@123 --version_control github --repo testPatchTrack/testPatch1 --branch master --scm_repo BJMX/testPatch01 --scm_branch test  --enabled true
 ```
 
-### 指定文件添加
+* 指定文件添加
 
 参数含义：
 >--server ：启动Patch Tracking服务的URL，例如：127.0.0.1:5001 \
@@ -234,7 +231,7 @@ repo ：需要进行跟踪的仓库名称，格式：组织/仓库 \
 branch ：需要进行跟踪的仓库的分支名称 \
 enabled ：是否自动跟踪该仓库
 
-### 指定目录添加
+* 指定目录添加
 
 在指定的目录，例如`test_yaml`下放入多个`xxx.yaml`文件，执行如下命令，记录指定目录下所有yaml文件的跟踪项。
 
@@ -248,7 +245,7 @@ enabled ：是否自动跟踪该仓库
 patch-tracking-cli add --server 127.0.0.1:5001 --user admin --password Test@123 --dir /home/Work/test_yaml/
 ```
 
-## 查询跟踪项
+2， 查询跟踪项
 
 参数含义：
 >--server ：必选参数，启动Patch Tracking服务的URL，例如：127.0.0.1:5001 \
@@ -263,7 +260,7 @@ patch-tracking-cli query --server SERVER --table tracking
 patch-tracking-cli query --server 127.0.0.1:5001 --table tracking
 ```
 
-## 查询生成的 Issue
+3， 查询生成的 Issue
 
 ```shell script
 patch-tracking-cli query --server SERVER --table issue
@@ -273,7 +270,7 @@ patch-tracking-cli query --server SERVER --table issue
 patch-tracking-cli query --server 127.0.0.1:5001 --table issue
 ```
 
-## 删除跟踪项
+4， 删除跟踪项
 
 ```shell script
 patch-tracking-cli delete --server SERVER --user USER --password PWD --repo REPO [--branch BRANCH]
@@ -286,7 +283,7 @@ patch-tracking-cli delete --server 127.0.0.1:5001 --user admin --password Test@1
 > 可以删除指定repo和branch的单条数据；也可直接删除指定repo下所有branch的数据。
 
 
-## 码云查看 issue 及 PR
+5， 码云查看 issue 及 PR
 
 登录Gitee上进行跟踪的软件项目，在该项目的Issues和Pull Requests页签下，可以查看到名为`[patch tracking] TIME`，例如` [patch tracking] 20200713101548`的条目，该条目即是刚生成的补丁文件的issue和对应PR。
 
