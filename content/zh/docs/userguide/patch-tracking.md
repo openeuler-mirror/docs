@@ -15,7 +15,7 @@
         - [配置参数](#配置参数)
         - [启动补丁跟踪服务](#启动补丁跟踪服务)
     - [工具使用](#工具使用)
-- [FAQ](#faq)
+    - [FAQ](#faq)
         - [访问 api.github.com Connection refused 异常](#访问-apigithubcom-connection-refused-异常)
 
 <!-- /TOC -->
@@ -309,7 +309,7 @@ patch-tracking-cli delete --server 127.0.0.1:5001 --user admin --password Test@1
 登录Gitee上进行跟踪的软件项目，在该项目的Issues和Pull Requests页签下，可以查看到名为`[patch tracking] TIME`，例如` [patch tracking] 20200713101548`的条目，该条目即是刚生成的补丁文件的issue和对应PR。
 
 
-# FAQ
+## FAQ
 
 ### 访问 api.github.com Connection refused 异常  
 
