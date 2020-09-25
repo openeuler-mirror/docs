@@ -714,19 +714,25 @@ You have obtained the  **root**  permission, and have configured a repo source f
     $ osc addremove *
     ```
 
-2.  Modify the source code and .spec file, and synchronize all modifications of the corresponding software package to the OBS server. The following is a command example. The information after the  **-m**  parameter is the commission record.
+2.  Modify the source code and .spec file, and run the following command to update the file.
+
+    ```
+    $ osc up
+    ```
+
+3.  Synchronize all modifications of the corresponding software package to the OBS server. The following is an example of command. The information after the **-m** parameter indicates the submmission record.
 
     ```
     $ osc ci -m "commit log"
     ```
 
-3.  Run the following command to obtain the repository name and architecture of the current project:
+4.  Run the following command to obtain the repository name and architecture of the current project:
 
     ```
     $ osc repos home:testUser:branches:openEuler:Mainline
     ```
 
-4.  After the modification is committed, OBS automatically compiles the software package. You can run the following command to view the compilation logs of the corresponding repository. In the command, *standard\_aarch64*  and  _aarch64_  indicate the repository name and architecture obtained in the command output.
+5.  After the modification is committed, OBS automatically compiles the software package. You can run the following command to view the compilation logs of the corresponding repository. In the command, *standard\_aarch64*  and  _aarch64_  indicate the repository name and architecture obtained in the command output.
 
     ```
     $ osc buildlog standard_aarch64  aarch64
