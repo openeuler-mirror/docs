@@ -711,19 +711,25 @@ RPM软件包构建完成后，通过网页端获取对应RPM软件包的方法�
     $ osc addremove *
     ```
 
-2.  修改源代码和spec文件，并将对应软件包的所有修改同步到OBS服务器。参考命令如下，-m参数后的信息为提交记录。
+2.  修改源代码和spec文件，并执行如下命令更新文件。
+
+    ```
+    $ osc up
+    ```
+
+3.  将对应软件包的所有修改同步到OBS服务器。参考命令如下，-m参数后的信息为提交记录。
 
     ```
     $ osc ci -m "commit log"
     ```
 
-3.  获取当前工程的仓库名称和架构，参考命令如下：
+4. 获取当前工程的仓库名称和架构，参考命令如下：
 
     ```
     $ osc repos home:testUser:branches:openEuler:Mainline
     ```
 
-4.  修改提交成功后，OBS会自动开始编译软件包。可以通过如下命令，查看对应仓库的编译日志，其中 _standard_aarch64_ 、 _aarch64_ 分别为查询所得仓库名称和架构。
+5. 修改提交成功后，OBS会自动开始编译软件包。可以通过如下命令，查看对应仓库的编译日志，其中 _standard_aarch64_ 、 _aarch64_ 分别为查询所得仓库名称和架构。
 
     ```
     $ osc buildlog standard_aarch64  aarch64

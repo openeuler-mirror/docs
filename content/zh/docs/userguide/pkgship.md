@@ -1,32 +1,45 @@
-pkgship
-===
+# pkgship
 
-# 介绍
+<!-- TOC -->
+
+- [pkgship](#pkgship)
+    - [介绍](#介绍)
+    - [架构](#架构)
+    - [软件下载](#软件下载)
+    - [运行环境](#运行环境)
+    - [安装工具](#安装工具)
+    - [配置参数](#配置参数)
+- [服务启动和停止](#服务启动和停止)
+- [工具使用](#工具使用)
+
+<!-- /TOC -->
+
+## 介绍
 pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系完整图谱的查询工具，pkgship提供软件包依赖查询、生命周期管理、补丁查询等功能。
 
 1. 软件包依赖查询：方便社区人员在软件包引入、更新和删除的时候了解软件的影响范围。
 2. 生命周期管理：跟踪上游软件包发布状态，方便维护人员了解当前软件状态，及时升级到合理的版本。
 3. 补丁查询：方便社区人员了解openEuler软件包的补丁情况以及提取补丁内容，详细内容请参见[patch-tracking](patch-tracking.md)。
 
-# 架构
+## 架构
 
 系统采用flask-restful开发，使用SQLAlchemy ORM查询框架。
 
 ![avatar](./images/pkgship_outline.png)
 
-# 软件下载
+## 软件下载
 
 * Repo源挂载正式发布地址：<https://repo.openeuler.org/>
 * 源码获取地址：<https://gitee.com/openeuler/openEuler-Advisor/tree/master/packageship>
 * rpm包beta版本获取地址：<https://117.78.1.88/project/show/openEuler:Mainline>
 
-# 运行环境
+## 运行环境
 
 * 可用内存700M以上
 * python版本 3.8及以上
 * sqlite版本 3.32及以上
 
-# 安装工具
+## 安装工具
 工具安装可通过以下两种方式中的任意一种实现。
 
 * 方法一，通过dnf挂载repo源实现。  
@@ -48,7 +61,7 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
     dnf install pkgship-x.x-x.oe1.noarch.rpm
     ```
 
-# 配置参数
+## 配置参数
 
 1. 在配置文件中对相应参数进行配置，系统的默认配置文件存放在 /etc/pkgship/packge.ini，请根据实际情况进行配置更改。
 
