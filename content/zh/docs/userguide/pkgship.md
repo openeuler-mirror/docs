@@ -31,7 +31,7 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 
 * Repo源挂载正式发布地址：<https://repo.openeuler.org/>
 * 源码获取地址：<https://gitee.com/openeuler/openEuler-Advisor/tree/master/packageship>
-* rpm包beta版本获取地址：<https://117.78.1.88/project/show/openEuler:Mainline>
+* rpm包版本获取地址：<https://117.78.1.88/project/show/openEuler:Mainline>
 
 ## 运行环境
 
