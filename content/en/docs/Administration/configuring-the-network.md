@@ -79,6 +79,26 @@ Common commands are listed as follows:
     ```
 
 
+#### Device Management  
+
+##### Connecting to a Device  
+
+Run the following command to connect NetworkManager to the corresponding network device. Try to find the proper connection configuration and activate it.  
+
+ ```  
+ $nmcli device connect "$IFNAME"   
+ ```  
+   
+> If the corresponding connection configuration does not exist, NetworkManager creates and activates a configuration file with default settings. 
+
+##### Disconnecting to a Device  
+
+Run the following command to disconnect NetworkManager with the network device and prevent the device from being automatically activated.    
+
+ ```  
+ $nmcli device disconnect "$IFNAME"    
+ ```  
+
 #### Setting Network Connections
 
 Run the following command to display all the available network connections:
@@ -251,8 +271,7 @@ You can add the Wi-Fi connection using either of the following methods:
 Connect to the Wi-Fi network specified by the SSID or BSSID. Run the following command to find a matching connection or create a connection, and then activate the connection on the device.  
 
 ```
-$ nmcli device wifi connect "$SSID" password
-$ PASSWORD" ifname "$IFNAME"
+$ nmcli device wifi connect "$SSID" password "$PASSWORD" ifname "$IFNAME"  
 $ nmcli --ask device wifi connect "$SSID" 
 ```
 **Method 2: Connect to the Wi-Fi network using the configuration file.**
