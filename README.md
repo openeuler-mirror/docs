@@ -16,6 +16,7 @@ Docs包含了openEuler社区的所有文档，包括发行说明、操作系统�
 * Quickstart文件夹对应手册为：快速入门
 * Releasenotes文件夹对应手册为：发行说明
 * Virtualization文件夹对应手册为：虚拟化应用指南
+* userguide文件夹对应手册为：openEuler工具集用户指南
 
 
 ### 如何修改文档
