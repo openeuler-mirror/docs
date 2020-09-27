@@ -78,6 +78,25 @@ Common commands are listed as follows:
     # nmcli device disconnect enp3s0
     ```
 
+#### Device Management  
+
+##### Connecting to a Device  
+
+Run the following command to connect NetworkManager to the corresponding network device. Try to find the proper connection configuration and activate it.  
+
+ ```  
+ $nmcli device connect "$IFNAME"   
+ ```  
+   
+> If the corresponding connection configuration does not exist, NetworkManager creates and activates a configuration file with default settings. 
+
+##### Disconnecting to a Device  
+
+Run the following command to disconnect NetworkManager with the network device and prevent the device from being automatically activated.    
+
+ ```  
+ $nmcli device disconnect "$IFNAME"    
+ ```  
 
 #### Setting Network Connections
 
