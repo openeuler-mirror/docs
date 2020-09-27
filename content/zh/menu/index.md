@@ -145,6 +145,7 @@ headless: true
     - [使用make编译]({{< relref "./docs/ApplicationDev/使用make编译.md" >}})
     - [使用JDK编译]({{< relref "./docs/ApplicationDev/使用JDK编译.md" >}})
     - [构建RPM包]({{< relref "./docs/ApplicationDev/构建RPM包.md" >}})
+    - [FAQ]({{< relref "./docs/ApplicationDev/FAQ.md" >}}
 
 - [openEuler工具集用户指南]({{< relref "./docs/userguide/概述.md" >}})
     - [补丁工具]({{< relref "./docs/userguide/patch-tracking.md" >}})

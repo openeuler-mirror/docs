@@ -16,6 +16,7 @@ Open the **docs** folder. The relationship between guides and folders is as foll
 * **Quickstart**: *Quick Start*
 * **Releasenotes**: *Release Notes*
 * **Virtualization**: *Virtualization Application Guide*
+* **userguide**: *openEuler Toolset User Guide*
 
 
 ### Modifying a Document
