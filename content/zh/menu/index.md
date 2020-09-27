@@ -128,7 +128,7 @@ headless: true
             - [容器管理]({{< relref "./docs/Container/容器管理-4.md" >}})
             - [镜像管理]({{< relref "./docs/Container/镜像管理-4.md" >}})
             - [统计信息]({{< relref "./docs/Container/统计信息-4.md" >}})
-    - [isula-build构建工具]({{< relref "./docs/Container/isula-build构建工具.md" >}})
+    - [容器镜像构建]({{< relref "./docs/Container/isula-build构建工具.md" >}})
 
 
 - [A-Tune用户指南]({{< relref "./docs/A-Tune/A-Tune.md" >}})
