@@ -40,6 +40,7 @@ headless: true
         - [Configuring the FTP Server]({{< relref "./docs/Administration/configuring-the-ftp-server.md" >}})
         - [Configuring the Web Server]({{< relref "./docs/Administration/configuring-the-web-server.md" >}})
         - [Setting Up the Database Server]({{< relref "./docs/Administration/setting-up-the-database-server.md" >}})
+    - [Trusted Computing]({{< relref "./docs/Administration/Trusted Computing.md" >}})
     - [FAQs]({{< relref "./docs/Administration/faqs.md" >}})
 
 
@@ -140,3 +141,9 @@ headless: true
     - [Using Make for Compilation]({{< relref "./docs/ApplicationDev/using-make-for-compilation.md" >}})
     - [Using JDK for Compilation]({{< relref "./docs/ApplicationDev/using-jdk-for-compilation.md" >}})
     - [Building an RPM Package]({{< relref "./docs/ApplicationDev/building-an-rpm-package.md" >}})
+
+
+
+- [openEuler Toolset User Guide]({{< relref "./docs/userguide/overview.md" >}})
+    - [patch-tracking]({{< relref "./docs/userguide/patch-tracking.md" >}})
+    - [pkgship]({{< relref "./docs/userguide/pkgship.md" >}})
