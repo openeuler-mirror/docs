@@ -16,7 +16,7 @@ Before you start:
         - [Introduction to NUMA](#introduction-to-numa)
         - [Configuring Host NUMA](#configuring-host-numa)
         - [Configuring Guest NUMA](#configuring-guest-numa)
-        - [Memory Hot Add](#Memory Hot Add)
+        - [Memory Hot Add](#memory-hot-add)
 
 
 
