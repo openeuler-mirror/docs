@@ -23,12 +23,15 @@ This section describes the compatibility of the hardware and software and the re
 
 Obtain the openEuler release package and verification file before the installation.
 
+> ![](public_sys-resources/icon-note.gif) **Note:**   
+> The release packages of the AArch64 architecture support the UEFI mode, and the release packages of the x86\_64 architecture support the UEFI and Legacy modes.
+
 Perform the following operations to obtain the openEuler release package:
 
 1.  Log in to the  [openEuler Community](https://openeuler.org)  website.
 2.  Click  **Download**. 
 3.  Click the link provided after  **Download ISO**. The download list is displayed.
-4.  Click  **openEuler-20.09**. The openEuler 20.09 version download list is displayed.
+4.  Click  **openEuler-20.09**. The openEuler 20.03 LTS version download list is displayed.
 5.  Click  **ISO**. The ISO download list is displayed.
     -   **aarch64**: ISO image file of the AArch64 architecture
     -   **x86\_64**: ISO image file of the x86\_64 architecture
@@ -47,7 +50,7 @@ Perform the following operations to obtain the openEuler release package:
 
 ## Release Package Integrity Check
 
->![](./public_sys-resources/icon-note.gif) **NOTE:**   
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
 >This section describes how to verify the integrity of the release package in the AArch64 architecture. The procedure for verifying the integrity of the release package in the x86\_64 architecture is the same.  
 
 ### Introduction
@@ -71,13 +74,13 @@ To verify the file integrity, perform the following operations:
 1.  Obtain the verification value in the verification file. Run the following command:
 
     ```
-    #cat openEuler-20.09-aarch64-dvd.iso.sha256sum 
+    $cat openEuler-20.09-aarch64-dvd.iso.sha256sum 
     ```
 
 2.  Calculate the SHA256 verification value of the file. Run the following command:
 
     ```
-    #sha256sum openEuler-20.09-aarch64-dvd.iso
+    $sha256sum openEuler-20.09-aarch64-dvd.iso
     ```
 
     After the command is run, the verification value is displayed.
@@ -94,7 +97,7 @@ To install the openEuler OS on a PM, the PM must meet the following hardware com
 
 You need to take hardware compatibility into account during openEuler installation.  [Table 1](#table14948632047)  describes the types of supported servers.
 
->![](./Installation/public_sys-resources/icon-note.gif) **NOTE:**   
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
 >
 >-   TaiShan 200 servers are backed by Huawei Kunpeng 920 processors.  
 >-   Currently, only Huawei TaiShan and FusionServer Pro servers are supported. More servers from other vendors will be supported in the future.  
