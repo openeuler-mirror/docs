@@ -459,6 +459,33 @@ To configure SR-IOV passthrough for a NIC, perform the following steps:
     >```
 
 
+#### SR-IOV Passthrough for the HPRE Accelerator
+
+The accelerator engine is a hardware acceleration solution provided by TaiShan 200 server based on the Kunpeng 920 processor. The HPRE accelerator is used to accelerate SSL/TLS applications. It significantly reduces processor consumption and improves processor efficiency.  
+On the Kunpeng server, the VF of the HPRE accelerator on the host needs to be passed through to the VM for internal services of the VM.
+
+**Table 1**  HPRE accelerator description
+
+|    items         | Description                                                                                                |
+|-------------|-----------------------------------------------------------------------------------------------------|
+| Device name    | Hi1620 on-chip RSA/DH security algorithm accelerator (HPRE engine)                                  |
+| Function        | Modular exponentiation, RSA key pair operation, DH calculation, and auxiliary operations of large numbers (modular exponentiation, modular multiplication, modulo, modular inverse, primality test, and co-prime test) |
+| VendorID    | 0x19E5                                                                                              |
+| PF DeviceID | 0xA258                                                                                              |
+| VF DeviceID | 0xA259                                                                                              |
+| Maximum number of VF  | A maximum of 63 VFs can be created for an HPRE PF                                                                       |
+
+
+>![](./public_sys-resources/icon-note.gif) **Note**  
+>When a VM is using a VF device, the driver on the host cannot be uninstalled, and the accelerator does not support hot swap.  
+>VF operation (If VFNUMS is 0, the VF is disabled. hpre_num is used to identify a specific accelerator device):  
+>```
+>echo $VFNUMS > /sys/class/uacce/hisi_hpre-$hpre_num/device/sriov_numvfs
+>```
+
+
+
+
 ## Managing VM USB
 
 To facilitate the use of USB devices such as USB key devices and USB mass storage devices on VMs, openEuler provides the USB device passthrough function. Through USB passthrough and hot-swappable interfaces, you can configure USB passthrough devices for VMs, or hot swap USB devices when VMs are running.
