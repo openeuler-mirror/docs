@@ -66,6 +66,7 @@ headless: true
     - [VM Live Migration]({{< relref "./docs/Virtualization/vm-live-migration.md" >}})
     - [System Resource Management]({{< relref "./docs/Virtualization/system-resource-management.md" >}})
     - [Managing Devices]({{< relref "./docs/Virtualization/managing-devices.md" >}})
+    - [VM Maintainability Management]({{< relref "./docs/Virtualization/vm-maintainability-management.md" >}})
     - [Best Practices]({{< relref "./docs/Virtualization/best-practices.md" >}})
     - [Appendix]({{< relref "./docs/Virtualization/appendix.md" >}})
 
