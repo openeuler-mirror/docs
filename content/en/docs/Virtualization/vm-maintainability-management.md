@@ -21,10 +21,12 @@ To configure the NMI Watchdog for a VM in ARM architecture,perform the following
 1. Add the following parameters to the VM boot configuration file grub.cfg:
 
 2. Check whether the PMU Watchdog is successfully loaded on the VM.
-  If the loading is successful, information similar to the following is displayed in the dmesg log of the kernel: 
-
-  ```
-  [2.1173222] NMI watchdog: CPU0 freq probed as 2399999942 HZ.
-  ```
+    If the loading is successful, information similar to the following is displayed in the dmesg log of the kernel: 
+    
+    ```
+     [2.1173222] NMI watchdog: CPU0 freq probed as 2399999942 HZ.
+    ```
+    
+    
 
   
