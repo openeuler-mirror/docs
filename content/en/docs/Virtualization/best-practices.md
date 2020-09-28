@@ -12,6 +12,7 @@
         - [Libvirt Authentication](#libvirt-authentication)
         - [qemu-ga](#qemu-ga)
         - [sVirt Protection](#svirt-protection)
+        - [VM Trusted Boot](#VM-Trusted-Boot)
 
 ## Performance Best Practices
 
@@ -449,3 +450,151 @@ In a virtualization environment that uses the discretionary access control \(DAC
     ```
 
 
+### VM Trusted Boot
+
+#### Overview
+
+Trusted boot includes measure boot and remote attestation. The measure boot function is mainly provided by virtualization component. The remote attestation function is enabled by users who install related software (RA client) on VMs and set up the RA server.
+
+The two basic elements for measure boot are the root of trust (RoT) and chain of trust. The basic idea is to establish a RoT in the computer system. The trustworthiness of the RoT is ensured by physical security, technical security, and management security, that is, CRTM (Core Root of Trust for Measurement). A chain of trust is established, starting from the RoT to the BIOS/BootLoader, operating system, and then to the application. The measure boot and trust is performed by one level to the previous level. Finally, the trust is extended to the entire system. The preceding process looks like a chain, so it is called a chain of trust.
+
+The CRTM is the root of the measure boot and the first component of the system startup. No other code is used to check the integrity of the CRTM. Therefore, as the starting point of the chain of trust, it must be an absolutely trusted source of trust. The CRTM needs to be technically designed as a segment of read-only or strictly restricted code to defend against BIOS attacks and prevent remote injection of malicious code or modification of startup code at the upper layer of the operating system. In a physical host, the CPU microcode is used as the CRTM. In a virtualization environment, the sec part of the vBIOS is generally the CRTM.
+
+During startup, the previous component measures (calculates the hash value) the next component, and then extends the measurement value to the trusted storage area, for example, the PCR of the TPM. The CRTM measurement BootLoader extends the measurement value to the PCR, and the BootLoader measurement OS extends the measurement value to the PCR.
+
+
+
+#### Configuring the vTPM Device to Enable Measurement Startup
+
+**Installing the swtpm and libtpms Software**
+
+swtpm provides a TPM emulator (TPM 1.2 and TPM 2.0) that can be integrated into a virtualization environment. So far, it has been integrated into QEMU and serves as a prototype system in RunC. swtpm uses libtpms to provide TPM1.2 and TPM2.0 simulation functions.
+Currently, openEuler20.09 provides the libtpms and swtpm sources. You can run the yum command to install them.
+
+```
+# yum install libtpms swtpm swtpm-devel swtpm-tools
+
+```
+
+
+**Configuring the vTPM Device for the VM**
+
+1.  Add the following information to the AArch64 VM configuration file:
+
+    ```
+    <domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+        ...
+        <devices>
+            ...
+            <tpm model='tpm-tis-device'>
+                <backend type='emulator' version='2.0'/>
+            </tpm>
+            ...
+        </devices>
+        ...
+    </domain>
+    ```
+
+    Add the following information to the x86 VM configuration file:
+
+    ```
+    <domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+        ...
+        <devices>
+            ...
+            <tpm model='tpm-tis'>
+                <backend type='emulator' version='2.0'/>
+            </tpm>
+            ...
+        </devices>
+        ...
+    </domain>
+    ```
+
+2.  Create the VM.
+
+    ```
+    # virsh define MeasuredBoot.xml
+    ```
+3.  Start the VM.
+    
+    Before starting the VM, run the chmod command to grant the following permission to the /var/lib/swtpm-localca/ directory. Otherwise, the libvirt cannot start the swtpm.
+
+    ```
+    # chmod -R 777 /var/lib/swtpm-localca/
+    #
+    # virsh start MeasuredbootVM
+    ```
+
+
+**Confirming that the Measure Boot Is Successfully Enabled**
+
+The vBIOS determines whether to enable the measure boot function. Currently, the vBIOS in openEuler20.09 has the measure boot capability. If the host machine uses the edk2 component of another version, check whether the edk2 component supports the measure boot function.
+
+Log in to the VM as user root and check whether the TPM driver, tpm2-tss protocol stack, and tpm2-tools are installed on the VM.
+By default, the tpm driver (tpm_tis.ko), tpm2-tss protocol stack, and tpm2-tools are installed in openEuler20.09. If another OS is used, run the following command to check whether the driver and related tools are installed:
+
+
+```
+# lsmod |grep tpm
+# tpm_tis          16384   0
+#
+# yum list installed | grep -E 'tpm2-tss|tpm2-tools'
+#
+# yum install tpm2-tss tpm2-tools
+```
+You can run the tpm2_pcrread (tpm2_pcrlist in tpm2_tools of earlier versions) command to list all PCR values.
+
+```
+# tpm2_pcrread
+sha1 :
+  0  : fffdcae7cef57d93c5f64d1f9b7f1879275cff55
+  1  : 5387ba1d17bba5fdadb77621376250c2396c5413
+  2  : b2a83b0ebf2f8374299a5b2bdfc31ea955ad7236
+  3  : b2a83b0ebf2f8374299a5b2bdfc31ea955ad7236
+  4  : e5d40ace8bb38eb170c61682eb36a3020226d2c0
+  5  : 367f6ea79688062a6df5f4737ac17b69cd37fd61
+  6  : b2a83b0ebf2f8374299a5b2bdfc31ea955ad7236
+  7  : 518bd167271fbb64589c61e43d8c0165861431d8
+  8  : af65222affd33ff779780c51fa8077485aca46d9
+  9  : 5905ec9fb508b0f30b2abf8787093f16ca608a5a
+  10 : 0000000000000000000000000000000000000000
+  11 : 0000000000000000000000000000000000000000
+  12 : 0000000000000000000000000000000000000000
+  13 : 0000000000000000000000000000000000000000
+  14 : 0000000000000000000000000000000000000000
+  15 : 0000000000000000000000000000000000000000
+  16 : 0000000000000000000000000000000000000000
+  17 : ffffffffffffffffffffffffffffffffffffffff
+  18 : ffffffffffffffffffffffffffffffffffffffff
+  19 : ffffffffffffffffffffffffffffffffffffffff
+  20 : ffffffffffffffffffffffffffffffffffffffff
+  21 : ffffffffffffffffffffffffffffffffffffffff
+  22 : ffffffffffffffffffffffffffffffffffffffff
+  23 : 0000000000000000000000000000000000000000
+sha256 :
+  0  : d020873038268904688cfe5b8ccf8b8d84c1a2892fc866847355f86f8066ea2d
+  1  : 13cebccdb194dd916f2c0c41ec6832dfb15b41a9eb5229d33a25acb5ebc3f016
+  2  : 3d458cfe55cc03ea1f443f1562beec8df51c75e14a9fcf9a7234a13f198e7969
+  3  : 3d458cfe55cc03ea1f443f1562beec8df51c75e14a9fcf9a7234a13f198e7969
+  4  : 07f9074ccd4513ef1cafd7660f9afede422b679fd8ad99d25c0659eba07cc045
+  5  : ba34c80668f84407cd7f498e310cc4ac12ec6ec43ea8c93cebb2a688cf226aff
+  6  : 3d458cfe55cc03ea1f443f1562beec8df51c75e14a9fcf9a7234a13f198e7969
+  7  : 65caf8dd1e0ea7a6347b635d2b379c93b9a1351edc2afc3ecda700e534eb3068
+  8  : f440af381b644231e7322babfd393808e8ebb3a692af57c0b3a5d162a6e2c118
+  9  : 54c08c8ba4706273f53f90085592f7b2e4eaafb8d433295b66b78d9754145cfc
+  10 : 0000000000000000000000000000000000000000000000000000000000000000
+  11 : 0000000000000000000000000000000000000000000000000000000000000000
+  12 : 0000000000000000000000000000000000000000000000000000000000000000
+  13 : 0000000000000000000000000000000000000000000000000000000000000000
+  14 : 0000000000000000000000000000000000000000000000000000000000000000
+  15 : 0000000000000000000000000000000000000000000000000000000000000000
+  16 : 0000000000000000000000000000000000000000000000000000000000000000
+  17 : ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  18 : ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  19 : ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  20 : ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  21 : ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  22 : ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  23 : 0000000000000000000000000000000000000000000000000000000000000000
+```
