@@ -443,7 +443,6 @@ The CRTM is the root of the measure boot and the first component of the system s
 During startup, the previous component measures (calculates the hash value) the next component, and then extends the measurement value to the trusted storage area, for example, the PCR of the TPM. The CRTM measurement BootLoader extends the measurement value to the PCR, and the BootLoader measurement OS extends the measurement value to the PCR.
 
 
- >![](./public_sys-resources/icon-note.gif)
 
 #### Configuring the vTPM Device to Enable Measurement Startup
 
