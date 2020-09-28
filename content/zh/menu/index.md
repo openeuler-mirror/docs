@@ -75,6 +75,14 @@ headless: true
     - [最佳实践]({{< relref "./docs/Virtualization/最佳实践.md" >}})
     - [工具使用指南]({{< relref "./docs/Virtualization/工具使用指南.md" >}})
     - [附录]({{< relref "./docs/Virtualization/附录.md" >}})
+- [StratoVirt虚拟化用户指南]({{< relref "./docs/StratoVirt/StratoVirt虚拟化用户指南.md" >}})
+    - [StratoVirt介绍]({{< relref "./docs/StratoVirt/StratoVirt介绍.md" >}})
+    - [安装StratoVirt]({{< relref "./docs/StratoVirt/安装StratoVirt.md" >}})
+    - [准备使用环境]({{< relref "./docs/StratoVirt/准备使用环境.md" >}})
+    - [虚拟机配置]({{< relref "./docs/StratoVirt/虚拟机配置.md" >}})
+    - [管理虚拟机生命周期]({{< relref "./docs/StratoVirt/管理虚拟机生命周期.md" >}})
+    - [管理虚拟机资源管理]({{< relref "./docs/StratoVirt/管理虚拟机资源管理.md" >}})
+    - [对接iSula安全容器]({{< relref "./docs/StratoVirt/对接iSula安全容器.md" >}})
 
 
 - [容器用户指南]({{< relref "./docs/Container/container.md" >}})
