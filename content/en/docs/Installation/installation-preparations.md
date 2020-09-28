@@ -47,7 +47,7 @@ Perform the following operations to obtain the openEuler release package:
 
 ## Release Package Integrity Check
 
->![](C:/Users/Administrator/Downloads/openDocs/docs/content/en/docs/Installation/public_sys-resources/icon-note.gif) **NOTE:**   
+>![](./public_sys-resources/icon-note.gif) **NOTE:**   
 >This section describes how to verify the integrity of the release package in the AArch64 architecture. The procedure for verifying the integrity of the release package in the x86\_64 architecture is the same.  
 
 ### Introduction
@@ -94,7 +94,7 @@ To install the openEuler OS on a PM, the PM must meet the following hardware com
 
 You need to take hardware compatibility into account during openEuler installation.  [Table 1](#table14948632047)  describes the types of supported servers.
 
->![](C:/Users/Administrator/Downloads/openDocs/docs/content/en/docs/Installation/public_sys-resources/icon-note.gif) **NOTE:**   
+>![](./Installation/public_sys-resources/icon-note.gif) **NOTE:**   
 >
 >-   TaiShan 200 servers are backed by Huawei Kunpeng 920 processors.  
 >-   Currently, only Huawei TaiShan and FusionServer Pro servers are supported. More servers from other vendors will be supported in the future.  

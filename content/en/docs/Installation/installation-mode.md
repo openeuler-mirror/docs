@@ -35,7 +35,7 @@ If you have obtained a CD/DVD-ROM, install the OS using the CD/DVD-ROM. If you h
 
 Perform the following operations to start the installation:
 
->![](C:/Users/Administrator/Downloads/openDocs/docs/content/en/docs/Installation/public_sys-resources/icon-note.gif) **NOTE:**   
+>![](./public_sys-resources/icon-note.gif) **NOTE:**   
 >Set the system to preferentially boot from the CD/DVD-ROM drive. Take the BIOS as an example. You need to move the  **CD/DVD-ROM Drive**  option under  **Boot Type Order**  to the top.  
 
 1.  Disconnect all drives that are not required, such as USB drives.
@@ -59,7 +59,7 @@ Pay attention to the capacity of the USB flash drive. The USB flash drive must h
     [ 170.171135] sd 5:0:0:0: [sdb] Attached SCSI removable disk
     ```
 
-    >![](C:/Users/Administrator/Downloads/openDocs/docs/content/en/docs/Installation/public_sys-resources/icon-note.gif) **NOTE:**   
+    >![](./public_sys-resources/icon-note.gif) **NOTE:**   
     >Take the  **sdb**  USB flash drive as an example.  
 
 2.  Switch to user  **root**. When running the  **su**  command, you need to enter the password.
@@ -113,7 +113,7 @@ Pay attention to the capacity of the USB flash drive. The USB flash drive must h
 
 Perform the following operations to start the installation:
 
->![](C:/Users/Administrator/Downloads/openDocs/docs/content/en/docs/Installation/public_sys-resources/icon-note.gif) **NOTE:**   
+>![](./public_sys-resources/icon-note.gif) **NOTE:**   
 >Set the system to preferentially boot from the USB flash drive. Take the BIOS as an example. You need to move the  **USB**  option under  **Boot Type Order**  to the top.  
 
 1.  Disconnect all drives that are not required.
@@ -131,7 +131,7 @@ If the target hardware is installed with a PXE-enabled NIC, we can configure it 
 
 For installation through the network using PXE, the client uses a PXE-enabled NIC to send a broadcast request for DHCP information and IP address to the network. The DHCP server provides the client with an IP address and other network information, such as the IP address or host name of the DNS and FTP server \(which provides the files required for starting the installation program\), and the location of the files on the server.
 
->![](C:/Users/Administrator/Downloads/openDocs/docs/content/en/docs/Installation/public_sys-resources/icon-note.gif) **NOTE:**   
+>![](./public_sys-resources/icon-note.gif) **NOTE:**   
 >The TFTP, DHCP, and HTTP server configurations are not described here. For details, see  [Full-automatic Installation Guide](using-kickstart-for-automatic-installation.html#full-automatic-installation-guide).  
 
 ## Installation Through a QCOW2 Image
