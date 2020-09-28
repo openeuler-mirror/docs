@@ -143,7 +143,7 @@ headless: true
     - [Using Make for Compilation]({{< relref "./docs/ApplicationDev/using-make-for-compilation.md" >}})
     - [Using JDK for Compilation]({{< relref "./docs/ApplicationDev/using-jdk-for-compilation.md" >}})
     - [Building an RPM Package]({{< relref "./docs/ApplicationDev/building-an-rpm-package.md" >}})
-
+    - [FAQ]({{< relref "./docs/ApplicationDev/FAQ.md" >}})
 
 
 - [openEuler Toolset User Guide]({{< relref "./docs/userguide/overview.md" >}})
