@@ -7,6 +7,7 @@
         - [Raw Device Mapping](#raw-device-mapping)
         - [kworker Isolation and Binding](#kworker-isolation-and-binding)
         - [HugePage Memory](#hugepage-memory)
+        - [PV-qspinlock](#pv-qspinlock)
     - [Security Best Practices](#security-best-practices)
         - [Libvirt Authentication](#libvirt-authentication)
         - [qemu-ga](#qemu-ga)
