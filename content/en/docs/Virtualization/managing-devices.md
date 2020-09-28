@@ -283,7 +283,7 @@ PCI passthrough directly assigns a physical PCI device on the host to a VM. The 
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
+>![](./public_sys-resources/icon-note.gif) **NOTE:**   
 >VFIO passthrough is implemented by IOMMU group. Devices are divided to IOMMU groups based on access control services \(ACS\) on hardware. Devices in the same IOMMU group can be assigned to only one VM. If multiple functions on a PCI device belong to the same IOMMU group, they can be directly assigned to only one VM as well.  
 
 ### SR-IOV Passthrough
@@ -292,7 +292,7 @@ PCI passthrough directly assigns a physical PCI device on the host to a VM. The 
 
 Single Root I/O Virtualization \(SR-IOV\) is a hardware-based virtualization solution. With the SR-IOV technology, a physical function \(PF\) can provide multiple virtual functions \(VFs\), and each VF can be directly assigned to a VM. This greatly improves hardware resource utilization and I/O performance of VMs. A typical application scenario is SR-IOV passthrough for NICs. With the SR-IOV technology, a physical NIC \(PF\) can function as multiple VF NICs, and then the VFs can be directly assigned to VMs.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
+>![](./public_sys-resources/icon-note.gif) **NOTE:**   
 >-   SR-IOV requires the support of physical hardware. Before using SR-IOV, ensure that the hardware device to be directly assigned supports SR-IOV and the device driver on the host OS works in SR-IOV mode.  
 >-   The following describes how to query the NIC model:  
 >In the following command output, values in the first column indicate the PCI numbers of NICs, and  **19e5:1822**  indicates the vendor ID and device ID of the NIC.  
@@ -305,10 +305,12 @@ Single Root I/O Virtualization \(SR-IOV\) is a hardware-based virtualization sol
 >0b:00.0 Ethernet controller: Device 19e5:1822 (rev 45)  
 >81:00.0 Ethernet controller: Intel Corporation 82599ES 10-Gigabit SFI/SFP+ Network Connection (rev 01)  
 >81:00.1 Ethernet controller: Intel Corporation 82599ES 10-Gigabit SFI/SFP+ Network Connection (rev 01)  
-```
+
+>```
 
 
 #### Procedure
+
 
 To configure SR-IOV passthrough for a NIC, perform the following steps:
 
@@ -450,7 +452,7 @@ To configure SR-IOV passthrough for a NIC, perform the following steps:
     </tbody>
     </table>
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >![](./public_sys-resources/icon-note.gif) **NOTE:**   
     >Disabling the SR-IOV function:  
     >To disable the SR-IOV function after the VM is stopped and no VF is in use, run the following command:  
     >The following uses the Hi1822 NIC \(corresponding network interface name: eth0\) as an example:  
@@ -466,14 +468,14 @@ On the Kunpeng server, the VF of the HPRE accelerator on the host needs to be pa
 
 **Table 1**  HPRE accelerator description
 
-|    items         | Description                                                                                                |
+|    items    | Description                                                                                         |
 |-------------|-----------------------------------------------------------------------------------------------------|
-| Device name    | Hi1620 on-chip RSA/DH security algorithm accelerator (HPRE engine)                                  |
-| Function        | Modular exponentiation, RSA key pair operation, DH calculation, and auxiliary operations of large numbers (modular exponentiation, modular multiplication, modulo, modular inverse, primality test, and co-prime test) |
+| Device name | Hi1620 on-chip RSA/DH security algorithm accelerator (HPRE engine)                                  |
+| Function    | Modular exponentiation, RSA key pair operation, DH calculation, and auxiliary operations of large numbers (modular exponentiation, modular multiplication, modulo, modular inverse, primality test, and co-prime test) |
 | VendorID    | 0x19E5                                                                                              |
 | PF DeviceID | 0xA258                                                                                              |
 | VF DeviceID | 0xA259                                                                                              |
-| Maximum number of VF  | A maximum of 63 VFs can be created for an HPRE PF                                                                       |
+| Maximum number of VF  | A maximum of 63 VFs can be created for an HPRE PF                                         |
 
 
 >![](./public_sys-resources/icon-note.gif) **Note**  
@@ -632,7 +634,7 @@ To configure USB passthrough, perform the following steps:
 
 The VM system may be damaged due to virus damage, system file deletion by mistake, or incorrect formatting. As a result, the system cannot be started. To quickly restore a damaged system, openEuler provides the storage snapshot function. openEuler can create a snapshot that records the VM status at specific time points without informing users \(usually within a few seconds\). The snapshot can be used to restore the VM to the status when the snapshots were taken. For example, a damaged system can be quickly restored with the help of snapshots, which improves system reliability.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
+>![](./public_sys-resources/icon-note.gif) **NOTE:**   
 >Currently, storage snapshots can be QCOW2 and RAW images only. Block devices are not supported.  
 
 ### Procedure

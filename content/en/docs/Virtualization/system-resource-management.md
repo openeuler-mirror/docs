@@ -265,7 +265,7 @@ This feature allows users to hot add CPUs to a running VM without affecting its 
     ACTION=="add", SUBSYSTEM=="cpu", ATTR{online}="1"
     ```
 
-    >![](public_sys-resources/icon-note.gif) **Note**  
+    >![](./public_sys-resources/icon-note.gif) **Note**  
     >If you do not use the udev rules, you can use the root permission to manually bring the hot added CPU online by running the following command:
     >```
     >for i in `grep -l 0 /sys/devices/system/cpu/cpu*/online`
@@ -280,7 +280,7 @@ This feature allows users to hot add CPUs to a running VM without affecting its 
     virsh setvcpus openEulerVM 6 --live
     ```
 
-    >![](public_sys-resources/icon-note.gif) **Note**  
+    >![](./public_sys-resources/icon-note.gif) **Note**  
     >The format for running the virsh setvcpus command to hot add a VM CPU is as follows:
     >```
     >virsh setvcpus <domain> <count> [--config] [--live]
