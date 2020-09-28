@@ -219,6 +219,25 @@ If VMs use static HugePages, you can disable THP to reduce the overhead of the h
     ```
 
 
+### PV-qspinlock
+
+#### Overview
+
+PV-qspinlock optimizes the spin lock in the virtual scenario of CPU overcommitment. It allows the hypervisor to set the vCPU in the lock context to the block state and wake up the corresponding vCPU after the lock is released. In this way, pCPU resources can be better used in the overcommitment scenario, and the compilation application scenario is optimized to reduce the compilation duration.
+
+#### Procedure
+
+Modify the /boot/efi/EFI/openEuler/grub.cfg configuration file of the VM, add arm_pvspin to the startup parameter in the command line, and restart the VM for the modification to take effect. After PV-qspinlock takes effect, run the dmesg command on the VM. The following information is displayed:
+
+```
+[    0.000000] arm-pv: PV qspinlocks enabled
+```
+
+>![](./public_sys-resources/icon-note.gif) **Note:**   
+>PV-qspinlock is supported only when the operating systems of the host machine and VM are both openEuler-20.09 or later and the VM kernel compilation option CONFIG_PARAVIRT_SPINLOCKS is set to y (default value for openEuler).
+
+
+
 ## security Best Practices
 
 ### Libvirt Authentication
