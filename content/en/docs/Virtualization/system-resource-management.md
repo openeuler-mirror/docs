@@ -16,6 +16,7 @@ Before you start:
         - [Introduction to NUMA](#introduction-to-numa)
         - [Configuring Host NUMA](#configuring-host-numa)
         - [Configuring Guest NUMA](#configuring-guest-numa)
+        - [Memory Hot Add](#Memory Hot Add)
 
 
 
@@ -293,3 +294,94 @@ After Guest NUMA is configured in the VM XML configuration file, you can view th
 >-   If you want to use Guest NUMA to provide better performance, configure <**numatune\>**  and  **<cputune\>**  so that the vCPU and memory are distributed on the same physical NUMA node.  
 >    -   **cellid**  in  **<numatune\>**  corresponds to  **cell id**  in  **<numa\>**.  **mode**  can be set to  **strict**  \(apply for memory from a specified node strictly. If the memory is insufficient, the application fails.\),  **preferred**  \(apply for memory from a node first. If the memory is insufficient, apply for memory from another node\), or  **interleave**  \(apply for memory from a specified node in cross mode\).;  **nodeset**  indicates the specified physical NUMA node.  
 >    -   In  **<cputune\>**, you need to bind the vCPU in the same  **cell id**  to the physical NUMA node that is the same as the  **memnode**.  
+
+
+
+### Memory Hot Add
+
+#### Overview
+In virtualization scenarios, the memory, CPU, and external devices of VMs are simulated by software. Therefore, the memory can be adjusted online for VMs at the virtualization bottom layer. In the current openEuler version, memory can be added to a VM online. If the physical memory of a VM is insufficient and the VM cannot be shut down, you can use this feature to add physical memory resources to the VM.
+
+#### Constraints
+
+-   For processors using the AArch64 architecture, the specified VM chipset type \(machine\) needs to be virt-4.1 or a later version when a VM is created.For processors using the x86 architecture, the specified VM chipset type \(machine\) needs to be a later version than pc-i440fx-1.5 when a VM is created.
+-   Guest NUMA on which the memory hot add feature depends needs to be configured on the VM. Otherwise, the memory hot add process cannot be completed.
+-   When hot adding memory, you need to specify the ID of Guest NUMA node to which the new memory belongs. Otherwise, the memory hot add fails.
+-   The VM kernel should support memory hot add. Otherwise, the VM cannot identify the newly added memory or the memory cannot be brought online.
+-   For a VM that uses hugepages, the capacity of the hot added memory should be an integral multiple of hugepagesz. Otherwise, the hot add fails.
+-   The hot added memory size should be an integral multiple of the Guest physical memory block size (block\_size\_bytes). Otherwise, the VM cannot go online. The value of block\_size\_bytes can be obtained using the lsmem command in Guest.
+-   After n pieces of virtio-net NICs are configured, the maximum number of hot add times is set to min\{max\_slot, 64 - n\} to reserve slots for NICs.
+-   The vhost-user device and the memory hot add feature are mutually exclusive. A VM configured with the vhost-user device does not support memory hot add. After the memory is hot added to a VM, the vhost-user device cannot be hot added.
+-   If the VM OS is Linux, ensure that the initial memory is greater than or equal to 4 GB.
+-   If the VM OS is Windows, the first hot added memory needs to be specified to Guest NUMA node0. Otherwise, the hot added memory cannot be identified by the VM.
+-   In passthrough scenarios, memory needs to be allocated in advance. Therefore, it is normal that the startup and hot add of memory are slower than those of common VMs (especially large-specification VMs).
+-   It is recommended that the ratio of the available memory to the hot added memory be at least 1:32. That is, at least 1 GB available memory is required for the VM with 32 GB hot added memory. If the ratio is less than 1:32, the VM may be suspended.
+-   Whether the hot added memory can automatically go online depends on the VM OS logic. You can manually bring the memory online or configure the udev rules to automatically bring the memory online.
+
+#### Procedure
+
+**VM XML Configuration**
+
+1.  To use the memory hot add function, configure the maximum hot add memory size and reserved slot number, and configure the Guest NUMA topology when creating a VM.
+
+    For example, run the following command to configure 32 GB initial memory for a VM, reserve 256 slots, set the memory upper limit to 1 TB, and configure two NUMA nodes:
+
+    ```
+    <domain type='kvm'>
+        <memory unit='GiB'>32</memory>
+        <maxMemory slots='256' unit='GiB'>1024</maxMemory>
+        <cpu mode='host-passthrough' check='none'>
+            <topology sockets='2' cores='2' threads='1'/>
+            <numa>
+              <cell id='0' cpus='0-1' memory='16' unit='GiB'/>
+              <cell id='1' cpus='2-3' memory='16' unit='GiB'/>
+            </numa>
+         </cpu>
+        ....
+    ```
+
+
+>![](public_sys-resources/icon-note.gif) **Note**  
+>In the preceding information,
+>the value of slots in the maxMemory field indicates the reserved memory slots. The maximum value is 256.
+>maxMemory indicates the maximum physical memory supported by the VM.
+>For details about how to configure Guest NUMA, see "Configuring Guest NUMA."
+
+**Hot Adding and Bringing Memory Online**
+
+1.  If the hot added memory needs to be automatically brought online, create the udev rules file /etc/udev/rules.d/99-hotplug-memory.rules in the VM as user root and define the udev rules in the file. The following is an example:
+
+    ```
+    ### automatically online hot-plugged memory
+    ACTION=="add", SUBSYSTEM=="memory", ATTR{state}="online"
+    ```
+
+2.  Create a memory description XML file based on the size of the memory to be hot added and the Guest NUMA node of the VM.
+
+    For example, to hot add 1 GB memory to NUMA node0, run the following command:
+
+    ```
+    <memory model='dimm'>
+      <target>
+      <size unit='MiB'>1024</size>
+      <node>0</node>
+      </target>
+    </memory>
+    ```
+
+3. Run the virsh attach-device command to hot add memory to the VM. In the command, openEulerVM indicates the VM name, memory.xml indicates the description file of the hot added memory, and --live indicates that the hot added memory takes effect online. You can also run the --config command to persist the hot added memory to the VM XML file.
+
+    ```
+    ### virsh attach-device openEulerVM memory.xml --live
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **Note**  
+    >If you do not use the udev rules, you can use the root permission to manually bring the hot added memory online by running the following command:
+    >```
+    >for i in `grep -l offline /sys/devices/system/memory/memory*/state`
+    >do
+    >    echo online > $i
+    >done
+    >```
+
+
