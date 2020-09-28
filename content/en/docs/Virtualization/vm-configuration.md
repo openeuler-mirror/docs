@@ -105,8 +105,8 @@ This section describes how to configure the vCPU and virtual memory.
 
     Sub-element  **topology**: A sub-element of the element cpu, used to describe the topology structure of a vCPU mode.
 
-    -   The attributes  **socket**,  **cores**, and  **threads**  of the sub-element topology describe the number of CPU sockets of a VM, the number of processor cores included in each CPU socket, and the number of hyperthreads included in each processor core, respectively. The attribute value is a positive integer, and a product of the three values is equal to the number of of vCPUs.
-
+    -   The attributes **socket**, **cores**, and **threads** of the sub-element topology describe the number of CPU sockets of a VM, the number of processor cores included in each CPU socket, and the number of threads included in each processor core, respectively. The attribute value is a positive integer, and the product of the three values equals the number of vCPUs.
+    -   The ARM architecture supports the virtual hyper-threading function. The virtual CPU hot add and the virtual hyper-threading function are mutually exclusive.
     Sub-element  **model**: A sub-element of the element cpu, used to describe the CPU model when **mode** is custom.
 
     Sub-element  **feature**: A sub-element of the element cpu, used to enable/disable a CPU feature when **mode** is custom.  The attribute **name** describes the name of the CPU feature.  And whether enable the CPU feature is controlled by the attribute **policy**:
