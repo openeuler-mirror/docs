@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="41px" height="34px" viewBox="0 0 41 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组</title>
+    <defs>
+        <polygon id="path-1" points="0 0.065195122 39.1369796 0.065195122 39.1369796 20.1282293 0 20.1282293"></polygon>
+        <polygon id="path-3" points="0.73355102 0.0652756098 26.0764082 0.0652756098 26.0764082 32.195122 0.73355102 32.195122"></polygon>
+        <polygon id="path-5" points="0.345795918 0.0652756098 19.5457959 0.0652756098 19.5457959 32.195122 0.345795918 32.195122"></polygon>
+    </defs>
+    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LandingPage-动效" transform="translate(-1005.000000, -422.000000)">
+            <g id="编组" transform="translate(1005.000000, 422.000000)">
+                <g transform="translate(0.000000, 0.739441)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M-0.000163265306,18.6874976 C0.945142857,18.6045951 13.7941224,20.1282293 13.7941224,20.1282293 L39.1369796,0.0650341463 L-0.000163265306,18.6874976 Z" id="Fill-1" fill="#AFCBEA" mask="url(#mask-2)"></path>
+                </g>
+                <g transform="translate(13.061224, 0.739441)">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <g id="Clip-4"></g>
+                    <polygon id="Fill-3" fill="#3D84C6" mask="url(#mask-4)" points="6.87640816 32.1952024 0.73355102 20.1284707 26.0764082 0.0652756098"></polygon>
+                </g>
+                <g transform="translate(19.591837, 0.739441)">
+                    <mask id="mask-6" fill="white">
+                        <use xlink:href="#path-5"></use>
+                    </mask>
+                    <g id="Clip-6"></g>
+                    <polygon id="Fill-5" fill="#7FA9DA" mask="url(#mask-6)" points="0.345795918 32.1952024 4.25191837 20.6580805 19.5457959 0.0652756098"></polygon>
+                </g>
+                <polygon id="Fill-7" fill="#AFCBEA" points="23.8439184 21.3971195 39.7696327 22.8619976 39.1369796 0.805119512"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
