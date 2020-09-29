@@ -1,3 +1,5 @@
+# Container Image Building
+
 
 <!-- TOC -->
 
@@ -35,6 +37,7 @@
 
 <!-- /TOC -->
 
+## Overview
 
 isula-build is a container image build tool developed by the iSula container team. It allows you to quickly build container images using Dockerfiles.
 
@@ -46,9 +49,9 @@ Note:
 
 - Currently, isula-build supports only Docker images.
 
-# Installation
+## Installation
 
-## Preparations
+### Preparations
 
 To ensure that isula-build can be successfully installed, the following software and hardware requirements must be met:
 
@@ -56,7 +59,7 @@ To ensure that isula-build can be successfully installed, the following software
 - Supported OS: openEuler
 - You have the permissions of the root user.
 
-### Installing isula-build
+#### Installing isula-build
 
 Before using isula-build to build a container image, you need to install the following software packages:
 
@@ -89,9 +92,9 @@ Before using isula-build to build a container image, you need to install the fol
 > **Note:** 
 After the installation is complete, you need to manually start the isula-build service. For details about how to start the service, see "Managing the isula-build Service."
 
-# Configuring and Managing the isula-build Service
+## Configuring and Managing the isula-build Service
 
-## Configuring the isula-build Service
+### Configuring the isula-build Service
 
 After the isula-build software package is installed, the systemd starts the isula-build service based on the default configuration contained in the isula-build software package on the isula-build server. If the default configuration file on the isula-build server cannot meet your requirements, perform the following operations to customize the configuration file: After the default configuration is modified, restart the isula-build server for the new configuration to take effect. For details, see "Managing the isula-build Service."
 
@@ -136,14 +139,14 @@ Currently, the isula-build server contains the following configuration file:
 
 
 
-## Managing the isula-build Service
+### Managing the isula-build Service
 
 Currently, openEuler uses systemd to manage the isula-build service. The isula-build software package contains the systemd service file. After installing the isula-build software package, you can use the systemd tool to start or stop the isula-build service. You can also manually start the isula-builder software. Note that only one isula-builder process can be started on a node at a time.
 
 >![](./public_sys-resources/icon-note.gif) **Note:** 
 > Only one isula-builder process can be started on a node at a time.
 
-### (Recommended) Using systemd for Management
+#### (Recommended) Using systemd for Management
 
 You can run the following systemd commands to start, stop, and restart the isula-build service:
 
@@ -171,7 +174,7 @@ The systemd service file of the isula-build software installation package is sto
 sudo systemctl daemon-reload
 ```
 
-### Directly Running isula-builder
+#### Directly Running isula-builder
 
 You can also run the isula-builder command on the server to start the service. The isula-builder command can contain flags for service startup. The following flags are supported:
 
@@ -191,9 +194,9 @@ Start the isula-build service. For example, to specify the local persistency dir
 sudo isula-builder --dataroot "/var/lib/isula-build" --debug=false
 ```
 
-# Usage Guidelines
+## Usage Guidelines
 
-## Prerequisites
+### Prerequisites
 
 isula-build depends on the executable file runc to build the RUN command in the Dockerfile. Therefore, the runc must be pre-installed in the running environment of isula-build. The installation method depends on the application scenario. If you do not need to use the complete docker-engine tool chain, you can install only the docker-runc RPM package.
 
@@ -212,7 +215,7 @@ sudo yum install -y docker-engine
 
 
 
-## Overview
+### Overview
 
 The isula-build client provides a series of commands for building and managing container images. Currently, the isula-build client provides the following command lines:
 
@@ -239,7 +242,7 @@ The following describes how to use these commands in detail.
 
 
 
-## ctr-img: Container Image Management
+### ctr-img: Container Image Management
 
 The isula-build command groups all container image management commands into the `ctr-img` command. The command is as follows:
 
@@ -247,7 +250,7 @@ The isula-build command groups all container image management commands into the 
 isula-build ctr-img [command]
 ```
 
-### build: Container Image Build
+#### build: Container Image Build
 
 The subcommand build of the ctr-img command is used to build container images. The command is as follows:
 
@@ -413,7 +416,7 @@ $ sudo isula-build ctr-img build --cap-add CAP_SYS_ADMIN --cap-add CAP_SYS_PTRAC
 
 
 
-### image: Viewing Local Persistent Build Images
+#### image: Viewing Local Persistent Build Images
 
 You can run the images command to view the images in the local persistent storage.
 
@@ -431,7 +434,7 @@ localhost:5000/library/alpine                   latest       a24bb4013296       
 
 
 
-### import: Importing a Basic Container Image
+#### import: Importing a Basic Container Image
 
 openEuler releases a basic container image, for example, openEuler-docker.x86_64.tar.xz, with the version. You can run the `ctr-img import` command to import the image to isula-build.
 
@@ -444,13 +447,13 @@ isula-build ctr-img import [flags]
 Example:
 
 ```sh
-$ sudo isula-build ctr-img import ./openEuler-docker.x86_64.tar.xz openeuler:20.03
+$ sudo isula-build ctr-img import ./openEuler-docker.x86_64.tar.xz openeuler:20.09
 Import success with image id: 7317851cd2ab33263eb293f68efee9d724780251e4e92c0fb76bf5d3c5585e37
 $ sudo isula-build ctr-img images
 ----------------------------------------------  --------------------  -----------------  ------------------------  ------------ 
 REPOSITORY                                      TAG                   IMAGE ID           CREATED                   SIZE
 ----------------------------------------------  --------------------  -----------------  ------------------------  ------------ 
-openeuler                                       20.03                 7317851cd2ab       2020-08-01 06:25:34       500 MB
+openeuler                                       20.09                 7317851cd2ab       2020-08-01 06:25:34       500 MB
 ----------------------------------------------  --------------------  -----------------  ------------------------  ------------
 ```
 
@@ -459,7 +462,7 @@ openeuler                                       20.03                 7317851cd2
 
 
 
-### load: Importing Cascade Images
+#### load: Importing Cascade Images
 
 Cascade images are images that are saved to the local computer by running the docker save or isula-build ctr-img save command. The compressed image package contains a layer-by-layer image package named layer.tar. You can run the ctr-img load command to import the image to isula-build.
 
@@ -505,7 +508,7 @@ Loaded image as c07ddb44daa97e9e8d2d68316b296cc9343ab5f3d2babc5e6e03b80cd580478e
 
 
 
-### rm: Deleting a Local Persistent Image
+#### rm: Deleting a Local Persistent Image
 
 You can run the rm command to delete an image from the local persistent storage. The command is as follows:
 
@@ -528,7 +531,7 @@ Deleted: sha256:eeba1bfe9fca569a894d525ed291bdaef389d28a88c288914c1a9db7261ad12c
 
 
 
-### save: Exporting Cascade Images
+#### save: Exporting Cascade Images
 
 You can run the save command to export the cascade images to the local disk. The command is as follows:
 
@@ -566,7 +569,7 @@ Save success with image: 21c3e96ac411
 
 
 
-### tag: Tagging Local Persistent Images
+#### tag: Tagging Local Persistent Images
 
 You can run the tag command to add a tag to a local persistent container image. The command is as follows:
 
@@ -595,7 +598,7 @@ alpine                                           v1           a24bb4013296      
 
 
 
-## info: Viewing the Operating Environment and System Information
+### info: Viewing the Operating Environment and System Information
 
 You can run the isula-build info command to view the running environment and system information of isula-build. The command is as follows:
 
@@ -632,7 +635,7 @@ $ sudo isula-build info -H
        oepkgs.net
 ```
 
-## login: Logging In to the Remote Image Repository
+### login: Logging In to the Remote Image Repository
 
 You can run the login command to log in to the remote image repository. The command is as follows:
 
@@ -663,7 +666,7 @@ Enter the password in interactive mode.
  Login Succeeded
 ```
 
-## logout: Logging Out of the Remote Image Repository
+### logout: Logging Out of the Remote Image Repository
 
 You can run the logout command to log out of the remote image repository. The command is as follows:
 
@@ -685,7 +688,7 @@ Example:
    Removed authentications
 ```
 
-## version: Querying the isula-build Version
+### version: Querying the isula-build Version
 
 You can run the version command to view the current version information.
 
@@ -707,11 +710,11 @@ You can run the version command to view the current version information.
 ```
 
 
-# Directly Integrating a Container Engine
+## Directly Integrating a Container Engine
 
 isula-build can be integrated with iSulad or Docker to import the built container image to the local storage of the container engine.
 
-## Integration with iSulad
+### Integration with iSulad
 
 Images that are successfully built can be directly exported to the iSulad.
 
@@ -734,7 +737,7 @@ busybox                        2.0        2d414a5cad6d         2020-08-01 06:41:
 > - It is required that isula-build and iSulad be on the same node.
 > - When an image is directly exported to the iSulad, the isula-build client needs to temporarily store the successfully built image as `/var/tmp/isula-build-tmp-%v.tar` and then import it to the iSulad. Ensure that the /var/tmp/ directory has sufficient disk space. If the isula-build client process is killed or Ctrl+C is pressed during the export, you need to manually clear the `/var/tmp/isula-build-tmp-%v.tar` file.
 
-## Integration with Docker
+### Integration with Docker
 
 Images that are successfully built can be directly exported to the Docker daemon.
 
@@ -756,10 +759,10 @@ busybox                                             2.0                 2d414a5c
 >
 > - The isula-build and Docker must be on the same node.
 
-# \<span id="Appendix"\>Appendix
+## \<span id="Appendix"\>Appendix
 
 
-## Command Line Parameters
+### Command Line Parameters
 
 **Table 1** Parameters in the ctr-img build command
 
@@ -806,11 +809,11 @@ busybox                                             2.0                 2d414a5c
 | -------- | --------- | ------------------------------------ |
 | logout | -a, --all | Boolean, which indicates whether to log out of all logged-in image repositories. |
 
-## Communication Matrix
+### Communication Matrix
 
 The isula-build component processes communicate with each other through the Unix socket file. No port is used for communication.
 
-## File and Permission
+### File and Permission
 
 - All isula-build operations must be performed by the root user.
 

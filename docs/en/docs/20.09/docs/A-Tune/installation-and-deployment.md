@@ -22,11 +22,11 @@ This chapter describes how to install and deploy A-Tune.
 
 ### Software Requirement
 
--   OS: openEuler 20.03 LTS
+-   OS: openEuler 20.09
 
 ## Environment Preparation
 
-For details about installing an openEuler OS, see  _openEuler 20.03 LTS Installation Guide_.
+For details about installing an openEuler OS, see  _openEuler 20.09 Installation Guide_.
 
 ## A-Tune Installation
 
@@ -58,7 +58,7 @@ To install the A-Tune, perform the following steps:
 1.  Mount an openEuler ISO file.
 
     ```
-    # mount openEuler-20.03-LTS-aarch64-dvd.iso /mnt
+    # mount openEuler-20.09-aarch64-dvd.iso /mnt
     ```
 
 2.  Configure the local yum source.
