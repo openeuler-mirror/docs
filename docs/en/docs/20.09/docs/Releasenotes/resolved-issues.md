@@ -1,74 +1,225 @@
-# Resolved Issues<a name="EN-US_TOPIC_0225731125"></a>
+# Resolved Issues<a name="ZH-CN_TOPIC_0225731125"></a>
 
-For details about the complete issue list, click  [https://gitee.com/organizations/src-openeuler/issues](https://gitee.com/organizations/src-openeuler/issues).
+For the complete issue list, see [Complete Issue List](https://gitee.com/organizations/src-openeuler/issues).
 
-For details about the complete kernel submission records, click  [https://gitee.com/openeuler/kernel/commits/openEuler-20.09](https://gitee.com/openeuler/kernel/commits/openEuler-20.09).
+For details about the complete kernel submission records, see [Record Submission](https://gitee.com/openeuler/kernel/commits/openEuler-1.0-LTS).
 
-[Table 1](#table249714911433)  lists the resolved issues.
+**Applications and basic services** <a name="table_fixed_1"></a>
 
-**Table  1**  Resolved issues
-
-<a name="table249714911433"></a>
-<table><thead align="left"><tr id="row104971596432"><th class="cellrowborder" valign="top" width="15%" id="mcps1.2.3.1.1"><p id="p1649720994313"><a name="p1649720994313"></a><a name="p1649720994313"></a>Issue</p>
+<table><thead align="left"><tr id="row104971596432"><th class="cellrowborder" valign="top" width="9.66%" id="mcps1.2.3.1.1"><p id="p1649720994313"><a name="p1649720994313"></a><a name="p1649720994313"></a>Issue</p>
 </th>
-<th class="cellrowborder" valign="top" width="85%" id="mcps1.2.3.1.2"><p id="p8497129114312"><a name="p8497129114312"></a><a name="p8497129114312"></a>Description</p>
+<th class="cellrowborder" valign="top" width="90.34%" id="mcps1.2.3.1.2"><p id="p8497129114312"><a name="p8497129114312"></a><a name="p8497129114312"></a>Description</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/openeuler/kernel/issues/I1BJTF?from=project-issue" target="_blank" rel="noopener noreferrer">I1BJTF</a></p>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/src-openeuler/mariadb/issues/I1TPY4" target="_blank" rel="noopener noreferrer">I1TPY4</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a>[Kernel bug] The <strong id="b1578853092814"><a name="b1578853092814"></a><a name="b1578853092814"></a>lscpu </strong>command on the ARM server cannot be used to display the CPU dominant frequency, and the CPU cache is incorrect.</p>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>x86/arm mariadb-server installation fails.</span></p>
 </td>
-</tr>
-<tr id="row20574203616567"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p1357415364563"><a name="p1357415364563"></a><a name="p1357415364563"></a><a href="https://gitee.com/openeuler/iSulad-img/issues/I1BWPD?from=project-issue" target="_blank" rel="noopener noreferrer">I1BWPD</a></p>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/src-openeuler/lm_sensors/issues/I1TOV5" target="_blank" rel="noopener noreferrer">I1TOV5</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p85749369567"><a name="p85749369567"></a><a name="p85749369567"></a>Failed to pull an image using the <strong id="b19671122163015"><a name="b19671122163015"></a><a name="b19671122163015"></a>isula pull</strong> or <strong id="b38112315303"><a name="b38112315303"></a><a name="b38112315303"></a>curl pull</strong> command.</p>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>lm_sensors cannot be started by default, and systemd is in the degraded state.</span></p>
 </td>
-</tr>
-<tr id="row20773194665915"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p6774164645917"><a name="p6774164645917"></a><a name="p6774164645917"></a><a href="https://gitee.com/src-openeuler/shadow/issues/I1BV56?from=project-issue" target="_blank" rel="noopener noreferrer">I1BV56</a></p>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/src-openeuler/kexec-tools/issues/I1TOCE" target="_blank" rel="noopener noreferrer">I1TOCE</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p77741646115916"><a name="p77741646115916"></a><a name="p77741646115916"></a>Delete redundant gpg sig file for shadow-4.6.</p>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>The kdump on an x86- or ARM-based physical machine fails to be started.</span></p>
 </td>
-</tr>
-<tr id="row442920506594"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p154294507593"><a name="p154294507593"></a><a name="p154294507593"></a><a href="https://gitee.com/src-openeuler/expect/issues/I1BV38?from=project-issue" target="_blank" rel="noopener noreferrer">I1BV38</a></p>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/src-openeuler/firewalld/issues/I1TZH1" target="_blank" rel="noopener noreferrer">I1TZH1</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p19429165016596"><a name="p19429165016596"></a><a name="p19429165016596"></a>The <strong id="b0171131110319"><a name="b0171131110319"></a><a name="b0171131110319"></a>unbuffer</strong> command is unavailable.</p>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>The rule does not take effect when the destination port is 80 and the data packages from the source IP address of a host are added to the x86-based server.</span></p>
 </td>
-</tr>
-<tr id="row640673815415"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p12406103810410"><a name="p12406103810410"></a><a name="p12406103810410"></a><a href="https://gitee.com/src-openeuler/iputils/issues/I1BA9B?from=project-issue" target="_blank" rel="noopener noreferrer">I1BA9B</a></p>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/src-openeuler/lvm2/issues/I1T4O3" target="_blank" rel="noopener noreferrer">I1T4O3</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p134061138343"><a name="p134061138343"></a><a name="p134061138343"></a>The <strong id="b23371742133118"><a name="b23371742133118"></a><a name="b23371742133118"></a>arping -w</strong> parameter is invalid.</p>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>During x86 PXE installation, the %packages file in the .ks file is used to install minimal, @core, and @base. After the installation is successful, the startup is suspended.</span></p>
 </td>
-</tr>
-<tr id="row1967874117414"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p16679204110411"><a name="p16679204110411"></a><a name="p16679204110411"></a><a href="https://gitee.com/openeuler/kernel/issues/I1AV3S?from=project-issue" target="_blank" rel="noopener noreferrer">I1AV3S</a></p>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/src-openeuler/freeradius/issues/I1T8JJ" target="_blank" rel="noopener noreferrer">I1T8JJ</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p176790413419"><a name="p176790413419"></a><a name="p176790413419"></a>The oops error occurs when the latest LTP pty03 test case is executed.</p>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>The installation of the ARM-based freeRADIUS server fails.</span></p>
 </td>
 </tr>
-<tr id="row1076072510202"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p776062513206"><a name="p776062513206"></a><a name="p776062513206"></a><a href="https://gitee.com/src-openeuler/cronie/issues/I1AZ1I?from=project-issue" target="_blank" rel="noopener noreferrer">I1AZ1I</a></p>
+</tr>
+</tbody>
+</table>
+
+**Programming languages and compilers <a name="table_fixed_2"></a>**
+
+<table><thead align="left"><tr id="row104971596432"><th class="cellrowborder" valign="top" width="9.66%" id="mcps1.2.3.1.1"><p id="p1649720994313"><a name="p1649720994313"></a><a name="p1649720994313"></a>Issue</p>
+</th>
+<th class="cellrowborder" valign="top" width="90.34%" id="mcps1.2.3.1.2"><p id="p8497129114312"><a name="p8497129114312"></a><a name="p8497129114312"></a>Description</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/src-openeuler/file/issues/I1RUM6" target="_blank" rel="noopener noreferrer">I1RUM6</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p147601725112012"><a name="p147601725112012"></a><a name="p147601725112012"></a>500 scheduled tasks are started. After 4 to 5 minutes, the tasks cannot be processed and the system stops responding.</p>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>Track the community to resolve the issue that the type of the file generated after the compilation of gcc -static-pie is incorrect.</span></p>
 </td>
 </tr>
-<tr id="row3131122913207"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p81318296202"><a name="p81318296202"></a><a name="p81318296202"></a><a href="https://gitee.com/openeuler/iSulad/issues/I1AH2C?from=project-issue" target="_blank" rel="noopener noreferrer">I1AH2C</a></p>
+</tr>
+</tbody>
+</table>
+
+**Virtualization and containers <a name="table_fixed_4"></a>**
+
+<table><thead align="left"><tr id="row104971596432"><th class="cellrowborder" valign="top" width="9.66%" id="mcps1.2.3.1.1"><p id="p1649720994313"><a name="p1649720994313"></a><a name="p1649720994313"></a>Issue</p>
+</th>
+<th class="cellrowborder" valign="top" width="90.34%" id="mcps1.2.3.1.2"><p id="p8497129114312"><a name="p8497129114312"></a><a name="p8497129114312"></a>Description</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/openeuler/kernel/issues/I1TB7N?from=project-issue" target="_blank" rel="noopener noreferrer">I1TB7N</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p19131152918200"><a name="p19131152918200"></a><a name="p19131152918200"></a>The warning information captured when the Kata container fails to be started is insufficient for fault locating. More errors need to be printed.</p>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>PMU nmi watchdog does not support CPU hot-plug.</span></p>
+</td>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/openeuler/kernel/issues/I1TXAU?from=project-issue" target="_blank" rel="noopener noreferrer">I1TXAU</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>The VM fails to be started when the VM CPU mode is configured with host-model.</span></p>
+</td>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/openeuler/kernel/issues/I1U8BP?from=project-issue" target="_blank" rel="noopener noreferrer">I1U8BP</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>When openEuler is used to set trusted boot as an image, the VM cannot identify the TPM device.</span></p>
 </td>
 </tr>
-<tr id="row1494114212318"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p129415428238"><a name="p129415428238"></a><a name="p129415428238"></a><a href="https://gitee.com/openeuler/iSulad/issues/I1AGXO?from=project-issue" target="_blank" rel="noopener noreferrer">I1AGXO</a></p>
+</tr>
+</tbody>
+</table>
+
+**Kernel** <a name="table_fixed_6"></a>
+
+<table><thead align="left"><tr id="row104971596432"><th class="cellrowborder" valign="top" width="9.66%" id="mcps1.2.3.1.1"><p id="p1649720994313"><a name="p1649720994313"></a><a name="p1649720994313"></a>Issue</p>
+</th>
+<th class="cellrowborder" valign="top" width="90.34%" id="mcps1.2.3.1.2"><p id="p8497129114312"><a name="p8497129114312"></a><a name="p8497129114312"></a>Description</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/openeuler/kernel/issues/I17YPQ?from=project-issue" target="_blank" rel="noopener noreferrer">I17YPQ</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p794174219231"><a name="p794174219231"></a><a name="p794174219231"></a>In kata-runtime remote mode, the <strong id="b494117574545"><a name="b494117574545"></a><a name="b494117574545"></a>kata-runtime kill</strong> is not called when the <strong id="b12947271339"><a name="b12947271339"></a><a name="b12947271339"></a>isula rm -f</strong> command is executed. As a result, residual data exists.</p>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>The drive connected to the LSI SAS3408 RAID controller card cannot be identified during the installation.</span></p>
+</td>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/openeuler/kernel/issues/I1JZHT?from=project-issue" target="_blank" rel="noopener noreferrer">I1JZHT</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>The Netdevsim is repeatedly loaded and uninstalled, causing the system to reset.</span></p>
+</td>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/openeuler/kernel/issues/I1RUC8?from=project-issue" target="_blank" rel="noopener noreferrer">I1RUC8</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>The performance loss of vmalloc on x86-based servers is huge.</span></p>
+</td>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/openeuler/kernel/issues/I1R86G?from=project-issue" target="_blank" rel="noopener noreferrer">I1R86G</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>An error of pread is reported when openEuler performs a test on the open GaussDB, causing the return to -EIO.</span></p>
+</td>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/openeuler/kernel/issues/I1SISM?from=project-issue" target="_blank" rel="noopener noreferrer">I1SISM</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>The XFS drive with size=8192 cannot be mounted to the openEuler on the x86 platform.</span></p>
 </td>
 </tr>
-<tr id="row19391546182314"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p164044613233"><a name="p164044613233"></a><a name="p164044613233"></a><a href="https://gitee.com/openeuler/kernel/issues/I1AF39?from=project-issue" target="_blank" rel="noopener noreferrer">I1AF39</a></p>
+</tr>
+</tbody>
+</table>
+
+**Security <a name="table_fixed_7"></a>**
+
+<table><thead align="left"><tr id="row104971596432"><th class="cellrowborder" valign="top" width="9.66%" id="mcps1.2.3.1.1"><p id="p1649720994313"><a name="p1649720994313"></a><a name="p1649720994313"></a>Issue</p>
+</th>
+<th class="cellrowborder" valign="top" width="90.34%" id="mcps1.2.3.1.2"><p id="p8497129114312"><a name="p8497129114312"></a><a name="p8497129114312"></a>Description</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/openeuler/kernel/issues/I1TQ15?from=project-issue" target="_blank" rel="noopener noreferrer">I1TQ15</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p164094682313"><a name="p164094682313"></a><a name="p164094682313"></a>The soft lockup is found when the open function is triggered in the ext4 file system.</p>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>An error is reported when the firewall-cmd --reload command is executed to add an IP address set that does not exist to the drop area as the source.</span></p>
 </td>
 </tr>
-<tr id="row154698862716"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p846910816275"><a name="p846910816275"></a><a name="p846910816275"></a><a href="https://gitee.com/openeuler/iSulad/issues/I1ADUD?from=project-issue" target="_blank" rel="noopener noreferrer">I1ADUD</a></p>
+</tr>
+</tbody>
+</table>
+
+**Hardware and chips** **<a name="table_fixed_7"></a>****
+
+<table><thead align="left"><tr id="row104971596432"><th class="cellrowborder" valign="top" width="9.66%" id="mcps1.2.3.1.1"><p id="p1649720994313"><a name="p1649720994313"></a><a name="p1649720994313"></a>Issue</p>
+</th>
+<th class="cellrowborder" valign="top" width="90.34%" id="mcps1.2.3.1.2"><p id="p8497129114312"><a name="p8497129114312"></a><a name="p8497129114312"></a>Description</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/openeuler/raspberrypi/issues/I1SY0K" target="_blank" rel="noopener noreferrer">I1SY0K</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p5694192512715"><a name="p5694192512715"></a><a name="p5694192512715"></a>Isulad breaks down when a pod is created using kubectl.</p>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>The Raspberry Pi Wi-Fi is unavailable and the connection to the Wi-Fi network fails.</span></p>
 </td>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/openeuler/raspberrypi/issues/I1R4G1" target="_blank" rel="noopener noreferrer">I1R4G1</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>The connection to the Raspberry Pi BT fails repeatedly.</span></p>
+</td>
+</tr>
+</tr>
+</tbody>
+</table>
+
+**File system <a name="table_fixed_9"></a>**
+
+<table><thead align="left"><tr id="row104971596432"><th class="cellrowborder" valign="top" width="9.66%" id="mcps1.2.3.1.1"><p id="p1649720994313"><a name="p1649720994313"></a><a name="p1649720994313"></a>Issue</p>
+</th>
+<th class="cellrowborder" valign="top" width="90.34%" id="mcps1.2.3.1.2"><p id="p8497129114312"><a name="p8497129114312"></a><a name="p8497129114312"></a>Description</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/src-openeuler/findutils/issues/I1E0KN" target="_blank" rel="noopener noreferrer">I1E0KN</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>A core dump occurs when a user creates and deletes folders concurrently in the XFS file system and uses the find command to query the folders.</span></p>
+</td>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/src-openeuler/libguestfs/issues/I1MA88" target="_blank" rel="noopener noreferrer">I1MA88</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>The libguestfs uses the Gnulib code that has a vulnerability, causing a core dump.</span></p>
+</td>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/src-openeuler/nfs-utils/issues/I1T3GC" target="_blank" rel="noopener noreferrer">I1T3GC</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>The memory allocation is reported to fail when the mounted drive letter is checked at the NFS client.</span></p>
+</td>
+</tr>
+</tr>
+</tbody>
+</table>
+
+**Network <a name="table_fixed_11"></a>**
+
+<table><thead align="left"><tr id="row104971596432"><th class="cellrowborder" valign="top" width="9.66%" id="mcps1.2.3.1.1"><p id="p1649720994313"><a name="p1649720994313"></a><a name="p1649720994313"></a>Issue</p>
+</th>
+<th class="cellrowborder" valign="top" width="90.34%" id="mcps1.2.3.1.2"><p id="p8497129114312"><a name="p8497129114312"></a><a name="p8497129114312"></a>Description</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/src-openeuler/network-manager-applet/issues/I1TO3R" target="_blank" rel="noopener noreferrer">I1TO3R</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>An error occurs when the network-manager-appletda is invoked during installation and ipv4 is manually configured.</span></p>
+</td>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/src-openeuler/NetworkManager/issues/I1TYDG" target="_blank" rel="noopener noreferrer">I1TYDG</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>The NetworkManager service cannot not be self-healed due to the D-Bus service exception.</span></p>
+</td>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/src-openeuler/initscripts/issues/I1AD7N" target="_blank" rel="noopener noreferrer">I1AD7N</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>The IP address is lost when the network is restarted because the return value of the grep -L command in the network-scripts file is changed.</span></p>
+</td>
+</tr>
+</tr>
+</tbody>
+</table>
+
+**System tools <a name="table_fixed_13"></a>**
+
+<table><thead align="left"><tr id="row104971596432"><th class="cellrowborder" valign="top" width="9.66%" id="mcps1.2.3.1.1"><p id="p1649720994313"><a name="p1649720994313"></a><a name="p1649720994313"></a>Issue</p>
+</th>
+<th class="cellrowborder" valign="top" width="90.34%" id="mcps1.2.3.1.2"><p id="p8497129114312"><a name="p8497129114312"></a><a name="p8497129114312"></a>Description</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/src-openeuler/system-config-printer/issues/I1U7RL" target="_blank" rel="noopener noreferrer">I1U7RL</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>An error occurs during system-config-printer installation.</span></p>
+</td><tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="9.66%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/src-openeuler/tuned/issues/I1T8H4" target="_blank" rel="noopener noreferrer">I1T8H4</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="90.34%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a><span>After the x86/ARM-based device is installed by default, the systemctl -all --failed command is executed and the tuned service fails to be started.</span></p>
+</td>
+</tr>
 </tr>
 </tbody>
 </table>
