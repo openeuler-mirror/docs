@@ -10,7 +10,9 @@
     - [Logging In to a VM](#logging-in-to-a-vm)
         - [Logging In Using VNC Passwords](#logging-in-using-vnc-passwords)
         - [Configuring VNC TLS Login](#configuring-vnc-tls-login)
-
+    - [VM Secure Boot](#VM-Secure-Boot)
+        - [General Introduction](#General-Introduction)
+        - [Secure Boot Practice](#Secure-Boot-Practice)
 
 ### VM Life Cycle
 
@@ -648,3 +650,153 @@ To enable the TLS encryption authentication mode for the VNC, perform the follow
     >-   For details about how to configure the VNC client certificate, see the usage description of each client.  
     >-   For details about how to log in to the VM, see Logging In Using VNC Passwords.  
 
+### VM Secure Boot
+
+#### General Introduction
+
+##### Overview
+
+Secure boot uses public and private key pairs to sign and validate boot components. During the startup, the previous component validates the digital signature of the next component. If the validation is successful, the next component starts. If the validation fails, the startup fails. Secure boot is used to detect whether the firmware and software during startup of the device are tampered with to prevent malware from intrusion and modification. Secure boot ensures the integrity of each component during system startup and prevents unauthorized components from being loaded and running, thereby preventing security threats to the system and user data. Secure boot is implemented based on the UEFI boot mode. It is not supported by the legacy boot mode. According to UEFI specifications, some reliable public keys can be built in the mainboard before delivery. Any operating system or hardware drivers that you want to load on this mainboard must be authenticated by these public keys. The secure boot of a physical machine is implemented by the physical BIOS, while the secure boot of a VM is simulated by software. The process of the VM secure boot is the same as that of the host secure boot, both complying with the open-source UEFI specifications. The UEFI on the virtualization platform is provided by the edk component. When a VM starts, QEMU maps the UEFI image to the memory to simulate the firmware startup process for the VM. Secure boot is a security protection capability provided by edk during the VM startup to protect the OS kernel of the VM from being tampered with. The sequence of signature validation for the secure boot is as follows: UEFI BIOS->shim->GRUB->vmlinuz (signature validation is passed and loaded in sequence).
+
+| English | Acronyms and Abbreviations | Description |
+| :----- | :----- | :----- |
+| Secure boot | - | Secure boot indicates that a component validates the digital signature of the next component during startup. If the validation is successful, the component runs. If the validation fails, the component stops running. It ensures the integrity of each component during system startup. |
+| Platform key | PK | Platform key is owned by the OEM vendor and must be RSA2048 or stronger. The PK establishes a trusted relationship between the platform owner and the platform firmware. The platform owner registers the PKpub, public key of the PK, with the platform firmware. The platform owner can use the PKpriv, private part of the PK, to change the ownership of the platform or register the KEK key. |
+| Key exchange key | KEK | Key exchange key creates a trusted relationship between the platform firmware and the OS. Each OS and third-party application that communicates with the platform firmware register the KEKpub, public part of the KEK key, in the platform firmware. |
+| Database trustlist | DB | Database trustlist stores and validates the keys of components such as shim, GRUB, and vmlinuz. |
+| Database blocklist | DBx | Database blocklist stores revoked keys. |
+
+##### Function Description
+
+The VM secure boot feature is implemented based on the edk open-source project. In non-secure boot mode, the basic Linux process is as follows:
+
+**Figure 1** System startup process
+
+![](./figures/OSBootFlow.png)
+
+In secure boot mode, the first component loaded after UEFI BIOS starts is shim in the system image. By interacting with UEFI BIOS, shim obtains the key stored in the variable DB of UEFI BIOS to validate GRUB. After GRUB is loaded, the key and the authentication API are also called to validate the kernel. The Linux boot process is as follows:
+
+**Figure 2** Secure boot process
+
+![](./figures/SecureBootFlow.png)
+
+The secure boot feature involves multiple key scenarios. Based on the scenario analysis and system breakdown, the secure boot feature involves the following subsystems: UEFI BIOS validating shim, shim validating GRUB, and GRUB validating kernel. When UEFI BIOS validates shim, if the validation is successful, shim is started. If the validation fails, an error message is displayed and shim fails to start. Shim needs to use the private key for signature during image compilation and creation, and the public key certificate needs to be imported to the variable area DB of UEFI BIOS. After shim is started, validate the startup of GRUB. If the validation is successful, GRUB is started. If the validation fails, an error message is displayed and GRUB fails to start. GRUB needs to be signed during image compilation and creation. The public and private key pairs are the same as those of shim. After GRUB is started, it calls the key and the authentication API key registered in UEFI BIOS to validate the kernel. If the validation is successful, GRUB starts the kernel. If the validation fails, an error message is displayed. GRUB needs to sign the image during compilation and creation and uses the public and private key pair that is the same as that of shim.
+
+##### Constraints
+
+* Running on the UEFI BIOS that does not support secure boot does not affect existing functions and services.
+* The secure boot feature depends on the UEFI BIOS and takes effect only when the UEFI supports this feature.
+* When secure boot is enabled in the UEFI BIOS, the system cannot be started if the related components have no signature or the signature is incorrect.
+* If secure boot is disabled in the UEFI BIOS, the validation function during the boot process is disabled.
+* The second half of the secure boot validation chain, that is, shim->GRUB->kernel, guides the kernel to start. This part of the validation chain is implemented by the OS image. If the OS does not support guiding the kernel for secure boot, the VM secure boot fails.
+* Currently, the x86 architecture do not provide nvram file configuration to configure VM secure boot.
+
+#### Secure Boot Practice
+
+VM secure boot depends on UEFI BIOS. The UEFI BIOS image is installed using the edk rpm package. This section uses AArch64 as an example to describe how to configure VM secure boot.
+
+##### Configuring VM
+
+The components in the edk rpm package are installed in the /usr/share/edk2/aarch64 directory, including `QEMU_EFI-pflash.raw` and `vars-template-pflash.raw`. The following describes the XML configuration of the UEFI BIOS during VM startup.
+
+```
+<os>
+    <type arch='aarch64' machine='virt'>hvm</type>
+    <loader readonly='yes' type='pflash'>/usr/share/edk2/aarch64/QEMU_EFI-pflash.raw</loader>
+    <nvram template='/usr/share/edk2/aarch64/vars-template-pflash.raw'>/path/to/QEMU-VARS.fd</nvram>
+</os>
+```
+
+In the preceding configuration, /usr/share/edk2/aarch64/QEMU_EFI-pflash.raw indicates the path of UEFI BIOS image, /path/to/QEMU-VARS.fd indicates the path of nvram image template. /usr/share/edk2/aarch64/vars-template-pflash.raw indicates the nvram image template path, and /path/to/QEMU-VARS.fd indicates the nvram image file path of the current virtual machine, which is used to save the environment variables in the UEFI BIOS system.
+
+##### Importing Certificate
+
+The certificate for VM secure boot is imported from the BIOS page. Before importing the certificate, you need to import the certificate file to the VM. You can mount the directory where the certificate file is located to the VM by mounting a disk. For example, you can create an image that contains the certificate and mount the image in the XML configuration file of the VM.
+
+Create a certificate file image.
+
+```
+dd of='/path/to/data.img' if='/dev/zero' bs=1M count=64
+mkfs.vfat -I /path/to/data.img
+mkdir /path/to/mnt
+mount path/to/data.img /path/to/mnt/
+cp -a /path/to/certificates/* /path/to/mnt/
+umount /path/to/mnt/
+```
+In the preceding command, /path/to/certificates/ indicates the path where the certificate file is located, /path/to/data.img indicates the path where the certificate file image is located, and /path/to/mnt/ indicates the image mounting path.
+
+Mount the image in the XML file of the VM.
+
+```
+<devices>
+	<disk type='file' device='disk'>
+		<driver name='qemu' type='raw' cache='none' io='native'/>
+		<source file='/path/to/data.img'/>
+		<target dev='sdc' bus='scsi'/>
+		<boot order='2'/>
+		<readonly/>
+	</disk>
+</devices>
+```
+
+Start the VM and import the PK certificate. The procedure is as follows (the procedure for importing the KEK certificate is the same as that for importing the DB certificate):
+
+After the VM is started, press F2 to go to the BIOS screen.
+
+**Figure 1** BIOS screen
+
+![](./figures/CertEnrollP1.png)
+
+**Figure 2** Device Manager
+
+![](./figures/CertEnrollP2.png)
+
+**Figure 3** Custom Secure Boot Options
+
+![](./figures/CertEnrollP3.png)
+
+**Figure 4** PK Options
+
+![](./figures/CertEnrollP4.png)
+
+**Figure 5** Enrolling PK
+
+![](./figures/CertEnrollP5.png)
+
+In the File Explorer window, many disk directories are displayed, including the certificate file directory mounted through the disk.
+
+**Figure 6** File Explorer
+
+![](./figures/CertEnrollP6.png)
+
+Select the PK certificate to be imported in the disk directory.
+
+**Figure 7** Disk where the certificate is stored
+
+![](./figures/CertEnrollP7.png)
+
+**Figure 8** Selecting Commit Changes and Exit to save the imported certificate
+
+![](./figures/CertEnrollP8.png)
+
+After the certificate is imported, the UEFI BIOS writes the certificate information and secure boot attributes into the nvram configuration file /path/to/QEMU-VARS.fd. The next time the virtual machine starts up, it will read the configuration and initialize the certificate information and secure boot attributes from the file /path/to/QEMU-VARS.fd, importing the certificate and enable secure boot automatically. Similarly, we can use the file /path/to/QEMU-VARS.fd as a UEFI BIOS boot configuration template file for other same configured VMs, and make the other VMs boot with the certificate automatically imported and the secure boot option enabled by modifying the nvram template field with the following VM xml configuration changes.
+
+```
+<os>
+    <type arch='aarch64' machine='virt'>hvm</type>
+    <loader readonly='yes' type='pflash'>/usr/share/edk2/aarch64/QEMU_EFI-pflash.raw</loader>
+    <nvram template='/path/to/QEMU-VARS.fd'></nvram>
+</os>
+```
+
+##### Secure Boot Observation
+
+After the VM is correctly configured and the PK, KEK, and DB certificates are imported, the VM runs in secure boot mode. You can configure the serial port log file in the VM configuration file in XML format to check whether the VM is in the secure boot mode. The following figure shows how to configure the serial port log file.
+
+```
+<serial type='file'>
+	<source path='/path/to/log_file' append='on'/>
+</serial>
+```
+
+After the OS image is successfully loaded to the VM, if "UEFI Secure Boot is enabled" is displayed in the serial port log file, the VM is in the secure boot state.
