@@ -583,7 +583,7 @@ OBS使用工程组织软件包。基础的权限控制、相关的存仓库和�
 7.  在页面中单击“Add file”上传spec文件和需要编译的文件（在spec文件中指定），如[图6](#fig1475845284011)所示。
 
     **图 6**  Add file页面<a name="fig1475845284011"></a>  
-    ![](./figures/Add-filepage.png)
+    ![](./figures/filepage.png)
 
 8.  文件上传成功后，OBS会自动开始构建RPM软件包。等待构建完成，并查看右侧状态栏的构建状态。
     -   succeed：构建成功。用户可以单击“succeeded”查看构建日志。
