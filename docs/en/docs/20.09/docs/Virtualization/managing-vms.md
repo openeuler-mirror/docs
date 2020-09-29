@@ -707,7 +707,7 @@ The components in the edk rpm package are installed in the /usr/share/edk2/aarch
 </os>
 ```
 
-In the preceding configuration, /usr/share/edk2/aarch64/QEMU_EFI-pflash.raw indicates the path of UEFI BIOS image, /path/to/QEMU-VARS.fd indicates the path of nvram image template. /usr/share/edk2/aarch64/vars-template-pflash.raw indicates the nvram image template path, and /path/to/QEMU-VARS.fd indicates the nvram image file path of the current virtual machine, which is used to save the environment variables in the UEFI BIOS system.
+In the preceding configuration, /usr/share/edk2/aarch64/QEMU_EFI-pflash.raw indicates the path of the UEFI BIOS image. /usr/share/edk2/aarch64/vars-template-pflash.raw is the path of the NVRAM image template, and /path/to/QEMU-VARS.fd is the path of the NVRAM image file of the current VM, which is used to store environment variables in the UEFI BIOS.
 
 ##### Importing Certificate
 
@@ -779,7 +779,7 @@ Select the PK certificate to be imported in the disk directory.
 
 ![](./figures/CertEnrollP8.png)
 
-After the certificate is imported, the UEFI BIOS writes the certificate information and secure boot attributes into the nvram configuration file /path/to/QEMU-VARS.fd. The next time the virtual machine starts up, it will read the configuration and initialize the certificate information and secure boot attributes from the file /path/to/QEMU-VARS.fd, importing the certificate and enable secure boot automatically. Similarly, we can use the file /path/to/QEMU-VARS.fd as a UEFI BIOS boot configuration template file for other same configured VMs, and make the other VMs boot with the certificate automatically imported and the secure boot option enabled by modifying the nvram template field with the following VM xml configuration changes.
+After the certificate is imported, the UEFI BIOS writes the certificate information and secure boot attributes to the NVRAM configuration file /path/to/QEMU-VARS.fd. Upon the next startup, the VM reads related configurations from the /path/to/QEMU-VARS.fd file, initializes certificate information and secure boot attributes, automatically imports the certificate, and enables secure boot. Similarly, you can use /path/to/QEMU-VARS.fd as the UEFI BIOS boot configuration template file of other VMs with the same configuration. Modify the nvram template field so that the certificate is automatically imported and the secure boot option is enabled when other VMs are started. The VM XML configuration is modified as follows:
 
 ```
 <os>
