@@ -441,13 +441,13 @@ isula-build ctr-img import [flags]
 使用举例：
 
 ```sh
-$ sudo isula-build ctr-img import ./openEuler-docker.x86_64.tar.xz openeuler:20.03
+$ sudo isula-build ctr-img import ./openEuler-docker.x86_64.tar.xz openeuler:20.09
 Import success with image id: 7317851cd2ab33263eb293f68efee9d724780251e4e92c0fb76bf5d3c5585e37
 $ sudo isula-build ctr-img images
 ----------------------------------------------  --------------------  -----------------  ------------------------  ------------ 
 REPOSITORY                                      TAG                   IMAGE ID           CREATED                   SIZE
 ----------------------------------------------  --------------------  -----------------  ------------------------  ------------ 
-openeuler                                       20.03                 7317851cd2ab       2020-08-01 06:25:34       500 MB
+openeuler                                       20.09                 7317851cd2ab       2020-08-01 06:25:34       500 MB
 ----------------------------------------------  --------------------  -----------------  ------------------------  ------------
 ```
 
