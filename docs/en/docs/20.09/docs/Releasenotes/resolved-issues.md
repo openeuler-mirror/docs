@@ -2,7 +2,7 @@
 
 For details about the complete issue list, click  [https://gitee.com/organizations/src-openeuler/issues](https://gitee.com/organizations/src-openeuler/issues).
 
-For details about the complete kernel submission records, click  [https://gitee.com/openeuler/kernel/commits/openEuler-1.0-LTS](https://gitee.com/openeuler/kernel/commits/openEuler-1.0-LTS).
+For details about the complete kernel submission records, click  [https://gitee.com/openeuler/kernel/commits/openEuler-20.09](https://gitee.com/openeuler/kernel/commits/openEuler-20.09).
 
 [Table 1](#table249714911433)  lists the resolved issues.
 
