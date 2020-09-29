@@ -24,7 +24,7 @@ Before installation, obtain the openEuler Raspberry Pi image and its verificatio
 
 3. Click the **Link** provided after **Download ISO**. The download list is displayed.
 
-4. Click **openEuler-20.09-LTS**. The openEuler 20.09 LTS version download list is displayed.
+4. Click **openEuler-20.09**. The openEuler 20.09 version download list is displayed.
 
 5. Click **Raspberry Pi**. The Raspberry Pi image download list is displayed.
    

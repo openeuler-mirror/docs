@@ -1,1 +1,1 @@
-本文是 openEuler 20.09 LTS 版本的发行说明。
+本文是 openEuler 20.09 版本的发行说明。
