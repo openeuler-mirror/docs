@@ -713,7 +713,7 @@
     },
     {
       "label": "openEuler工具集用户指南",
-      "path": "docs/userguide/概述",
+      "path": "docs/userguide/overview",
       "children": [
         {
           "label": "补丁工具",
