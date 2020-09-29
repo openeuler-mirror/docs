@@ -8,6 +8,7 @@
         - [kworker Isolation and Binding](#kworker-isolation-and-binding)
         - [HugePage Memory](#hugepage-memory)
         - [PV-qspinlock](#pv-qspinlock)
+        - [Guest-Idle-Haltpoll](#Guest-Idle-Haltpoll)
     - [Security Best Practices](#security-best-practices)
         - [Libvirt Authentication](#libvirt-authentication)
         - [qemu-ga](#qemu-ga)
@@ -238,6 +239,73 @@ Modify the /boot/efi/EFI/openEuler/grub.cfg configuration file of the VM, add ar
 >![](./public_sys-resources/icon-note.gif) **Note:**   
 >PV-qspinlock is supported only when the operating systems of the host machine and VM are both openEuler-20.09 or later and the VM kernel compilation option CONFIG_PARAVIRT_SPINLOCKS is set to y (default value for openEuler).
 
+### Guest-Idle-Haltpoll
+
+#### Overview
+
+To ensure fairness and reduce power consumption, when the vCPU of the VM is idle, the VM executes the WFx/HLT instruction to exit to the host machine and triggers context switchover. The host machine determines whether to schedule other processes or vCPUs on the physical CPU or enter the energy saving mode. However, overheads of switching between a virtual machine and a host machine, additional context switching, and IPI wakeup are relatively high, and this problem is particularly prominent in services where sleep and wakeup are frequently performed. The Guest-Idle-Haltpoll technology indicates that when the vCPU of a VM is idle, the WFx/HLT is not executed immediately and VM-exit occurs. Instead, polling is performed on the VM for a period of time. During this period, the tasks of other vCPUs that share the LLC on the vCPU are woken up without sending IPI interrupts. This reduces the overhead of sending and receiving IPI interrupts and the overhead of VM-exit, thereby reducing the task wakeup latency.
+
+>![](public_sys-resources/icon-note.gif) **Note:**
+ The execution of the idle-haltpoll command by the vCPU on the VM increases the CPU overhead of the vCPU on the host machine. Therefore, it is recommended that the vCPU exclusively occupy physical cores on the host machine when this feature is enabled.
+
+#### Procedure
+
+The Guest-Idle-Haltpoll feature is disabled by default. The following describes how to enable this feature.
+
+1.  Enable the Guest-Idle-Haltpoll feature.
+    - If the processor architecture of the host machine is x86, you can configure hint-dedicated in the XML file of the VM on the host machine to enable this feature. In this way, the status that the vCPU exclusively occupies the physical core can be transferred to the VM through the VM XML configuration. The host machine ensures the status of the physical core exclusively occupied by the vCPU.
+
+        ```
+        <domain type='kvm'>
+         ...
+         <features>
+           <kvm>
+             ...
+             <hint-dedicated state='on'/>
+           </kvm>
+         </features>
+          ...
+        </domain>
+        ```
+
+        Alternatively, set cpuidle\_haltpoll.force to Y in the kernel startup parameters of the VM to forcibly enable the function. This method does not require the host machine to configure the vCPU to exclusively occupy the physical core.
+        ```
+        cpuidle_haltpoll.force=Y
+        ```
+
+    - If the processor architecture of the host machine is AArch64, this feature can be enabled only by configuring cpuidle\_haltpoll.force=Y haltpoll.enable=Y in the VM kernel startup parameters.
+
+        ```
+        cpuidle_haltpoll.force=Y haltpoll.enable=Y
+        ```
+
+2.  Check whether the Guest-Idle-Haltpoll feature takes effect. Run the following command on the VM. If haltpoll is returned, the feature has taken effect.
+
+    ```
+    # cat /sys/devices/system/cpu/cpuidle/current_driver
+    ```
+
+3.  (Optional) Set the Guest-Idle-Haltpoll parameter.
+
+    The following configuration files are provided in the /sys/module/haltpoll/parameters/ directory of the VM. You can adjust the configuration parameters based on service characteristics.
+
+    -   guest\_halt\_poll\_ns: a global parameter that specifies the maximum polling duration after the vCPU is idle. The default value is 200000 (unit: ns).
+    -   guest\_halt\_poll\_shrink:  a divisor that is used to shrink the current vCPU guest\_halt\_poll\_ns when the wakeup event occurs after the global guest\_halt\_poll\_ns time. The default value is 2.
+    -   guest\_halt\_poll\_grow:  a multiplier that is used to extend the current vCPU guest\_halt\_poll\_ns when the wakeup event occurs after the current vCPU guest\_halt\_poll\_ns and before the global guest\_halt\_poll\_ns. The default value is 2.
+    -   guest\_halt\_poll\_grow\_start: When the system is idle, the guest\_halt\_poll\_ns of each vCPU reaches 0. This parameter is used to set the initial value of the current vCPU guest\_halt\_poll\_ns to facilitate scaling in and scaling out of the vCPU polling duration. The default value is 50000 (unit: ns).
+    -   guest\_halt\_poll\_allow\_shrink: a switch that is used to enable vCPU guest\_halt\_poll\_ns scale-in. The default value is Y. (Y indicates enabling the scale-in; N indicates disabling the scale-in.)
+
+    You can run the following command as the user root to change the parameter values: In the preceding command, _value_ indicates the parameter value to be set, and _configFile_ indicates the corresponding configuration file.
+
+    ```
+    # echo value > /sys/module/haltpoll/parameters/configFile
+    ```
+
+    For example, to set the global guest\_halt\_poll\_ns to 200000 ns, run the following command:
+
+    ```
+    # echo 200000 > /sys/module/haltpoll/parameters/guest_halt_poll_ns
+    ```
 
 
 ## security Best Practices
