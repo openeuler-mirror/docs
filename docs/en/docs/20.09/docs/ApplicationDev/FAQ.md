@@ -7,7 +7,7 @@
 
 <!-- /TOC -->
 
-## The memory usage of the libvirtd service queried by running the systemctl command is different from that queried by running the top command.
+## The self-compilation of some applications that depend on the **java-devel** package fails.
 
 ### Symptom
 
