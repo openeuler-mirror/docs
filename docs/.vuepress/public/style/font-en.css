@@ -1,0 +1,85 @@
+@font-face {
+    font-family: "HuaweiSans-Bold";
+    src: url(../fonts/HuaweiSans-Bold.ttf);
+}
+@font-face {
+    font-family: "HuaweiSans-Light";
+    src: url(../fonts/HuaweiSans-Light.ttf);
+}
+@font-face {
+    font-family: "HuaweiSans-Medium";
+    src: url(../fonts/HuaweiSans-Medium.ttf);
+}
+@font-face {
+    font-family: "HuaweiSans";
+    src: url(../fonts/HuaweiSans-Regular.ttf);
+}
+@font-face {
+    font-family: "HuaweiSans-Thin";
+    src: url(../fonts/HuaweiSans-Thin.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-Black";
+    src: url(../fonts/Roboto-Black.ttf);
+}
+@font-face {
+    font-family: "Roboto-BlackItalic";
+    src: url(../fonts/Roboto-BlackItalic.ttf);
+}
+@font-face {
+    font-family: "Roboto-Bold";
+    src: url(../fonts/Roboto-Bold.ttf);
+}
+@font-face {
+    font-family: "Roboto-BoldCondensed";
+    src: url(../fonts/Roboto-BoldCondensed.ttf);
+}
+@font-face {
+    font-family: "Roboto-BoldCondensedItalic";
+    src: url(../fonts/Roboto-BoldCondensedItalic.ttf);
+}
+@font-face {
+    font-family: "Roboto-BoldItalic";
+    src: url(../fonts/Roboto-BoldItalic.ttf);
+}
+@font-face {
+    font-family: "Roboto-Condensed";
+    src: url(../fonts/Roboto-Condensed.ttf);
+}
+@font-face {
+    font-family: "Roboto-CondensedItalic";
+    src: url(../fonts/Roboto-CondensedItalic.ttf);
+}
+@font-face {
+    font-family: "Roboto-Italic";
+    src: url(../fonts/Roboto-Italic.ttf);
+}
+@font-face {
+    font-family: "Roboto-Light";
+    src: url(../fonts/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: "Roboto-LightItalic";
+    src: url(../fonts/Roboto-LightItalic.ttf);
+}
+@font-face {
+    font-family: "Roboto-Medium";
+    src: url(../fonts/Roboto-Medium.ttf);
+}
+@font-face {
+    font-family: "Roboto-MediumItalic";
+    src: url(../fonts/Roboto-MediumItalic.ttf);
+}
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: "Roboto-Thin";
+    src: url(../fonts/Roboto-Thin.ttf);
+}
+@font-face {
+    font-family: "Roboto-ThinItalic";
+    src: url(../fonts/Roboto-ThinItalic.ttf);
+}

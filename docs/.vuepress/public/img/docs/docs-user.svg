@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="28px" viewBox="0 0 23 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Outlined/UI/paper</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="240" height="60" rx="8"></rect>
+        <filter x="-20.0%" y="-70.0%" width="140.0%" height="260.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="文档_学习路径_20.03-LTS" transform="translate(-1292.000000, -856.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1920" height="1464"></rect>
+            <g id="学习路径" transform="translate(409.000000, 500.000000)">
+                <g id="使用" transform="translate(396.000000, 340.000000)">
+                    <g id="安装指南" transform="translate(466.000000, 0.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Base">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <g id="openEuler/icons/copy" mask="url(#mask-2)" fill="#252C32">
+                            <g transform="translate(16.000000, 14.000000)" id="形状结合">
+                                <path d="M26,2 C27.1045695,2 28,2.8954305 28,4 L28,24 C28,25.1045695 27.1045695,26 26,26 L24,26 L24,28 C24,29.1045695 23.1045695,30 22,30 L7,30 C5.8954305,30 5,29.1045695 5,28 L5,8 C5,6.8954305 5.8954305,6 7,6 L9,6 L9,4 C9,2.8954305 9.8954305,2 11,2 L26,2 Z M21,8 L8,8 C7.48716416,8 7.06449284,8.38604019 7.00672773,8.88337887 L7,9 L7,27 C7,27.5128358 7.38604019,27.9355072 7.88337887,27.9932723 L8,28 L21,28 C21.5128358,28 21.9355072,27.6139598 21.9932723,27.1166211 L22,27 L22,9 C22,8.44771525 21.5522847,8 21,8 Z M25,4 L12,4 C11.4871642,4 11.0644928,4.38604019 11.0067277,4.88337887 L11,5 L11,6 L22,6 C23.1045695,6 24,6.8954305 24,8 L24,24 L25,24 C25.5128358,24 25.9355072,23.6139598 25.9932723,23.1166211 L26,23 L26,5 C26,4.48716416 25.6139598,4.06449284 25.1166211,4.00672773 L25,4 Z M16,21 C16.5522847,21 17,21.4477153 17,22 C17,22.5522847 16.5522847,23 16,23 L10,23 C9.44771525,23 9,22.5522847 9,22 C9,21.4477153 9.44771525,21 10,21 L16,21 Z M19,16 C19.5522847,16 20,16.4477153 20,17 C20,17.5522847 19.5522847,18 19,18 L10,18 C9.44771525,18 9,17.5522847 9,17 C9,16.4477153 9.44771525,16 10,16 L19,16 Z M19,11 C19.5522847,11 20,11.4477153 20,12 C20,12.5522847 19.5522847,13 19,13 L10,13 C9.44771525,13 9,12.5522847 9,12 C9,11.4477153 9.44771525,11 10,11 L19,11 Z"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

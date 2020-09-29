@@ -1,0 +1,264 @@
+/* CSS Document */
+/*css reset*/
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldest,
+img {
+    border: 0;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+p:before,
+q:after {
+    content: "";
+}
+
+abbr,
+acronym {
+    border: 0;
+}
+
+/*定位*/
+.tl {
+    text-align: left;
+}
+
+.tc {
+    text-align: center;
+}
+
+.tr {
+    text-align: right;
+}
+
+.bc {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.cb {
+    clear: both;
+}
+
+.cl {
+    clear: left;
+}
+
+.cr {
+    clear: right;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: 0.8s all ease-out;
+    transform: scale(0.8);
+}
+.font-hjw {
+    font-family: FZLTHJW;
+}
+.font-chjw {
+    font-family: FZLTCHJW;
+}
+.font-hbjw {
+    font-family: FZLTHBJW;
+}
+.font-xihjw {
+    font-family: FZLTXIHJW;
+}
+.font-zhjw {
+    font-family: FZLTZHJW;
+}
+.font-hwbold {
+    font-family: HuaweiSans-Bold;
+}
+.font-hwlight {
+    font-family: HuaweiSans-Light;
+}
+.font-hwmedium {
+    font-family: HuaweiSans-Medium;
+}
+.font-hw {
+    font-family: HuaweiSans;
+}
+.font-hwthin {
+    font-family: HuaweiSans-Thin;
+}
+.font-rblack {
+    font-family: Roboto-Black;
+}
+.font-rblackItalic {
+    font-family: Roboto-BlackItalic;
+}
+.font-rbold {
+    font-family: Roboto-Bold;
+}
+.font-rboldCondensed {
+    font-family: Roboto-BoldCondensed;
+}
+.font-rboldCondensedItalic {
+    font-family: Roboto-BoldCondensedItalic;
+}
+.font-rboldItalic {
+    font-family: Roboto-BoldItalic;
+}
+.font-rcondensed {
+    font-family: Roboto-Condensed;
+}
+.font-rcondensedItalic {
+    font-family: Roboto-CondensedItalic;
+}
+.font-ritalic {
+    font-family: Roboto-Italic;
+}
+.font-rlight {
+    font-family: Roboto-Light;
+}
+.font-rlightItalic {
+    font-family: Roboto-LightItalic;
+}
+.font-rmedium {
+    font-family: Roboto-Medium;
+}
+.font-rmediumItalic {
+    font-family: Roboto-MediumItalic;
+}
+.font-rregular {
+    font-family: Roboto-Regular;
+}
+.font-rthin {
+    font-family: Roboto-Thin;
+}
+.font-rthinItalic {
+    font-family: Roboto-ThinItalic;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?4mtq8t');
+    src:  url('../fonts/icomoon.eot?4mtq8t#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?4mtq8t') format('truetype'),
+      url('../fonts/icomoon.woff?4mtq8t') format('woff'),
+      url('../fonts/icomoon.svg?4mtq8t#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-menu:before {
+    content: "\e900";
+  }
+
+  .icon-arrow:before {
+    content: "\e901";
+  }
+
+  .icon-search:before {
+    content: "\e902";
+  }
