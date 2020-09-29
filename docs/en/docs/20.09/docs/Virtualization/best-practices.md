@@ -1,19 +1,6 @@
 # Best Practices
 
-- [Best Practices](#best-practices)
-    - [Performance Best Practices](#performance-best-practices)
-        - [Halt-Polling](#halt-polling)
-        - [I/O Thread Configuration](#i-o-thread-configuration)
-        - [Raw Device Mapping](#raw-device-mapping)
-        - [kworker Isolation and Binding](#kworker-isolation-and-binding)
-        - [HugePage Memory](#hugepage-memory)
-        - [PV-qspinlock](#pv-qspinlock)
-        - [Guest-Idle-Haltpoll](#Guest-Idle-Haltpoll)
-    - [Security Best Practices](#security-best-practices)
-        - [Libvirt Authentication](#libvirt-authentication)
-        - [qemu-ga](#qemu-ga)
-        - [sVirt Protection](#svirt-protection)
-        - [VM Trusted Boot](#VM-Trusted-Boot)
+[[tod]]
 
 ## Performance Best Practices
 
