@@ -111,7 +111,7 @@ The release packages of the AArch64 architecture support the UEFI mode, and the 
 
 3. Click the link provided after  **Download ISO**. The download list is displayed.
 
-4. Click **openEuler-20.09-LTS**. The openEuler 20.09 LTS version download list is displayed.
+4. Click **openEuler-20.09**. The openEuler 20.09 version download list is displayed.
 
 5. Click  **ISO**. The ISO download list is displayed.
    
