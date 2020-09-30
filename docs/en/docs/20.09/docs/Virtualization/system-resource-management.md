@@ -1,24 +1,14 @@
 # system Resource Management
 
+[[tod]]
+
+
 The  **libvirt**  command manages VM system resources, such as vCPU and virtual memory resources.
 
 Before you start:
 
 -   Ensure that the libvirtd daemon is running on the host.
 -   Run the  **virsh list --all**  command to check that the VM has been defined.
-
-- [System Resource Management](#system-resource-management)
-    - [Managing vCPU](#managing-vcpu)
-        - [CPU Shares](#cpu-shares)
-        - [Binding the QEMU Process to a Physical CPU](#binding-the-qemu-process-to-a-physical-cpu)
-        - [Adjusting the vCPU Binding Relationship](#adjusting-the-vcpu-binding-relationship)
-        - [CPU Hot Add](#cpu-hot-add)
-    - [Managing Virtual Memory](#managing-virtual-memory)
-        - [Introduction to NUMA](#introduction-to-numa)
-        - [Configuring Host NUMA](#configuring-host-numa)
-        - [Configuring Guest NUMA](#configuring-guest-numa)
-        - [Memory Hot Add](#memory-hot-add)
-
 
 
 ## Managing vCPU
