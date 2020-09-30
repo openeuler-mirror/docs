@@ -35,7 +35,6 @@ The following environment is required for running StratoVirt:
   $ modprobe vhost_vsock
   ```
 
-  
 
 - To use QMP commands, install the nmap tool. After configuring the yum source, run the following command to install the nmap tool:
 
@@ -74,9 +73,9 @@ The StratoVirt of the current version supports only the PE kernel image of the x
    $ make -j vmlinux && objcopy -O binary vmlinux vmlinux.bin
    ```
    
-   After the compilation is complete, the kernel image vmlinux is generated in the current directory.
+   After the compilation is complete, the kernel image vmlinux.bin is generated in the current directory.
    
-   
+   ​
 
 ## Creating the Rootfs Image
 
@@ -113,7 +112,6 @@ The rootfs image is a file system image. When the StratoVirt is started, the ext
      $ rm alpine-minirootfs-3.12.0-aarch64.tar.gz
      ```
 
-     
 
    - For the x86_64 processor architecture, run the following command:
 
@@ -123,12 +121,11 @@ The rootfs image is a file system image. When the StratoVirt is started, the ext
      $ rm alpine-minirootfs-3.12.0-x86_64.tar.gz
      ```
 
-     
 
 5. Run the following command to create a simple /sbin/init for the ext4 file image:
 
    ```
-   $ rm sbin/init && touch sbin/init && cat > sbin/init <<EOF
+   $ rm sbin/init; touch sbin/init && cat > sbin/init <<EOF
    #! /bin/sh
    mount -t devtmpfs dev /dev
    mount -t proc proc /proc
