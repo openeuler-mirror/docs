@@ -1,3 +1,5 @@
+# 容器镜像构建
+
 <!-- TOC -->
 
 * [安装](#安装)
@@ -33,6 +35,8 @@
 
 <!-- /TOC -->
 
+## 概述
+
 isula-build是iSula容器团队推出的容器镜像构建工具，支持通过Dockerfile文件快速构建容器镜像。
 
 isula-build采用服务端/客户端模式，其中，isula-build为客户端，提供了一组命令行工具，用于镜像构建及管理等；isula-builder为服务端，用于处理客户端管理请求，作为守护进程常驻后台。
@@ -43,9 +47,9 @@ isula-build采用服务端/客户端模式，其中，isula-build为客户端，
 
 - isula-build当前仅支持Docker镜像。
 
-# 安装
+## 安装
 
-## 环境准备
+### 环境准备
 
 为了确保isula-build成功安装，需满足以下软件硬件要求。
 
@@ -53,7 +57,7 @@ isula-build采用服务端/客户端模式，其中，isula-build为客户端，
 - 支持的操作系统：openEuler
 - 用户具有root权限。
 
-### 安装isula-build
+#### 安装isula-build
 
 使用isula-build构建容器镜像，需要先安装以下软件包。
 
@@ -86,9 +90,9 @@ isula-build采用服务端/客户端模式，其中，isula-build为客户端，
 > **说明：** 
 > 安装完成后，需要手工启动isula-build服务。启动请参见"管理服务"。
 
-# 配置与管理服务
+## 配置与管理服务
 
-## 配置服务
+### 配置服务
 
 在安装完 isula-build 软件包之后，systemd 管理服务会以 isula-build 软件包自带的 isula-build 服务端默认配置启动 isula-build 服务。如果 isula-build 服务端的默认配置文件不能满足用户的需求，可以参考如下介绍进行定制化配置。需要注意的是，修改完默认配置之后，需要重启 isula-build 服务端使新配置生效，具体操作可参考下一章节。
 
@@ -133,14 +137,14 @@ isula-build采用服务端/客户端模式，其中，isula-build为客户端，
 
 
 
-## 管理服务
+### 管理服务
 
 目前 openEuler 采用 systemd 管理软件服务，isula-build 软件包已经自带了 systemd 的服务文件，用户安装完 isula-build 软件包之后可以直接通过 systemd 工具对它进行服务启停等操作。用户同样可以手动启动 isula-build 服务端软件。需要注意的是，同一个节点上不可以同时启动多个 isula-build 服务端软件。
 
 >![](./public_sys-resources/icon-note.gif) **说明：** 
 >同一个节点上不可以同时启动多个 isula-build 服务端软件。
 
-### 通过 systemd 管理（推荐方式）
+#### 通过 systemd 管理（推荐方式）
 
 用户可以通过如下 systemd 的标准指令控制 isula-build 服务的启动、停止、重启等动作：
 
@@ -168,7 +172,7 @@ isula-build 软件包安装的 systemd 服务文件保存在 `/usr/lib/systemd/s
 sudo systemctl daemon-reload
 ```
 
-### 直接运行 isula-build 服务端
+#### 直接运行 isula-build 服务端
 
 您也可以通过执行 isula-build 服务端命令（ isula-builder）的方式启动服务。其中，服务端启动配置，可通过isula-builder命令支持的 flags 设置。isula-build 服务端目前支持的 flags 如下：
 
@@ -188,9 +192,9 @@ sudo systemctl daemon-reload
 sudo isula-builder --dataroot "/var/lib/isula-build" --debug=false
 ```
 
-# 使用指南
+## 使用指南
 
-## 前提条件
+### 前提条件
 
 isula-build 构建 Dockerfile 内的 RUN 指令时依赖可执行文件 runc ，需要 isula-build 的运行环境上预装好 runc。安装方式视用户使用场景而定，如果用户不需要使用完整的 docker-engine 工具链，则可以仅安装 docker-runc rpm包：
 
@@ -209,7 +213,7 @@ sudo yum install -y docker-engine
 
 
 
-## 总体说明
+### 总体说明
 
 isula-build 客户端提供了一系列命令用于构建和管理容器镜像，当前 isula-build 包含的命令行指令如下：
 
@@ -236,7 +240,7 @@ isula-build 客户端提供了一系列命令用于构建和管理容器镜像�
 
 
 
-## ctr-img: 容器镜像管理
+### ctr-img: 容器镜像管理
 
 isula-build 将所有容器镜像管理相关命令划分在子命令 `ctr-img` 下，命令原型为：
 
@@ -244,7 +248,7 @@ isula-build 将所有容器镜像管理相关命令划分在子命令 `ctr-img` 
 isula-build ctr-img [command]
 ```
 
-### build: 容器镜像构建
+#### build: 容器镜像构建
 
 ctr-img 的子命令 build 用于构建容器镜像，命令原型为：
 
@@ -410,7 +414,7 @@ $ sudo isula-build ctr-img build --cap-add CAP_SYS_ADMIN --cap-add CAP_SYS_PTRAC
 
 
 
-### image: 查看本地持久化构建镜像
+#### image: 查看本地持久化构建镜像
 
 可通过images命令查看当前本地持久化存储的镜像：
 
@@ -428,7 +432,7 @@ localhost:5000/library/alpine                   latest       a24bb4013296       
 
 
 
-### import: 导入容器基础镜像
+#### import: 导入容器基础镜像
 
 openEuler会随版本发布一个容器基础镜像，比如openEuler-docker.x86_64.tar.xz。可以通过`ctr-img import`指令将它导入到 isula-build。
 
@@ -456,7 +460,7 @@ openeuler                                       20.09                 7317851cd2
 
 
 
-### load: 导入层叠镜像
+#### load: 导入层叠镜像
 
 层叠镜像指的是通过 docker save 或 isula-build ctr-img save 等指令，将一个构建完成的镜像保存至本地之后，镜像压缩包内是一层一层 layer.tar 的镜像包。可以通过 ctr-img load 指令将它导入至 isula-build。
 
@@ -501,7 +505,7 @@ Loaded image as c07ddb44daa97e9e8d2d68316b296cc9343ab5f3d2babc5e6e03b80cd580478e
 
 
 
-### rm: 删除本地持久化镜像
+#### rm: 删除本地持久化镜像
 
 可通过rm命令删除当前本地持久化存储的镜像。命令原型为：
 
@@ -524,7 +528,7 @@ Deleted: sha256:eeba1bfe9fca569a894d525ed291bdaef389d28a88c288914c1a9db7261ad12c
 
 
 
-### save: 导出层叠镜像
+#### save: 导出层叠镜像
 
 可通过save命令导出层叠镜像到本地磁盘。命令原型如下：
 
@@ -562,7 +566,7 @@ Save success with image: 21c3e96ac411
 
 
 
-### tag: 给本地持久化镜像打标签
+#### tag: 给本地持久化镜像打标签
 
 可使用tag命令给本地持久化的容器镜像打tag。命令原型如下：
 
@@ -591,7 +595,7 @@ alpine                                           v1           a24bb4013296      
 
 
 
-## info: 查看运行环境与系统信息
+### info: 查看运行环境与系统信息
 
 可以通过“isula-build info”指令查看 isula-build 目前的运行环境与系统信息。命令原型如下：
 
@@ -628,7 +632,7 @@ $ sudo isula-build info -H
        oepkgs.net
 ```
 
-## login: 登录远端镜像仓库
+### login: 登录远端镜像仓库
 
 用户可以运行 login 命令来登录远程镜像仓库。命令原型如下：
 
@@ -659,7 +663,7 @@ $ sudo isula-build info -H
  Login Succeeded
 ```
 
-## logout: 退出远端镜像仓库
+### logout: 退出远端镜像仓库
 
 用户可以运行 logout 命令来登出远程镜像仓库。命令原型如下：
 
@@ -681,7 +685,7 @@ $ sudo isula-build info -H
    Removed authentications
 ```
 
-## version: 版本查询
+### version: 版本查询
 
 可通过version命令查看当前版本信息：
 
@@ -703,11 +707,11 @@ $ sudo isula-build info -H
 ```
 
 
-# 直接集成容器引擎
+## 直接集成容器引擎
 
 isula-build可以与iSulad和docker集成，将构建好的容器镜像导入到容器引擎的本地存储中。
 
-## 与iSulad集成
+### 与iSulad集成
 
 支持将构建成功的镜像直接导出到iSulad。
 
@@ -730,7 +734,7 @@ busybox                        2.0        2d414a5cad6d         2020-08-01 06:41:
 > - 要求isula-build和iSulad在同一节点。
 > - 直接导出镜像到iSulad时，isula-build client端需要将构建成功的镜像暂存成 `/var/tmp/isula-build-tmp-%v.tar` 再导入至 iSulad，用户需要保证 /var/tmp/ 目录有足够磁盘空间；同时如果在导出过程中 isula-build client进程被KILL或Ctrl+C终止，需要依赖用户手动清理 `/var/tmp/isula-build-tmp-%v.tar` 文件。
 
-## 与Docker集成
+### 与Docker集成
 
 支持将构建成功的镜像直接导出到Docker daemon。
 
@@ -752,10 +756,10 @@ busybox                                             2.0                 2d414a5c
 >
 > - 要求isula-build和Docker在同一节点。
 
-# 附录
+## 附录
 
 
-## 命令行参数说明
+### 命令行参数说明
 
 **表1** ctr-img build 命令参数列表
 
@@ -802,11 +806,11 @@ busybox                                             2.0                 2d414a5c
 | -------- | --------- | ------------------------------------ |
 | logout   | -a, --all | 布尔值，是否登出所有已登陆的镜像仓库 |
 
-## 通信矩阵
+### 通信矩阵
 
 isula-build两个组件进程之间通过unix socket套接字文件进行通信，无端口通信。
 
-## 文件与权限
+### 文件与权限
 
 - isula-build 所有的操作均需要使用 root 权限。
 
