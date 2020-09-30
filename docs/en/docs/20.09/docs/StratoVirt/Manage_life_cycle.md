@@ -28,7 +28,7 @@ $ /path/to/stratovirt \
     -api-channel unix:/path/to/socket
 ```
 
-Where, /path/to/json indicates the path of the JSON configuration file. / path/to/socket is the socket file specified by the user (for example, /tmp/stratovirt.socket). After the command is executed, the socket file is automatically created. Ensure that the socket file does not exist before executing the command, so that the VM can be started properly.
+Where, /path/to/json indicates the path of the JSON configuration file. /path/to/socket is the socket file specified by the user (for example, /tmp/stratovirt.socket). After the command is executed, the socket file is automatically created. Ensure that the socket file does not exist before executing the command, so that the VM can be started properly.
 
 
 
