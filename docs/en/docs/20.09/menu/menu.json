@@ -344,6 +344,47 @@
       ]
     },
     {
+      "label": "StratoVirt User Guide",
+      "path": "docs/StratoVirt/StratoVrit_guidence",
+      "children": [
+        {
+          "label": "Introduction to StratoVirt",
+          "path": "docs/StratoVirt/StratoVirt_Intoduction",
+          "children": []
+        },
+        {
+          "label": "Installing StratoVirt",
+          "path": "docs/StratoVirt/Install_StratoVirt",
+          "children": []
+        },
+        {
+          "label": "Preparing the Environment",
+          "path": "docs/StratoVirt/Prepare_env",
+          "children": []
+        },
+        {
+          "label": "Configuring a VM",
+          "path": "docs/StratoVirt/VM_configuration",
+          "children": []
+        },
+        {
+          "label": "Managing the VM Lifecycle",
+          "path": "docs/StratoVirt/Manage_life_cycle",
+          "children": []
+        },
+        {
+          "label": "Managing VM resources",
+          "path": "docs/StratoVirt/Manage_resource",
+          "children": []
+        },
+        {
+          "label": "Interconnecting with the iSula Secure Container",
+          "path": "docs/StratoVirt/Interconnect_isula",
+          "children": []
+        }
+      ]
+    },
+    {
       "label": "Container User Guide",
       "path": "docs/Container/container",
       "children": [
