@@ -404,7 +404,7 @@ View the profile content.
 
 #### Format
 
-**atune-adm info**  <profile_\>_
+**atune-adm info**  <profile\>
 
 #### Example
 
@@ -518,7 +518,7 @@ Manually activate the profile to make it in the active state.
 
 #### Format
 
-**atune-adm profile **_<_profile_\>_
+**atune-adm profile ** <profile\>
 
 #### Parameter Description
 
@@ -734,6 +734,7 @@ Use the specified project file to search the dynamic space for parameters and fi
 </tr>
 </tbody>
 </table>
+
 **Table  2**  Description of object configuration items
 
 <table><thead align="left"><tr id="row3800656151910"><th class="cellrowborder" valign="top" width="16.98%" id="mcps1.2.5.1.1"><p id="p3799185621910"><a name="p3799185621910"></a><a name="p3799185621910"></a><strong id="b295122519566"><a name="b295122519566"></a><a name="b295122519566"></a>Name</strong> </p>
