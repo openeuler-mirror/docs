@@ -635,4 +635,4 @@ The additional compilation options provided by the IMA Digest Lists extension ar
 
 The following figure compares the performance when IMA is disabled, native IMA is enabled, and IMA digest list is enabled.
 
-![img](./figures/ima_performance.PNG)
+![img](./figures/ima_performance.png)
