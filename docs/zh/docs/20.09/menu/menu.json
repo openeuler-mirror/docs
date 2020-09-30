@@ -716,7 +716,7 @@
       "path": "docs/userguide/overview",
       "children": [
         {
-          "label": "补丁工具",
+          "label": "patch-tracking",
           "path": "docs/userguide/patch-tracking",
           "children": []
         },
