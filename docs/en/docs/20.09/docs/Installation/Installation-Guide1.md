@@ -23,7 +23,7 @@ You can log in to the Raspberry Pi in either of the following ways:
 
 1. Local login
    
-   Connect the Raspberry Pi to the monitor (the Raspberry Pi video output interface is Micro HDMI), keyboard, and mouse, and start the Raspberry Pi. The Raspberry Pi startup log is displayed on the monitor. After Raspberry Pi is started, enter the user name **root** and password **openEuler12#$** to log in.
+   Connect the Raspberry Pi to the monitor (the Raspberry Pi video output interface is Micro HDMI), keyboard, and mouse, and start the Raspberry Pi. The Raspberry Pi startup log is displayed on the monitor. After Raspberry Pi is started, enter the user name **root** and password **openeuler** to log in.
 
 2. SSH remote login
    
@@ -32,7 +32,7 @@ You can log in to the Raspberry Pi in either of the following ways:
    **Figure 1** Obtain the IP address<a name="zh-cn_topic_0151920806_f6ff7658b349942ea87f4521c0256c313"></a>  
    ![](./figures/Obtain the IP address)
    
-   According to the preceding figure, the IP address of the Raspberry Pi is **192.168.31.109**. You can run the `ssh root@192.168.1.109` command and enter the password `openEuler12#$` to remotely log in to the Raspberry Pi.
+   According to the preceding figure, the IP address of the Raspberry Pi is **192.168.31.109**. You can run the `ssh root@192.168.1.109` command and enter the password `openeuler` to remotely log in to the Raspberry Pi.
 
 ## Configuring the System
 
