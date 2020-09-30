@@ -344,7 +344,7 @@
       ]
     },
     {
-      "label": "StratoVirt虚拟化用户指南",
+      "label": "StratoVirt用户指南",
       "path": "docs/StratoVirt/StratoVirtGuide",
       "children": [
         {

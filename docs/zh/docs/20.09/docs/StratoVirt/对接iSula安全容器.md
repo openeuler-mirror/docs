@@ -28,7 +28,7 @@ kata配置文件的默认路径为：/usr/share/defaults/kata-containers/configu
 
    ```
    #!/bin/bash
-   export QUANTVISOR_LOG_LEVEL=info  # set log level
+   export STRATOVIRT_LOG_LEVEL=info  # set log level which includes trace, debug, info, warn and error.
    /usr/bin/stratovirt $@
    ```
 
@@ -38,4 +38,3 @@ kata配置文件的默认路径为：/usr/share/defaults/kata-containers/configu
    $ isula run -tid --runtime=kata-runtime --name test busybox:latest sh
    ```
 
-   
