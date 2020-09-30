@@ -518,7 +518,7 @@ Manually activate the profile to make it in the active state.
 
 #### Format
 
-**atune-adm profile ** <profile\>
+**atune-adm profile** <profile\>
 
 #### Parameter Description
 
