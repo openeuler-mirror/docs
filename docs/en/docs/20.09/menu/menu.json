@@ -210,7 +210,7 @@
         },
         {
           "label": "Trusted Computing",
-          "path": "docs/Administration/Trusted Computing",
+          "path": "docs/Administration/trusted-computing",
           "children": []
         },
         {
