@@ -25,7 +25,7 @@ To use StratoVirt virtualization, it is necessary to install StratoVirt. Before 
 1. Run the following command as user root to install the StratoVirt components:
 
    ```
-   $ yum install stratovirt
+   # yum install stratovirt
    ```
 
 
