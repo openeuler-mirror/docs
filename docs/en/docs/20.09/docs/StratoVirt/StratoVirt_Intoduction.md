@@ -4,9 +4,7 @@
 
 ## Overview
 
-In the field of data center, virtualization is an important method for resource isolation, providing a secure virtual runtime environment with multiple granularities. However, traditional virtualization software such as QEMU has a large amount of code and frequent CVE security vulnerabilities. The industry has gradually evolved the trend of using the Rust language to implement microVM. In the future, general virtualization technologies will feature being secure, lightweight, enjoying high-performance, low-loss, flexible component splitting, and applying to all scenarios (data centers, terminals, and edge devices).
-
-StratoVirt is a lightweight virtualization solution implemented by Rust. It simplifies the device model, optimizes the running performance, and provides a secure sandbox running environment with security isolation and excellent performance for containers.
+StratoVirt is an enterprise-class virtualization platform for cloud data centers in the computing industry, enabling a unified architecture that supports virtual machines, containers and Serverless scenarios. On top of that, StratoVirt has a key technology competitive advantage in terms of lightweight, low noise, hard and soft collaboration, Rust language-level security, and more. StratoVirt reserves the capabilities and interfaces for component assembly in architectural design and interfaces. More importantly, StratoVirt has the flexibility to assemble advanced features on demand until it evolves to support standard virtualization, finding the best balance between feature requirements, applications scenarios, and light flexibility.
 
 
 

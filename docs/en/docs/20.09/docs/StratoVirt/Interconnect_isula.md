@@ -28,7 +28,7 @@ The default path of the Kata configuration file is /usr/share/defaults/kata-cont
 
    ```
    #!/bin/bash
-   export QUANTVISOR_LOG_LEVEL=info  # set log level
+   export STRATOVIRT_LOG_LEVEL=info  # set log level which includes trace, debug, info, warn and error.
    /usr/bin/stratovirt $@
    ```
 
