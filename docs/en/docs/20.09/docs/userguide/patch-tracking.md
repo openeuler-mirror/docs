@@ -94,7 +94,7 @@ The RPM package can be obtained from https://build.openeuler.org/package/show/op
 
 Method 1: Install the patch-tracking from the repo source. 
 
-1. Use DNF to mount the repo source (The repo source of 20.09 or later is required. For details, see the [Application Development Guide](https://openeuler.org/zh/docs/20.03_LTS/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)). Run the following command to download and install the patch-tracking and its dependencies.
+1. Use DNF to mount the repo source (The repo source of 20.09 or later is required. For details, see the [Application Development Guide](https://openeuler.org/en/docs/20.09/docs/ApplicationDev/application-development.html). Run the following command to download and install the patch-tracking and its dependencies.
 
 2. Run the following command to install the `patch-tracking`:
    
