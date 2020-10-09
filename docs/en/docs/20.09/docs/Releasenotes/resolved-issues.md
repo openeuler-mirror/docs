@@ -65,8 +65,8 @@ For details about the complete kernel submission records, see [Record Submission
     </tbody>
 </table>
 
-**Programming languages and compilers 
-<a name="table_fixed_2"></a>**
+**Programming languages and compilers** 
+<a name="table_fixed_2"></a>
 <table>
     <thead align="left">
         <tr id="row104971596432">
@@ -91,8 +91,8 @@ For details about the complete kernel submission records, see [Record Submission
     </tbody>
 </table>
 
-**Virtualization and containers 
-<a name="table_fixed_4"></a>**
+**Virtualization and containers** 
+<a name="table_fixed_4"></a>
 <table>
     <thead align="left">
         <tr id="row104971596432">
@@ -244,7 +244,7 @@ For details about the complete kernel submission records, see [Record Submission
     </tbody>
 </table>
 
-**File system **
+**File system**
 <a name="table_fixed_9"></a>
 <table>
     <thead align="left">
@@ -284,7 +284,7 @@ For details about the complete kernel submission records, see [Record Submission
     </tbody>
 </table>
 
-**Network **
+**Network**
 <a name="table_fixed_11"></a>
 <table>
     <thead align="left">
@@ -324,7 +324,7 @@ For details about the complete kernel submission records, see [Record Submission
     </tbody>
 </table>
 
-**System tools **
+**System tools**
 <a name="table_fixed_13"></a>
 <table>
     <thead align="left">
