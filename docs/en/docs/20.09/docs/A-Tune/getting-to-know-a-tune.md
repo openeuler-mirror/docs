@@ -26,7 +26,7 @@ A-Tune is an AI-based engine that optimizes system performance. It uses AI techn
 The following figure shows the A-Tune core technical architecture, which consists of intelligent decision-making, system profile, and interaction system.
 
 -   Intelligent decision-making layer: consists of the awareness and decision-making subsystems, which implements intelligent awareness of applications and system optimization decision-making, respectively.
--   System profile layer: consists of the labeling and learning subsystems. The labeling subsystem is used to cluster service models, and the learning subsystem is used to learn and classify service models.
+-   System profile layer: consists of the feature engineering and two-layer classification model. The feature engineering is used to automatically select service features, and the two-layer classification model is used to learn and classify service models.
 -   Interaction system layer: monitors and configures various system resources and executes optimization policies.
 
 ![](figures/en-us_image_0227497343.png)

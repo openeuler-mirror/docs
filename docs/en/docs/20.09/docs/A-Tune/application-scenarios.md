@@ -51,7 +51,7 @@ You can use functions provided by A-Tune through the CLI client atune-adm. This 
 
 #### Function
 
-Query the supported workload types, profiles, and the values of Active.
+Query the supported profiles, and the values of Active.
 
 #### Format
 
@@ -630,7 +630,7 @@ Use the specified project file to search the dynamic space for parameters and fi
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >Before running the command, ensure that the following conditions are met:  
 >1.  The YAML configuration file on the server has been edited and stored in the **/etc/atuned/tuning/** directory of the atuned service.
->2.  The YAML configuration file of the client has been compiled and stored on the atuned client.
+>2.  The YAML configuration file of the client has been edited and stored on the atuned client.
 
 #### Parameter Description
 
