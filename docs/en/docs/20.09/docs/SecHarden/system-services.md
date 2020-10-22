@@ -207,7 +207,7 @@ To harden a client, perform the following steps:
     </td>
     <td class="cellrowborder" valign="top" width="45.34%" headers="mcps1.2.5.1.2 "><p id="p19145217162616"><a name="p19145217162616"></a><a name="p19145217162616"></a>Hash algorithm for SSH data verification.</p>
     </td>
-    <td class="cellrowborder" valign="top" width="13.01%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0152100390_ab749b83348bd4b078841e5f2c959c1ce"><a name="en-us_topic_0152100390_ab749b83348bd4b078841e5f2c959c1ce"></a><a name="en-us_topic_0152100390_ab749b83348bd4b078841e5f2c959c1ce"></a>hmac-sha2-512,hmac-sha2-512-etm@openssh.com,hmac-sha2-256,hmac-sha2-256-etm@openssh.com,hmac-sha1,hmac-sha1-etm@openssh.com</p>
+    <td class="cellrowborder" valign="top" width="13.01%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0152100390_ab749b83348bd4b078841e5f2c959c1ce"><a name="en-us_topic_0152100390_ab749b83348bd4b078841e5f2c959c1ce"></a><a name="en-us_topic_0152100390_ab749b83348bd4b078841e5f2c959c1ce"></a>hmac-sha2-512,hmac-sha2-512-etm@openssh.com,hmac-sha2-256,hmac-sha2-256-etm@openssh.com</p>
     </td>
     <td class="cellrowborder" valign="top" width="25.09%" headers="mcps1.2.5.1.4 "><p id="p18860142412259"><a name="p18860142412259"></a><a name="p18860142412259"></a>Yes</p>
     </td>
@@ -279,7 +279,7 @@ To harden a client, perform the following steps:
     </td>
     <td class="cellrowborder" valign="top" width="45.34%" headers="mcps1.2.5.1.2 "><p id="p1914641722613"><a name="p1914641722613"></a><a name="p1914641722613"></a>SSH key exchange algorithms.</p>
     </td>
-    <td class="cellrowborder" valign="top" width="13.01%" headers="mcps1.2.5.1.3 "><p id="p209516241518"><a name="p209516241518"></a><a name="p209516241518"></a>curve25519-sha256,curve25519-sha256@@libssh.org,diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha1,diffie-hellman-group-exchange-sha256</p>
+    <td class="cellrowborder" valign="top" width="13.01%" headers="mcps1.2.5.1.3 "><p id="p209516241518"><a name="p209516241518"></a><a name="p209516241518"></a>curve25519-sha256,curve25519-sha256@@libssh.org,diffie-hellman-group-exchange-sha256</p>
     </td>
     <td class="cellrowborder" valign="top" width="25.09%" headers="mcps1.2.5.1.4 "><p id="p19860122420254"><a name="p19860122420254"></a><a name="p19860122420254"></a>Yes</p>
     </td>
@@ -321,7 +321,7 @@ To harden a client, perform the following steps:
     </td>
     <td class="cellrowborder" valign="top" width="9.569999999999999%" headers="mcps1.2.5.1.2 "><p id="p6200165334714"><a name="p6200165334714"></a><a name="p6200165334714"></a>SSH key exchange algorithms.</p>
     </td>
-    <td class="cellrowborder" valign="top" width="54.510000000000005%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0152100390_a2afb24fc01c44ad9923f003fd9c2200a"><a name="en-us_topic_0152100390_a2afb24fc01c44ad9923f003fd9c2200a"></a><a name="en-us_topic_0152100390_a2afb24fc01c44ad9923f003fd9c2200a"></a>ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1</p>
+    <td class="cellrowborder" valign="top" width="54.510000000000005%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0152100390_a2afb24fc01c44ad9923f003fd9c2200a"><a name="en-us_topic_0152100390_a2afb24fc01c44ad9923f003fd9c2200a"></a><a name="en-us_topic_0152100390_a2afb24fc01c44ad9923f003fd9c2200a"></a>ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256</p>
     </td>
     <td class="cellrowborder" valign="top" width="8.85%" headers="mcps1.2.5.1.4 "><p id="p10810111614714"><a name="p10810111614714"></a><a name="p10810111614714"></a>No</p>
     </td>
