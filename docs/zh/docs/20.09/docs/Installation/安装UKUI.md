@@ -1,5 +1,5 @@
 # 在 openEuler 上安装 UKUI
-UKUI是麒麟软件团队历经多年打造的一款Linux 桌面，主要基于 GTK 和 QT开发。与其它UI界面相比，UKUI更加注重易用性和敏捷度，各元件相依性小，可以不倚赖其它套件而独自运行，给用户带来亲切和高效的使用体验。
+UKUI是麒麟软件团队历经多年打造的一款Linux 桌面，主要基于 GTK 和 QT开发。与其它UI界面相比，UKUI更加注重易用性和敏捷度，各元件相依性小，可以不依赖其它套件而独自运行，给用户带来亲切和高效的使用体验。
 
 UKUI支持x86_64和aarch64两种架构。
 
@@ -13,7 +13,7 @@ sudo dnf update
 ```
 sudo dnf install ukui
 ```
-注：目前UKUI的依赖libdbusmenu在安装时需要安装python2，和python3-unversioned-command包（该包提供了一个指向python3的软连接）冲突，必须先强行卸载python3-unversioned-command（`rpm -e --nodeps python3-unversioned-command`）。在安装完成后，可通过以下命令恢复该包的设置。
+注：目前UKUI的依赖libdbusmenu在安装时需要安装python2，和python3-unversioned-command包（该包提供了一个指向python3的软连接）产生了冲突，必须先强行卸载python3-unversioned-command包（`rpm -e --nodeps python3-unversioned-command`）。在安装完成后，可通过以下命令恢复该包的设置。
 ```
 ln -s /usr/bin/python3 /usr/bin/python
 ```
