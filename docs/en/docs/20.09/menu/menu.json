@@ -94,6 +94,11 @@
               "children": []
             },
             {
+              "label": "Installation UKUI",
+              "path": "docs/Installation/install-UKUI",
+              "children": []
+            },
+            {
               "label": "FAQs",
               "path": "docs/Installation/faqs",
               "children": []
