@@ -6,7 +6,7 @@ As an openEuler user, you can contribute to the openEuler community in multiple 
 
 openEuler brings together people of common interest to form different special interest groups \(SIGs\). For details about existing SIGs, see the  [SIG list](https://openeuler.org/en/sig/sig-list/).
 
-You are welcome to join an existing SIG or create a SIG. For details about how to create a SIG, see the  [SIG Management Procedure](https://gitee.com/openeuler/community/blob/master/zh/technical-committee/governance/README.md).
+You are welcome to join an existing SIG or create a SIG. For details about how to create a SIG, see the  [SIG Management Procedure](https://gitee.com/openeuler/community/blob/master/en/technical-committee/governance/README.md).
 
 ## Mail List and Tasks<a name="section118551716123918"></a>
 
@@ -14,7 +14,7 @@ You are welcome to actively help users solve problems raised in the  [mail list]
 
 ## Documents<a name="section108651229193"></a>
 
-You can contribute to the community by submitting code. We also welcome your feedback on problems and difficulties, or suggestions on improving the usability and integrity of documents. For example, problems in obtaining software or documents and difficulties in using the system. Welcome to pay attention to and improve the documentation module of the  [openEuler community](https://openeuler.org/zh/).
+You can contribute to the community by submitting code. We also welcome your feedback on problems and difficulties, or suggestions on improving the usability and integrity of documents. For example, problems in obtaining software or documents and difficulties in using the system. Welcome to pay attention to and improve the documentation module of the  [openEuler community](https://openeuler.org/en/).
 
 ## IRC<a name="section6563203211285"></a>
 
