@@ -1,10 +1,10 @@
 # Contribution<a name="EN-US_TOPIC_0228211471"></a>
 
-As an openEuler user, you can contribute to the openEuler community in multiple ways. For details about how to contribute to the community, see  [Contributions to the Community](https://openeuler.org/zh/community/contribution/). Here, some methods are listed for reference.
+As an openEuler user, you can contribute to the openEuler community in multiple ways. For details about how to contribute to the community, see  [Contributions to the Community](https://openeuler.org/en/community/contribution/). Here, some methods are listed for reference.
 
 ## Special Interest Groups \(SIGs\)<a name="section19487145916118"></a>
 
-openEuler brings together people of common interest to form different special interest groups \(SIGs\). For details about existing SIGs, see the  [SIG list](https://openeuler.org/zh/sig/sig-list/).
+openEuler brings together people of common interest to form different special interest groups \(SIGs\). For details about existing SIGs, see the  [SIG list](https://openeuler.org/en/sig/sig-list/).
 
 You are welcome to join an existing SIG or create a SIG. For details about how to create a SIG, see the  [SIG Management Procedure](https://gitee.com/openeuler/community/blob/master/zh/technical-committee/governance/README.md).
 
