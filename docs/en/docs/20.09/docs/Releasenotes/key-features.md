@@ -1,6 +1,6 @@
 # Key Features
 
-- StratoVirt: Combines high security and performance with lightweight loads, low power consumption, and flexible component splitting for universal VMs running in all scenarios.
+- StratoVirt: Combines high security and performance with lightweight loads, low power consumption, and flexible component splitting for trusted virtualization platform in all scenarios.
   
   - Uses the Rust language, supports **seccomp** and multi-tenant isolation, providing a secure and trusted operating environment.
   - Supports startup within 50 ms and memory noise floor of less than 4 MB, achieving the ultimate performance and lightweight deployment in various scenarios across-device-edge-cloud.
