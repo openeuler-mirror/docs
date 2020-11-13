@@ -15,6 +15,7 @@ Docs包含了openEuler社区的所有文档，包括发行说明、操作系统�
 * Installation文件夹对应手册为：安装指南
 * Quickstart文件夹对应手册为：快速入门
 * Releasenotes文件夹对应手册为：发行说明
+* SecHarden文件夹对应手册为：安全加固指南
 * Virtualization文件夹对应手册为：虚拟化应用指南
 * userguide文件夹对应手册为：openEuler工具集用户指南
 * StratoVirt文件夹对应手册为：StratoVrit虚拟化用户指南
@@ -36,15 +37,15 @@ Docs当前使用如下4个分支：
 ### 如何参与SIG
 建立或回复 issue：欢迎通过建立或回复 issue 来讨论。
 提交PR：欢迎通过提交PR的方式参与SIG。具体操作方法可参考[PR提交指南](https://gitee.com/openeuler/community/blob/master/zh/contributors/pull-request.md)。  
-提交评论：欢迎在issue或PR中提交评论。   
+提交评论：欢迎在issue或PR中提交评论。 您也可以通过网站文档页的“意见反馈”对文档进行评论。  
 重要的事说三遍：欢迎提交 PR！欢迎提交 PR！欢迎提交 PR！
 
 ### 成员
 #### Maintainer 列表
-- Rudy_Tan(@rudy_tan)
-- amyMaYun(@amy_mayun)
-- qiaominna(@qiaominna)
+- Rudy_Tan[@rudy_tan](https://gitee.com/rudy_tan)
+- amyMaYun[@amy_mayun](https://gitee.com/amy_mayun)
+- qiaominna[@qiaominna](https://gitee.com/qiaominna)
 
 ### 如何联系我们
-邮件列表: dev@openeuler.org  
+邮件列表: doc@openeuler.org  
 IRC: #openeuler-doc  
