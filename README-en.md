@@ -15,6 +15,7 @@ Open the **docs** folder. The relationship between guides and folders is as foll
 * **Installation**: *Installation Guide*
 * **Quickstart**: *Quick Start*
 * **Releasenotes**: *Release Notes*
+* **SecHarden**: *Security Hardening Guide*
 * **Virtualization**: *Virtualization Application Guide*
 * **userguide**: *openEuler Toolset User Guide*
 * **StratoVirt**： *StratoVirt User Guide*
@@ -35,15 +36,16 @@ The DOCS contains the following four branches:
 ### Participating in SIG
 Create or reply to an issue: You can discuss an issue by creating or replying to an issue.  
 Submit a Pull Request (PR): You can participate in SIG by submitting a PR.  
-Submit comments: You can submit comments on issues or PRs.   
+Submit comments: You can submit comments on issues or PRs. You can also comment on the document through **Feedback** on the website document page.
 We are always pleased to receive PRs from you.
 
 ### Member
 #### Maintainer List
-- Rudy_Tan (@rudy_tan)
-- amyMaYun (@amy_mayun)
-- qiaominna(@qiaominna)
+- Rudy_Tan[@rudy_tan](https://gitee.com/rudy_tan)
+- amyMaYun[@amy_mayun](https://gitee.com/amy_mayun)
+- qiaominna[@qiaominna](https://gitee.com/qiaominna)
+
 
 ###  Contacting Us
-E-mails: dev@openeuler.org  
+E-mails: doc@openeuler.org  
 IRC: #openeuler-doc 
