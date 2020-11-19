@@ -41,10 +41,6 @@ You can use functions provided by A-Tune through the CLI client atune-adm. This 
 
 -   The  **define**,  **update**,  **undefine**,  **collection**,  **train**, and  **upgrade **commands do not support remote execution.
 -   In the command format, brackets \(\[\]\) indicate that the parameter is optional, and angle brackets \(<\>\) indicate that the parameter is mandatory. The actual parameters prevail.
--   In the command format, meanings of each command are as follows:
-    -   **WORKLOAD\_TYPE**: name of a user-defined workload type. For details about the supported workload types, see the query result of the  **list**  command.
-    -   **PROFILE\_NAME**: user-defined profile name.
-    -   **PROFILE\_PATH**: path of the user-defined profile.
 
 
 ## Querying Workload Types
@@ -55,7 +51,7 @@ You can use functions provided by A-Tune through the CLI client atune-adm. This 
 
 #### Function
 
-Query the supported workload types, profiles, and the values of Active.
+Query the supported profiles, and the values of Active.
 
 #### Format
 
@@ -66,37 +62,109 @@ Query the supported workload types, profiles, and the values of Active.
 ```
 # atune-adm list
 
-Support WorkloadTypes:
-+-----------------------------------+------------------------+-----------+
-| WorkloadType                      | ProfileName            | Active    |
-+===================================+========================+===========+
-| default                           | default                | true      |
-+-----------------------------------+------------------------+-----------+
-| webserver                         | ssl_webserver          | false     |
-+-----------------------------------+------------------------+-----------+
-| big_database                      | database               | false     |
-+-----------------------------------+------------------------+-----------+
-| big_data                          | big_data               | false     |
-+-----------------------------------+------------------------+-----------+
-| in-memory_computing               | in-memory_computing    | false     |
-+-----------------------------------+------------------------+-----------+
-| in-memory_database                | in-memory_database     | false     |
-+-----------------------------------+------------------------+-----------+
-| single_computer_intensive_jobs    | compute-intensive      | false     |
-+-----------------------------------+------------------------+-----------+
-| communication                     | rpc_communication      | false     |
-+-----------------------------------+------------------------+-----------+
-| idle                              | default                | false     |
-+-----------------------------------+------------------------+-----------+
+Support profiles:
++------------------------------------------------+-----------+
+| ProfileName                                    | Active    |
++================================================+===========+
+| arm-native-android-container-robox             | false     |
++------------------------------------------------+-----------+
+| basic-test-suite-euleros-baseline-fio          | false     |
++------------------------------------------------+-----------+
+| basic-test-suite-euleros-baseline-lmbench      | false     |
++------------------------------------------------+-----------+
+| basic-test-suite-euleros-baseline-netperf      | false     |
++------------------------------------------------+-----------+
+| basic-test-suite-euleros-baseline-stream       | false     |
++------------------------------------------------+-----------+
+| basic-test-suite-euleros-baseline-unixbench    | false     |
++------------------------------------------------+-----------+
+| basic-test-suite-speccpu-speccpu2006           | false     |
++------------------------------------------------+-----------+
+| basic-test-suite-specjbb-specjbb2015           | false     |
++------------------------------------------------+-----------+
+| big-data-hadoop-hdfs-dfsio-hdd                 | false     |
++------------------------------------------------+-----------+
+| big-data-hadoop-hdfs-dfsio-ssd                 | false     |
++------------------------------------------------+-----------+
+| big-data-hadoop-spark-bayesian                 | false     |
++------------------------------------------------+-----------+
+| big-data-hadoop-spark-kmeans                   | false     |
++------------------------------------------------+-----------+
+| big-data-hadoop-spark-sql1                     | false     |
++------------------------------------------------+-----------+
+| big-data-hadoop-spark-sql10                    | false     |
++------------------------------------------------+-----------+
+| big-data-hadoop-spark-sql2                     | false     |
++------------------------------------------------+-----------+
+| big-data-hadoop-spark-sql3                     | false     |
++------------------------------------------------+-----------+
+| big-data-hadoop-spark-sql4                     | false     |
++------------------------------------------------+-----------+
+| big-data-hadoop-spark-sql5                     | false     |
++------------------------------------------------+-----------+
+| big-data-hadoop-spark-sql6                     | false     |
++------------------------------------------------+-----------+
+| big-data-hadoop-spark-sql7                     | false     |
++------------------------------------------------+-----------+
+| big-data-hadoop-spark-sql8                     | false     |
++------------------------------------------------+-----------+
+| big-data-hadoop-spark-sql9                     | false     |
++------------------------------------------------+-----------+
+| big-data-hadoop-spark-tersort                  | false     |
++------------------------------------------------+-----------+
+| big-data-hadoop-spark-wordcount                | false     |
++------------------------------------------------+-----------+
+| cloud-compute-kvm-host                         | false     |
++------------------------------------------------+-----------+
+| database-mariadb-2p-tpcc-c3                    | false     |
++------------------------------------------------+-----------+
+| database-mariadb-4p-tpcc-c3                    | false     |
++------------------------------------------------+-----------+
+| database-mongodb-2p-sysbench                   | false     |
++------------------------------------------------+-----------+
+| database-mysql-2p-sysbench-hdd                 | false     |
++------------------------------------------------+-----------+
+| database-mysql-2p-sysbench-ssd                 | false     |
++------------------------------------------------+-----------+
+| database-postgresql-2p-sysbench-hdd            | false     |
++------------------------------------------------+-----------+
+| database-postgresql-2p-sysbench-ssd            | false     |
++------------------------------------------------+-----------+
+| default-default                                | false     |
++------------------------------------------------+-----------+
+| docker-mariadb-2p-tpcc-c3                      | false     |
++------------------------------------------------+-----------+
+| docker-mariadb-4p-tpcc-c3                      | false     |
++------------------------------------------------+-----------+
+| hpc-gatk4-human-genome                         | false     |
++------------------------------------------------+-----------+
+| in-memory-database-redis-redis-benchmark       | false     |
++------------------------------------------------+-----------+
+| middleware-dubbo-dubbo-benchmark               | false     |
++------------------------------------------------+-----------+
+| storage-ceph-vdbench-hdd                       | false     |
++------------------------------------------------+-----------+
+| storage-ceph-vdbench-ssd                       | false     |
++------------------------------------------------+-----------+
+| virtualization-consumer-cloud-olc              | false     |
++------------------------------------------------+-----------+
+| virtualization-mariadb-2p-tpcc-c3              | false     |
++------------------------------------------------+-----------+
+| virtualization-mariadb-4p-tpcc-c3              | false     |
++------------------------------------------------+-----------+
+| web-apache-traffic-server-spirent-pingpo       | false     |
++------------------------------------------------+-----------+
+| web-nginx-http-long-connection                 | true      |
++------------------------------------------------+-----------+
+| web-nginx-https-short-connection               | false     |
++------------------------------------------------+-----------+
 
 ```
 
->![](./public_sys-resources/icon-note.gif) **NOTE:**   
->If the value of Active is  **true**, the profile is activated. In the example, the profile of the default type is activated.  
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>If the value of Active is **true**, the profile is activated. In the example, the profile of web-nginx-http-long-connection is activated.
 
 ## Workload Type Analysis and Auto Optimization
-
-
 
 
 ### analysis
@@ -121,7 +189,12 @@ Collect real-time statistics from the system to identify and automatically optim
   </thead>
   <tbody><tr id="row334110395452"><td class="cellrowborder" valign="top" width="23.87%" headers="mcps1.1.3.1.1 "><p id="p9341639104517"><a name="p9341639104517"></a><a name="p9341639104517"></a>--model, -m</p>
   </td>
-  <td class="cellrowborder" valign="top" width="76.13%" headers="mcps1.1.3.1.2 "><p id="p23414394459"><a name="p23414394459"></a><a name="p23414394459"></a>Model generated by user-defined training</p>
+  <td class="cellrowborder" valign="top" width="76.13%" headers="mcps1.1.3.1.2 "><p id="p23414394459"><a name="p23414394459"></a><a name="p23414394459"></a>New model generated after user self-training</p>
+  </td>
+  </tr>
+  <tr id="row334110395452"><td class="cellrowborder" valign="top" width="23.87%" headers="mcps1.1.3.1.1 "><p id="p9341639104517"><a name="p9341639104517"></a><a name="p9341639104517"></a>--characterization, -c</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="76.13%" headers="mcps1.1.3.1.2 "><p id="p23414394459"><a name="p23414394459"></a><a name="p23414394459"></a>Use the default model for application identification and do not perform automatic optimization</p>
   </td>
   </tr>
   </tbody>
@@ -130,12 +203,18 @@ Collect real-time statistics from the system to identify and automatically optim
 
 #### Example
 
--   Use the default model for classification and identification.
+-   Use the default model for application identification.
+
+    ```
+    # atune-adm analysis --characterization
+    ```
+
+-   Use the default model to identify applications and perform automatic tuning.
 
     ```
     # atune-adm analysis
     ```
-
+    
 -   Use the user-defined training model for recognition.
 
     ```
@@ -147,60 +226,56 @@ Collect real-time statistics from the system to identify and automatically optim
 
 A-Tune allows users to define and learn new models. To define a new model, perform the following steps:
 
-1.  Run the  **define**  command to define workload\_type and profile.
-2.  Run the  **collection**  command to collect the profile data corresponding to workload\_type.
+1.  Run the **define** command to define a new profile.
+2.  Run the **collection** command to collect the system data corresponding to the application.
 3.  Run the  **train**  command to train the model.
-
-
 
 
 ### define
 
 #### Function
 
-Add a user-defined workload type and the corresponding profile optimization item.
+Add a user-defined application scenarios and the corresponding profile tuning items.
 
 #### Format
 
-**atune-adm define**  <WORKLOAD\_TYPE\> <PROFILE\_NAME\> <PROFILE\_PATH\>
+**atune-adm define**  <service_type> <application_name> <scenario_name> <profile_path>
 
 #### Example
 
-Add a workload type. Set workload type to  **test\_type**, profile name to  **test\_name**, and configuration file of an optimization item to  **example.conf**.
+Add a profile whose service_type is **test_service**, application_name is **test_app**, scenario_name is **test_scenario**, and tuning item configuration file is **example.conf**.
 
 ```
-# atune-adm define test_type test_name ./example.conf
+# atune-adm define test_service test_app test_scenario ./example.conf
 ```
 
-The  **example.conf**  file can be written as follows \(the following optimization items are optional and are for reference only\). You can also run the  **atune-adm info**  command to view how the existing profile is written.
+The **example.conf** file can be written as follows (the following optimization items are optional and are for reference only). You can also run the **atune-adm info** command to view how the existing profile is written.
 
 ```
-[main]
-# list its parent profile
-[tip]
-# the recommended optimization, which should be performed manunaly
-[check]
-# check the environment
-[affinity.irq]
-# to change the affinity of irqs
-[affinity.task]
-# to change the affinity of tasks
-[bios]
-# to change the bios config
-[bootloader.grub2]
-# to change the grub2 config
-[kernel_config]
-# to change the kernel config
-[script]
-# the script extention of cpi
-[sysctl]
-# to change the /proc/sys/* config
-[sysfs]
-# to change the /sys/* config
-[systemctl]
-# to change the system service config
-[ulimit]
-# to change the resources limit of user
+ [main]
+ # list its parent profile
+ [kernel_config]
+ # to change the kernel config
+ [bios]
+ # to change the bios config
+ [bootloader.grub2]
+ # to change the grub2 config
+ [sysfs]
+ # to change the /sys/* config
+ [systemctl]
+ # to change the system service status
+ [sysctl]
+ # to change the /proc/sys/* config
+ [script]
+ # the script extention of cpi
+ [ulimit]
+ # to change the resources limit of user
+ [schedule_policy]
+ # to change the schedule policy
+ [check]
+ # check the environment
+ [tip]
+ # the recommended optimization, which should be performed manunaly
 ```
 
 ### collection
@@ -209,7 +284,7 @@ The  **example.conf**  file can be written as follows \(the following optimizati
 
 Collect the global resource usage and OS status information during service running, and save the collected information to a CSV output file as the input dataset for model training.
 
->![](./public_sys-resources/icon-note.gif) **NOTE:**   
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
 >-   This command depends on the sampling tools such as perf, mpstat, vmstat, iostat, and sar.  
 >-   Currently, only the Kunpeng 920 CPU is supported. You can run the  **dmidecode -t processor**  command to check the CPU model.  
 
@@ -247,9 +322,9 @@ Collect the global resource usage and OS status information during service runni
   <td class="cellrowborder" valign="top" width="76.13%" headers="mcps1.1.3.1.2 "><p id="en-us_topic_0210923698_p206451911611"><a name="en-us_topic_0210923698_p206451911611"></a><a name="en-us_topic_0210923698_p206451911611"></a>Network port used during service running, for example, eth0.</p>
   </td>
   </tr>
-  <tr id="en-us_topic_0210923698_row14645219112"><td class="cellrowborder" valign="top" width="23.87%" headers="mcps1.1.3.1.1 "><p id="en-us_topic_0210923698_p9645191811"><a name="en-us_topic_0210923698_p9645191811"></a><a name="en-us_topic_0210923698_p9645191811"></a>--workload_type, -t</p>
+  <tr id="en-us_topic_0210923698_row14645219112"><td class="cellrowborder" valign="top" width="23.87%" headers="mcps1.1.3.1.1 "><p id="en-us_topic_0210923698_p9645191811"><a name="en-us_topic_0210923698_p9645191811"></a><a name="en-us_topic_0210923698_p9645191811"></a>--app_type, -t</p>
   </td>
-  <td class="cellrowborder" valign="top" width="76.13%" headers="mcps1.1.3.1.2 "><p id="en-us_topic_0210923698_p16450117114"><a name="en-us_topic_0210923698_p16450117114"></a><a name="en-us_topic_0210923698_p16450117114"></a>Workload type, which is used as a label for training.</p>
+  <td class="cellrowborder" valign="top" width="76.13%" headers="mcps1.1.3.1.2 "><p id="en-us_topic_0210923698_p16450117114"><a name="en-us_topic_0210923698_p16450117114"></a><a name="en-us_topic_0210923698_p16450117114"></a>Mark the application type of the service as a label for training.</p>
   </td>
   </tr>
   <tr id="en-us_topic_0210923698_row76452118115"><td class="cellrowborder" valign="top" width="23.87%" headers="mcps1.1.3.1.1 "><p id="en-us_topic_0210923698_p96451114116"><a name="en-us_topic_0210923698_p96451114116"></a><a name="en-us_topic_0210923698_p96451114116"></a>--duration, -d</p>
@@ -269,14 +344,14 @@ Collect the global resource usage and OS status information during service runni
 #### Example
 
 ```
-# atune-adm collection --filename name --interval 5 --duration 1200 --output_path /home/data --disk sda --network eth0 --workload_type test_type 
+# atune-adm collection --filename name --interval 5 --duration 1200 --output_path /home/data --disk sda --network eth0 --app_type test_type 
 ```
 
 ### train
 
 #### Function
 
-Use the collected data to train the model. Collect data of at least two workload types during training. Otherwise, an error is reported.
+Use the collected data to train the model. Collect data of at least two application types during training. Otherwise, an error is reported.
 
 #### Format
 
@@ -304,18 +379,18 @@ Use the CSV file in the  **data**  directory as the training input. The generate
 
 #### Function
 
-Delete a user-defined workload type.
+Delete a user-defined profile.
 
 #### Format
 
-**atune-adm undefine**  <WORKLOAD\_TYPE\>
+**atune-adm undefine**  <profile\>
 
 #### Example
 
-Delete the  **test\_type**  workload type.
+Delete the user-defined profile.
 
 ```
-# atune-adm undefine test_type 
+# atune-adm undefine test_service-test_app-test_scenario
 ```
 
 ## Querying Profiles
@@ -325,26 +400,26 @@ Delete the  **test\_type**  workload type.
 
 #### Function
 
-View the profile content of a workload type.
+View the profile content.
 
 #### Format
 
-**atune-adm info**  <WORKLOAD\_TYPE_\>_
+**atune-adm info**  <profile\>
 
 #### Example
 
-View the profile content of webserver.
+View the profile content of web-nginx-http-long-connection.
 
 ```
-# atune-adm info webserver
+# atune-adm info web-nginx-http-long-connection
 
-*** ssl_webserver:
+*** web-nginx-http-long-connection:
 
 #
-# webserver tuned configuration
+# nginx http long connection A-Tune configuration
 #
 [main]
-#TODO CONFIG
+include = default-default
 
 [kernel_config]
 #TODO CONFIG
@@ -352,11 +427,18 @@ View the profile content of webserver.
 [bios]
 #TODO CONFIG
 
+[bootloader.grub2]
+iommu.passthrough = 1
+
 [sysfs]
 #TODO CONFIG
 
+[systemctl]
+sysmonitor = stop
+irqbalance = stop
+
 [sysctl]
-fs.file-max=6553600
+fs.file-max = 6553600
 fs.suid_dumpable = 1
 fs.aio-max-nr = 1048576
 kernel.shmmax = 68719476736
@@ -384,63 +466,46 @@ net.core.rmem_default = 8388608
 net.core.rmem_max = 16777216
 net.core.wmem_max = 16777216
 
-[systemctl]
-sysmonitor=stop
-irqbalance=stop
-
-[bootloader.grub2]
-selinux=0
-iommu.passthrough=1
-
-[tip]
-bind your master process to the CPU near the network = affinity
-bind your network interrupt to the CPU that has this network = affinity
-relogin into the system to enable limits setting = OS
-
 [script]
-openssl_hpre = 0
 prefetch = off
+ethtool =  -X {network} hfunc toeplitz
 
 [ulimit]
 {user}.hard.nofile = 102400
 {user}.soft.nofile = 102400
 
-[affinity.task]
-#TODO CONFIG
-
-[affinity.irq]
+[schedule_policy]
 #TODO CONFIG
 
 [check]
 #TODO CONFIG
 
+[tip]
+SELinux provides extra control and security features to linux kernel. Disabling SELinux will improve the performance but may cause security risks. = kernel
+disable the nginx log = application
 ```
-
-  
 
 ## Updating a Profile
 
 You can update the existing profile as required.
 
 
-
-
 ### update
 
 #### Function
 
-Update an optimization item of a workload type to the content in the  **new.conf**  file.
+Update the original tuning items in the existing profile to the content in the **new.conf** file.
 
 #### Format
 
-**atune-adm update**  <WORKLOAD\_TYPE\> <PROFILE\_NAME\> <PROFILE\_FILE\>
+**atune-adm update**  <profile\> <profile_path\> 
 
 #### Example
 
-Update the workload type to  **test\_type**  and the optimization item of test\_name to  **new.conf**.
+Change the tuning item of the profile named **test_service-test_app-test_scenario** to **new.conf**.
 
 ```
-# atune-adm update test_type test_name ./new.conf
+# atune-adm update test_service-test_app-test_scenario ./new.conf
 ```
 
 ## Activating a Profile
@@ -449,29 +514,25 @@ Update the workload type to  **test\_type**  and the optimization item of test\_
 
 #### Function
 
-Manually activate a profile of a workload type.
+Manually activate the profile to make it in the active state.
 
 #### Format
 
-**atune-adm profile **_<_WORKLOAD\_TYPE_\>_
+**atune-adm profile** <profile\>
 
 #### Parameter Description
 
-You can run the  **list**  command to query the supported workload types.
+For details about the profile name, see the query result of the list command.
 
 #### Example
 
-Activate the profile configuration of webserver.
+Activate the profile corresponding to the web-nginx-http-long-connection.
 
 ```
-# atune-adm profile webserver
+# atune-adm profile web-nginx-http-long-connection
 ```
 
 ## Rolling Back Profiles
-
-  
-
-
 
 ### rollback
 
@@ -490,10 +551,6 @@ Roll back the current configuration to the initial configuration of the system.
 ```
 
 ## Updating Database
-
-  
-
-
 
 ### upgrade
 
@@ -521,10 +578,6 @@ The database is updated to  **new\_sqlite.db**.
 ```
 
 ## Querying System Information
-
-  
-
-
 
 
 ### check
@@ -561,9 +614,7 @@ Check the CPU, BIOS, OS, and NIC information.
 
 ## Automatic Parameter Optimization
 
-A-Tune provides the automatic search capability for optimal configurations, eliminating the need for repeated manual parameter adjustment and performance evaluation. This greatly improves the search efficiency of optimal configurations.
-
-
+A-Tune provides the automatic search capability with the optimal configuration, saving the trouble of manually configuring parameters and performance evaluation. This greatly improves the search efficiency of optimal configurations.
 
 
 ### Tuning
@@ -574,12 +625,12 @@ Use the specified project file to search the dynamic space for parameters and fi
 
 #### Format
 
->![](./public_sys-resources/icon-note.gif) **NOTE:**   
->Before running the command, ensure that the following conditions are met:  
->1.  The YAML configuration file of the server has been edited and placed in the  **/etc/atuned/tuning/**  directory on the server by the server administrator.  
->2.  The YAML configuration file of the client has been edited and placed in an arbitrary directory on the client.  
-
 **atune-adm tuning**  \[OPTIONS\] <PROJECT\_YAML\>
+
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>Before running the command, ensure that the following conditions are met:  
+>1.  The YAML configuration file on the server has been edited and stored in the **/etc/atuned/tuning/** directory of the atuned service.
+>2.  The YAML configuration file of the client has been edited and stored on the atuned client.
 
 #### Parameter Description
 
@@ -601,11 +652,22 @@ Use the specified project file to search the dynamic space for parameters and fi
   <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p10802114624412"><a name="p10802114624412"></a><a name="p10802114624412"></a>Specifies the project name in the YAML file to be restored.</p>
   </td>
   </tr>
+  <tr id="row88018467448"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p78011346164417"><a name="p78011346164417"></a><a name="p78011346164417"></a>--restart, -c</p>
+  </td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p10802114624412"><a name="p10802114624412"></a><a name="p10802114624412"></a>Perform tuning based on historical tuning results.</p>
+  </td>
+  </tr>
+  <tr id="row88018467448"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p78011346164417"><a name="p78011346164417"></a><a name="p78011346164417"></a>--detail, -d</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p10802114624412"><a name="p10802114624412"></a><a name="p10802114624412"></a>Print detailed information about the tuning process.</p>
+  </td>
+  </tr>
   </tbody>
   </table>
-
-  >![](./public_sys-resources/icon-note.gif) **NOTE:**   
-  >The preceding two parameters must be used at the same time, and the -p parameter must be followed by the specific project name.  
+  
+  
+  >![](public_sys-resources/icon-note.gif) **NOTE:**   
+  >If this parameter is used, the -p parameter must be followed by a specific project name and the YAML file of the project must be specified.  
 
 
 -   **PROJECT\_YAML**: YAML configuration file of the client.
@@ -672,6 +734,7 @@ Use the specified project file to search the dynamic space for parameters and fi
 </tr>
 </tbody>
 </table>
+
 **Table  2**  Description of object configuration items
 
 <table><thead align="left"><tr id="row3800656151910"><th class="cellrowborder" valign="top" width="16.98%" id="mcps1.2.5.1.1"><p id="p3799185621910"><a name="p3799185621910"></a><a name="p3799185621910"></a><strong id="b295122519566"><a name="b295122519566"></a><a name="b295122519566"></a>Name</strong> </p>
@@ -740,36 +803,36 @@ Use the specified project file to search the dynamic space for parameters and fi
 </tr>
 <tr id="row1480275691918"><td class="cellrowborder" valign="top" width="16.98%" headers="mcps1.2.5.1.1 "><p id="p78019565194"><a name="p78019565194"></a><a name="p78019565194"></a>dtype</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.18%" headers="mcps1.2.5.1.2 "><p id="p17801756101914"><a name="p17801756101914"></a><a name="p17801756101914"></a>This parameter is available only when type is set to <strong id="b135607416711"><a name="b135607416711"></a><a name="b135607416711"></a>discrete</strong>. Currently, only <strong id="b1614114941020"><a name="b1614114941020"></a><a name="b1614114941020"></a>int</strong> and <strong id="b1768554171015"><a name="b1768554171015"></a><a name="b1768554171015"></a>string</strong> are supported.</p>
+<td class="cellrowborder" valign="top" width="20.18%" headers="mcps1.2.5.1.2 "><p id="p17801756101914"><a name="p17801756101914"></a><a name="p17801756101914"></a>This parameter is available only when type is set to <strong id="b135607416711"><a name="b135607416711"></a><a name="b135607416711"></a>discrete</strong>. Currently, <strong id="b1614114941020"><a name="b1614114941020"></a><a name="b1614114941020"></a>int, float</strong> and <strong id="b1768554171015"><a name="b1768554171015"></a><a name="b1768554171015"></a>string</strong> are supported.</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.47%" headers="mcps1.2.5.1.3 "><p id="p180145611193"><a name="p180145611193"></a><a name="p180145611193"></a>Enumeration</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.370000000000005%" headers="mcps1.2.5.1.4 "><p id="p7801956171913"><a name="p7801956171913"></a><a name="p7801956171913"></a>int, string</p>
+<td class="cellrowborder" valign="top" width="47.370000000000005%" headers="mcps1.2.5.1.4 "><p id="p7801956171913"><a name="p7801956171913"></a><a name="p7801956171913"></a>int, float, string</p>
 </td>
 </tr>
 <tr id="row280235612194"><td class="cellrowborder" valign="top" width="16.98%" headers="mcps1.2.5.1.1 "><p id="p78027569198"><a name="p78027569198"></a><a name="p78027569198"></a>scope</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.18%" headers="mcps1.2.5.1.2 "><p id="p180235617196"><a name="p180235617196"></a><a name="p180235617196"></a>Parameter setting range. This parameter is valid only when type is set to <strong id="b167741475107"><a name="b167741475107"></a><a name="b167741475107"></a>discrete</strong> and dtype is set to <strong id="b1169310171018"><a name="b1169310171018"></a><a name="b1169310171018"></a>int</strong>, or type is set to <strong id="b7331144104"><a name="b7331144104"></a><a name="b7331144104"></a>continuous</strong>.</p>
+<td class="cellrowborder" valign="top" width="20.18%" headers="mcps1.2.5.1.2 "><p id="p180235617196"><a name="p180235617196"></a><a name="p180235617196"></a>Parameter setting range. This parameter is valid only when type is set to <strong id="b167741475107"><a name="b167741475107"></a><a name="b167741475107"></a>discrete</strong> and dtype is set to <strong id="b1169310171018"><a name="b1169310171018"></a><a name="b1169310171018"></a>int or float</strong>, or type is set to <strong id="b7331144104"><a name="b7331144104"></a><a name="b7331144104"></a>continuous</strong>.</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.47%" headers="mcps1.2.5.1.3 "><p id="p1780215617191"><a name="p1780215617191"></a><a name="p1780215617191"></a>Integer</p>
+<td class="cellrowborder" valign="top" width="15.47%" headers="mcps1.2.5.1.3 "><p id="p1780215617191"><a name="p1780215617191"></a><a name="p1780215617191"></a>Integer/Float</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.370000000000005%" headers="mcps1.2.5.1.4 "><p id="p1680255641916"><a name="p1680255641916"></a><a name="p1680255641916"></a>The value is user-defined and must be within the valid range of this parameter.</p>
 </td>
 </tr>
 <tr id="row138022565199"><td class="cellrowborder" valign="top" width="16.98%" headers="mcps1.2.5.1.1 "><p id="p880265681911"><a name="p880265681911"></a><a name="p880265681911"></a>step</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.18%" headers="mcps1.2.5.1.2 "><p id="p6802256161918"><a name="p6802256161918"></a><a name="p6802256161918"></a>Parameter value step, which is used when <strong id="b13833241114316"><a name="b13833241114316"></a><a name="b13833241114316"></a>dtype</strong> is set to <strong id="b871165128"><a name="b871165128"></a><a name="b871165128"></a>int</strong>.</p>
+<td class="cellrowborder" valign="top" width="20.18%" headers="mcps1.2.5.1.2 "><p id="p6802256161918"><a name="p6802256161918"></a><a name="p6802256161918"></a>Parameter value step, which is used when <strong id="b13833241114316"><a name="b13833241114316"></a><a name="b13833241114316"></a>dtype</strong> is set to <strong id="b871165128"><a name="b871165128"></a><a name="b871165128"></a>int or float</strong>.</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.47%" headers="mcps1.2.5.1.3 "><p id="p198021156141918"><a name="p198021156141918"></a><a name="p198021156141918"></a>Integer</p>
+<td class="cellrowborder" valign="top" width="15.47%" headers="mcps1.2.5.1.3 "><p id="p198021156141918"><a name="p198021156141918"></a><a name="p198021156141918"></a>Integer/Float</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.370000000000005%" headers="mcps1.2.5.1.4 "><p id="p1180265619195"><a name="p1180265619195"></a><a name="p1180265619195"></a>This value is user-defined.</p>
 </td>
 </tr>
 <tr id="row8802175611912"><td class="cellrowborder" valign="top" width="16.98%" headers="mcps1.2.5.1.1 "><p id="p2802205614195"><a name="p2802205614195"></a><a name="p2802205614195"></a>items</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.18%" headers="mcps1.2.5.1.2 "><p id="p5802105681916"><a name="p5802105681916"></a><a name="p5802105681916"></a>Enumerated value of which the parameter value is not within the scope. This is used when <strong id="b15657184154415"><a name="b15657184154415"></a><a name="b15657184154415"></a>dtype</strong> is set to <strong id="b15131115132"><a name="b15131115132"></a><a name="b15131115132"></a>int</strong>.</p>
+<td class="cellrowborder" valign="top" width="20.18%" headers="mcps1.2.5.1.2 "><p id="p5802105681916"><a name="p5802105681916"></a><a name="p5802105681916"></a>Enumerated value of which the parameter value is not within the scope. This is used when <strong id="b15657184154415"><a name="b15657184154415"></a><a name="b15657184154415"></a>dtype</strong> is set to <strong id="b15131115132"><a name="b15131115132"></a><a name="b15131115132"></a>int or float</strong>.</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.47%" headers="mcps1.2.5.1.3 "><p id="p28025564191"><a name="p28025564191"></a><a name="p28025564191"></a>Integer</p>
+<td class="cellrowborder" valign="top" width="15.47%" headers="mcps1.2.5.1.3 "><p id="p28025564191"><a name="p28025564191"></a><a name="p28025564191"></a>Integer/Float</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.370000000000005%" headers="mcps1.2.5.1.4 "><p id="p980211562191"><a name="p980211562191"></a><a name="p980211562191"></a>The value is user-defined and must be within the valid range of this parameter.</p>
 </td>
@@ -783,21 +846,13 @@ Use the specified project file to search the dynamic space for parameters and fi
 <td class="cellrowborder" valign="top" width="47.370000000000005%" headers="mcps1.2.5.1.4 "><p id="p78039562198"><a name="p78039562198"></a><a name="p78039562198"></a>The value is user-defined and must be within the valid range of this parameter.</p>
 </td>
 </tr>
-<tr id="row188031756141912"><td class="cellrowborder" valign="top" width="16.98%" headers="mcps1.2.5.1.1 "><p id="p10803205618199"><a name="p10803205618199"></a><a name="p10803205618199"></a>ref</p>
-</td>
-<td class="cellrowborder" valign="top" width="20.18%" headers="mcps1.2.5.1.2 "><p id="p18803205613196"><a name="p18803205613196"></a><a name="p18803205613196"></a>Recommended initial value of the parameter</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.47%" headers="mcps1.2.5.1.3 "><p id="p580345612191"><a name="p580345612191"></a><a name="p580345612191"></a>Integer or character string</p>
-</td>
-<td class="cellrowborder" valign="top" width="47.370000000000005%" headers="mcps1.2.5.1.4 "><p id="p10803165631912"><a name="p10803165631912"></a><a name="p10803165631912"></a>The value is user-defined and must be within the valid range of this parameter.</p>
-</td>
-</tr>
 </tbody>
 </table>
 
 **Table  3**  Description of configuration items of a YAML file on the client
 
 <a name="table114320101924"></a>
+
 <table><thead align="left"><tr id="row84321410123"><th class="cellrowborder" valign="top" width="16.84%" id="mcps1.2.5.1.1"><p id="p7432201016216"><a name="p7432201016216"></a><a name="p7432201016216"></a><strong id="b85212388194"><a name="b85212388194"></a><a name="b85212388194"></a>Name</strong> </p>
 </th>
 <th class="cellrowborder" valign="top" width="19.97%" id="mcps1.2.5.1.2"><p id="p54328101323"><a name="p54328101323"></a><a name="p54328101323"></a><strong id="b94321810524"><a name="b94321810524"></a><a name="b94321810524"></a>Description</strong></p>
@@ -817,6 +872,15 @@ Use the specified project file to search the dynamic space for parameters and fi
 <td class="cellrowborder" valign="top" width="47.47%" headers="mcps1.2.5.1.4 "><p id="p143215103213"><a name="p143215103213"></a><a name="p143215103213"></a>-</p>
 </td>
 </tr>
+<tr id="row104321010525"><td class="cellrowborder" valign="top" width="16.84%" headers="mcps1.2.5.1.1 "><p id="p17432141014217"><a name="p17432141014217"></a><a name="p17432141014217"></a>engine</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.97%" headers="mcps1.2.5.1.2 "><p id="p1443261017218"><a name="p1443261017218"></a><a name="p1443261017218"></a>Tuning algorithm.</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.72%" headers="mcps1.2.5.1.3 "><p id="p2432010828"><a name="p2432010828"></a><a name="p2432010828"></a>Character string</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.47%" headers="mcps1.2.5.1.4 "><p id="p143215103213"><a name="p143215103213"></a><a name="p143215103213"></a>"random", "forest", "gbrt", "bayes", "extraTrees"</p>
+</td>
+</tr>
 <tr id="row16432310326"><td class="cellrowborder" valign="top" width="16.84%" headers="mcps1.2.5.1.1 "><p id="p17432191018213"><a name="p17432191018213"></a><a name="p17432191018213"></a>iterations</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.97%" headers="mcps1.2.5.1.2 "><p id="p243217101521"><a name="p243217101521"></a><a name="p243217101521"></a>Number of optimization iterations.</p>
@@ -824,6 +888,51 @@ Use the specified project file to search the dynamic space for parameters and fi
 <td class="cellrowborder" valign="top" width="15.72%" headers="mcps1.2.5.1.3 "><p id="p543211018210"><a name="p543211018210"></a><a name="p543211018210"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.47%" headers="mcps1.2.5.1.4 "><p id="p1343231017218"><a name="p1343231017218"></a><a name="p1343231017218"></a>≥ 10</p>
+</td>
+</tr>
+<tr id="row16432310326"><td class="cellrowborder" valign="top" width="16.84%" headers="mcps1.2.5.1.1 "><p id="p17432191018213"><a name="p17432191018213"></a><a name="p17432191018213"></a>random_starts</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.97%" headers="mcps1.2.5.1.2 "><p id="p243217101521"><a name="p243217101521"></a><a name="p243217101521"></a>Number of random iterations.</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.72%" headers="mcps1.2.5.1.3 "><p id="p543211018210"><a name="p543211018210"></a><a name="p543211018210"></a>Integer</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.47%" headers="mcps1.2.5.1.4 "><p id="p1343231017218"><a name="p1343231017218"></a><a name="p1343231017218"></a>< iterations</p>
+</td>
+</tr>
+<tr id="row16432310326"><td class="cellrowborder" valign="top" width="16.84%" headers="mcps1.2.5.1.1 "><p id="p17432191018213"><a name="p17432191018213"></a><a name="p17432191018213"></a>feature_filter_engine</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.97%" headers="mcps1.2.5.1.2 "><p id="p243217101521"><a name="p243217101521"></a><a name="p243217101521"></a>Parameter search algorithm, which is used to select important parameters. This parameter is optional.</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.72%" headers="mcps1.2.5.1.3 "><p id="p543211018210"><a name="p543211018210"></a><a name="p543211018210"></a>Character string</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.47%" headers="mcps1.2.5.1.4 "><p id="p1343231017218"><a name="p1343231017218"></a><a name="p1343231017218"></a>"lhs"</p>
+</td>
+</tr>
+<tr id="row16432310326"><td class="cellrowborder" valign="top" width="16.84%" headers="mcps1.2.5.1.1 "><p id="p17432191018213"><a name="p17432191018213"></a><a name="p17432191018213"></a>feature_filter_cycle</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.97%" headers="mcps1.2.5.1.2 "><p id="p243217101521"><a name="p243217101521"></a><a name="p243217101521"></a>Parameter search cycles, which is used to select important parameters. This parameter is used together with feature_filter_engine.</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.72%" headers="mcps1.2.5.1.3 "><p id="p543211018210"><a name="p543211018210"></a><a name="p543211018210"></a>Integer</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.47%" headers="mcps1.2.5.1.4 "><p id="p1343231017218"><a name="p1343231017218"></a><a name="p1343231017218"></a>-</p>
+</td>
+</tr>
+<tr id="row16432310326"><td class="cellrowborder" valign="top" width="16.84%" headers="mcps1.2.5.1.1 "><p id="p17432191018213"><a name="p17432191018213"></a><a name="p17432191018213"></a>feature_filter_iters</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.97%" headers="mcps1.2.5.1.2 "><p id="p243217101521"><a name="p243217101521"></a><a name="p243217101521"></a>Number of iterations for each cycle of parameter search, which is used to select important parameters. This parameter is used together with feature_filter_engine.</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.72%" headers="mcps1.2.5.1.3 "><p id="p543211018210"><a name="p543211018210"></a><a name="p543211018210"></a>Integer</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.47%" headers="mcps1.2.5.1.4 "><p id="p1343231017218"><a name="p1343231017218"></a><a name="p1343231017218"></a>-</p>
+</td>
+</tr>
+<tr id="row16432310326"><td class="cellrowborder" valign="top" width="16.84%" headers="mcps1.2.5.1.1 "><p id="p17432191018213"><a name="p17432191018213"></a><a name="p17432191018213"></a>split_count</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.97%" headers="mcps1.2.5.1.2 "><p id="p243217101521"><a name="p243217101521"></a><a name="p243217101521"></a>Number of evenly selected parameters in the value range of tuning parameters, which is used to select important parameters. This parameter is used together with feature_filter_engine.</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.72%" headers="mcps1.2.5.1.3 "><p id="p543211018210"><a name="p543211018210"></a><a name="p543211018210"></a>Integer</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.47%" headers="mcps1.2.5.1.4 "><p id="p1343231017218"><a name="p1343231017218"></a><a name="p1343231017218"></a>-</p>
 </td>
 </tr>
 <tr id="row1543215101726"><td class="cellrowborder" valign="top" width="16.84%" headers="mcps1.2.5.1.1 "><p id="p2043215101522"><a name="p2043215101522"></a><a name="p2043215101522"></a>benchmark</p>
@@ -847,6 +956,8 @@ Use the specified project file to search the dynamic space for parameters and fi
 </tr>
 </tbody>
 </table>
+
+
 **Table  4**  Description of evaluations configuration item
 
 <table><thead align="left"><tr id="row96719161245"><th class="cellrowborder" valign="top" width="12.950000000000001%" id="mcps1.2.5.1.1"><p id="p49973411241"><a name="p49973411241"></a><a name="p49973411241"></a><strong id="b17506714192519"><a name="b17506714192519"></a><a name="b17506714192519"></a>Name</strong> </p>
@@ -912,86 +1023,36 @@ Use the specified project file to search the dynamic space for parameters and fi
 The following is an example of the YAML file configuration on a server:
 
 ```
-project: "example"
-maxiterations: 10
+project: "compress"
+maxiterations: 500
 startworkload: ""
 stopworkload: ""
 object :
   -
-    name : "vm.swappiness"
+    name : "compressLevel"
     info :
-        desc : "the vm.swappiness"
-        get : "sysctl -a | grep vm.swappiness"
-        set : "sysctl -w vm.swappiness=$value"
-        needrestart: "false"
+        desc : "The compresslevel parameter is an integer from 1 to 9 controlling the level of compression"
+        get : "cat /root/A-Tune/examples/tuning/compress/compress.py | grep 'compressLevel=' | awk -F '=' '{print $2}'"
+        set : "sed -i 's/compressLevel=\\s*[0-9]*/compressLevel=$value/g' /root/A-Tune/examples/tuning/compress/compress.py"
+        needrestart : "false"
         type : "continuous"
         scope :
-          - 0
-          - 10
-        ref : 1
-  -
-    name : "irqbalance"
-    info :
-        desc : "system irqbalance"
-        get : "systemctl status irqbalance"
-        set : "systemctl $value sysmonitor;systemctl $value irqbalance"
-        needrestart: "false"
-        type : "discrete"
-        options:
-          - "start"
-          - "stop"
-        dtype : "string"
-        ref : "start"
-  -
-    name : "net.tcp_min_tso_segs"
-    info :
-        desc : "the minimum tso number"
-        get : "cat /proc/sys/net/ipv4/tcp_min_tso_segs"
-        set : "echo $value > /proc/sys/net/ipv4/tcp_min_tso_segs"
-        needrestart: "false"
-        type : "continuous"
-        scope:
           - 1
-          - 16
-        ref : 2
+          - 9
+        dtype : "int"
   -
-    name : "prefetcher"
+    name : "compressMethod"
     info :
-        desc : ""
-        get : "cat /sys/class/misc/prefetch/policy"
-        set : "echo $value > /sys/class/misc/prefetch/policy"
-        needrestart: "false"
+        desc : "The compressMethod parameter is a string controlling the compression method"
+        get : "cat /root/A-Tune/examples/tuning/compress/compress.py | grep 'compressMethod=' | awk -F '=' '{print $2}' | sed 's/\"//g'"
+        set : "sed -i 's/compressMethod=\\s*[0-9,a-z,\"]*/compressMethod=\"$value\"/g' /root/A-Tune/examples/tuning/compress/compress.py"
+        needrestart : "false"
         type : "discrete"
-        options:
-          - "0"
-          - "15"
+        options :
+          - "bz2"
+          - "zlib"
+          - "gzip"
         dtype : "string"
-        ref : "15"
-  -
-    name : "kernel.sched_min_granularity_ns"
-    info :
-        desc : "Minimal preemption granularity for CPU-bound tasks"
-        get : "sysctl kernel.sched_min_granularity_ns"
-        set : "sysctl -w kernel.sched_min_granularity_ns=$value"
-        needrestart: "false"
-        type : "continuous"
-        scope:
-          - 5000000
-          - 50000000
-        ref : 10000000
-  -
-    name : "kernel.sched_latency_ns"
-    info :
-        desc : ""
-        get : "sysctl kernel.sched_latency_ns"
-        set : "sysctl -w kernel.sched_latency_ns=$value"
-        needrestart: "false"
-        type : "continuous"
-        scope:
-          - 10000000
-          - 100000000
-        ref : 16000000
-
 ```
 
   
@@ -999,17 +1060,25 @@ object :
 The following is an example of the YAML file configuration on a client:
 
 ```
-project: "example"
-iterations : 10
-benchmark : "sh /home/Benchmarks/mysql/tunning_mysql.sh"
+project: "compress"
+engine : "gbrt"
+iterations : 20
+random_starts : 10
+
+benchmark : "python3 /root/A-Tune/examples/tuning/compress/compress.py"
 evaluations :
   -
-    name: "tps"
+    name: "time"
     info:
-        get: "echo -e '$out' |grep 'transactions:' |awk '{print $3}' | cut -c 2-"
+        get: "echo '$out' | grep 'time' | awk '{print $3}'"
+        type: "positive"
+        weight: 20
+  -
+    name: "compress_ratio"
+    info:
+        get: "echo '$out' | grep 'compress_ratio' | awk '{print $3}'"
         type: "negative"
-        weight: 100
-        threshold: 100
+        weight: 80
 ```
 
   
@@ -1019,13 +1088,13 @@ evaluations :
 -   Perform tuning.
 
     ```
-    # atune-adm tuning example-client.yaml
+    # atune-adm tuning --project compress --detail compress_client.yaml
     ```
 
--   Restore the initial configuration before tuning. The example value is the project name in the YAML file.
+-   Restore the initial configuration before tuning. The compress is the project name in the YAML file.
 
     ```
-    # atune-adm tuning --restore --project example
+    # atune-adm tuning --restore --project compress
     ```
 
 
