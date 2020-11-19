@@ -66,7 +66,6 @@ The iSulad server daemon  **isulad**  can be configured with a configuration fil
           --hook-spec                       Default hook spec file applied to all containers
       -H, --host                            The socket name used to create gRPC server
           --image-layer-check               Check layer intergrity when needed
-          --image-opt-timeout               Max timeout(default 5m) for image operation
           --insecure-registry               Disable TLS verification for the given registry
           --insecure-skip-verify-enforce    Force to skip the insecure verify(default false)
           --log-driver                      Set daemon log driver, such as: file
@@ -258,15 +257,6 @@ The iSulad server daemon  **isulad**  can be configured with a configuration fil
     <pre class="screen" id="en-us_topic_0183088382_screen930516156473"><a name="en-us_topic_0183088382_screen930516156473"></a><a name="en-us_topic_0183088382_screen930516156473"></a>overlay2.override_kernel_check=true #Ignore the kernel version check.
     overlay2.size=${size} #Set the rootfs quota to ${<em id="en-us_topic_0183088382_i6643961440"><a name="en-us_topic_0183088382_i6643961440"></a><a name="en-us_topic_0183088382_i6643961440"></a>size</em>}.
     overlay2.basesize=${size} #It is equivalent to overlay2.size.</pre>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0183088382_row131175617481"><td class="cellrowborder" valign="top" width="14.673267326732672%" headers="mcps1.1.5.1.1 "><p id="en-us_topic_0183088382_p1011776154814"><a name="en-us_topic_0183088382_p1011776154814"></a><a name="en-us_topic_0183088382_p1011776154814"></a>--image-opt-timeout</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="32.85148514851485%" headers="mcps1.1.5.1.2 "><p id="en-us_topic_0183088382_p1011715614811"><a name="en-us_topic_0183088382_p1011715614811"></a><a name="en-us_topic_0183088382_p1011715614811"></a>"image-opt-timeout": "5m"</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="21.237623762376238%" headers="mcps1.1.5.1.3 "><p id="en-us_topic_0183088382_p191172614487"><a name="en-us_topic_0183088382_p191172614487"></a><a name="en-us_topic_0183088382_p191172614487"></a>Image operation timeout interval, which is <strong id="en-us_topic_0183088382_b48971850173111"><a name="en-us_topic_0183088382_b48971850173111"></a><a name="en-us_topic_0183088382_b48971850173111"></a>5m</strong> by default.</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="31.237623762376238%" headers="mcps1.1.5.1.4 "><p id="en-us_topic_0183088382_p1211716634811"><a name="en-us_topic_0183088382_p1211716634811"></a><a name="en-us_topic_0183088382_p1211716634811"></a>The value <strong id="en-us_topic_0183088382_b13502125973116"><a name="en-us_topic_0183088382_b13502125973116"></a><a name="en-us_topic_0183088382_b13502125973116"></a>-1</strong> indicates that the timeout interval is not limited.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0183088382_row9416750154814"><td class="cellrowborder" valign="top" width="14.673267326732672%" headers="mcps1.1.5.1.1 "><p id="en-us_topic_0183088382_p1141645012486"><a name="en-us_topic_0183088382_p1141645012486"></a><a name="en-us_topic_0183088382_p1141645012486"></a>--registry-mirrors</p>
@@ -474,7 +464,6 @@ The iSulad server daemon  **isulad**  can be configured with a configuration fil
             "rnd-dockerhub.huawei.com"
         ],
         "pod-sandbox-image": "",
-        "image-opt-timeout": "5m",
         "native.umask": "secure",
         "network-plugin": "",
         "cni-bin-dir": "",

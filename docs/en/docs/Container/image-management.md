@@ -245,7 +245,6 @@ $ cat /etc/isulad/daemon.json
         "rnd-dockerhub.huawei.com"
     ],
     "pod-sandbox-image": "",
-    "image-opt-timeout": "5m",
     "native.umask": "secure",
     "network-plugin": "",
     "cni-bin-dir": "",
