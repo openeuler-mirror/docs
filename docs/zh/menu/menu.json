@@ -94,38 +94,70 @@
       "path": "docs/Installation/installation",
       "children": [
         {
-          "label": "安装准备",
-          "path": "docs/Installation/安装准备",
+          "label": "安装在服务器",
+          "path": "docs/Installation/安装在服务器",
           "children": [
-            
+            {
+              "label": "安装准备",
+              "path": "docs/Installation/安装准备",
+              "children": []
+            },
+            {
+              "label": "安装方式介绍",
+              "path": "docs/Installation/安装方式介绍",
+              "children": []
+            },
+            {
+              "label": "安装指导",
+              "path": "docs/Installation/安装指导",
+              "children": []
+            },
+            {
+              "label": "使用kickstart自动化安装",
+              "path": "docs/Installation/使用kickstart自动化安装",
+              "children": []
+            },
+            {
+              "label": "安装UKUI",
+              "path": "docs/Installation/安装UKUI",
+              "children": []
+            },
+            {
+              "label": "FAQ",
+              "path": "docs/Installation/FAQ",
+              "children": []
+            }
           ]
         },
         {
-          "label": "安装方式介绍",
-          "path": "docs/Installation/安装方式介绍",
+          "label": "安装在树莓派",
+          "path": "docs/Installation/安装在树莓派",
           "children": [
-            
-          ]
-        },
-        {
-          "label": "安装指导",
-          "path": "docs/Installation/安装指导",
-          "children": [
-            
-          ]
-        },
-        {
-          "label": "使用kickstart自动化安装",
-          "path": "docs/Installation/使用kickstart自动化安装",
-          "children": [
-            
-          ]
-        },
-        {
-          "label": "FAQ",
-          "path": "docs/Installation/FAQ",
-          "children": [
-            
+            {
+              "label": "安装准备",
+              "path": "docs/Installation/安装准备-1",
+              "children": []
+            },
+            {
+              "label": "安装方式介绍",
+              "path": "docs/Installation/安装方式介绍-1",
+              "children": []
+            },
+            {
+              "label": "安装指导",
+              "path": "docs/Installation/安装指导-1",
+              "children": []
+            },
+            {
+              "label": "FAQ",
+              "path": "docs/Installation/FAQ-1",
+              "children": []
+            },
+            {
+              "label": "更多资源",
+              "path": "docs/Installation/更多资源",
+              "children": []
+            }
           ]
         }
       ]

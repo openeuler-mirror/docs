@@ -94,38 +94,70 @@
       "path": "docs/Installation/Installation",
       "children": [
         {
-          "label": "Installation Preparations",
-          "path": "docs/Installation/installation-preparations",
+          "label": "Installation on Servers",
+          "path": "docs/Installation/install-server",
           "children": [
-            
+            {
+              "label": "Installation Preparations",
+              "path": "docs/Installation/installation-preparations",
+              "children": []
+            },
+            {
+              "label": "Installation Mode",
+              "path": "docs/Installation/installation-mode",
+              "children": []
+            },
+            {
+              "label": "Installation Guideline",
+              "path": "docs/Installation/installation-guideline",
+              "children": []
+            },
+            {
+              "label": "Using Kickstart for Automatic Installation",
+              "path": "docs/Installation/using-kickstart-for-automatic-installation",
+              "children": []
+            },
+            {
+              "label": "Installation UKUI",
+              "path": "docs/Installation/install-UKUI",
+              "children": []
+            },
+            {
+              "label": "FAQs",
+              "path": "docs/Installation/faqs",
+              "children": []
+            }
           ]
         },
         {
-          "label": "Installation Mode",
-          "path": "docs/Installation/installation-mode",
+          "label": "Installation on Raspberry Pi",
+          "path": "docs/Installation/install-pi",
           "children": [
-            
-          ]
-        },
-        {
-          "label": "Installation Guideline",
-          "path": "docs/Installation/installation-guideline",
-          "children": [
-            
-          ]
-        },
-        {
-          "label": "Using Kickstart for Automatic Installation",
-          "path": "docs/Installation/using-kickstart-for-automatic-installation",
-          "children": [
-            
-          ]
-        },
-        {
-          "label": "FAQs",
-          "path": "docs/Installation/faqs",
-          "children": [
-            
+            {
+              "label": "Installation Preparations",
+              "path": "docs/Installation/Installation-Preparations1",
+              "children": []
+            },
+            {
+              "label": "Installation Mode",
+              "path": "docs/Installation/Installation-Modes1",
+              "children": []
+            },
+            {
+              "label": "Installation Guideline",
+              "path": "docs/Installation/Installation-Guide1",
+              "children": []
+            },
+            {
+              "label": "FAQs",
+              "path": "docs/Installation/FAQ1",
+              "children": []
+            },
+            {
+              "label": "More Resources",
+              "path": "docs/Installation/More-Resources",
+              "children": []
+            }
           ]
         }
       ]
