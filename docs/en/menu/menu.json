@@ -414,6 +414,13 @@
           ]
         },
         {
+          "label": "Tool Guide",
+          "path": "docs/Virtualization/tool-guide",
+          "children": [
+            
+          ]
+        },
+        {
           "label": "Appendix",
           "path": "docs/Virtualization/appendix",
           "children": [
