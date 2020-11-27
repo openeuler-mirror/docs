@@ -8,6 +8,7 @@
     - [使用默认配置启动SNTP服务失败](#使用默认配置启动sntp服务失败)
     - [安装时出现软件包冲突、文件冲突或缺少软件包导致安装失败](#安装时出现软件包冲突文件冲突或缺少软件包导致安装失败)
     - [通过dnf update 默认方式升级openssh软件包时无法安装openssh相关包](#通过dnf-update-默认方式升级openssh软件包时无法安装openssh相关包)
+    - [libiscsi降级失败](#libiscsi降级失败)
 
 <!-- /TOC -->
 
@@ -209,3 +210,34 @@ DNF的--nobest选项可用于覆盖/关闭默认的“best”行为，以使用�
  dnf update –y –nobest openssh
  
  ```
+
+## libiscsi降级失败
+
+### 问题现象
+
+libiscsi-1.19.2 版本及以上降级到 libiscsi-1.19.1 及以下版本时失败
+
+```
+Error: Transaction test error:
+file /usr/bin/iscsi-inq from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-ls from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-perf from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-readcapacity16 from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-swp from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-test-cu from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+```
+
+### 原因分析
+
+libiscsi-1.19.1 之前的版本把 iscsi-xxx 等二进制文件打包进了主包 libiscsi，而这些二进制文件引入了不合理的依赖 CUnit, 为了解决这种不合理的依赖，在 libiscsi-1.19.2 版本把这些二进制文件单独拆分出来一个子包 libiscsi-utils，主包弱依赖于子包，产品可以根据自己的需求在做镜像时是否集成该子包；不集成或卸载子包不会影响 libiscsi 主包的功能。
+
+如果系统中安装了 libiscsi-utils 子包，libiscsi-1.19.2 及以上版本降级到 libiscsi-1.19.1 及以下版本时，由于 libiscsi-1.19.1 及以下版本无法提供对应的 libiscsi-utils，因此 libiscsi-utils 不会降级，但 libiscsi-utils 依赖于降级前的 libiscsi 主包，导致依赖问题无法解决，最终导致降级失败。
+
+### 解决方案
+
+先卸载  libiscsi-utils 子包之后进行降级。
+
+```
+yum remove libiscsi-utils
+```
+
