@@ -7,6 +7,8 @@
     - [使用rpmbuild编译mariadb失败](#使用rpmbuild编译mariadb失败)
     - [使用默认配置启动SNTP服务失败](#使用默认配置启动sntp服务失败)
     - [安装时出现软件包冲突、文件冲突或缺少软件包导致安装失败](#安装时出现软件包冲突文件冲突或缺少软件包导致安装失败)
+    - [libiscsi降级失败](#libiscsi降级失败)
+    - [xfsprogs降级失败](#xfsprogs降级失败)
 
 <!-- /TOC -->
 
@@ -177,3 +179,63 @@ Error:
         ```
 
 3.  重新进行升级操作。
+
+
+## libiscsi降级失败
+
+### 问题现象
+
+libiscsi-1.19.2 版本及以上降级到 libiscsi-1.19.1 及以下版本时失败。
+
+```
+Error: Transaction test error:
+file /usr/bin/iscsi-inq from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-ls from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-perf from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-readcapacity16 from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-swp from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-test-cu from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+```
+
+### 原因分析
+
+libiscsi-1.19.1 之前的版本把 iscsi-xxx 等二进制文件打包进了主包 libiscsi，而这些二进制文件引入了不合理的依赖 CUnit, 为了解决这种不合理的依赖，在 libiscsi-1.19.2 版本把这些二进制文件单独拆分出来一个子包 libiscsi-utils，主包弱依赖于子包，产品可以根据自己的需求在做镜像时是否集成该子包；不集成或卸载子包不会影响 libiscsi 主包的功能。
+
+如果系统中安装了 libiscsi-utils 子包，libiscsi-1.19.4 及以上版本降级到 libiscsi-1.19.3 及以下版本时，由于 libiscsi-1.19.3 及以下版本无法提供对应的 libiscsi-utils，因此 libiscsi-utils 不会降级，但 libiscsi-utils 依赖于降级前的 libiscsi 主包，导致依赖问题无法解决，最终导致降级失败。
+
+### 解决方案
+
+执行以下命令，卸载 libiscsi-utils 子包，卸载成功后再进行降级操作。
+
+```
+yum remove libiscsi-utils
+```
+
+## xfsprogs降级失败
+
+### 问题现象
+
+xfsprogs-5.6.0-2 及以上版本降级到 xfsprogs-5.6.0-1 及以下版本时失败。
+
+```
+Error:
+Problem: problem with installed package xfsprogs-xfs_scrub-5.6.0-2.oe1.x86_64
+- package xfsprogs-xfs_scrub-5.6.0-2.oe1.x86_64 requires xfsprogs = 5.6.0-2.oe1, but none of the providers can be installed
+- cannot install both xfsprogs-5.6.0-1.oe1.x86_64 and xfsprogs-5.6.0-2.oe1.x86_64
+- cannot install both xfsprogs-5.6.0-2.oe1.x86_64 and xfsprogs-5.6.0-1.oe1.x86_64
+- conflicting requests
+```
+
+### 原因分析
+
+在 xfsprogs-5.6.0-2 版本中，为了减少 xfsprogs 主包的不合理依赖，同时将实验性质的命令从主包中分来，我们将 xfs_scrub* 命令拆分到单独的 xfsprogs-xfs_scrub 子包中。而 xfsprogs 主包弱依赖于 xfsprogs-xfs_scrub 子包，所以产品可以根据自己的需求在做镜像时是否集成该子包，或者是否卸载该子包。不集成或卸载该子包不会影响 xfsprogs 主包功能。
+
+如果系统中安装了 xfsprogs-xfs_scrub 子包，从 xfsprogs-5.6.0-2 及以上版本降级到 xfsprogs-5.6.0-1 及以下版本时，由于 xfsprogs-5.6.0-1 及以下版本无法提供对应的 xfsprogs-xfs_scrub，因此 xfsprogs-xfs_scrub 不会降级，但 xfsprogs-xfs_scrub 依赖于降级前的 xfsprogs 主包，导致依赖问题无法解决，最终导致降级失败。
+
+### 解决方案
+
+执行以下命令，卸载 xfsprogs-xfs_scrub 子包，卸载成功后再进行降级操作。
+
+```
+yum remove xfsprogs-xfs_scrub
+```
