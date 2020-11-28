@@ -216,7 +216,7 @@ DNF的--nobest选项可用于覆盖/关闭默认的“best”行为，以使用�
 
 ### 问题现象
 
-libiscsi-1.19.2 版本及以上降级到 libiscsi-1.19.1 及以下版本时失败
+libiscsi-1.19.2 版本及以上降级到 libiscsi-1.19.1 及以下版本时失败。
 
 ```
 Error: Transaction test error:
@@ -236,7 +236,7 @@ libiscsi-1.19.1 之前的版本把 iscsi-xxx 等二进制文件打包进了主�
 
 ### 解决方案
 
-先卸载  libiscsi-utils 子包之后进行降级。
+执行以下命令，卸载 libiscsi-utils 子包，卸载成功后再进行降级操作。
 
 ```
 yum remove libiscsi-utils
@@ -246,7 +246,7 @@ yum remove libiscsi-utils
 
 ### 问题现象
 
-xfsprogs-5.6.0-2 及以上版本降级到 xfsprogs-5.6.0-1 及以下版本时失败
+xfsprogs-5.6.0-2 及以上版本降级到 xfsprogs-5.6.0-1 及以下版本时失败。
 
 ```
 Error:
@@ -264,6 +264,8 @@ Problem: problem with installed package xfsprogs-xfs_scrub-5.6.0-2.oe1.x86_64
 如果系统中安装了 xfsprogs-xfs_scrub 子包，从 xfsprogs-5.6.0-2 及以上版本降级到 xfsprogs-5.6.0-1 及以下版本时，由于 xfsprogs-5.6.0-1 及以下版本无法提供对应的 xfsprogs-xfs_scrub，因此 xfsprogs-xfs_scrub 不会降级，但 xfsprogs-xfs_scrub 依赖于降级前的 xfsprogs 主包，导致依赖问题无法解决，最终导致降级失败。
 
 ### 解决方案
+
+执行以下命令，卸载 xfsprogs-xfs_scrub 子包，卸载成功后再进行降级操作。
 
 ```
 yum remove xfsprogs-xfs_scrub
