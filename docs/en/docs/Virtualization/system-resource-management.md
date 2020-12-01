@@ -203,6 +203,90 @@ Run the  **virsh vcpupin**  command to adjust the binding relationship between v
 
     The preceding commands bind vCPU  **0**  of VM  **openEulerVM**  to physical CPUs  **0**,  **2**, and  **3**. That is, vCPU  **0**  is scheduled only on the three physical CPUs. The modification of the binding relationship does not take effect immediately. Instead, the modification takes effect after the next startup of the VM and takes effect permanently. 
 
+### CPU Hot Add
+
+#### Overview
+
+This feature allows users to hot add CPUs to a running VM without affecting its normal running. When the internal service pressure of a VM keeps increasing, all CPUs will be overloaded. To improve the computing capability of the VM, you can use the CPU hot add function to increase the number of CPUs on the VM without stopping it.
+
+#### Constraints
+
+-   For processors using the AArch64 architecture, the specified VM chipset type \(machine\) needs to be virt-4.1 or a later version when a VM is created. For processors using the x86\_64 architecture, the specified VM chipset type \(machine\) needs to be pc-i440fx-1.5 or a later version when a VM is created.
+-   When configuring Guest NUMA, you need to configure the vCPUs that belong to the same socket in the same vNode. Otherwise, the VM may be soft locked up after the CPU is hot added, which may cause the VM panic.
+-   VMs do not support CPU hot add during migration, hibernation, wake-up, or snapshot.
+-   Whether the hot added CPU can automatically go online depends on the VM OS logic rather than the virtualization layer.
+-   CPU hot add is restricted by the maximum number of CPUs supported by the Hypervisor and GuestOS.
+-   When a VM is being started, stopped, or restarted, the hot added CPU may become invalid. However, the hot added CPU takes effect after the VM is restarted.
+-   During VM CPU hot add, if the number of added CPUs is not an integer multiple of the number of cores in the VM CPU topology configuration item, the CPU topology displayed in the VM may be disordered. You are advised to add CPUs whose number is an integer multiple of the number of cores each time.
+-   If the hot added CPU needs to take effect online and is still valid after the VM is restarted, the --config and --live options need to be transferred to the virsh setvcpus API to persist the hot added CPU.
+
+#### Procedure
+
+**VM XML Configuration**
+
+1. To use the CPU hot add function, configure the number of CPUs, the maximum number of CPUs supported by the VM, and the VM chipset type when creating the VM. (For the AArch64 architecture, the virt-4.1 or a later version is required. For the x86\_64 architecture, the pc-i440fx-1.5 or later version is required. The AArch64 VM is used as an example. The configuration template is as follows:
+
+    ```
+    <domain type='kvm'>
+        ...
+        <vcpu placement='static' current='m'>n</vcpu>
+        <os>
+            <type arch='aarch64' machine='virt-4.1'>hvm</type>
+        </os>
+        ...
+    <domain>
+    ```
+
+    >![](./public_sys-resources/icon-note.gif) **Note** 
+    >-   The value of placement must be static.
+    >-   m indicates the current number of CPUs on the VM, that is, the default number of CPUs after the VM is started. n indicates the maximum number of CPUs that can be hot added to a VM. The value cannot exceed the maximum CPU specifications supported by the Hypervisor or GuestOS. n is greater than or equal to m.
+
+    For example, if the current number of CPUs of a VM is 4 and the maximum number of hot added CPUs is 64, the XML configuration is as follows:
+
+    ```
+    <domain type='kvm'>
+    ……
+        <vcpu placement='static' current='4'>64</vcpu>
+        <os>
+            <type arch='aarch64' machine='virt-4.1'>hvm</type>
+        </os>
+    ……
+    ```
+
+
+**Hot Adding and Bringing CPUs Online**
+
+1.  If the hot added CPU needs to be automatically brought online, create the udev rules file /etc/udev/rules.d/99-hotplug-cpu.rules in the VM as user root and define the udev rules in the file. The following is an example:
+
+    ```
+    ### automatically online hot-plugged cpu
+    ACTION=="add", SUBSYSTEM=="cpu", ATTR{online}="1"
+    ```
+
+    >![](./public_sys-resources/icon-note.gif) **Note**  
+    >If you do not use the udev rules, you can use the root permission to manually bring the hot added CPU online by running the following command:
+    >```
+    >for i in `grep -l 0 /sys/devices/system/cpu/cpu*/online`
+    >do
+    >    echo 1 > $i
+    >done
+    >```
+
+2.  Use the virsh tool to hot add CPUs to the VM. For example, to set the number of CPUs after hot adding to 6 on the VM named openEulerVM and make the hot add take effect online, run the following command:
+
+    ```
+    virsh setvcpus openEulerVM 6 --live
+    ```
+
+    >![](./public_sys-resources/icon-note.gif) **Note**  
+    >The format for running the virsh setvcpus command to hot add a VM CPU is as follows:
+    >```
+    >virsh setvcpus <domain> <count> [--config] [--live]
+    >```
+    >-   domain: Parameter, which is mandatory. Specifies the name of a VM.
+    >-   count: Parameter, which is mandatory. Specifies the number of target CPUs, that is, the number of CPUs after hot adding.
+    >-   --config: Option, which is optional. This parameter is still valid when the VM is restarted.
+    >-   --live: Option, which is optional. The configuration takes effect online.
 
 ## Managing Virtual Memory
 
