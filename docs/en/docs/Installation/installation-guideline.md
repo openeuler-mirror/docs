@@ -56,10 +56,10 @@ Load the ISO image of openEuler from the CD/DVD-ROM drive of the server and rest
 
 ### Installation Wizard
 
-A boot menu is displayed after the system is booted using the boot medium. In addition to options for starting the installation program, some other options are available on the boot menu. During system installation, the  **Test this media & install openEuler 20.03 LTS**  mode is used by default. Press the arrow keys on the keyboard to change the selection, and press  **Enter**  when the desired option is highlighted.
+A boot menu is displayed after the system is booted using the boot medium. In addition to options for starting the installation program, some other options are available on the boot menu. During system installation, the  **Test this media & install openEuler 20.03 LTS SP1**  mode is used by default. Press the arrow keys on the keyboard to change the selection, and press  **Enter**  when the desired option is highlighted.
 
 >![](./public_sys-resources/icon-note.gif) **NOTE:**   
->-   If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media & install openEuler 20.03 LTS**  and enters the installation page.  
+>-   If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media & install openEuler 20.03 LTS SP1**  and enters the installation page.  
 >-   During PM installation, if you cannot use the arrow keys to select boot options and the system does not respond after you press  **Enter**, click  ![](./figures/en-us_image_0229420473.png)  on the BMC page and configure  **Key & Mouse Reset**.  
 
 **Figure  4**  Installation Wizard<a name="fig1601161484619"></a>  
@@ -67,19 +67,19 @@ A boot menu is displayed after the system is booted using the boot medium. In ad
 
 Installation wizard options are described as follows:
 
--   **Install openEuler 20.03 LTS**: Install openEuler on your server in GUI mode.
+-   **Install openEuler 20.03 LTS SP1**: Install openEuler on your server in GUI mode.
 
--   **Test this media & install openEuler 20.03 LTS**: Default option. Install openEuler on your server in GUI mode. The integrity of the installation medium is checked before the installation program is started.
+-   **Test this media & install openEuler 20.03 LTS SP1**: Default option. Install openEuler on your server in GUI mode. The integrity of the installation medium is checked before the installation program is started.
 
 -   **Troubleshooting**: Troubleshooting mode, which is used when the system cannot be installed properly. In troubleshooting mode, the following options are available:
-    -   **Install openEuler 20.03-LTS in basic graphics mode**: Basic graphics installation mode. In this mode, the video driver is not started before the system starts and runs.
+    -   **Install openEuler 20.03-LTS-SP1 in basic graphics mode**: Basic graphics installation mode. In this mode, the video driver is not started before the system starts and runs.
     -   **Rescue the openEuler system**: Rescue mode, which is used to restore the system. In rescue mode, the installation process is printed in the VNC or BMC, and the serial port is unavailable.
 
 On the installation wizard screen, press  **e**  to go to the parameter editing screen of the selected option, and press  **c**  to go to the command-line interface \(CLI\). 
 
 ### Installation in GUI Mode
 
-On the installation wizard page, select  **Test this media & install openEuler 20.03 LTS**  to enter the GUI installation mode.
+On the installation wizard page, select  **Test this media & install openEuler 20.03 LTS SP1**  to enter the GUI installation mode.
 
 Perform graphical installation operations using a keyboard.
 

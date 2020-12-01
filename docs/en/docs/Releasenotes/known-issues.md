@@ -8,7 +8,7 @@
 -   CVE-2015-9541: When Qt attempts to parse the abnormal SVG files which are constructed to launch exponential XML entity extension attacks, the memory may be insufficient. For details about the discussion, click  [https://codereview.qt-project.org/c/qt/qtbase/+/293909](https://codereview.qt-project.org/c/qt/qtbase/+/293909).
 -   Before compiling some open-source packages, you need to install basic software such as GDB, GCC, and make. Otherwise, the compilation fails due to lack of dependency.
 -   AArch64 and x86\_64 have different definitions of the character type. As a result, an error is reported during the self-check using Coreutils, Augeas, and Diffutils. You can add the  **--fsigned-char**  compilation option to solve the problem.
--   For 20.03 LTS, if you run the **rpm -Uvh XXX** command (XXX indicates the version, for example, mysql-8.0.21-1.oe1.aarch64.rpm) to upgrade mysql-8.0.17-3.oe1 to the latest version, the functions are unavailable after the upgrade. You can use either of the following methods to upgrade the version. The following uses the upgrade from mysql-8.0.17-3.oe1 to mysql-8.0.21-1.oe1 as an example:  
+-   For 20.03 LTS SP1, if you run the **rpm -Uvh XXX** command (XXX indicates the version, for example, mysql-8.0.21-1.oe1.aarch64.rpm) to upgrade mysql-8.0.17-3.oe1 to the latest version, the functions are unavailable after the upgrade. You can use either of the following methods to upgrade the version. The following uses the upgrade from mysql-8.0.17-3.oe1 to mysql-8.0.21-1.oe1 as an example:  
     -  Method 1: Run the following upgrade command:  
         ``` 
         # rpm -Uvh mysql-8.0.21-1.oe1.aarch64.rpm --noscripts 

@@ -25,7 +25,7 @@ The minimum hardware requirements for installing virtualization components on op
 
 #### Prerequisites
 
--   The yum source has been configured. For details, see  _openEuler 20.03 LTS Administrator Guide_.
+-   The yum source has been configured. For details, see  _openEuler 20.03 LTS SP1 Administrator Guide_.
 -   Only the administrator has permission to perform the installation.
 
 #### Procedure

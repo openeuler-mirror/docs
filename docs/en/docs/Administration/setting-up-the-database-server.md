@@ -1619,7 +1619,7 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
 
 #### Installing MySQL
 >![](./public_sys-resources/icon-note.gif) **NOTE:**   
-> For 20.03 LTS, if you run the **rpm -Uvh XXX** command (XXX indicates the version, for example, mysql-8.0.21-1.oe1.aarch64.rpm) to upgrade mysql-8.0.17-3.oe1 to the latest version, the functions are unavailable after the upgrade. You can use either of the following methods to upgrade the version. The following uses the upgrade from mysql-8.0.17-3.oe1 to mysql-8.0.21-1.oe1 as an example:   
+> For 20.03 LTS SP1, if you run the **rpm -Uvh XXX** command (XXX indicates the version, for example, mysql-8.0.21-1.oe1.aarch64.rpm) to upgrade mysql-8.0.17-3.oe1 to the latest version, the functions are unavailable after the upgrade. You can use either of the following methods to upgrade the version. The following uses the upgrade from mysql-8.0.17-3.oe1 to mysql-8.0.21-1.oe1 as an example:   
 >  
 >Method 1: Run the following upgrade command:   
    ``` 
