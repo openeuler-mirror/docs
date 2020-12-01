@@ -2,7 +2,7 @@
 
 ## Release Package<a name="section19865103114280"></a>
 
-The following table lists the [openEuler release files](http://repo.openeuler.org/openEuler-20.03-LTS/), including the ISO release package, container image, VM image, and repo source that is used online.
+The following table lists the [openEuler release files](http://repo.openeuler.org/openEuler-20.03-LTS-SP1/), including the ISO release package, container image, VM image, and repo source that is used online.
 
 **Table 1**  openEuler release files<a name="table001"></a>
 
@@ -15,14 +15,14 @@ The following table lists the [openEuler release files](http://repo.openeuler.or
 </tr>
 </thead>
 <tr>
-	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/ISO/">ISO</a></td>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS-SP1/ISO/">ISO</a></td>
 	<td id="table001row001">ISO release package</td>
 	<td>The directory differentiates the ISO release packages for the AArch64, x86, and source, respectively. The details are as follows:
 		<ul>
-			<li><strong>openEuler-20.03-LTS-aarch64-dvd.iso</strong> and <strong>openEuler-20.03-LTS-x86_64-dvd.iso</strong> are the openEuler basic installation software package ISO files for the AArch64 and x86 architectures, respectively. The ISO files contain basic components running on the openEuler OS and meet the basic requirements of developers.</li>
-			<li><strong>openEuler-20.03-LTS-everything-aarch64-dvd.iso</strong> and <strong>openEuler-20.03-LTS-everything-x86_64-dvd.iso</strong> are the openEuler full software package ISO files for the AArch64 and x86 architectures, respectively. In addition to all software in the openEuler basic installation software package, the ISO files also contain the software packages that have been verified in the openEuler community, which meet the advanced requirements of developers.</li>
-			<li><strong>openEuler-20.03-LTS-debuginfo-aarch64-dvd.iso</strong> and <strong>openEuler-20.03-LTS-debuginfo-x86_64-dvd.iso</strong> are the openEuler debugging software package ISO files for the AArch64 and x86 architectures, respectively. The ISO files contain the symbol table information required for debugging and are used for debugging software functions and performance.</li>
-			<li><strong>openEuler-20.03-LTS-source-dvd.iso</strong> is the ISO file that contains all source code software packages of the openEuler community, which is used offline by developers.</li>
+			<li><strong>openEuler-20.03-LTS-SP1-aarch64-dvd.iso</strong> and <strong>openEuler-20.03-LTS-SP1-x86_64-dvd.iso</strong> are the openEuler basic installation software package ISO files for the AArch64 and x86 architectures, respectively. The ISO files contain basic components running on the openEuler OS and meet the basic requirements of developers.</li>
+			<li><strong>openEuler-20.03-LTS-SP1-everything-aarch64-dvd.iso</strong> and <strong>openEuler-20.03-LTS-SP1-everything-x86_64-dvd.iso</strong> are the openEuler full software package ISO files for the AArch64 and x86 architectures, respectively. In addition to all software in the openEuler basic installation software package, the ISO files also contain the software packages that have been verified in the openEuler community, which meet the advanced requirements of developers.</li>
+			<li><strong>openEuler-20.03-LTS-SP1-debuginfo-aarch64-dvd.iso</strong> and <strong>openEuler-20.03-LTS-SP1-debuginfo-x86_64-dvd.iso</strong> are the openEuler debugging software package ISO files for the AArch64 and x86 architectures, respectively. The ISO files contain the symbol table information required for debugging and are used for debugging software functions and performance.</li>
+			<li><strong>openEuler-20.03-LTS-SP1-source-dvd.iso</strong> is the ISO file that contains all source code software packages of the openEuler community, which is used offline by developers.</li>
 		</ul>
 		<div><span class="notetitle">Note:</span>
 			<div class="notebody"><p>Each ISO release package has its own verification file, which is used to verify the integrity of the ISO release package.</p></div>
@@ -30,7 +30,7 @@ The following table lists the [openEuler release files](http://repo.openeuler.or
 	</td>
 </tr>
 <tr>
-	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/docker_img/">docker_img</a></td>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS-SP1/docker_img/">docker_img</a></td>
 	<td id="table001row002">Container image</td>
 	<td>The openEuler container image, which provides only the basic bash environment, is used as the basic container image. The directory differentiates the container images for the AArch64 and x86 architectures, respectively.
 		<div><span class="notetitle">Note:</span>
@@ -39,7 +39,7 @@ The following table lists the [openEuler release files](http://repo.openeuler.or
 	</td>
 </tr>
 <tr>
-	<td id="table001row003"><a href="http://repo.openeuler.org/openEuler-20.03-LTS/virtual_machine_img/">virtual_machine_img</a></td>
+	<td id="table001row003"><a href="http://repo.openeuler.org/openEuler-20.03-LTS-SP1/virtual_machine_img/">virtual_machine_img</a></td>
 	<td>VM image</td>
 	<td><p>The openEuler VM image provides only the basic running environment to shorten the VM deployment time. The directory differentiates the VM images for the AArch64 and x86 architectures, respectively.</p>
 		<div><span class="notetitle">说明：</span>
@@ -53,32 +53,32 @@ The following table lists the [openEuler release files](http://repo.openeuler.or
 	</td>
 </tr>
 <tr>
-	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/EPOL/">EPOL</a></td>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS-SP1/EPOL/">EPOL</a></td>
 	<td rowspan="7" id="table001row004">Repo source</td>
 	<td>The repo sources of the openEuler third-party software package are mainly contributed by third parties and communities, and are maintained by the providers. The directory differentiates the repo sources for the AArch64 and x86 architectures, respectively.</td>
 </tr>
 <tr>
-	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/OS/">OS</a></td>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/">OS</a></td>
 	<td>The repo source of the openEuler basic installation software package provides the offline version upgrade function. The content of the software package is the same as that of the basic installation software package ISO in the ISO release package. The directory differentiates the repo sources for the AArch64 and x86 architectures, respectively.</td>
 </tr>
 <tr>
-	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/debuginfo/">debuginfo</a></td>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS-SP1/debuginfo/">debuginfo</a></td>
 	<td>The repo source of the openEuler debugging software package provides the online download function. The content of the software package is the same as that of the debugging software package ISO in the ISO release package. The directory differentiates the repo sources for the AArch64 and x86 architectures, respectively.</td>
 </tr>
 <tr>
-	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/everything/">everything</a></td>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS-SP1/everything/">everything</a></td>
 	<td>The repo source of the openEuler full software package provides the online download and version upgrade functions. The content of the software package is the same as that of the full software package ISO in the ISO release package. The directory differentiates the repo sources for the AArch64 and x86 architectures, respectively.</td>
 </tr>
 <tr>
-	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/extras/">extras</a></td>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS-SP1/extras/">extras</a></td>
 	<td>The repo source of the openEuler extended software package is used to release new software packages with added features. The directory differentiates the repo sources for the AArch64 and x86 architectures, respectively.</td>
 </tr>
 <tr>
-	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/source/">source</a></td>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS-SP1/source/">source</a></td>
 	<td>The repo source of all source code software packages in the openEuler community, which is used online by developers.</td>
 </tr>
 <tr>
-	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS/update/">update</a></td>
+	<td><a href="http://repo.openeuler.org/openEuler-20.03-LTS-SP1/update/">update</a></td>
 	<td>The repo source of the openEuler upgrade software package, which is used to fix bugs and common vulnerabilities and exposures (CVE) in released versions and to update and release software with enhancements. It provides online download and software upgrade functions. The directory differentiates the repo sources for the AArch64 and x86 architectures, respectively.</td>
 </tr>
 </table>
@@ -87,7 +87,7 @@ The following table lists the [openEuler release files](http://repo.openeuler.or
 
 ## Minimal Hardware Specifications<a name="en-us_topic_0182825778_section1542202114014"></a>
 
-[Table 5](#en-us_topic_0182825778_tff48b99c9bf24b84bb602c53229e2541)  lists the minimum hardware specifications for installing openEuler 20.03 LTS.
+[Table 5](#en-us_topic_0182825778_tff48b99c9bf24b84bb602c53229e2541)  lists the minimum hardware specifications for installing openEuler 20.03 LTS SP1.
 
 **Table  5**  Minimal hardware specifications
 
