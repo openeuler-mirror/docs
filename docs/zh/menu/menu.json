@@ -414,6 +414,13 @@
           ]
         },
         {
+          "label": "工具使用指南",
+          "path": "docs/Virtualization/工具使用指南",
+          "children": [
+            
+          ]
+        },
+        {
           "label": "附录",
           "path": "docs/Virtualization/附录",
           "children": [
