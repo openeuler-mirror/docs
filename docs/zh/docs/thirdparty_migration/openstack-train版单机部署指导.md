@@ -334,7 +334,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
     # vi /etc/sudoers //在sudoers文件的“root ALL=(ALL) ALL”下面，加入如下内容:stack  ALL=(ALL) NOPASSWD: ALL
     # chmod –w /etc/dudoers
     ```
-
+    ![](./figures/createuser.png)
 
 ## 下载 devstack 脚本
 
@@ -486,17 +486,13 @@ $ git clone https://opendev.org/OpenStack/devstack
 
 安装过程大约需要十几分钟，安装成功页面如下图所示。
 
-* x86 架构
-    ![](./figures/installx86.png)
-
-* ARM 架构
-    ![](./figures/installarm.png)
+![](./figures/stack.png)
 
 # 软件运行
 
 devstack.sh 若执行成功，会在当前主机内，根据 local.conf 文件中的配置信息，安装指定的子模块，若 local.conf 中没有指定模块，则会安装所有子模块。
 
-运行 openstack 命令前，需要先执行以下命令。
+运行 openstack 命令前，需要先执行以下命令，以管理员用户登录客户端。
 
 ```
 source openrc admin admin
@@ -511,7 +507,7 @@ source openrc admin admin
     - 执行以下命令，可以获取网略资源列表
 	    ```
         # openstack network list
-        ```	
+        ```
     - 执行以下命令，可以获取虚拟机配置类型列表
 	    ```
         # openstack flavor list
@@ -547,7 +543,7 @@ source openrc admin admin
 
     # ./clean.sh
     ```
- 
+
 2.  删除 devstack。
 
     ```
@@ -600,7 +596,11 @@ mariadb 服务启动失败。
 gssapi 插件未禁用，devstack 的搭建需要以非root用户执行，而 gassapi 插件在非 root 用户下执行命令 `/usr/bin/mysql\_install\_db –user=mysql –skip-test-db` 会失败，导致 mariadb 服务启动失败。
 
 **解决方法**
-卸载 mariadb-gssapi-server 包。
+执行如下命令，卸载 mariadb-gssapi-server 包。
+
+```
+# yum remove mariadb-gssapi-server –y
+```
 
 ![](figures/zh-cn_image_0296837436.png)
 
@@ -608,14 +608,16 @@ gssapi 插件未禁用，devstack 的搭建需要以非root用户执行，而 ga
 ## neutron 服务启动失败
 
 **问题现象**
-neutron 服务启动失败。
+neutron 服务启动过程中，有概率启动失败。
 
 **问题原因**
-网络问题。
+网络波动，导致network节点搭建失败。
 
 **解决方法**
-先执行`./unstack.sh` 命令卸载脚本，再执行 `stack.sh` 命令重新执行。
-
+执行如下命令，重新执行脚本。
+```
+# ./unstack.sh && FORCE=yes ./stack.sh
+```
 
 ## pip引导失败
 **问题现象**
