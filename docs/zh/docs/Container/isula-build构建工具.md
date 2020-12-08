@@ -19,6 +19,8 @@
         * [rm: 删除本地持久化镜像](#rm-删除本地持久化镜像)
         * [save: 导出层叠镜像](#save-导出层叠镜像)
         * [tag: 给本地持久化镜像打标签](#tag-给本地持久化镜像打标签)
+        * [pull: 拉取镜像到本地](#pull-拉取镜像到本地)
+        * [push: 将本地镜像推送到远程仓库](#push-将本地镜像推送到远程仓库)
     * [info: 查看运行环境与系统信息](#info-查看运行环境与系统信息)
     * [login: 登录远端镜像仓库](#login-登录远端镜像仓库)
     * [logout: 退出远端镜像仓库](#logout-退出远端镜像仓库)
@@ -73,7 +75,7 @@ isula-build采用服务端/客户端模式，其中，isula-build为客户端，
 
 **方法二：使用rpm包安装**
 
-1. 从openEuler yum源中获取isula-build对应安装包isula-build-*.rpm。例如isula-build-0.9.3-1.oe1.x86_64.rpm。
+1. 从openEuler yum源中获取isula-build对应安装包isula-build-*.rpm。例如isula-build-0.9.3-4.oe1.x86_64.rpm。
 
 2. 将获取的rpm软件包上传至目标服务器的任一目录，例如 /home/。
 
@@ -102,7 +104,8 @@ isula-build采用服务端/客户端模式，其中，isula-build为客户端，
 | loglevel  | 可选     | 设置日志级别                      | debug<br/>info<br/>warn<br/>error               |
 | run_root  | 必选     | 设置运行时数据根目录              | 运行时数据根目录路径，例如/var/run/isula-build/ |
 | data_root | 必选     | 设置本地持久化目录                | 本地持久化目录路径，例如/var/lib/isula-build/   |
-| runtime   | 可选     | 设置runtime种类，目前仅支持runc。 | runc                                            |
+| runtime   | 可选     | 设置runtime种类，目前仅支持runc   | runc                                            |
+| group     | 可选     | 设置本地套接字isula_build.sock文件属组使得加入该组的非特权用户可以操作isula-build | isula |
 
 
 - /etc/isula-build/storage.toml: 本地持久化存储的配置文件，包含所使用的存储驱动的配置。
@@ -130,6 +133,7 @@ isula-build采用服务端/客户端模式，其中，isula-build为客户端，
 > - isula-build 支持最大 1MiB 的上述配置文件。
 > - isula-build 不支持将持久化工作目录 dataroot 配置在内存盘上，比如 tmpfs。
 > - isula-build 目前仅支持使用overlay2为底层 graphdriver。
+> - 在设置--group参数前，需保证本地OS已经创建了对应的用户组，且非特权用户已经加入该组。重启isula-builder之后即可使该非特权用户使用isula-build功能。同时，为了保持权限一致性，isula-build的配置文件目录/etc/isula-build的数组也会被设置为--group指定的组。
 
 
 
@@ -178,6 +182,7 @@ sudo systemctl daemon-reload
 - --runroot: 运行时路径，默认为”/var/run/isula-build/“。
 - --storage-driver：底层存储驱动类型。
 - --storage-opt: 底层存储驱动配置。
+- --group: 设置本地套接字isula_build.sock文件属组使得加入该组的非特权用户可以操作isula-build，默认为“isula”。
 
 >![](./public_sys-resources/icon-note.gif) **说明：** 
 >当命令行启动参数中传递了与配置文件相同的配置选项时，优先使用命令行参数启动。
@@ -219,8 +224,10 @@ isula-build 客户端提供了一系列命令用于构建和管理容器镜像�
   - import，导入容器基础镜像。
   - load，导入层叠镜像。
   - rm，删除本地容器镜像。
-  - save, 导出层叠镜像至本地磁盘。
+  - save，导出层叠镜像至本地磁盘。
   - tag，给本地容器镜像打tag。
+  - pull，拉取镜像到本地。
+  - push，推送本地镜像到远程仓库。
 - info，查看isula-build的运行环境和系统信息。
 - login，登录远端容器镜像仓库。
 - logout，退出远端容器镜像仓库。
@@ -407,6 +414,7 @@ $ sudo isula-build ctr-img build --cap-add CAP_SYS_ADMIN --cap-add CAP_SYS_PTRAC
 > - isula-build 的stage name最长可为64个字符。
 > - isula-build 暂不支持对单次Dockerfile的构建进行资源限制。如有资源限制需求，可通过对 isula-builder 服务端配置资源限额的方式进行限制。
 > - isula-build 目前不支持Dockerfile里的ADD指令提供的数据来源是远端url。
+> - isula-build 使用docker-archive类型导出的本地tar包未经压缩。如有需求，用户可以手动进行压缩。
 
 
 
@@ -560,6 +568,27 @@ Storing signatures
 Save success with image: 21c3e96ac411
 ```
 
+以下示例导出多个镜像到同一个tarball：
+```sh
+$ sudo isula-build ctr-img save busybox:latest nginx:latest -o all.tar
+Getting image source signatures
+Copying blob sha256:eb78099fbf7fdc70c65f286f4edc6659fcda510b3d1cfe1caa6452cc671427bf
+Copying blob sha256:29f11c413898c5aad8ed89ad5446e89e439e8cfa217cbb404ef2dbd6e1e8d6a5
+Copying blob sha256:af5bd3938f60ece203cd76358d8bde91968e56491daf3030f6415f103de26820
+Copying config sha256:b8efb18f159bd948486f18bd8940b56fd2298b438229f5bd2bcf4cedcf037448
+Writing manifest to image destination
+Storing signaturesGetting image source signatures
+Copying blob sha256:e2d6930974a28887b15367769d9666116027c411b7e6c4025f7c850df1e45038
+Copying config sha256:a33de3c85292c9e65681c2e19b8298d12087749b71a504a23c576090891eedd6
+Writing manifest to image destination
+Storing signatures
+Save success with image: [busybox:latest nginx:latest]
+```
+
+>![](./public_sys-resources/icon-note.gif) **说明：** 
+>
+>- save 导出的镜像默认格式为未压缩的tar格式，如有需求，用户可以再save之后手动压缩。
+>- 在导出镜像时，需要写明镜像的完整性，格式为IMAGE_NAME:IMAGE_TAG。
 
 
 ### tag: 给本地持久化镜像打标签
@@ -589,6 +618,49 @@ alpine                                           v1           a24bb4013296      
 ----------------------------------------------  -----------  -----------------  --------------------------  ------------
 ```
 
+### pull: 拉取镜像到本地
+
+可通过pull命令拉取远程镜像仓库中的镜像到本地。命令原型如下：
+
+```
+isula-build ctr-img pull REPOSITORY[:TAG]
+```
+
+使用示例：
+
+```sh
+$ sudo isula-build ctr-img pull example-registry/library/alpine:latest
+Getting image source signatures
+Copying blob sha256:8f52abd3da461b2c0c11fda7a1b53413f1a92320eb96525ddf92c0b5cde781ad
+Copying config sha256:e4db68de4ff27c2adfea0c54bbb73a61a42f5b667c326de4d7d5b19ab71c6a3b
+Writing manifest to image destination
+Storing signatures
+Pull success with image: example-registry/library/alpine:latest
+```
+
+### push: 将本地镜像推送到远程仓库
+
+可通过push命令将本地镜像推送到远程仓库。命令原型如下：
+
+```
+isula-build ctr-img push REPOSITORY[:TAG]
+```
+
+使用示例：
+
+```sh
+$ sudo isula-build ctr-img push example-registry/library/mybusybox:latest
+Getting image source signatures
+Copying blob sha256:d2421964bad195c959ba147ad21626ccddc73a4f2638664ad1c07bd9df48a675
+Copying config sha256:f0b02e9d092d905d0d87a8455a1ae3e9bb47b4aa3dc125125ca5cd10d6441c9f
+Writing manifest to image destination
+Storing signatures
+Push success with image: example-registry/library/mybusybox:latest
+```
+
+>![](./public_sys-resources/icon-note.gif) **说明：** 
+>
+>- 推送镜像时，需要先登录对应的镜像仓库。
 
 
 ## info: 查看运行环境与系统信息
@@ -601,12 +673,13 @@ alpine                                           v1           a24bb4013296      
 
 支持如下Flags：
 
-- -H, –human-readable 布尔值，以常用内存表示格式打印内存信息，使用1000次幂
+- -H, --human-readable 布尔值，以常用内存表示格式打印内存信息，使用1000次幂
+- -V, --verbose 布尔值，显示运行时内存占用信息
 
 使用示例：
 
 ```sh
-$ sudo isula-build info -H
+$ sudo isula-build info -HV
    General:  
      MemTotal:     7.63 GB  
      MemFree:      757 MB  
@@ -626,6 +699,13 @@ $ sudo isula-build info -H
      Insecure Registries:    
        localhost:5000    
        oepkgs.net
+   Runtime:
+	 MemSys:           68.4 MB
+     HeapSys:          63.3 MB
+     HeapAlloc:        7.41 MB
+     MemHeapInUse:     8.98 MB
+     MemHeapIdle:      54.4 MB
+     MemHeapReleased:  52.1 MB
 ```
 
 ## login: 登录远端镜像仓库
@@ -681,6 +761,7 @@ $ sudo isula-build info -H
    Removed authentications
 ```
 
+
 ## version: 版本查询
 
 可通过version命令查看当前版本信息：
@@ -688,17 +769,17 @@ $ sudo isula-build info -H
 ```sh
  $ sudo isula-build version
  Client:
-   Version:       0.9.2
+   Version:       0.9.4
    Go Version:    go1.13.3
-   Git Commit:    ccb2a13
-   Built:         Sat Aug 22 08:06:47 2020
+   Git Commit:    0038365c
+   Built:         Tue Nov 24 16:32:05 2020
    OS/Arch:       linux/amd64
  
  Server:
-   Version:       0.9.2
+   Version:       0.9.4
    Go Version:    go1.13.3
-   Git Commit:    ccb2a13
-   Built:         Sat Aug 22 08:06:47 2020
+   Git Commit:    0038365c
+   Built:         Tue Nov 24 16:32:05 2020
    OS/Arch:       linux/amd64
 ```
 
@@ -728,7 +809,7 @@ busybox                        2.0        2d414a5cad6d         2020-08-01 06:41:
 
 > ![](./public_sys-resources/icon-note.gif) **说明：** 
 > - 要求isula-build和iSulad在同一节点。
-> - 直接导出镜像到iSulad时，isula-build client端需要将构建成功的镜像暂存成 `/var/tmp/isula-build-tmp-%v.tar` 再导入至 iSulad，用户需要保证 /var/tmp/ 目录有足够磁盘空间；同时如果在导出过程中 isula-build client进程被KILL或Ctrl+C终止，需要依赖用户手动清理 `/var/tmp/isula-build-tmp-%v.tar` 文件。
+> - 直接导出镜像到iSulad时，isula-build client端需要将构建成功的镜像暂存成 `/var/lib/isula-build/tmp/[buildid]/isula-build-tmp-%v.tar` 再导入至 iSulad，用户需要保证 /var/lib/isula-build/tmp/ 目录有足够磁盘空间；同时如果在导出过程中 isula-build client进程被KILL或Ctrl+C终止，需要依赖用户手动清理 `/var/lib/isula-build/tmp/[buildid]/isula-build-tmp-%v.tar` 文件。
 
 ## 与Docker集成
 
@@ -808,22 +889,24 @@ isula-build两个组件进程之间通过unix socket套接字文件进行通信�
 
 ## 文件与权限
 
-- isula-build 所有的操作均需要使用 root 权限。
+- isula-build 所有的操作均需要使用 root 权限。如需使用非特权用户操作，则需要配置--group参数
 
 - isula-build 运行涉及文件权限如下表所示：
 
 | **文件路径**                                | **文件/文件夹权限** | **说明**                                                     |
 | ------------------------------------------- | ------------------- | ------------------------------------------------------------ |
-| /usr/bin/isula-build                        | 550                 | 命令行工具二进制文件。                                       |
+| /usr/bin/isula-build                        | 551                 | 命令行工具二进制文件。                                       |
 | /usr/bin/isula-builder                      | 550                 | 服务端isula-builder进程二进制文件。                          |
 | /usr/lib/systemd/system/isula-build.service | 640                 | systemd配置文件，用于管理isula-build服务。                   |
+| /etc/isula-build                            | 650                 | isula-builder 配置文件根目录                                 |
 | /etc/isula-build/configuration.toml         | 600                 | isula-builder 总配置文件，包含设置 isula-builder 日志级别、持久化目录和运行时目录、OCI runtime等。 |
 | /etc/isula-build/policy.json                | 600                 | 签名验证策略文件的语法文件。                                 |
 | /etc/isula-build/registries.toml            | 600                 | 针对各个镜像仓库的配置文件，含可用的镜像仓库列表、镜像仓库黑名单。 |
 | /etc/isula-build/storage.toml               | 600                 | 本地持久化存储的配置文件，包含所使用的存储驱动的配置。       |
+| /etc/isula-build/isula-build.pub            | 444                 | 非对称加密公钥文件                                           |
 | /var/run/isula_build.sock                   | 600                 | 服务端isula-builder的本地套接字。                            |
 | /var/lib/isula-build                        | 700                 | 本地持久化目录。                                             |
 | /var/run/isula-build                        | 700                 | 本地运行时目录。                                             |
-| /var/tmp/isula-build-tmp-*.tar              | 600                 | 镜像导出至iSulad时的本地暂存目录。                           |
+| /var/lib/isula-build/tmp/[buildid]/isula-build-tmp-*.tar              | 600                 | 镜像导出至iSulad时的本地暂存目录。                           |
 
    
