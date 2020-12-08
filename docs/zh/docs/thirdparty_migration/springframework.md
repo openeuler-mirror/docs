@@ -370,7 +370,9 @@ MvcNamespaceTests.java 中的 assert 未通过测试，失败提示信息如下�
 
 **解决方法**
 
-handler 的 date 成员的时间强制置 0，与 LocalDate 转换的默认 Time 保持一致。
+修改工程目录下的文`spring-webmvc/src/test/java/org/springframework/web/servlet/config/MvcNamespaceTests.java`，
+
+将handler的date成员时间强制置0，与LocalDate转换的默认Time保持一致。
 
 ![](figures/zh-cn_image_0296838204.png)
 

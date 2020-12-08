@@ -115,6 +115,8 @@ Kubernetes 集群中存在两种节点，Master 节点和 Worker 节点。Master
 
 ## 安装 docker 配置 yum 源
 
+若官方发布的镜像中已配置好 yum 源，不需要另外配置。如系统中没有配置任何 openEuler yum 源，则需要新增 repo 文件
+
 1. 分别在 Master 和 Worker 节点上执行如下命令，配置 yum 源，配置信息如下图所示。
 
     ```
@@ -167,7 +169,7 @@ EOF
 
     ```
 
-2. 配置完成后，执行如下命令。
+2. 配置完成后，执行如下命令，清除缓存中的软件包及旧的 headers，重新建立缓存。
     ```
     $ yum clean all
     $ yum makecache
@@ -177,22 +179,32 @@ EOF
 ## 关闭交换分区
 
 在安装 K8S 集群时，Linux 的 Swap 内存交换机制需要关闭，否则会因为内存交换影响系统的性能和稳定性。 
-1. 分别在 Master 和 Worker 节点上执行如下命令，关闭交换分区，修改后需重启系统。
+
+1. 分别在 Master 和 Worker 节点上执行如下命令，关闭交换分区。
 
     ```
     $ swapoff –a
     $ cp -p /etc/fstab /etc/fstab.bak$(date '+%Y%m%d%H%M%S')
+    $ sed -i "s/\/dev\/mapper\/openeuler-swap/\#\/dev\/mapper\/openeuler-swap/g" /etc/fstab
     ```
-2. 编辑 `/etc/fstab` 文件，注释掉 swap 一行内容。
 
-3. 重启系统
+2. 执行如下命令查看是否修改成功。
+    ```
+    $ cat /etc/fstab
+    ```
+    ![](figures/zh-cn_image_0296836364.png)	
 
+3. 执行如下命令重启系统。
+
+    ```
+    $ reboot
+    ```
 
 # 软件安装
 
 ## 安装k8s组件
 
-执行如下命令，安装 k8s 组件。
+分别在 Master 和 Worker 节点上执行如下命令，安装 k8s 组件。
 
 ```
 $ yum install -y kubelet-1.15.10 kubeadm-1.15.10 kubectl-1.15.10 kubernetes-cni-0.7.5
@@ -200,7 +212,7 @@ $ yum install -y kubelet-1.15.10 kubeadm-1.15.10 kubectl-1.15.10 kubernetes-cni-
 
 ## 配置开机启动项
 
-1. 执行如下命令，配置开机启动 kubelet。
+1. 分别在 Master 和 Worker 节点上执行如下命令，配置开机启动 kubelet。
 
     ```
     $ systemctl enable kubelet
@@ -215,7 +227,7 @@ $ yum install -y kubelet-1.15.10 kubeadm-1.15.10 kubectl-1.15.10 kubernetes-cni-
     $ vm.swappiness=0
     ```
 
-3. 执行如下命令，使修改生效。
+3. 分别在 Master 和 Worker 节点上执行如下命令，使修改生效。
 
     ```
     $ modprobe br_netfilter
@@ -406,6 +418,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，以下命令分别两
 
 # 软件卸载
 
+如果不需要使用 k8s 集群时，可以按本章节操作，删除 k8s 集群，以下命令需要分别在 Master 和 Worker 节点上执行。
 1. 执行如下命令，清空 k8s 集群设置
 
     ```
