@@ -1,6 +1,6 @@
 # Quick Start
 
-This document uses openEuler 20.03 LTS SP1 installed on the TaiShan 200 server as an example to describe how to quickly install and use openEuler OS. For details about the installation requirements and methods, see  [ Installation Guide](./../Installation/Installation.html).
+This document uses openEuler 20.03-LTS-SP1 installed on the TaiShan 200 server as an example to describe how to quickly install and use openEuler OS. For details about the installation requirements and methods, see  [ Installation Guide](./../Installation/Installation.html).
 
 <!-- TOC -->
 
@@ -111,7 +111,7 @@ The release packages of the AArch64 architecture support the UEFI mode, and the 
 
 3. Click the link provided after  **Download ISO**. The download list is displayed.
 
-4. Click **openEuler-20.03-LTS-SP1**. The openEuler 20.03 LTS SP1  version download list is displayed.
+4. Click **openEuler-20.03-LTS-SP1**. The openEuler 20.03-LTS-SP1  version download list is displayed.
 
 5. Click  **ISO**. The ISO download list is displayed.
    
@@ -308,7 +308,7 @@ After entering the GUI installation page, perform the following operations to in
 
 ## Viewing System Information
 
-After the system is installed and restarted, the system CLI login page is displayed. Enter the username and password set during the installation to log in to openEuler OS and view the following system information. For details about system management and configuration, see the  [openEuler 20.03 LTS SP1 Administrator Guide](./../Administration/administration.html).
+After the system is installed and restarted, the system CLI login page is displayed. Enter the username and password set during the installation to log in to openEuler OS and view the following system information. For details about system management and configuration, see the  [openEuler 20.03-LTS-SP1 Administrator Guide](./../Administration/administration.html).
 
 - Run the following command to view the system information:
   
@@ -321,10 +321,10 @@ After the system is installed and restarted, the system CLI login page is displa
   ```
   $ cat /etc/os-release
   NAME="openEuler"
-  VERSION="20.03"
+  VERSION="20.03 (LTS-SP1)"
   ID="openEuler"
   VERSION_ID="20.03"
-  PRETTY_NAME="openEuler 20.03"
+  PRETTY_NAME="openEuler 20.03 (LTS-SP1)"
   ANSI_COLOR="0;31"
   ```
 
