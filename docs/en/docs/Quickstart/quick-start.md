@@ -321,10 +321,10 @@ After the system is installed and restarted, the system CLI login page is displa
   ```
   $ cat /etc/os-release
   NAME="openEuler"
-  VERSION="20.03"
+  VERSION="20.03 (LTS-SP1)"
   ID="openEuler"
   VERSION_ID="20.03"
-  PRETTY_NAME="openEuler 20.03"
+  PRETTY_NAME="openEuler 20.03 (LTS-SP1)"
   ANSI_COLOR="0;31"
   ```
 

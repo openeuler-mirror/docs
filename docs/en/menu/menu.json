@@ -858,4 +858,31 @@
         }
       ]
     }
+    {
+      "label": "Third-Party Software Porting Guide",
+      "path": "docs/thirdparty_migration/thidrparty",
+      "children": [
+        {
+          "label": "Single-Node Deployment Guide for OpenStack-train",
+          "path": "docs/thirdparty_migration/openstack-train",
+          "children": [
+            
+          ]
+        },
+        {
+          "label": "Kubernetes Environment Setup Guide",
+          "path": "docs/thirdparty_migration/k8sinstall",
+          "children": [
+            
+          ]
+        },
+        {
+          "label": "springframework单机部署指导",
+          "path": "docs/thirdparty_migration/SpringFramework Single-Node System Deployment Guide",
+          "children": [
+            
+          ]
+        }
+      ]
+    }
 ]
