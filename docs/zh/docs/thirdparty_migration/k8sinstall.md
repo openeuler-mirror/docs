@@ -115,9 +115,7 @@ Kubernetes 集群中存在两种节点，Master 节点和 Worker 节点。Master
 
 ## 安装 docker 配置 yum 源
 
-若官方发布的镜像中已配置好 yum 源，不需要另外配置。如系统中没有配置任何 openEuler yum 源，则需要新增 repo 文件
-
-1. 分别在 Master 和 Worker 节点上执行如下命令，配置 yum 源，配置信息如下图所示。
+1. **可选** 官方发布的镜像中已配置好 yum 源，不需要另外配置。如系统中没有配置任何 openEuler yum 源，则需要按照如下操作新增 repo 文件，`baseurl`值以发布版本中的源地址为准。
 
     ```
     $ vim /etc/yum.repos.d/openEuler\_aarch64.repo
@@ -125,11 +123,15 @@ Kubernetes 集群中存在两种节点，Master 节点和 Worker 节点。Master
 
     ![](figures/zh-cn_image_0296836364.png)
 	
-2. 分别在 Master 和 Worker 节点上执行如下命令，安装 docker。
+2. 分别在 Master 和 Worker 节点上执行。
+清除缓存中的软件包及旧的headers，重新建立缓存。
 
     ```
     $ yum clean all
     $ yum makecache
+    ```
+安装docker并启动相关服务，输出Docker的状态。	
+    ```	
     $ yum install docker-engine
     $ systemctl daemon-reload
     $ systemctl status docker
@@ -148,6 +150,7 @@ Kubernetes 集群中存在两种节点，Master 节点和 Worker 节点。Master
 $ systemctl stop firewalld
 $ systemctl disable firewalld
 $ setenforce 0
+$ sed -i '/^SELINUX=/s/enforcing/disabled/' /etc/selinux/config
 ```
 
 ## 配置 kubernetes yum 源
@@ -159,7 +162,7 @@ $ setenforce 0
 
     [kubernetes]
     name=Kubernetes
-    baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-aarch64rything/aarch64/os
+    baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-aarch64
     enable=1
     gpgcheck=1
     repo_gpgcheck=1
@@ -289,7 +292,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，以下命令分别两
     ```
     $ systemctl daemon-reload
     $ systemctl restart kubelet
-    $ kubeadm init –kubernetes-version v1.15.10 --pod-network-cidr=10.244.0.0/16  
+    $ kubeadm init –-kubernetes-version v1.15.10 --pod-network-cidr=10.244.0.0/16  
     ```
     ![](figures/configmaster.png)   
 
@@ -344,7 +347,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，以下命令分别两
     ```
     $ kubectl apply -f calico.yaml
     ```
-5. 在 Master 节点上执行如下命令，查看节点状态。
+5. 在 Master 节点上执行如下命令，查看节点状态,状态为 Ready 即表明安装成功。
 
     ```
     $ kubectl get nodes
