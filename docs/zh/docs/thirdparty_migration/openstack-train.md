@@ -279,6 +279,9 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 
 ## 必要库和依赖安装（本地yum源）
 
+>![](./public_sys-resources/icon-note.gif) **说明：**   
+>本节内容可以通过执行自动化脚本prep_install.sh实现，详见附录。
+
 执行以下命令，安装脚本执行过程中所需的必要库和依赖。
 
 ```
@@ -304,6 +307,9 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 # yum -y install python3-devel
 # yum -y install python3-sqlalchemy python3-sqlalchemy-utils
 # yum -y install openeuler-lsb
+```
+利用 yum 源，安装 uefi 相关库，按照 CPU 架构不同，命令分别如下。
+
 * x86 架构
 ```
 # yum -y install edk2-ovmf edk2-devel  python3-edk2-devel
@@ -312,7 +318,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 ```
 # yum -y install edk2-aarch64 edk2-devel  python3-edk2-devel
 ```
-```
+
 
 ## 创建执行用户
 
@@ -341,6 +347,9 @@ $ git clone https://opendev.org/OpenStack/devstack
 以下操作均使用 stack 用户执行。
 
 ## 修改主机相关环境
+
+>![](./public_sys-resources/icon-note.gif) **说明：**   
+>本节内容可以通过执行自动化脚本prep_install.sh实现，详见附录。
 
 1. 在 `/etc/httpd/conf/httpd.conf` 文件中增加如下配置，使之可以加载第三方插件服务，插入位置见下图。
     ```
@@ -392,7 +401,7 @@ $ git clone https://opendev.org/OpenStack/devstack
     * x86 架构
         ```
         [[local|localrc]]
-        HOST_IP=192.168.122.93     ///主机ip
+        HOST_IP=172.168.132.11    ///主机ip
         ADMIN_PASSWORD=a123456        ///各模块服务密码
         DATABASE_PASSWORD=d123456
         RABBIT_PASSWORD=r123456
@@ -411,7 +420,7 @@ $ git clone https://opendev.org/OpenStack/devstack
     * ARM 架构
         ```
         [[local|localrc]]
-        HOST_IP=172.168.132.11       ///主机ip
+        HOST_IP=192.168.122.8        ///主机ip
         ADMIN_PASSWORD=a123456        ///各模块服务密码
         DATABASE_PASSWORD=d123456
         RABBIT_PASSWORD=r123456
@@ -430,7 +439,8 @@ $ git clone https://opendev.org/OpenStack/devstack
         LOGFILE=$DEST/logs/stack.sh.log
 
 	    ```
-
+>![](./public_sys-resources/icon-note.gif) **说明：**   
+>本节以下内容可以通过执行自动化脚本prep_install.sh实现，详见附录。
 3. 编辑 `/home/stack/devstack/stackrc` 文件，修改下图所示字段值为 stable/train，指定待安装的 OpenStack 的版本。
 
     ![](./figures/host_env5.png)
@@ -547,9 +557,6 @@ source openrc admin admin
     ```
 
 
-
-
-
 # FAQ
 
 ## openstack project list 因为网络问题有概率性失败
@@ -627,3 +634,7 @@ pip 社区更新至20.3，版本不适配。
 # patch -p1 < 7a3a7ce87.patch
 ```
 
+# 附录
+
+自动化脚本 prep_install.sh点击[prep_install.sh](./prep_install.sh)获取。
+将脚本存放到`/home/stack`目录，执行命令 `bash -x prep_install.sh`即可完成必要库和依赖安装、修改主机相关环境和修改devstack脚本和相关配置的部分操作。

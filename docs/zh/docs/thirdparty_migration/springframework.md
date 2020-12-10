@@ -101,27 +101,27 @@ Spring Boot 是 Spring 的一套快速配置方案，可以基于 Spring Boot �
 <td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 ">&nbsp;&nbsp;</td>
 <td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.5.1.4 ">&nbsp;&nbsp;</td>
 </tr>
-<tr id="row7609317"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p12374913"><a name="p12374913"></a><a name="p12374913"></a>GNU</p>
+<tr id="row7609317"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p12374913"><a name="p12374913"></a><a name="p12374913"></a>tar</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.2 "><p id="p62843922"><a name="p62843922"></a><a name="p62843922"></a>7.3.0</p>
+<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.2 "><p id="p62843922"><a name="p62843922"></a><a name="p62843922"></a>1.32</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 "><p id="p57192960"><a name="p57192960"></a><a name="p57192960"></a>见基础软件安装</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.5.1.4 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="row19063753"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p660124"><a name="p660124"></a><a name="p660124"></a>Python3</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.2 "><p id="p53470121"><a name="p53470121"></a><a name="p53470121"></a>3.7.9</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 "><p id="p36112534"><a name="p36112534"></a><a name="p36112534"></a>见基础软件安装</p>
+<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 "><p id="p57192960"><a name="p57192960"></a><a name="p57192960"></a>yum install</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.5.1.4 ">&nbsp;&nbsp;</td>
 </tr>
-<tr id="row19362793"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p24882366"><a name="p24882366"></a><a name="p24882366"></a>Bash</p>
+<tr id="row19063753"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p660124"><a name="p660124"></a><a name="p660124"></a>wget</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.2 "><p id="p2205743"><a name="p2205743"></a><a name="p2205743"></a>5.0.17</p>
+<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.2 "><p id="p53470121"><a name="p53470121"></a><a name="p53470121"></a>1.20.3</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 "><p id="p44447526"><a name="p44447526"></a><a name="p44447526"></a>见基础软件安装</p>
+<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 "><p id="p36112534"><a name="p36112534"></a><a name="p36112534"></a>yum install</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.5.1.4 ">&nbsp;&nbsp;</td>
+</tr>
+<tr id="row19362793"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p24882366"><a name="p24882366"></a><a name="p24882366"></a>git</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.2 "><p id="p2205743"><a name="p2205743"></a><a name="p2205743"></a>2.27</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 "><p id="p44447526"><a name="p44447526"></a><a name="p44447526"></a>yum install</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.5.1.4 ">&nbsp;&nbsp;</td>
 </tr>
@@ -143,7 +143,14 @@ Spring Boot 是 Spring 的一套快速配置方案，可以基于 Spring Boot �
 </td>
 <td class="cellrowborder" valign="top" width="35.35353535353536%" headers="mcps1.1.4.1.2 "><p id="p56564507"><a name="p56564507"></a><a name="p56564507"></a>1.8.0</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.45454545454545%" headers="mcps1.1.4.1.3 "><p id="p18322322"><a name="p18322322"></a><a name="p18322322"></a>见安装Spring Framework到本地 maven 仓库</p>
+<td class="cellrowborder" valign="top" width="45.45454545454545%" headers="mcps1.1.4.1.3 "><p id="p18322322"><a name="p18322322"></a><a name="p18322322"></a>见基础软件安装</p>
+</td>
+</tr>
+<tr id="row9633593"><td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.1.4.1.1 "><p id="p42123551"><a name="p42123551"></a><a name="p42123551"></a>maven</p>
+</td>
+<td class="cellrowborder" valign="top" width="35.35353535353536%" headers="mcps1.1.4.1.2 "><p id="p56564507"><a name="p56564507"></a><a name="p56564507"></a>3.5.4</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.45454545454545%" headers="mcps1.1.4.1.3 "><p id="p18322322"><a name="p18322322"></a><a name="p18322322"></a>见基础软件安装</p>
 </td>
 </tr>
 </tbody>
@@ -177,15 +184,22 @@ Spring Boot 是 Spring 的一套快速配置方案，可以基于 Spring Boot �
 
 ## 使用本地 yum 源安装基础软件
 
-1. 执行以下命令，利用 yum 源，安装 jdk。
+1. 执行以下命令，安装 maven 构建工具。
+
+    ```
+    # yum install maven
+    ```
+	
+2. 执行以下命令，利用 yum 源，安装 jdk。
 
     ```
     # yum –y install java-1.8.0-openjdk-devel
     ```
 
-2. 安装验证,安装成功输入java -version会显示java版本信息，输入javac –help会显示编译器javac的使用方法
+3. 安装验证,安装成功输入以下命令，分别查看 maven 和 java 的版本信息以及查看 javac 的使用方法
 
     ```
+	# maven -version
     # java –version
     # javac –help
     ```
@@ -229,7 +243,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以基于 Spring Boot �
 
     ```
     # cd /home
-    # wget http://github.com/Spring-projects/Spring-boot/archive/v1.5.4.RELEASE.tar.gz
+    # wget https://github.com/Spring-projects/Spring-boot/archive/v1.5.4.RELEASE.tar.gz
     # tar –xvf v1.5.4.RELEASE.tar.gz
     # cd /home/Spring-boot-1.5.4.RELEASE/Spring-boot-samples/Spring-boot-sample-tomcat
     ```
