@@ -20,9 +20,9 @@ DevStack 是一组模块化脚本，运行这些脚本可以使开发人员快�
 
 DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置文件来部署其他服务。通常，DevStack 从 git master 中拉取核心服务，也可以修改配置文件从稳定分支（stable branch）（如 stable/pike）克隆。
 
-所有服务均从源安装，我们可以从[这里](https://github.com/OpenStack/devstack )获取源。
+所有服务均从源安装，我们可以从[devstack.github](https://github.com/OpenStack/devstack )获取源。
 
-本文档使用 DevStack 脚本进行安装部署和测试，采用单机“All in one”模式，按照 CPU 架构不同，可以安装在 x86 或者 ARM 上。两者主要的安装步骤相同，仅有部分命令或者步骤有差异，具体差异点本文会有详细描述。
+本文使用 DevStack 脚本进行安装部署和测试，采用单机“ALL IN ONE”模式，按照 CPU 架构不同，可以安装在 x86 或者 ARM 上。两者主要的安装步骤相同，仅有部分命令或者步骤有差异，具体差异点本文会有详细描述。
 
 
 
@@ -275,27 +275,6 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 # setenforce 0
 ```
 
-## 配置yum源（可选）
-
-1. 若安装 SP1 稳定版的 iso，使用默认源即可。
-
-2. 编辑配置源文件`/etc/yum.repos.d/openEuler.repo`，在文件末尾追加以下内容：
-
-    ```
-    [20.03-LTS-SP1]
-    name=20.03-LTS-SP1
-    baseurl=https://119.3.219.20:82/openEuler:/20.03:/LTS:/SP1:/standard_x86_64
-    enable=1
-    gpgcheck=0
-    ```
-
-3.  执行以下命令，清除缓存，生成新的cache数据：
-
-    ```
-    #yum clean all
-    #yum makecache
-    ```
-
 # 软件编译
 
 ## 必要库和依赖安装（本地yum源）
@@ -303,36 +282,43 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 执行以下命令，安装脚本执行过程中所需的必要库和依赖。
 
 ```
-# yum –y install tar git bash
-# yum –y install python3-systemd
-# yum –y install libffi-devel
-# yum –y install open-iscsi-devel
-# yum –y install libxml2 libxml2-devel 
-# yum –y install python3-lxml python3-libxml2 libxslt libxslt-devel
-# yum –y install pcp-system-tools
-# yum –y install haproxy
-# yum –y install edk2-ovmf edk2-devel  python3-edk2-devel
-# yum –y install qemu qemu-guest-agent
-# yum –y install libvirt*  python3-libvirt
-# yum –y install  httpd httpd-devel
-# yum –y install memcached
-# yum –y install mariadb-server
-# yum –y install rabbitmq-server
-# yum –y install python3-uWSGI
-# yum install python3-mod_wsgi  //安装后需要修改/etc/httpd/conf/httpd.conf文件，见修改 devstack 脚本和相关配置
-# yum –y install python3-copr
-# yum –y install python3-scss
-# yum install gcc-g++
-# yum install python3-devel
-# yum –y install python3-sqlalchemy python3-sqlalchemy-utils
-# yum –y install openeuler-lsb
+# yum -y install tar git bash
+# yum -y install python3-systemd
+# yum -y install libffi-devel
+# yum -y install open-iscsi-devel
+# yum -y install libxml2-devel 
+# yum -y install python3-lxml python3-libxml2 libxslt libxslt-devel
+# yum -y install pcp-system-tools
+# yum -y install haproxy
+# yum -y install qemu qemu-guest-agent
+# yum -y install libvirt*  python3-libvirt
+# yum -y install httpd httpd-devel
+# yum -y install memcached
+# yum -y install mariadb-server
+# yum -y install rabbitmq-server
+# yum -y install python3-uWSGI
+# yum -y install python3-mod_wsgi 
+# yum -y install python3-copr
+# yum -y install python3-scss
+# yum -y install gcc-c++
+# yum -y install python3-devel
+# yum -y install python3-sqlalchemy python3-sqlalchemy-utils
+# yum -y install openeuler-lsb
+* x86 架构
+```
+# yum -y install edk2-ovmf edk2-devel  python3-edk2-devel
+```
+* ARM 架构
+```
+# yum -y install edk2-aarch64 edk2-devel  python3-edk2-devel
+```
 ```
 
 ## 创建执行用户
 
 1. 使用root用户登录待安装主机，执行以下命令创建 stack 用户来执行脚本。
     ```
-    # useradd –s /bin/bash –d /home/stack –m stack
+    # useradd -s /bin/bash -d /home/stack -m stack
     ```
 
 2. 执行以下操作，为 stack 用户设置 root 用户权限，后续操作使用 stack 用户操作。
@@ -340,7 +326,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
     ```
     # chmod +w /etc/sudoers
     # vi /etc/sudoers //在sudoers文件的“root ALL=(ALL) ALL”下面，加入如下内容:stack  ALL=(ALL) NOPASSWD: ALL
-    # chmod –w /etc/dudoers
+    # chmod -w /etc/dudoers
     ```
     ![](./figures/createuser.png)
 
@@ -366,18 +352,18 @@ $ git clone https://opendev.org/OpenStack/devstack
     * x86 架构
         ```
 	    # cd /usr/share
-        # mkdir OVMF && chmod –R 755 OVMF
+        # mkdir OVMF && chmod -R 755 OVMF
         # cd OVMF
-        # ln –s ../edk2/ovmf/OVMF_CODE.fd OVMF_CODE.fd
-        # ln –s ../edk2/ovmf/OVMF_VARS.fd OVMF_VARS.fd
+        # ln -s ../edk2/ovmf/OVMF_CODE.fd OVMF_CODE.fd
+        # ln -s ../edk2/ovmf/OVMF_VARS.fd OVMF_VARS.fd
 	    ```
 
     * ARM 架构
         ```
-        # mkdir AAVMF && chmod –R 755 AAVMF
+        # mkdir AAVMF && chmod -R 755 AAVMF
         # cd AAVMF
-        # ln –s ../edk2/aarch64/QEMU_EFI-pflash.raw AAVMF_CODE.fd
-        # ln –s ../edk2/aarch64/vars-tmplate-pflash.raw AAVMF_VARS.fd
+        # ln -s ../edk2/aarch64/QEMU_EFI-pflash.raw AAVMF_CODE.fd
+        # ln -s ../edk2/aarch64/vars-tmplate-pflash.raw AAVMF_VARS.fd
 	    ```
 
 3. 在 `/etc/libvirt/qemu.conf` 文件中增加如下配置，增加 qemu 对 uefi 的支持。
@@ -526,7 +512,7 @@ source openrc admin admin
 
     - 使用查询到的资源，执行以下命令创建虚拟机。
         ```
-        # OpenStack server create –image cirros-0.5.1-x86_64-disk –flavor 1 vm
+        # OpenStack server create -image cirros-0.5.1-x86_64-disk -flavor 1 vm
         ```
 		
         ![](./figures/startvm.png)
@@ -556,8 +542,8 @@ source openrc admin admin
 
     ```
     # cd /home/stack 
-    # rm –rf devstack
-    # rm –rf /opt/stack
+    # rm -rf devstack
+    # rm -rf /opt/stack
     ```
 
 
@@ -569,7 +555,7 @@ source openrc admin admin
 ## openstack project list 因为网络问题有概率性失败
 
 **问题现象**
-脚本执行 OpenStack project list 报错。
+脚本执行 openstack project list 报错。
 
 **问题原因**
 网络原因，执行完命令 `source openrc admin admin` 后，需要等待一段时间，再执行命令 `openstack project list` 才生效
@@ -583,7 +569,7 @@ source openrc admin admin
 ## devstack@q-meta.service 服务概率性启动失败
 
 **问题现象**
-命令 `sudo systemctl start devstack@q-meta.service` 失败。
+执行命令 `sudo systemctl start devstack@q-meta.service` 失败。
 
 **问题原因**
 执行 `systemctl enable devstack@q-meta.service` 命令后，要等待一段时间。
@@ -606,7 +592,7 @@ mysql_install_db 数据库创建失败，提示gssapi插件报错。
 **解决方法**
 由于没有使用到 gssapi插件，执行如下命令，卸载 mariadb-gssapi-server 包。
 ```
-yum remove mariadb-gssapi-server –y 
+yum remove mariadb-gssapi-server -y 
 ```
 
 
@@ -638,6 +624,6 @@ pip 社区更新至20.3，版本不适配。
 ```
 # wget https://github.com/openstack/devstack/commit/7a3a7ce87.patch 
 # sudo yum install patch -y  
-# patch –p1 < 7a3a7ce87.patch
+# patch -p1 < 7a3a7ce87.patch
 ```
 
