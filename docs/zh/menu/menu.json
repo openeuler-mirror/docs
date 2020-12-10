@@ -869,21 +869,21 @@
       "path": "docs/thirdparty_migration/thidrparty",
       "children": [
         {
-          "label": "openstack-train版单机部署指导",
+          "label": "openstack-train迁移至openEuler指导",
           "path": "docs/thirdparty_migration/openstack-train",
           "children": [
             
           ]
         },
         {
-          "label": "K8S环境搭建指导",
+          "label": "K8S迁移至openEuler指导",
           "path": "docs/thirdparty_migration/k8sinstall",
           "children": [
             
           ]
         },
         {
-          "label": "springframework单机部署指导",
+          "label": "springframework迁移至openEuler指导",
           "path": "docs/thirdparty_migration/springframework",
           "children": [
             

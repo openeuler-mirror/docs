@@ -1,4 +1,4 @@
-# OpenStack-Train 版\(单机部署\)环境搭建指导书
+# OpenStack-Train 迁移至 openEuler 指导
 
 [[toc]]
 
