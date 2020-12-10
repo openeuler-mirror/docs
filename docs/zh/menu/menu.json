@@ -123,6 +123,11 @@
               "children": []
             },
             {
+              "label": "安装DDE",
+              "path": "docs/Installation/安装DDE",
+              "children": []
+            },
+            {
               "label": "FAQ",
               "path": "docs/Installation/FAQ",
               "children": []
@@ -863,7 +868,7 @@
           ]
         }
       ]
-    }
+    },
     {
       "label": "第三方软件移植指南",
       "path": "docs/thirdparty_migration/thidrparty",
@@ -889,6 +894,13 @@
             
           ]
         }
+      ]
+    },
+    {
+      "label": "UKUI用户指南",
+      "path": "docs/userguide/UKUI用户指南",
+      "children": [
+        
       ]
     }
 ]

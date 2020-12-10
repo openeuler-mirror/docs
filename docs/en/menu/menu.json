@@ -123,6 +123,11 @@
               "children": []
             },
             {
+              "label": "Installation DDE",
+              "path": "docs/Installation/install-DDE",
+              "children": []
+            },
+            {
               "label": "FAQs",
               "path": "docs/Installation/faqs",
               "children": []
@@ -883,6 +888,13 @@
             
           ]
         }
+      ]
+    }
+    {
+      "label": "UKUI User Guide ",
+      "path": "docs/userguide/UKUI-user-guide",
+      "children": [
+        
       ]
     }
 ]
