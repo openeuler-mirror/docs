@@ -239,6 +239,13 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 <td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p53034330"><a name="p53034330"></a><a name="p53034330"></a>见必要库和依赖安装</p>
 </td>
 </tr>
+<tr id="row41804156"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p30693434"><a name="p30693434"></a><a name="p30693434"></a>openeuler-lsb</p>
+</td>
+<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p3140258"><a name="p3140258"></a><a name="p3140258"></a>5.0</p>
+</td>
+<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p53034330"><a name="p53034330"></a><a name="p53034330"></a>见必要库和依赖安装</p>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -314,10 +321,11 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 # yum –y install python3-uWSGI
 # yum install python3-mod_wsgi  //安装后需要修改/etc/httpd/conf/httpd.conf文件，见修改 devstack 脚本和相关配置
 # yum –y install python3-copr
-#yum –y install python3-scss
+# yum –y install python3-scss
 # yum install gcc-g++
-#yum install python3-devel
+# yum install python3-devel
 # yum –y install python3-sqlalchemy python3-sqlalchemy-utils
+# yum –y install openeuler-lsb
 ```
 
 ## 创建执行用户
@@ -593,16 +601,13 @@ source openrc admin admin
 mariadb 服务启动失败。
 
 **问题原因**
-gssapi 插件未禁用，devstack 的搭建需要以非root用户执行，而 gassapi 插件在非 root 用户下执行命令 `/usr/bin/mysql\_install\_db –user=mysql –skip-test-db` 会失败，导致 mariadb 服务启动失败。
+mysql_install_db 数据库创建失败，提示gssapi插件报错。
 
 **解决方法**
-执行如下命令，卸载 mariadb-gssapi-server 包。
-
+由于没有使用到 gssapi插件，执行如下命令，卸载 mariadb-gssapi-server 包。
 ```
-# yum remove mariadb-gssapi-server –y
+yum remove mariadb-gssapi-server –y 
 ```
-
-![](figures/zh-cn_image_0296837436.png)
 
 
 ## neutron 服务启动失败
@@ -635,3 +640,4 @@ pip 社区更新至20.3，版本不适配。
 # sudo yum install patch -y  
 # patch –p1 < 7a3a7ce87.patch
 ```
+
