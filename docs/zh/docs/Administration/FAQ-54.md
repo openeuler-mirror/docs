@@ -10,7 +10,7 @@
     - [通过dnf update 默认方式升级openssh软件包时无法安装openssh相关包](#通过dnf-update-默认方式升级openssh软件包时无法安装openssh相关包)
     - [libiscsi降级失败](#libiscsi降级失败)
     - [xfsprogs降级失败](#xfsprogs降级失败)
-    - [glibc正则表达式使用限制](#glibc正则表达式使用限制)
+    - [不合理使用glibc正则表达式引起ReDoS攻击](#不合理使用glibc正则表达式引起ReDoS攻击)
 
 <!-- /TOC -->
 
@@ -272,11 +272,11 @@ Problem: problem with installed package xfsprogs-xfs_scrub-5.6.0-2.oe1.x86_64
 yum remove xfsprogs-xfs_scrub
 ```
 
-## glibc正则表达式使用限制
+## 不合理使用glibc正则表达式引起ReDoS攻击
 
 ### 问题现象
 
-使用glibc的regcomp/regexec接口编程，或者grep/sed等应用glibc正则表达式的shell命令，不合理的正则表达式或输入会造成DDOS攻击（CVE-2019-9192/CVE-2018-28796）。
+使用glibc的regcomp/regexec接口编程，或者grep/sed等应用glibc正则表达式的shell命令，不合理的正则表达式或输入会造成ReDoS攻击（CVE-2019-9192/CVE-2018-28796）。
 典型正则表达式pattern为“反向引用”（\1表示）与“*”（匹配零次或多次）、“+”（匹配一次或多次）、“{m,n}”（最小匹配m次，最多匹配n次）的组合，或者配合超长字符串输入，示例如下：
 ```
 # echo D | grep -E "$(printf '(\0|)(\\1\\1)*')"Segmentation fault (core dumped)
@@ -290,11 +290,11 @@ Segmentation fault (core dumped)
 Segmentation fault (core dumped)
 ```
 
-### 影响分析
+### 原因分析
 
-使用正则表达式的进程coredump。具体原因为glibc正则表达式的实现为NFA/DFA混合算法，内部原理是使用贪婪算法进行递归查找，目的是尽可能匹配更多的字符串，贪婪算法在处理递归正则表达式时会导致DDOS。
+使用正则表达式的进程coredump。具体原因为glibc正则表达式的实现为NFA/DFA混合算法，内部原理是使用贪婪算法进行递归查找，目的是尽可能匹配更多的字符串，贪婪算法在处理递归正则表达式时会导致ReDoS。
 
-### 解决方法
+### 解决方案
 
 1.  需要对用户做严格的权限控制，减少攻击面。
 2.  用户需保证正则表达式的正确性，不输入无效正则表达式，或者超长字符串配合正则的“引用” “*”等容易触发无限递归的组合。
