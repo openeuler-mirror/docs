@@ -10,6 +10,7 @@
     - [libiscsi降级失败](#libiscsi降级失败)
     - [xfsprogs降级失败](#xfsprogs降级失败)
     - [cpython/Lib发现CVE-2019-9674:Zip炸弹漏洞](#cpython/Lib发现CVE-2019-9674:Zip炸弹漏洞)
+    - [glibc正则表达式使用限制](#glibc正则表达式使用限制)
 
 <!-- /TOC -->
 
@@ -252,3 +253,31 @@ Python 3.7.2 及以下版本中的 Lib/zipfile.py 允许远程攻击者通过 zi
 ### 解决方法
 
 在 zipfile 文档中添加告警信息： https://github.com/python/cpython/blob/3.7/Doc/library/zipfile.rst。
+
+## glibc正则表达式使用限制
+
+### 问题现象
+
+glibc正则表达式使用限制问题描述使用glibc的regcomp/regexec接口编程，或者grep/sed等应用glibc正则表达式的shell命令，不合理的正则表达式或输入会造成DDOS攻击（CVE-2019-9192/CVE-2018-28796）。
+典型正则表达式pattern为“反向引用”（\1表示）与“*”（匹配零次或多次）、“+”（匹配一次或多次）、“{m,n}”（最小匹配m次，最多匹配n次）的组合，或者配合超长字符串输入，示例如下：
+```
+# echo D | grep -E "$(printf '(\0|)(\\1\\1)*')"Segmentation fault (core dumped)
+# grep -E "$(printf '(|)(\\1\\1)*')"
+Segmentation fault (core dumped)
+# echo A | sed '/\(\)\(\1\1\)*/p'
+Segmentation fault (core dumped)
+# time python -c 'print "a"*40000' | grep -E "a{1,32767}"
+Segmentation fault (core dumped)
+# time python -c 'print "a"*40900' | grep -E "(a)\\1"
+Segmentation fault (core dumped)
+```
+
+### 影响分析
+
+使用正则表达式的进程coredump。具体原因为glibc正则表达式的实现为NFA/DFA混合算法，内部原理是使用贪婪算法进行递归查找，目的是尽可能匹配更多的字符串，贪婪算法在处理递归正则表达式时会导致DDOS。
+
+### 解决方法
+
+1.  需要对用户做严格的权限控制，减少攻击面。
+2.  用户需保证正则表达式的正确性，不输入无效正则表达式，如类似()(\1\1)*这种，或者超长字符串配合正则的“引用”“*”等的组合匹配，如上述"a"*400000对应的字符串。
+3.  用户程序在检测到进程异常之后，通过重启进程等手段恢复业务，提升程序的可靠性。
