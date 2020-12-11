@@ -6,46 +6,46 @@
 
 ## Spring Framwork 简介
 
-Spring Framework 是为解决 EJB 开发 JAVAEE 程序代码冗余，配置复杂等诸多问题而引入的开源框架。Spring 作为容器，提供了对多种技术\(JMS, MQ, UnitTest\)的支持，同时通过 AOP\(事物管理，日志等\)提供了众多方便应用的辅助类，对主流框架提供了良好的支持。
+Spring Framework 是为解决 EJB 开发 JavaEE 程序代码冗余，配置复杂等诸多问题而引入的开源框架。Spring 作为容器，提供了对多种技术\(JMS, MQ, UnitTest\)的支持，同时通过 AOP\(事物管理，日志等\)提供了众多方便应用的辅助类，对主流框架提供了良好的支持。
 
 Spring Framework 整体框架结构如 [图1](#fig1601161484619)所示
 
 **图 1**  Spring Framework 整体框架结构<a name="fig1601161484619"></a>  
 ![](./figures/zh-cn_image_0296838174.png)
 
-Spring Framework 包括三个核心组件 Spring-core、Spring-context 和 Spring-beans。还包括基础组件Spring-aop、Spring-web 和 Spring-webmvc 等，各个组件的功能说明如下：
+Spring Framework 包括三个核心组件 Spring-Core、Spring-Context 和 Spring-Beans。还包括基础组件Spring-AOP、Spring-Web 和 Spring-Webmvc 等，各个组件的功能说明如下：
 
-**Spring-core**
+**Spring-Core**
 核心容器提供 Spring 框架的基本功能，主要组件是 BeanFactory ,实现对 Bean 的管理。
 
-**Spring-context**
+**Spring-Context**
 是一个配置文件，向Spring Framework 提供上下文信息。上下文包括企业服务，例如 JNDI，EJB，电子邮件，国际化，校验和调度功能。
 
-**Spring-beans**
+**Spring-Beans**
 实现IOC\(控制反转\)的包，是 Spring Framework 的关键特性。
 
-**Spring-aop**
-直接将面向切面的编程功能集成到 Spring 框架中，所以可以很容易的使用 Spring 框架管理任何对象。Spring-aop 为基于 Spring 的应用程序中的对象提供了事物管理服务，不依赖 EJB 组件，就可以将声明性事物管理集成到应用程序中。
+**Spring-AOP**
+直接将面向切面的编程功能集成到 Spring 框架中，所以可以很容易的使用 Spring 框架管理任何对象。Spring-AOP 为基于 Spring 的应用程序中的对象提供了事物管理服务，不依赖 EJB 组件，就可以将声明性事物管理集成到应用程序中。
 
-**Spring-web**
-建立在 Spring-context 模块之上，为基于 Web 的应用程序提供上下文。
+**Spring-Web**
+建立在 Spring-Context 模块之上，为基于 Web 的应用程序提供上下文。
 
-**Spring-webmvc**
-是一个全功能的构建 web 应用程序的 MVC 实现。通过策略接口，MVC 框架变成了高度可配置的，并且， MVC 容纳了大量视图技术。
+**Spring-Webmvc**
+是一个全功能的构建 web 应用程序的 MVC 实现，容纳了大量视图技术。MVC 框架通过策略接口变成了高度可配置的。
 
-从上面的介绍可以看出，IOC\(控制反转\)的实现包 Spring-beans 和 AOP\(依赖注入\)的实现包 Spring-aop 也是整个框架的基础，而 Spring-core 是整个框架的核心。在此基础上，Spring-context 提供了上下文环境，为各个模块提供粘合作用。而 web 部分的功能，都是依赖 Spring-web 和 Spring-webmvc 来实现的。
+从上面的介绍可以看出，IOC\(控制反转\)的实现包 Spring-Beans 和 AOP\(依赖注入\)的实现包  Spring-AOP 是整个框架的基础，而 Spring-Core 是整个框架的核心。在此基础上，Spring-Context 提供了上下文环境，为各个模块提供粘合作用。而 web 部分的功能，是依赖 Spring-Web 和 Spring-Webmvc 来实现的。
 
 
 ## Spring Boot 和 Spring Cloud 简介
 
-Spring Framework 引入到本地 maven 仓库后，就可以使用这个框架对 Java 程序进行 maven 构建。但 Spring 构建需要配置大量的 xml 文件，开发繁琐。Spring Boot 基于 Spring Framework 来构建，是一种快速构建 Spring 应用的方案，而 Spring cloud 是构建 Spring boot的分布式环境，也就是常说的云应用，Spring Boot 起到承上启下的作用。
+Spring Framework 引入到本地 maven 仓库后，就可以使用这个框架对 Java 程序进行 maven 构建。但 Spring 构建需要配置大量的 xml 文件，开发繁琐。Spring Boot 基于 Spring Framework 来构建，是一种快速构建 Spring 应用的方案，而 Spring Cloud 是构建 Spring Boot的分布式环境，也就是常说的云应用，Spring Boot 起到承上启下的作用。
 
-Spring Framework,Spring-boot和Spring-cloud三者的关系如 [图2](#fig1601161484619)所示
+Spring Framework,Spring-Boot和Spring-Cloud三者的关系如 [图2](#fig1601161484620)所示
 
-**图 2**  组件关系<a name="fig1601161484619"></a>  
+**图 2**  组件关系<a name="fig1601161484620"></a>  
 ![](./figures/zh-cn_image_0296838176.png)
 
-Spring Boot 是 Spring 的一套快速配置方案，可以基于 Spring Boot 快速开发单个微服务，Spring Cloud 是一个基于 Spring Boot 实现的云应用开发工具；Spring Boot 专注于快速、方便集成单个个体，Spring Cloud 是关注全局的服务治理框架，Spring Cloud 很大一部分是基于 Spring Boot 实现的。Spring Boot 可以离开 Spring Cloud 独立使用开发项目，但 Spring Cloud 离不开 Spring Boot，属于依赖关系。
+Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单个微服务，Spring Cloud 是一个基于 Spring Boot 实现的云应用开发工具；Spring Boot 专注于快速、方便集成单个个体，Spring Cloud 是关注全局的服务治理框架。Spring Boot 可以离开 Spring Cloud 独立使用开发项目，但 Spring Cloud 无法离开 Spring Boot使用。
 
 ## 环境配置
 
@@ -94,9 +94,9 @@ Spring Boot 是 Spring 的一套快速配置方案，可以基于 Spring Boot �
 </th>
 </tr>
 </thead>
-<tbody><tr id="row7150716"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p42337115"><a name="p42337115"></a><a name="p42337115"></a>OpenEuler</p>
+<tbody><tr id="row7150716"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p42337115"><a name="p42337115"></a><a name="p42337115"></a>openEuler</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.2 "><p id="p6754315"><a name="p6754315"></a><a name="p6754315"></a>20.03-LTS-Next</p>
+<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.2 "><p id="p6754315"><a name="p6754315"></a><a name="p6754315"></a>20.03-LTS-SP1</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 ">&nbsp;&nbsp;</td>
 <td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.5.1.4 ">&nbsp;&nbsp;</td>
@@ -177,7 +177,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以基于 Spring Boot �
 2. 执行以下命令，挂载源镜像。
 
     ```
-    # mount /root/openEuler-20.03-LTS-Next-everything-aarch64-dvd.iso /mnt
+    # mount /root/openEuler-20.03-LTS-SP1-everything-aarch64-dvd.iso /mnt
     ```
 
 # 软件编译
@@ -193,15 +193,15 @@ Spring Boot 是 Spring 的一套快速配置方案，可以基于 Spring Boot �
 2. 执行以下命令，利用 yum 源，安装 jdk。
 
     ```
-    # yum –y install java-1.8.0-openjdk-devel
+    # yum -y install java-1.8.0-openjdk-devel
     ```
 
 3. 安装验证,安装成功输入以下命令，分别查看 maven 和 java 的版本信息以及查看 javac 的使用方法
 
     ```
 	# maven -version
-    # java –version
-    # javac –help
+    # java -version
+    # javac -help
     ```
 
     ![](./figures/install1.png)
@@ -215,13 +215,13 @@ Spring Boot 是 Spring 的一套快速配置方案，可以基于 Spring Boot �
     ```
     # cd /home
     # wget https://github.com/Spring-projects/Spring-framework/archive/v5.2.10.RELEASE.tar.gz
-    # tar –xvf v5.2.10.RELEASE.tar.gz
+    # tar -xvf v5.2.10.RELEASE.tar.gz
     ```
 
 2. 执行以下命令，编译Spring Framework源码包，编译成功页面显示如下：
 
     ```
-    # cd /home/Spring-framework-5.2.10.RELEASE
+    # cd /home/spring-framework-5.2.10.RELEASE
     # ./gradlew build
     ```
 
@@ -230,10 +230,10 @@ Spring Boot 是 Spring 的一套快速配置方案，可以基于 Spring Boot �
 3. 执行以下命令，安装 Spring Framework 到本地 maven 仓库。
 
     ```
-    # ./gradlew publishToMavenLocal –x javadoc –x dokka –x asciidoctor
+    # ./gradlew publishToMavenLocal -x javadoc -x dokka -x asciidoctor
     ```
 
-    安装成功后会在用户根目录的`.m2/repository/org/`文件夹下看到 Spring Framework 文件夹。
+    安装成功后会在`/root/.m2/repository/org/`文件夹下看到 springframework 文件夹。
     ![](figures/zh-cn_image_0296838184.png)
 
 
@@ -244,8 +244,8 @@ Spring Boot 是 Spring 的一套快速配置方案，可以基于 Spring Boot �
     ```
     # cd /home
     # wget https://github.com/Spring-projects/Spring-boot/archive/v1.5.4.RELEASE.tar.gz
-    # tar –xvf v1.5.4.RELEASE.tar.gz
-    # cd /home/Spring-boot-1.5.4.RELEASE/Spring-boot-samples/Spring-boot-sample-tomcat
+    # tar -xvf v1.5.4.RELEASE.tar.gz
+    # cd /home/spring-boot-1.5.4.RELEASE/spring-boot-samples/spring-boot-sample-tomcat
     ```
 
 2. 执行以下命令，编译工程。
@@ -298,13 +298,13 @@ Spring Boot 是 Spring 的一套快速配置方案，可以基于 Spring Boot �
 
 ## Spring Boot单机环境运行示例
 
-Spring-boot-sample-tomcat 若编译成功，会在工程目录的 target 文件夹下生成 Spring-boot-sample-tomcat-1.5.4.RELEASE.jar 文件，执行以下命令，运行这个 jar 文件。
+Spring-boot-sample-tomcat 若编译成功，会在工程目录的`/home/spring-boot-1.5.4.RELEASE/spring-boot-samples/spring-boot-samples-tomcatt/target` 文件夹下生成 Spring-boot-sample-tomcat-1.5.4.RELEASE.jar 文件，执行以下命令，运行这个 jar 文件。
 
 ```
-# java –jar Spring-boot-sample-tomcat-1.5.4.RELEASE.jar
+# java -jar spring-boot-sample-tomcat-1.5.4.RELEASE.jar
 ```
 
-执行以下命令，查看tomcat服务运行状态。
+启动新窗口，执行以下命令，查看tomcat服务运行状态。
 
 ```
 # curl http://localhost:8080
@@ -318,10 +318,11 @@ Spring-boot-sample-tomcat 若编译成功，会在工程目录的 target 文件�
 spring-cloud-gateway-sample 工程若编译成功，会在工程目录的 target 文件夹下生成 spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar 文件，执行如下命令。
 
     ```
-    # java –jar spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar
+    # java -jar spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar
     # curl http://localhost:8080/get
     ```
 返回结果如下图所示，即表明运行成功。
+
 ![](figures/run1.png)
 
 
@@ -330,40 +331,45 @@ zuul-server 需要在 eureka 工程运行后再运行。执行如下命令。
 
     ```
     # cd /home/eureka/target
-    # java –jar eureka-0.0.1-SNAPSHOT.jar
+    # java -jar eureka-0.0.1-SNAPSHOT.jar
     # cd /home/zuul-server/target
-    # java –jar zuul-server-1.0.0.BUILD-SNAPSHOT.jar
+    # java -jar zuul-server-1.0.0.BUILD-SNAPSHOT.jar
     # curl http://localhost:8765
     ```
 
     zuul-server 服务启动后控制台会输出访问的端口为 8765, curl 访问本地 8765 端口，会看到返回的带有时间戳的 404 信息，同时服务端控制会记录到一次访问事件。
 		
     Tomcat 8765端口开放如下图所示：
-![](figures/run2.png) 	
+	
+    ![](figures/run2.png) 	
     curl访问8765端口如下图所示：
-![](figures/run3.png)  	
+	
+    ![](figures/run3.png)  	
     用户访问时服务端打印的日志信息如下图所示：
-![](figures/run4.png) 
+	
+    ![](figures/run4.png) 
 
 * feign-eureka工程运行示例
 feign-eureka 要在 eureka 工程运行后执行，执行如下命令，分别运行 feign-eureka 工程下的 server 和 client。
 
     ```
     # cd /home/eureka/target
-    # java –jar eureka-0.0.1-SNAPSHOT.jar
+    # java -jar eureka-0.0.1-SNAPSHOT.jar
     # cd /home/feign-eureka/server/target
-    # java –jar feign-eureka-hello-server-0.0.1-SNAPSHOT.jar
+    # java -jar feign-eureka-hello-server-0.0.1-SNAPSHOT.jar
     # cd /home/feign-eureka/client/target
-    # java –jar feign-eureka-hello-client-0.0.1-SNAPSHOT.jar
+    # java -jar feign-eureka-hello-client-0.0.1-SNAPSHOT.jar
     # curl http://localhost:7211
     ```
     服务启动后会在client的控制台看到，服务打开了7211端口，curl访问这个端口，获得Hello SERVER信息
 
     工程 feign-eureka 开放 7211 端口如下图所示：
-![](figures/run5.png) 
+	
+    ![](figures/run5.png) 
 
     访问 feign-eureka 服务查看返回结果如下图所示：
-![](figures/run6.png) 
+	
+    ![](figures/run6.png) 
 
 
 
@@ -384,7 +390,7 @@ MvcNamespaceTests.java 中的 assert 未通过测试，失败提示信息如下�
 
 **解决方法**
 
-修改工程目录下的文`spring-webmvc/src/test/java/org/springframework/web/servlet/config/MvcNamespaceTests.java`，
+修改工程目录下的文件`spring-webmvc/src/test/java/org/springframework/web/servlet/config/MvcNamespaceTests.java`，
 
 将handler的date成员时间强制置0，与LocalDate转换的默认Time保持一致。
 
@@ -432,9 +438,9 @@ Spring-test:compileJava执行失败，页面提示 "error：warnings found and -
 **问题现象**：
 
 repo源无效，页面提示“Received status code 403 from server: Forbidden”。
+
 ![](figures/zh-cn_image_0296838212.png)
 
-图 6.7 repo源无效错误提示信息
 
 **问题原因**
 
