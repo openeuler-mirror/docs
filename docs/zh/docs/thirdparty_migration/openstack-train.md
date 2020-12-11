@@ -22,7 +22,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 
 所有服务均从源安装，我们可以从[devstack.github](https://github.com/OpenStack/devstack )获取源。
 
-本文使用 DevStack 脚本进行安装部署和测试，采用单机“ALL IN ONE”模式，按照 CPU 架构不同，可以安装在 x86 或者 ARM 上。两者主要的安装步骤相同，仅有部分命令或者步骤有差异，具体差异点本文会有详细描述。
+本文使用 DevStack 脚本进行安装部署和测试，采用单机“All In One”模式，按照 CPU 架构不同，可以安装在 x86 或者 ARM 上。两者主要的安装步骤相同，仅有部分命令或者步骤有差异，具体差异点本文会有详细描述。
 
 
 
@@ -176,7 +176,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 <td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p52781566"><a name="p52781566"></a><a name="p52781566"></a>见必要库和依赖安装</p>
 </td>
 </tr>
-<tr id="row5272053"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p24383158"><a name="p24383158"></a><a name="p24383158"></a>edk2-ovmf edk2-devel python3-edk2-devel</p>
+<tr id="row5272053"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p24383158"><a name="p24383158"></a><a name="p24383158"></a>edk2-ovmf(x86) edk2-aarch64(ARM) edk2-devel python3-edk2-devel</p>
 </td>
 <td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p28878783"><a name="p28878783"></a><a name="p28878783"></a>202002</p>
 </td>
@@ -246,6 +246,13 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 <td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p53034330"><a name="p53034330"></a><a name="p53034330"></a>见必要库和依赖安装</p>
 </td>
 </tr>
+<tr id="row41804156"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p30693434"><a name="p30693434"></a><a name="p30693434"></a>mariadb-server</p>
+</td>
+<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p3140258"><a name="p3140258"></a><a name="p3140258"></a>10.3.9</p>
+</td>
+<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p53034330"><a name="p53034330"></a><a name="p53034330"></a>见必要库和依赖安装</p>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -268,7 +275,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 
 ## 修改SELINUX为disabled（可选）
 
-执行以下命令，关闭防火墙。
+执行以下命令，关闭 SELINUX。
 
 ```
 # sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
@@ -332,7 +339,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
     ```
     # chmod +w /etc/sudoers
     # vi /etc/sudoers //在sudoers文件的“root ALL=(ALL) ALL”下面，加入如下内容:stack  ALL=(ALL) NOPASSWD: ALL
-    # chmod -w /etc/dudoers
+    # chmod -w /etc/sudoers
     ```
     ![](./figures/createuser.png)
 
@@ -351,7 +358,8 @@ $ git clone https://opendev.org/OpenStack/devstack
 >![](./public_sys-resources/icon-note.gif) **说明：**   
 >本节内容可以通过执行自动化脚本prep_install.sh实现，详见附录。
 
-1. 在 `/etc/httpd/conf/httpd.conf` 文件中增加如下配置，使之可以加载第三方插件服务，插入位置见下图。
+1. 执行`sudo vi /etc/httpd/conf/httpd.conf`命令，使用管理员权限在 `/etc/httpd/conf/httpd.conf` 文件中增加如下配置，使之可以加载第三方插件服务，插入位置见下图。
+
     ```
 	LoadModule wsgi_module modules/mod_wsgi_python3.so
 	```
@@ -361,10 +369,10 @@ $ git clone https://opendev.org/OpenStack/devstack
     * x86 架构
         ```
 	    # cd /usr/share
-        # mkdir OVMF && chmod -R 755 OVMF
+        # mkdir OVMF && sudo chmod -R 755 OVMF
         # cd OVMF
-        # ln -s ../edk2/ovmf/OVMF_CODE.fd OVMF_CODE.fd
-        # ln -s ../edk2/ovmf/OVMF_VARS.fd OVMF_VARS.fd
+        # sudo ln -s ../edk2/ovmf/OVMF_CODE.fd OVMF_CODE.fd
+        # sudo ln -s ../edk2/ovmf/OVMF_VARS.fd OVMF_VARS.fd
 	    ```
 
     * ARM 架构
@@ -394,7 +402,7 @@ $ git clone https://opendev.org/OpenStack/devstack
 
     ```
     # cd /home/stack/devstack
-    # touch lal.conf 
+    # touch local.conf 
     ```
 2. 编辑 `local.conf` 文件，配置如下内容。
 
@@ -445,11 +453,11 @@ $ git clone https://opendev.org/OpenStack/devstack
 
     ![](./figures/host_env5.png)
 
-4. devstack 维护的平台暂不包含 openEuler，修改 `/home/stack/devstack/function-common` 文件中的 GetOSVersion 函数，使脚本识别默认使用 fedora30 模式安装，修改方法如下图所示。
+4. devstack 维护的平台暂不包含 openEuler，修改 `/home/stack/devstack/functions-common` 文件中的 GetOSVersion 函数，使脚本识别默认使用 fedora30 模式安装，修改方法如下图所示。
 
     ![](./figures/host_env6.png)
 
-5. 编辑 `/home/stack/devstack/lib/nova_plugins/functions-libvirt` 文件，注释掉安装 python-libvirt 相关代码。python-libvirt 已在openEuler-20.03-LTS-SP1 的 yum 源中手动安装。
+5. 由于脚本文件中默认的 python-libvirt 版本不适配，需编辑 `/home/stack/devstack/lib/nova_plugins/functions-libvirt` 文件，注释掉安装 python-libvirt 相关代码。python-libvirt 已在openEuler-20.03-LTS-SP1 的 yum 源中手动安装。
 
     ![](./figures/host_env7.png)
 	
@@ -488,7 +496,7 @@ $ git clone https://opendev.org/OpenStack/devstack
     
 ```
 
-安装过程大约需要十几分钟，安装成功页面如下图所示。
+安装过程大约需要十几分钟，x86架构安装成功显示信息与ARM架构一致，此处以安装ARM架构为例，安装成功页面如下图所示。
 
 ![](./figures/stack.png)
 
@@ -496,7 +504,7 @@ $ git clone https://opendev.org/OpenStack/devstack
 
 devstack.sh 若执行成功，会在当前主机内，根据 local.conf 文件中的配置信息，安装指定的子模块，若 local.conf 中没有指定模块，则会安装所有子模块。
 
-运行 openstack 命令前，需要先执行以下命令，以管理员用户登录客户端。
+以 stack 用户执行以下命令，使用管理员登录 OpenStack 客户端。
 
 ```
 source openrc admin admin
@@ -522,7 +530,7 @@ source openrc admin admin
 
     - 使用查询到的资源，执行以下命令创建虚拟机。
         ```
-        # OpenStack server create -image cirros-0.5.1-x86_64-disk -flavor 1 vm
+        # openstack server create -image cirros-0.5.1-x86_64-disk -flavor 1 vm
         ```
 		
         ![](./figures/startvm.png)
@@ -530,7 +538,7 @@ source openrc admin admin
     - 执行如下命令，查看虚拟机状态。
 
         ```
-        # OpenStack server list   //查看虚拟机状态
+        # openstack server list   //查看虚拟机状态
         ```
         
 		![](./figures/vmlist.png)
@@ -562,7 +570,7 @@ source openrc admin admin
 ## openstack project list 因为网络问题有概率性失败
 
 **问题现象**
-脚本执行 openstack project list 报错。
+脚本执行 `openstack project list` 命令报错。
 
 **问题原因**
 网络原因，执行完命令 `source openrc admin admin` 后，需要等待一段时间，再执行命令 `openstack project list` 才生效
@@ -576,7 +584,7 @@ source openrc admin admin
 ## devstack@q-meta.service 服务概率性启动失败
 
 **问题现象**
-执行命令 `sudo systemctl start devstack@q-meta.service` 失败。
+命令 `sudo systemctl start devstack@q-meta.service` 执行失败。
 
 **问题原因**
 执行 `systemctl enable devstack@q-meta.service` 命令后，要等待一段时间。
