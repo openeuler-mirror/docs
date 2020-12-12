@@ -1,3 +1,4 @@
+
 # Spring Framework迁移至 openEuler 指导
 
 [[toc]]
@@ -298,18 +299,20 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 
 ## Spring Boot单机环境运行示例
 
-Spring-boot-sample-tomcat 若编译成功，会在工程目录的`/home/spring-boot-1.5.4.RELEASE/spring-boot-samples/spring-boot-samples-tomcatt/target` 文件夹下生成 Spring-boot-sample-tomcat-1.5.4.RELEASE.jar 文件，执行以下命令，运行这个 jar 文件。
+1. spring-boot-sample-tomcat 若编译成功，会在工程目录的`/home/spring-boot-1.5.4.RELEASE/spring-boot-samples/spring-boot-samples-tomcat/target` 文件夹下生成 spring-boot-sample-tomcat-1.5.4.RELEASE.jar 文件，执行以下命令，运行这个 jar 文件。
 
-```
-# java -jar spring-boot-sample-tomcat-1.5.4.RELEASE.jar
-```
+    ```
+    # java -jar spring-boot-sample-tomcat-1.5.4.RELEASE.jar
+    ```
 
-启动新窗口，执行以下命令，查看tomcat服务运行状态。
+2. 待控制台出现 `tomcat start` 字样后，启动新窗口执行以下命令，查看 tomcat 服务运行状态。
+窗口2
+    ```
+    # curl http://localhost:8080
+    ```
+    回显“helloworld”即表明运行成功。
 
-```
-# curl http://localhost:8080
-```
-回显“helloworld”即表明运行成功。
+3. 如果要关闭 Spring-Boot 服务，在步骤 1 窗口中，按 ctrl + c 组合键关闭服务。
 
 ## Spring Cloud单机环境运行示例
 
