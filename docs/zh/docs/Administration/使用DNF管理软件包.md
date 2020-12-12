@@ -173,7 +173,7 @@ repository部分允许您定义定制化的openEuler软件源仓库，各个仓�
     baseurl=https://repo.openeuler.org/openEuler-20.09/OS/$basearch/
     enabled=1
     gpgcheck=1
-    gpgkey=https://repo.openeuler.org/openEuler-20.09/OS/aarch64/RPM-GPG-KEY-openEuler
+    gpgkey=https://repo.openeuler.org/openEuler-20.09/OS/$basearch/RPM-GPG-KEY-openEuler
     ```
 
     >![](./public_sys-resources/icon-note.gif) **说明：**   
