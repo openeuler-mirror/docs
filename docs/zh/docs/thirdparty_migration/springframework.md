@@ -306,7 +306,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
     ```
 
 2. 待控制台出现 `tomcat start` 字样后，启动新窗口执行以下命令，查看 tomcat 服务运行状态。
-窗口2
+
     ```
     # curl http://localhost:8080
     ```
