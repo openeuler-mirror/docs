@@ -170,23 +170,10 @@ repository部分允许您定义定制化的openEuler软件源仓库，各个仓�
     ```
     [OS]
     name=openEuler-$releasever - OS
-    baseurl=https://repo.openeuler.org/openEuler-20.03-LTS/OS/$basearch/
+    baseurl=https://repo.openeuler.org/openEuler-20.09/OS/$basearch/
     enabled=1
     gpgcheck=1
-
-    [update]
-    name=openEuler-$releasever - Update
-    baseurl=http://repo.openeuler.org/openEuler-20.03-LTS/update/$basearch/
-    enabled=1
-    gpgcheck=1
-    gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS/update/$basearch/RPM-GPG-KEY-openEuler
-
-    [extras]
-    name=openEuler-$releasever - Extras
-    baseurl=http://repo.openeuler.org/openEuler-20.03-LTS/extras/$basearch/
-    enabled=0
-    gpgcheck=1
-    gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS/extras/$basearch/RPM-GPG-KEY-openEuler
+    gpgkey=https://repo.openeuler.org/openEuler-20.09/OS/aarch64/RPM-GPG-KEY-openEuler
     ```
 
     >![](./public_sys-resources/icon-note.gif) **说明：**   
