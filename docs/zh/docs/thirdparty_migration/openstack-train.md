@@ -516,7 +516,7 @@ source openrc admin admin
 	    ```
         # openstack image list
         ```
-    - 执行以下命令，可以获取网略资源列表
+    - 执行以下命令，可以获取网络资源列表
 	    ```
         # openstack network list
         ```
