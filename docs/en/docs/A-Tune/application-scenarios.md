@@ -636,34 +636,56 @@ Use the specified project file to search the dynamic space for parameters and fi
 
 - OPTIONS
 
-  <table><thead align="left"><tr id="row16801164620446"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p4801046114412"><a name="p4801046114412"></a><a name="p4801046114412"></a>Parameter</p>
-  </th>
-  <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p1280184654418"><a name="p1280184654418"></a><a name="p1280184654418"></a>Description</p>
-  </th>
-  </tr>
-  </thead>
-  <tbody><tr id="row080110466442"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p108011346154411"><a name="p108011346154411"></a><a name="p108011346154411"></a>--restore, -r</p>
-  </td>
-  <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1980144614414"><a name="p1980144614414"></a><a name="p1980144614414"></a>Restores the initial configuration before tuning.</p>
-  </td>
-  </tr>
-  <tr id="row88018467448"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p78011346164417"><a name="p78011346164417"></a><a name="p78011346164417"></a>--project, -p</p>
-  </td>
-  <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p10802114624412"><a name="p10802114624412"></a><a name="p10802114624412"></a>Specifies the project name in the YAML file to be restored.</p>
-  </td>
-  </tr>
-  <tr id="row88018467448"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p78011346164417"><a name="p78011346164417"></a><a name="p78011346164417"></a>--restart, -c</p>
-  </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p10802114624412"><a name="p10802114624412"></a><a name="p10802114624412"></a>Perform tuning based on historical tuning results.</p>
-  </td>
-  </tr>
-  <tr id="row88018467448"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p78011346164417"><a name="p78011346164417"></a><a name="p78011346164417"></a>--detail, -d</p>
-  </td>
-  <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p10802114624412"><a name="p10802114624412"></a><a name="p10802114624412"></a>Print detailed information about the tuning process.</p>
-  </td>
-  </tr>
-  </tbody>
-  </table>
+<table>
+    <thead align="left">
+        <tr id="row16801164620446">
+            <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1">
+                <p id="p4801046114412"><a name="p4801046114412"></a><a name="p4801046114412"></a>Parameter</p>
+            </th>
+            <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2">
+                <p id="p1280184654418"><a name="p1280184654418"></a><a name="p1280184654418"></a>Description</p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="row080110466442">
+            <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 ">
+                <p id="p108011346154411"><a name="p108011346154411"></a><a name="p108011346154411"></a>--restore, -r</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 ">
+                <p id="p1980144614414"><a name="p1980144614414"></a><a name="p1980144614414"></a>Restores the initial
+                    configuration before tuning.</p>
+            </td>
+        </tr>
+        <tr id="row88018467448">
+            <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 ">
+                <p id="p78011346164417"><a name="p78011346164417"></a><a name="p78011346164417"></a>--project, -p</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 ">
+                <p id="p10802114624412"><a name="p10802114624412"></a><a name="p10802114624412"></a>Specifies the
+                    project name in the YAML file to be restored.</p>
+            </td>
+        </tr>
+        <tr id="row88018467448">
+            <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 ">
+                <p id="p78011346164417"><a name="p78011346164417"></a><a name="p78011346164417"></a>--restart, -c</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 ">
+                <p id="p10802114624412"><a name="p10802114624412"></a><a name="p10802114624412"></a>Perform tuning based
+                    on historical tuning results.</p>
+            </td>
+        </tr>
+        <tr id="row88018467448">
+            <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 ">
+                <p id="p78011346164417"><a name="p78011346164417"></a><a name="p78011346164417"></a>--detail, -d</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 ">
+                <p id="p10802114624412"><a name="p10802114624412"></a><a name="p10802114624412"></a>Print detailed
+                    information about the tuning process.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
   
   
   >![](public_sys-resources/icon-note.gif) **NOTE:**   
