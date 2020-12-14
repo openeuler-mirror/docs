@@ -271,7 +271,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
     # System language
     lang zh_CN.UTF-8
     #Use http installation source
-    url  --url=//192.168.122.1/openEuler/
+    url --url=http://192.168.122.1/openEuler/
     %post
     #enable kdump
     sed  -i "s/ ro / ro crashkernel=1024M,high /" /boot/efi/EFI/openEuler/grub.cfg
@@ -336,7 +336,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
     filename "grubaa64.efi"; 　　 # pxelinux 启动文件位置;
     next-server 192.168.122.1;　　# (重要)TFTP Server 的IP地址;
     subnet 192.168.122.0 netmask 255.255.255.0 {
-    option routers 192.168.111.1; # 网关地址
+    option routers 192.168.122.1; # 网关地址
     option subnet-mask 255.255.255.0; # 子网掩码
     range dynamic-bootp 192.168.122.50 192.168.122.200; # 动态ip范围
     default-lease-time 21600;
