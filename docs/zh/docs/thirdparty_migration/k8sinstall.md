@@ -360,7 +360,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
 	
     ![](figures/configmaster.png)  
 	
-	保存上图中的`kubeadm join`命令<a name="jump1"></a>，在下文[Worker节点加入集群](#jump2)步骤中需要执行该命令。
+	保存上图中的`kubeadm join`命令，在下文[Worker节点加入集群](#jump2)步骤中需要执行该命令。<a name="jump1"></a>
 
     
 	> ![](./public_sys-resources/icon-note.gif) **说明：**
@@ -455,7 +455,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
 
 ## 加入集群
 
-1. 在 Worker 节点执行[配置 Master 节点](#jump1)中保存的命令，将 Worker 节点加入集群<a name="jump2"></a>。
+1. 在 Worker 节点执行[配置 Master 节点](#jump1)中保存的命令，将 Worker 节点加入集群。<a name="jump2"></a>
 
     ```
     $ kubeadm join 192.168.122.72:6443 --token 9hyjsw.102m4qpmr93msfdv --discovery-token-ca-cert-hash sha256:ccf9a7762c7ae08fab3ec0649897b1de8e3ef37cf789517f42ea95fad0bd29b1
