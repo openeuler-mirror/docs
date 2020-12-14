@@ -178,7 +178,7 @@ To use kickstart to perform semi-automatic installation of openEuler, perform th
     1.  On the installation wizard page in [Starting the Installation](./installation-guideline.html#starting-the-installation), select  **Install openEuler 20.03 LTS SP1**  and press  **e**.
     2.  Add  **inst.ks=http://server ip/ks/openEuler-ks.cfg**  to the startup parameters.
 
-        ![](./figures/semi-automatic-installation.png)
+        ![](./figures/startparam.png)
 
     3.  Press  **Ctrl**+**x**  to start the automatic installation.
 
