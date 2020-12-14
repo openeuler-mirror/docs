@@ -61,22 +61,22 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 </thead>
 <tbody><tr id="row31627628"><td class="cellrowborder" valign="top" width="34.34343434343434%" headers="mcps1.1.3.1.1 "><p id="p11701082"><a name="p11701082"></a><a name="p11701082"></a>处理器</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.65656565656566%" headers="mcps1.1.3.1.2 "><p id="p8263625"><a name="p8263625"></a><a name="p8263625"></a>2*KunPeng 920-4826 aarch64，2600MHz</p>
+<td class="cellrowborder" valign="top" width="65.65656565656566%" headers="mcps1.1.3.1.2 "><p id="p8263625"><a name="p8263625"></a><a name="p8263625"></a>2\*KunPeng 920-4826 aarch64，2600MHz</p>
 </td>
 </tr>
 <tr id="row7263769"><td class="cellrowborder" valign="top" width="34.34343434343434%" headers="mcps1.1.3.1.1 "><p id="p51494379"><a name="p51494379"></a><a name="p51494379"></a>内存</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.65656565656566%" headers="mcps1.1.3.1.2 "><p id="p10295186"><a name="p10295186"></a><a name="p10295186"></a>16*16G，2933MHz，DDR4</p>
+<td class="cellrowborder" valign="top" width="65.65656565656566%" headers="mcps1.1.3.1.2 "><p id="p10295186"><a name="p10295186"></a><a name="p10295186"></a>16\*16G，2933MHz，DDR4</p>
 </td>
 </tr>
 <tr id="row25547817"><td class="cellrowborder" valign="top" width="34.34343434343434%" headers="mcps1.1.3.1.1 "><p id="p56107306"><a name="p56107306"></a><a name="p56107306"></a>硬盘</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.65656565656566%" headers="mcps1.1.3.1.2 "><p id="p48397939"><a name="p48397939"></a><a name="p48397939"></a>OS：1 * 960G SSD，DATA：1*8000G HDD</p>
+<td class="cellrowborder" valign="top" width="65.65656565656566%" headers="mcps1.1.3.1.2 "><p id="p48397939"><a name="p48397939"></a><a name="p48397939"></a>OS：1 \* 960G SSD，DATA：1*8000G HDD</p>
 </td>
 </tr>
 <tr id="row32928275"><td class="cellrowborder" valign="top" width="34.34343434343434%" headers="mcps1.1.3.1.1 "><p id="p49944604"><a name="p49944604"></a><a name="p49944604"></a>网络</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.65656565656566%" headers="mcps1.1.3.1.2 "><p id="p18981122"><a name="p18981122"></a><a name="p18981122"></a>1 * 1000Mb/s</p>
+<td class="cellrowborder" valign="top" width="65.65656565656566%" headers="mcps1.1.3.1.2 "><p id="p18981122"><a name="p18981122"></a><a name="p18981122"></a>1 \* 1000Mb/s</p>
 </td>
 </tr>
 </tbody>

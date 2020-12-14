@@ -140,9 +140,9 @@ The configuration items in the A-Tune configuration file  **/etc/atuned/atuned.c
     -   **interval**: Interval for collecting samples when the system executes the analysis process. The default value is 5s.
     -   **grpc_tls**: Indicates whether to enable SSL/TLS certificate verification for the gRPC service. By default, this function is disabled. After grpc_tls is enabled, you need to set the following environment variables before running the **atune-adm** command to communicate with the server:
         -   export ATUNE_TLS=yes
-        -   export ATUNED_CACERT=<Path of the client CA certificate>
-        -   export ATUNED_CLIENTCERT=<Client certificate path>
-        -   export ATUNED_CLIENTKEY=<Client key path>
+        -   export ATUNED_CACERT=\<Path of the client CA certificate\>
+        -   export ATUNED_CLIENTCERT=\<Client certificate path\>
+        -   export ATUNED_CLIENTKEY=\<Client key path\>
         -   export ATUNED_SERVERCN=server
     -   **tlsservercafile**: Path of the gPRC server's CA certificate.
     -   **tlsservercertfile**: Path of the gPRC server certificate.
