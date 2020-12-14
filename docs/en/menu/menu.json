@@ -862,7 +862,7 @@
           ]
         }
       ]
-    }
+    },
     {
       "label": "Third-Party Software Porting Guide",
       "path": "docs/thirdparty_migration/thidrparty",
@@ -889,7 +889,7 @@
           ]
         }
       ]
-    }
+    },
     {
       "label": "UKUI User Guide ",
       "path": "docs/userguide/UKUI-user-guide",
