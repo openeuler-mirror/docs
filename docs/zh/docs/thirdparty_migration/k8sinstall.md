@@ -121,7 +121,7 @@ Kubernetes 集群中存在两种节点，Master 节点和 Worker 节点。Master
     $ vim /etc/yum.repos.d/openEuler_aarch64.repo
     ```
 
-    ![](figures/zh-cn_image_0296836364.png)
+    ![](figures/yumarm.png)
 
 * x86架构
 
@@ -138,7 +138,7 @@ Kubernetes 集群中存在两种节点，Master 节点和 Worker 节点。Master
     $ yum clean all
     $ yum makecache
     ```
-安装docker并启动相关服务，输出Docker的状态。
+3. 安装docker并启动相关服务，输出Docker的状态。
 	
     ```	
     $ yum -y install docker-engine
@@ -292,7 +292,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
     $ docker pull gcmirrors/pause-amd64:3.1
     $ docker pull gcmirrors/etcd-amd64:3.3.10
     $ docker pull coredns/coredns:1.3.1
-    ```	
+    ```
 	>![](./public_sys-resources/icon-note.gif) **说明：**   
     >如果配置了docker镜像库代理，可以直接将标签换为“k8s.gcr.io”并省略以下步骤。
 
@@ -357,10 +357,11 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
     $ kubeadm init --kubernetes-version v1.15.10 --pod-network-cidr=10.244.0.0/16  
     ```
     集群初始化成功后，界面显示信息如下。
+	
     ![](figures/configmaster.png)  
 	
-	保存上图中的`kubeadm join`命令，在下文Worker节点加入集群步骤中需要执行该命令。
- 
+	保存上图中的`kubeadm join`命令<a name="jump1"></a>，在下文[Worker节点加入集群](#jump2)步骤中需要执行该命令。
+
     
 	> ![](./public_sys-resources/icon-note.gif) **说明：**
     > 使用 kubeadm 安装的 Kubernetes 会自动生成集群所需的证书。所有证书都存放在 `/etc/kubernetes/pki` 目录下。
@@ -395,7 +396,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
     $ docker pull calico/node:v3.14.2-amd64
     $ docker pull calico/kube-controllers:v3.14.2-amd64
 	$ docker pull calico/pod2daemon-flexvol:v3.14.2-amd64
-    ```	
+    ```
 2. 分别在 Master 和 Worker 节点上执行如下命令，修改已下载的镜像标签
     * aarch64架构
     ```
@@ -410,13 +411,13 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
     $ docker tag calico/node:v3.14.2-amd64 calico/node:v3.14.2
     $ docker tag calico/kube-controllers:v3.14.2-amd64 calico/kube-controllers:v3.14.2
 	$ docker tag calico/pod2daemon-flexvol:v3.14.2-amd64 calico/pod2daemon-flexvol:v3.14.2
-    ```	
+    ```
 
 3. 执行如下命令，查看是否成功打上 calico 标签。
-    
+   
 	```
     $ docker images | grep calico
-    ```
+   ```
     ![](figures/calicotag.png)
 
 3. 分别在 Master 和 Worker 节点上执行如下命令，删除旧镜像
@@ -453,8 +454,8 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
 
 
 ## 加入集群
-	
-1. 在 Worker 节点执行如下命令，将 Worker 节点加入集群。
+
+1. 在 Worker 节点执行[配置 Master 节点](#jump1)中保存的命令，将 Worker 节点加入集群<a name="jump2"></a>。
 
     ```
     $ kubeadm join 192.168.122.72:6443 --token 9hyjsw.102m4qpmr93msfdv --discovery-token-ca-cert-hash sha256:ccf9a7762c7ae08fab3ec0649897b1de8e3ef37cf789517f42ea95fad0bd29b1
