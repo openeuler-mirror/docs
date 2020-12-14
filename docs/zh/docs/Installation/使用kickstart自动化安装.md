@@ -106,7 +106,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
 
     ```
     # mkdir /var/www/html/ks
-    # vim /var/www/html/ks/openEuler-ks.cfg ===>根据已安装openEuler系统自动生成的anaconda-ks.cfg修改得到，也可以使用system-config-kickstart工具做成
+    # vim /var/www/html/ks/openEuler-ks.cfg ===>根据已安装openEuler系统自动生成的anaconda-ks.cfg修改得到
     ====================================
     ***以下内容需要根据实际需求进行修改***
     #version=DEVEL
