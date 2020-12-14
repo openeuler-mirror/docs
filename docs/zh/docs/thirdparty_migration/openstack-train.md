@@ -8,7 +8,7 @@
 
 OpenStack 是一个社区，也是一个项目。它提供了一个部署云的操作平台或工具集，为组织提供可扩展的、灵活的云计算。
 
-作为一个开源的云计算管理平台，OpenStack 由几个主要的组件组合起来完成具体工作。OpenStack 支持几乎所有类型的云环境，项目目标是提供实施简单、可大规模扩展、丰富、标准统一的云计算管理平台。OpenStack 通过各种互补的服务提供了基础设施即服务（IaaS）的解决方案，每个服务提供 API 进行集成。
+作为一个开源的云计算管理平台，OpenStack 由nova、neutron、glance、keystone、horizon等几个主要的组件组合起来完成具体工作。OpenStack 支持几乎所有类型的云环境，项目目标是提供实施简单、可大规模扩展、丰富、标准统一的云计算管理平台。OpenStack 通过各种互补的服务提供了基础设施即服务（IaaS）的解决方案，每个服务提供 API 进行集成。
 
 ## 适配版本
 
@@ -259,7 +259,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 
 # 系统配置
 
-## 关闭防火墙（可选）
+## 关闭防火墙
 
 1. 执行以下命令，停止防火墙。
 
@@ -273,7 +273,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
     # systemctl disable firewalld.service
     ```
 
-## 修改SELINUX为disabled（可选）
+## 修改SELINUX为disabled
 
 执行以下命令，关闭 SELINUX。
 
@@ -369,7 +369,7 @@ $ git clone https://opendev.org/OpenStack/devstack
     * x86 架构
         ```
 	    # cd /usr/share
-        # mkdir OVMF && sudo chmod -R 755 OVMF
+        # sudo mkdir OVMF && sudo chmod -R 755 OVMF
         # cd OVMF
         # sudo ln -s ../edk2/ovmf/OVMF_CODE.fd OVMF_CODE.fd
         # sudo ln -s ../edk2/ovmf/OVMF_VARS.fd OVMF_VARS.fd
@@ -377,17 +377,18 @@ $ git clone https://opendev.org/OpenStack/devstack
 
     * ARM 架构
         ```
-        # mkdir AAVMF && chmod -R 755 AAVMF
+		# cd /usr/share
+        # sudo mkdir AAVMF && chmod -R 755 AAVMF
         # cd AAVMF
-        # ln -s ../edk2/aarch64/QEMU_EFI-pflash.raw AAVMF_CODE.fd
-        # ln -s ../edk2/aarch64/vars-tmplate-pflash.raw AAVMF_VARS.fd
+        # sudo ln -s ../edk2/aarch64/QEMU_EFI-pflash.raw AAVMF_CODE.fd
+        # sudo ln -s ../edk2/aarch64/vars-tmplate-pflash.raw AAVMF_VARS.fd
 	    ```
 
 3. 在 `/etc/libvirt/qemu.conf` 文件中增加如下配置，增加 qemu 对 uefi 的支持。
 
     * x86 架构
         ```
-        nvram = ["/usr/share/AAVMF/AAVMF_CODE.fd:/usr/share/AAVMF/AAVMF_VARS.fd","/usr/share/OVMF/OVMF_CODE.secboot.fd:/usr/share/OVMF/OVMF_VARS.fd"]
+        nvram = ["/usr/share/OVMF/OVMF_CODE.fd:/usr/share/OVMF/OVMF_VARS.fd","/usr/share/edk2/ovmf/OVMF_CODE.fd:/usr/share/edk2/ovmf/OVMF_VARS.fd"]
 	    ```
 
     * ARM 架构
@@ -602,12 +603,12 @@ source openrc admin admin
 mariadb 服务启动失败。
 
 **问题原因**
-mysql_install_db 数据库创建失败，提示gssapi插件报错。
+mysql_install_db 数据库创建失败，提示gssapi插件报错、inodb建立失败、galgare地址失效等问题。
 
 **解决方法**
 由于没有使用到 gssapi插件，执行如下命令，卸载 mariadb-gssapi-server 包。
 ```
-yum remove mariadb-gssapi-server -y 
+./unstack.sh ./clean.sh && FORCE=yes ./stack.sh
 ```
 
 
@@ -633,7 +634,7 @@ pip 引导失败，控制台报错信息为 "ERROR: Links are not allowed as con
 pip 社区更新至20.3，版本不适配。
 
 **解决方法**
-参考社区解决方案 ，使用补丁修改 devstack 源码。
+删除/opt/stack/requirement/.venv 下旧的python 虚拟运行环境，参考社区解决方案 ，使用补丁修改 devstack 源码。
 在 /home/stack/devstack 目录下，执行如下命令：
 
 ```

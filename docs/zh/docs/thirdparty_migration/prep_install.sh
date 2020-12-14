@@ -37,10 +37,10 @@ function install_mode()
 
 	# Change VIRTUALENV_CMD
 	pip3 install virtualenv
-	sed -i "s/python3 -m pip/virtualenv/g" $DEVSTACK_HOME/stackrc
+	sed -i "s/python3 -m venv/virtualenv/g" $DEVSTACK_HOME/stackrc
 
 	# Fixed git branch
-	sed -i "s/master/stable/train/g" $DEVSTACK_HOME/stackrc
+	sed -i "s/master/stable\/train/g" $DEVSTACK_HOME/stackrc
 }
 
 # Config mod_wsgi
@@ -68,7 +68,7 @@ function qemu_uefi_init()
 		sudo sed -i '$anvram = [\"/usr/share/AAVMF/AAVMF_CODE.fd:/usr/share/AAVMF/AAVMF_VARS.fd\",\"/usr/share/edk2/aarch64/QEMU_EFI-pflash.raw:/usr/share/edk2/aarch64/vars-template-pflash.raw\"]' $QEMU_CG 
 	fi
 	if [[ `arch` == x86_64 ]]; then
-		sudo sed -i '$anvram = [\"/usr/share/OVMF/OVMF_CODE.fd:/usr/share/OVMF/OVMF_VARS.fd\",\"/usr/share/OVMF/OVMF_CODE.secboot.fd:/usr/share/OVMF/OVMF_VARS.fd\"]' $QEMU_CG
+		sudo sed -i '$anvram = [\"/usr/share/OVMF/OVMF_CODE.fd:/usr/share/OVMF/OVMF_VARS.fd\",\"/usr/share/edk2/ovmf/OVMF_CODE.fd:/usr/share/edk2/ovmf/OVMF_VARS.fd"]' $QEMU_CG
 	fi
 }
 
@@ -88,8 +88,8 @@ function edk2_uefi_init()
 	fi
 	if [[ `arch` == "x86_64" ]]; then
 		sudo mkdir $UEFI_DIR_X86 && pushd $UEFI_DIR_X86
-		sudo ln -s $EDK2_UEFI_PATH/aarch64/QEMU_EFI-pflash.raw AAVMF_CODE.fd
-		sudo ln -s $EDK2_UEFI_PATH/aarch64/vars-tmplate-pflash.raw AAVMF_VARS.fd
+		sudo ln -s $EDK2_UEFI_PATH/ovmf/OVMF_CODE.fd OVMF_CODE.fd
+		sudo ln -s $EDK2_UEFI_PATH/ovmf/OVMF_VARS.fd OVMF_VARS.fd
 		popd
 	
 	fi
@@ -104,8 +104,8 @@ function libvirt_version_fixed()
 		echo "Maybe you should confirm whether python3-libvirt is installed"
 		exit 1
 	fi
-	sudo sed -i "s/pip_uninstall libvirt-python//g" lib/nova_plugins/functions-libvirt
-	sudo sed -i "s/pip_install_gr libvirt-python//g" lib/nova_plugins/functions-libvirt
+	sudo sed -i "s/pip_uninstall libvirt-python//g" $DEVSTACK_HOME/lib/nova_plugins/functions-libvirt
+	sudo sed -i "s/pip_install_gr libvirt-python//g" $DEVSTACK_HOME/lib/nova_plugins/functions-libvirt
 }
 
 # The installation system script execution process must depend on
@@ -128,7 +128,7 @@ function yum_pkgs()
 		sudo yum install -y edk2-ovmf edk2-devel python3-edk2-devel
 	fi
 	sudo yum install -y qemu qemu-guest-agent && edk2_uefi_init
-	sudo yum install -y libvirt* python3-libvirt && 
+	sudo yum install -y libvirt* python3-libvirt &&  libvirt_version_fixed
 	sudo yum install -y httpd httpd-devel
 	sudo yum install -y memcached
 	sudo yum install -y mariadb-server
