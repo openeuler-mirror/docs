@@ -303,3 +303,24 @@ Segmentation fault (core dumped)
     # "a"*400000
     ```
 3.  用户程序在检测到进程异常之后，通过重启进程等手段恢复业务，提升程序的可靠性。
+
+## emacs编辑文件时会存在缓存文件
+
+### 问题现象
+
+emacs未进行配置时，编辑文件保存后会存在以~结尾的缓存文件
+
+### 原因分析
+
+emacs未进行配置，或者未生成有效的配置文件
+
+### 解决方案
+
+1. 安装好emacs后进入emacs界面
+2. 在emacs界面输入alt - x  （意为alt键加x键）
+3. 输入customize后可进行各种设置，对任一功能设置后会生成一个.emacs配置文件，会显示出相应的配置文件路径，如/root/.emacs（自行创建的.emacs无功能作用）
+4. 修改配置文件：
+
+   （1）关闭功能：(setq make-backup-files nil)
+
+   （2）指定集中保存备份文件的目录：(setq backup-directory-alist (quote (("." . "/.emacs-backups"))))
