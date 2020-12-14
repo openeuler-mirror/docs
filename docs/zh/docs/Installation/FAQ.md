@@ -9,6 +9,7 @@
     - [如何手动开启kdump服务](#如何手动开启kdump服务)
     - [多块磁盘组成逻辑卷安装系统后，再次安装不能只选其中一块磁盘](#多块磁盘组成逻辑卷安装系统后再次安装不能只选其中一块磁盘)
     - [x86物理机UEFI模式由于security boot安全选项问题无法安装](#x86物理机uefi模式由于security-boot安全选项问题无法安装)
+    - [安装openEuler时，软件选择页面选择“服务器-性能工具”，安装后messages日志有pmie_check报错信息](#安装openEuler时软件选择页面选择服务器-性能工具安装后messages日志有pmie_check报错信息)
 
 <!-- /TOC -->
 
@@ -295,3 +296,26 @@ x86物理机安装系统时，由于设置了BIOS选项security boot 为enable�
     >![](./public_sys-resources/icon-note.gif) **说明：**   
     >设置security boot为disable之后，保存退出，重新安装即可。  
 
+## 安装openEuler时，软件选择页面选择“服务器-性能工具”，安装后messages日志有pmie_check报错信息
+
+### 问题现象
+
+安装系统时软件选择勾选服务器-性能工具，会安装pcp相关软件包，正常安装并重启后，/var/log/messages日志文件中会产生报错：pmie_check failed in /usr/share/pcp/lib/pmie。
+
+### 原因分析
+
+anaconda不支持在chroot环境中安装selinux策略模块，当安装pcp-selinux时，postin脚本安装pcp相关selinux策略模块执行失败，从而导致重启后产生报错。
+
+### 解决办法
+
+完成安装并重启后，以下方法选择其一。
+
+1. 执行如下命令，安装selinux策略模块pcpupstream
+    ```
+    /usr/libexec/pcp/bin/selinux-setup /var/lib/pcp/selinux install "pcpupstream"
+    ```
+
+2. 重新安装pcp-selinux
+    ```
+    sudo dnf reinstall pcp-selinux
+    ```
