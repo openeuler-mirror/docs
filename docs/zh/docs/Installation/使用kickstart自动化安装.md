@@ -178,7 +178,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
     1.  在“[启动安装](./安装指导.html#启动安装)”中的“安装引导界面”中选择“Install openEuler 20.03 LTS SP1”，并按下“e”键。
     2.  启动参数中追加“inst.ks=http://server ip/ks/openEuler-ks.cfg”。
 
-        ![](./figures/Semi-automatic-new.png)
+        ![](./figures/startparam.png)
 
     3.  按“Ctrl+x”，开始系统的自动安装。
 
