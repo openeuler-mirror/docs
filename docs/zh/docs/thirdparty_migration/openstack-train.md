@@ -2,19 +2,19 @@
 
 [[toc]]
 
-# 软件介绍
+## 软件介绍
 
-## OpenStack 简介
+### OpenStack 简介
 
 OpenStack 是一个社区，也是一个项目。它提供了一个部署云的操作平台或工具集，为组织提供可扩展的、灵活的云计算。
 
 作为一个开源的云计算管理平台，OpenStack 由nova、neutron、glance、keystone、horizon等几个主要的组件组合起来完成具体工作。OpenStack 支持几乎所有类型的云环境，项目目标是提供实施简单、可大规模扩展、丰富、标准统一的云计算管理平台。OpenStack 通过各种互补的服务提供了基础设施即服务（IaaS）的解决方案，每个服务提供 API 进行集成。
 
-## 适配版本
+### 适配版本
 
 本文使用“Train”版本进行适配，OpenStack Train版本于2019年10月16日发布，是部署最广泛的开源云基础设施软件的第20个版本。
 
-## DevStack 介绍
+### DevStack 介绍
 
 DevStack 是一组模块化脚本，运行这些脚本可以使开发人员快速轻松部署 OpenStack。这些脚本可以在裸机或虚拟机的单个节点上运行，也可以部署到多个节点。
 
@@ -28,9 +28,9 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 
 
 
-# 环境配置
+## 环境配置
 
-## 软件平台
+### 软件平台
 
 <a name="table4006700"></a>
 <table><thead align="left"><tr id="row48514281"><th class="cellrowborder" valign="top" width="27.55102040816326%" id="mcps1.1.5.1.1"><p id="p37342697"><a name="p37342697"></a><a name="p37342697"></a>软件名称</p>
@@ -88,7 +88,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 </tbody>
 </table>
 
-## 必要依赖包
+### 必要依赖包
 
 <a name="table56107302"></a>
 <table><thead align="left"><tr id="row38793220"><th class="cellrowborder" valign="top" width="48.484848484848484%" id="mcps1.1.4.1.1"><p id="p55243139"><a name="p55243139"></a><a name="p55243139"></a>软件名称</p>
@@ -257,9 +257,9 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 </table>
 
 
-# 系统配置
+## 系统配置
 
-## 关闭防火墙
+### 关闭防火墙
 
 1. 执行以下命令，停止防火墙。
 
@@ -273,7 +273,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
     # systemctl disable firewalld.service
     ```
 
-## 修改SELINUX为disabled
+### 修改SELINUX为disabled
 
 执行以下命令，关闭 SELINUX。
 
@@ -282,9 +282,9 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 # setenforce 0
 ```
 
-# 软件编译
+## 软件编译
 
-## 必要库和依赖安装（本地yum源）
+### 必要库和依赖安装（本地yum源）
 
 >![](./public_sys-resources/icon-note.gif) **说明：**   
 >本节内容可以通过执行自动化脚本prep_install.sh实现，详见附录。
@@ -327,7 +327,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 ```
 
 
-## 创建执行用户
+### 创建执行用户
 
 1. 使用root用户登录待安装主机，执行以下命令创建 stack 用户来执行脚本。
     ```
@@ -343,7 +343,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
     ```
     ![](./figures/createuser.png)
 
-## 下载 devstack 脚本
+### 下载 devstack 脚本
 
 切换 stack 用户，执行以下命令，下载 devstack 脚本文件:
 
@@ -353,7 +353,7 @@ $ git clone https://opendev.org/OpenStack/devstack
 ```
 以下操作均使用 stack 用户执行。
 
-## 修改主机相关环境
+### 修改主机相关环境
 
 >![](./public_sys-resources/icon-note.gif) **说明：**   
 >本节内容可以通过执行自动化脚本prep_install.sh实现，详见附录。
@@ -397,7 +397,7 @@ $ git clone https://opendev.org/OpenStack/devstack
 	    ```
 
 
-## 修改devstack脚本和相关配置
+### 修改devstack脚本和相关配置
 
 1. 执行以下命令，创建 `local.conf` 文件。
 
@@ -487,21 +487,20 @@ $ git clone https://opendev.org/OpenStack/devstack
     pip3 install virtualenv
     ```
 
-# 执行 devstack 脚本安装 OpenStack
+## 执行 devstack 脚本安装 OpenStack
 
 以stack用户，执行以下命令，运行 stack.sh 脚本，进行 OpenStack 单机版安装。
 
 ```
 # cd  /home/stack/devstack
 # FORCE=yes ./stack.sh 
-    
 ```
 
 安装过程大约需要十几分钟，x86架构安装成功显示信息与ARM架构一致，此处以安装ARM架构为例，安装成功页面如下图所示。
 
 ![](./figures/stack.png)
 
-# 软件运行
+## 软件运行
 
 devstack.sh 若执行成功，会在当前主机内，根据 local.conf 文件中的配置信息，安装指定的子模块，若 local.conf 中没有指定模块，则会安装所有子模块。
 
@@ -549,7 +548,7 @@ source openrc admin admin
 		![](./figures/vmlist.png)
 			
 			
-# 软件卸载
+## 软件卸载
 
 1. 分别执行以下命令，卸载并清理 devstack 生成的文件及环境配置。
 
@@ -570,74 +569,90 @@ source openrc admin admin
     ```
 
 
-# FAQ
+## FAQ
 
-## openstack project list 因为网络问题有概率性失败
+### openstack project list 因为网络问题有概率性失败
 
 **问题现象**
+
 脚本执行 `openstack project list` 命令报错。
 
 **问题原因**
+
 网络原因，执行完命令 `source openrc admin admin` 后，需要等待一段时间，再执行命令 `openstack project list` 才生效
 
 **解决方法**
+
 参考下图修改 `/home/stack/devstack/lib/neutron\_plugins/services/l3` 文件
 
 ![](figures/faq1.png)
 
 
-## devstack@q-meta.service 服务概率性启动失败
+### devstack@q-meta.service 服务概率性启动失败
 
 **问题现象**
+
 命令 `sudo systemctl start devstack@q-meta.service` 执行失败。
 
 **问题原因**
+
 执行 `systemctl enable devstack@q-meta.service` 命令后，要等待一段时间。
 
 **解决方法**
+
 服务 enable 后，等待 30s 再启动。
 
 参考下图修改 `/home/stack/devstack/functions-common` 文件。
 
 ![](figures/zh-cn_image_0296837434.png)
 
-## mariadb 服务启动失败
+### mariadb 服务启动失败
 
 **问题现象**
+
 mariadb 服务启动失败。
 
 **问题原因**
+
 mysql_install_db 数据库创建失败，提示gssapi插件报错、inodb建立失败、galgare地址失效等问题。
 
 **解决方法**
+
 由于没有使用到 gssapi插件，执行如下命令，卸载 mariadb-gssapi-server 包。
 ```
 ./unstack.sh ./clean.sh && FORCE=yes ./stack.sh
 ```
 
 
-## neutron 服务启动失败
+### neutron 服务启动失败
 
 **问题现象**
+
 neutron 服务启动过程中，有概率启动失败。
 
 **问题原因**
+
 网络波动，导致network节点搭建失败。
 
 **解决方法**
+
 执行如下命令，重新执行脚本。
 ```
 # ./unstack.sh && FORCE=yes ./stack.sh
 ```
 
-## pip引导失败
+### pip引导失败
+
 **问题现象**
+
 pip 引导失败，控制台报错信息为 "ERROR: Links are not allowed as constraints"
 
 **问题原因**
+
 pip 社区更新至20.3，版本不适配。
 
 **解决方法**
+
 删除/opt/stack/requirement/.venv 下旧的python 虚拟运行环境，参考社区解决方案 ，使用补丁修改 devstack 源码。
 在 /home/stack/devstack 目录下，执行如下命令：
 
@@ -647,7 +662,7 @@ pip 社区更新至20.3，版本不适配。
 # patch -p1 < 7a3a7ce87.patch
 ```
 
-# 附录
+## 附录
 
 自动化脚本 prep_install.sh点击[prep_install.sh](./prep_install.sh)获取。
 将脚本存放到`/home/stack`目录，执行命令 `bash -x prep_install.sh`即可完成必要库和依赖安装、修改主机相关环境和修改devstack脚本和相关配置的部分操作。
