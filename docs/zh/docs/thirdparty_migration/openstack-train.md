@@ -530,12 +530,16 @@ source openrc admin admin
 * 启动一个实例
 
     - 使用查询到的资源，执行以下命令创建虚拟机。
-        ```
-        # openstack server create -image cirros-0.5.1-x86_64-disk -flavor 1 vm
-        ```
+	    - x86 架构
+            ```
+            # openstack server create --image cirros-0.5.1-x86_64-disk --flavor 1 vm
+            ```
 		
-        ![](./figures/startvm.png)
-		
+            ![](./figures/startvm.png)
+		- ARM 架构
+            ```
+            # openstack server create --image cirros-0.5.1-aarch64-disk.img --flavor 1 vm
+            ```		
     - 执行如下命令，查看虚拟机状态。
 
         ```
