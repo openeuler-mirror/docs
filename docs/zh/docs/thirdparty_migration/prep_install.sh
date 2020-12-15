@@ -127,8 +127,8 @@ function yum_pkgs()
 	if [[ `arch` == "x86_64" ]]; then
 		sudo yum install -y edk2-ovmf edk2-devel python3-edk2-devel
 	fi
-	sudo yum install -y qemu qemu-guest-agent && edk2_uefi_init
 	sudo yum install -y libvirt* python3-libvirt &&  libvirt_version_fixed
+	sudo yum install -y qemu qemu-guest-agent && edk2_uefi_init
 	sudo yum install -y httpd httpd-devel
 	sudo yum install -y memcached
 	sudo yum install -y mariadb-server
