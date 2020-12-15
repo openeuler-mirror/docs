@@ -188,7 +188,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 1. 执行以下命令，安装 maven 构建工具。
 
     ```
-    # yum install maven
+    # yum -y install maven
     ```
 	
 2. 执行以下命令，利用 yum 源，安装 jdk。
@@ -200,7 +200,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 3. 安装验证,安装成功输入以下命令，分别查看 maven 和 java 的版本信息以及查看 javac 的使用方法
 
     ```
-	# maven -version
+	# mvn -version
     # java -version
     # javac -help
     ```
