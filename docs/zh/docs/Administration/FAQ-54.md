@@ -313,15 +313,22 @@ emacs未进行配置时，编辑文件保存后会存在以“~”结尾的缓�
 
 ### 原因分析
 
-emacs未进行配置，或者未生成有效的配置文件。
+emacs未进行配置，或者未生成有效的配置文件，会导致存在缓存文件，缓存文件的功能是为了防止系统意外关闭导致的数据丢失，用户可自行决定是否启用该功能。
 
 ### 解决方案
 
 1. 安装好emacs后进入emacs界面。
 2. 在emacs界面输入alt键加x键。
 3. 输入customize后可进行各种设置，对任一功能设置后会生成一个.emacs配置文件，会显示出相应的配置文件路径，如/root/.emacs（自行创建的.emacs无功能作用）。
-4. 修改配置文件：
+4. 若需更改缓存文件配置，有如下方案，可自选：
 
-   （1）关闭功能：(setq make-backup-files nil)。
+    * 复制如下代码到/root/.emacs，关闭缓存文件功能：
+      ```
+      (setq make-backup-files nil)
+      ```
 
-   （2）指定集中保存备份文件的目录：(setq backup-directory-alist (quote (("." . "/.emacs-backups"))))。
+
+    * 复制如下代码到/root/.emacs，指定集中保存备份文件的目录：
+      ```
+      (setq backup-directory-alist (quote (("." . "/.emacs-backups"))))
+      ```
