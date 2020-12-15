@@ -874,7 +874,7 @@
       "path": "docs/thirdparty_migration/thidrparty",
       "children": [
         {
-          "label": "openstack-train迁移至openEuler指导",
+          "label": "OpenStack-train迁移至openEuler指导",
           "path": "docs/thirdparty_migration/openstack-train",
           "children": [
             
@@ -888,7 +888,7 @@
           ]
         },
         {
-          "label": "springframework迁移至openEuler指导",
+          "label": "SpringFramework迁移至openEuler指导",
           "path": "docs/thirdparty_migration/springframework",
           "children": [
             

@@ -2,7 +2,7 @@
 
 [[toc]]
 
-# 软件介绍
+## 软件介绍
 
 Kubernetes 集群（以下简称 K8S）是一个开源的容器集群管理平台，可以实现容器集群的自动化部署、自动扩缩容、维护等功能。Kubernetes的目标是促进完善组件和工具的生态系统，以减轻应用程序在云上运行的负担。
 
@@ -11,9 +11,9 @@ Kubernetes 集群中存在两种节点，Master 节点和 Worker 节点。Master
 本文描述使用两个节点来搭建 Kubernetes 集群的方法，一个作为 Master 节点，另一个作为 Worker 节点。
 
 
-# 环境配置
+## 环境配置
 
-**软件平台**
+### 软件平台
 
 <table><thead align="left"><tr id="row19660823"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.1.4.1.1"><p id="p49022807"><a name="p49022807"></a><a name="p49022807"></a>软件名称</p>
 </th>
@@ -50,7 +50,7 @@ Kubernetes 集群中存在两种节点，Master 节点和 Worker 节点。Master
 </tbody>
 </table>
 
-**必要依赖包**
+### 必要依赖包
 
 <table><thead align="left"><tr id="row14515408"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.1.4.1.1"><p id="p34897438"><a name="p34897438"></a><a name="p34897438"></a>软件名称</p>
 </th>
@@ -101,10 +101,10 @@ Kubernetes 集群中存在两种节点，Master 节点和 Worker 节点。Master
 >![](./public_sys-resources/icon-note.gif) **说明：**
 >本文适用于 K8S 1.15.10/1.18/1.16 三个版本，本文以 1.15.10 版本为例说明。
 
-# 系统配置
+## 系统配置
 
 
-## 修改主机配置
+### 修改主机配置
 
 分别编辑 Master 和 Worker 节点的`/etc/hosts` 文件，在文件末尾添加 Master 和 Worker 节点的IP。
 
@@ -113,7 +113,7 @@ Kubernetes 集群中存在两种节点，Master 节点和 Worker 节点。Master
 192.168.122.130 worker 
 ```
 
-## 安装 docker 配置 yum 源
+### 安装 docker 配置 yum 源
 
 1. 可选，官方发布的镜像中已配置好 yum 源，不需要另外配置。如系统中没有配置任何 openEuler yum 源，则需要按照如下操作新增 repo 文件，`baseurl`值以发布版本中的源地址为准。
 * aarch64架构
@@ -149,7 +149,7 @@ Kubernetes 集群中存在两种节点，Master 节点和 Worker 节点。Master
     $ systemctl enable docker
     ```
 
-## 关闭防火墙和selinux
+### 关闭防火墙和selinux
 
 由于 nftables 后端兼容性问题，产生了重复的防火墙规则，需要关闭防火墙；为了使容器可以访问宿主机的文件系统，需要关闭 selinux。
 
@@ -162,7 +162,7 @@ $ setenforce 0
 $ sed -i '/^SELINUX=/s/enforcing/disabled/' /etc/selinux/config
 ```
 
-## 配置 kubernetes yum 源
+### 配置 kubernetes yum 源
 
 1. 分别在 Master 和 Worker 节点上执行如下命令，配置 kubernetes 的 yum 源。
     * aarch64架构
@@ -202,7 +202,7 @@ $ sed -i '/^SELINUX=/s/enforcing/disabled/' /etc/selinux/config
     ```
 
 
-## 关闭交换分区
+### 关闭交换分区
 
 在安装 K8S 集群时，Linux 的 Swap 内存交换机制需要关闭，否则会因为内存交换影响系统的性能和稳定性。 
 
@@ -226,9 +226,9 @@ $ sed -i '/^SELINUX=/s/enforcing/disabled/' /etc/selinux/config
     $ reboot
     ```
 
-# 软件安装
+## 软件安装
 
-## 安装k8s组件
+### 安装k8s组件
 
 分别在 Master 和 Worker 节点上执行如下命令，安装 k8s 组件。
 
@@ -236,7 +236,7 @@ $ sed -i '/^SELINUX=/s/enforcing/disabled/' /etc/selinux/config
 $ yum install -y kubelet-1.15.10 kubeadm-1.15.10 kubectl-1.15.10 kubernetes-cni-0.7.5
 ```
 
-## 配置开机启动项
+### 配置开机启动项
 
 1. 分别在 Master 和 Worker 节点上执行如下命令，配置开机启动 kubelet。
 
@@ -260,7 +260,7 @@ $ yum install -y kubelet-1.15.10 kubeadm-1.15.10 kubectl-1.15.10 kubernetes-cni-
     $ sysctl -p /etc/sysctl.d/k8s.conf
     ```
 
-## 通过Docker下载组件
+### 通过Docker下载组件
 
 Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要根据架构选择相应的版本,以下命令分别两台节点上执行，操作步骤如下。
 
@@ -347,7 +347,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
     $ docker rmi gcmirrors/etcd-amd64:3.3.10
     $ docker rmi coredns/coredns:1.3.1
     ```
-## 配置 Master 节点
+### 配置 Master 节点
 
 1. 在 Master 节点上执行如下命令，进行集群初始化。
 
@@ -380,7 +380,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
     ```
     由于还没有配置calico网络，当前node状态为未就绪。
 	
-## 安装calico网络插件
+### 安装calico网络插件
 
 1. 分别在 Master 和 Worker 节点上执行如下命令，下载 calico 容器镜像。
     * aarch64架构
@@ -453,7 +453,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
     ```
 
 
-## 加入集群
+### 加入集群
 
 1. 在 Worker 节点执行[配置 Master 节点](#jump1)中保存的命令，将 Worker 节点加入集群。<a name="jump2"></a>
 
@@ -479,7 +479,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
 
 
 
-## 查看状态信息相关命令
+### 查看状态信息相关命令
 
 * 查看所有 pods
 
@@ -512,7 +512,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
     ```
 
 
-# 软件卸载
+## 软件卸载
 
 如果不需要使用 k8s 集群时，可以按本章节操作，删除 k8s 集群，以下命令需要分别在 Master 和 Worker 节点上执行。
 1. 执行如下命令，清空 k8s 集群设置

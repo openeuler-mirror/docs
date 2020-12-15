@@ -3,9 +3,9 @@
 
 [[toc]]
 
-# 软件介绍
+## 软件介绍
 
-## Spring Framwork 简介
+### Spring Framwork 简介
 
 Spring Framework 是为解决 EJB 开发 JavaEE 程序代码冗余，配置复杂等诸多问题而引入的开源框架。Spring 作为容器，提供了对多种技术\(JMS, MQ, UnitTest\)的支持，同时通过 AOP\(事物管理，日志等\)提供了众多方便应用的辅助类，对主流框架提供了良好的支持。
 
@@ -37,7 +37,7 @@ Spring Framework 包括三个核心组件 Spring-Core、Spring-Context 和 Sprin
 从上面的介绍可以看出，IOC\(控制反转\)的实现包 Spring-Beans 和 AOP\(依赖注入\)的实现包  Spring-AOP 是整个框架的基础，而 Spring-Core 是整个框架的核心。在此基础上，Spring-Context 提供了上下文环境，为各个模块提供粘合作用。而 web 部分的功能，是依赖 Spring-Web 和 Spring-Webmvc 来实现的。
 
 
-## Spring Boot 和 Spring Cloud 简介
+### Spring Boot 和 Spring Cloud 简介
 
 Spring Framework 引入到本地 maven 仓库后，就可以使用这个框架对 Java 程序进行 maven 构建。但 Spring 构建需要配置大量的 xml 文件，开发繁琐。Spring Boot 基于 Spring Framework 来构建，是一种快速构建 Spring 应用的方案，而 Spring Cloud 是构建 Spring Boot的分布式环境，也就是常说的云应用，Spring Boot 起到承上启下的作用。
 
@@ -82,7 +82,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 </tbody>
 </table>
 
-软件平台
+### 软件平台
 
 <a name="table34563480"></a>
 <table><thead align="left"><tr id="row39539678"><th class="cellrowborder" valign="top" width="27.55102040816326%" id="mcps1.1.5.1.1"><p id="p48597379"><a name="p48597379"></a><a name="p48597379"></a>软件名称</p>
@@ -129,7 +129,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 </tbody>
 </table>
 
-必要依赖包
+### 必要依赖包
 
 <a name="table24167893"></a>
 <table><thead align="left"><tr id="row33208779"><th class="cellrowborder" valign="top" width="19.19191919191919%" id="mcps1.1.4.1.1"><p id="p5556592"><a name="p5556592"></a><a name="p5556592"></a>软件名称</p>
@@ -158,9 +158,9 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 </table>
 
 
-# 系统配置
+## 系统配置
 
-## 配置本地 yum 源
+### 配置本地 yum 源
 
 若环境可以连接互联网，可不用配置本地源，直接用系统配置好的源或者自己添加其它网络源即可。
 
@@ -181,7 +181,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
     # mount /root/openEuler-20.03-LTS-SP1-everything-aarch64-dvd.iso /mnt
     ```
 
-# 软件编译
+## 软件编译
 
 ## 使用本地 yum 源安装基础软件
 
@@ -209,7 +209,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 
 
 
-## 安装 Spring Framework 到本地 maven 仓库
+### 安装 Spring Framework 到本地 maven 仓库
 
 1. 执行以下命令，获取 Spring Framework 工程源码包:
 
@@ -238,7 +238,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
     ![](figures/zh-cn_image_0296838184.png)
 
 
-## Spring Boot工程 tomcat 用例编译
+### Spring Boot工程 tomcat 用例编译
 
 1. 执行以下命令，获取用例源码。
 
@@ -255,7 +255,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
     # mvn package -DskipTests
     ```
 
-## Spring Cloud 工程用例编译
+### Spring Cloud 工程用例编译
 
 1. 执行以下命令，编译 Spring-cloud-gateway-sample 工程。
 
@@ -295,9 +295,9 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
     ```
 
 
-# 软件运行
+## 软件运行
 
-## Spring Boot单机环境运行示例
+### Spring Boot单机环境运行示例
 
 1. spring-boot-sample-tomcat 若编译成功，会在工程目录的`/home/spring-boot-1.5.4.RELEASE/spring-boot-samples/spring-boot-samples-tomcat/target` 文件夹下生成 spring-boot-sample-tomcat-1.5.4.RELEASE.jar 文件，执行以下命令，运行这个 jar 文件。
 
@@ -314,10 +314,10 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 
 3. 如果要关闭 Spring-Boot 服务，在步骤 1 窗口中，按 ctrl + c 组合键关闭服务。
 
-## Spring Cloud单机环境运行示例
+### Spring Cloud单机环境运行示例
 
 
-* spring-cloud-gateway-sample 工程运行示例。
+#### spring-cloud-gateway-sample 工程运行示例。
 
     1. spring-cloud-gateway-sample 工程若编译成功，会在工程目录的 `/home/spring-cloud-geteway-sample/target` 文件夹下生成 spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar 文件，执行如下命令，运行这个 jar 文件。
 
@@ -331,7 +331,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
         ![](figures/run1.png)
     3. 如果要关闭服务，在步骤 1 窗口中，按 ctrl + c 组合键关闭服务。
 
-* zuul-server工程运行示例
+#### zuul-server工程运行示例
     1. zuul-server 需要在 eureka 工程运行后再运行。在`/home/eureka/target` 目录下，执行如下命令，启动 eureka 服务。
 
         ```
@@ -356,7 +356,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
         ![](figures/run4.png) 
     4. 如果要关闭服务，在步骤 2 和 3 窗口中，按 ctrl + c 组合键关闭服务。
 	
-* feign-eureka工程运行示例
+#### feign-eureka工程运行示例
     1. feign-eureka 要在 eureka 工程运行后执行，在`/home/eureka/target` 目录下，执行如下命令，启动 eureka 服务。
 
         ```
@@ -390,10 +390,10 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 
 
 
-# FAQ
+## FAQ
 
 
-## Spring Framework编译过程中Spring-webmvc:test 失败
+### Spring Framework编译过程中Spring-webmvc:test 失败
 
 **问题现象**
 
@@ -414,7 +414,7 @@ MvcNamespaceTests.java 中的 assert 未通过测试，失败提示信息如下�
 ![](figures/zh-cn_image_0296838204.png)
 
 
-## 任务 asciidoctor 执行失败
+### 任务 asciidoctor 执行失败
 
 **问题现象**
 
@@ -432,7 +432,7 @@ MvcNamespaceTests.java 中的 assert 未通过测试，失败提示信息如下�
 执行命令 `./gradlew clean test` 进行构建
 
 
-## Spring-test:compileJava执行失败
+### Spring-test:compileJava执行失败
 
 **问题现象**
 
@@ -450,7 +450,7 @@ Spring-test:compileJava执行失败，页面提示 "error：warnings found and -
 
 ![](figures/zh-cn_image_0296838210.png)
 
-## repo源失效
+### repo源失效
 
 **问题现象**：
 
@@ -476,7 +476,7 @@ https://repo.Spring.io/plugins-release
 
 https://repo.Springsource.org/plugin-release
 
-## build超时导致的失败
+### build超时导致的失败
 
 **问题现象**：
 
