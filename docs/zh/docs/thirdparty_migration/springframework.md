@@ -318,61 +318,75 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 
 
 * spring-cloud-gateway-sample 工程运行示例。
-spring-cloud-gateway-sample 工程若编译成功，会在工程目录的 target 文件夹下生成 spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar 文件，执行如下命令。
+    1. spring-cloud-gateway-sample 工程若编译成功，会在工程目录的 `/home/spring-cloud-geteway-sample/target` 文件夹下生成 spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar 文件，执行如下命令，运行这个 jar 文件。
 
-    ```
-    # java -jar spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar
-    # curl http://localhost:8080/get
-    ```
-返回结果如下图所示，即表明运行成功。
-
-![](figures/run1.png)
-
+        ```
+        # java -jar spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar
+        ```
+	2. 待控制台出现 `Started DemogatewayApplication` 字样后，启动新窗口执行以下命令，查看 gateway服务运行状态。
+    返回结果如下图所示，即表明运行成功。
+	    ```
+        # curl http://localhost:8080/get
+        ```
+        ![](figures/run1.png)
+    3. 如果要关闭服务，在步骤 1 窗口中，按 ctrl + c 组合键关闭服务。
 
 * zuul-server工程运行示例
-zuul-server 需要在 eureka 工程运行后再运行。执行如下命令。
+    1. zuul-server 需要在 eureka 工程运行后再运行。在`/home/eureka/target` 目录下，执行如下命令，启动 eureka 服务。
 
-    ```
-    # cd /home/eureka/target
-    # java -jar eureka-0.0.1-SNAPSHOT.jar
-    # cd /home/zuul-server/target
-    # java -jar zuul-server-1.0.0.BUILD-SNAPSHOT.jar
-    # curl http://localhost:8765
-    ```
+        ```
+        # java -jar eureka-0.0.1-SNAPSHOT.jar	
+        ```	
+	2. 待控制台出现 `Started EurekaApplicattion` 字样后，启动新窗口在工程目录`/home/zuul-server/target`下执行以下命令，启动 zuul-server 服务。
 
-    zuul-server 服务启动后控制台会输出访问的端口为 8765, curl 访问本地 8765 端口，会看到返回的带有时间戳的 404 信息，同时服务端控制会记录到一次访问事件。
-		
-    Tomcat 8765端口开放如下图所示：
-	
-    ![](figures/run2.png) 	
-    curl访问8765端口如下图所示：
-	
-    ![](figures/run3.png)  	
-    用户访问时服务端打印的日志信息如下图所示：
-	
-    ![](figures/run4.png) 
+        ```
+        # java -jar zuul-server-1.0.0.BUILD-SNAPSHOT.jar
+        ```
+    3. 待控制台出现 `Started ZuulServerApplicatttion` 字样后，启动新窗口执行以下命令查看服务运行状态。
+	    ```
+        # curl http://localhost:8765
+        ```		
+        zuul-server 服务启动后控制台会输出访问的端口为 8765, curl 访问本地 8765 端口，会看到返回的带有时间戳的 404 信息，同时服务端控制会记录到一次访问事件。
 
+        curl访问8765端口如下图所示：
+	
+        ![](figures/run3.png)  	
+        用户访问时服务端打印的日志信息如下图所示：
+	
+        ![](figures/run4.png) 
+    4. 如果要关闭服务，在步骤 2 和 3 窗口中，按 ctrl + c 组合键关闭服务。
+	
 * feign-eureka工程运行示例
-feign-eureka 要在 eureka 工程运行后执行，执行如下命令，分别运行 feign-eureka 工程下的 server 和 client。
+    1. feign-eureka 要在 eureka 工程运行后执行，在`/home/eureka/target` 目录下，执行如下命令，启动 eureka 服务。
 
-    ```
-    # cd /home/eureka/target
-    # java -jar eureka-0.0.1-SNAPSHOT.jar
-    # cd /home/feign-eureka/server/target
-    # java -jar feign-eureka-hello-server-0.0.1-SNAPSHOT.jar
-    # cd /home/feign-eureka/client/target
-    # java -jar feign-eureka-hello-client-0.0.1-SNAPSHOT.jar
-    # curl http://localhost:7211
-    ```
-    服务启动后会在client的控制台看到，服务打开了7211端口，curl访问这个端口，获得Hello SERVER信息
-
-    工程 feign-eureka 开放 7211 端口如下图所示：
+        ```
+        # java -jar eureka-0.0.1-SNAPSHOT.jar	
+        ```	
+	2. 待控制台出现 `Started EurekaApplicattion` 字样后，启动新窗口在工程目录`/home/feign-eureka/server/target`下执行以下命令，启动 feign-eureka 工程的 server。
 	
-    ![](figures/run5.png) 
+        ```
+        # java -jar feign-eureka-hello-server-0.0.1-SNAPSHOT.jar	
+        ```
 
-    访问 feign-eureka 服务查看返回结果如下图所示：
+    3. 待控制台出现 `Started HelloServerApplication` 字样后，启动新窗口在工程目录`/home/feign-eureka/client/target`	下执行以下命令，启动 feign-eureka 工程的 client。
 	
-    ![](figures/run6.png) 
+        ```
+        # java -jar feign-eureka-hello-client-0.0.1-SNAPSHOT.jar	
+        ```
+		
+	4. 待控制台出现 `Started HelloClientApplication` 字样后，启动新窗口执行以下命令查看服务运行状态。
+        ```
+        # curl http://localhost:7211
+        ```
+        服务启动后会在client的控制台看到，服务打开了7211端口，curl访问这个端口，获得Hello SERVER信息
+
+        工程 feign-eureka 开放 7211 端口如下图所示：
+	
+        ![](figures/run5.png) 
+
+        访问 feign-eureka 服务查看返回结果如下图所示：
+	
+        ![](figures/run6.png) 
 
 
 
@@ -462,3 +476,20 @@ https://repo.Spring.io/plugins-release
 
 https://repo.Springsource.org/plugin-release
 
+## build超时导致的失败
+
+**问题现象**：
+
+问题集中体现在网络相关模块的test不通过，例如提示信息，Task ：spring-webflux:test FAILED，而且上报失败的代码位置并不是每次编译都会出现。
+
+![](figures/x86_build_fail.png)
+
+**问题原因**
+
+通过分析代码，可以得出结论，失败是因为在规定时间内得不到远端服务的回应,产生超时错误,导致构建失败。
+
+**解决方法**
+
+根据编译错误提示的代码位置，延长超时等待时间。具体的操作：修改提示代码处.verify\(Duration.ofSeconds\(TIMEOUT\)\)或.block\(TIMEOUT\),将TIMEOUT的数值，调整为二倍大。例如下图时间一处超时时间由5秒改为10秒。
+
+![](figures/modify_timeout_value.png)
