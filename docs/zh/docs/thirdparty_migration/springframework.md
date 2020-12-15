@@ -318,13 +318,13 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 
 
 * spring-cloud-gateway-sample 工程运行示例。
+
     1. spring-cloud-gateway-sample 工程若编译成功，会在工程目录的 `/home/spring-cloud-geteway-sample/target` 文件夹下生成 spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar 文件，执行如下命令，运行这个 jar 文件。
 
         ```
         # java -jar spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar
         ```
-	2. 待控制台出现 `Started DemogatewayApplication` 字样后，启动新窗口执行以下命令，查看 gateway服务运行状态。
-    返回结果如下图所示，即表明运行成功。
+    2. 待控制台出现 `Started DemogatewayApplication` 字样后，启动新窗口执行以下命令，查看 gateway服务运行状态。返回结果如下图所示，即表明运行成功。
 	    ```
         # curl http://localhost:8080/get
         ```
@@ -337,7 +337,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
         ```
         # java -jar eureka-0.0.1-SNAPSHOT.jar	
         ```	
-	2. 待控制台出现 `Started EurekaApplicattion` 字样后，启动新窗口在工程目录`/home/zuul-server/target`下执行以下命令，启动 zuul-server 服务。
+    2. 待控制台出现 `Started EurekaApplicattion` 字样后，启动新窗口在工程目录`/home/zuul-server/target`下执行以下命令，启动 zuul-server 服务。
 
         ```
         # java -jar zuul-server-1.0.0.BUILD-SNAPSHOT.jar
@@ -362,7 +362,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
         ```
         # java -jar eureka-0.0.1-SNAPSHOT.jar	
         ```	
-	2. 待控制台出现 `Started EurekaApplicattion` 字样后，启动新窗口在工程目录`/home/feign-eureka/server/target`下执行以下命令，启动 feign-eureka 工程的 server。
+    2. 待控制台出现 `Started EurekaApplicattion` 字样后，启动新窗口在工程目录`/home/feign-eureka/server/target`下执行以下命令，启动 feign-eureka 工程的 server。
 	
         ```
         # java -jar feign-eureka-hello-server-0.0.1-SNAPSHOT.jar	
@@ -374,7 +374,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
         # java -jar feign-eureka-hello-client-0.0.1-SNAPSHOT.jar	
         ```
 		
-	4. 待控制台出现 `Started HelloClientApplication` 字样后，启动新窗口执行以下命令查看服务运行状态。
+    4. 待控制台出现 `Started HelloClientApplication` 字样后，启动新窗口执行以下命令查看服务运行状态。
         ```
         # curl http://localhost:7211
         ```
