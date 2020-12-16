@@ -162,7 +162,7 @@ The repository part allows you to customize openEuler software source repositori
 
     openEuler provides multiple repo sources for users online. For details about the repo sources, see [System Installation](./../Releasenotes/installing-the-os.md.html). This section uses the OS repo source of the AArch64 architecture as an example. 
 
-    For example, run the following command as the **root** user to add the openeuler repo source to the openEuler_aarch64.repo file. 
+    For example, run the following command as the administrator authority to add the openeuler repo source to the openEuler_aarch64.repo file. 
 
     ```
     # vi /etc/yum.repos.d/openEuler_aarch64.repo
