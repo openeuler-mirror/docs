@@ -30,6 +30,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 
 ## 环境配置
 
+建议部署环境内存大于 2 G。
 ### 软件平台
 
 <a name="table4006700"></a>
@@ -653,7 +654,7 @@ pip 社区更新至20.3，版本不适配。
 
 **解决方法**
 
-删除/opt/stack/requirement/.venv 下旧的python 虚拟运行环境，参考社区解决方案 ，使用补丁修改 devstack 源码。
+删除/opt/stack/requirement下旧的python 虚拟运行环境，参考社区解决方案 ，使用补丁修改 devstack 源码。
 在 /home/stack/devstack 目录下，执行如下命令：
 
 ```
