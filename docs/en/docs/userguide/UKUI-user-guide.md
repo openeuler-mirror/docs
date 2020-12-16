@@ -52,7 +52,7 @@
 ## Overview
 Desktop Environment is the basis for the user's operation on the graphical interface, and provides multiple functions including taskbar, start menu, etc. The main interface is shown in figure below.
 
-![Fig. 1 Desktop main interface-big](UKUI_Image/1.png)
+![Fig. 1 Desktop main interface-big](./figures/1.png)
 
 <br>
 
@@ -62,20 +62,20 @@ The system places three icons Computer, Recycle Bin and Personal by default, and
 
 | Icon |  Description	|
 | :------------ | :------------ |
-| ![](UKUI_Image/icon1.png) | Computer: Show the drives and hardwares connected to the machine|
-| ![](UKUI_Image/icon2.png) | Recycle Bin: Show documents that have been diverted|
-| ![](UKUI_Image/icon3.png) | Personal: Show personal home directory|
+| ![](./figures/icon1.png) | Computer: Show the drives and hardwares connected to the machine|
+| ![](./figures/icon2.png) | Recycle Bin: Show documents that have been diverted|
+| ![](./figures/icon3.png) | Personal: Show personal home directory|
 	
 <br>
 
 In addition, right-clicking "Computer" and selecting "Properties", it can show the current system version, kernel version, activation and other related informations.
 
-![Fig. 2 "Computer" - "Properties"-big](UKUI_Image/2.png)
+![Fig. 2 "Computer" - "Properties"-big](./figures/2.png)
 
 ### Right-click Menu
 Right-click on the desktop blank and a menu appears as shown in figure below, providing the users with some shortcut features.
 
-![Fig. 3 Right-click Menu](UKUI_Image/3.png)
+![Fig. 3 Right-click Menu](./figures/3.png)
 
 Some of the options are described in table below.
 
@@ -91,186 +91,186 @@ Some of the options are described in table below.
 ### Basic Function
 Taskbar is located at the bottom and includes the Start Menu, Multi View Switch, File Browser, Firefox Web Browser, WPS, and Tray Menu.
 
-![Fig. 4 Taskbar](UKUI_Image/4.png)
+![Fig. 4 Taskbar](./figures/4.png)
 
 | Component | Decsription |
 | :------------ | :------------ |
-|![](UKUI_Image/icon4.png)| Start menu: Open the system menu to find applications and files |
-|![](UKUI_Image/icon5.png)| Multi View Switch: Operate in multiple workspaces without interfering with each other |
-|![](UKUI_Image/icon6.png)| File Browser: Browse and manage documents in the system |
-|![](UKUI_Image/icon7.png)| Firefox Web Browser: Provide a convenient and safe way to access the Internet |
-|![](UKUI_Image/icon8.png)| WPS: Realize the most common functions of office software such as text, forms, presentations, and more |
+|![](./figures/icon4.png)| Start menu: Open the system menu to find applications and files |
+|![](./figures/icon5.png)| Multi View Switch: Operate in multiple workspaces without interfering with each other |
+|![](./figures/icon6.png)| File Browser: Browse and manage documents in the system |
+|![](./figures/icon7.png)| Firefox Web Browser: Provide a convenient and safe way to access the Internet |
+|![](./figures/icon8.png)| WPS: Realize the most common functions of office software such as text, forms, presentations, and more |
 |Window Display Area| The blank part in the middle of the horizontal bar. Display running programs, opened documents, and allow users to close the windows, top the windows, etc |
-|![](UKUI_Image/icon9.png)| Tray Menu: Include settings for voice, Kylin weather,input method, internet connection, notification center, date, and night mode |
+|![](./figures/icon9.png)| Tray Menu: Include settings for voice, Kylin weather,input method, internet connection, notification center, date, and night mode |
 |Show Desktop| The button is on the far right. Minimize all windows on the desktop and return to the desktop; Clicking again will restore the windows |
 
 #### Multi View Switch
-Click the icon "![](UKUI_Image/icon10-o.png)" on the taskbar to enter the interface shown in figure below, and select the operation area that users need to work on at the moment in multiple work areas.
+Click the icon "![](./figures/icon10-o.png)" on the taskbar to enter the interface shown in figure below, and select the operation area that users need to work on at the moment in multiple work areas.
 
-![Fig. 5 Multi View Switch-big](UKUI_Image/5.png)
+![Fig. 5 Multi View Switch-big](./figures/5.png)
 
 #### Preview Window
 Users move the mouse over the app icon in the taskbar, and then a small preview window will be shown if this app has already been opened. 
 
 Hover over the specified window as shown below for hover state, the window will be slightly fuzzy glass effect (left), the rest of the window as default Status (right).
 
-![Fig. 6 Taskbar - Preview Window](UKUI_Image/6.png)
+![Fig. 6 Taskbar - Preview Window](./figures/6.png)
 
 Users can close the application by right-clicking on the app icon in the taskbar.
 
-![Fig. 7 Taskbar - Right-click Preview](UKUI_Image/7.png)
+![Fig. 7 Taskbar - Right-click Preview](./figures/7.png)
 
 #### Sidebar
-The sidebar is located at the right of the entire desktop. Click the icon "![](UKUI_Image/icon11-o.png)" in the taskbar tray menu to open the storage menu, and click the icon "![](UKUI_Image/icon12-o.png)" in Sidebar to pop up the sidebar as shown in figure below. 
+The sidebar is located at the right of the entire desktop. Click the icon "![](./figures/icon11-o.png)" in the taskbar tray menu to open the storage menu, and click the icon "![](./figures/icon12-o.png)" in Sidebar to pop up the sidebar as shown in figure below. 
 
 The sidebar consists of two parts: Notification Center, Clipboard and Widget.
 
-![Fig. 8 Sidebar without message status-big](UKUI_Image/8.png)
+![Fig. 8 Sidebar without message status-big](./figures/8.png)
 
 ##### Notification Center
 Notification center will display a list of recent important and newest informations. 
 
 Select "Clear" in the upper right corner to clear the list of informations; Select "Setting" in the upper right corner to go to the notification settings in the control center, and users can set which applications can show informations and the quantity of informations.
 
-![Fig. 9 Notification Center-big](UKUI_Image/9.png)
+![Fig. 9 Notification Center-big](./figures/9.png)
 
 Workspace at right side can be set to fold by applications.
 
-![Fig. 10 Fold messages by applications-big](UKUI_Image/10.png)
+![Fig. 10 Fold messages by applications-big](./figures/10.png)
 
-Icon "![](UKUI_Image/icon13-o.png)" at the top right corner of the sidebar can store unimportant informations. When the messages are more than 999+, it will be shown as the form of ![](UKUI_Image/icon14-o.png) which means limitless.
+Icon "![](./figures/icon13-o.png)" at the top right corner of the sidebar can store unimportant informations. When the messages are more than 999+, it will be shown as the form of ![](./figures/icon14-o.png) which means limitless.
 
-![Fig. 11 Message Organizer](UKUI_Image/11.png)
+![Fig. 11 Message Organizer](./figures/11.png)
 
 ##### Clipboard
 Clipboard can save the contents those were recently selected to copy or cut, and  users can operate them by using the icons in Table.
 
-![Fig. 12 Clipboard](UKUI_Image/12.png)
+![Fig. 12 Clipboard](./figures/12.png)
 
-Clicking "![](UKUI_Image/icon15-o.png)", users can edit the the contents of the clipboard.
+Clicking "![](./figures/icon15-o.png)", users can edit the the contents of the clipboard.
 
-![Fig. 13 edit the content](UKUI_Image/13.png)
+![Fig. 13 edit the content](./figures/13.png)
 
 | Icon | Description | Icon | Description |
 | :------------ | :------------ | :------------ | :------------ |
-| ![](UKUI_Image/icon16.png) | Copy the content | ![](UKUI_Image/icon18.png) | Edit the content |
-| ![](UKUI_Image/icon17.png) | Delete the content |  |  |	
+| ![](./figures/icon16.png) | Copy the content | ![](./figures/icon18.png) | Edit the content |
+| ![](./figures/icon17.png) | Delete the content |  |  |	
 	
 <br>
 
 The second label of the clipboard is the small plug-in that contains alarm clock, notebook, user feedback.
 
-![Fig. 14 Plug-in](UKUI_Image/14.png)
+![Fig. 14 Plug-in](./figures/14.png)
 
 #### Tray Menu
 ##### Storage Menu
-Click "![](UKUI_Image/icon19-o.png)" at the tray menu to open the storage menu. 
+Click "![](./figures/icon19-o.png)" at the tray menu to open the storage menu. 
 
 It contains Kylin Weather, Input Method, Bluetooth, USB, etc.
 
-![Fig. 15 Storage Menu](UKUI_Image/15.png)
+![Fig. 15 Storage Menu](./figures/15.png)
 
 ##### Input Method
 The taskbar input method defaults to Sogou input method. Use the shortcut key "Ctrl+Space" to switch it out, and the "Shift" key to switch between Chinese and English modes.
 
-![Fig. 16 Input Method](UKUI_Image/16.png)
+![Fig. 16 Input Method](./figures/16.png)
 
 ##### USB
 When the USB is inserted into the computer, it will be matically read the data inside. 
 
-Click "![](UKUI_Image/icon26-o.png)" to open the window as shown in figure below. 
+Click "![](./figures/icon26-o.png)" to open the window as shown in figure below. 
 
-When users need to umount the USB, please click the icon "![](UKUI_Image/icon27-o.png)".
+When users need to umount the USB, please click the icon "![](./figures/icon27-o.png)".
 
-![Fig. 17 The status of USB](UKUI_Image/17.png)
+![Fig. 17 The status of USB](./figures/17.png)
 
 ##### Power Supply
-Click the icon "![](UKUI_Image/icon28-o.png)": 
+Click the icon "![](./figures/icon28-o.png)": 
 
 When no power supply is detected.
 
-![Fig. 18 No Power Supply](UKUI_Image/18.png)
+![Fig. 18 No Power Supply](./figures/18.png)
 
 When power supply is detected.
 
-![Fig. 19 Have Power Supply](UKUI_Image/19.png)
+![Fig. 19 Have Power Supply](./figures/19.png)
 
-Users right-click the icon "![](UKUI_Image/icon30-o.png)" of power manager to open the power setting menu. 
+Users right-click the icon "![](./figures/icon30-o.png)" of power manager to open the power setting menu. 
 
 It provides two setting options: adjust screen brightness, and set power and sleep.
 
-![Fig. 20 Power Manager](UKUI_Image/20.png)
+![Fig. 20 Power Manager](./figures/20.png)
 
 If the power manager pops up a"low battery" window, users can click to turn on the power save mode, and the power manager will set the machine to run in this mode immediately.
 
-![Fig. 21 Power Saving Mode](UKUI_Image/21.png)
+![Fig. 21 Power Saving Mode](./figures/21.png)
 
 ##### Network
-Users can choose wired or wireless network connections by clicking the icon "![](UKUI_Image/icon31-o.png)" of network manager.
+Users can choose wired or wireless network connections by clicking the icon "![](./figures/icon31-o.png)" of network manager.
 
 | Icon | Description | Icon | Description |
 | :------------ | :------------ | :------------ | :------------ |
-|![](UKUI_Image/icon32.png)|	Connected |![](UKUI_Image/icon37.png)| Unconnected |
-|![](UKUI_Image/icon33.png)|	Connection limited |![](UKUI_Image/icon38.png)|	Locked |
-|![](UKUI_Image/icon34.png)|	Connecting |![](UKUI_Image/icon39.png)|	Wifi connected |
-|![](UKUI_Image/icon35.png)|	Wifi unconnected |![](UKUI_Image/icon40.png)|	Wificonnection limited |
-|![](UKUI_Image/icon36.png)|	Wifi locked |![](UKUI_Image/icon41.png)|	Wifi connecting |	
+|![](./figures/icon32.png)|	Connected |![](./figures/icon37.png)| Unconnected |
+|![](./figures/icon33.png)|	Connection limited |![](./figures/icon38.png)|	Locked |
+|![](./figures/icon34.png)|	Connecting |![](./figures/icon39.png)|	Wifi connected |
+|![](./figures/icon35.png)|	Wifi unconnected |![](./figures/icon40.png)|	Wificonnection limited |
+|![](./figures/icon36.png)|	Wifi locked |![](./figures/icon41.png)|	Wifi connecting |	
 
 <br>
 
-![Fig. 22 Network Connection](UKUI_Image/22.png)
+![Fig. 22 Network Connection](./figures/22.png)
 
 ###### 1) Wired Network
 In the wired network connection interface, click on the wired network plan to expand. Details of the network.
 
-![Fig. 23 Wired Network](UKUI_Image/23.png)
+![Fig. 23 Wired Network](./figures/23.png)
 
 ###### 2) Wireless Network
 Click the switch button in the upper right corner to turn on the wireless network connection, and select the WiFi from the list of available wireless networks. Enter the password to access the Internet.
 
-![Fig. 24 Wireless Network](UKUI_Image/24.png)
+![Fig. 24 Wireless Network](./figures/24.png)
 
 ###### 3) Network Setting
-Right-click the icon "![](UKUI_Image/icon42-o.png)" of network mnager to pop up the setting menu.
+Right-click the icon "![](./figures/icon42-o.png)" of network mnager to pop up the setting menu.
 
-![Fig. 25 Wired Network Setting](UKUI_Image/25.png)
+![Fig. 25 Wired Network Setting](./figures/25.png)
 
 Click network setting to go to the setting window immediately.
 
-![Fig. 26 Network Setting](UKUI_Image/26.png)
+![Fig. 26 Network Setting](./figures/26.png)
 
 ##### Volume
-Click the icon "![](UKUI_Image/icon43-o.png)" to open the volume window, and there provides three modes.
+Click the icon "![](./figures/icon43-o.png)" to open the volume window, and there provides three modes.
 
 ###### 1) Mini Mode
 It only displays the volume of the speaker.
 
-![Fig. 27 Mini Mode](UKUI_Image/27.png)
+![Fig. 27 Mini Mode](./figures/27.png)
 
 ###### 2) According to Equipment
 It contains input equipments and output equipments.
 
-![Fig. 28 According to Equipment List](UKUI_Image/28.png)
+![Fig. 28 According to Equipment List](./figures/28.png)
 
 ###### 3) According to Application
 It contains system volume and other applications' volume.
 
-![Fig. 29 According to Application List](UKUI_Image/29.png)
+![Fig. 29 According to Application List](./figures/29.png)
 
 ##### Calendar
 Click the date&time on the taskbar to open the calendar window.
 
 Users can view the day's informations by filtering the year, month, day. The date will be displayed in large letters, with the time, the week, the festival,and the lunar calendar. Taboos can be seen by checking.
 
-![Fig. 30 Calendar-big](UKUI_Image/30.png)
+![Fig. 30 Calendar-big](./figures/30.png)
 
 ##### Night Mode
-Click the icon "![](UKUI_Image/icon44-o.png)" on the Taskbar and then the system changes to the night mode.
+Click the icon "![](./figures/icon44-o.png)" on the Taskbar and then the system changes to the night mode.
 
 #### Advanced Setting
 Right-click the Taskbar to open the menu.
 
-![Fig. 31 Right-Clicking Menu](UKUI_Image/31.png)
+![Fig. 31 Right-Clicking Menu](./figures/31.png)
 
 Users can set the lauserst of taskbar accroding to "Taskbar Settings".
 
@@ -308,7 +308,7 @@ Click the button to open the "Start Menu".
 
 It provides sliding bar.
 
-![Fig. 32 Start Menu](UKUI_Image/32.png)
+![Fig. 32 Start Menu](./figures/32.png)
 
 #### Category Menu at right side
 When the mouse is over the right side of the start menu, it will appear a pre-expanded cue bar. Clicking to expand, and then three categories are showing at the right side by default: "Common Software", "Alphabetical Category", and "Functional category".
@@ -321,19 +321,19 @@ When the mouse is over the right side of the start menu, it will appear a pre-ex
 
 Users can click the button at top right corner to view fullscreen menu mode.
 
-![Fig. 33 Fullscreen Menu-big](UKUI_Image/33.png)
+![Fig. 33 Fullscreen Menu-big](./figures/33.png)
 
 #### Function Button at right side
 It provides User Avatar, Computer, Control Center and Shutdown four options.
 
 ##### User Avatar
-Click "![](UKUI_Image/icon45-o.png)" to view user's informations.
+Click "![](./figures/icon45-o.png)" to view user's informations.
 
 ##### Computer
-Click "![](UKUI_Image/icon46-o.png)" to open personal home folder
+Click "![](./figures/icon46-o.png)" to open personal home folder
 
 ##### Control Center
-Click "![](UKUI_Image/icon47-o.png)" to go to the control center.
+Click "![](./figures/icon47-o.png)" to go to the control center.
 
 ##### Shutdown
 ###### Lock Screen
@@ -341,7 +341,7 @@ When users do not need to use the computer temporarily, the lock screen can be s
 
  The system will matically lock the screen after a period of idle time by default.
 
-![Fig. 34 Lock Screen-big](UKUI_Image/34.png)
+![Fig. 34 Lock Screen-big](./figures/34.png)
 
 ###### Switch Users & Log Out
 When users want to select another user to log in uing the computer, users can select "Log out" or "Switch user".
@@ -355,7 +355,7 @@ There are two ways:
 
 It will pop up a dialog box, and users can choose shutdown or reboot as needed.
 
-![Fig. 35 Shutdown Dialog Box-big](UKUI_Image/35.png)
+![Fig. 35 Shutdown Dialog Box-big](./figures/35.png)
 
 2)"Start Menu" > right side menu of the "Shutdown" button > "Shutdown"/"Reboot"
 
@@ -368,11 +368,11 @@ Right-clicking Start Menu, it provides lock screen, switch user, log out, reboot
 ### Applications
 Users can search apps in the search box by key words. As shown in figure below, the result will show up matically with the input.
 
-![Fig. 36 Search Apps](UKUI_Image/36.png)
+![Fig. 36 Search Apps](./figures/36.png)
 
 Right-clicking one app in the Start Menu, the right-click menu poping up.
 
-![Fig. 37 Right-click Menu](UKUI_Image/37.png)
+![Fig. 37 Right-click Menu](./figures/37.png)
 
 The options are described in table below.
 
