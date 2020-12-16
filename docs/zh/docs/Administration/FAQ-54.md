@@ -11,6 +11,7 @@
     - [libiscsi降级失败](#libiscsi降级失败)
     - [xfsprogs降级失败](#xfsprogs降级失败)
     - [不合理使用glibc正则表达式引起ReDoS攻击](#不合理使用glibc正则表达式引起ReDoS攻击)
+    - [cpython/Lib发现CVE-2019-9674:Zip炸弹漏洞](#cpython/Lib发现CVE-2019-9674:Zip炸弹漏洞)
 
 <!-- /TOC -->
 
@@ -303,3 +304,17 @@ Segmentation fault (core dumped)
     # "a"*400000
     ```
 3.  用户程序在检测到进程异常之后，通过重启进程等手段恢复业务，提升程序的可靠性。
+
+## cpython/Lib发现CVE-2019-9674:Zip炸弹漏洞
+
+### 问题现象
+
+Python 3.7.2 及以下版本中的 Lib/zipfile.py 允许远程攻击者通过 zip 炸弹制造拒绝服务请求，从而导致资源消耗过大。
+
+### 影响分析
+
+远程攻击者通过 zip 炸弹导致拒绝服务，影响目标系统业务甚至达到使系统崩溃的结果。zip 炸弹就是一个高压缩比的 zip 文件，它本身可能只有几M或几十M的大小，但是解压缩之后会产生巨大的数据量，产生巨大的资源消耗。
+
+### 解决方法
+
+在 zipfile 文档中添加告警信息： https://github.com/python/cpython/blob/3.7/Doc/library/zipfile.rst。
