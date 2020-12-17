@@ -4,23 +4,26 @@ English | [简体中文](./README.md)
 
 ### Introduction
 
-DOCS contains all documents of the openEuler community, including the release notes, OS installation guide, administrator guide, virtualization, container, and A-Tune user guides, and application development guide.
+DOCS contains all documents of the openEuler community, including the release notes, OS installation guide, administrator guide, virtualization, container, A-Tune user guides and application development guide.
 
 ### Searching for a Document in DOCS
 
 Open the **docs** folder. The folder contains documents in Chinese (**zh** folder) and English (**en** folder). The English document is used as an example. In the **en** folder, the **docs** folder contains the content of a specific document, and the **menu** folder contains the overview of the document.   
 Open the **docs** folder. The relationship between guides and folders is as follows:  
-* **A-Tune**: *A-Tune User Guide*
-* **Administrator**: *Administrator Guide*
-* **ApplicationDev**: *Application Development Guide*
-* **Container**: *Container User Guide*
-* **Installation**: *Installation Guide*
-* **Quickstart**: *Quick Start*
-* **Releasenotes**: *Release Notes*
-* **SecHarden**: *Security Hardening Guide*
-* **Virtualization**: *Virtualization Application Guide*
-* **userguide**: *openEuler Toolset User Guide*
-* **StratoVirt**： *StratoVirt User Guide*
+
+| folder | Content |
+|-----|-----|
+| **A-Tune** | *A-Tune User Guide* |
+| **Administrator** | *Administrator Guide* |
+| **ApplicationDev** | *Application Development Guide* |
+| **Container** | *Container User Guide* |
+| **Installation** | *Installation Guide* |
+| **Quickstart** | *Quick Start*
+| **Releasenotes** | *Release Notes*
+| **SecHarden** | *Security Hardening Guide* |
+| **Virtualization** | *Virtualization Application Guide* |
+| **userGuide* |* | *openEuler Toolset User Guide* |
+| **StratoVirt**： *StratoVirt User Guide* |
 
 
 ### Modifying a Document
@@ -30,10 +33,12 @@ When the openEuler version information is updated, the documents herein also nee
 ### Checking the Relationship Between Versions and Branches
 The DOCS contains the following four branches:
 
-* **master**: development branch, which is the default branch
-* **stable-1.0\_Base**: 1.0 Base version branch, which is displayed in **DOCS** > **1.0 BASE** on the [openEuler community website](https://openeuler.org/)
-* **stable-20.03\_LTS**: 20.03 LTS version branch, which is displayed in **DOCS** > **20.03 LTS** on the [openEuler community website](https://openeuler.org/)
-* **stable-20.09\_LTS**: 20.09 version branch, which is displayed in **DOCS** > **20.09** on the [openEuler community website](https://openeuler.org/)
+| Branch | Description | Documentation |
+|--------|-------------|---------------|
+| **master** | development branch, which is the default branch ||
+| **stable-1.0\_Base** | 1.0 Base version branch | which is displayed in **DOCS** > **1.0 BASE** on the [openEuler community website](https://openeuler.org/) |
+| **stable-20.03\_LTS** | 20.03 LTS version branch | which is displayed in **DOCS** > **20.03 LTS** on the [openEuler community website](https://openeuler.org/) |
+| **stable-20.09\_LTS** | 20.09 version branch | which is displayed in **DOCS** > **20.09** on the [openEuler community website](https://openeuler.org/) |
 
 ### Participating in SIG
 Create or reply to an issue: You can discuss an issue by creating or replying to an issue.  
