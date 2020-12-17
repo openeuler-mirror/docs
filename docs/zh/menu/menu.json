@@ -422,7 +422,11 @@
           "label": "工具使用指南",
           "path": "docs/Virtualization/工具使用指南",
           "children": [
-            
+            {
+              "label": "vmtop",
+	      "path": "docs/Virtualization/vmtop",
+	      "children": []
+            }
           ]
         },
         {
