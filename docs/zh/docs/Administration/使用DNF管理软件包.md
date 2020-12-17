@@ -161,26 +161,25 @@ repository部分允许您定义定制化的openEuler软件源仓库，各个仓�
 
 -   配置/etc/yum.repos.d目录下的.repo文件
 
-    openEuler提供了多种repo源供用户在线使用，各repo源含义可参考[系统安装](./../Releasenotes/系统安装.md)，以AArch64架构的OS repo源为例。使用root权限在openEuler_aarch64.repo文件中添加openEuler repo源，示例如下：
+    openEuler提供了多种repo源供用户在线使用，各repo源含义可参考[系统安装](./../Releasenotes/系统安装.md)。使用root权限添加openEuler repo源，示例如下：
 
     ```
-    # vi /etc/yum.repos.d/openEuler_aarch64.repo
+    # vi /etc/yum.repos.d/openEuler.repo
     ```
 
     ```
-    [osrepo]
-    name=osrepo
-    baseurl=https://repo.openeuler.org/openEuler-20.09/OS/aarch64/
+    [OS]
+    name=openEuler-$releasever - OS
+    baseurl=https://repo.openeuler.org/openEuler-20.09/OS/$basearch/
     enabled=1
     gpgcheck=1
-    gpgkey=https://repo.openeuler.org/openEuler-20.09/OS/aarch64/RPM-GPG-KEY-openEuler
-
+    gpgkey=https://repo.openeuler.org/openEuler-20.09/OS/$basearch/RPM-GPG-KEY-openEuler
     ```
 
     >![](./public_sys-resources/icon-note.gif) **说明：**   
     > - enabled为是否启用该软件源仓库，可选值为1和0。默认值为1，表示启用该软件源仓库。
 	> - gpgkey为验证签名用的公钥。
-	
+
 
 #### 显示当前配置
 
@@ -333,7 +332,7 @@ Available Packages
 Name        : httpd
 Version     : 2.4.34
 Release     : 8.h5.oe1
-Arch        : aarch64 
+Arch        : aarch64
 Size        : 1.2 M
 Repo        : Local
 Summary     : Apache HTTP Server
@@ -492,7 +491,7 @@ dnf group install groupid
 例如安装Development Tools相应的软件包组，命令如下：
 
 ```
-# dnf group install "Development Tools" 
+# dnf group install "Development Tools"
 ```
 
 ```
@@ -514,7 +513,7 @@ dnf group remove groupid
 例如删除Development Tools相应的软件包组，命令如下：
 
 ```
-# dnf group remove "Development Tools" 
+# dnf group remove "Development Tools"
 ```
 
 ```
