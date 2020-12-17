@@ -7,18 +7,21 @@ Docs包含了openEuler社区的所有文档，包括发行说明、操作系统�
 
 打开“docs”文件夹，该文件夹包含了中文（“zh”文件夹）和英文（“en”文件夹）两种语言文档，以中文文档举例进行说明。 
 在“zh”文件夹中，进入到目录docs/zh/docs/20.09，“docs”文件夹包含了具体文档的内容，“menu”包含了文档的大纲内容。  
-打开“docs”文件夹，各手册和文件夹对应关系如下。  
-* A-Tune文件夹对应：A-Tune用户指南
-* Adminnistration文件夹对应手册为：管理员指南
-* ApplicationDev文件夹对应手册为：应用开发指南
-* Container文件夹对应手册为：容器用户指南
-* Installation文件夹对应手册为：安装指南
-* Quickstart文件夹对应手册为：快速入门
-* Releasenotes文件夹对应手册为：发行说明
-* SecHarden文件夹对应手册为：安全加固指南
-* Virtualization文件夹对应手册为：虚拟化应用指南
-* userguide文件夹对应手册为：openEuler工具集用户指南
-* StratoVirt文件夹对应手册为：StratoVrit虚拟化用户指南
+打开“docs”文件夹，各手册和文件夹对应关系如下:
+
+| 文件夹 | 手册 |
+|-----|----|
+| A-Tune | A-Tune用户指南 |
+| Adminnistration | 管理员指南 |
+| ApplicationDev | 应用开发指南 |
+| Container | 容器用户指南 |
+| Installation | 安装指南 |
+| Quickstart | 快速入门 |
+| Releasenotes | 发行说明 |
+| SecHarden | 安全加固指南 |
+| Virtualization | 虚拟化应用指南 |
+| userguide | openEuler工具集用户指南 |
+| StratoVirt | StratoVrit虚拟化用户指南 |
 
 
 ### 如何修改文档
@@ -28,10 +31,12 @@ Docs包含了openEuler社区的所有文档，包括发行说明、操作系统�
 
 ### 如何查看版本分支对应关系
 Docs当前使用如下4个分支：
-* master：开发分支，为默认分支。
-* stable2-1.0_Base：1.0 Base版本分支，分支内容呈现在[openEuler社区](https://openeuler.org/)网站“文档->1.0 BASE。
-* stable2-20.03_LTS：20.03 LTS版本分支，分支内容呈现在[openEuler社区](https://openeuler.org/)网站“文档->20.03 LTS”。
-* stable2-20.09：20.09 版本分支，分支内容呈现在[openEuler社区](https://openeuler.org/)网站“文档->20.09”。
+| 分支 | 说明 | 内容呈现 |
+|-----|----|----|
+| master | 开发分支，为默认分支||
+| stable2-1.0_Base | 1.0 Base版本分支 | 分支内容呈现在[openEuler社区](https://openeuler.org/)网站“文档->1.0 BASE |
+| stable2-20.03_LTS：20.03 LTS版本分支 | 分支内容呈现在[openEuler社区](https://openeuler.org/)网站“文档->20.03 LTS |
+| stable2-20.09 | 20.09 版本分支 | 分支内容呈现在[openEuler社区](https://openeuler.org/)网站“文档->20.09 |
 
 
 ### 如何参与SIG
