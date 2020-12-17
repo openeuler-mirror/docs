@@ -293,7 +293,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 
     ```
     # java -jar spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar
-    ``
+    ```
 2. 待控制台出现 `Started DemogatewayApplication` 字样后，启动新窗口执行以下命令，查看 gateway服务运行状态。返回结果如下图所示，即表明运行成功。
 	
     ```
@@ -322,7 +322,8 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 
     curl访问8765端口如下图所示：
 	
-    ![](figures/run3.png)  	
+    ![](figures/run3.png)
+  	
     用户访问时服务端打印的日志信息如下图所示：
 	
     ![](figures/run4.png) 
