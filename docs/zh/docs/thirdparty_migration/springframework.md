@@ -295,7 +295,8 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
     # java -jar spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar
     ``
 2. 待控制台出现 `Started DemogatewayApplication` 字样后，启动新窗口执行以下命令，查看 gateway服务运行状态。返回结果如下图所示，即表明运行成功。
-	```
+	
+    ```
     # curl http://localhost:8080/get
     ```
     ![](figures/run1.png)
@@ -313,7 +314,8 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
     # java -jar zuul-server-1.0.0.BUILD-SNAPSHOT.jar
     ```
 3. 待控制台出现 `Started ZuulServerApplicatttion` 字样后，启动新窗口执行以下命令查看服务运行状态。
-	```
+	
+    ```
     # curl http://localhost:8765
     ```		
     zuul-server 服务启动后控制台会输出访问的端口为 8765, curl 访问本地 8765 端口，会看到返回的带有时间戳的 404 信息，同时服务端控制会记录到一次访问事件。
