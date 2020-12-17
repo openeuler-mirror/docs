@@ -1,5 +1,7 @@
 # openEuler 文档
 
+![English](./README-en.md) | 简体中文
+
 ### 介绍
 
 Docs包含了openEuler社区的所有文档，包括发行说明、操作系统安装、管理员指南、虚拟化和容器的使用指导、A-Tune使用指导和应用开发指导等内容。
