@@ -36,9 +36,9 @@ The DOCS contains the following four branches:
 | Branch | Description | Documentation |
 |--------|-------------|---------------|
 | **master** | development branch, which is the default branch ||
-| **stable-1.0\_Base** | 1.0 Base version branch |  **DOCS** > **1.0 BASE** on the [openEuler community website](https://openeuler.org/) |
-| **stable-20.03\_LTS** | 20.03 LTS version branch | **DOCS** > **20.03 LTS** on the [openEuler community website](https://openeuler.org/) |
-| **stable-20.09\_LTS** | 20.09 version branch | **DOCS** > **20.09** on the [openEuler community website](https://openeuler.org/) |
+| **stable2-1.0\_Base** | 1.0 Base version branch |  **DOCS** > **1.0 BASE** on the [openEuler community website](https://openeuler.org/) |
+| **stable2-20.03\_LTS** | 20.03 LTS version branch | **DOCS** > **20.03 LTS** on the [openEuler community website](https://openeuler.org/) |
+| **stable2-20.09** | 20.09 version branch | **DOCS** > **20.09** on the [openEuler community website](https://openeuler.org/) |
 
 ### Participating in SIG
 Create or reply to an issue: You can discuss an issue by creating or replying to an issue.  
