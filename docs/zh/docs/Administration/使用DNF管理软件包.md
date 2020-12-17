@@ -161,20 +161,19 @@ repository部分允许您定义定制化的openEuler软件源仓库，各个仓�
 
 -   配置/etc/yum.repos.d目录下的.repo文件
 
-    openEuler提供了多种repo源供用户在线使用，各repo源含义可参考[系统安装](./../Releasenotes/系统安装.md)，以AArch64架构的OS repo源为例。使用管理员权限在openEuler_aarch64.repo文件中添加openEuler repo源，示例如下：
+    openEuler提供了多种repo源供用户在线使用，各repo源含义可参考[系统安装](./../Releasenotes/系统安装.md)，使用管理员权限添加openEuler repo源，示例如下：
 
     ```
-    # vi /etc/yum.repos.d/openEuler_aarch64.repo
+    # vi /etc/yum.repos.d/openEuler.repo
     ```
 
     ```
-    [osrepo]
-    name=osrepo
-    baseurl=https://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/aarch64/
+    [OS]
+    name=openEuler-$releasever - OS
+    baseurl=https://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/$basearch/
     enabled=1
     gpgcheck=1
-    gpgkey=https://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/aarch64/RPM-GPG-KEY-openEuler
-
+    gpgkey=https://repo.openeuler.org/openEuler-20.09/OS/$basearch/RPM-GPG-KEY-openEuler
     ```
 
     >![](./public_sys-resources/icon-note.gif) **说明：**   
