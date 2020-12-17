@@ -289,74 +289,74 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 
 #### spring-cloud-gateway-sample 工程运行示例。
 
-    1. spring-cloud-gateway-sample 工程若编译成功，会在工程目录的 `/home/spring-cloud-geteway-sample/target` 文件夹下生成 spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar 文件，执行如下命令，运行这个 jar 文件。
+1. spring-cloud-gateway-sample 工程若编译成功，会在工程目录的 `/home/Spring-cloud-gateway-sample/target` 文件夹下生成 spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar 文件，执行如下命令，运行这个 jar 文件。
 
-        ```
-        # java -jar spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar
-        ```
-    2. 待控制台出现 `Started DemogatewayApplication` 字样后，启动新窗口执行以下命令，查看 gateway服务运行状态。返回结果如下图所示，即表明运行成功。
-	    ```
-        # curl http://localhost:8080/get
-        ```
-        ![](figures/run1.png)
-    3. 如果要关闭服务，在步骤 1 窗口中，按 ctrl + c 组合键关闭服务。
+    ```
+    # java -jar spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar
+    ``
+2. 待控制台出现 `Started DemogatewayApplication` 字样后，启动新窗口执行以下命令，查看 gateway服务运行状态。返回结果如下图所示，即表明运行成功。
+	```
+    # curl http://localhost:8080/get
+    ```
+    ![](figures/run1.png)
+3. 如果要关闭服务，在步骤 1 窗口中，按 ctrl + c 组合键关闭服务。
 
 #### zuul-server工程运行示例
-    1. zuul-server 需要在 eureka 工程运行后再运行。在`/home/eureka/target` 目录下，执行如下命令，启动 eureka 服务。
+1. zuul-server 需要在 eureka 工程运行后再运行。在`/home/eureka/target` 目录下，执行如下命令，启动 eureka 服务。
 
-        ```
-        # java -jar eureka-0.0.1-SNAPSHOT.jar	
-        ```	
-    2. 待控制台出现 `Started EurekaApplicattion` 字样后，启动新窗口在工程目录`/home/zuul-server/target`下执行以下命令，启动 zuul-server 服务。
+    ```
+    # java -jar eureka-0.0.1-SNAPSHOT.jar	
+    ```	
+2. 待控制台出现 `Started EurekaApplicattion` 字样后，启动新窗口在工程目录`/home/zuul-server/target`下执行以下命令，启动 zuul-server 服务。
 
-        ```
-        # java -jar zuul-server-1.0.0.BUILD-SNAPSHOT.jar
-        ```
-    3. 待控制台出现 `Started ZuulServerApplicatttion` 字样后，启动新窗口执行以下命令查看服务运行状态。
-	    ```
-        # curl http://localhost:8765
-        ```		
-        zuul-server 服务启动后控制台会输出访问的端口为 8765, curl 访问本地 8765 端口，会看到返回的带有时间戳的 404 信息，同时服务端控制会记录到一次访问事件。
+    ```
+    # java -jar zuul-server-1.0.0.BUILD-SNAPSHOT.jar
+    ```
+3. 待控制台出现 `Started ZuulServerApplicatttion` 字样后，启动新窗口执行以下命令查看服务运行状态。
+	```
+    # curl http://localhost:8765
+    ```		
+    zuul-server 服务启动后控制台会输出访问的端口为 8765, curl 访问本地 8765 端口，会看到返回的带有时间戳的 404 信息，同时服务端控制会记录到一次访问事件。
 
-        curl访问8765端口如下图所示：
+    curl访问8765端口如下图所示：
 	
-        ![](figures/run3.png)  	
-        用户访问时服务端打印的日志信息如下图所示：
+    ![](figures/run3.png)  	
+    用户访问时服务端打印的日志信息如下图所示：
 	
-        ![](figures/run4.png) 
-    4. 如果要关闭服务，在步骤 2 和 3 窗口中，按 ctrl + c 组合键关闭服务。
+    ![](figures/run4.png) 
+4. 如果要关闭服务，在步骤 2 和 3 窗口中，按 ctrl + c 组合键关闭服务。
 	
 #### feign-eureka工程运行示例
-    1. feign-eureka 要在 eureka 工程运行后执行，在`/home/eureka/target` 目录下，执行如下命令，启动 eureka 服务。
+1. feign-eureka 要在 eureka 工程运行后执行，在`/home/eureka/target` 目录下，执行如下命令，启动 eureka 服务。
 
-        ```
-        # java -jar eureka-0.0.1-SNAPSHOT.jar	
-        ```	
-    2. 待控制台出现 `Started EurekaApplicattion` 字样后，启动新窗口在工程目录`/home/feign-eureka/server/target`下执行以下命令，启动 feign-eureka 工程的 server。
+    ```
+    # java -jar eureka-0.0.1-SNAPSHOT.jar	
+    ```	
+2. 待控制台出现 `Started EurekaApplicattion` 字样后，启动新窗口在工程目录`/home/feign-eureka/server/target`下执行以下命令，启动 feign-eureka 工程的 server。
 	
-        ```
-        # java -jar feign-eureka-hello-server-0.0.1-SNAPSHOT.jar	
-        ```
+    ```
+    # java -jar feign-eureka-hello-server-0.0.1-SNAPSHOT.jar	
+    ```
 
-    3. 待控制台出现 `Started HelloServerApplication` 字样后，启动新窗口在工程目录`/home/feign-eureka/client/target`	下执行以下命令，启动 feign-eureka 工程的 client。
+3. 待控制台出现 `Started HelloServerApplication` 字样后，启动新窗口在工程目录`/home/feign-eureka/client/target`	下执行以下命令，启动 feign-eureka 工程的 client。
 	
-        ```
-        # java -jar feign-eureka-hello-client-0.0.1-SNAPSHOT.jar	
-        ```
+    ```
+    # java -jar feign-eureka-hello-client-0.0.1-SNAPSHOT.jar	
+    ```
 		
-    4. 待控制台出现 `Started HelloClientApplication` 字样后，启动新窗口执行以下命令查看服务运行状态。
-        ```
-        # curl http://localhost:7211
-        ```
-        服务启动后会在client的控制台看到，服务打开了7211端口，curl访问这个端口，获得Hello SERVER信息
+4. 待控制台出现 `Started HelloClientApplication` 字样后，启动新窗口执行以下命令查看服务运行状态。
+    ```
+    # curl http://localhost:7211
+    ```
+    服务启动后会在client的控制台看到，服务打开了7211端口，curl访问这个端口，获得Hello SERVER信息
 
-        工程 feign-eureka 开放 7211 端口如下图所示：
+    工程 feign-eureka 开放 7211 端口如下图所示：
 	
-        ![](figures/run5.png) 
+    ![](figures/run5.png) 
 
-        访问 feign-eureka 服务查看返回结果如下图所示：
+    访问 feign-eureka 服务查看返回结果如下图所示：
 	
-        ![](figures/run6.png) 
+    ![](figures/run6.png) 
 
 
 
