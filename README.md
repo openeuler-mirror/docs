@@ -35,7 +35,7 @@ Docs当前使用如下4个分支：
 |-----|----|----|
 | master | 开发分支，为默认分支||
 | stable2-1.0_Base | 1.0 Base版本分支 | 分支内容呈现在[openEuler社区](https://openeuler.org/)网站“文档->1.0 BASE |
-| stable2-20.03_LTS：20.03 LTS版本分支 | 分支内容呈现在[openEuler社区](https://openeuler.org/)网站“文档->20.03 LTS |
+| stable2-20.03_LTS | 20.03 LTS版本分支 | 分支内容呈现在[openEuler社区](https://openeuler.org/)网站“文档->20.03 LTS |
 | stable2-20.09 | 20.09 版本分支 | 分支内容呈现在[openEuler社区](https://openeuler.org/)网站“文档->20.09 |
 
 
