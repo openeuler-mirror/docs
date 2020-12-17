@@ -160,22 +160,21 @@ The repository part allows you to customize openEuler software source repositori
 -   Configuring the .repo file in the /etc/yum.repos.d directory
 
 
-    openEuler provides multiple repo sources for users online. For details about the repo sources, see [System Installation](./../Releasenotes/installing-the-os.md.html). This section uses the OS repo source of the AArch64 architecture as an example. 
+    openEuler provides multiple repo sources for users online. For details about the repo sources, see [System Installation](./../Releasenotes/installing-the-os.md.html). 
 
-    For example, run the following command as the administrator authority to add the openeuler repo source to the openEuler_aarch64.repo file. 
-
-    ```
-    # vi /etc/yum.repos.d/openEuler_aarch64.repo
-    ```
+    For example, run the following command as the administrator authority to add the openeuler repo source to the openEuler.repo file. 
 
     ```
-    [osrepo]
-    name=osrepo
-    baseurl=https://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/aarch64/
+    # vi /etc/yum.repos.d/openEuler.repo
+    ```
+
+    ```
+    [OS]
+    name=openEuler-$releasever - OS
+    baseurl=https://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/$basearch/
     enabled=1
     gpgcheck=1
-    gpgkey=https://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/aarch64/RPM-GPG-KEY-openEuler
-
+    gpgkey=https://repo.openeuler.org/openEuler-20.09/OS/$basearch/RPM-GPG-KEY-openEuler
     ```
 
     >![](./public_sys-resources/icon-note.gif) **NOTE:**    
