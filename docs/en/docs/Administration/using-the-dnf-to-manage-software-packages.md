@@ -39,12 +39,12 @@ DNF is a Linux software package management tool used to manage RPM software pack
 
 The main configuration file of the DNF is /etc/dnf/dnf.conf which consists of two parts:
 
--   The  **main**  part in the file stores the global settings of the DNF. 
+-   The  **main**  part in the file stores the global settings of the DNF.
 
--   The **repository** part in the file stores the settings of the software source. You can add one or more  **repository**  sections to the file. 
+-   The **repository** part in the file stores the settings of the software source. You can add one or more  **repository**  sections to the file.
 
-In addition, the /etc/yum.repos.d directory stores one or more repo source files, which define different repositories. 
-	
+In addition, the /etc/yum.repos.d directory stores one or more repo source files, which define different repositories.
+
 You can configure a software source by either directly configuring the /etc/dnf/dnf.conf file or configuring the .repo file in the /etc/yum.repos.d directory.
 
 #### Configuring the main Part
@@ -160,22 +160,35 @@ The repository part allows you to customize openEuler software source repositori
 -   Configuring the .repo file in the /etc/yum.repos.d directory
 
 
-    openEuler provides multiple repo sources for users online. For details about the repo sources, see [System Installation](./../Releasenotes/installing-the-os.md.html). This section uses the OS repo source of the AArch64 architecture as an example. 
+    openEuler provides multiple repo sources for users online. For details about the repo sources, see [System Installation](./../Releasenotes/installing-the-os.md.html).
 
-    For example, run the following command as the **root** user to add the openeuler repo source to the openEuler_aarch64.repo file. 
-
-    ```
-    # vi /etc/yum.repos.d/openEuler_aarch64.repo
-    ```
+    For example, run the following command as the **root** user to add the openeuler repo source to the openEuler.repo file.
 
     ```
-    [osrepo]
-    name=osrepo
-    baseurl=https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/
+    # vi /etc/yum.repos.d/openEuler.repo
+    ```
+
+    ```
+    [OS]
+    name=openEuler-$releasever - OS
+    baseurl=https://repo.openeuler.org/openEuler-20.03-LTS/OS/$basearch/
     enabled=1
     gpgcheck=1
-    gpgkey=https://repo.openeuler.org/openEuler-20.03-LTS/OS/aarch64/RPM-GPG-KEY-openEuler
+    gpgkey=https://repo.openeuler.org/openEuler-20.03-LTS/OS/$basearch/RPM-GPG-KEY-openEuler
 
+    [update]
+    name=openEuler-$releasever - Update
+    baseurl=http://repo.openeuler.org/openEuler-20.03-LTS/update/$basearch/
+    enabled=1
+    gpgcheck=1
+    gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS/update/$basearch/RPM-GPG-KEY-openEuler
+
+    [extras]
+    name=openEuler-$releasever - Extras
+    baseurl=http://repo.openeuler.org/openEuler-20.03-LTS/extras/$basearch/
+    enabled=0
+    gpgcheck=1
+    gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS/extras/$basearch/RPM-GPG-KEY-openEuler
     ```
 
     >![](./public_sys-resources/icon-note.gif) **NOTE:**    
@@ -327,7 +340,7 @@ Available Packages
 Name        : httpd
 Version     : 2.4.34
 Release     : 8.h5.oe1
-Arch        : aarch64 
+Arch        : aarch64
 Size        : 1.2 M
 Repo        : Local
 Summary     : Apache HTTP Server
@@ -480,7 +493,7 @@ dnf group install groupid
 For example, to install the software package group of Development Tools, run the following command:
 
 ```
-# dnf group install "Development Tools" 
+# dnf group install "Development Tools"
 ```
 
 ```
@@ -501,7 +514,7 @@ dnf group remove groupid
 For example, to delete the software package group of Development Tools, run the following command:
 
 ```
-# dnf group remove "Development Tools" 
+# dnf group remove "Development Tools"
 ```
 
 ```
