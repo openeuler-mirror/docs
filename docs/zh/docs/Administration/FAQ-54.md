@@ -332,3 +332,62 @@ emacs未进行配置，或者未生成有效的配置文件，会导致存在缓
       ```
       (setq backup-directory-alist (quote (("." . "/.emacs-backups"))))
       ```
+
+## rtkit-daemon服务启动报错Failed to make ourselves RT: Operation not permitted
+
+### 问题现象
+默认情况下rtkit-daemon服务启动正常，但是在安装docker-engine的情况下启动
+rtkit-daemon会有报错信息，如下所示：
+
+```
+12月 18 09:34:15 openEuler systemd[1]: Started RealtimeKit Scheduling Policy Service.
+12月 18 09:34:15 openEuler rtkit-daemon[22560]: Successfully called chroot.
+12月 18 09:34:15 openEuler rtkit-daemon[22560]: Successfully dropped privileges.
+12月 18 09:34:15 openEuler rtkit-daemon[22560]: Successfully limited resources.
+12月 18 09:34:15 openEuler rtkit-daemon[22560]: Running.
+12月 18 09:34:15 openEuler rtkit-daemon[22560]: Canary thread running.
+12月 18 09:34:15 openEuler rtkit-daemon[22560]: Failed to make ourselves RT: Operation not permitted
+12月 18 09:34:15 openEuler rtkit-daemon[22560]: Watchdog thread running.
+```
+
+### 原因分析
+rtkit-daemon报错的原因是有服务(如docker.service)配置了Delegate=yes。
+
+在没有配置该参数的情况下，rtkit-daemon的cgroup信息如下所示，此时服务表现正常。
+```
+[root@openEuler ~]# cat /proc/pidof rtkit-daemon/cgroup | grep system
+12:pids:/system.slice/rtkit-daemon.service
+7:devices:/system.slice/rtkit-daemon.service
+5:memory:/system.slice/rtkit-daemon.service
+2:blkio:/system.slice
+1:name=systemd:/system.slice/rtkit-daemon.service
+```
+
+在配置了Delegate=yes的情况下，systemd会创建相关slice，并把cpu cgroup也移动到
+slice中。这样rtkit-daemon服务的cgroup信息如下所示。rtkit-daemon被移动到了
+3:cpu,cpuacct:/system.slice/rtkit-daemon.service 但是里面的cpu.rt_runtime_us又
+没有设置合理的数值，所以有报错。
+
+```
+[root@openEuler ~]# cat /proc/pidof rtkit-daemon/cgroup | grep system
+12:pids:/system.slice/rtkit-daemon.service
+7:devices:/system.slice/rtkit-daemon.service
+5:memory:/system.slice/rtkit-daemon.service
+3:cpu,cpuacct:/system.slice/rtkit-daemon.service
+2:blkio:/system.slice/rtkit-daemon.service
+1:name=systemd:/system.slice/rtkit-daemon.service
+```
+
+### 解决方案
+解决方法一：修改rtkit-daemon.service，添加如下配置，这种方式即使用系统默认cpu cgroup配置。
+```
+Slice=-.slice
+DisableControllers=cpu cpuacct
+```
+
+解决方法二：修改rtkit-daemon.service，添加如下配置，这种方法即根据需要配置调度参数。
+```
+ExecStartPre=/usr/bin/bash -c "mkdir -p /sys/fs/cgroup/cpu,cpuacct/system.slice/rtkit-daemon.service"
+ExecStartPre=/usr/bin/bash -c "echo 950000 > /sys/fs/cgroup/cpu,cpuacct/system.slice/cpu.rt_runtime_us"
+ExecStartPre=/usr/bin/bash -c "echo 950000 > /sys/fs/cgroup/cpu,cpuacct/system.slice/rtkit-daemon.service/cpu.rt_runtime_us"
+```
