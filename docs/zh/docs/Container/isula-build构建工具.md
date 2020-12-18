@@ -904,9 +904,9 @@ isula-build两个组件进程之间通过unix socket套接字文件进行通信�
 | /etc/isula-build/registries.toml            | 600                 | 针对各个镜像仓库的配置文件，含可用的镜像仓库列表、镜像仓库黑名单。 |
 | /etc/isula-build/storage.toml               | 600                 | 本地持久化存储的配置文件，包含所使用的存储驱动的配置。       |
 | /etc/isula-build/isula-build.pub            | 444                 | 非对称加密公钥文件                                           |
-| /var/run/isula_build.sock                   | 600                 | 服务端isula-builder的本地套接字。                            |
+| /var/run/isula_build.sock                   | 660                 | 服务端isula-builder的本地套接字。                            |
 | /var/lib/isula-build                        | 700                 | 本地持久化目录。                                             |
 | /var/run/isula-build                        | 700                 | 本地运行时目录。                                             |
-| /var/lib/isula-build/tmp/[buildid]/isula-build-tmp-*.tar              | 600                 | 镜像导出至iSulad时的本地暂存目录。                           |
+| /var/lib/isula-build/tmp/[buildid]/isula-build-tmp-*.tar              | 644                 | 镜像导出至iSulad时的本地暂存目录。                           |
 
    
