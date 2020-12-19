@@ -15,88 +15,22 @@ Kubernetes 集群中存在两种节点，Master 节点和 Worker 节点。Master
 
 ### 软件平台
 
-<table><thead align="left"><tr id="row19660823"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.1.4.1.1"><p id="p49022807"><a name="p49022807"></a><a name="p49022807"></a>软件名称</p>
-</th>
-<th class="cellrowborder" valign="top" width="18.181818181818183%" id="mcps1.1.4.1.2"><p id="p11424440"><a name="p11424440"></a><a name="p11424440"></a>版本号</p>
-</th>
-<th class="cellrowborder" valign="top" width="48.484848484848484%" id="mcps1.1.4.1.3"><p id="p52964449"><a name="p52964449"></a><a name="p52964449"></a>备注</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row62262011"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.1.4.1.1 "><p id="p10058158"><a name="p10058158"></a><a name="p10058158"></a>OpenEuler</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.181818181818183%" headers="mcps1.1.4.1.2 "><p id="p9404449"><a name="p9404449"></a><a name="p9404449"></a>20.03-LTS-SP1</p>
-</td>
-<td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="row10739296"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.1.4.1.1 "><p id="p64576684"><a name="p64576684"></a><a name="p64576684"></a>GNU</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.181818181818183%" headers="mcps1.1.4.1.2 "><p id="p63328883"><a name="p63328883"></a><a name="p63328883"></a>7.3.0</p>
-</td>
-<td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="row62966687"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.1.4.1.1 "><p id="p27997"><a name="p27997"></a><a name="p27997"></a>Python3</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.181818181818183%" headers="mcps1.1.4.1.2 "><p id="p2267763"><a name="p2267763"></a><a name="p2267763"></a>3.7.4</p>
-</td>
-<td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="row42586845"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.1.4.1.1 "><p id="p26982424"><a name="p26982424"></a><a name="p26982424"></a>Bash</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.181818181818183%" headers="mcps1.1.4.1.2 "><p id="p38092711"><a name="p38092711"></a><a name="p38092711"></a>5.0.11</p>
-</td>
-<td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-</tbody>
-</table>
+|  软件名称   |版本号  |安装方法   |
+|:---  |:----  |:----  |
+| openEuler | 20.03-LTS-SP1 |iso  |
+| gnu | 7.3.0 |  |
+| python3 | 3.7.4 | |
+| bash | 5.0.11 |          |
 
 ### 必要依赖包
 
-<table><thead align="left"><tr id="row14515408"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.1.4.1.1"><p id="p34897438"><a name="p34897438"></a><a name="p34897438"></a>软件名称</p>
-</th>
-<th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.4.1.2"><p id="p8120240"><a name="p8120240"></a><a name="p8120240"></a>版本号</p>
-</th>
-<th class="cellrowborder" valign="top" width="42.42424242424242%" id="mcps1.1.4.1.3"><p id="p53759727"><a name="p53759727"></a><a name="p53759727"></a>安装方法</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row59570626"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.1.4.1.1 "><p id="p60491410"><a name="p60491410"></a><a name="p60491410"></a>docker-engine</p>
-</td>
-<td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.1.4.1.2 "><p id="p857158"><a name="p857158"></a><a name="p857158"></a>18.09.0-101</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.1.4.1.3 "><p id="p2320967"><a name="p2320967"></a><a name="p2320967"></a>见安装docker配置yum源</p>
-</td>
-</tr>
-<tr id="row20888703"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.1.4.1.1 "><p id="p14263389"><a name="p14263389"></a><a name="p14263389"></a>kubelet</p>
-</td>
-<td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.1.4.1.2 "><p id="p14483900"><a name="p14483900"></a><a name="p14483900"></a>1.15.10/1.18/1.16</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.1.4.1.3 "><p id="p32345284"><a name="p32345284"></a><a name="p32345284"></a>见安装k8s组件</p>
-</td>
-</tr>
-<tr id="row22672102"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.1.4.1.1 "><p id="p24500989"><a name="p24500989"></a><a name="p24500989"></a>kubeadm</p>
-</td>
-<td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.1.4.1.2 "><p id="p38423121"><a name="p38423121"></a><a name="p38423121"></a>1.15.10/1.18/1.16</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.1.4.1.3 "><p id="p25265097"><a name="p25265097"></a><a name="p25265097"></a>见安装k8s组件</p>
-</td>
-</tr>
-<tr id="row26059286"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.1.4.1.1 "><p id="p30427456"><a name="p30427456"></a><a name="p30427456"></a>kubectl</p>
-</td>
-<td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.1.4.1.2 "><p id="p48704899"><a name="p48704899"></a><a name="p48704899"></a>1.15.10/1.18/1.16</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.1.4.1.3 "><p id="p52782726"><a name="p52782726"></a><a name="p52782726"></a>见安装k8s组件</p>
-</td>
-</tr>
-<tr id="row5282487"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.1.4.1.1 "><p id="p25228285"><a name="p25228285"></a><a name="p25228285"></a>kubernetes-cni</p>
-</td>
-<td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.1.4.1.2 "><p id="p30225241"><a name="p30225241"></a><a name="p30225241"></a>1.15.10/1.18/1.16</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.1.4.1.3 "><p id="p32325424"><a name="p32325424"></a><a name="p32325424"></a>见安装k8s组件</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  软件名称   |版本号  |安装方法   |
+|:---  |:----  |:----  |
+| docker-engine | 18.09.0-101 |见安装docker配置yum源  |
+| kubelet | 1.15.10/1.18/1.16 | 见安装k8s组件 |
+| kubeadm | 1.15.10/1.18/1.16 | 见安装k8s组件 |
+| kubectl | 1.15.10/1.18/1.16 | 见安装k8s组件 |
+| kubernetes-cni | 1.15.10/1.18/1.16 | 见安装k8s组件 |
 
 >![](./public_sys-resources/icon-note.gif) **说明：**
 >本文适用于 K8S 1.15.10/1.18/1.16 三个版本，本文以 1.15.10 版本为例说明。
