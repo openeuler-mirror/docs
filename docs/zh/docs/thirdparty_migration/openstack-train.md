@@ -397,7 +397,7 @@ source openrc admin admin
 
 参考下图修改 `/home/stack/devstack/lib/neutron\_plugins/services/l3` 文件。
 
-![](figures/faq1.png)
+![](./figures/faq1.png)
 
 
 ### devstack@q-meta.service 服务概率性启动失败
@@ -416,7 +416,7 @@ source openrc admin admin
 
 参考下图修改 `/home/stack/devstack/functions-common` 文件。
 
-![](figures/zh-cn_image_0296837434.png)
+![](./figures/zh-cn_image_0296837434.png)
 
 ### mariadb 服务启动失败
 

@@ -138,7 +138,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
     # ./gradlew build
     ```
 
-    ![](figures/zh-cn_image_0296838182.png)
+    ![](./figures/zh-cn_image_0296838182.png)
 
 3. 执行以下命令，安装 Spring Framework 到本地 maven 仓库。
 
@@ -147,7 +147,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
     ```
 
     安装成功后会在`/root/.m2/repository/org/`文件夹下看到 springframework 文件夹。
-    ![](figures/zh-cn_image_0296838184.png)
+    ![](./figures/zh-cn_image_0296838184.png)
 
 
 ### Spring Boot工程 tomcat 用例编译
@@ -241,7 +241,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
     ```
     # curl http://localhost:8080/get
     ```
-    ![](figures/run1.png)
+    ![](./figures/run1.png)
 3. 如果要关闭服务，在步骤 1 窗口中，按 ctrl + c 组合键关闭服务。
 
 #### zuul-server工程运行示例
@@ -264,11 +264,11 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 
     curl访问8765端口如下图所示：
 	
-    ![](figures/run3.png)
+    ![](./figures/run3.png)
     	
     用户访问时服务端打印的日志信息如下图所示：
 	
-    ![](figures/run4.png) 
+    ![](./figures/run4.png) 
 4. 如果要关闭服务，在步骤 2 和 3 窗口中，按 ctrl + c 组合键关闭服务。
 	
 #### feign-eureka工程运行示例
@@ -297,11 +297,11 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 
     工程 feign-eureka 开放 7211 端口如下图所示：
 	
-    ![](figures/run5.png) 
+    ![](./figures/run5.png) 
 
     访问 feign-eureka 服务查看返回结果如下图所示：
 	
-    ![](figures/run6.png) 
+    ![](./figures/run6.png) 
 
 
 
@@ -314,7 +314,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 
 MvcNamespaceTests.java 中的 assert 未通过测试，失败提示信息如下图所示。
 
-![](figures/zh-cn_image_0296838200.png)
+![](./figures/zh-cn_image_0296838200.png)
 
 **问题原因**
 
@@ -326,7 +326,7 @@ MvcNamespaceTests.java 中的 assert 未通过测试，失败提示信息如下�
 
 将handler的date成员时间强制置0，与LocalDate转换的默认Time保持一致。
 
-![](figures/zh-cn_image_0296838204.png)
+![](./figures/zh-cn_image_0296838204.png)
 
 
 ### 任务 asciidoctor 执行失败
@@ -335,7 +335,7 @@ MvcNamespaceTests.java 中的 assert 未通过测试，失败提示信息如下�
 
 提示找不到`/root/.gem/jruby/1.9`文件夹
 
-![](figures/zh-cn_image_0296838206.png)
+![](./figures/zh-cn_image_0296838206.png)
 
 
 **问题原因**
@@ -352,7 +352,7 @@ MvcNamespaceTests.java 中的 assert 未通过测试，失败提示信息如下�
 **问题现象**
 
 Spring-test:compileJava执行失败，页面提示 "error：warnings found and -Werror specified"
-![](figures/zh-cn_image_0296838208.png)
+![](./figures/zh-cn_image_0296838208.png)
 
 
 **问题原因**
@@ -363,7 +363,7 @@ Spring-test:compileJava执行失败，页面提示 "error：warnings found and -
 
 编辑项目的 build.gradle 编译脚本，去除编译参数中的“-Werror”选项
 
-![](figures/zh-cn_image_0296838210.png)
+![](./figures/zh-cn_image_0296838210.png)
 
 ### repo源失效
 
@@ -371,7 +371,7 @@ Spring-test:compileJava执行失败，页面提示 "error：warnings found and -
 
 repo源无效，页面提示“Received status code 403 from server: Forbidden”。
 
-![](figures/zh-cn_image_0296838212.png)
+![](./figures/zh-cn_image_0296838212.png)
 
 
 **问题原因**
@@ -382,7 +382,7 @@ repo源无效，页面提示“Received status code 403 from server: Forbidden�
 
 检查 build.gradle 文件的 repo 源设置，是否正确，登录 repo 源，看是否存在缺失的文件。
 
-![](figures/zh-cn_image_0296838214.png)
+![](./figures/zh-cn_image_0296838214.png)
 
 
 以下有效的 repo 源供参考：
@@ -397,7 +397,7 @@ https://repo.Springsource.org/plugin-release
 
 问题集中体现在网络相关模块的test不通过，例如提示信息，Task ：spring-webflux:test FAILED，而且上报失败的代码位置并不是每次编译都会出现。
 
-![](figures/x86_build_fail.png)
+![](./figures/x86_build_fail.png)
 
 **问题原因**
 
@@ -407,4 +407,4 @@ https://repo.Springsource.org/plugin-release
 
 根据编译错误提示的代码位置，延长超时等待时间。具体的操作：修改提示代码处.verify\(Duration.ofSeconds\(TIMEOUT\)\)或.block\(TIMEOUT\),将TIMEOUT的数值，调整为二倍大。例如下图时间一处超时时间由5秒改为10秒。
 
-![](figures/modify_timeout_value.png)
+![](./figures/modify_timeout_value.png)

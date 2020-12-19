@@ -55,7 +55,7 @@ Kubernetes 集群中存在两种节点，Master 节点和 Worker 节点。Master
     $ vim /etc/yum.repos.d/openEuler_aarch64.repo
     ```
 
-    ![](figures/yumarm.png)
+    ![](./figures/yumarm.png)
 
 * x86架构
 
@@ -63,7 +63,7 @@ Kubernetes 集群中存在两种节点，Master 节点和 Worker 节点。Master
     $ vim /etc/yum.repos.d/openEuler_x86_64.repo
     ```
 
-    ![](figures/yumx86.png)
+    ![](./figures/yumx86.png)
 	
 2. 分别在 Master 和 Worker 节点上执行。
 清除缓存中的软件包及旧的headers，重新建立缓存。
@@ -152,7 +152,7 @@ $ sed -i '/^SELINUX=/s/enforcing/disabled/' /etc/selinux/config
     ```
     $ cat /etc/fstab
     ```
-    ![](figures/zh-cn_image_0296836364.png)	
+    ![](./figures/zh-cn_image_0296836364.png)	
 
 3. 执行如下命令重启系统。
 
@@ -202,7 +202,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
     ```
 	$ kubeadm config images list
 	```
-    ![](figures/downloaddocker.png)  
+    ![](./figures/downloaddocker.png)  
 	>![](./public_sys-resources/icon-note.gif) **说明：**   
     > K8S所需镜像版本有可能会变动，故需查看列表匹配需要下载的Docker镜像，以下镜像版本仅供参考。
 	
@@ -258,7 +258,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
     $ docker images | grep k8s
     ```
 
-    ![](figures/zh-cn_image_0296836374.png)
+    ![](./figures/zh-cn_image_0296836374.png)
 	
 5. 标签打好后，执行如下命令，删除当前环境上的旧镜像。
     * aarch64架构
@@ -292,7 +292,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
     ```
     集群初始化成功后，界面显示信息如下。
 	
-    ![](figures/configmaster.png)  
+    ![](./figures/configmaster.png)  
 	
 	保存上图中的`kubeadm join`命令，在下文[Worker节点加入集群](#jump2)步骤中需要执行该命令。<a name="jump1"></a>
 
@@ -352,7 +352,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
 	```
     $ docker images | grep calico
    ```
-    ![](figures/calicotag.png)
+    ![](./figures/calicotag.png)
 
 3. 分别在 Master 和 Worker 节点上执行如下命令，删除旧镜像
     * aarch64架构
