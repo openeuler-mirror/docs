@@ -41,7 +41,7 @@ Spring Framework 包括三个核心组件 Spring-Core、Spring-Context 和 Sprin
 
 Spring Framework 引入到本地 maven 仓库后，就可以使用这个框架对 Java 程序进行 maven 构建。但 Spring 构建需要配置大量的 xml 文件，开发繁琐。Spring Boot 基于 Spring Framework 来构建，是一种快速构建 Spring 应用的方案，而 Spring Cloud 是构建 Spring Boot的分布式环境，也就是常说的云应用，Spring Boot 起到承上启下的作用。
 
-Spring Framework,Spring-Boot和Spring-Cloud三者的关系如 [图2](#fig1601161484620)所示
+Spring Framework、Spring Boot和Spring Cloud三者的关系如 [图2](#fig1601161484620)所示
 
 **图 2**  组件关系<a name="fig1601161484620"></a>  
 ![](./figures/zh-cn_image_0296838176.png)
