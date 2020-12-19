@@ -54,78 +54,20 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 
 ### 软件平台
 
-<a name="table34563480"></a>
-<table><thead align="left"><tr id="row39539678"><th class="cellrowborder" valign="top" width="27.55102040816326%" id="mcps1.1.5.1.1"><p id="p48597379"><a name="p48597379"></a><a name="p48597379"></a>软件名称</p>
-</th>
-<th class="cellrowborder" valign="top" width="19.387755102040817%" id="mcps1.1.5.1.2"><p id="p44073649"><a name="p44073649"></a><a name="p44073649"></a>版本号</p>
-</th>
-<th class="cellrowborder" valign="top" width="19.387755102040817%" id="mcps1.1.5.1.3"><p id="p13195791"><a name="p13195791"></a><a name="p13195791"></a>安装方法</p>
-</th>
-<th class="cellrowborder" valign="top" width="33.6734693877551%" id="mcps1.1.5.1.4"><p id="p62226117"><a name="p62226117"></a><a name="p62226117"></a>备注</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row7150716"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p42337115"><a name="p42337115"></a><a name="p42337115"></a>openEuler</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.2 "><p id="p6754315"><a name="p6754315"></a><a name="p6754315"></a>20.03-LTS-SP1</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.5.1.4 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="row7609317"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p12374913"><a name="p12374913"></a><a name="p12374913"></a>tar</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.2 "><p id="p62843922"><a name="p62843922"></a><a name="p62843922"></a>1.32</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 "><p id="p57192960"><a name="p57192960"></a><a name="p57192960"></a>yum install</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.5.1.4 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="row19063753"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p660124"><a name="p660124"></a><a name="p660124"></a>wget</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.2 "><p id="p53470121"><a name="p53470121"></a><a name="p53470121"></a>1.20.3</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 "><p id="p36112534"><a name="p36112534"></a><a name="p36112534"></a>yum install</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.5.1.4 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="row19362793"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p24882366"><a name="p24882366"></a><a name="p24882366"></a>git</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.2 "><p id="p2205743"><a name="p2205743"></a><a name="p2205743"></a>2.27</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 "><p id="p44447526"><a name="p44447526"></a><a name="p44447526"></a>yum install</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.5.1.4 ">&nbsp;&nbsp;</td>
-</tr>
-</tbody>
-</table>
+|  软件名称   |版本号  |安装方法   |
+|:---  |:----  |:----  |
+| openEuler | 20.03-LTS-SP1 |iso  |
+| tar | 1.32 |yum install  |
+| wget | 1.20.3 |yum install |
+| git | 2.27 |yum install |
+
 
 ### 必要依赖包
 
-<a name="table24167893"></a>
-<table><thead align="left"><tr id="row33208779"><th class="cellrowborder" valign="top" width="19.19191919191919%" id="mcps1.1.4.1.1"><p id="p5556592"><a name="p5556592"></a><a name="p5556592"></a>软件名称</p>
-</th>
-<th class="cellrowborder" valign="top" width="35.35353535353536%" id="mcps1.1.4.1.2"><p id="p47430793"><a name="p47430793"></a><a name="p47430793"></a>版本号</p>
-</th>
-<th class="cellrowborder" valign="top" width="45.45454545454545%" id="mcps1.1.4.1.3"><p id="p16689023"><a name="p16689023"></a><a name="p16689023"></a>安装方法</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row9633593"><td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.1.4.1.1 "><p id="p42123551"><a name="p42123551"></a><a name="p42123551"></a>jdk</p>
-</td>
-<td class="cellrowborder" valign="top" width="35.35353535353536%" headers="mcps1.1.4.1.2 "><p id="p56564507"><a name="p56564507"></a><a name="p56564507"></a>1.8.0</p>
-</td>
-<td class="cellrowborder" valign="top" width="45.45454545454545%" headers="mcps1.1.4.1.3 "><p id="p18322322"><a name="p18322322"></a><a name="p18322322"></a>见基础软件安装</p>
-</td>
-</tr>
-<tr id="row9633593"><td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.1.4.1.1 "><p id="p42123551"><a name="p42123551"></a><a name="p42123551"></a>maven</p>
-</td>
-<td class="cellrowborder" valign="top" width="35.35353535353536%" headers="mcps1.1.4.1.2 "><p id="p56564507"><a name="p56564507"></a><a name="p56564507"></a>3.5.4</p>
-</td>
-<td class="cellrowborder" valign="top" width="45.45454545454545%" headers="mcps1.1.4.1.3 "><p id="p18322322"><a name="p18322322"></a><a name="p18322322"></a>见基础软件安装</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  软件名称   |版本号  |安装方法   |
+|:---  |:----  |:----  |
+| jdk | 1.8.0 |见基础软件安装  |
+| maven | 3.5.4 |见基础软件安装  |
 
 
 ## 系统配置
@@ -307,7 +249,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 
     ```
     # java -jar eureka-0.0.1-SNAPSHOT.jar	
-    ```	
+    ```
 2. 待控制台出现 `Started EurekaApplicattion` 字样后，启动新窗口在工程目录`/home/zuul-server/target`下执行以下命令，启动 zuul-server 服务。
 
     ```
@@ -317,13 +259,13 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 	
     ```
     # curl http://localhost:8765
-    ```		
+    ```
     zuul-server 服务启动后控制台会输出访问的端口为 8765, curl 访问本地 8765 端口，会看到返回的带有时间戳的 404 信息，同时服务端控制会记录到一次访问事件。
 
     curl访问8765端口如下图所示：
 	
     ![](figures/run3.png)
-  	
+    	
     用户访问时服务端打印的日志信息如下图所示：
 	
     ![](figures/run4.png) 
@@ -334,7 +276,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 
     ```
     # java -jar eureka-0.0.1-SNAPSHOT.jar	
-    ```	
+    ```
 2. 待控制台出现 `Started EurekaApplicattion` 字样后，启动新窗口在工程目录`/home/feign-eureka/server/target`下执行以下命令，启动 feign-eureka 工程的 server。
 	
     ```
@@ -346,7 +288,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
     ```
     # java -jar feign-eureka-hello-client-0.0.1-SNAPSHOT.jar	
     ```
-		
+	
 4. 待控制台出现 `Started HelloClientApplication` 字样后，启动新窗口执行以下命令查看服务运行状态。
     ```
     # curl http://localhost:7211

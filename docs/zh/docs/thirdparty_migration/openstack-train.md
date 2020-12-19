@@ -33,229 +33,40 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 建议部署环境内存大于 2 G。
 ### 软件平台
 
-<a name="table4006700"></a>
-<table><thead align="left"><tr id="row48514281"><th class="cellrowborder" valign="top" width="27.55102040816326%" id="mcps1.1.5.1.1"><p id="p37342697"><a name="p37342697"></a><a name="p37342697"></a>软件名称</p>
-</th>
-<th class="cellrowborder" valign="top" width="14.285714285714285%" id="mcps1.1.5.1.2"><p id="p4859597"><a name="p4859597"></a><a name="p4859597"></a>版本号</p>
-</th>
-<th class="cellrowborder" valign="top" width="19.387755102040817%" id="mcps1.1.5.1.3"><p id="p58083070"><a name="p58083070"></a><a name="p58083070"></a>安装方法</p>
-</th>
-<th class="cellrowborder" valign="top" width="38.775510204081634%" id="mcps1.1.5.1.4"><p id="p7108195"><a name="p7108195"></a><a name="p7108195"></a>备注</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row38892900"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p63317227"><a name="p63317227"></a><a name="p63317227"></a>openEuler</p>
-</td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.1.5.1.2 "><p id="p28421725"><a name="p28421725"></a><a name="p28421725"></a>20.03-LTS-SP1</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 "><p id="p20458404"><a name="p20458404"></a><a name="p20458404"></a>iso</p>
-</td>
-<td class="cellrowborder" valign="top" width="38.775510204081634%" headers="mcps1.1.5.1.4 "><p id="p46518056"><a name="p46518056"></a><a name="p46518056"></a>x86可以选择虚拟机或物理机部署，ARM只能在物理机部署</p>
-</td>
-</tr>
-<tr id="row16009324"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p21686869"><a name="p21686869"></a><a name="p21686869"></a>gcc</p>
-</td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.1.5.1.2 "><p id="p11805999"><a name="p11805999"></a><a name="p11805999"></a>7.3.0</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 "><p id="p16761890"><a name="p16761890"></a><a name="p16761890"></a>见必要库和依赖安装</p>
-</td>
-<td class="cellrowborder" valign="top" width="38.775510204081634%" headers="mcps1.1.5.1.4 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="row5604734"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p51330292"><a name="p51330292"></a><a name="p51330292"></a>python3</p>
-</td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.1.5.1.2 "><p id="p64113024"><a name="p64113024"></a><a name="p64113024"></a>3.7.9</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 "><p id="p25772423"><a name="p25772423"></a><a name="p25772423"></a>见必要库和依赖安装</p>
-</td>
-<td class="cellrowborder" valign="top" width="38.775510204081634%" headers="mcps1.1.5.1.4 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="row64723859"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p8141201"><a name="p8141201"></a><a name="p8141201"></a>bash</p>
-</td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.1.5.1.2 "><p id="p55457511"><a name="p55457511"></a><a name="p55457511"></a>5.0</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 "><p id="p62873406"><a name="p62873406"></a><a name="p62873406"></a>见必要库和依赖安装</p>
-</td>
-<td class="cellrowborder" valign="top" width="38.775510204081634%" headers="mcps1.1.5.1.4 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="row66468012"><td class="cellrowborder" valign="top" width="27.55102040816326%" headers="mcps1.1.5.1.1 "><p id="p15199867"><a name="p15199867"></a><a name="p15199867"></a>devstack</p>
-</td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.1.5.1.2 "><p id="p23229703"><a name="p23229703"></a><a name="p23229703"></a>Latest</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.387755102040817%" headers="mcps1.1.5.1.3 "><p id="p2557751"><a name="p2557751"></a><a name="p2557751"></a>见修改 devstack 脚本和安装配置</p>
-</td>
-<td class="cellrowborder" valign="top" width="38.775510204081634%" headers="mcps1.1.5.1.4 "><p id="p5851251"><a name="p5851251"></a><a name="p5851251"></a>https://github.com/OpenStack/devstack</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  软件名称   |版本号  |安装方法   | 备注  |
+|:---  |:----  |:----  |:----  |
+| openEuler | 20.03-LTS-SP1 |iso  | x86可以选择虚拟机或物理机部署，ARM只能在物理机部署 |
+| gcc | 7.3.0 |见必要库和依赖安装  |  |
+| python3 | 3.7.9 |见必要库和依赖安装 |  |
+| bash | 5.0 |见必要库和依赖安装 |  |
+| devstack | Latest |见修改 devstack 脚本和安装配置 | https://github.com/OpenStack/devstack |
 
 ### 必要依赖包
 
-<a name="table56107302"></a>
-<table><thead align="left"><tr id="row38793220"><th class="cellrowborder" valign="top" width="48.484848484848484%" id="mcps1.1.4.1.1"><p id="p55243139"><a name="p55243139"></a><a name="p55243139"></a>软件名称</p>
-</th>
-<th class="cellrowborder" valign="top" width="11.11111111111111%" id="mcps1.1.4.1.2"><p id="p45509270"><a name="p45509270"></a><a name="p45509270"></a>版本号</p>
-</th>
-<th class="cellrowborder" valign="top" width="40.4040404040404%" id="mcps1.1.4.1.3"><p id="p62372262"><a name="p62372262"></a><a name="p62372262"></a>安装方法</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row18988442"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p61668827"><a name="p61668827"></a><a name="p61668827"></a>python3-systemd</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p29119056"><a name="p29119056"></a><a name="p29119056"></a>234</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p9833313"><a name="p9833313"></a><a name="p9833313"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row21390960"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p54946232"><a name="p54946232"></a><a name="p54946232"></a>pcp-system-tools</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p21459792"><a name="p21459792"></a><a name="p21459792"></a>4.1.3</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p60521568"><a name="p60521568"></a><a name="p60521568"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row7823205"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p29699869"><a name="p29699869"></a><a name="p29699869"></a>haproxy</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p56879202"><a name="p56879202"></a><a name="p56879202"></a>2.0.14</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p43812635"><a name="p43812635"></a><a name="p43812635"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row58769399"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p62700858"><a name="p62700858"></a><a name="p62700858"></a>httpd httpd-devel</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p45604709"><a name="p45604709"></a><a name="p45604709"></a>2.4.43</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p2993953"><a name="p2993953"></a><a name="p2993953"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row26945581"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p35108420"><a name="p35108420"></a><a name="p35108420"></a>memcached</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p25209792"><a name="p25209792"></a><a name="p25209792"></a>1.5.10</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p28727305"><a name="p28727305"></a><a name="p28727305"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row57219158"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p4240188"><a name="p4240188"></a><a name="p4240188"></a>python3-devel</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p7910947"><a name="p7910947"></a><a name="p7910947"></a>3.7.9</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p36806962"><a name="p36806962"></a><a name="p36806962"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row62827209"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p55839144"><a name="p55839144"></a><a name="p55839144"></a>libffi-devel</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p26676804"><a name="p26676804"></a><a name="p26676804"></a>3.3.7</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p13337476"><a name="p13337476"></a><a name="p13337476"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row52928421"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p59343703"><a name="p59343703"></a><a name="p59343703"></a>open-iscsi-devel</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p42110625"><a name="p42110625"></a><a name="p42110625"></a>2.1.1</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p55517484"><a name="p55517484"></a><a name="p55517484"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row29895313"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p5601312"><a name="p5601312"></a><a name="p5601312"></a>libxml2 libxml2-devel python3-libxml2</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p51053123"><a name="p51053123"></a><a name="p51053123"></a>2.9.10</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p41662307"><a name="p41662307"></a><a name="p41662307"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row39416445"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p38615458"><a name="p38615458"></a><a name="p38615458"></a>python3-lxml</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p40844408"><a name="p40844408"></a><a name="p40844408"></a>4.2.3</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p20062758"><a name="p20062758"></a><a name="p20062758"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row46347102"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p63127813"><a name="p63127813"></a><a name="p63127813"></a>libxslt libxslt-devel</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p13079191"><a name="p13079191"></a><a name="p13079191"></a>1.1.34</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p52781566"><a name="p52781566"></a><a name="p52781566"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row5272053"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p24383158"><a name="p24383158"></a><a name="p24383158"></a>edk2-ovmf(x86) edk2-aarch64(ARM) edk2-devel python3-edk2-devel</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p28878783"><a name="p28878783"></a><a name="p28878783"></a>202002</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p57480121"><a name="p57480121"></a><a name="p57480121"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row47559048"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p27077678"><a name="p27077678"></a><a name="p27077678"></a>qemu qemu-guest-agent</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p45808280"><a name="p45808280"></a><a name="p45808280"></a>4.1.0</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p19483182"><a name="p19483182"></a><a name="p19483182"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row41130918"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p43270058"><a name="p43270058"></a><a name="p43270058"></a>libvirt*  python3-libvirt</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p15213839"><a name="p15213839"></a><a name="p15213839"></a>6.2.0</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p24361469"><a name="p24361469"></a><a name="p24361469"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row17926630"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p42770931"><a name="p42770931"></a><a name="p42770931"></a>rabbitmq-server</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p41893405"><a name="p41893405"></a><a name="p41893405"></a>3.7.23</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p37922635"><a name="p37922635"></a><a name="p37922635"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row5759399"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p63858199"><a name="p63858199"></a><a name="p63858199"></a>python3-copr</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p5131648"><a name="p5131648"></a><a name="p5131648"></a>1.105</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p13010313"><a name="p13010313"></a><a name="p13010313"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row49983953"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p22168365"><a name="p22168365"></a><a name="p22168365"></a>python3-uWSGI</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p50807166"><a name="p50807166"></a><a name="p50807166"></a>2.0.19</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p21739820"><a name="p21739820"></a><a name="p21739820"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row61440657"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p10637333"><a name="p10637333"></a><a name="p10637333"></a>python3-mod_wsgi</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p56317608"><a name="p56317608"></a><a name="p56317608"></a>4.6.4</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p65432437"><a name="p65432437"></a><a name="p65432437"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row52021024"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p52953396"><a name="p52953396"></a><a name="p52953396"></a>python3-sqlalchemy python3-sqlalchemy-utils</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p61366677"><a name="p61366677"></a><a name="p61366677"></a>1.2.19</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p4644906"><a name="p4644906"></a><a name="p4644906"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row41804155"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p30693434"><a name="p30693434"></a><a name="p30693434"></a>python3-scss</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p3140258"><a name="p3140258"></a><a name="p3140258"></a>1.3.5</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p53034330"><a name="p53034330"></a><a name="p53034330"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row41804156"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p30693434"><a name="p30693434"></a><a name="p30693434"></a>openeuler-lsb</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p3140258"><a name="p3140258"></a><a name="p3140258"></a>5.0</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p53034330"><a name="p53034330"></a><a name="p53034330"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-<tr id="row41804156"><td class="cellrowborder" valign="top" width="48.484848484848484%" headers="mcps1.1.4.1.1 "><p id="p30693434"><a name="p30693434"></a><a name="p30693434"></a>mariadb-server</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.11111111111111%" headers="mcps1.1.4.1.2 "><p id="p3140258"><a name="p3140258"></a><a name="p3140258"></a>10.3.9</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.4040404040404%" headers="mcps1.1.4.1.3 "><p id="p53034330"><a name="p53034330"></a><a name="p53034330"></a>见必要库和依赖安装</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  软件名称   |版本号  |安装方法   |
+|:---  |:----  |:----  |
+| python3-systemd | 234 |见必要库和依赖安装  |
+| pcp-system-tools | 4.1.3  |见必要库和依赖安装  |
+| haproxy | 2.0.14 |见必要库和依赖安装 |
+| httpd httpd-devel | 2.4.43 |见必要库和依赖安装 |
+| memcached | 1.5.10 |见必要库和依赖安装 |
+| python3-devel | 3.7.9 |见必要库和依赖安装 |
+| libffi-devel | 3.3.7 |见必要库和依赖安装 |
+| open-iscsi-devel | 2.1.1 |见必要库和依赖安装 |
+| libxml2 libxml2-devel python3-libxml2 | 2.9.10 |见必要库和依赖安装 |
+| python3-lxml | 4.2.3 |见必要库和依赖安装 |
+| libxslt libxslt-devel | 1.1.34 |见必要库和依赖安装 |
+| edk2-ovmf(x86) edk2-aarch64(ARM) edk2-devel python3-edk2-devel | 202002 |见必要库和依赖安装 |
+| qemu qemu-guest-agent | 4.1.0 |见必要库和依赖安装 |
+| libvirt*  python3-libvirt | 6.2.0 |见必要库和依赖安装 |
+| rabbitmq-server | 3.7.23 |见必要库和依赖安装 |
+| python3-copr | 1.105 |见必要库和依赖安装 |
+| python3-uWSGI | 2.0.19 |见必要库和依赖安装 |
+| python3-mod_wsgi | 4.6.4 |见必要库和依赖安装 |
+| python3-sqlalchemy python3-sqlalchemy-utils | 1.2.19 |见必要库和依赖安装 |
+| python3-scss | 1.3.5 |见必要库和依赖安装 |
+| openeuler-lsb | 5.0 |见必要库和依赖安装 |
+| mariadb-server | 10.3.9 |见必要库和依赖安装 |
 
 
 ## 系统配置
@@ -467,7 +278,7 @@ $ git clone https://opendev.org/OpenStack/devstack
 
     ![](./figures/host_env8.png)
 
-7. 修改 `/home/stack/devstack/inc/python` 文件，默认安装 glance 组件
+7. 修改 `/home/stack/devstack/inc/python` 文件，默认安装 glance 组件。
 
     ![](./figures/host_env9.png)
 
@@ -513,15 +324,15 @@ source openrc admin admin
 
 * 获取相关资源列表
 
-    - 执行以下命令，可以获取镜像资源列表
+    - 执行以下命令，可以获取镜像资源列表。
 	    ```
         # openstack image list
         ```
-    - 执行以下命令，可以获取网络资源列表
+    - 执行以下命令，可以获取网络资源列表。
 	    ```
         # openstack network list
         ```
-    - 执行以下命令，可以获取虚拟机配置类型列表
+    - 执行以下命令，可以获取虚拟机配置类型列表。
 	    ```
         # openstack flavor list
         ```
@@ -539,7 +350,7 @@ source openrc admin admin
 		- ARM 架构
             ```
             # openstack server create --image cirros-0.5.1-aarch64-disk.img --flavor 1 vm
-            ```		
+            ```
     - 执行如下命令，查看虚拟机状态。
 
         ```
@@ -646,7 +457,7 @@ neutron 服务启动过程中，有概率启动失败。
 
 **问题现象**
 
-pip 引导失败，控制台报错信息为 "ERROR: Links are not allowed as constraints"
+pip 引导失败，控制台报错信息为 "ERROR: Links are not allowed as constraints"。
 
 **问题原因**
 
