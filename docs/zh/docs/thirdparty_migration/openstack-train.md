@@ -391,11 +391,11 @@ source openrc admin admin
 
 **问题原因**
 
-网络原因，执行完命令 `source openrc admin admin` 后，需要等待一段时间，再执行命令 `openstack project list` 才生效
+网络原因，执行完命令 `source openrc admin admin` 后，需要等待一段时间，再执行命令 `openstack project list` 才生效。
 
 **解决方法**
 
-参考下图修改 `/home/stack/devstack/lib/neutron\_plugins/services/l3` 文件
+参考下图修改 `/home/stack/devstack/lib/neutron\_plugins/services/l3` 文件。
 
 ![](./figures/faq1.png)
 
