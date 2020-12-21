@@ -1,18 +1,6 @@
 # FAQ
-<!-- TOC -->
 
-- [FAQ](#faq)
-    - [使用systemctl和top命令查询libvirtd服务占用内存不同](#使用systemctl和top命令查询libvirtd服务占用内存不同)
-    - [设置RAID0卷，参数stripsize设置为4时出错](#设置raid0卷参数stripsize设置为4时出错)
-    - [使用rpmbuild编译mariadb失败](#使用rpmbuild编译mariadb失败)
-    - [使用默认配置启动SNTP服务失败](#使用默认配置启动sntp服务失败)
-    - [安装时出现软件包冲突、文件冲突或缺少软件包导致安装失败](#安装时出现软件包冲突文件冲突或缺少软件包导致安装失败)
-    - [libiscsi降级失败](#libiscsi降级失败)
-    - [xfsprogs降级失败](#xfsprogs降级失败)
-    - [cpython/Lib发现CVE-2019-9674:Zip炸弹漏洞](#cpython/Lib发现CVE-2019-9674:Zip炸弹漏洞)
-    - [不合理使用glibc正则表达式引起ReDoS攻击](#不合理使用glibc正则表达式引起ReDoS攻击)
-
-<!-- /TOC -->
+[[toc]]
 
 ## 使用systemctl和top命令查询libvirtd服务占用内存不同
 
