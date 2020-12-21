@@ -161,7 +161,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 
 ```
 # su - stack
-$ git clone https://opendev.org/OpenStack/devstack  
+# git clone https://opendev.org/OpenStack/devstack  
 ```
 以下操作均使用 stack 用户执行。
 
@@ -285,7 +285,7 @@ $ git clone https://opendev.org/OpenStack/devstack
 8. 修改`/home/stack/devstack/lib/neutron_plugins/services/l3` 文件，在图示位置添加如下配置。
 
     ```
-    source openrc admin admin
+    # source openrc admin admin
     ```
 
     ![](./figures/host_env10.png)
@@ -296,7 +296,7 @@ $ git clone https://opendev.org/OpenStack/devstack
 
     修改完成后，保存退出，并执行以下命令：
 	```
-    pip3 install virtualenv
+    # pip3 install virtualenv
     ```
 
 ## 执行 devstack 脚本安装 OpenStack
@@ -319,7 +319,7 @@ devstack.sh 若执行成功，会在当前主机内，根据 local.conf 文件�
 以 stack 用户执行以下命令，使用管理员登录 OpenStack 客户端。
 
 ```
-source openrc admin admin
+# source openrc admin admin
 ```
 
 * 获取相关资源列表
@@ -432,7 +432,7 @@ mysql_install_db 数据库创建失败，提示gssapi插件报错、inodb建立�
 
 由于没有使用到 gssapi插件，执行如下命令，卸载 mariadb-gssapi-server 包。
 ```
-./unstack.sh ./clean.sh && FORCE=yes ./stack.sh
+# ./unstack.sh ./clean.sh && FORCE=yes ./stack.sh
 ```
 
 
