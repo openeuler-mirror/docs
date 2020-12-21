@@ -161,12 +161,19 @@ After the setting is complete, click  **Done**  in the upper left corner to go b
 
 ## Setting the Installation Source
 
-On the  **INSTALLATION SUMMARY**  page, click  **INSTALLATION SOURCE**  to locate the installation source.
+On the **INSTALLATION SUMMARY** page, click **INSTALLATION SOURCE** to locate the installation source.
 
-If you use a CD/DVD-ROM for installation, the installation program automatically detects and displays the installation source information. You can use the default settings.  [Figure 10](#en-us_topic_0186390100_en-us_topic_0144427079_fig93633295132)  shows an example.
+* When you use the complete CD-ROM for installation, the installation program automatically detects and displays the installation source information. You can use the default settings, as shown in [Figure 10](#en-us_topic_0186390100_en-us_topic_0144427079_fig93633295132):
 
-**Figure  10**  Setting the installation source<a name="en-us_topic_0186390100_en-us_topic_0144427079_fig93633295132"></a>  
-![](./figures/setting-the-installation-source.png "setting-the-installation-source")
+    **Figure 10**  Installation source<a name="zh-cn_topic_0186390100_zh-cn_topic_0144427079_fig93633295132"></a>  
+    ![](./figures/Installation_source.png)
+
+* When the network source is used for installation, you need to set the IP address of the server, as shown in [Figure 11](#3837222):
+
+    If the HTTPS server uses a private certificate, press **e** on the installation wizard page to go to the parameter editing page of the selected option and add the **inst.noverifyssl** parameter.
+
+    **Figure 11**  Installation source<a name="3837222"></a>  
+    ![](./figures/installsourceen.png)
 
 When you use the network for installation, if the HTTPS server uses a private certificate, press  **e**  on the installation wizard page to go to the parameter editing page and add the  **inst.noverifyssl**  parameter.
 

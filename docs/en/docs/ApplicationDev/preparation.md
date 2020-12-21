@@ -344,13 +344,13 @@ Install the software required for development. The software required varies in d
    $ dnf makecache
    ```
 
-4. Query the JDK software package that can be installed.
+4. Run the following command to query the JDK software packages that can be installed:
    
    ```
    $ dnf search jdk | grep jdk
    ```
    
-   View the command output and install the  **java-x.x.x-openjdk-devel.aarch64**  software package.  **x.x.x**  indicates the version number.
+   View the command output and install the **java-x.x.x-openjdk-devel.aarch64** software package. **x.x.x** indicates the version number. OpenJDK 1.8, OpenJDK 11, and the latest OpenJDK are supported.
 
 5. Install the JDK software package as the **root** user. The following uses the  **java-1.8.0-openjdk-devel**  software package as an example.
    

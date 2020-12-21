@@ -1,26 +1,7 @@
 # Basic Configuration
 
-<!-- TOC -->
+[[toc]]
 
-- [Basic Configuration](#basic-configuration)
-    - [Setting the System Locale](#setting-the-system-locale)
-        - [Displaying the Current Locale Status](#displaying-the-current-locale-status)
-        - [Listing Available Locales](#listing-available-locales)
-        - [Setting the Locale](#setting-the-locale)
-    - [Setting the Keyboard Layout](#setting-the-keyboard-layout)
-        - [Displaying the Current Settings](#displaying-the-current-settings)
-        - [Listing Available Keyboard Layouts](#listing-available-keyboard-layouts)
-        - [Setting the Keyboard Layout](#setting-the-keyboard-layout-1)
-    - [Setting the Date and Time](#setting-the-date-and-time)
-        - [Using the timedatectl Command](#using-the-timedatectl-command)
-        - [Using the date Command](#using-the-date-command)
-        - [Using the hwclock Command](#using-the-hwclock-command)
-    - [Setting kdump](#setting-kdump)
-        - [Setting the Memory Reserved for kdump](#setting-the-memory-reserved-for-kdump)
-        - [Recommended Reserved Memory](#recommended-reserved-memory)
-        - [Disabling Network Drivers](#disabling-network-drivers)
-
-<!-- /TOC -->
 ## Setting the System Locale
 
 System locale settings are stored in the /etc/locale.conf file and can be modified by the localectl command. These settings are read at system boot by the systemd daemon.
@@ -277,63 +258,20 @@ You can also customize the format of the displayed information by providing the 
 $ date +"format"
 ```
 
-**Table  1**  Formatting options
+**Table  1**  Formatting options<a name="en-us_topic_0151920961_t5113feb6bf86416883c941865a536aae"></a>
 
-<a name="en-us_topic_0151920961_t5113feb6bf86416883c941865a536aae"></a>
+|  Format Option   | Description  |
+|  :----  | :----  |
+| %H  | The hour in the HH format (for example, 17) |
+| %M  | The minute in the MM format (for example, 37) |
+| %S  | The second in the SS format (for example, 25) |
+| %d  | The day of the month in the DD format (for example, 15) |
+| %m  | The month in the MM format (for example, 07) |
+| %Y  | The year in the YYYY format (for example, 2019) |
+| %Z  | The time zone abbreviation (for example, CEST) |
+| %F  | The full date in the YYYY-MM-DD format (for example, 2019-7-15). This option is equal to %Y-%m-%d |
+| %T  | The full time in the HH:MM:SS format (for example, 18:30:25). This option is equal to %H:%M:%S |
 
-<table><thead align="left"><tr id="en-us_topic_0151920961_r2ad2cb74e72f4a52ab523486d1fb5e23"><th class="cellrowborder" valign="top" width="18.23%" id="mcps1.2.3.1.1"><p id="en-us_topic_0151920961_a995c5cbca5ec49f48097e94e0692222e"><a name="en-us_topic_0151920961_a995c5cbca5ec49f48097e94e0692222e"></a><a name="en-us_topic_0151920961_a995c5cbca5ec49f48097e94e0692222e"></a>Format Option</p>
-</th>
-<th class="cellrowborder" valign="top" width="81.77%" id="mcps1.2.3.1.2"><p id="en-us_topic_0151920961_a2c082d7678c14c54acae9c32cb46efa9"><a name="en-us_topic_0151920961_a2c082d7678c14c54acae9c32cb46efa9"></a><a name="en-us_topic_0151920961_a2c082d7678c14c54acae9c32cb46efa9"></a>Description</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="en-us_topic_0151920961_r4bf64ec46df3458db0b40dd2597b96a4"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151920961_a7c84b16430784236af6f428bb03354e6"><a name="en-us_topic_0151920961_a7c84b16430784236af6f428bb03354e6"></a><a name="en-us_topic_0151920961_a7c84b16430784236af6f428bb03354e6"></a>%H</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.77%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151920961_af1ad9a0cf0f74e28905916c24e9a624c"><a name="en-us_topic_0151920961_af1ad9a0cf0f74e28905916c24e9a624c"></a><a name="en-us_topic_0151920961_af1ad9a0cf0f74e28905916c24e9a624c"></a>The hour in the HH format (for example, 17)</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151920961_r81bd46c86c484a2d8127ac25f8cd3f84"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151920961_ac75c896629a94f5a948ecf00d9ae846c"><a name="en-us_topic_0151920961_ac75c896629a94f5a948ecf00d9ae846c"></a><a name="en-us_topic_0151920961_ac75c896629a94f5a948ecf00d9ae846c"></a>%M</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.77%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151920961_a713b23439f944c7e89dad6ad8fd3a00b"><a name="en-us_topic_0151920961_a713b23439f944c7e89dad6ad8fd3a00b"></a><a name="en-us_topic_0151920961_a713b23439f944c7e89dad6ad8fd3a00b"></a>The minute in the MM format (for example, 37)</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151920961_r01f5733f51244eb08597f035a86f62d3"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151920961_a83cbeee8d15d4ab19166f8859aca3c94"><a name="en-us_topic_0151920961_a83cbeee8d15d4ab19166f8859aca3c94"></a><a name="en-us_topic_0151920961_a83cbeee8d15d4ab19166f8859aca3c94"></a>%S</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.77%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151920961_a198c8d8580fa4d00b3a701f522cf2eb3"><a name="en-us_topic_0151920961_a198c8d8580fa4d00b3a701f522cf2eb3"></a><a name="en-us_topic_0151920961_a198c8d8580fa4d00b3a701f522cf2eb3"></a>The second in the SS format (for example, 25)</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151920961_r8bdf9b4c58f24f6982fc6b6b3def6ec3"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151920961_a52b3ddb644664af794aed0ceef431eae"><a name="en-us_topic_0151920961_a52b3ddb644664af794aed0ceef431eae"></a><a name="en-us_topic_0151920961_a52b3ddb644664af794aed0ceef431eae"></a>%d</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.77%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151920961_a0d60b507d1064efdb930ff4800d11205"><a name="en-us_topic_0151920961_a0d60b507d1064efdb930ff4800d11205"></a><a name="en-us_topic_0151920961_a0d60b507d1064efdb930ff4800d11205"></a>The day of the month in the DD format (for example, 15)</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151920961_r6156a88a26d14f2f89e6540944718f47"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151920961_a312fb7c0a5ad48dfb2e9b7d17e99c1d9"><a name="en-us_topic_0151920961_a312fb7c0a5ad48dfb2e9b7d17e99c1d9"></a><a name="en-us_topic_0151920961_a312fb7c0a5ad48dfb2e9b7d17e99c1d9"></a>%m</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.77%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151920961_a893723adba374d028ebb80fed09bf3e6"><a name="en-us_topic_0151920961_a893723adba374d028ebb80fed09bf3e6"></a><a name="en-us_topic_0151920961_a893723adba374d028ebb80fed09bf3e6"></a>The month in the MM format (for example, 07)</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151920961_r34b505f1fd7741cfb1780a831fbf72d2"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151920961_ac01465841ba64c03ae64788361a25a4e"><a name="en-us_topic_0151920961_ac01465841ba64c03ae64788361a25a4e"></a><a name="en-us_topic_0151920961_ac01465841ba64c03ae64788361a25a4e"></a>%Y</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.77%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151920961_a6419efda4cdc4072914756ebb31ec1fa"><a name="en-us_topic_0151920961_a6419efda4cdc4072914756ebb31ec1fa"></a><a name="en-us_topic_0151920961_a6419efda4cdc4072914756ebb31ec1fa"></a>The year in the YYYY format (for example, 2019)</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151920961_r2a7d4de380fe4194ab6d757429583f60"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151920961_ada7b17d82b7b45668fef67f483b31b33"><a name="en-us_topic_0151920961_ada7b17d82b7b45668fef67f483b31b33"></a><a name="en-us_topic_0151920961_ada7b17d82b7b45668fef67f483b31b33"></a>%Z</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.77%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151920961_ac10a70e17c7b4dab86f97d3e460849a8"><a name="en-us_topic_0151920961_ac10a70e17c7b4dab86f97d3e460849a8"></a><a name="en-us_topic_0151920961_ac10a70e17c7b4dab86f97d3e460849a8"></a>The time zone abbreviation (for example, CEST)</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151920961_r65c5b28a951b4f10a0ab67d51ea41c75"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151920961_aaf432a3ed9c548d7bd3b45929723ca72"><a name="en-us_topic_0151920961_aaf432a3ed9c548d7bd3b45929723ca72"></a><a name="en-us_topic_0151920961_aaf432a3ed9c548d7bd3b45929723ca72"></a>%F</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.77%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151920961_a7a6917b7cf9a46759467cd140afc17e9"><a name="en-us_topic_0151920961_a7a6917b7cf9a46759467cd140afc17e9"></a><a name="en-us_topic_0151920961_a7a6917b7cf9a46759467cd140afc17e9"></a>The full date in the YYYY-MM-DD format (for example, 2019-7-15). This option is equal to %Y-%m-%d.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151920961_r722205ab957549d187a171eb72cb040b"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151920961_a2e925e19328a49b082150aadec3869a2"><a name="en-us_topic_0151920961_a2e925e19328a49b082150aadec3869a2"></a><a name="en-us_topic_0151920961_a2e925e19328a49b082150aadec3869a2"></a>%T</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.77%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151920961_a7dafd8b31b2e47da84f62588b5290fe6"><a name="en-us_topic_0151920961_a7dafd8b31b2e47da84f62588b5290fe6"></a><a name="en-us_topic_0151920961_a7dafd8b31b2e47da84f62588b5290fe6"></a>The full time in the HH:MM:SS format (for example, 18:30:25). This option is equal to %H:%M:%S.</p>
-</td>
-</tr>
-</tbody>
-</table>
 Example commands and outputs:
 
 - To display the current date and time:
@@ -466,3 +404,23 @@ The memory reserved for kdump must be added to the bootargs in the **/boot/efi/E
 In the kdump configuration file **/etc/kdump.conf**, the dracut parameters can be used to set the tailored driver module. You can configure the network driver to the tailored driver list to prevent the kdump file system from loading the driver. After the configuration file is modified, restart the kdump service for the modification to take effect. Set the dracut parameters as follows:
 
 `dracut_args --omit-drivers "mdio-gpi usb_8dev et1011c rt2x00usb bcm-phy-lib mac80211_hwsim rtl8723be rndis_host hns3_cae amd vrf rtl8192cu mt76x02-lib int51x1 ppp_deflate team_mode_loadbalance smsc911x aweth bonding mwifiex_usb hnae dnet rt2x00pci vaser_pci hdlc_ppp marvell rtl8xxxu mlxsw_i2c ath9k_htc rtl8150 smc91x cortina at803x rockchip cxgb4 spi_ks8995 mt76x2u smsc9420 mdio-cavium bnxt_en ch9200 dummy macsec ice mt7601u rtl8188ee ixgbevf net1080 liquidio_vf be2net mlxsw_switchx2 gl620a xilinx_gmii2rgmii ppp_generic rtl8192de sja1000_platform ath10k_core cc770_platform realte igb c_can_platform c_can ethoc dm9601 smsc95xx lg-vl600 ifb enic ath9 mdio-octeon ppp_mppe ath10k_pci cc770 team_mode_activebackup marvell10g hinic rt2x00lib mlx4_en iavf broadcom igc c_can_pci alx rtl8192se rtl8723ae microchip lan78xx atl1c rtl8192c-common almia ax88179_178a qed netxen_nic brcmsmac rt2800usb e1000 qla3xxx mdio-bitbang qsemi mdio-mscc-miim plx_pci ipvlan r8152 cx82310_eth slhc mt76x02-usb ems_pci xen-netfront usbnet pppoe mlxsw_minimal mlxsw_spectrum cdc_ncm rt2800lib rtl_usb hnae3 ath9k_common ath9k_hw catc mt76 hns_enet_drv ppp_async huawei_cdc_ncm i40e rtl8192ce dl2 qmi_wwan mii peak_usb plusb can-dev slcan amd-xgbe team_mode_roundrobin ste10Xp thunder_xcv pptp thunder_bgx ixgbe davicom icplus tap tun smsc75xx smsc dlci hns_dsaf mlxsw_core rt2800mmi softing uPD60620 vaser_usb dp83867 brcmfmac mwifiex_pcie mlx4_core micrel team macvlan bnx2 virtio_net rtl_pci zaurus hns_mdi libcxgb hv_netvsc nicvf mt76x0u teranetics mlxfw cdc_eem qcom-emac pppox mt76-usb sierra_net i40evf bcm87xx mwifiex pegasus rt2x00mmi sja1000 ena hclgevf cnic cxgb4vf ppp_synctty iwlmvm team_mode_broadcast vxlan vsockmon hdlc_cisc rtl8723-common bsd_comp fakelb dp83822 dp83tc811 cicada fm10 8139t sfc hs geneve hclge xgene-enet-v2 cdc_mbim hdlc asix netdevsim rt2800pci team_mode_random lxt ems_usb mlxsw_pci sr9700 mdio-thunder mlxsw_switchib macvtap atlantic cdc_ether mcs7830 nicpf mdi peak_pci atl1e cdc_subset ipvtap btcoexist mt76x0-common veth slip iwldvm bcm7xxx vitesse netconsole epic100 myri10ge r8169 qede microchip_t1 liquidi bnx2x brcmutil mwifiex_sdi mlx5_core rtlwifi vmxnet3 nlmon hns3 hdlc_raw esd_usb2 atl2 mt76x2-common iwlwifi mdio-bcm-unimac national ath rtwpci rtw88 nfp rtl8821ae fjes thunderbolt-net 8139cp atl1 mscc vcan dp83848 dp83640 hdlc_fr e1000e ipheth net_failover aquantia rtl8192ee igbvf rocker intel-xway tg3" --omit "ramdisk network ifcfg qemu-net" --install "chmod" --nofscks`
+
+## Setting the Disk Scheduling Algorithm
+
+This section describes how to set the disk scheduling algorithm.
+
+### Temporarily Modifying the Scheduling Policy
+
+For example, if all I/O scheduling algorithms are changed to **mq-deadline**, the modification becomes invalid after the system is restarted.
+
+```
+echo mq-deadline > /sys/block/sd*/queue/scheduler
+```
+
+### Permanently Setting the Scheduling Policy
+
+You can add **elevator=mq-deadline** to the kernel line in the kernel boot configuration file **grub.cfg**. The setting takes effect after the system is restarted.
+
+```
+linux   /vmlinuz-4.19.90-2003.4.0.0036.oe1.x86_64 root=/dev/mapper/openeuler-root ro resume=/dev/mapper/openeuler-swap rd.lvm.lv=openeuler/root rd.lvm.lv=openeuler/swap quiet crashkernel=512M elevator=mq-deadline
+```
