@@ -868,21 +868,21 @@
       "path": "docs/thirdparty_migration/thidrparty",
       "children": [
         {
-          "label": "Single-Node Deployment Guide for OpenStack-train",
+          "label": "Guide to Porting OpenStack-Train to openEuler",
           "path": "docs/thirdparty_migration/openstack-train",
           "children": [
             
           ]
         },
         {
-          "label": "Kubernetes Environment Setup Guide",
+          "label": "Guide to Porting Kubernetes to openEuler",
           "path": "docs/thirdparty_migration/k8sinstall",
           "children": [
             
           ]
         },
         {
-          "label": "springframework单机部署指导",
+          "label": "Guide to Porting Spring Framework to openEuler",
           "path": "docs/thirdparty_migration/SpringFramework Single-Node System Deployment Guide",
           "children": [
             
