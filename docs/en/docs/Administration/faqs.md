@@ -1,14 +1,7 @@
 # FAQs
-<!-- TOC -->
 
-- [FAQs](#faqs)
-    - [Why Is the Memory Usage of the libvirtd Service Queried by Running the systemctl and top Commands Different?](#why-is-the-memory-usage-of-the-libvirtd-service-queried-by-running-the-systemctl-and-top-commands-different)
-    - [An Error Occurs When stripsize Is Set to 4 During RAID 0 Volume Configuration](#an-error-occurs-when-stripsize-is-set-to-4-during-raid-0-volume-configuration)
-    - [Failed to Compile MariaDB Using rpmbuild](#failed-to-compile-mariadb-using-rpmbuild)
-    - [Failed to Start the SNTP Service Using the Default Configuration](#failed-to-start-the-sntp-service-using-the-default-configuration)
-    - [Installation Failure Caused by Software Package Conflict, File Conflict, or Missing Software Package](#installation-failure-caused-by-software-package-conflict-file-conflict-or-missing-software-package)
+[[toc]]
 
-<!-- /TOC -->
 ## Why Is the Memory Usage of the libvirtd Service Queried by Running the systemctl and top Commands Different?
 
 ### Symptom
@@ -162,3 +155,109 @@ If a software package is missing, perform the following steps \(the missed softw
         ```
 
 3.  Perform the upgrade again.
+
+## The libiscsi Fails to Downgrade
+
+### Symptom
+
+The libiscsi-1.19.2 or a later version fails to downgrade to libiscsi-1.19.1 or an earlier version.
+
+```
+Error: Transaction test error:
+file /usr/bin/iscsi-inq from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-ls from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-perf from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-readcapacity16 from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-swp from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-test-cu from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+```
+
+### Cause Analysis
+
+In versions earlier than the libiscsi-1.19.1, binary files such as **iscsi-xxx** are packed into the main package **libiscsi**. However, these binary files introduce the improper dependency CUnit. To solve this problem, the libiscsi-1.19.2 incorporates these binary files into a subpackage **libiscsi-utils**, and the **libiscsi** is weakly dependent on the **libiscsi-utils**. As a result, the integration of the **libiscsi-utils** is optional during mirroring. The **libiscsi** is not affected even if the **libiscsi-utils** is uninstalled or not integrated.
+
+When the **libiscsi-utils** is installed in the system, it will not downgrade because the libiscsi-1.19.1 or an earlier version that downgrades from the libiscsi-1.19.2 or a later version cannot provide the corresponding libiscsi-utils. However, **libiscsi-utils** depends on the main package **libiscsi** that has been generated before the downgrade. As a result, the dependency problem cannot be resolved and the downgrade fails.
+
+### Solution
+
+Run the following command to uninstall the **libiscsi-utils** and then perform the downgrade:
+
+```
+yum remove libiscsi-utils
+```
+
+## The xfsprogs Fails to Downgrade
+
+### Symptom
+
+xfsprogs-5.6.0-2 or a later version fails to downgrade to xfsprogs-5.6.0-1 or an earlier version.
+
+```
+Error:
+Problem: problem with installed package xfsprogs-xfs_scrub-5.6.0-2.oe1.x86_64
+- package xfsprogs-xfs_scrub-5.6.0-2.oe1.x86_64 requires xfsprogs = 5.6.0-2.oe1, but none of the providers can be installed
+- cannot install both xfsprogs-5.6.0-1.oe1.x86_64 and xfsprogs-5.6.0-2.oe1.x86_64
+- cannot install both xfsprogs-5.6.0-2.oe1.x86_64 and xfsprogs-5.6.0-1.oe1.x86_64
+- conflicting requests
+```
+
+### Cause Analysis
+
+To reduce the dependency of the **xfsprogs** main package, the xfsprogs-5.6.0-2 version separates the **xfs\_scrub\*** command from the main package and incorporates the command into a subpackage **xfsprogs-xfs\_scrub**. The **xfsprogs** main package is weakly dependent on the **xfsprogs-xfs\_scrub**. As a result, the integration or uninstallation of the **xfsprogs-xfs\_scrub** is optional during mirroring. The xfsprogs main package is not affected even if the **xfsprogs-xfs\_scrub** is uninstalled or not integrated.
+
+When the **xfsprogs-xfs\_scrub** is installed in the system, it will not downgrade because the xfsprogs-5.6.0-1 or an earlier version that downgrades from the xfsprogs-5.6.0-2 or a later version cannot provide the corresponding xfsprogs-xfs\_scrub. However, **xfsprogs-xfs\_scrub** depends on the xfsprogs main package that has been generated before the downgrade. As a result, the dependency problem cannot be resolved and the downgrade fails.
+
+### Solution
+
+Run the following command to uninstall the **xfsprogs-xfs\_scrub** subpackage and then perform the downgrade:
+
+```
+yum remove xfsprogs-xfs_scrub
+```
+
+## CVE-2019-9674: Zip Bomb Vulnerability Detected by CPython/Lib
+
+### Symptom
+
+Lib/zipfile.py in Python 3.7.2 and earlier versions allows remote attackers to cause denial of service (DoS) using Zip bombs, resulting in high resource consumption.
+
+### Impact Analysis
+
+Remote attackers cause DoS using Zip bombs, affecting or even crashing target system services. A Zip bomb is a highly compressed zip file. It may be several MB or dozens of MB in size. However, a large amount of data is generated after decompression, which is resource-consuming.
+
+### Solution
+
+Add the following alarm information to the **zipfile** file: https://github.com/python/cpython/blob/3.7/Doc/library/zipfile.rst.
+
+## ReDoS Caused by Improper Use of glibc Regular Expressions
+
+### Symptom
+
+When the regcomp and regexec interfaces of glibc are used for programming, or shell commands that use glibc regular expressions, such as **grep** and **sed**, are executed, improper regular expressions or input may cause the regular expression denial of service (ReDoS) (CVE-2019-9192/CVE-2018-28796). The typical regular expression pattern is the combination of reverse reference (indicated by **\\1**), **\*** (zero match or multiple matches), **+** (one match or multiple matches), and **{m,n}** (m: minimum number of matches; n: maximum number of matches). You can also enter an ultra-long character string together with the regular expression. Examples are shown as follows:
+
+```
+# echo D | grep -E "$(printf '(\0|)(\\1\\1)*')"Segmentation fault (core dumped)
+# grep -E "$(printf '(|)(\\1\\1)*')"
+Segmentation fault (core dumped)
+# echo A | sed '/\(\)\(\1\1\)*/p'
+Segmentation fault (core dumped)
+# time python -c 'print "a"*40000' | grep -E "a{1,32767}"
+Segmentation fault (core dumped)
+# time python -c 'print "a"*40900' | grep -E "(a)\\1"
+Segmentation fault (core dumped)
+```
+
+### Cause Analysis
+
+A core dump occurs on the process that uses the regular expression. This occurs because the glibc regular expression is implemented using the hybrid DFA-NFA  algorithm. The internal principle is to use the greedy algorithm for recursive search to match as many character strings as possible. The greedy algorithm causes the ReDoS when processing recursive regular expressions.
+
+### Solution
+
+1. Strictly control the user permission to reduce the scope of attack.
+2. Ensure that the regular expression is correct. Do not enter an invalid regular expression or a combination that may trigger infinite recursion, such as an ultra-long character string accompanied with **\\1** or **\***.
+   ```
+   # ()(\1\1)*
+   # "a"*400000
+   ```
+3. After detecting a process exception in the program, restart the process to restore services, which helps improve program reliability.
+
