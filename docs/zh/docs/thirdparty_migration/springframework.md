@@ -389,7 +389,7 @@ repo源无效，页面提示“Received status code 403 from server: Forbidden�
 
 [https://repo.Spring.io/plugins-release](https://repo.Spring.io/plugins-release)
 
-[https://repo.Springsource.org/plugin-release](https://repo.Springsource.org/plugin-release)
+[https://repo.Springsource.org/plugins-release](https://repo.Springsource.org/plugins-release)
 
 ### build超时导致的失败
 
