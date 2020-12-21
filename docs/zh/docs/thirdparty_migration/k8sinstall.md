@@ -354,7 +354,7 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
    ```
     ![](./figures/calicotag.png)
 
-3. 分别在 Master 和 Worker 节点上执行如下命令，删除旧镜像
+4. 分别在 Master 和 Worker 节点上执行如下命令，删除旧镜像
     * aarch64架构
     ```
     $ docker rmi calico/cni:v3.14.2-arm64
@@ -369,18 +369,18 @@ Master 和 Worker 节点通过 Docker 下载其他组件，下载镜像时需要
     $ docker rmi calico/kube-controllers:v3.14.2-amd64
 	$ docker rmi calico/pod2daemon-flexvol:v3.14.2-amd64
     ```
-4. 在 Master 节点上执行如下命令，下载 yaml 文件。
+5. 在 Master 节点上执行如下命令，下载 yaml 文件。
 
     ```
     $ wget https://docs.projectcalico.org/v3.14/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml --no-check-certificate
     ```
 
-5. 在 Master 节点上执行如下命令，部署 calico。
+6. 在 Master 节点上执行如下命令，部署 calico。
 
     ```
     $ kubectl apply -f calico.yaml
     ```
-5. 在 Master 节点上执行如下命令，查看节点状态,状态为 Ready 即表明安装成功。
+7. 在 Master 节点上执行如下命令，查看节点状态,状态为 Ready 即表明安装成功。
 
     ```
     $ kubectl get nodes
