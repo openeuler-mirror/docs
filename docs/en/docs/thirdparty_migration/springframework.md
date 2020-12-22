@@ -54,7 +54,7 @@ Spring Boot is a quick configuration solution of Spring and can be used to quick
 
 ## Environment Configuration
 
-建议部署环境内存大于 2 G。
+It is recommended that the memory of the deployment environment be greater than 2 GB.
 
 ### Software platform
 
@@ -228,67 +228,88 @@ If the Internet is available in the environment, you can use the configured sour
 ### Examples of Running Spring Cloud on a Single-Node System
 
 #### Example of running the spring-cloud-gateway-sample project
-  
-If the spring-cloud-gateway-sample project is compiled successfully, the **spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar** file is generated in the **/home/Spring-cloud-gateway-sample/target** folder in the project directory. Run the following commands:
-  
-```
-# java -jar spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar
-# curl http://localhost:8080/get
-```
 
-If the command output shown in the following figure is displayed, the execution is successful.
+1. If the spring-cloud-gateway-sample project is compiled successfully, the **spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar** file is generated in the **/home/Spring-cloud-gateway-sample/target** folder in the project directory. Run the following commands:
+  
+    ```
+    # java -jar spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar
+    ```
+2. After the message **Started DemogatewayApplication** is displayed on the console, start a new window and run the following command to check the service running status.If the command output shown in the following figure is displayed, the execution is successful.
 
-![](./figures/run1.png)
+    ```
+    # curl http://localhost:8080/get
+    ```
+    
+	![](./figures/run1.png)
+3. To stop the service, press Ctrl+C in the windows in Step 1.
 
 #### Example of running the zuul-server project
-  
-Run the zuul-server service after running the eureka project. Run the following commands:
-  
-```
-# cd /home/eureka/target
-# java -jar eureka-0.0.1-SNAPSHOT.jar
-# cd /home/zuul-server/target
-# java -jar zuul-server-1.0.0.BUILD-SNAPSHOT.jar
-# curl http://localhost:8765
-```
-  
-After the zuul-server service is started, the console displays the access port 8765. When you access the local port 8765 using curl, the 404 information with the timestamp is returned, and an access event is recorded on the server.
-  
-The following figure shows the opened Tomcat 8765 port:
-  
-  ![](./figures/run2.png) 	 
-  
-  The following figure shows how to access the port 8765 using curl:
 
-  ![](./figures/run3.png) 	
+1. Run the zuul-server service after running the eureka project. In the **/home/eureka/target** directory, run the following command to start the eureka service:
+
+    ```
+    # java -jar eureka-0.0.1-SNAPSHOT.jar
+    ```
+
+2. After the message **Started EurekaApplicattion** is displayed on the console, start a new window and run the following command in the project directory **/home/zuul-server/target** to start the zuul-server service:
+
+    ```
+    # java -jar zuul-server-1.0.0.BUILD-SNAPSHOT.jar
+    ```
+
+3. After the message Started ZuulServerApplicatttion is displayed on the console, start a new window and run the following command to check the service running status:
+
+    ```
+    # curl http://localhost:8765
+    ```
+    
+	After the zuul-server service is started, the console displays the access port 8765. When you access the local port 8765 using curl, the 404 information with the timestamp is returned, and an access event is recorded on the server.	 
   
-  The following figure shows the log information printed by the server when the user accesses the port:
+    The following figure shows how to access the port 8765 using curl:
+
+    ![](./figures/run3.png) 	
   
-  ![](./figures/run4.png)
-  
+    The following figure shows the log information printed by the server when the user accesses the port:
+
+    ![](./figures/run4.png)
+
+4. To stop the service, press Ctrl+C in the windows in Step 2 and Step 3.
+
 #### Example of running the feign-eureka project 
+
+1. Run the zuul-server service after running the eureka project. In the **/home/eureka/target** directory, run the following command to start the eureka service:
+
+    ```
+    # java -jar eureka-0.0.1-SNAPSHOT.jar
+    ```
+
+2. After the message **Started EurekaApplicattion** is displayed on the console, start a new window and run the following command in the project directory **/home/feign-eureka/server/target** to start the zuul-server service:
+
+    ```
+    # java -jar feign-eureka-hello-server-0.0.1-SNAPSHOT.jar
+    ```
+
+3. After the message **Started HelloServerApplication** is displayed on the console, start a new window and run the following command in the project directory **/home/feign-eureka/client/target** to start the zuul-server service:
+
+    ```
+    # java -jar feign-eureka-hello-client-0.0.1-SNAPSHOT.jar
+    ```
+
+4. After the message **Started HelloClientApplication**  is displayed on the console, start a new window and run the following command to check the service running status:
+
+    ```
+    # curl http://localhost:7211
+    ```
+
+    After the service is started, you can see that port 7211 is enabled on the client console. Access this port using curl to obtain the Hello Server information.
   
-  Run the feign-eureka service after running the eureka project. Run the following commands to run the server and client of the feign-eureka project, respectively:
+    The following figure shows the opened port 7211 of the feign-eureka project:
   
-  ```
-  # cd /home/eureka/target
-  # java -jar eureka-0.0.1-SNAPSHOT.jar
-  # cd /home/feign-eureka/server/target
-  # java -jar feign-eureka-hello-server-0.0.1-SNAPSHOT.jar
-  # cd /home/feign-eureka/client/target
-  # java -jar feign-eureka-hello-client-0.0.1-SNAPSHOT.jar
-  # curl http://localhost:7211
-  ```
+    ![](./figures/run5.png)
   
-  After the service is started, you can see that port 7211 is enabled on the client console. Access this port using curl to obtain the Hello Server information.
+    Access the feign-eureka service to view the returned result, as shown in the following figure:
   
-  The following figure shows the opened port 7211 of the feign-eureka project:
-  
-  ![](./figures/run5.png)
-  
-  Access the feign-eureka service to view the returned result, as shown in the following figure:
-  
-  ![](./figures/run6.png)
+    ![](./figures/run6.png)
 
 ## FAQs
 
@@ -369,3 +390,21 @@ The following valid repo sources are for reference:
 [https://repo.Spring.io/plugins-release](https://repo.Spring.io/plugins-release)
 
 [https://repo.Springsource.org/plugins-release](https://repo.Springsource.org/plugins-release)
+
+### Build Failed Due to Timeout Error
+
+**Symptom**
+
+The network-related modules fail to pass the test, and the message Task: spring-webflux:test FAILED is displayed. In addition, the code line that fails is not reported in each time of compilation.
+
+**Cause Analysis**
+
+According to the code analysis, the build fails because the response from the remote service is not received within the specified period and a timeout error occurs.
+
+![](./figures/x86_build_fail.png)
+
+**Solution**
+
+Prolong the timeout period based on the code line prompted in the error message. You can modify .verify\(Duration.ofSeconds\(TIMEOUT\)\) or .block\(TIMEOUT\) in the code prompted to double the value of TIMEOUT. For example, the timeout period is changed from 5 seconds to 10 seconds in the following figure:
+
+![](./figures/modify_timeout_value.png)
