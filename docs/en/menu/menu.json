@@ -422,7 +422,11 @@
           "label": "Tool Guide",
           "path": "docs/Virtualization/tool-guide",
           "children": [
-            
+            {
+              "label": "vmtop",
+              "path": "docs/Virtualization/vmtop",
+              "children": []
+            }
           ]
         },
         {
