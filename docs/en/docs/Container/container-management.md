@@ -51,7 +51,7 @@ The following table lists the parameters supported by the  **create**  command.
 <td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0182207105_p15578102285710"><a name="en-us_topic_0182207105_p15578102285710"></a><a name="en-us_topic_0182207105_p15578102285710"></a>Description</p>
 </td>
 </tr>
-<tr id="en-us_topic_0182207105_row11591115892517"><td class="cellrowborder" rowspan="49" valign="top" width="17.333333333333336%"><p id="en-us_topic_0182207105_p1921425017550"><a name="en-us_topic_0182207105_p1921425017550"></a><a name="en-us_topic_0182207105_p1921425017550"></a><strong id="en-us_topic_0182207105_b112687501808"><a name="en-us_topic_0182207105_b112687501808"></a><a name="en-us_topic_0182207105_b112687501808"></a>create</strong></p>
+<tr id="en-us_topic_0182207105_row11591115892517"><td class="cellrowborder" rowspan="50" valign="top" width="17.333333333333336%"><p id="en-us_topic_0182207105_p1921425017550"><a name="en-us_topic_0182207105_p1921425017550"></a><a name="en-us_topic_0182207105_p1921425017550"></a><strong id="en-us_topic_0182207105_b112687501808"><a name="en-us_topic_0182207105_b112687501808"></a><a name="en-us_topic_0182207105_b112687501808"></a>create</strong></p>
 <p id="en-us_topic_0182207105_p7986133491612"><a name="en-us_topic_0182207105_p7986133491612"></a><a name="en-us_topic_0182207105_p7986133491612"></a>&nbsp;&nbsp;</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.57575757575758%"><p id="en-us_topic_0182207105_p8129151463514"><a name="en-us_topic_0182207105_p8129151463514"></a><a name="en-us_topic_0182207105_p8129151463514"></a>--annotation</p>
@@ -234,7 +234,7 @@ The following table lists the parameters supported by the  **create**  command.
 </tr>
 <tr id="en-us_topic_0182207105_row154751863710"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p7312539679"><a name="en-us_topic_0182207105_p7312539679"></a><a name="en-us_topic_0182207105_p7312539679"></a>--mount</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p183152391174"><a name="en-us_topic_0182207105_p183152391174"></a><a name="en-us_topic_0182207105_p183152391174"></a>Mounts a host directory to a container.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p183152391174"><a name="en-us_topic_0182207105_p183152391174"></a><a name="en-us_topic_0182207105_p183152391174"></a>Mounts the host directory, volume, or file system to the container.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row565519595210"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p12655457526"><a name="en-us_topic_0182207105_p12655457526"></a><a name="en-us_topic_0182207105_p12655457526"></a>--no-healthcheck</p>
@@ -301,6 +301,11 @@ The following table lists the parameters supported by the  **create**  command.
 <tr id="en-us_topic_0182207105_row969873217614"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p1443220391575"><a name="en-us_topic_0182207105_p1443220391575"></a><a name="en-us_topic_0182207105_p1443220391575"></a>-v, --volume=[]</p>
 </td>
 <td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p343617396718"><a name="en-us_topic_0182207105_p343617396718"></a><a name="en-us_topic_0182207105_p343617396718"></a>Mounts a volume.</p>
+</td>
+</tr>
+<tr id="en-us_topic_0182207105_row969873217614"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p1443220391575"><a name="en-us_topic_0182207105_p1443220391575"></a><a name="en-us_topic_0182207105_p1443220391575"></a>--volumes-from=[]</p>
+</td>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p343617396718"><a name="en-us_topic_0182207105_p343617396718"></a><a name="en-us_topic_0182207105_p343617396718"></a>Uses the mounting configuration of the specified container.</p>
 </td>
 </tr>
 </tbody>

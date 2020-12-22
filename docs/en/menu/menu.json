@@ -471,6 +471,11 @@
                   "label": "Supporting OCI hooks",
                   "path": "docs/Container/supporting-oci-hooks",
                   "children": []
+                },
+                {
+                  "label": "Local Volume Management",
+                  "path": "docs/Container/local-volume-management",
+                  "children": []
                 }
               ]
             },
