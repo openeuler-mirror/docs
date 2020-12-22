@@ -26,6 +26,8 @@ This document uses the **devstack** script for installation, deployment, and tes
 
 ## Environment Configuration
 
+It is recommended that the memory of the deployment environment be greater than 2 GB.
+
 ### Software Platform
 
 |  Software   |Version Number  |Installation Method   | Remarks |
