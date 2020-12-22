@@ -482,5 +482,5 @@ pip 社区更新至20.3，版本不适配。
 
 ## 附录
 
-自动化脚本 prep_install.sh点击[prep_install.sh](./prep_install.sh)获取。
+自动化脚本 prep_install.sh点击[prep_install.sh](https://gitee.com/openeuler/docs/blob/stable2-20.03_LTS_SP1/docs/zh/docs/thirdparty_migration/prep_install.sh)获取。
 将脚本存放到`/home/stack`目录，执行命令 `bash -x prep_install.sh`即可完成必要库和依赖安装、修改主机相关环境和修改devstack脚本和相关配置的部分操作。

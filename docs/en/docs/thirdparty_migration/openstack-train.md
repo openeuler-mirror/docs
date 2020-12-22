@@ -491,6 +491,6 @@ Refer to the community solution. Use the patch to modify the devstack source cod
 
 ## Appendix
 
-Click [prep\_install.sh](./prep_install.sh) to obtain the automation script **prep\_install.sh**. 
+Click [prep\_install.sh](https://gitee.com/openeuler/docs/blob/stable2-20.03_LTS_SP1/docs/en/docs/thirdparty_migration/prep_install.sh) to obtain the automation script **prep\_install.sh**. 
 
 Save the script to the `/home/stack` directory and run the `bash -x prep_install.sh` command to install required libraries and dependencies, modify the host environment, and modify the **devstack** script and related configurations.
