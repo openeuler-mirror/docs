@@ -163,24 +163,42 @@ After the setting is complete, click  **Done**  in the upper left corner to go b
 
 On the **INSTALLATION SUMMARY** page, click **INSTALLATION SOURCE** to locate the installation source.
 
-* When you use the complete CD-ROM for installation, the installation program automatically detects and displays the installation source information. You can use the default settings, as shown in [Figure 10](#en-us_topic_0186390100_en-us_topic_0144427079_fig93633295132):
+* When you use the complete CD-ROM for installation, the installation program automatically detects and displays the installation source information. You can use the default settings, as shown in [Figure 10](#zh-cn_topic_0186390100_zh-cn_topic_0144427079_fig93633295132):
+  
+  **Figure 10** Installation source<a name="zh-cn_topic_0186390100_zh-cn_topic_0144427079_fig93633295132"></a>  
+![](./figures/Installation_source.png)
 
-    **Figure 10**  Installation source<a name="zh-cn_topic_0186390100_zh-cn_topic_0144427079_fig93633295132"></a>  
-    ![](./figures/Installation_source.png)
-
-* When the network source is used for installation, you need to set the IP address of the server, as shown in [Figure 11](#3837222):
-
-    If the HTTPS server uses a private certificate, press **e** on the installation wizard page to go to the parameter editing page of the selected option and add the **inst.noverifyssl** parameter.
-
-    **Figure 11**  Installation source<a name="3837222"></a>  
+* When the network source is used for installation, you need to set the URL of the network source.
+  
+  - HTTP or HTTPS mode
+    
+    The following figure shows the installation source in HTTP or HTTPS mode:
+    
     ![](./figures/installsourceen.png)
+    
+    If the HTTPS server uses a private certificate, press **e** on the installation wizard page to go to the parameter editing page of the selected option, and add the **inst.noverifyssl** parameter.
+    
+    Enter the actual installation source address, for example, **https://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/x86_64**, in the text box. **openEuler-20.03-LTS-SP1** indicates the version number, and **x86\_64** indicates the CPU architecture.
+  
+  - FTP mode
+    
+    The following figure shows the installation source in FTP mode. Enter the FTP address in the text box.
+    
+    ![](./figures/sourceftp.png)
+    
+    You need to set up an FTP server, mount the **openEuler-20.03-LTS-SP1-x86\_64-dvd.iso** image, and copy the mounted files to the shared directory on the FTP server. **x86\_64** indicates the CPU architecture. You can use images as required.
+  
+  - NFS mode
+    
+    The following figure shows the installation source in NFS mode. Enter the NFS address in the text box.
+    
+    ![](./figures/sourcenfs.png)
+    
+    You need to set up an NFS server, mount the **openEuler-20.03-LTS-SP1-x86\_64-dvd.iso** image, and copy the mounted file to the shared directory on the NFS server. **x86\_64** indicates the CPU architecture. You can use images as required.
 
-When you use the network for installation, if the HTTPS server uses a private certificate, press  **e**  on the installation wizard page to go to the parameter editing page and add the  **inst.noverifyssl**  parameter.
+During the installation, if you have any questions about configuring the installation source, see [An Exception Occurs During the Selection of the Installation Source](./faqs.html#an-exception-occurs-during-the-selection-of-the-installation-source).
 
 After the setting is complete, click  **Done**  in the upper left corner to go back to the  **INSTALLATION SUMMARY**  page.
-
->![](./public_sys-resources/icon-note.gif) **NOTE:**   
-> During the installation, if you have any questions about configuring the installation source, see [An Exception Occurs During the Selection of the Installation Source](./faqs.html#an-exception-occurs-during-the-selection-of-the-installation-source).  
 
 ## Selecting Installation Software
 

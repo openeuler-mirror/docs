@@ -274,3 +274,34 @@ A core dump occurs on the process that uses the regular expression. This occurs 
    # "a"*400000
    ```
 3. After detecting a process exception in the program, restart the process to restore services, which helps improve program reliability.
+
+## A Cache File Exists when Files Are Edited Using Emacs.
+
+### Symptom
+
+If Emacs is not configured, a cache file ending with **~** exists after the edited file is saved.
+
+### Cause Analysis
+
+If Emacs is not configured or no valid configuration file is generated, a cache file will exist. The cache file is used to prevent data loss caused by unexpected system shutdown. You can determine whether to enable this function.
+
+### Solution
+
+1. After Emacs is installed, the Emacs page is displayed.
+
+2. Press **Alt+X** on the Emacs page.
+
+3. After entering **customize**, you can set any function. After the function is set, an **.emacs** configuration file is generated, and the path of the configuration file is displayed, for example, **/root/.emacs**. (The **.emacs** file that you create does not support this function.)
+
+4. If you need to modify the cache file configuration, use either of the following methods:
+   
+    * Copy the following code to **/root/.emacs** to disable the cache file function:
+     
+        ```
+        (setq make-backup-files nil)
+        ```
+    * Copy the following code to **/root/.emacs** and specify the directory for storing backup files:
+     
+        ```
+        (setq backup-directory-alist (quote (("." . "/.emacs-backups"))))
+        ```
