@@ -150,7 +150,7 @@ Use the Yum source to install UEFI-related libraries. The commands for the x86 a
    
     ```
     # chmod +w /etc/sudoers
-    # vi /etc/sudoers //在sudoers文件的“root ALL=(ALL) ALL”下面，加入如下内容:stack  ALL=(ALL) NOPASSWD: ALL
+    # vi /etc/sudoers //Insert "stack  ALL=(ALL) NOPASSWD: ALL" in the position shown in the figure.
     # chmod -w /etc/sudoers
     ```
    
@@ -278,9 +278,15 @@ Perform the following operations as the stack user.
 
     ![](./figures/host_env5.png)
 
-4. The devstack currently does not maintain the openEuler platform. Modify the GetOSVersion function in the `/home/stack/devstack/functions-common` file so that the script uses the Fedora 30 installation mode by default. The following figure shows how to modify the function:
+4. The devstack currently does not maintain the openEuler platform. run the following command to adapt to the OpenEuler version installation.
    
-    ![](./figures/host_env6.png)
+	```
+    # cd /home/stack/devstack
+    # sed -i "/\# Git Functions/i\\function is_openeuler {\n\tif [[ -z \"\$os_VENDOR\" ]]; then\n\tGetOSVersion\n\tfi\n\n\t[[ \"\$os_VENDOR\" =~ (openEuler) ]]\n}\n" functions-common
+    # sed -i "s/elif is_fedora/elif is_fedora || is_openeuler/g" functions-common
+    # sed -i "/DISTRO=\"f\$os_RELEASE\"/a\ \ \ \ elif [[ \"\$os_VENDOR\" =~ (openEuler) ]]; then\n\tDISTRO=\"openEuler-\$os_RELEASE\"" functions-common
+    # grep -nir "is_fedora" | grep -v functions-common | cut -d ":" -f1 | sort | uniq | for line in `xargs`;do sed -i "s/is_fedora/is_fedora || is_openeuler/g" $line;done
+    ```
 
 5. The default python-libvirt version in the script file does not adapt to openEuler. Therefore, you need to edit the `/home/stack/devstack/lib/nova_plugins/functions-libvirt` file and comment out the code related to python-libvirt installation. python-libvirt has been manually installed in the Yum source of openEuler-20.03-LTS-SP1.
    
@@ -471,7 +477,7 @@ The pip boot fails, and the console displays the error message **ERROR: Links ar
 
 **Cause Analysis** 
 
-The latest pip 20.03 release has been available, but it does not adapt to openEuler.
+The latest pip 20.3 release has been available, but it does not adapt to openEuler.
 
 **Solution** 
 
