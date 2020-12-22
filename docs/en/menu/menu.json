@@ -883,7 +883,7 @@
         },
         {
           "label": "Guide to Porting Spring Framework to openEuler",
-          "path": "docs/thirdparty_migration/SpringFramework Single-Node System Deployment Guide",
+          "path": "docs/thirdparty_migration/springframework",
           "children": [
             
           ]
