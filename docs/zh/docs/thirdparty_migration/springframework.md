@@ -196,7 +196,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
     # mvn package -DskipTests
     ```
 
-4. 执行以下命令，编译 feign-eurka 工程。
+4. 执行以下命令，编译 feign-eureka 工程。
 
     ```
     # cd /home
