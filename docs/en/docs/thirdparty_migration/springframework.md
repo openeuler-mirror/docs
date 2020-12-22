@@ -17,7 +17,7 @@ The Spring Framework consists of three core modules: Spring-Core, Spring-Context
 
 **Spring-Core**
 
-The core container provides basic functions of the Spring Framework, including the main module BeanFactory that manages the bean.
+The core container provides basic functions of the Spring Framework, including the main module BeanFactory that manages the Bean.
 
 **Spring-Context** 
 
@@ -97,7 +97,7 @@ If the Internet is available in the environment, you can use the configured sour
 
 ## Software Compilation
 
-### Using the Local yum Source to Install Basic Software
+### Using the Local Yum Source to Install Basic Software
 
 1. Run the following command to install the Maven build tool:
    
@@ -196,7 +196,7 @@ If the Internet is available in the environment, you can use the configured sour
     # mvn package -DskipTests
     ```
 
-4. Run the following commands to compile the feign-eurka project:
+4. Run the following commands to compile the feign-eureka project:
    
     ```
     # cd /home
@@ -241,7 +241,7 @@ If the Internet is available in the environment, you can use the configured sour
     ```
     
 	![](./figures/run1.png)
-3. To stop the service, press Ctrl+C in the windows in Step 1.
+3. To stop the service, press **Ctrl+C** in the windows in Step 1.
 
 #### Example of running the zuul-server project
 
@@ -273,7 +273,7 @@ If the Internet is available in the environment, you can use the configured sour
 
     ![](./figures/run4.png)
 
-4. To stop the service, press Ctrl+C in the windows in Step 2 and Step 3.
+4. To stop the service, press **Ctrl+C** in the windows in Step 2 and Step 3.
 
 #### Example of running the feign-eureka project 
 
