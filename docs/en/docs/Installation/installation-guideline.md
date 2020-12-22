@@ -83,7 +83,7 @@ On the installation wizard screen, press  **e**  to go to the parameter editing 
 
 ### Installation in GUI Mode
 
-On the installation wizard page, select  **Test this media \& install openEuler 20.09**  to enter the GUI installation mode.
+On the installation wizard page, select  **Test this media \& install openEuler 20.03-LTS-SP1**  to enter the GUI installation mode.
 
 Perform graphical installation operations using a keyboard.
 
