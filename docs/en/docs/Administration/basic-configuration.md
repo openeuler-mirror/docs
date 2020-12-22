@@ -424,3 +424,23 @@ You can add **elevator=mq-deadline** to the kernel line in the kernel boot confi
 ```
 linux   /vmlinuz-4.19.90-2003.4.0.0036.oe1.x86_64 root=/dev/mapper/openeuler-root ro resume=/dev/mapper/openeuler-swap rd.lvm.lv=openeuler/root rd.lvm.lv=openeuler/swap quiet crashkernel=512M elevator=mq-deadline
 ```
+
+
+## Setting the NMI Watchdog
+
+The non-maskable interrupt (NMI) is the highest priority interrupt in the system. The NMI watchdog can be used to detect server suspension events and trigger the server reboot after fault information collection. According to the lab test results of the openEuler QA team, when the NMI watchdog is enabled, NMI occasionally generates a large number of interrupts and deteriorates the server performance. Therefore, properly enable the NMI watchdog function.
+
+Run the following command to display the current NMI watchdog configuration status:
+
+```
+# sudo sysctl kernel.nmi\_watchdog
+kernel.nmi\_watchdog = 0
+```
+
+Run the following command to set the NMI watchdog configuration parameters:
+
+```
+# sudo sysctl  -w kernel.nmi\_watchdog=1
+```
+
+Value **1**: **enabled**; Value **0**: **disabled**
