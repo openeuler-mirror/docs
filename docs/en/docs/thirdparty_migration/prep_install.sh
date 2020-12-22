@@ -41,6 +41,9 @@ function install_mode()
 
 	# Fixed git branch
 	sed -i "s/master/stable\/train/g" $DEVSTACK_HOME/stackrc
+	
+	# Change pypi repo
+	sed -i "s/$cmd_pip install/$cmd_pip install -i https:\/\/mirrors.aliyun.com\/pypi\/simple/g" $DEVSTACK_HOME/inc/python
 }
 
 # Config mod_wsgi
