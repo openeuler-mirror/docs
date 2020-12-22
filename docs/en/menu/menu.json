@@ -426,6 +426,11 @@
               "label": "vmtop",
               "path": "docs/Virtualization/vmtop",
               "children": []
+            },
+            {
+              "label": "LibcarePlus",
+              "path": "docs/Virtualization/LibcarePlus",
+              "children": []
             }
           ]
         },
