@@ -1,11 +1,12 @@
-# openEuler 20.03 SP1上UKUI的安装方法
+# 在 openEuler 上安装 UKUI
+
 UKUI是麒麟软件团队历经多年打造的一款Linux 桌面，主要基于 GTK 和 QT开发。与其它UI界面相比，UKUI更加注重易用性和敏捷度，各元件相依性小，可以不依赖其它套件而独自运行，给用户带来亲切和高效的使用体验。
 
 UKUI支持x86_64和aarch64两种架构。
 
 安装时，建议新建一个管理员用户。
 
-1.下载 openEuler-20.03-LTS SP1 镜像并安装系统。
+1.下载 openEuler 20.03 LTS SP1 镜像并安装系统。
 ```
 sudo dnf update
 ```
