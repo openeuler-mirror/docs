@@ -266,9 +266,15 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 
     ![](./figures/host_env5.png)
 
-4. devstack 维护的平台暂不包含 openEuler，修改 `/home/stack/devstack/functions-common` 文件中的 GetOSVersion 函数，使脚本识别默认使用 fedora30 模式安装，修改方法如下图所示。
+4. devstack 维护的平台暂不包含 openEuler，执行以下命令，适配 openEuler 版本安装方法。
 
-    ![](./figures/host_env6.png)
+	```
+    # cd /home/stack/devstack
+    # sed -i "/\# Git Functions/i\\function is_openeuler {\n\tif [[ -z \"\$os_VENDOR\" ]]; then\n\tGetOSVersion\n\tfi\n\n\t[[ \"\$os_VENDOR\" =~ (openEuler) ]]\n}\n" functions-common
+    # sed -i "s/elif is_fedora/elif is_fedora || is_openeuler/g" functions-common
+    # sed -i "/DISTRO=\"f\$os_RELEASE\"/a\ \ \ \ elif [[ \"\$os_VENDOR\" =~ (openEuler) ]]; then\n\tDISTRO=\"openEuler-\$os_RELEASE\"" functions-common
+    # grep -nir "is_fedora" | grep -v functions-common | cut -d ":" -f1 | sort | uniq | for line in `xargs`;do sed -i "s/is_fedora/is_fedora || is_openeuler/g" $line;done
+    ```
 
 5. 由于脚本文件中默认的 python-libvirt 版本不适配，需编辑 `/home/stack/devstack/lib/nova_plugins/functions-libvirt` 文件，注释掉安装 python-libvirt 相关代码。python-libvirt 已在openEuler-20.03-LTS-SP1 的 yum 源中手动安装。
 
