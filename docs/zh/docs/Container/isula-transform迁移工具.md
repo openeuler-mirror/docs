@@ -136,7 +136,8 @@ isula-transform 支持两种用法:
 - isula-transform 目前支持对 Docker 18.09 版本创建的容器进行迁移，容器需要处于 running 或者 pause 状态。
 - isula-transform 完成迁移后原 Docker 容器会处于 pause 状态，由用户决定原 Docker 容器的生命周期。
 - isula-transform 要求被迁移的 Docker 容器以 --network=host 启动， 或者复用以 host 网络启动的容器的网络栈。后者场景中，两个容器均需要被迁移，且迁移后需要首先启动父容器。
-- 涉及到共享 namespace （pid，ipc）和 cgroup 嵌套（cgroup-parent）时，父子容器均需要被迁移，且迁移后需要首先启动父容器。
+- 涉及到共享 namespace （pid，ipc）时，父子容器均需要被迁移，且迁移后需要首先启动父容器。
+- 涉及到指定 --cgroup-parent 时, Docker 引擎为原容器创建的 cgroup 没有被销毁，iSulad 引擎无法为新容器创建 cgroup，需要原 Docker 容器被停止或删除后，新容器才能启动。
 - iSula 容器相对于 Docker 容器不支持的配置参数，isula-transform 迁移后会丢弃。
 
 ## 附录
