@@ -1,9 +1,10 @@
-# system Resource Management
+# System Resource Management
 
 [[toc]]
 
+## General Description
+openEuler virtualization uses the **libvirt** command to manage VM system resources, such as vCPUs and virtual memory resources.
 
-The  **libvirt**  command manages VM system resources, such as vCPU and virtual memory resources.
 
 Before you start:
 
@@ -251,7 +252,7 @@ This feature allows users to hot add CPUs to a running VM without affecting its 
 1.  If the hot added CPU needs to be automatically brought online, create the udev rules file /etc/udev/rules.d/99-hotplug-cpu.rules in the VM as user root and define the udev rules in the file. The following is an example:
 
     ```
-    ### automatically online hot-plugged cpu
+    # automatically online hot-plugged cpu
     ACTION=="add", SUBSYSTEM=="cpu", ATTR{online}="1"
     ```
 
@@ -428,7 +429,7 @@ In virtualization scenarios, the memory, CPU, and external devices of VMs are si
 1.  If the hot added memory needs to be automatically brought online, create the udev rules file /etc/udev/rules.d/99-hotplug-memory.rules in the VM as user root and define the udev rules in the file. The following is an example:
 
     ```
-    ### automatically online hot-plugged memory
+    # automatically online hot-plugged memory
     ACTION=="add", SUBSYSTEM=="memory", ATTR{state}="online"
     ```
 
@@ -448,7 +449,7 @@ In virtualization scenarios, the memory, CPU, and external devices of VMs are si
 3. Run the virsh attach-device command to hot add memory to the VM. In the command, openEulerVM indicates the VM name, memory.xml indicates the description file of the hot added memory, and --live indicates that the hot added memory takes effect online. You can also run the --config command to persist the hot added memory to the VM XML file.
 
     ```
-    ### virsh attach-device openEulerVM memory.xml --live
+    # virsh attach-device openEulerVM memory.xml --live
     ```
 
     >![](./public_sys-resources/icon-note.gif) **Note**  
