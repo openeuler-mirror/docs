@@ -324,7 +324,6 @@ anaconda不支持在chroot环境中安装selinux策略模块，当安装pcp-seli
 
 ### 问题现象
 用户在安装操作系统过程中，存在两块都已经安装过的磁盘，此时如果先选择一块盘，进行自定义分区，然后点击取消按钮，再选择第二块盘，并进行自定义分区时，会出现安装失败。
-issue访问链接：https://gitee.com/src-openeuler/anaconda/issues/I29P84?from=project-issue
 
 ![](./figures/cancle_disk.png)
 ![](./figures/custom_paratition.png)
@@ -334,3 +333,6 @@ issue访问链接：https://gitee.com/src-openeuler/anaconda/issues/I29P84?from=
 
 ### 解决方法
 直接选择目标磁盘进行自定义分区，请勿频繁取消操作，如果一定要进行取消重选建议重新安装。
+
+###issue访问链接
+https://gitee.com/src-openeuler/anaconda/issues/I29P84?from=project-issue
