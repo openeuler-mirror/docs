@@ -1,19 +1,6 @@
 # FAQ
-<!-- TOC -->
 
-- [FAQ](#faq)
-    - [使用systemctl和top命令查询libvirtd服务占用内存不同](#使用systemctl和top命令查询libvirtd服务占用内存不同)
-    - [设置RAID0卷，参数stripsize设置为4时出错](#设置raid0卷参数stripsize设置为4时出错)
-    - [使用rpmbuild编译mariadb失败](#使用rpmbuild编译mariadb失败)
-    - [使用默认配置启动SNTP服务失败](#使用默认配置启动sntp服务失败)
-    - [安装时出现软件包冲突、文件冲突或缺少软件包导致安装失败](#安装时出现软件包冲突文件冲突或缺少软件包导致安装失败)
-    - [通过dnf update 默认方式升级openssh软件包时无法安装openssh相关包](#通过dnf-update-默认方式升级openssh软件包时无法安装openssh相关包)
-    - [libiscsi降级失败](#libiscsi降级失败)
-    - [xfsprogs降级失败](#xfsprogs降级失败)
-    - [不合理使用glibc正则表达式引起ReDoS攻击](#不合理使用glibc正则表达式引起ReDoS攻击)
-    - [emacs编辑文件时会存在缓存文件](#emacs编辑文件时会存在缓存文件)
-
-<!-- /TOC -->
+[[toc]]
 
 ## 使用systemctl和top命令查询libvirtd服务占用内存不同
 
@@ -333,9 +320,10 @@ emacs未进行配置，或者未生成有效的配置文件，会导致存在缓
       (setq backup-directory-alist (quote (("." . "/.emacs-backups"))))
       ```
 
-## rtkit-daemon服务启动报错Failed to make ourselves RT: Operation not permitted
+## rtkit-daemon 服务启动报错“Failed to make ourselves RT: Operation not permitted”
 
 ### 问题现象
+
 默认情况下rtkit-daemon服务启动正常，但是在安装docker-engine的情况下启动
 rtkit-daemon会有报错信息，如下所示：
 
@@ -351,6 +339,7 @@ rtkit-daemon会有报错信息，如下所示：
 ```
 
 ### 原因分析
+
 rtkit-daemon报错的原因是有服务(如docker.service)配置了Delegate=yes。
 
 在没有配置该参数的情况下，rtkit-daemon的cgroup信息如下所示，此时服务表现正常。
@@ -379,13 +368,16 @@ slice中。这样rtkit-daemon服务的cgroup信息如下所示。rtkit-daemon被
 ```
 
 ### 解决方案
-解决方法一：修改rtkit-daemon.service，添加如下配置，这种方式即使用系统默认cpu cgroup配置。
+
+方法一：修改rtkit-daemon.service，添加如下配置，这种方式即使用系统默认cpu cgroup配置。
+
 ```
 Slice=-.slice
 DisableControllers=cpu cpuacct
 ```
 
-解决方法二：修改rtkit-daemon.service，添加如下配置，这种方法即根据需要配置调度参数。
+方法二：修改rtkit-daemon.service，添加如下配置，这种方法即根据需要配置调度参数。
+
 ```
 ExecStartPre=/usr/bin/bash -c "mkdir -p /sys/fs/cgroup/cpu,cpuacct/system.slice/rtkit-daemon.service"
 ExecStartPre=/usr/bin/bash -c "echo 950000 > /sys/fs/cgroup/cpu,cpuacct/system.slice/cpu.rt_runtime_us"
