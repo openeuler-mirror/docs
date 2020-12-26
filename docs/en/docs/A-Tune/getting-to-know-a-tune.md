@@ -19,7 +19,7 @@ To address the preceding challenges, openEuler launches A-Tune.
 
 A-Tune is an AI-based engine that optimizes system performance. It uses AI technologies to precisely profile business scenarios, discover and infer business characteristics, so as to make intelligent decisions, match with the optimal system parameter configuration combination, and give recommendations, ensuring the optimal business running status.
 
-![](figures/en-us_image_0227497000.png)
+![](./figures/en-us_image_0227497000.png)
 
 ## Architecture
 
@@ -29,7 +29,7 @@ The following figure shows the A-Tune core technical architecture, which consist
 -   System profile layer: consists of the feature engineering and two-layer classification model. The feature engineering is used to automatically select service features, and the two-layer classification model is used to learn and classify service models.
 -   Interaction system layer: monitors and configures various system resources and executes optimization policies.
 
-![](figures/en-us_image_0227497343.png)
+![](./figures/en-us_image_0227497343.png)
 
 ## Supported Features and Service Models
 
