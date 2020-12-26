@@ -39,6 +39,13 @@
           ]
         },
         {
+          "label": "接口变更",
+          "path": "docs/Releasenotes/接口变更",
+          "children": [
+            
+          ]
+        },
+        {
           "label": "已知问题",
           "path": "docs/Releasenotes/已知问题",
           "children": [
