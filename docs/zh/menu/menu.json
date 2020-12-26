@@ -74,6 +74,13 @@
           ]
         },
         {
+          "label": "附录",
+          "path": "docs/Releasenotes/附录",
+          "children": [
+            
+          ]
+        },
+        {
           "label": "致谢",
           "path": "docs/Releasenotes/致谢",
           "children": [
