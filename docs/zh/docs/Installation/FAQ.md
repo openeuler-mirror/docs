@@ -334,5 +334,5 @@ anaconda不支持在chroot环境中安装selinux策略模块，当安装pcp-seli
 ### 解决方法
 直接选择目标磁盘进行自定义分区，请勿频繁取消操作，如果一定要进行取消重选建议重新安装。
 
-###issue访问链接
+### issue访问链接
 https://gitee.com/src-openeuler/anaconda/issues/I29P84?from=project-issue
