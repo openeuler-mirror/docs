@@ -1,4 +1,4 @@
-# k8s 迁移至 openEuler 指导
+# K8S 迁移至 openEuler 指导
 
 [[toc]]
 
