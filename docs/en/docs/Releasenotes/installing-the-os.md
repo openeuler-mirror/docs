@@ -42,7 +42,7 @@ The following table lists the [openEuler release files](http://repo.openeuler.or
 
 |  Directory  | Description  |
 | :----  | :----  |
-| [ISO](http://repo.openeuler.org/openEuler-20.03-LTS/ISO/) | The directory differentiates the ISO release packages for the AArch64, x86, and source, respectively |
+| [ISO](http://repo.openeuler.org/openEuler-20.03-LTS-SP1/ISO/) | The directory differentiates the ISO release packages for the AArch64, x86, and source, respectively |
 | [OS](http://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/) | The repo source of the openEuler basic installation software package provides the offline version upgrade function |
 | [debuginfo](http://repo.openeuler.org/openEuler-20.03-LTS-SP1/debuginfo/) | The repo source of the openEuler debugging software package provides the online download function |
 | [docker_img](http://repo.openeuler.org/openEuler-20.03-LTS-SP1/docker_img/) | The openEuler container image, which provides only the basic bash environment, is used as the basic container image |
