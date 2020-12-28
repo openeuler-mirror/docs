@@ -89,7 +89,7 @@ The following table lists the [openEuler release files](http://repo.openeuler.or
   </tr>
   <tr>
 	<td>Memory</td>
-	<td>32G\*4 2933MHz</td>
+	<td>32G*4 2933MHz</td>
   </tr>
   <tr>
     <td>RAID controller card</td>
