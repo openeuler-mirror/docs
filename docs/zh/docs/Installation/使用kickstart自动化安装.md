@@ -158,15 +158,17 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
 
     >![](./public_sys-resources/icon-note.gif) **说明：**   
     >密码密文生成方式：  
-    >\# python3  
-    >Python 3.7.0 \(default, Apr  1 2019, 00:00:00\)  
-    >\[GCC 7.3.0\] on linux  
+	>```
+    ># python3  
+    >Python 3.7.0 (default, Apr  1 2019, 00:00:00)  
+    >[GCC 7.3.0] on linux  
     >Type "help", "copyright", "credits" or "license" for more information.  
-    >\>\>\> import crypt  
-    >\>\>\> passwd = crypt.crypt\("myPasswd"\)  
-    >\>\>\> print\(passwd\)  
+    >>>> import crypt  
+    >>>> passwd = crypt.crypt("myPasswd")  
+    >>>> print (passwd)  
     >$6$63c4tDmQGn5SDayV$mZoZC4pa9Jdt6/ALgaaDq6mIExiOO2EjzomB.Rf6V1BkEMJDcMddZeGdp17cMyc9l9ML9ldthytBEPVcnboR/0  
-
+    >```
+	
 3.  将ISO镜像文件挂载到需要安装openEuler计算机的光驱上。
 
     另外，也可以选择NFS等网络安装，kickstart文件中需要指定安装源位置（默认是cdrom）。
