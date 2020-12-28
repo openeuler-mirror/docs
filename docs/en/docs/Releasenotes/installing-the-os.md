@@ -62,7 +62,7 @@ The following table lists the [openEuler release files](http://repo.openeuler.or
 
 |  Component  | Minimal Hardware Specification  |
 | :----  | :----  |
-| CPU | Kunpeng 920 (architecture: AArch64)<br>x86-64 (Skylake or later) |
+| CPU | Kunpeng 920 (architecture: AArch64)<br>Skylake or later (x86-64) |
 | Memory | ≥ 8 GB |
 | Hard disk | ≥ 120 GB |
 
@@ -85,7 +85,7 @@ The following table lists the [openEuler release files](http://repo.openeuler.or
     <td rowspan="4">TaiShan 200</td>
     <td rowspan="4">2280 balanced model</td>
 	<td>CPU</td>
-	<td>HiSilicon <br>Kunpeng 920</td>
+	<td>Kunpeng 920</td>
   </tr>
   <tr>
 	<td>Memory</td>
