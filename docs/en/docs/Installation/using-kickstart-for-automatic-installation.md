@@ -158,14 +158,16 @@ To use kickstart to perform semi-automatic installation of openEuler, perform th
 
     >![](./public_sys-resources/icon-note.gif) **NOTE:**   
     >The method of generating the password ciphertext is as follows:  
-    >\# python3  
-    >Python 3.7.0 \(default, Apr  1 2019, 00:00:00\)  
-    >\[GCC 7.3.0\] on linux  
+	>```
+    ># python3  
+    >Python 3.7.0 (default, Apr  1 2019, 00:00:00)  
+    >[GCC 7.3.0] on linux  
     >Type "help", "copyright", "credits" or "license" for more information.  
-    >\>\>\> import crypt  
-    >\>\>\> passwd = crypt.crypt\("myPasswd"\)  
-    >\>\>\> print\(passwd\)  
+    >>>> import crypt  
+    >>>> passwd = crypt.crypt("myPasswd")  
+    >>>> print (passwd)  
     >$6$63c4tDmQGn5SDayV$mZoZC4pa9Jdt6/ALgaaDq6mIExiOO2EjzomB.Rf6V1BkEMJDcMddZeGdp17cMyc9l9ML9ldthytBEPVcnboR/0  
+    >```
 
 3.  Mount the ISO image file to the CD-ROM drive of the computer where openEuler is to be installed.
 
