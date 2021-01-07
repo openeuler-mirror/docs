@@ -230,7 +230,7 @@ The  **cron**  command is used to create a routine task. Users who can run the  
 
 ### Description
 
-A common user can use the  **sudo**  command to run commands as the user  **root**. To harden system security, it is necessary to restrict permissions on the  **sudo**  command. Only user  **root**  can use the  **sudo**  command.
+A common user can use the  **sudo**  command to run commands as the user  **root**. To harden system security, it is necessary to restrict permissions on the  **sudo**  command. Only user  **root**  can use the  **sudo**  command. By default, openEuler does not retrict the permission of non-root users to run the sudo command.
 
 ### Implementation
 
