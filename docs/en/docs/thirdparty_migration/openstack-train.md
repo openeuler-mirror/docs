@@ -36,7 +36,7 @@ It is recommended that the memory of the deployment environment be greater than 
 | gcc | 7.3.0 |Refer to Installing Required Libraries and Dependencies  |  |
 | python3 | 3.7.9 |Refer to Installing Required Libraries and Dependencies |  |
 | bash | 5.0 |Refer to Installing Required Libraries and Dependencies |  |
-| devstack | Latest |Refer to Modifying the devstack Script and Related Configurations |[devstack](https://github.com/OpenStack/devstack](https://github.com/OpenStack/devstack) |
+| devstack | Latest |Refer to Modifying the devstack Script and Related Configurations |[devstack](https://github.com/OpenStack/devstack) |
 
 ### Required Dependency Packages
 
