@@ -1,54 +1,7 @@
-<!-- TOC -->
-- [UKUI Desktop Environment](#ukui-desktop-environment)
-  - [Overview](#overview)
-  - [Desktop](#desktop)
-    - [Desktop’s Icons](#desktops-icons)
-    - [Right-click Menu](#right-click-menu)
-  - [Taskbar](#taskbar)
-    - [Basic Function](#basic-function)
-      - [Multi View Switch](#multi-view-switch)
-      - [Preview Window](#preview-window)
-      - [Sidebar](#sidebar)
-        - [Notification Center](#notification-center)
-        - [Clipboard](#clipboard)
-      - [Tray Menu](#tray-menu)
-        - [Storage Menu](#storage-menu)
-        - [Input Method](#input-method)
-        - [USB](#usb)
-        - [Power Supply](#power-supply)
-        - [Network](#network)
-          - [1) Wired Network](#1-wired-network)
-          - [2) Wireless Network](#2-wireless-network)
-          - [3) Network Setting](#3-network-setting)
-        - [Volume](#volume)
-          - [1) Mini Mode](#1-mini-mode)
-          - [2) According to Equipment](#2-according-to-equipment)
-          - [3) According to Application](#3-according-to-application)
-        - [Calendar](#calendar)
-        - [Night Mode](#night-mode)
-      - [Advanced Setting](#advanced-setting)
-  - [Window](#window)
-    - [Window Manager](#window-manager)
-    - [Window Switch](#window-switch)
-  - [Start Menu](#start-menu)
-    - [Basic Function](#basic-function-1)
-      - [Category Menu at right side](#category-menu-at-right-side)
-      - [Function Button at right side](#function-button-at-right-side)
-        - [User Avatar](#user-avatar)
-        - [Computer](#computer)
-        - [Control Center](#control-center)
-        - [Shutdown](#shutdown)
-          - [Lock Screen](#lock-screen)
-          - [Switch Users & Log Out](#switch-users--log-out)
-          - [Shutdown & Reboot](#shutdown--reboot)
-    - [Advanced Setting](#advanced-setting-1)
-    - [Applications](#applications)
-  - [FAQ](#faq)
-    - [Can’t login to the system after locking the screen?](#cant-login-to-the-system-after-locking-the-screen)
-  - [Appendix](#appendix)
-    - [Shortcut Key](#shortcut-key)
-
 # UKUI Desktop Environment
+
+[[toc]]
+
 ## Overview
 Desktop Environment is the basis for the user's operation on the graphical interface, and provides multiple functions including taskbar, start menu, etc. The main interface is shown in figure below.
 
@@ -57,6 +10,7 @@ Desktop Environment is the basis for the user's operation on the graphical inter
 <br>
 
 ## Desktop
+
 ### Desktop’s Icons
 The system places three icons Computer, Recycle Bin and Personal by default, and double click the left mouse button to open the page. The functions are shown in table below. 
 
@@ -88,6 +42,7 @@ Some of the options are described in table below.
 <br>
 
 ## Taskbar
+
 ### Basic Function
 Taskbar is located at the bottom and includes the Start Menu, Multi View Switch, File Browser, Firefox Web Browser, WPS, and Tray Menu.
 
@@ -220,42 +175,42 @@ Users can choose wired or wireless network connections by clicking the icon "![]
 
 ![Fig. 22 Network Connection](./figures/22.png)
 
-###### 1) Wired Network
-In the wired network connection interface, click on the wired network plan to expand. Details of the network.
+- Wired Network
+    In the wired network connection interface, click on the wired network plan to expand. Details of the network.
 
-![Fig. 23 Wired Network](./figures/23.png)
+    ![Fig. 23 Wired Network](./figures/23.png)
 
-###### 2) Wireless Network
-Click the switch button in the upper right corner to turn on the wireless network connection, and select the WiFi from the list of available wireless networks. Enter the password to access the Internet.
+- Wireless Network
+    Click the switch button in the upper right corner to turn on the wireless network connection, and select the WiFi from the list of available wireless networks. Enter the password to access the Internet.
 
-![Fig. 24 Wireless Network](./figures/24.png)
+    ![Fig. 24 Wireless Network](./figures/24.png)
 
-###### 3) Network Setting
-Right-click the icon "![](./figures/icon42-o.png)" of network mnager to pop up the setting menu.
+- Network Setting
+    Right-click the icon "![](./figures/icon42-o.png)" of network mnager to pop up the setting menu.
 
-![Fig. 25 Wired Network Setting](./figures/25.png)
+    ![Fig. 25 Wired Network Setting](./figures/25.png)
 
-Click network setting to go to the setting window immediately.
+    Click network setting to go to the setting window immediately.
 
-![Fig. 26 Network Setting](./figures/26.png)
+    ![Fig. 26 Network Setting](./figures/26.png)
 
 ##### Volume
 Click the icon "![](./figures/icon43-o.png)" to open the volume window, and there provides three modes.
 
-###### 1) Mini Mode
-It only displays the volume of the speaker.
+- Mini Mode
+    It only displays the volume of the speaker.
 
-![Fig. 27 Mini Mode](./figures/27.png)
+    ![Fig. 27 Mini Mode](./figures/27.png)
 
-###### 2) According to Equipment
-It contains input equipments and output equipments.
+- According to Equipment
+    It contains input equipments and output equipments.
 
-![Fig. 28 According to Equipment List](./figures/28.png)
+    ![Fig. 28 According to Equipment List](./figures/28.png)
 
-###### 3) According to Application
-It contains system volume and other applications' volume.
+- According to Application
+    It contains system volume and other applications' volume.
 
-![Fig. 29 According to Application List](./figures/29.png)
+    ![Fig. 29 According to Application List](./figures/29.png)
 
 ##### Calendar
 Click the date&time on the taskbar to open the calendar window.
@@ -389,13 +344,13 @@ The options are described in table below.
 
 ### Can’t login to the system after locking the screen?
 
-（1）Switch to character terminal by < Ctrl + Alt + F1 >.
+- Switch to character terminal by < Ctrl + Alt + F1 >.
 
-（2）Input the user-name and passwd to login to the system.
+- Input the user-name and passwd to login to the system.
 
-（3）Do "sudo rm -rf ~/.Xauthority".
+- Do "sudo rm -rf ~/.Xauthority".
 
-（4）Switch to graphical interface by < Ctrl + Alt + F7 >, and input the passwd.
+- Switch to graphical interface by < Ctrl + Alt + F7 >, and input the passwd.
 
 <br>
 
