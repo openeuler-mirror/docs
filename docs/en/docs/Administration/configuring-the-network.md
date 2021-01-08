@@ -1,25 +1,6 @@
 # Configuring the Network
-<!-- TOC -->
 
-- [Configuring the Network](#configuring-the-network)
-    - [Configuring an IP Address](#configuring-an-ip-address)
-        - [Using the nmcli Command](#using-the-nmcli-command)
-        - [Using the ip Command](#using-the-ip-command)
-        - [Configuring the Network Through the ifcfg File](#configuring-the-network-through-the-ifcfg-file)
-    - [Configuring a Host Name](#configuring-a-host-name)
-        - [Introduction](#introduction)
-        - [Configuring a Host Name by Running the  **hostnamectl**  Command](#configuring-a-host-name-by-running-the-hostnamectl-command)
-        - [Configuring a Host Name by Running the nmcli Command](#configuring-a-host-name-by-running-the-nmcli-command)
-    - [Configuring Network Bonding](#configuring-network-bonding)
-        - [Running the nmcli Command](#running-the-nmcli-command)
-        - [Configuring Network Bonding by Using a Command Line](#configuring-network-bonding-by-using-a-command-line)
-    - [IPv6 Differences \(vs IPv4\)](#ipv6-differences-vs-ipv4)
-        - [Restrictions](#restrictions)
-        - [Configuration Description](#configuration-description)
-        - [FAQ](#faq)
-
-<!-- /TOC -->
-
+[[toc]]
 
 ## Configuring an IP Address
 

@@ -1,13 +1,7 @@
 # FAQ
 
-<!-- TOC -->
-- [FAQ](#faq)
-  - [Failing to Start the Raspberry Pi](#树莓派启动失败)
-    - [Symptom](#问题现象)
-    - [Cause Analysis](#原因分析)
-    - [Solution](#解决方法)
+[[toc]]
 
-<!-- /TOC -->
 ## Failing to Start the Raspberry Pi
 
 ### Symptom

@@ -1,25 +1,7 @@
 # Preparation
 
-<!-- TOC -->
+[[toc]]
 
-- [Preparation](#preparation)
-    - [Configuring the Development Environment](#configuring-the-development-environment)
-        - [OS Requirements](#os-requirements)
-    - [Configuring a Repo Source](#configuring-a-repo-source)
-        - [Configuring a Repo Source by Directly Obtaining the Repo Source File](#configuring-a-repo-source-by-directly-obtaining-the-repo-source-file)
-        - [Configuring a Repo Source by Mounting an ISO File](#configuring-a-repo-source-by-mounting-an-iso-file)
-    - [Installing the Software Package](#installing-the-software-package)
-        - [Installing the JDK Software Package](#installing-the-jdk-software-package)
-        - [Installing the rpm-build Software Package](#installing-the-rpm-build-software-package)
-    - [Using the IDE for Java Development](#using-the-ide-for-java-development)
-        - [Overview](#overview)
-        - [Logging In to the Server Using MobaXterm](#logging-in-to-the-server-using-mobaxterm)
-        - [Setting the JDK Environment](#setting-the-jdk-environment)
-        - [Downloading and Installing the GTK Library](#downloading-and-installing-the-gtk-library)
-        - [Setting X11 Forwarding](#setting-x11-forwarding)
-        - [Downloading and Running IntelliJ IDEA](#downloading-and-running-intellij-idea)
-
-<!-- /TOC -->
 ## Configuring the Development Environment
 
 - If physical machines (PMs) are used, the minimum hardware requirements of the development environment are described in  [Table 1](#table154419352610).

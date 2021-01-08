@@ -1,10 +1,6 @@
 # FAQ
-<!-- TOC -->
 
-- [FAQ](#faq)
-    - [部分依赖java-devel的应用程序自编译失败](#部分依赖java-devel的应用程序自编译失败)
-
-<!-- /TOC -->
+[[toc]]
 
 ## 部分依赖java-devel的应用程序自编译失败  
 

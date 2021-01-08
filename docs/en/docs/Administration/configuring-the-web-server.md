@@ -1,22 +1,6 @@
 # Configuring the Web Server
-<!-- TOC -->
 
-- [Configuring the Web Server](#configuring-the-web-server)
-    - [Apache Server](#apache-server)
-        - [Overview](#overview)
-        - [Managing httpd](#managing-httpd)
-        - [Configuration File Description](#configuration-file-description)
-        - [Management Module and SSL](#management-module-and-ssl)
-        - [Verifying Whether the Web Service Is Successfully Set Up](#verifying-whether-the-web-service-is-successfully-set-up)
-    - [Nginx Server](#nginx-server)
-        - [Overview](#overview-1)
-        - [Installing Nginx](#installing-nginx)
-        - [Managing Nginx](#managing-nginx)
-        - [Configuration File Description](#configuration-file-description-1)
-        - [Management Modules](#management-modules)
-        - [Verifying Whether the Web Service Is Successfully Set Up](#verifying-whether-the-web-service-is-successfully-set-up-1)
-
-<!-- /TOC -->
+[[toc]]
 
 ## Apache Server
 

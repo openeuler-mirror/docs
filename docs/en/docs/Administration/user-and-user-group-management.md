@@ -3,22 +3,8 @@
 In Linux, each common user has an account, including the user name, password, and home directory. There are also special users created for specific purposes, and the most important special user is the admin account whose default user name is root. In addition, Linux provides user groups so that each user belongs to at least one group, facilitating permission management.
 
 The control of users and user groups is a core element of openEuler security management. This topic introduces the user and group management commands and explains how to assign privileges to common users in graphical user interface and on command lines.
-<!-- TOC -->
 
-- [User and User Group Management](#user-and-user-group-management)
-     - [Managing Users](#managing-users)
-        - [Adding a User](#adding-a-user)
-        - [Modifying a User Account](#modifying-a-user-account)
-        - [Deleting a User](#deleting-a-user)
-        - [Granting Rights to a Common User](#granting-rights-to-a-common-user)
-     - [Managing User Groups](#managing-user-groups)
-        - [Adding a User Group](#adding-a-user-group)
-        - [Modifying a User Group](#modifying-a-user-group)
-        - [Deleting a User Group](#deleting-a-user-group)
-        - [Adding a User to a Group or Removing a User from a Group](#adding-a-user-to-a-group-or-removing-a-user-from-a-group)
-        - [Changing the Current Group of a User to a Specified Group](#changing-the-current-group-of-a-user-to-a-specified-group)
-
-<!-- /TOC -->
+[[toc]]
 
 ## Managing Users
 

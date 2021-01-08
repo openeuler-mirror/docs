@@ -1,19 +1,6 @@
 # Using Kickstart for Automatic Installation
-<!-- TOC -->
 
-- [Using Kickstart for Automatic Installation](#using-kickstart-for-automatic-installation)
-     - [Introduction](#introduction)
-        - [Overview](#overview)
-        - [Advantages and Disadvantages](#advantages-and-disadvantages)
-        - [Background](#background)
-    - [Semi-automatic Installation Guide](#semi-automatic-installation-guide)
-        - [Environment Requirements](#environment-requirements)
-        - [Procedure](#procedure)
-    - [Full-automatic Installation Guide](#full-automatic-installation-guide)
-        - [Environment Requirements](#environment-requirements-1)
-        - [Procedure](#procedure-1)
-
-<!-- /TOC -->
+[[toc]]
 
 ## Introduction
 

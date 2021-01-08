@@ -1,22 +1,8 @@
 # 构建RPM包
 
 本章介绍通过本地或OBS构建RPM软件包的方法。详见[打包规则](https://gitee.com/openeuler/community/blob/master/zh/contributors/packaging.md)。
-<!-- TOC -->
 
-- [构建RPM包](#构建rpm包)
-    - [打包说明](#打包说明)
-        - [原理介绍](#原理介绍)
-        - [打包流程](#打包流程)
-        - [打包选项](#打包选项)
-    - [本地构建](#本地构建)
-        - [搭建开发环境](#搭建开发环境)
-        - [创建Hello World RPM包](#创建hello-world-rpm包)
-    - [使用OBS构建](#使用obs构建)
-        - [OBS简介](#obs简介)
-        - [在线构建软件包](#在线构建软件包)
-        - [使用osc构建软件包](#使用osc构建软件包)
-
-<!-- /TOC -->
+[[toc]]
 
 ## 打包说明
 

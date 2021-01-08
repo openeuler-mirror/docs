@@ -1,18 +1,6 @@
 # pkgship
 
-<!-- TOC -->
-
-- [pkgship](#pkgship)
-    - [Overview](#overview)
-    - [Architecture](#architecture)
-    - [Downloading Software](#downloading-software)
-    - [Operating Environments](#operating-environments)
-    - [Installing the Tool](#installing-the-tool)
-    - [Configuring Parameters](#configuring-parameters)
-    - [Starting and Stopping Services](#starting-and-stopping-services)
-    - [Tool Usage](#tool-usage)
-
-<!-- /TOC -->
+[[toc]]
 
 ## Overview
 

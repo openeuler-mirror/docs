@@ -1,45 +1,8 @@
 # Service Management
 
 This topic describes how to manage your operating system and services using the systemd.
-<!-- TOC -->
 
-- [Service Management](#service-management)
-    - [Introduction to systemd](#introduction-to-systemd)
-        - [Systemd Units](#systemd-units)
-    - [Features](#features)
-        - [Fast Activation](#fast-activation)
-        - [On-Demand Activation](#on-demand-activation)
-        - [Service Lifecycle Management by Cgroups](#service-lifecycle-management-by-cgroups)
-        - [Mount and Automount Point Management](#mount-and-automount-point-management)
-        - [Transactional Dependency Management](#transactional-dependency-management)
-        - [Compatibility with SysVinit Scripts](#compatibility-with-sysvinit-scripts)
-        - [System State Snapshots and System Restoration](#system-state-snapshots-and-system-restoration)
-    - [Managing System Services](#managing-system-services)
-        - [Comparison Between SysVinit and systemd Commands](#comparison-between-sysvinit-and-systemd-commands)
-        - [Listing Services](#listing-services)
-        - [Displaying Service Status](#displaying-service-status)
-        - [Starting a Service](#starting-a-service)
-        - [Stopping a Service](#stopping-a-service)
-        - [Restarting a Service](#restarting-a-service)
-        - [Enabling a Service](#enabling-a-service)
-        - [Disabling a Service](#disabling-a-service)
-    - [Changing a Runlevel](#changing-a-runlevel)
-        - [Targets and Runlevels](#targets-and-runlevels)
-        - [Viewing the Default Startup Target](#viewing-the-default-startup-target)
-        - [Viewing All Startup Targets](#viewing-all-startup-targets)
-        - [Changing the Default Target](#changing-the-default-target)
-        - [Changing the Current Target](#changing-the-current-target)
-        - [Changing to Rescue Mode](#changing-to-rescue-mode)
-        - [Changing to Emergency Mode](#changing-to-emergency-mode)
-    - [Shutting Down, Suspending, and Hibernating the Operating System](#shutting-down-suspending-and-hibernating-the-operating-system)
-        - [systemctl Command](#systemctl-command)
-        - [Shutting Down the Operating System](#shutting-down-the-operating-system)
-        - [Restarting the Operating System](#restarting-the-operating-system)
-        - [Suspending the Operating System](#suspending-the-operating-system)
-        - [Hibernating the Operating System](#hibernating-the-operating-system)
-
-<!-- /TOC -->
-
+[[toc]]
 
 ## Introduction to systemd
 

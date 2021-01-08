@@ -1,27 +1,6 @@
 # Setting Up the Database Server
-<!-- TOC -->
 
-- [Setting Up the Database Server](#setting-up-the-database-server)
-    - [PostgreSQL Server](#postgresql-server)
-        - [Software Description](#software-description)
-        - [Configuring the Environment](#configuring-the-environment)
-        - [Installing, Running, and Uninstalling PostgreSQL](#installing-running-and-uninstalling-postgresql)
-        - [Managing Database Roles](#managing-database-roles)
-        - [Managing Databases](#managing-databases)
-    - [MariaDB Server](#mariadb-server)
-        - [Software Description](#software-description-1)
-        - [Configuring the Environment](#configuring-the-environment-1)
-        - [Installing, Running, and Uninstalling MariaDB Server](#installing-running-and-uninstalling-mariadb-server)
-        - [Managing Database Users](#managing-database-users)
-        - [Managing Databases](#managing-databases-1)
-    - [MySQL Server](#mysql-server)
-        - [Software Description](#software-description-2)
-        - [Configuring the Environment](#configuring-the-environment-2)
-        - [Installing, Running, and Uninstalling MySQL](#installing-running-and-uninstalling-mysql)
-        - [Managing Database Users](#managing-database-users-1)
-        - [Managing Databases](#managing-databases-2)
-
-<!-- /TOC -->
+[[toc]]
 
 ## PostgreSQL Server
 

@@ -5,31 +5,8 @@ DNF is a Linux software package management tool used to manage RPM software pack
 >![](./public_sys-resources/icon-note.gif) **NOTE:**   
 >-   DNF is fully compatible with YUM and provides YUM-compatible command lines and APIs for extensions and plug-ins.  
 >-   You must have the administrator rights to use the DNF. All commands in this chapter must be executed by the administrator.  
-<!-- TOC -->
 
-- [Using the DNF to Manage Software Packages](#using-the-dnf-to-manage-software-packages)
-    - [Configuring the DNF](#configuring-the-dnf)
-        - [The DNF Configuration File](#the-dnf-configuration-file)
-        - [Creating a Local Software Repository](#creating-a-local-software-repository)
-        - [Adding, Enabling, and Disabling Software Sources](#adding-enabling-and-disabling-software-sources)
-    - [Managing Software Package](#managing-software-package)
-        - [Searching for Software Packages](#searching-for-software-packages)
-        - [Listing Software Packages](#listing-software-packages)
-        - [Displaying RPM Package Information](#displaying-rpm-package-information)
-        - [Installing an RPM Package](#installing-an-rpm-package)
-        - [Downloading Software Packages](#downloading-software-packages)
-        - [Deleting a Software Package](#deleting-a-software-package)
-    - [Managing Software Package Groups](#managing-software-package-groups)
-        - [Listing Software Package Groups](#listing-software-package-groups)
-        - [Displaying the Software Package Group Information](#displaying-the-software-package-group-information)
-        - [Installation Software Package Group](#installation-software-package-group)
-        - [Deleting a Software Package Group](#deleting-a-software-package-group)
-    - [Check and Update](#check-and-update)
-        - [Checking for Update](#checking-for-update)
-        - [Upgrade](#upgrade)
-        - [Updating All Packages and Their Dependencies](#updating-all-packages-and-their-dependencies)
-
-<!-- /TOC -->
+[[toc]]
 
 ## Configuring the DNF
 

@@ -1,20 +1,6 @@
 # Using JDK for Compilation
-<!-- TOC -->
 
-- [Using JDK for Compilation](#using-jdk-for-compilation)
-    - [Overview](#overview)
-    - [Basics](#basics)
-        - [File Type and Tool](#file-type-and-tool)
-        - [Java Program Generation Process](#java-program-generation-process)
-        - [Common JDK Options](#common-jdk-options)
-    - [Class Library](#class-library)
-        - [Package Declaration](#package-declaration)
-        - [Package Reference](#package-reference)
-    - [Examples](#examples)
-        - [Compiling a Java Program Without a Package](#compiling-a-java-program-without-a-package)
-        - [Compiling a Java Program with a Package](#compiling-a-java-program-with-a-package)
-
-<!-- /TOC -->
+[[toc]]
 
 ## Overview
 

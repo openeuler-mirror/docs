@@ -1,21 +1,8 @@
 # 使用make编译
 
 本章介绍make编译的一些基本知识，并通过示例进行实际演示。更多的make知识请通过**man make**命令查询。
-<!-- TOC -->
 
-- [使用make编译](#使用make编译)
-    - [简介](#简介)
-    - [基本规则](#基本规则)
-        - [文件类型](#文件类型)
-        - [make工作流程](#make工作流程)
-        - [make选项](#make选项)
-    - [Makefile](#makefile)
-        - [Makefile结构](#makefile结构)
-        - [Makefile主要内容](#makefile主要内容)
-    - [示例](#示例)
-        - [使用Makefile实现编译的示例](#使用makefile实现编译的示例)
-
-<!-- /TOC -->
+[[toc]]
 
 ## 简介
 

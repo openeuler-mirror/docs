@@ -1,23 +1,7 @@
 # Using the KAE
-<!-- TOC -->
 
-- [Using the KAE](#using-the-kae)
-    - [Overview](#overview)
-    - [Application Scenarios](#application-scenarios)
-    - [Installing, Running, and Uninstalling the KAE](#installing-running-and-uninstalling-the-kae)
-        - [Installing the Accelerator Software Packages](#installing-the-accelerator-software-packages)
-        - [Upgrading the Accelerator Software Packages](#upgrading-the-accelerator-software-packages)
-        - [Uninstalling the Accelerator Software Packages](#uninstalling-the-accelerator-software-packages)
-    - [Querying Logs](#querying-logs)
-    - [Acceleration Engine Application](#acceleration-engine-application)
-        - [Example Code for the KAE](#example-code-for-the-kae)
-        - [Using the KAE in the OpenSSL Configuration File openssl.cnf](#using-the-kae-in-the-openssl-configuration-file-opensslcnf)
-    - [Troubleshooting](#troubleshooting)
-        - [Initialization Failure](#initialization-failure)
-        - [Failed to Identify Accelerator Devices After the Acceleration Engine Is Installed](#failed-to-identify-accelerator-devices-after-the-acceleration-engine-is-installed)
-        - [Failed to Upgrade the Accelerator Drivers](#failed-to-upgrade-the-accelerator-drivers)
+[[toc]]
 
-<!-- /TOC -->
 ## Overview
 
 Kunpeng Accelerator Engine \(KAE\) is a software acceleration library of openEuler, which provides hardware acceleration engine function on the Kunpeng 920 processor. The engine supports symmetric encryption, asymmetric encryption, and digital signature. It is ideal for accelerating SSL/TLS applications, and can significantly reduce processor consumption and improve processor efficiency. In addition, users can quickly migrate existing services through the standard OpenSSL interface.

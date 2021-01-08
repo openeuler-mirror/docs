@@ -1,23 +1,8 @@
 # Building an RPM Package
 
-This section describes how to build an RPM software package on a local PC or using OBS. For details, see  [https://gitee.com/openeuler/community/blob/master/zh/contributors/packaging.md](https://gitee.com/openeuler/community/blob/master/zh/contributors/packaging.md).
-<!-- TOC -->
+This section describes how to build an RPM software package on a local PC or using OBS. For details, see  [
 
-- [Building an RPM Package](#building-an-rpm-package)
-    - [Packaging Description](#packaging-description)
-        - [Principles](#principles)
-        - [Packaging Process](#packaging-process)
-        - [Packaging Options](#packaging-options)
-    - [Building an RPM Package Locally](#building-an-rpm-package-locally)
-        - [Setting Up the Development Environment](#setting-up-the-development-environment)
-        - [Creating a Hello World RPM Package](#creating-a-hello-world-rpm-package)
-    - [Building an RPM Package Using the OBS](#building-an-rpm-package-using-the-obs)
-        - [OBS Overview](#obs-overview)
-        - [Building an RPM Software Package Online](#building-an-rpm-software-package-online)
-        - [Building a Software Package Using OSC](#building-a-software-package-using-osc)
-
-<!-- /TOC -->
-
+[[toc]]
 
 ## Packaging Description
 

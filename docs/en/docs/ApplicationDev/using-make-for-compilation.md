@@ -1,21 +1,8 @@
 # Using Make for Compilation
 
 This chapter describes the basic knowledge of make compilation and provides examples for demonstration. For more information about Make, run the  **man make**  command.
-<!-- TOC -->
 
-- [Using Make for Compilation](#using-make-for-compilation)
-    - [Overview](#overview)
-    - [Basics](#basics)
-        - [File Type](#file-type)
-        - [make Work Process](#make-work-process)
-        - [make Options](#make-options)
-    - [Makefiles](#makefiles)
-        - [Makefile Structure](#makefile-structure)
-        - [Makefile Contents](#makefile-contents)
-    - [Examples](#examples)
-        - [Example of Using Makefile to Implement Compilation](#example-of-using-makefile-to-implement-compilation)
-
-<!-- /TOC -->
+[[toc]]
 
 ## Overview
 

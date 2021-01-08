@@ -1,31 +1,6 @@
 # Configuring the FTP Server
-<!-- TOC -->
 
-- [Configuring the FTP Server](#configuring-the-ftp-server)
-    - [General Introduction](#general-introduction)
-        - [FTP Overview](#ftp-overview)
-        - [Port Used by the FTP Server](#port-used-by-the-ftp-server)
-        - [Introduction to vsftpd](#introduction-to-vsftpd)
-    - [Using vsftpd](#using-vsftpd)
-        - [Installing vsftpd](#installing-vsftpd)
-        - [Service Management](#service-management)
-    - [Configuring vsftpd](#configuring-vsftpd)
-        - [vsftpd Configuration Files](#vsftpd-configuration-files)
-        - [Default Configuration Description](#default-configuration-description)
-        - [Setting the Local Time](#setting-the-local-time)
-        - [Configuring Welcome Information](#configuring-welcome-information)
-        - [Configuring the Login Permission of a System Account](#configuring-the-login-permission-of-a-system-account)
-    - [Verifying Whether the FTP Service Is Successfully Set Up](#verifying-whether-the-ftp-service-is-successfully-set-up)
-    - [Configuring a Firewall](#configuring-a-firewall)
-    - [File Transmission](#file-transmission)
-        - [Overview](#overview)
-        - [Connecting to the Server](#connecting-to-the-server)
-        - [Downloading a File](#downloading-a-file)
-        - [Uploading a file](#uploading-a-file)
-        - [Deleting a File](#deleting-a-file)
-        - [Disconnecting from the Server](#disconnecting-from-the-server)
-
-<!-- /TOC -->
+[[toc]]
 
 ## General Introduction
 

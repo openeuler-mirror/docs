@@ -2,17 +2,8 @@
 
 This document uses openEuler 20.09 installed on the TaiShan 200 server as an example to describe how to quickly install and use openEuler OS. For details about the installation requirements and methods, see  [ Installation Guide](./../Installation/Installation.html).
 
-<!-- TOC -->
+[[toc]]
 
-- [Quick Start](#quick-start)
-  - [Installation Preparations](#installation-preparations)
-  - [Obtaining the Installation Source](#obtaining-the-installation-source)
-  - [Release Package Integrity Check](#release-package-integrity-check)
-  - [Starting the Installation](#starting-the-installation)
-  - [Installation](#installation)
-  - [Viewing System Information](#viewing-system-information)
-
-<!-- /TOC -->
 ## Installation Preparations
 
 - Hardware Compatibility

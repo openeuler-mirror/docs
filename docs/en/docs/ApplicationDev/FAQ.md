@@ -1,11 +1,6 @@
 # FAQ
 
-<!-- TOC -->
-
-- [FAQ](#faq)
-  - [The self-compilation of some applications that depend on the **java-devel** package fails.](#部分依赖java-devel的应用程序自编译失败)
-
-<!-- /TOC -->
+[[toc]]
 
 ## The self-compilation of some applications that depend on the **java-devel** package fails.
 

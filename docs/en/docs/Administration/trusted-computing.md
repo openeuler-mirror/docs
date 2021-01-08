@@ -1,18 +1,7 @@
 # Trusted Computing
 
-<!-- TOC -->
-- [Trusted Computing](#可信计算)
-  - [Trusted Computing Basics](#可信计算基础)
-    - [Trusted Computing](#可信计算-1)
-  - [Kernel Integrity Measurement Architecture (IMA)](#内核完整性度量ima)
-    - [Overview](#概述)
-    - [Constraints](#约束限制)
-    - [Application Scenarios](#使用场景)
-    - [Procedure](#操作指导)
-    - [FAQ](#faq)
-    - [Appendix](#附录)
+[[toc]]
 
-<!-- /TOC -->
 ## Trusted Computing Basics
 
 ### Trusted Computing

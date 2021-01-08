@@ -3,25 +3,8 @@
 >![](./public_sys-resources/icon-note.gif) **NOTE:** 
 > openEuler provides multiple repo sources for users online. For details about the repo sources, see [System Installation](./../Releasenotes/installing-the-os.html). If you cannot obtain the openEuler repo source online, you can use the ISO release package provided by openEuler to create a local openEuler repo source. This section uses the  **openEuler-20.09-aarch64-dvd.iso**  file as an example. Modify the ISO file as required.
 
-<!-- TOC -->
+[[toc]]
 
-- [Configuring the Repo Server](#configuring-the-repo-server)
-    - [Overview](#overview)
-    - [Creating or Updating a Local Repo Source](#creating-or-updating-a-local-repo-source)
-        - [Obtaining the ISO File](#obtaining-the-iso-file)
-        - [Mounting an ISO File to Create a Repo Source](#mounting-an-iso-file-to-create-a-repo-source)
-        - [Creating a Local Repo Source](#creating-a-local-repo-source)
-        - [Updating the Repo Source](#updating-the-repo-source)
-    - [Deploying the Remote Repo Source](#deploying-the-remote-repo-source)
-        - [Installing and Configuring Nginx](#installing-and-configuring-nginx)
-        - [Starting Nginx](#starting-nginx)
-        - [Deploying the Repo Source](#deploying-the-repo-source)
-    - [Using the repo Source](#using-the-repo-source)
-        - [Configuring repo as the yum Source](#configuring-repo-as-the-yum-source)
-        - [repo Priority](#repo-priority)
-        - [Related Commands of dnf](#related-commands-of-dnf)
-
-<!-- /TOC -->
 ## Overview
 
 Create the  **openEuler-20.09-aarch64-dvd.iso**  file provided by openEuler as the repo source. The following uses Nginx as an example to describe how to deploy the repo source and provide the HTTP service.
