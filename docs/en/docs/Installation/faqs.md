@@ -1,16 +1,6 @@
 # FAQs
-<!-- TOC -->
 
-- [FAQs](#faqs)
-    - [Why Does openEuler Fail to Start After I Install It to the Second Disk?](#why-does-openeuler-fail-to-start-after-i-install-it-to-the-second-disk)
-    - [Why Does openEuler Enter Emergency Mode After It Is Powered On?](#why-does-openeuler-enter-emergency-mode-after-it-is-powered-on)
-    - [Failed to Reinstall openEuler When a Logical Volume Group That Cannot Be Activated Has Existed in openEuler](#failed-to-reinstall-openeuler-when-a-logical-volume-group-that-cannot-be-activated-has-existed-in-openeuler)
-    - [An Exception Occurs During the Selection of the Installation Source](#an-exception-occurs-during-the-selection-of-the-installation-source)
-    - [How Do I Manually Enable the kdump Service?](#how-do-i-manually-enable-the-kdump-service)
-    - [Failed to Selected Only One Disk for Reinstallation When openEuler Was Installed on a Logical Volume Consisting of Multiple Disks](#failed-to-selected-only-one-disk-for-reinstallation-when-openeuler-was-installed-on-a-logical-volume-consisting-of-multiple-disks)
-    - [Failed to Install openEuler on an x86 PM in UEFI Mode due to Secure Boot Option Setting](#failed-to-install-openeuler-on-an-x86-pm-in-uefi-mode-due-to-secure-boot-option-setting)
-
-<!-- /TOC -->
+[[toc]]
 
 ## Why Does openEuler Fail to Start After I Install It to the Second Disk?
 

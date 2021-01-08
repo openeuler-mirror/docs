@@ -39,7 +39,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 | gcc | 7.3.0 |见必要库和依赖安装  |  |
 | python3 | 3.7.9 |见必要库和依赖安装 |  |
 | bash | 5.0 |见必要库和依赖安装 |  |
-| devstack | Latest |见修改 devstack 脚本和安装配置 | https://github.com/OpenStack/devstack |
+| devstack | Latest |见修改 devstack 脚本和安装配置 | 详见[devstack](https://github.com/OpenStack/devstack) |
 
 ### 必要依赖包
 

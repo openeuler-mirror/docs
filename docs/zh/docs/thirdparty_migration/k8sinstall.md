@@ -152,6 +152,7 @@ $ sed -i '/^SELINUX=/s/enforcing/disabled/' /etc/selinux/config
     ```
     $ cat /etc/fstab
     ```
+	
     ![](./figures/zh-cn_image_0296836364.png)	
 
 3. 执行如下命令重启系统。
