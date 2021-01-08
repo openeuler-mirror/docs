@@ -305,3 +305,65 @@ If Emacs is not configured or no valid configuration file is generated, a cache 
         ```
         (setq backup-directory-alist (quote (("." . "/.emacs-backups"))))
         ```
+
+
+## The Error Message "Failed to make ourselves RT: Operation not permitted" Is Displayed when the rtkit-daemon Service Is Started 
+
+### Symptom
+
+By default, the rtkit-daemon service is started properly. However, if you start the rtkit-daemon service with the Docker Engine installed, the following error message is displayed:
+
+```
+12月 18 09:34:15 openEuler systemd[1]: Started RealtimeKit Scheduling Policy Service.
+12月 18 09:34:15 openEuler rtkit-daemon[22560]: Successfully called chroot.
+12月 18 09:34:15 openEuler rtkit-daemon[22560]: Successfully dropped privileges.
+12月 18 09:34:15 openEuler rtkit-daemon[22560]: Successfully limited resources.
+12月 18 09:34:15 openEuler rtkit-daemon[22560]: Running.
+12月 18 09:34:15 openEuler rtkit-daemon[22560]: Canary thread running.
+12月 18 09:34:15 openEuler rtkit-daemon[22560]: Failed to make ourselves RT: Operation not permitted
+12月 18 09:34:15 openEuler rtkit-daemon[22560]: Watchdog thread running.
+```
+
+### Cause Analysis
+
+The error occurs because services, such as docker service, are set to **Delegate=yes**.
+
+If this parameter is not set, the rtkit-daemon service runs normally with the following cgroup information:
+
+```
+[root@openEuler ~]# cat /proc/pidof rtkit-daemon/cgroup | grep system
+12:pids:/system.slice/rtkit-daemon.service
+7:devices:/system.slice/rtkit-daemon.service
+5:memory:/system.slice/rtkit-daemon.service
+2:blkio:/system.slice
+1:name=systemd:/system.slice/rtkit-daemon.service
+```
+
+If **Delegate=yes** is set, the systemd creates a slice and moves the CPU cgroup to the slice. In this case, the cgroup information of the rtkit-daemon service is as follows. The rtkit-daemon is moved to **3:cpu,cpuacct:/system.slice/rtkit-daemon.service**, but the value of **cpu.rt\_runtime\_us** is not properly set. As a result, an error is reported.
+
+```
+[root@openEuler ~]# cat /proc/pidof rtkit-daemon/cgroup | grep system
+12:pids:/system.slice/rtkit-daemon.service
+7:devices:/system.slice/rtkit-daemon.service
+5:memory:/system.slice/rtkit-daemon.service
+3:cpu,cpuacct:/system.slice/rtkit-daemon.service
+2:blkio:/system.slice/rtkit-daemon.service
+1:name=systemd:/system.slice/rtkit-daemon.service
+```
+
+### Solution
+
+Method 1: Use the default CPU cgroup configuration by modifying the rtkit-daemon service and adding the following configuration:
+
+```
+Slice=-.slice
+DisableControllers=cpu cpuacct
+```
+
+Method 2: Configure scheduling parameters as required by modifying the rtkit-daemon service and adding the following configuration:
+
+```
+ExecStartPre=/usr/bin/bash -c "mkdir -p /sys/fs/cgroup/cpu,cpuacct/system.slice/rtkit-daemon.service"
+ExecStartPre=/usr/bin/bash -c "echo 950000 > /sys/fs/cgroup/cpu,cpuacct/system.slice/cpu.rt_runtime_us"
+ExecStartPre=/usr/bin/bash -c "echo 950000 > /sys/fs/cgroup/cpu,cpuacct/system.slice/rtkit-daemon.service/cpu.rt_runtime_us"
+```

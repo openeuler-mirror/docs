@@ -428,19 +428,21 @@ linux   /vmlinuz-4.19.90-2003.4.0.0036.oe1.x86_64 root=/dev/mapper/openeuler-roo
 
 ## Setting the NMI Watchdog
 
-The non-maskable interrupt (NMI) is the highest priority interrupt in the system. The NMI watchdog can be used to detect server suspension events and trigger the server reboot after fault information collection. According to the lab test results of the openEuler QA team, when the NMI watchdog is enabled, NMI occasionally generates a large number of interrupts and deteriorates the server performance. Therefore, properly enable the NMI watchdog function.
+The non-maskable interrupt (NMI) is the highest priority interrupt in the system. The NMI watchdog can be used to detect server suspension events and trigger the server reboot after fault information is collected. According to the lab test results of the openEuler QA team, when the NMI watchdog is enabled, NMI occasionally generates a large number of interrupts and deteriorates the server performance. Therefore, properly enable the NMI watchdog function.
 
-Run the following command to display the current NMI watchdog configuration status:
+Note: The following NMI watchdog settings apply only to hardware servers whose compatibility has been verified by the openEuler community. For other types of servers and VMs, the NMI watchdog settings are for reference only.
 
-```
-# sudo sysctl kernel.nmi\_watchdog
-kernel.nmi\_watchdog = 0
-```
-
-Run the following command to set the NMI watchdog configuration parameters:
+### Run the following command to display the current NMI watchdog configuration status:
 
 ```
-# sudo sysctl  -w kernel.nmi\_watchdog=1
+# sudo sysctl kernel.nmi_watchdog 
+kernel.nmi_watchdog = 0 
 ```
 
-Value **1**: **enabled**; Value **0**: **disabled**
+### Run the following command to set the NMI watchdog parameters:
+
+```
+# sudo sysctl  -w kernel.nmi_watchdog=1
+```
+
+Value **1**: enabled; Value **0**: disabled

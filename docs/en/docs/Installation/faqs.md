@@ -285,3 +285,24 @@ Access the BIOS, set  **secure boot**  to  **disabled**, and reinstall the openE
     >![](./public_sys-resources/icon-note.gif) **NOTE:**   
     >After  **Enforce Secure Boot**  is set to  **Disabled**, save the settings, and exit. Then, reinstall the system.  
 
+## The Installation Fails when a User Selects Two Drives on Which the OS Has Been Installed and Customizes Partitioning.
+
+### Symptom
+
+During the OS installation, the OS has been installed on two drives. In this case, if you select one drive for customized partitioning, and click **Cancel** to perform customized partitioning on the other drive, the installation fails.
+
+![](./figures/cancle_disk.png)
+
+![](./figures/custom_paratition.png)
+
+### Cause Analysis
+
+A user selects a drive for partitioning. After the user clicks **Cancel** and then selects the other drive, the drive information is incorrect. As a result, the installation fails.
+
+### Solution
+
+Select the target drive for customized partitioning. Do not frequently cancel the operation. If you have to cancel and select another drive, you are advised to reinstall the OS.
+
+### Learn More About the Issue at:
+
+https://gitee.com/src-openeuler/anaconda/issues/I29P84?from=project-issue

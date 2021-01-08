@@ -1,31 +1,55 @@
-# Key Features<a name="EN-US_TOPIC_0228254580"></a>
+# Key Features
 
--   iSula lightweight container solution, unified IoT, and edge and cloud computing container solutions
-    -   Shortens a trace chain by three levels, and the memory usage of hundreds of containers is significantly lower than that of the Docker engine.
-    -   Supports standard open-source container runtime interface \(CRI\) and open container initiative \(OCI\) and flexibly interconnects with multiple OCI runtimes such as runC and Kata.
-    -   Secure container: combines the virtualization technology and container technology to ensure better isolation of secure containers.
-    -   System container: supports local file system startup to implement quick deployment, and supports systemd deployment to improve user namespace isolation.
+- iSula: A lightweight container solution that unifies IoT, edge, and cloud computing.
+  
+  - Anonymous volumes can be configured in the image, and local volumes can be easily managed by users.
+  - The isula-build allows you to pull and push images and save multiple images to a tarball.
 
--   Kunpeng acceleration engine \(KAE\), supporting encryption and decryption acceleration
-    -   Digest algorithm SM3, which supports asynchronous models.
-    -   Symmetric encryption algorithm SM4, which supports asynchronous models and CTR, XTS, and CBC modes.
-    -   Symmetric encryption algorithm AES, which supports asynchronous models and ECB, CTR, XTS, and CBC modes.
-    -   Asymmetric algorithm RSA, which supports asynchronous models and key sizes 1024, 2048, 3072, and 4096.
-    -   Key negotiation algorithm DH, which supports asynchronous models and key sizes 768, 1024, 1536, 2048, 3072, and 4096.
+- A-Tune: An intelligent system performance optimization engine that infers service features and configures the optimal system parameter set for the best service operations. The following functions are added:
+  
+  - Incremental tuning
+  - Sensitive parameter identification, filtering, and tuning
+  - Tuning capabilities for VM scenarios
+  - One-click model training
 
+- Multiple JDK versions are supported to meet different requirements on compatibility, performance, and functions.
+  
+  - The operating system supports multiple JDK versions, allowing users to deploy Java applications of multiple versions. The versions and functions supported are as follows:
+  - Java 11. For details, see [JDK 11](http://openjdk.java.net/projects/jdk/11/).
+  - TLS 1.3 for a more secure protocol
+  - Java Flight Recorder, an efficient Java application diagnosis tool with low performance loss
+  - Experimental ZGC algorithm with low latency
+  - The latest Short Term Support (STS) version is supported, which is JDK 15 currently. For details, see [JDK 15](http://openjdk.java.net/projects/jdk/15/).
+  - `Pattern Matching for instanceof (Second Preview)`
+  - `Production-ready ZGC`
+  - `Production-ready Shenandoah GC`
+  - `Foreign-Memory Access API (Second Incubator)`
+  - `Records (Second Preview)`
 
--   A-Tune intelligent system performance optimization engine, inferring service features and configuring optimal system parameters to ensure optimal service running
--   Enhancing the performance of glibc, zlib, and gzip and fully using the NEON instruction set of AArch64 to improve the basic library performance
--   Kernel feature enhancement
-    -   Supports ARM64 kernel hot patches.
-    -   Numa Aware Qspinlock: reduces cache/bus conflicts across NUMA nodes.
-    -   Optimizes the IOVA page table lookup and release algorithms to improve the performance of the IOMMU subsystem.
-    -   Optimizes the implementation of CRC32 and checksum based on ARM64 instructions and pipeline features, greatly improving data verification performance.
-    -   Supports ARM v8.4 Memory System Resource Partitioning and Monitoring \(MPAM\).
--   virtualization feature  enhancement
-    -   Interruption virtualization optimization: The process for an IRQfd to inject an interrupt is optimized, greatly improving the performance of high-performance passthrough devices (sush as  NICs and SSDs).
-    -   Memory virtualization optimization: The Kunpeng hardware feature is used to improve the memory loading speed during VM startup.
-    -   Storage virtualization optimization: NUMA affinity self-binding is optimized for the iSCSI module **kworker** to improve the I/O performance of IP SAN disks.
+- Kernel feature enhancement
+  
+  - Huawei 1822 HBA card driver
+  - NVDIMMs for higher performance in service scenarios such as big data
+  - FT-2000+/64 of Phytium processors for general-purpose computing
+  - The iSCSI work thread can be bound to cores based on NUMA-aware affinity to improve I/O performance.
+  - The percpu lock-free function of the file cache is optimized to reduce the atomic overhead and improve the performance of concurrent file access and Nginx scenarios.
 
+- Virtualization feature enhancement
+  
+  - ARM virtualization supports CPU/memory hot plug, making resource configuration more flexible.
+  - The KVM CPU can be set to the custom mode (ARM) to customize configurations of the CPU feature on the VM.
+  - The O\&M tool VMTOP is used to quickly collect VM performance indicators, such as exit/entry.
+  - Secure boot is supported to improve VM security.
 
+- Desktop support
+  
+  - Default UKUI desktop environment on Kylin OS
+  - DDE (Uniontech-developed desktop system)
 
+- High reliability
+  
+  - HA cluster software comprising Pacemaker and Corosync
+
+- Hardware enablement
+  
+  - Raspberry Pi serial boards
