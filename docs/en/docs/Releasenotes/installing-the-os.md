@@ -118,5 +118,24 @@ The following table lists the [openEuler release files](http://repo.openeuler.or
     <td>Network</td>
     <td>X722</td>
   </tr>
+  <tr>
+    <td rowspan="4">PHYTIUM</td>
+    <td rowspan="4">Phytium</td>
+    <td rowspan="4">FT-2000+/64</td>
+	<td>CPU</td>
+	<td>FT-2000+/64</td>
+  </tr>
+  <tr>
+	<td>Memory</td>
+	<td>Micron 16G*32</td>
+  </tr>
+  <tr>
+    <td>RAID controller card</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>Network</td>
+    <td>I350</td>
+  </tr>
 </table>
 
