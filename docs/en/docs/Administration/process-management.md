@@ -1,20 +1,8 @@
 # Process Management
 
 The operating system manages multiple user requests and tasks. In most cases, the operating system comes with only one CPU and one main memory, but it may have multiple tier-2 disks and input/output \(I/O\) devices. Therefore, users have to share resources, but it appears to users that they are exclusively occupying resources. The operating system places user tasks, OS tasks, emailing, print tasks, and other pending tasks in the queue and schedules the tasks according to predefined rules. In this topic, you will know how the operating system manages processes.
-<!-- TOC -->
 
-- [Process Management](#process-management)
-    - [Viewing Processes](#viewing-processes)
-        - [who Command](#who-command)
-        - [ps Command](#ps-command)
-        - [top Command](#top-command)
-        - [kill Command](#kill-command)
-    - [Scheduling a Process](#scheduling-a-process)
-        - [Using the at Command to Run Processes at the Scheduled Time](#using-the-at-command-to-run-processes-at-the-scheduled-time)
-        - [Using the cron Service to Run Commands Periodically](#using-the-cron-service-to-run-commands-periodically)
-    - [Suspending/Resuming a Process](#suspendingresuming-a-process)
-
-<!-- /TOC -->
+[[toc]]
 
 ## Viewing Processes
 

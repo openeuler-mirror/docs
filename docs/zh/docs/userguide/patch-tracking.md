@@ -1,24 +1,6 @@
 # patch-tracking
 
-<!-- TOC -->
-
-- [patch-tracking](#patch-tracking)
-    - [简介](#简介)
-    - [架构](#架构)
-        - [C/S架构](#cs架构)
-        - [核心流程](#核心流程)
-        - [数据结构](#数据结构)
-    - [工具部署](#工具部署)
-        - [软件下载](#软件下载)
-        - [安装工具](#安装工具)
-        - [生成证书](#生成证书)
-        - [配置参数](#配置参数)
-        - [启动补丁跟踪服务](#启动补丁跟踪服务)
-    - [工具使用](#工具使用)
-    - [FAQ](#faq)
-        - [访问 api.github.com Connection refused 异常](#访问-apigithubcom-connection-refused-异常)
-
-<!-- /TOC -->
+[[toc]]
 
 ## 简介
 

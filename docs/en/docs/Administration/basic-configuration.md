@@ -1,26 +1,7 @@
 # Basic Configuration
 
-<!-- TOC -->
+[[toc]]
 
-- [Basic Configuration](#basic-configuration)
-    - [Setting the System Locale](#setting-the-system-locale)
-        - [Displaying the Current Locale Status](#displaying-the-current-locale-status)
-        - [Listing Available Locales](#listing-available-locales)
-        - [Setting the Locale](#setting-the-locale)
-    - [Setting the Keyboard Layout](#setting-the-keyboard-layout)
-        - [Displaying the Current Settings](#displaying-the-current-settings)
-        - [Listing Available Keyboard Layouts](#listing-available-keyboard-layouts)
-        - [Setting the Keyboard Layout](#setting-the-keyboard-layout-1)
-    - [Setting the Date and Time](#setting-the-date-and-time)
-        - [Using the timedatectl Command](#using-the-timedatectl-command)
-        - [Using the date Command](#using-the-date-command)
-        - [Using the hwclock Command](#using-the-hwclock-command)
-    - [Setting kdump](#setting-kdump)
-        - [Setting the Memory Reserved for kdump](#setting-the-memory-reserved-for-kdump)
-        - [Recommended Reserved Memory](#recommended-reserved-memory)
-        - [Disabling Network Drivers](#disabling-network-drivers)
-
-<!-- /TOC -->
 ## Setting the System Locale
 
 System locale settings are stored in the /etc/locale.conf file and can be modified by the localectl command. These settings are read at system boot by the systemd daemon.

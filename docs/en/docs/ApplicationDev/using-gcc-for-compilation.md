@@ -1,25 +1,8 @@
 # Using GCC for Compilation
 
 This chapter describes the basic knowledge of GCC compilation and provides examples for demonstration. For more information about GCC, run the  **man gcc**  command.
-<!-- TOC -->
 
-- [Using GCC for Compilation](#using-gcc-for-compilation)
-    - [Overview](#overview)
-    - [Basics](#basics)
-        - [File Type](#file-type)
-        - [Compilation Process](#compilation-process)
-        - [Compilation Options](#compilation-options)
-        - [Multi-file Compilation](#multi-file-compilation)
-    - [Libraries](#libraries)
-        - [Dynamic Link Library](#dynamic-link-library)
-        - [Static Link Library](#static-link-library)
-    - [Examples](#examples)
-        - [Example for Using GCC to Compile C Programs](#example-for-using-gcc-to-compile-c-programs)
-        - [Example for Creating and Using a DLL Using GCC](#example-for-creating-and-using-a-dll-using-gcc)
-        - [Example for Creating and Using an SLL Using GCC](#example-for-creating-and-using-an-sll-using-gcc)
-
-<!-- /TOC -->
-
+[[toc]]
 
 ## Overview
 

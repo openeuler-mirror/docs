@@ -1,25 +1,6 @@
 # patch-tracking
 
-<!-- TOC -->
-
-- [patch-tracking](#patch-tracking)
-    - [Overview](#overview)
-    - [Architecture](#architecture)
-        - [C/S Architecture](#cs-architecture)
-        - [Core Procedure](#core-procedure)
-        - [Data structure](#data-structure)
-    - [Tool Deployment](#tool-deployment)
-        - [Downloading Software](#downloading-software)
-        - [Installing the Tool](#installing-the-tool)
-        - [Generating a Certificate](#generating-a-certificate)
-        - [Configuring Parameters](#configuring-parameters)
-        - [Starting the Patch Tracking Service](#starting-the-patch-tracking-service)
-    - [Tool Usage](#tool-usage)
-    - [FAQ](#faq)
-        - [When I access api.github.com, the connection is refused.](#when-i-access-apigithubcom-the-connection-is-refused)
-
-<!-- /TOC -->
-
+[[toc]]
 
 ## Overview
 

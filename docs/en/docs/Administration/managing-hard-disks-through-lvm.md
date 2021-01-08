@@ -1,36 +1,6 @@
 # Managing Hard Disks Through LVM
-<!-- TOC -->
 
-- [Managing Hard Disks Through LVM](#managing-hard-disks-through-lvm)
-    - [LVM Overview](#lvm-overview)
-        - [Basic Terms](#basic-terms)
-    - [Installing the LVM](#installing-the-lvm)
-    - [Managing PVs](#managing-pvs)
-        - [Creating a PV](#creating-a-pv)
-        - [Viewing a PV](#viewing-a-pv)
-        - [Modifying PV Attributes](#modifying-pv-attributes)
-        - [Deleting a PV](#deleting-a-pv)
-    - [Managing VGs](#managing-vgs)
-        - [Creating a VG](#creating-a-vg)
-        - [Viewing a VG](#viewing-a-vg)
-        - [Modifying VG Attributes](#modifying-vg-attributes)
-        - [Extending a VG](#extending-a-vg)
-        - [Shrinking a VG](#shrinking-a-vg)
-        - [Deleting a VG](#deleting-a-vg)
-    - [Managing LVs](#managing-lvs)
-        - [Creating an LV](#creating-an-lv)
-        - [Viewing an LV](#viewing-an-lv)
-        - [Adjusting the LV Size](#adjusting-the-lv-size)
-        - [Extending an LV](#extending-an-lv)
-        - [Shrinking an LV](#shrinking-an-lv)
-        - [Deleting an LV](#deleting-an-lv)
-    - [Creating and Mounting a File System](#creating-and-mounting-a-file-system)
-        - [Creating a File System](#creating-a-file-system)
-        - [Manually Mounting a File System](#manually-mounting-a-file-system)
-        - [Automatically Mounting a File System](#automatically-mounting-a-file-system)
-
-<!-- /TOC -->
-
+[[toc]]
 
 ## LVM Overview
 

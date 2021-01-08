@@ -3,25 +3,7 @@
 >![](./public_sys-resources/icon-note.gif) **说明：**   
 >openEuler提供了多种repo源供用户在线使用，各repo源含义可参考[系统安装](./../Releasenotes/系统安装.md)。若用户无法在线获取openEuler repo源，则可使用openEuler提供的ISO发布包创建为本地openEuler repo源。本章节中以openEuler-20.09-aarch64-dvd.iso发布包为例，请根据实际需要的ISO发布包进行修改。
 
-<!-- TOC -->
-
-- [搭建repo服务器](#搭建repo服务器)
-    - [概述](#概述)
-    - [创建/更新本地repo源](#创建更新本地repo源)
-        - [获取ISO发布包](#获取iso发布包)
-        - [挂载ISO创建repo源](#挂载iso创建repo源)
-        - [创建本地repo源](#创建本地repo源)
-        - [更新repo源](#更新repo源)
-    - [部署远端repo源](#部署远端repo源)
-        - [nginx安装与配置](#nginx安装与配置)
-        - [启动nginx服务](#启动nginx服务)
-        - [repo源部署](#repo源部署)
-    - [使用repo源](#使用repo源)
-        - [repo配置为yum源（软件源）](#repo配置为yum源软件源)
-        - [repo优先级](#repo优先级)
-        - [dnf相关命令](#dnf相关命令)
-
-<!-- /TOC -->
+[[toc]]
 
 ## 概述
 

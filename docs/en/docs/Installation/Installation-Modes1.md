@@ -6,22 +6,8 @@
 > - The installation is performed by writing images to the SD card. This section describes how to write images using Windows, Linux, and Mac.
 > - The image used in this section is the Raspberry Pi image of openEuler. For details about how to obtain the image, see [Installation Preparations](./安装准备-1.html).
 
-<!-- TOC -->
+[[toc]]
 
-- [Installation Modes](./Installation Modes)
-  - [Writing Images Using Windows](./Writing Images Using Windows)
-    - [Formatting the SD Card](./Formatting the SD Card)
-    - [Writing Images to the SD Card](./Writing Images to the SD Card)
-  - [Writing Images Using Linux](./Writing Images Using Linux)
-    - [Checking Drive Partition Information](./Checking Drive Partition Information)
-    - [Unmouting the SD Card](./Unmouting the SD Card)
-    - [Writing Images to the SD Card](./Writing Images to the SD Card)
-  - [Writing Images Using the Mac OS](./Writing Images Using the Mac OS)
-    - [Checking Drive Partition Information](./Checking Drive Partition Information)
-    - [Unmouting the SD Card](./Unmouting the SD Card)
-    - [Writing Images to the SD Card](./Writing Images to the SD Card)
-
-<!-- /TOC -->
 ## Writing Images Using Windows
 
 This section uses Windows 10 as an example to describe how to write images to the SD card using Windows.

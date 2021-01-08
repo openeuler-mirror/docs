@@ -2,6 +2,8 @@
 
 This document describes the common tools used for application development and guides users to develop applications based on openEuler.
 
+[[toc]]
+
 ## Overview
 
 This document describes the following four parts to guide users to use openEuler and develop code based on openEuler.

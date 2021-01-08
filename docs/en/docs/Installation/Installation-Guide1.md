@@ -2,15 +2,8 @@
 
 This section describes how to enable the Raspberry Pi function after [Writing Raspberry Pi Images into the SD card](./安装方式介绍-1.html).
 
-<!-- TOC -->
-- [Installation Guide](#安装指导)
-  - [Starting the System](#启动系统)
-  - [Logging in to the System](#启动系统)
-  - [Configuring the System](#启动系统)
-    - [Expanding the Root Directory Partition](#扩展根目录分区)
-    - [Connecting to the Wi-Fi Network](#连接-wifi)
+[[toc]]
 
-<!-- /TOC -->
 ## Starting the System
 
 After an image is written into the SD card, insert the SD card into the Raspberry Pi and power on the SD card.

@@ -2,31 +2,8 @@
 
 This section describes how to install openEuler using a CD-ROM. The installation process is the same for other installation modes except the boot option.
 
-<!-- TOC -->
+[[toc]]
 
-- [Installation Guideline](#installation-guideline)
-  - [Starting the Installation](#starting-the-installation)
-    - [Booting from the CD/DVD-ROM Drive](#booting-from-the-cddvd-rom-drive)
-    - [Installation Wizard](#installation-wizard)
-    - [Installation in GUI Mode](#installation-in-gui-mode)
-  - [Configuring an Installation Program Language](#configuring-an-installation-program-language)
-  - [Entering the Installation Page](#entering-the-installation-page)
-  - [Setting the Keyboard Layout](#setting-the-keyboard-layout)
-  - [Setting a System Language](#setting-a-system-language)
-  - [Setting Date and Time](#setting-date-and-time)
-  - [Setting the Installation Source](#setting-the-installation-source)
-  - [Selecting Installation Software](#selecting-installation-software) 
-  - [Setting the Installation Destination](#setting-the-installation-destination)
-    - [Storage Configuration](#storage-configuration)
-  - [Setting the Network and Host Name](#setting-the-network-and-host-name)
-  - [Setting the Root Password](#设置根密码)
-    - [Password Complexity](#密码复杂度)
-  - [Creating a User](#创建用户)
-  - [Starting the Installation](#开始安装)
-  - [Installation Procedure](#安装过程)
-  - [Completing the Installation](#安装完成)
-
-<!-- /TOC -->
 ## Starting the Installation
 
 ### Booting from the CD/DVD-ROM Drive
