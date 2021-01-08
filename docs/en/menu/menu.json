@@ -39,6 +39,13 @@
           ]
         },
         {
+          "label": "Interface Change",
+          "path": "docs/Releasenotes/interface-change",
+          "children": [
+            
+          ]
+        },
+        {
           "label": "Known Issues",
           "path": "docs/Releasenotes/known-issues",
           "children": [
@@ -53,8 +60,8 @@
           ]
         },
         {
-          "label": "Common Vulnerabilities and Exposures \\(CVE\\)",
-          "path": "docs/Releasenotes/common-vulnerabilities-and-exposures-(cve)",
+          "label": "Common Vulnerabilities and Exposures",
+          "path": "docs/Releasenotes/cve",
           "children": [
             
           ]

@@ -1,20 +1,11 @@
-# Known Issues<a name="EN-US_TOPIC_0225731124"></a>
+# Known Issues
 
--   The FIPS boot mode of the kernel has not been fully authenticated. The FIPS boot may be abnormal.  [I17Z18](https://gitee.com/src-openeuler/crypto-policies/issues/I17Z18?from=project-issue)
--   When libvirt is used to start the GlusterFS VM, a 300-byte memory leak occurs each time. For details about the discussion, click  [https://github.com/gluster/glusterfs/issues/818](https://github.com/gluster/glusterfs/issues/818).  [I185CH](https://gitee.com/src-openeuler/glusterfs/issues/I185CH?from=project-issue)
--   When the libvirt interface is used to continuously perform disk hot swap operations, there is a possibility that the hot remove interface returns a success message, but the disk is not removed and cannot be hot swapped again. You can stop the VM and then restart it.  [I1C72L](https://gitee.com/src-openeuler/qemu/issues/I1C72L?from=project-issue)
--   There is a low probability that an unknown installation exception occurs when the x86\_64 VM is used for installation. In this case, install the x86\_64 VM again.  [I1C8HS](https://gitee.com/src-openeuler/anaconda/issues/I1C8HS?from=project-issue)
--   CVE-2012-0039: When a local application calls the  **g\_str\_hash**  function, the application continuously consumes CPU resources, causing DoS attacks. This issue will not be resolved in the community.
--   CVE-2015-9541: When Qt attempts to parse the abnormal SVG files which are constructed to launch exponential XML entity extension attacks, the memory may be insufficient. For details about the discussion, click  [https://codereview.qt-project.org/c/qt/qtbase/+/293909](https://codereview.qt-project.org/c/qt/qtbase/+/293909).
--   Before compiling some open-source packages, you need to install basic software such as GDB, GCC, and make. Otherwise, the compilation fails due to lack of dependency.
--   AArch64 and x86\_64 have different definitions of the character type. As a result, an error is reported during the self-check using Coreutils, Augeas, and Diffutils. You can add the  **--fsigned-char**  compilation option to solve the problem.
--   For 20.03 LTS SP1, if you run the **rpm -Uvh XXX** command (XXX indicates the version, for example, mysql-8.0.21-1.oe1.aarch64.rpm) to upgrade mysql-8.0.17-3.oe1 to the latest version, the functions are unavailable after the upgrade. You can use either of the following methods to upgrade the version. The following uses the upgrade from mysql-8.0.17-3.oe1 to mysql-8.0.21-1.oe1 as an example:  
-    -  Method 1: Run the following upgrade command:  
-        ``` 
-        # rpm -Uvh mysql-8.0.21-1.oe1.aarch64.rpm --noscripts 
-        ```
-    -  Method 2: Run the following commands to uninstall the MySQL of the earlier version and then install the MySQL of the new version:
-        ```
-        # rpm -e mysql-8.0.17-3.oe1      
-        # rpm -ivh mysql-8.0.21-1.oe1.aarch64.rpm
-        ```
+|  Issue  |Description  |
+|:---  |:----  |
+| [I26ZLO](https://gitee.com/openeuler/community/issues/I26ZLO?from=project-issue) | After the installation is successful, click **Reboot**, and the system occasionally stops responding during the reboot. The information is insufficient for locating faults. This issue occurs only once in the test period of nearly a month. You are advised to configure the dongle to ensure reliability. |
+| [I29P84](https://gitee.com/src-openeuler/anaconda/issues/I29P84?from=project-issue) | This issue occurs only during the installation. After the installation is complete, the issue does not affect the system. During the GUI-based installation, a user selects a drive for installation, and then click **Cancel** to select a new drive for customized partitioning. As a result, the Anaconda cannot identify the drive information and the installation fails. To solve this issue, select the drive to be installed. |
+| [I29TET](https://gitee.com/src-openeuler/LibRaw/issues/I29TET?from=project-issue) | LibRaw is a library for reading RAW files. When abnormal data is injected into **dcraw\_process**, integer overflow occurs. The openEuler community already has corresponding issues but does not fix injection issues. The subjective judgment will affect the execution efficiency. Keep tracking the issue resolution in the community. |
+| [I28N07](https://gitee.com/src-openeuler/util-linux/issues/I28N07?from=project-issue) | Running the **blockdev** command to set the read-only mode does not take effect. This issue exists in all versions of the community. The community is discussing the solution. This issue has no adverse impact on other functions. |
+| [I27TNT](https://gitee.com/src-openeuler/augeas/issues/I27TNT?from=project-issue) | The fuzz fault injection testing is not performed. A memory leak error is reported on the **fa\_minus()** interface. According to preliminary analysis, this interface is an internal interface. Augeas is used to edit configuration files. It is mostly used at a time, and rarely runs in the background. |
+| [I28XL7](https://gitee.com/openeuler/community/issues/I28XL7?from=project-issue) | After the x86/ARM-based physical machine is successfully installed, an i40iw error is reported on the dmesg. The error does not affect the basic functions of the NIC. |
+
