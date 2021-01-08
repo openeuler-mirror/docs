@@ -81,9 +81,9 @@ The following table lists the [openEuler release files](http://repo.openeuler.or
 	<th>Typical Configuration</th>
   </tr>
   <tr>
-    <td rowspan="4">Huawei</td>
-    <td rowspan="4">TaiShan 200</td>
-    <td rowspan="4">2280 balanced model</td>
+    <td rowspan="3">Huawei</td>
+    <td rowspan="3">TaiShan 200</td>
+    <td rowspan="3">2280 balanced model</td>
 	<td>CPU</td>
 	<td>Kunpeng 920</td>
   </tr>
@@ -92,17 +92,13 @@ The following table lists the [openEuler release files](http://repo.openeuler.or
 	<td>32G*4 2933MHz</td>
   </tr>
   <tr>
-    <td>RAID controller card</td>
-    <td>LSI SAS3508</td>
-  </tr>
-  <tr>
     <td>Network</td>
     <td>TM210</td>
   </tr>
   <tr>
-    <td rowspan="4">Huawei</td>
-    <td rowspan="4">FusionServer Pro</td>
-    <td rowspan="4">2288H V5 rack server</td>
+    <td rowspan="3">Huawei</td>
+    <td rowspan="3">FusionServer Pro</td>
+    <td rowspan="3">2288H V5 rack server</td>
 	<td>CPU</td>
 	<td>Intel(R) Xeon(R) Gold 5118 CPU @ 2.30GHz</td>
   </tr>
@@ -111,27 +107,19 @@ The following table lists the [openEuler release files](http://repo.openeuler.or
 	<td>32*4 2400MHz</td>
   </tr>
   <tr>
-    <td>RAID controller card</td>
-    <td>LSI SAS3508</td>
-  </tr>
-  <tr>
     <td>Network</td>
     <td>X722</td>
   </tr>
   <tr>
-    <td rowspan="4">PHYTIUM</td>
-    <td rowspan="4">Phytium</td>
-    <td rowspan="4">FT-2000+/64</td>
+    <td rowspan="3">PHYTIUM</td>
+    <td rowspan="3">Phytium</td>
+    <td rowspan="3">FT-2000+/64</td>
 	<td>CPU</td>
 	<td>FT-2000+/64</td>
   </tr>
   <tr>
 	<td>Memory</td>
 	<td>Micron 16G*32</td>
-  </tr>
-  <tr>
-    <td>RAID controller card</td>
-    <td>-</td>
   </tr>
   <tr>
     <td>Network</td>
