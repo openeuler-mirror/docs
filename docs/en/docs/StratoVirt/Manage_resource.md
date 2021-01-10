@@ -71,6 +71,30 @@ StratoVirt allows users to adjust the number of NICs during VM running. That is,
 
 ### Hot Plugged-in NIC
 
+**Preparations (Requiring the Root Permission)**
+
+1. Create and enable a Linux bridge. For example, if the bridge name is qbr0, run the following command:
+
+   ```shell
+   # brctl addbr qbr0
+   # ifconfig qbr0 up
+   ```
+
+2. Create and enable a tap device. For example, if the tap device name is **tap0**, run the following command:
+
+   ```shell
+   # ip tuntap add tap0 mode tap
+   # ifconfig tap0 up
+   ```
+
+3. Add the tap device to the bridge.
+
+   ```shell
+   # brctl addif qbr0 tap0
+   ```
+
+   ​
+
 **Usage**
 
 ```
