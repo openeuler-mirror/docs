@@ -32,7 +32,7 @@ You can log in to the Raspberry Pi in either of the following ways:
    **Figure 1** Obtain the IP address<a name="zh-cn_topic_0151920806_f6ff7658b349942ea87f4521c0256c313"></a>  
    ![](./figures/Obtain the IP address)
    
-   According to the preceding figure, the IP address of the Raspberry Pi is **192.168.31.109**. You can run the `ssh root@192.168.1.109` command and enter the password `openeuler` to remotely log in to the Raspberry Pi.
+   According to the preceding figure, the IP address of the Raspberry Pi is **192.168.31.109**. You can run the `ssh root@192.168.31.109` command and enter the password `openeuler` to remotely log in to the Raspberry Pi.
 
 ## Configuring the System
 
