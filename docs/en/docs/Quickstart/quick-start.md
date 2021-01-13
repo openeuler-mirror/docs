@@ -8,85 +8,27 @@ This document uses openEuler 20.09 installed on the TaiShan 200 server as an exa
 
 - Hardware Compatibility
   
-  [Table 1](#table14948632047)  describes the types of supported servers.
+    [Table 1](#table14948632047)  describes the types of supported servers.
   
-  **Table  1**  Supported servers
-  
-  <a name="table14948632047"></a>
-  
-  <table><thead align="left"><tr id="en-us_topic_0229291190_row5949431547"><th class="cellrowborder" valign="top" width="26.369999999999997%" id="mcps1.2.4.1.1"><p id="en-us_topic_0229291190_p694923843"><a name="en-us_topic_0229291190_p694923843"></a><a name="en-us_topic_0229291190_p694923843"></a>Server Type</p>
-  </th>
-  <th class="cellrowborder" valign="top" width="24%" id="mcps1.2.4.1.2"><p id="en-us_topic_0229291190_p132705020556"><a name="en-us_topic_0229291190_p132705020556"></a><a name="en-us_topic_0229291190_p132705020556"></a>Server Name</p>
-  </th>
-  <th class="cellrowborder" valign="top" width="49.63%" id="mcps1.2.4.1.3"><p id="en-us_topic_0229291190_p119491131848"><a name="en-us_topic_0229291190_p119491131848"></a><a name="en-us_topic_0229291190_p119491131848"></a>Server Model</p>
-  </th>
-  </tr>
-  </thead>
-  <tbody><tr id="en-us_topic_0229291190_row8949153348"><td class="cellrowborder" valign="top" width="26.369999999999997%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0229291190_p4893192424117"><a name="en-us_topic_0229291190_p4893192424117"></a><a name="en-us_topic_0229291190_p4893192424117"></a>Rack server</p>
-  </td>
-  <td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0229291190_p02706012553"><a name="en-us_topic_0229291190_p02706012553"></a><a name="en-us_topic_0229291190_p02706012553"></a>TaiShan 200</p>
-  </td>
-  <td class="cellrowborder" valign="top" width="49.63%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0229291190_p126551941225"><a name="en-us_topic_0229291190_p126551941225"></a><a name="en-us_topic_0229291190_p126551941225"></a>2280 balanced model</p>
-  </td>
-  </tr>
-  <tr id="en-us_topic_0229291190_row104064391909"><td class="cellrowborder" valign="top" width="26.369999999999997%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0229291190_p54061539609"><a name="en-us_topic_0229291190_p54061539609"></a><a name="en-us_topic_0229291190_p54061539609"></a>Rack server</p>
-  </td>
-  <td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0229291190_p9937105713311"><a name="en-us_topic_0229291190_p9937105713311"></a><a name="en-us_topic_0229291190_p9937105713311"></a>FusionServer Pro </p>
-  </td>
-  <td class="cellrowborder" valign="top" width="49.63%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0229291190_p154063394011"><a name="en-us_topic_0229291190_p154063394011"></a><a name="en-us_topic_0229291190_p154063394011"></a>FusionServer Pro 2288H V5</p>
-  <div class="note" id="en-us_topic_0229291190_note2046771016316"><a name="en-us_topic_0229291190_note2046771016316"></a><a name="en-us_topic_0229291190_note2046771016316"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0229291190_p1646710101130"><a name="en-us_topic_0229291190_p1646710101130"></a><a name="en-us_topic_0229291190_p1646710101130"></a>The server must be configured with the Avago SAS3508 RAID controller card and the LOM-X722 NIC.</p>
-  </div></div>
-  </td>
-  </tr>
-  </tbody>
-  </table>
+    **Table  1**  Supported servers
+
+    | Server Type   | Server Name  |Server Model  |
+    |:---  |:----  |:----  |
+    | Rack server | TaiShan 200|2280 balanced model |
+    | Rack server | FusionServer Pro |FusionServer Pro 2288H V5<br/>NOTE: <br/>The server must be configured with the Avago SAS3508 RAID controller card and the LOM-X722 NIC.|
 
 - Minimum Hardware Specifications
   
-  [Table 2](#tff48b99c9bf24b84bb602c53229e2541)  lists the minimum hardware specifications supported by openEuler.
+    [Table 2](#tff48b99c9bf24b84bb602c53229e2541)  lists the minimum hardware specifications supported by openEuler.
   
-  **Table  2**  Minimum hardware specifications
-  
-  <a name="tff48b99c9bf24b84bb602c53229e2541"></a>
-  
-  <table><thead align="left"><tr id="en-us_topic_0229291228_r36f08b63edea4973a8228200caa2a50b"><th class="cellrowborder" valign="top" width="11.19111911191119%" id="mcps1.2.4.1.1"><p id="en-us_topic_0229291228_aef3575d97cdf4dcfb65f8d0c8d2d4a76"><a name="en-us_topic_0229291228_aef3575d97cdf4dcfb65f8d0c8d2d4a76"></a><a name="en-us_topic_0229291228_aef3575d97cdf4dcfb65f8d0c8d2d4a76"></a>Component</p>
-  </th>
-  <th class="cellrowborder" valign="top" width="40.06400640064006%" id="mcps1.2.4.1.2"><p id="en-us_topic_0229291228_a919d3bb266c8432fb33c51fa8f3a4fc3"><a name="en-us_topic_0229291228_a919d3bb266c8432fb33c51fa8f3a4fc3"></a><a name="en-us_topic_0229291228_a919d3bb266c8432fb33c51fa8f3a4fc3"></a>Minimum Hardware Specifications</p>
-  </th>
-  <th class="cellrowborder" valign="top" width="48.74487448744874%" id="mcps1.2.4.1.3"><p id="en-us_topic_0229291228_a3ac7cf4867974c4990ee6deab716db5f"><a name="en-us_topic_0229291228_a3ac7cf4867974c4990ee6deab716db5f"></a><a name="en-us_topic_0229291228_a3ac7cf4867974c4990ee6deab716db5f"></a>Description</p>
-  </th>
-  </tr>
-  </thead>
-  <tbody><tr id="en-us_topic_0229291228_r1a3ceb0cc79241c6ba8c5fb800c274e2"><td class="cellrowborder" valign="top" width="11.19111911191119%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0229291228_af37d7ef138ee45eca00898e0d34a03f4"><a name="en-us_topic_0229291228_af37d7ef138ee45eca00898e0d34a03f4"></a><a name="en-us_topic_0229291228_af37d7ef138ee45eca00898e0d34a03f4"></a>Architecture</p>
-  </td>
-  <td class="cellrowborder" valign="top" width="40.06400640064006%" headers="mcps1.2.4.1.2 "><a name="en-us_topic_0229291228_ul262164044016"></a><a name="en-us_topic_0229291228_ul262164044016"></a><ul id="en-us_topic_0229291228_ul262164044016"><li>AArch64</li><li>x86_64</li></ul>
-  </td>
-  <td class="cellrowborder" valign="top" width="48.74487448744874%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0229291228_ul1830173916388"></a><a name="en-us_topic_0229291228_ul1830173916388"></a><ul id="en-us_topic_0229291228_ul1830173916388"><li>64-bit Arm architecture</li><li>64-bit Intel x86 architecture</li></ul>
-  </td>
-  </tr>
-  <tr id="en-us_topic_0229291228_ra68eff5c33a84bb2be6672a48a643d26"><td class="cellrowborder" valign="top" width="11.19111911191119%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0229291228_ac0a50d2069ab444cafff180647772df4"><a name="en-us_topic_0229291228_ac0a50d2069ab444cafff180647772df4"></a><a name="en-us_topic_0229291228_ac0a50d2069ab444cafff180647772df4"></a>CPU</p>
-  </td>
-  <td class="cellrowborder" valign="top" width="40.06400640064006%" headers="mcps1.2.4.1.2 "><a name="en-us_topic_0229291228_ul97131912175915"></a><a name="en-us_topic_0229291228_ul97131912175915"></a><ul id="en-us_topic_0229291228_ul97131912175915"><li>Huawei Kunpeng 920 series</li><li>Intel <sup>&reg;</sup> Xeon<sup>&reg;</sup> processor</li></ul>
-  </td>
-  <td class="cellrowborder" valign="top" width="48.74487448744874%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0229291228_a2601e9eece5f4c7bb02881c9ac647a61"><a name="en-us_topic_0229291228_a2601e9eece5f4c7bb02881c9ac647a61"></a><a name="en-us_topic_0229291228_a2601e9eece5f4c7bb02881c9ac647a61"></a>-</p>
-  </td>
-  </tr>
-  <tr id="en-us_topic_0229291228_rf2a5d43b74894a0882b7c17bdfeb697f"><td class="cellrowborder" valign="top" width="11.19111911191119%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0229291228_ad00611ec129a41a9841fb579eece7804"><a name="en-us_topic_0229291228_ad00611ec129a41a9841fb579eece7804"></a><a name="en-us_topic_0229291228_ad00611ec129a41a9841fb579eece7804"></a>Memory</p>
-  </td>
-  <td class="cellrowborder" valign="top" width="40.06400640064006%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0229291228_a94efe642b8694e5a85747e123b951efc"><a name="en-us_topic_0229291228_a94efe642b8694e5a85747e123b951efc"></a><a name="en-us_topic_0229291228_a94efe642b8694e5a85747e123b951efc"></a>≥ 4 GB (8 GB or higher recommended for better user experience)</p>
-  </td>
-  <td class="cellrowborder" valign="top" width="48.74487448744874%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0229291228_abfb44d28dca741f68df94e4e276d2410"><a name="en-us_topic_0229291228_abfb44d28dca741f68df94e4e276d2410"></a><a name="en-us_topic_0229291228_abfb44d28dca741f68df94e4e276d2410"></a>-</p>
-  </td>
-  </tr>
-  <tr id="en-us_topic_0229291228_rd2c1ebd93ea64e85a5f3fc88dc5ba456"><td class="cellrowborder" valign="top" width="11.19111911191119%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0229291228_afd36954546334c1681b5a391bbc386ae"><a name="en-us_topic_0229291228_afd36954546334c1681b5a391bbc386ae"></a><a name="en-us_topic_0229291228_afd36954546334c1681b5a391bbc386ae"></a>Hard disk</p>
-  </td>
-  <td class="cellrowborder" valign="top" width="40.06400640064006%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0229291228_p1224172312719"><a name="en-us_topic_0229291228_p1224172312719"></a><a name="en-us_topic_0229291228_p1224172312719"></a>≥ 120 GB (for better user experience)</p>
-  </td>
-  <td class="cellrowborder" valign="top" width="48.74487448744874%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0229291228_acc0affdd82e34f32966171e21855ef40"><a name="en-us_topic_0229291228_acc0affdd82e34f32966171e21855ef40"></a><a name="en-us_topic_0229291228_acc0affdd82e34f32966171e21855ef40"></a>The hard disk supports IDE, SATA, SAS interfaces.</p>
-  </td>
-  </tr>
-  </tbody>
-  </table>
+    **Table  2**  Minimum hardware specifications
+
+    |  Component   | Minimum Hardware Specifications  |Description |
+    |:---  |:----  |:----  |
+    | Architecture | AArch64<br/> x86_64|64-bit Arm architecture<br/>64-bit Intel x86 architecture |
+    | CPU | Huawei Kunpeng 920 series<br/>Intel ® Xeon® processor|- |
+	| Memory | ≥ 4 GB (8 GB or higher recommended for better user experience)|- |
+	| Hard disk | ≥ 120 GB (for better user experience) | The hard disk supports IDE, SATA, SAS interfaces.|
 
 
 ## Obtaining the Installation Source

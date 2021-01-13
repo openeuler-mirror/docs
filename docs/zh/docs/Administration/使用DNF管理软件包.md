@@ -40,60 +40,17 @@ best=True
 
 **表 1**  main参数说明
 
-<a name="zh-cn_topic_0151921080_t2716a40f69b24a989ec3c0b6f278cb5d"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0151921080_re437b39f0a1647ff864353c080184c45"><th class="cellrowborder" valign="top" width="31.580000000000002%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0151921080_a228122f6ac30401d8237a59bf9535ad1"><a name="zh-cn_topic_0151921080_a228122f6ac30401d8237a59bf9535ad1"></a><a name="zh-cn_topic_0151921080_a228122f6ac30401d8237a59bf9535ad1"></a>参数</p>
-</th>
-<th class="cellrowborder" valign="top" width="68.42%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0151921080_ae291ac87cc3c4ce1bd23cfbd2f989d09"><a name="zh-cn_topic_0151921080_ae291ac87cc3c4ce1bd23cfbd2f989d09"></a><a name="zh-cn_topic_0151921080_ae291ac87cc3c4ce1bd23cfbd2f989d09"></a>说明</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="zh-cn_topic_0151921080_raeb774ff205e457e818067d51a26a39a"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_aca09cf10eb084bee89cf1f5fe5f35fac"><a name="zh-cn_topic_0151921080_aca09cf10eb084bee89cf1f5fe5f35fac"></a><a name="zh-cn_topic_0151921080_aca09cf10eb084bee89cf1f5fe5f35fac"></a>cachedir</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a2151a724f4ff4a468f77b15eaec8ed3a"><a name="zh-cn_topic_0151921080_a2151a724f4ff4a468f77b15eaec8ed3a"></a><a name="zh-cn_topic_0151921080_a2151a724f4ff4a468f77b15eaec8ed3a"></a>缓存目录，该目录用于存储RPM包和数据库文件。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0151921080_r22f24b5ffe0e4bc3be64ef01afc49c6c"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_a33e3b7427b024df7922a3acdc7d2caf7"><a name="zh-cn_topic_0151921080_a33e3b7427b024df7922a3acdc7d2caf7"></a><a name="zh-cn_topic_0151921080_a33e3b7427b024df7922a3acdc7d2caf7"></a>keepcache</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a16334e4f6fec4e79872c4a8b3a31d772"><a name="zh-cn_topic_0151921080_a16334e4f6fec4e79872c4a8b3a31d772"></a><a name="zh-cn_topic_0151921080_a16334e4f6fec4e79872c4a8b3a31d772"></a>可选值是1和0，表示是否要缓存已安装成功的那些RPM包及头文件，默认值为0，即不缓存。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0151921080_rc9c76f44bb7840b8b61a46b0854538b3"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_af751af3ed4cb4a189f209994d274dfe0"><a name="zh-cn_topic_0151921080_af751af3ed4cb4a189f209994d274dfe0"></a><a name="zh-cn_topic_0151921080_af751af3ed4cb4a189f209994d274dfe0"></a>debuglevel</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a118e43ebde57468eb40f0af51b86d751"><a name="zh-cn_topic_0151921080_a118e43ebde57468eb40f0af51b86d751"></a><a name="zh-cn_topic_0151921080_a118e43ebde57468eb40f0af51b86d751"></a>设置dnf生成的debug信息。取值范围：[0-10]，数值越大会输出越详细的debug信息。默认值为2，设置为0表示不输出debug信息。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0151921080_rc12e82ae45524ba8aea5248e154a832a"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_adc7f634b391d4726808fe0b3354f969d"><a name="zh-cn_topic_0151921080_adc7f634b391d4726808fe0b3354f969d"></a><a name="zh-cn_topic_0151921080_adc7f634b391d4726808fe0b3354f969d"></a>clean_requirements_on_remove</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_ae9df2a3423504b4da46111a6e1162352"><a name="zh-cn_topic_0151921080_ae9df2a3423504b4da46111a6e1162352"></a><a name="zh-cn_topic_0151921080_ae9df2a3423504b4da46111a6e1162352"></a>删除在dnf remove期间不再使用的依赖项，如果软件包是通过DNF安装的，而不是通过显式用户请求安装的，则只能通过clean_requirements_on_remove删除软件包，即它是作为依赖项引入的。 默认值为True。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0151921080_r096417e2f0524024b93c722dab0113cd"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_p11584914871"><a name="zh-cn_topic_0151921080_p11584914871"></a><a name="zh-cn_topic_0151921080_p11584914871"></a>best</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a406b4dd56fb7483ea43c7231aa2a7499"><a name="zh-cn_topic_0151921080_a406b4dd56fb7483ea43c7231aa2a7499"></a><a name="zh-cn_topic_0151921080_a406b4dd56fb7483ea43c7231aa2a7499"></a>升级包时，总是尝试安装其最高版本，如果最高版本无法安装，则提示无法安装的原因并停止安装。默认值为True。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0151921080_r447c1e6abe344a719dd9e8b109c799fa"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_a6befc61e1a58499b96ecdcc96b0489d4"><a name="zh-cn_topic_0151921080_a6befc61e1a58499b96ecdcc96b0489d4"></a><a name="zh-cn_topic_0151921080_a6befc61e1a58499b96ecdcc96b0489d4"></a>obsoletes</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a581b6f9d8f9b4ad7b62734f86f6d556e"><a name="zh-cn_topic_0151921080_a581b6f9d8f9b4ad7b62734f86f6d556e"></a><a name="zh-cn_topic_0151921080_a581b6f9d8f9b4ad7b62734f86f6d556e"></a>可选值1和0，设置是否允许更新陈旧的RPM包。默认值为1，表示允许更新。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0151921080_r30106389463d4ba0bf505a6b78034b23"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_a51da18882a5b41ff8a5a328f73d186dd"><a name="zh-cn_topic_0151921080_a51da18882a5b41ff8a5a328f73d186dd"></a><a name="zh-cn_topic_0151921080_a51da18882a5b41ff8a5a328f73d186dd"></a>gpgcheck</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_addb19525458847cd90f1d1390b966701"><a name="zh-cn_topic_0151921080_addb19525458847cd90f1d1390b966701"></a><a name="zh-cn_topic_0151921080_addb19525458847cd90f1d1390b966701"></a>可选值1和0，设置是否进行gpg校验。默认值为1，表示需要进行校验。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0151921080_ra0a9a346638c4a1bb007bbbe59eaeea7"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_af01afb28195145988ff4ba218bfad29b"><a name="zh-cn_topic_0151921080_af01afb28195145988ff4ba218bfad29b"></a><a name="zh-cn_topic_0151921080_af01afb28195145988ff4ba218bfad29b"></a>plugins</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a093f5fa9735a4e27a6bdbd2e1d59faee"><a name="zh-cn_topic_0151921080_a093f5fa9735a4e27a6bdbd2e1d59faee"></a><a name="zh-cn_topic_0151921080_a093f5fa9735a4e27a6bdbd2e1d59faee"></a>可选值1和0，表示启用或禁用dnf插件。默认值为1，表示启用dnf插件。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0151921080_r1fea2c77ef6e4c63a6ca076666eb8651"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_a66ecbecaa5494510b6b1304af3e4da43"><a name="zh-cn_topic_0151921080_a66ecbecaa5494510b6b1304af3e4da43"></a><a name="zh-cn_topic_0151921080_a66ecbecaa5494510b6b1304af3e4da43"></a>installonly_limit</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_aab5e9fba116044e4807c04ae55297cd1"><a name="zh-cn_topic_0151921080_aab5e9fba116044e4807c04ae55297cd1"></a><a name="zh-cn_topic_0151921080_aab5e9fba116044e4807c04ae55297cd1"></a>设置可以同时安装“installonlypkgs”指令列出包的数量。默认值为3，不建议降低此值。</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  参数   |说明  |
+|:---  |:----  |
+| cachedir | 缓存目录，该目录用于存储RPM包和数据库文件。 |
+| keepcache | 可选值是1和0，表示是否要缓存已安装成功的那些RPM包及头文件，默认值为0，即不缓存。 |
+| debuglevel | 设置dnf生成的debug信息。取值范围：[0-10]，数值越大会输出越详细的debug信息。默认值为2，设置为0表示不输出debug信息。 |
+| clean_requirements_on_remove | 删除在dnf remove期间不再使用的依赖项，如果软件包是通过DNF安装的，而不是通过显式用户请求安装的，则只能通过clean_requirements_on_remove删除软件包，即它是作为依赖项引入的。 默认值为True。 |
+| best | 升级包时，总是尝试安装其最高版本，如果最高版本无法安装，则提示无法安装的原因并停止安装。默认值为True。 |
+| obsoletes | 可选值1和0，设置是否允许更新陈旧的RPM包。默认值为1，表示允许更新。 |
+| gpgcheck | 可选值1和0，设置是否进行gpg校验。默认值为1，表示需要进行校验。 |
+| plugins | 可选值1和0，表示启用或禁用dnf插件。默认值为1，表示启用dnf插件。 |
+| installonly_limit | 设置可以同时安装“installonlypkgs”指令列出包的数量。默认值为3，不建议降低此值。 |
 
 #### 配置repository部分
 
@@ -115,25 +72,11 @@ repository部分允许您定义定制化的openEuler软件源仓库，各个仓�
     选项说明：
 
     **表 2**  repository参数说明
-    <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="31.580000000000002%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0151921080_af95a9e18156646249707de3f94ac1b3c"><a name="zh-cn_topic_0151921080_af95a9e18156646249707de3f94ac1b3c"></a><a name="zh-cn_topic_0151921080_af95a9e18156646249707de3f94ac1b3c"></a>参数</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="68.42%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0151921080_a8cc2e976bc794e86a279d3bae8f901c4"><a name="zh-cn_topic_0151921080_a8cc2e976bc794e86a279d3bae8f901c4"></a><a name="zh-cn_topic_0151921080_a8cc2e976bc794e86a279d3bae8f901c4"></a>说明</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="zh-cn_topic_0151921080_rbfa3a638cbc24c73ab13529149b75bb1"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_a4a0b069bbf624b09be3bdd08567c0445"><a name="zh-cn_topic_0151921080_a4a0b069bbf624b09be3bdd08567c0445"></a><a name="zh-cn_topic_0151921080_a4a0b069bbf624b09be3bdd08567c0445"></a>name=repository_name</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a21ddbd0f48924c1eb7475cc34de2dc32"><a name="zh-cn_topic_0151921080_a21ddbd0f48924c1eb7475cc34de2dc32"></a><a name="zh-cn_topic_0151921080_a21ddbd0f48924c1eb7475cc34de2dc32"></a>软件仓库（repository ）描述的字符串。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0151921080_r00b7f4067dc94647941026719cd6f293"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_af53cdfe5f204471f956cdab7c466fa40"><a name="zh-cn_topic_0151921080_af53cdfe5f204471f956cdab7c466fa40"></a><a name="zh-cn_topic_0151921080_af53cdfe5f204471f956cdab7c466fa40"></a>baseurl=repository_url</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_aa17154cd42524a1a8075e6414160a153"><a name="zh-cn_topic_0151921080_aa17154cd42524a1a8075e6414160a153"></a><a name="zh-cn_topic_0151921080_aa17154cd42524a1a8075e6414160a153"></a>软件仓库（repository ）的地址。</p>
-    <a name="zh-cn_topic_0151921080_ued0c249b843549a79bfa68170539c91e"></a><a name="zh-cn_topic_0151921080_ued0c249b843549a79bfa68170539c91e"></a><ul id="zh-cn_topic_0151921080_ued0c249b843549a79bfa68170539c91e"><li>使用http协议的网络位置：例如 http://path/to/repo</li><li>使用ftp协议的网络位置：例如 ftp://path/to/repo</li><li>本地位置：例如 file:///path/to/local/repo</li></ul>
-    </td>
-    </tr>
-    </tbody>
-    </table>
+	
+	|  参数   |说明  |
+    |:---  |:----  |
+    | name=repository_name | 软件仓库（repository ）描述的字符串。 |
+    | baseurl=repository_url | 软件仓库（repository ）的地址。<br/>例如：<br/>使用http协议的网络位置： http://path/to/repo<br/>使用ftp协议的网络位置： ftp://path/to/repo<br/>本地位置： file:///path/to/local/repo |
 
 
 -   配置/etc/yum.repos.d目录下的.repo文件
