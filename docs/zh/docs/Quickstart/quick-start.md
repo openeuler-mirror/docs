@@ -11,34 +11,11 @@
     支持的服务器类型如[表1](#table14948632047)所示。
 
     **表 1**  支持的服务器类型
-
-    <a name="table14948632047"></a>
-    <table><thead align="left"><tr id="zh-cn_topic_0229291190_row5949431547"><th class="cellrowborder" valign="top" width="26.369999999999997%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0229291190_p694923843"><a name="zh-cn_topic_0229291190_p694923843"></a><a name="zh-cn_topic_0229291190_p694923843"></a><strong id="zh-cn_topic_0229291190_b1990114912213"><a name="zh-cn_topic_0229291190_b1990114912213"></a><a name="zh-cn_topic_0229291190_b1990114912213"></a>服务器形态</strong></p>
-    </th>
-    <th class="cellrowborder" valign="top" width="24%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0229291190_p132705020556"><a name="zh-cn_topic_0229291190_p132705020556"></a><a name="zh-cn_topic_0229291190_p132705020556"></a><strong id="zh-cn_topic_0229291190_b18630171675"><a name="zh-cn_topic_0229291190_b18630171675"></a><a name="zh-cn_topic_0229291190_b18630171675"></a>服务器名称</strong></p>
-    </th>
-    <th class="cellrowborder" valign="top" width="49.63%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0229291190_p119491131848"><a name="zh-cn_topic_0229291190_p119491131848"></a><a name="zh-cn_topic_0229291190_p119491131848"></a><strong id="zh-cn_topic_0229291190_b209018491722"><a name="zh-cn_topic_0229291190_b209018491722"></a><a name="zh-cn_topic_0229291190_b209018491722"></a>服务器型号</strong></p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="zh-cn_topic_0229291190_row8949153348"><td class="cellrowborder" valign="top" width="26.369999999999997%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0229291190_p4893192424117"><a name="zh-cn_topic_0229291190_p4893192424117"></a><a name="zh-cn_topic_0229291190_p4893192424117"></a>机架服务器</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0229291190_p02706012553"><a name="zh-cn_topic_0229291190_p02706012553"></a><a name="zh-cn_topic_0229291190_p02706012553"></a>TaiShan 200</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="49.63%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0229291190_p126551941225"><a name="zh-cn_topic_0229291190_p126551941225"></a><a name="zh-cn_topic_0229291190_p126551941225"></a>2280均衡型</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0229291190_row104064391909"><td class="cellrowborder" valign="top" width="26.369999999999997%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0229291190_p54061539609"><a name="zh-cn_topic_0229291190_p54061539609"></a><a name="zh-cn_topic_0229291190_p54061539609"></a>机架服务器</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0229291190_p9937105713311"><a name="zh-cn_topic_0229291190_p9937105713311"></a><a name="zh-cn_topic_0229291190_p9937105713311"></a>FusionServer Pro 机架服务器</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="49.63%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0229291190_p154063394011"><a name="zh-cn_topic_0229291190_p154063394011"></a><a name="zh-cn_topic_0229291190_p154063394011"></a>FusionServer Pro 2288H V5</p>
-    <div class="note" id="zh-cn_topic_0229291190_note2046771016316"><a name="zh-cn_topic_0229291190_note2046771016316"></a><a name="zh-cn_topic_0229291190_note2046771016316"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0229291190_p1646710101130"><a name="zh-cn_topic_0229291190_p1646710101130"></a><a name="zh-cn_topic_0229291190_p1646710101130"></a>服务器要求配置Avago 3508 RAID控制卡和启用LOM-X722网卡。</p>
-    </div></div>
-    </td>
-    </tr>
-    </tbody>
-    </table>
+	
+    |  服务器形态   | 服务器名称  |服务器型号  |
+    |:---  |:----  |:----  |
+    | 机架服务器 | TaiShan 200|2280均衡型 |
+    | 机架服务器 | FusionServer Pro 机架服务器|FusionServer Pro 2288H V5<br/>说明：<br/>服务器要求配置Avago 3508 RAID控制卡和启用LOM-X722网卡。 |
 
 -   最小硬件要求
 
@@ -46,45 +23,12 @@
 
     **表 2**  最小硬件要求
 
-    <a name="tff48b99c9bf24b84bb602c53229e2541"></a>
-    <table><thead align="left"><tr id="zh-cn_topic_0229291228_r36f08b63edea4973a8228200caa2a50b"><th class="cellrowborder" valign="top" width="11.19111911191119%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0229291228_aef3575d97cdf4dcfb65f8d0c8d2d4a76"><a name="zh-cn_topic_0229291228_aef3575d97cdf4dcfb65f8d0c8d2d4a76"></a><a name="zh-cn_topic_0229291228_aef3575d97cdf4dcfb65f8d0c8d2d4a76"></a><strong id="zh-cn_topic_0229291228_abf63bde6a66a4ce5b21d81948fcafe36"><a name="zh-cn_topic_0229291228_abf63bde6a66a4ce5b21d81948fcafe36"></a><a name="zh-cn_topic_0229291228_abf63bde6a66a4ce5b21d81948fcafe36"></a>部件名称</strong></p>
-    </th>
-    <th class="cellrowborder" valign="top" width="40.06400640064006%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0229291228_a919d3bb266c8432fb33c51fa8f3a4fc3"><a name="zh-cn_topic_0229291228_a919d3bb266c8432fb33c51fa8f3a4fc3"></a><a name="zh-cn_topic_0229291228_a919d3bb266c8432fb33c51fa8f3a4fc3"></a><strong id="zh-cn_topic_0229291228_a9386cf027c1e47d99651159bb62130e7"><a name="zh-cn_topic_0229291228_a9386cf027c1e47d99651159bb62130e7"></a><a name="zh-cn_topic_0229291228_a9386cf027c1e47d99651159bb62130e7"></a>最小硬件要求</strong></p>
-    </th>
-    <th class="cellrowborder" valign="top" width="48.74487448744874%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0229291228_a3ac7cf4867974c4990ee6deab716db5f"><a name="zh-cn_topic_0229291228_a3ac7cf4867974c4990ee6deab716db5f"></a><a name="zh-cn_topic_0229291228_a3ac7cf4867974c4990ee6deab716db5f"></a><strong id="zh-cn_topic_0229291228_a0206841e981640cf833dc2556a7def50"><a name="zh-cn_topic_0229291228_a0206841e981640cf833dc2556a7def50"></a><a name="zh-cn_topic_0229291228_a0206841e981640cf833dc2556a7def50"></a>说明</strong></p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="zh-cn_topic_0229291228_r1a3ceb0cc79241c6ba8c5fb800c274e2"><td class="cellrowborder" valign="top" width="11.19111911191119%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0229291228_af37d7ef138ee45eca00898e0d34a03f4"><a name="zh-cn_topic_0229291228_af37d7ef138ee45eca00898e0d34a03f4"></a><a name="zh-cn_topic_0229291228_af37d7ef138ee45eca00898e0d34a03f4"></a>架构</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="40.06400640064006%" headers="mcps1.2.4.1.2 "><a name="zh-cn_topic_0229291228_ul262164044016"></a><a name="zh-cn_topic_0229291228_ul262164044016"></a><ul id="zh-cn_topic_0229291228_ul262164044016"><li>AArch64</li><li>x86_64</li></ul>
-    </td>
-    <td class="cellrowborder" valign="top" width="48.74487448744874%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0229291228_ul1830173916388"></a><a name="zh-cn_topic_0229291228_ul1830173916388"></a><ul id="zh-cn_topic_0229291228_ul1830173916388"><li>支持Arm的64位架构。</li><li>支持Intel的x86 64位架构。</li></ul>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0229291228_ra68eff5c33a84bb2be6672a48a643d26"><td class="cellrowborder" valign="top" width="11.19111911191119%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0229291228_ac0a50d2069ab444cafff180647772df4"><a name="zh-cn_topic_0229291228_ac0a50d2069ab444cafff180647772df4"></a><a name="zh-cn_topic_0229291228_ac0a50d2069ab444cafff180647772df4"></a>CPU</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="40.06400640064006%" headers="mcps1.2.4.1.2 "><a name="zh-cn_topic_0229291228_ul97131912175915"></a><a name="zh-cn_topic_0229291228_ul97131912175915"></a><ul id="zh-cn_topic_0229291228_ul97131912175915"><li>华为鲲鹏920系列CPU</li><li>Intel<sup id="zh-cn_topic_0229291228_sup487664501416"><a name="zh-cn_topic_0229291228_sup487664501416"></a><a name="zh-cn_topic_0229291228_sup487664501416"></a>&reg;</sup> Xeon<sup id="zh-cn_topic_0229291228_sup10571950171416"><a name="zh-cn_topic_0229291228_sup10571950171416"></a><a name="zh-cn_topic_0229291228_sup10571950171416"></a>&reg;</sup>处理器</li></ul>
-    </td>
-    <td class="cellrowborder" valign="top" width="48.74487448744874%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0229291228_a2601e9eece5f4c7bb02881c9ac647a61"><a name="zh-cn_topic_0229291228_a2601e9eece5f4c7bb02881c9ac647a61"></a><a name="zh-cn_topic_0229291228_a2601e9eece5f4c7bb02881c9ac647a61"></a>-</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0229291228_rf2a5d43b74894a0882b7c17bdfeb697f"><td class="cellrowborder" valign="top" width="11.19111911191119%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0229291228_ad00611ec129a41a9841fb579eece7804"><a name="zh-cn_topic_0229291228_ad00611ec129a41a9841fb579eece7804"></a><a name="zh-cn_topic_0229291228_ad00611ec129a41a9841fb579eece7804"></a>内存</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="40.06400640064006%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0229291228_a94efe642b8694e5a85747e123b951efc"><a name="zh-cn_topic_0229291228_a94efe642b8694e5a85747e123b951efc"></a><a name="zh-cn_topic_0229291228_a94efe642b8694e5a85747e123b951efc"></a>不小于4GB（为了获得更好的应用体验，建议不小于8GB）</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="48.74487448744874%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0229291228_abfb44d28dca741f68df94e4e276d2410"><a name="zh-cn_topic_0229291228_abfb44d28dca741f68df94e4e276d2410"></a><a name="zh-cn_topic_0229291228_abfb44d28dca741f68df94e4e276d2410"></a>-</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0229291228_rd2c1ebd93ea64e85a5f3fc88dc5ba456"><td class="cellrowborder" valign="top" width="11.19111911191119%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0229291228_afd36954546334c1681b5a391bbc386ae"><a name="zh-cn_topic_0229291228_afd36954546334c1681b5a391bbc386ae"></a><a name="zh-cn_topic_0229291228_afd36954546334c1681b5a391bbc386ae"></a>硬盘</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="40.06400640064006%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0229291228_p1224172312719"><a name="zh-cn_topic_0229291228_p1224172312719"></a><a name="zh-cn_topic_0229291228_p1224172312719"></a>为了获得更好的应用体验，建议不小于120GB）</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="48.74487448744874%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0229291228_acc0affdd82e34f32966171e21855ef40"><a name="zh-cn_topic_0229291228_acc0affdd82e34f32966171e21855ef40"></a><a name="zh-cn_topic_0229291228_acc0affdd82e34f32966171e21855ef40"></a>支持IDE、SATA、SAS等接口的硬盘。</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
+    |  部件名称   | 最小硬件要求  |说明 |
+    |:---  |:----  |:----  |
+    | 架构 | AArch64<br/> x86_64|支持Arm的64位架构。<br/>支持Intel的x86 64位架构。 |
+    | CPU | 华为鲲鹏920系列CPU<br/>Intel® Xeon®处理器|- |
+	| 内存 | 不小于4GB（为了获得更好的应用体验，建议不小于8GB）|- |
+	| 硬盘 | 为了获得更好的应用体验，建议不小于120GB）|支持IDE、SATA、SAS等接口的硬盘。 |
 
 
 ## 获取安装源
