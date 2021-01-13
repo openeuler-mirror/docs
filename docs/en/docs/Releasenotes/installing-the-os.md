@@ -1,6 +1,6 @@
-# Installing the OS<a name="EN-US_TOPIC_0225731123"></a>
+# Installing the OS
 
-## Release Package<a name="section19865103114280"></a>
+## Release Package
 
 The following table lists the [openEuler release files](http://repo.openeuler.org/openEuler-20.09/), including the ISO release package, container image, VM image, and repo source that is used online.
 
@@ -87,107 +87,59 @@ The following table lists the [openEuler release files](http://repo.openeuler.or
 
 ## Minimal Hardware Specifications<a name="en-us_topic_0182825778_section1542202114014"></a>
 
-[Table 5](#en-us_topic_0182825778_tff48b99c9bf24b84bb602c53229e2541)  lists the minimum hardware specifications for installing openEuler 20.09.
+[Table 2](#en-us_topic_0182825778_tff48b99c9bf24b84bb602c53229e2541)  lists the minimum hardware specifications for installing openEuler 20.09.
 
-**Table  5**  Minimal hardware specifications
+**Table  2**  Minimal hardware specifications
 
-<a name="en-us_topic_0182825778_tff48b99c9bf24b84bb602c53229e2541"></a>
-<table><thead align="left"><tr id="en-us_topic_0182825778_r36f08b63edea4973a8228200caa2a50b"><th class="cellrowborder" valign="top" width="21.89%" id="mcps1.2.3.1.1"><p id="en-us_topic_0182825778_aef3575d97cdf4dcfb65f8d0c8d2d4a76"><a name="en-us_topic_0182825778_aef3575d97cdf4dcfb65f8d0c8d2d4a76"></a><a name="en-us_topic_0182825778_aef3575d97cdf4dcfb65f8d0c8d2d4a76"></a><strong id="b44837190120"><a name="b44837190120"></a><a name="b44837190120"></a>Component</strong></p>
-</th>
-<th class="cellrowborder" valign="top" width="78.11%" id="mcps1.2.3.1.2"><p id="en-us_topic_0182825778_a919d3bb266c8432fb33c51fa8f3a4fc3"><a name="en-us_topic_0182825778_a919d3bb266c8432fb33c51fa8f3a4fc3"></a><a name="en-us_topic_0182825778_a919d3bb266c8432fb33c51fa8f3a4fc3"></a><strong id="b1151410222115"><a name="b1151410222115"></a><a name="b1151410222115"></a>Minimal Hardware Specification</strong></p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="en-us_topic_0182825778_ra68eff5c33a84bb2be6672a48a643d26"><td class="cellrowborder" valign="top" width="21.89%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0182825778_ac0a50d2069ab444cafff180647772df4"><a name="en-us_topic_0182825778_ac0a50d2069ab444cafff180647772df4"></a><a name="en-us_topic_0182825778_ac0a50d2069ab444cafff180647772df4"></a>CPU</p>
-</td>
-<td class="cellrowborder" valign="top" width="78.11%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0182825778_p202681030132314"><a name="en-us_topic_0182825778_p202681030132314"></a><a name="en-us_topic_0182825778_p202681030132314"></a>Kunpeng 920 (architecture: AArch64)</p>
-<p id="p267183805010"><a name="p267183805010"></a><a name="p267183805010"></a>x86-64 (Skylake or later)</p>
-</td>
-</tr>
-<tr id="en-us_topic_0182825778_rf2a5d43b74894a0882b7c17bdfeb697f"><td class="cellrowborder" valign="top" width="21.89%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0182825778_ad00611ec129a41a9841fb579eece7804"><a name="en-us_topic_0182825778_ad00611ec129a41a9841fb579eece7804"></a><a name="en-us_topic_0182825778_ad00611ec129a41a9841fb579eece7804"></a>Memory</p>
-</td>
-<td class="cellrowborder" valign="top" width="78.11%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0182825778_a94efe642b8694e5a85747e123b951efc"><a name="en-us_topic_0182825778_a94efe642b8694e5a85747e123b951efc"></a><a name="en-us_topic_0182825778_a94efe642b8694e5a85747e123b951efc"></a>≥ 8 GB</p>
-</td>
-</tr>
-<tr id="en-us_topic_0182825778_rd2c1ebd93ea64e85a5f3fc88dc5ba456"><td class="cellrowborder" valign="top" width="21.89%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0182825778_afd36954546334c1681b5a391bbc386ae"><a name="en-us_topic_0182825778_afd36954546334c1681b5a391bbc386ae"></a><a name="en-us_topic_0182825778_afd36954546334c1681b5a391bbc386ae"></a>Hard disk</p>
-</td>
-<td class="cellrowborder" valign="top" width="78.11%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0182825778_p1224172312719"><a name="en-us_topic_0182825778_p1224172312719"></a><a name="en-us_topic_0182825778_p1224172312719"></a>≥ 120 GB</p>
-</td>
-</tr>
-</tbody>
+
+|  Component  | Minimal Hardware Specification |
+|:---  |:----  |
+| CPU | Kunpeng 920 (architecture: AArch64)<br/>x86-64 (Skylake or later) |
+| Memory | ≥ 8 GB |
+| Hard disk | ≥ 120 GB |
+
+## Hardware Compatibility
+
+[Table 3](#en-us_topic_0227922427_table39822012)  lists the typical configurations of servers and components supported by openEuler. openEuler will gradually support other servers in the future. Partners and developers are welcome to participate in the contribution and validation.
+
+**Table  3**  Supported servers and typical configurations
+
+<table>
+  <tr>
+    <th>Vendor</th>
+    <th>Server</th>
+    <th>Server Model</th>
+    <th>Component</th>
+	<th>Typical Configuration</th>
+  </tr>
+  <tr>
+    <td rowspan="3">Huawei</td>
+    <td rowspan="3">TaiShan 200</td>
+    <td rowspan="3">2280 balanced model</td>
+	<td>CPU</td>
+	<td>Kunpeng 920</td>
+  </tr>
+  <tr>
+	<td>Memory</td>
+	<td>32G*4 2933MHz</td>
+  </tr>
+  <tr>
+    <td>Network</td>
+    <td>TM210</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Huawei</td>
+    <td rowspan="3">FusionServer Pro</td>
+    <td rowspan="3">2288H V5 rack server</td>
+	<td>CPU</td>
+	<td>Intel(R) Xeon(R) Gold 5118 CPU @ 2.30GHz</td>
+  </tr>
+  <tr>
+	<td>Memory</td>
+	<td>32*4 2400MHz</td>
+  </tr>
+  <tr>
+    <td>Network</td>
+    <td>X722</td>
+  </tr>
 </table>
-
-## Hardware Compatibility<a name="section1154104624319"></a>
-
-[Table 6](#en-us_topic_0227922427_table39822012)  lists the typical configurations of servers and components supported by openEuler. openEuler will gradually support other servers in the future. Partners and developers are welcome to participate in the contribution and validation.
-
-**Table  6**  Supported servers and typical configurations
-
-<a name="en-us_topic_0227922427_table39822012"></a>
-<table><thead align="left"><tr id="en-us_topic_0227922427_row17270681"><th class="cellrowborder" valign="top" width="8.200820082008201%" id="mcps1.2.6.1.1"><p id="p1239010167198"><a name="p1239010167198"></a><a name="p1239010167198"></a>Vendor</p>
-</th>
-<th class="cellrowborder" valign="top" width="16.28162816281628%" id="mcps1.2.6.1.2"><p id="en-us_topic_0227922427_p56747887"><a name="en-us_topic_0227922427_p56747887"></a><a name="en-us_topic_0227922427_p56747887"></a>Server</p>
-</th>
-<th class="cellrowborder" valign="top" width="18.71187118711871%" id="mcps1.2.6.1.3"><p id="en-us_topic_0227922427_p33176134"><a name="en-us_topic_0227922427_p33176134"></a><a name="en-us_topic_0227922427_p33176134"></a>Server Model</p>
-</th>
-<th class="cellrowborder" valign="top" width="17.211721172117212%" id="mcps1.2.6.1.4"><p id="p19313161314450"><a name="p19313161314450"></a><a name="p19313161314450"></a>Component</p>
-</th>
-<th class="cellrowborder" valign="top" width="39.59395939593959%" id="mcps1.2.6.1.5"><p id="p183840814519"><a name="p183840814519"></a><a name="p183840814519"></a>Typical Configuration</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="en-us_topic_0227922427_row7284856"><td class="cellrowborder" rowspan="4" valign="top" width="8.200820082008201%" headers="mcps1.2.6.1.1 "><p id="p111661925121918"><a name="p111661925121918"></a><a name="p111661925121918"></a>Huawei</p>
-</td>
-<td class="cellrowborder" rowspan="4" valign="top" width="16.28162816281628%" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0227922427_p34571797"><a name="en-us_topic_0227922427_p34571797"></a><a name="en-us_topic_0227922427_p34571797"></a>TaiShan 200</p>
-</td>
-<td class="cellrowborder" rowspan="4" valign="top" width="18.71187118711871%" headers="mcps1.2.6.1.3 "><p id="en-us_topic_0227922427_p53202458"><a name="en-us_topic_0227922427_p53202458"></a><a name="en-us_topic_0227922427_p53202458"></a>2280 balanced model</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.211721172117212%" headers="mcps1.2.6.1.4 "><p id="p632634144516"><a name="p632634144516"></a><a name="p632634144516"></a>CPU</p>
-</td>
-<td class="cellrowborder" valign="top" width="39.59395939593959%" headers="mcps1.2.6.1.5 "><p id="p269564774512"><a name="p269564774512"></a><a name="p269564774512"></a>HiSilicon Kunpeng 920</p>
-</td>
-</tr>
-<tr id="row127460329457"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p7326641174519"><a name="p7326641174519"></a><a name="p7326641174519"></a>Memory</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p4695124774516"><a name="p4695124774516"></a><a name="p4695124774516"></a>32G\*4 2933MHz</p>
-</td>
-</tr>
-<tr id="row3713103715458"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p13326114115457"><a name="p13326114115457"></a><a name="p13326114115457"></a>RAID controller card</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p13696154764514"><a name="p13696154764514"></a><a name="p13696154764514"></a>LSI SAS3508</p>
-</td>
-</tr>
-<tr id="row1371312378455"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p732611416456"><a name="p732611416456"></a><a name="p732611416456"></a>Network</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p13696114718455"><a name="p13696114718455"></a><a name="p13696114718455"></a>TM210</p>
-</td>
-</tr>
-<tr id="en-us_topic_0227922427_row36446907"><td class="cellrowborder" rowspan="4" valign="top" width="8.200820082008201%" headers="mcps1.2.6.1.1 "><p id="p1831103919198"><a name="p1831103919198"></a><a name="p1831103919198"></a>Huawei</p>
-</td>
-<td class="cellrowborder" rowspan="4" valign="top" width="16.28162816281628%" headers="mcps1.2.6.1.2 "><p id="p1245317822418"><a name="p1245317822418"></a><a name="p1245317822418"></a>FusionServer Pro</p>
-</td>
-<td class="cellrowborder" rowspan="4" valign="top" width="18.71187118711871%" headers="mcps1.2.6.1.3 "><p id="p1345214816241"><a name="p1345214816241"></a><a name="p1345214816241"></a>2288H V5 rack server</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.211721172117212%" headers="mcps1.2.6.1.4 "><p id="p1235016319467"><a name="p1235016319467"></a><a name="p1235016319467"></a>CPU</p>
-</td>
-<td class="cellrowborder" valign="top" width="39.59395939593959%" headers="mcps1.2.6.1.5 "><p id="p148932077463"><a name="p148932077463"></a><a name="p148932077463"></a>Intel(R) Xeon(R) Gold 5118 CPU @ 2.30GHz</p>
-</td>
-</tr>
-<tr id="row12326548454"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p1035012313461"><a name="p1035012313461"></a><a name="p1035012313461"></a>Memory</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p13893379461"><a name="p13893379461"></a><a name="p13893379461"></a>32*4 2400MHz</p>
-</td>
-</tr>
-<tr id="row206435916456"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p23509319462"><a name="p23509319462"></a><a name="p23509319462"></a>RAID controller card</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p16893107144611"><a name="p16893107144611"></a><a name="p16893107144611"></a>LSI SAS3508</p>
-</td>
-</tr>
-<tr id="row5647591455"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p1835019312469"><a name="p1835019312469"></a><a name="p1835019312469"></a>Network</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p189318714460"><a name="p189318714460"></a><a name="p189318714460"></a>X722</p>
-</td>
-</tr>
-</tbody>
-</table>
-
