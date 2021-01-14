@@ -32,55 +32,16 @@ A common scenario is using the ps command to monitor background processes, which
 
 **Table  1**  Common ps command options
 
-<a name="en-us_topic_0151921029_t34619d964a3d41ad8694189ec383359c"></a>
-<table><thead align="left"><tr id="en-us_topic_0151921029_r79d809c7e44245b1bbf90aac5b57cb16"><th class="cellrowborder" valign="top" width="18.61%" id="mcps1.2.3.1.1"><p id="en-us_topic_0151921029_a4dcafe9758654440a1cd09443b49b996"><a name="en-us_topic_0151921029_a4dcafe9758654440a1cd09443b49b996"></a><a name="en-us_topic_0151921029_a4dcafe9758654440a1cd09443b49b996"></a>Option</p>
-</th>
-<th class="cellrowborder" valign="top" width="81.39%" id="mcps1.2.3.1.2"><p id="en-us_topic_0151921029_ac6fdbea1258d4c3ca520255a2d2fe663"><a name="en-us_topic_0151921029_ac6fdbea1258d4c3ca520255a2d2fe663"></a><a name="en-us_topic_0151921029_ac6fdbea1258d4c3ca520255a2d2fe663"></a>Description</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="en-us_topic_0151921029_r738b90e22f614e77b9ea21359ad14755"><td class="cellrowborder" valign="top" width="18.61%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921029_a29392e63172746c491bc46c8b76b0080"><a name="en-us_topic_0151921029_a29392e63172746c491bc46c8b76b0080"></a><a name="en-us_topic_0151921029_a29392e63172746c491bc46c8b76b0080"></a>-e</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.39%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921029_a512f7ef0b90a4cb7bf17fa20f4775725"><a name="en-us_topic_0151921029_a512f7ef0b90a4cb7bf17fa20f4775725"></a><a name="en-us_topic_0151921029_a512f7ef0b90a4cb7bf17fa20f4775725"></a>Displays all processes.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151921029_r015cec7c7ac44cbca03a8af4cd753492"><td class="cellrowborder" valign="top" width="18.61%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921029_a068031d192014fe8a886ae267635afde"><a name="en-us_topic_0151921029_a068031d192014fe8a886ae267635afde"></a><a name="en-us_topic_0151921029_a068031d192014fe8a886ae267635afde"></a>-f</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.39%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921029_a474a7023a5fd41258427e511f0b4d79c"><a name="en-us_topic_0151921029_a474a7023a5fd41258427e511f0b4d79c"></a><a name="en-us_topic_0151921029_a474a7023a5fd41258427e511f0b4d79c"></a>Full output format.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151921029_rec7c0b7251f743e4b6d3d41dc44c7e9f"><td class="cellrowborder" valign="top" width="18.61%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921029_af814f2f50cc44408999eb08d9d0a2a2a"><a name="en-us_topic_0151921029_af814f2f50cc44408999eb08d9d0a2a2a"></a><a name="en-us_topic_0151921029_af814f2f50cc44408999eb08d9d0a2a2a"></a>-h</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.39%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921029_ab4f39caa92d54d2ea6b3c093e55d618e"><a name="en-us_topic_0151921029_ab4f39caa92d54d2ea6b3c093e55d618e"></a><a name="en-us_topic_0151921029_ab4f39caa92d54d2ea6b3c093e55d618e"></a>Hides column headings in the listing of process information.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151921029_r38d5c83acc40447abba5cca0c4386932"><td class="cellrowborder" valign="top" width="18.61%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921029_a2a631b086f1942b6b81eafb5dbabdcd0"><a name="en-us_topic_0151921029_a2a631b086f1942b6b81eafb5dbabdcd0"></a><a name="en-us_topic_0151921029_a2a631b086f1942b6b81eafb5dbabdcd0"></a>-l</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.39%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921029_a09dc585737284fad909909e50c803bc2"><a name="en-us_topic_0151921029_a09dc585737284fad909909e50c803bc2"></a><a name="en-us_topic_0151921029_a09dc585737284fad909909e50c803bc2"></a>Long output format.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151921029_r2e38bfe71fa94287ac2147781f1a53c1"><td class="cellrowborder" valign="top" width="18.61%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921029_a188698ebfa154b02a7841a551ab484da"><a name="en-us_topic_0151921029_a188698ebfa154b02a7841a551ab484da"></a><a name="en-us_topic_0151921029_a188698ebfa154b02a7841a551ab484da"></a>-w</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.39%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921029_ab88d108c1ce744cdb50047050bc0cd9b"><a name="en-us_topic_0151921029_ab88d108c1ce744cdb50047050bc0cd9b"></a><a name="en-us_topic_0151921029_ab88d108c1ce744cdb50047050bc0cd9b"></a>Wide output format.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151921029_r84c7a5f140c44fb598620f34927af667"><td class="cellrowborder" valign="top" width="18.61%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921029_a811383eb9caa4ad583b1e5de91ea5dd4"><a name="en-us_topic_0151921029_a811383eb9caa4ad583b1e5de91ea5dd4"></a><a name="en-us_topic_0151921029_a811383eb9caa4ad583b1e5de91ea5dd4"></a>-a</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.39%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921029_aa07844184ac64000a161e1c1291675e3"><a name="en-us_topic_0151921029_aa07844184ac64000a161e1c1291675e3"></a><a name="en-us_topic_0151921029_aa07844184ac64000a161e1c1291675e3"></a>Lists all processes on a terminal, including those of other users.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151921029_rd13fe771cf744239858d51db76b25f8e"><td class="cellrowborder" valign="top" width="18.61%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921029_ab886c758505744f4b37c512bde114ae3"><a name="en-us_topic_0151921029_ab886c758505744f4b37c512bde114ae3"></a><a name="en-us_topic_0151921029_ab886c758505744f4b37c512bde114ae3"></a>-r</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.39%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921029_abc98313b7c914539adb9532d56c037d3"><a name="en-us_topic_0151921029_abc98313b7c914539adb9532d56c037d3"></a><a name="en-us_topic_0151921029_abc98313b7c914539adb9532d56c037d3"></a>Lists only running processes.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151921029_rcb3959cc0c6e4110b87f7409841b01b1"><td class="cellrowborder" valign="top" width="18.61%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921029_a0fd38f1f80de4840aaa00e63119a82a8"><a name="en-us_topic_0151921029_a0fd38f1f80de4840aaa00e63119a82a8"></a><a name="en-us_topic_0151921029_a0fd38f1f80de4840aaa00e63119a82a8"></a>-x</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.39%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921029_aa7d202094de346738f7e3ad4735f2bce"><a name="en-us_topic_0151921029_aa7d202094de346738f7e3ad4735f2bce"></a><a name="en-us_topic_0151921029_aa7d202094de346738f7e3ad4735f2bce"></a>Lists all processes without controlling terminals.</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  Option   |Description  |
+|:---  |:----  |
+| -e |  Displays all processes. |
+| -f |  Full output format. |
+| -h |  Hides column headings in the listing of process information. |
+| -l |  Long output format. |
+| -w |  Wide output format. |
+| -a |  Lists all processes on a terminal, including those of other users. |
+| -r |  Lists only running processes. |
+| -x |  Lists all processes without controlling terminals. |
 
 For example, to list all processes on a terminal, run the following command:
 
@@ -236,45 +197,15 @@ Each field is described as follows:
 
 **Table  2**  Parameter description
 
-<a name="en-us_topic_0151921016_t7d97d1204fe249d7ae0a87b4cf9a9353"></a>
-<table><thead align="left"><tr id="en-us_topic_0151921016_r1d8017a30f5648a19724518fbc502fba"><th class="cellrowborder" valign="top" width="23.31%" id="mcps1.2.3.1.1"><p id="en-us_topic_0151921016_a4efedc128af6418a9113b81b6bc45280"><a name="en-us_topic_0151921016_a4efedc128af6418a9113b81b6bc45280"></a><a name="en-us_topic_0151921016_a4efedc128af6418a9113b81b6bc45280"></a>Parameter</p>
-</th>
-<th class="cellrowborder" valign="top" width="76.69%" id="mcps1.2.3.1.2"><p id="en-us_topic_0151921016_a0aff089cd76f4ce8b57b3d78e2d5260c"><a name="en-us_topic_0151921016_a0aff089cd76f4ce8b57b3d78e2d5260c"></a><a name="en-us_topic_0151921016_a0aff089cd76f4ce8b57b3d78e2d5260c"></a>Description</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="en-us_topic_0151921016_r818177ba8472416a8b1a3ad5da3993fe"><td class="cellrowborder" valign="top" width="23.31%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921016_ae9e45efeced0467fbcdb87cc563bbbc9"><a name="en-us_topic_0151921016_ae9e45efeced0467fbcdb87cc563bbbc9"></a><a name="en-us_topic_0151921016_ae9e45efeced0467fbcdb87cc563bbbc9"></a>minute</p>
-</td>
-<td class="cellrowborder" valign="top" width="76.69%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921016_a85a76e44d8f94ea0b0f3cdc347b64ea2"><a name="en-us_topic_0151921016_a85a76e44d8f94ea0b0f3cdc347b64ea2"></a><a name="en-us_topic_0151921016_a85a76e44d8f94ea0b0f3cdc347b64ea2"></a>The minute of the hour at which commands will be executed. Value range: 0–59.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151921016_rb37d136bb14c4962a27c434fea54ca90"><td class="cellrowborder" valign="top" width="23.31%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921016_ada2b1d186b5746d0800d40771e987e58"><a name="en-us_topic_0151921016_ada2b1d186b5746d0800d40771e987e58"></a><a name="en-us_topic_0151921016_ada2b1d186b5746d0800d40771e987e58"></a>hour</p>
-</td>
-<td class="cellrowborder" valign="top" width="76.69%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921016_ac546d5a8e6874f948430fb1ae7b1a9b2"><a name="en-us_topic_0151921016_ac546d5a8e6874f948430fb1ae7b1a9b2"></a><a name="en-us_topic_0151921016_ac546d5a8e6874f948430fb1ae7b1a9b2"></a>The hour of the day at which periodic commands will be executed. Value range: 0–23.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151921016_r1fcedf929bd1479482bf2176f346918e"><td class="cellrowborder" valign="top" width="23.31%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921016_a2d366d6adae349ec82a24a9d6354543e"><a name="en-us_topic_0151921016_a2d366d6adae349ec82a24a9d6354543e"></a><a name="en-us_topic_0151921016_a2d366d6adae349ec82a24a9d6354543e"></a>day-of-month</p>
-</td>
-<td class="cellrowborder" valign="top" width="76.69%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921016_a614c715381cb4d7693b03fab8933e328"><a name="en-us_topic_0151921016_a614c715381cb4d7693b03fab8933e328"></a><a name="en-us_topic_0151921016_a614c715381cb4d7693b03fab8933e328"></a>The day of month at which periodic commands will be executed. Value range: 1–31.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151921016_r162a1d415a5640b48e3ed0a711627afb"><td class="cellrowborder" valign="top" width="23.31%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921016_acc3a9f7fc87e478d9cc3969a712d806b"><a name="en-us_topic_0151921016_acc3a9f7fc87e478d9cc3969a712d806b"></a><a name="en-us_topic_0151921016_acc3a9f7fc87e478d9cc3969a712d806b"></a>month-of-year</p>
-</td>
-<td class="cellrowborder" valign="top" width="76.69%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921016_a9320fc6a49d44dedb32039060c335fe4"><a name="en-us_topic_0151921016_a9320fc6a49d44dedb32039060c335fe4"></a><a name="en-us_topic_0151921016_a9320fc6a49d44dedb32039060c335fe4"></a>The month of year at which periodic commands will be executed. Value range: 1–12.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151921016_ra8ad0d8047f549d2850f0d67ecb0c3eb"><td class="cellrowborder" valign="top" width="23.31%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921016_a80ab684536b646e2b5bf7f3b6d6e30e0"><a name="en-us_topic_0151921016_a80ab684536b646e2b5bf7f3b6d6e30e0"></a><a name="en-us_topic_0151921016_a80ab684536b646e2b5bf7f3b6d6e30e0"></a>day-of-week</p>
-</td>
-<td class="cellrowborder" valign="top" width="76.69%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921016_ab370eed19e3345019d5c83c21f6fcf5e"><a name="en-us_topic_0151921016_ab370eed19e3345019d5c83c21f6fcf5e"></a><a name="en-us_topic_0151921016_ab370eed19e3345019d5c83c21f6fcf5e"></a>The day of week at which periodic commands will be executed. Value range: 0–6.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0151921016_r0fc447476fb44ae6b0f478dfda8e2cc6"><td class="cellrowborder" valign="top" width="23.31%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921016_a7cfb8dd547ea4872b91a4ccd59821a04"><a name="en-us_topic_0151921016_a7cfb8dd547ea4872b91a4ccd59821a04"></a><a name="en-us_topic_0151921016_a7cfb8dd547ea4872b91a4ccd59821a04"></a>commands</p>
-</td>
-<td class="cellrowborder" valign="top" width="76.69%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921016_abb56c882dc5a438fad111e1232ba1b21"><a name="en-us_topic_0151921016_abb56c882dc5a438fad111e1232ba1b21"></a><a name="en-us_topic_0151921016_abb56c882dc5a438fad111e1232ba1b21"></a>Periodic commands.</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  Parameter   |Description  |
+|:---  |:----  |
+| minute | The minute of the hour at which commands will be executed. Value range: 0–59.  |
+| hour |  The hour of the day at which periodic commands will be executed. Value range: 0–23. |
+| day-of-month | The day of month at which periodic commands will be executed. Value range: 1–31.  |
+| month-of-year | The month of year at which periodic commands will be executed. Value range: 1–12.  |
+| day-of-week |  The day of week at which periodic commands will be executed. Value range: 0–6. |
+| commands | Periodic commands.  |
+
 
 The fields cannot be left unspecified. In addition to numerical values, the following special symbols are allowed: Asterisk \(\*\): a wildcard value. Forward slash \(/\): followed by a numeral N to indicate that commands will be executed at a regular interval of N. Hyphen \(-\): used with a range.Comma \(,\): used to separate discrete numbers. A complete path to the commands shall be provided.
 
