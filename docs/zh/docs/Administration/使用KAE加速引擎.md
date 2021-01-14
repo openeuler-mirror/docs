@@ -21,39 +21,14 @@ KAE加速引擎主要有以下应用场景，如[表1](#table11915824163418)所�
 
 **表 1**  应用场景
 
-<a name="table11915824163418"></a>
-<table><thead align="left"><tr id="row12819762"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p31767774"><a name="p31767774"></a><a name="p31767774"></a>场景</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p55347837"><a name="p55347837"></a><a name="p55347837"></a>数据</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row53989823"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p11099566"><a name="p11099566"></a><a name="p11099566"></a>大数据</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p11137969"><a name="p11137969"></a><a name="p11137969"></a>流数据</p>
-</td>
-</tr>
-<tr id="row33132859"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p66515904"><a name="p66515904"></a><a name="p66515904"></a>数据加密</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1907972"><a name="p1907972"></a><a name="p1907972"></a>块数据</p>
-</td>
-</tr>
-<tr id="row17171756"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p48735027"><a name="p48735027"></a><a name="p48735027"></a>智能安防</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p43884268"><a name="p43884268"></a><a name="p43884268"></a>视频流数据</p>
-</td>
-</tr>
-<tr id="row59414099"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p47812724"><a name="p47812724"></a><a name="p47812724"></a>Web服务</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p32455223"><a name="p32455223"></a><a name="p32455223"></a>握手连接</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  场景   |数据  |
+|:---  |:----  |
+| 大数据| 流数据 |
+| 数据加密 | 块数据  |
+| 智能安防 | 视频流数据 |
+|Web服务  | 握手连接 |
 
 ## 安装、升级和卸载
-
-
 
 ### 安装加速器软件包
 
@@ -75,34 +50,11 @@ KAE加速引擎主要有以下应用场景，如[表1](#table11915824163418)所�
 
 **表 2**  加速引擎的rpm软件包
 
-<a name="table9060076"></a>
-<table><thead align="left"><tr id="row36699979"><th class="cellrowborder" valign="top" width="48.57%" id="mcps1.2.3.1.1"><p id="p19908318"><a name="p19908318"></a><a name="p19908318"></a>软件包名称</p>
-</th>
-<th class="cellrowborder" valign="top" width="51.43%" id="mcps1.2.3.1.2"><p id="p1961070"><a name="p1961070"></a><a name="p1961070"></a>软件包说明</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row48788899"><td class="cellrowborder" valign="top" width="48.57%" headers="mcps1.2.3.1.1 "><p id="p59586712"><a name="p59586712"></a><a name="p59586712"></a>kae_driver-版本号-1.OS类型.aarch64.rpm</p>
-</td>
-<td class="cellrowborder" valign="top" width="51.43%" headers="mcps1.2.3.1.2 "><p id="p61794345"><a name="p61794345"></a><a name="p61794345"></a>加速器驱动，包含内容：uacce.ko、hisi_qm.ko、hisi_sec2.ko、hisi_hpre.ko内核模块</p>
-<p id="p186913584617"><a name="p186913584617"></a><a name="p186913584617"></a>支持：SM3/SM4/AES/RSA/DH算法</p>
-</td>
-</tr>
-<tr id="row49528506"><td class="cellrowborder" valign="top" width="48.57%" headers="mcps1.2.3.1.1 "><p id="p52386074"><a name="p52386074"></a><a name="p52386074"></a>libwd-版本号-1.OS类型.aarch64.rpm</p>
-</td>
-<td class="cellrowborder" valign="top" width="51.43%" headers="mcps1.2.3.1.2 "><p id="p15413619"><a name="p15413619"></a><a name="p15413619"></a>包含内容：libwd.so动态链接库</p>
-<p id="p4504844"><a name="p4504844"></a><a name="p4504844"></a>提供接口给KAE引擎</p>
-</td>
-</tr>
-<tr id="row40543596"><td class="cellrowborder" valign="top" width="48.57%" headers="mcps1.2.3.1.1 "><p id="p62805805"><a name="p62805805"></a><a name="p62805805"></a>libkae-版本号-1.OS类型.aarch64.rpm</p>
-</td>
-<td class="cellrowborder" valign="top" width="51.43%" headers="mcps1.2.3.1.2 "><p id="p54105439"><a name="p54105439"></a><a name="p54105439"></a>依赖：libwd rpm包</p>
-<p id="p17186905"><a name="p17186905"></a><a name="p17186905"></a>包含内容：libkae.so动态库</p>
-<p id="p20464425"><a name="p20464425"></a><a name="p20464425"></a>支持：SM3/SM4/AES/RSA/DH等算法</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  软件包名称   |软件包说明  |
+|:---  |:----  |
+| kae_driver-版本号-1.OS类型.aarch64.rpm|加速器驱动，包含内容：uacce.ko、hisi_qm.ko、hisi_sec2.ko、hisi_hpre.ko内核模块<br/>支持：SM3/SM4/AES/RSA/DH算法 |
+| libwd-版本号-1.OS类型.aarch64.rpm |包含内容：libwd.so动态链接库、提供接口给KAE引擎|
+| libkae-版本号-1.OS类型.aarch64.rpm | 依赖：libwd rpm包 <br/>包含内容：libkae.so动态库<br/>支持：SM3/SM4/AES/RSA/DH等算法 |
 
 #### 安装加速器软件包
 
@@ -468,38 +420,10 @@ hisi_zip-1.2.10-4.oe1.aarch64
 
 **表 3**  日志信息
 
-<a name="table52821836"></a>
-<table><thead align="left"><tr id="row62537016"><th class="cellrowborder" valign="top" width="28.28282828282828%" id="mcps1.2.4.1.1"><p id="p32333556"><a name="p32333556"></a><a name="p32333556"></a>目录</p>
-</th>
-<th class="cellrowborder" valign="top" width="27.27272727272727%" id="mcps1.2.4.1.2"><p id="p1772413"><a name="p1772413"></a><a name="p1772413"></a>文件名</p>
-</th>
-<th class="cellrowborder" valign="top" width="44.44444444444445%" id="mcps1.2.4.1.3"><p id="p9347770"><a name="p9347770"></a><a name="p9347770"></a>文件内容说明</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row18971924"><td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.4.1.1 "><p id="p60330866"><a name="p60330866"></a><a name="p60330866"></a>/var/log/</p>
-</td>
-<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.4.1.2 "><p id="p54961981"><a name="p54961981"></a><a name="p54961981"></a>kae.log</p>
-</td>
-<td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p22735452"><a name="p22735452"></a><a name="p22735452"></a>OpenSSL引擎日志默认打印等级为error级别，如需要设置日志级别按照如下操作：</p>
-<a name="ol3292479"></a><a name="ol3292479"></a><ol id="ol3292479"><li>export KAE_CONF_ENV=/var/log/</li><li>在/var/log/下创建文件kae.cnf</li><li>在kae.cnf 文件中设置如下：<p id="p60010105"><a name="p60010105"></a><a name="p60010105"></a>[LogSection]</p>
-<p id="p3220036"><a name="p3220036"></a><a name="p3220036"></a>debug_level=error #取值内容none/error/info/warning/debug</p>
-</li></ol>
-<div class="note" id="note28980331"><a name="note28980331"></a><a name="note28980331"></a><span class="notetitle"> 说明： </span><div class="notebody"><p class="textintable" id="p59496389"><a name="p59496389"></a><a name="p59496389"></a>正常情况下不建议开启info或debug级别日志，否则会导致加速器性能的下降。</p>
-</div></div>
-</td>
-</tr>
-<tr id="row65705461"><td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.4.1.1 "><p id="p20542144"><a name="p20542144"></a><a name="p20542144"></a>/var/log/</p>
-</td>
-<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.4.1.2 "><p id="p53300980"><a name="p53300980"></a><a name="p53300980"></a>message/syslog</p>
-</td>
-<td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><a name="ul22412087"></a><a name="ul22412087"></a><ul id="ul22412087"><li>内核日志路径为/var/log/message。</li></ul>
-<div class="note" id="note30958167"><a name="note30958167"></a><a name="note30958167"></a><span class="notetitle"> 说明： </span><div class="notebody"><p class="textintable" id="p10188049"><a name="p10188049"></a><a name="p10188049"></a>或通过dmesg &gt; /var/log/dmesg.log日志收集内核相关日志，包含驱动及内核态日志。</p>
-</div></div>
-</td>
-</tr>
-</tbody>
-</table>
+|  目录   |文件名  | 文件内容说明  |
+|:---  |:----  |:----  |
+| /var/log/| kae.log |OpenSSL引擎日志默认打印等级为error级别，如需要设置日志级别按照如下操作：<br/>1. export KAE_CONF_ENV=/var/log/<br/>2. 在/var/log/下创建文件kae.cnf<br/>3. 在kae.cnf 文件中设置如下：<br/>    [LogSection]<br/>    debug_level=error #取值内容<br/>    none/error/info/warning/debug<br/>说明：<br/>正常情况下不建议开启info或debug级别日志，否则会导致加速器性能的下降。  |
+| /var/log/ | message/syslog | 内核日志路径为/var/log/message。<br/>说明：<br/>或通过dmesg >/var/log/dmesg.log日志收集内核相关日志，包含驱动及内核态日志。 |
 
 ## 加速引擎的应用
 

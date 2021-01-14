@@ -15,57 +15,20 @@ JDK（Java Development Kit）是 Java 开发者进行 Java 开发所必须的软
 
 **表 1**  JDK常用的文件类型
 
-<a name="table634145764320"></a>
-<table><thead align="left"><tr id="row53445724319"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p134175716436"><a name="p134175716436"></a><a name="p134175716436"></a>扩展名（后缀）</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p3341573439"><a name="p3341573439"></a><a name="p3341573439"></a>说明</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row2341857174311"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p143419579434"><a name="p143419579434"></a><a name="p143419579434"></a>.java</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1634125794311"><a name="p1634125794311"></a><a name="p1634125794311"></a>java语言源代码文件。</p>
-</td>
-</tr>
-<tr id="row334185744314"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p134105764319"><a name="p134105764319"></a><a name="p134105764319"></a>.class</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13425717436"><a name="p13425717436"></a><a name="p13425717436"></a>java的字节码文件，是一种和任何具体机器环境及操作系统环境无关的中间代码。它是一种二进制文件，是Java 源文件由 Java 编译器编译后生成的目标代码文件。</p>
-</td>
-</tr>
-<tr id="row1934157104315"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1234957124317"><a name="p1234957124317"></a><a name="p1234957124317"></a>.jar</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p234135724312"><a name="p234135724312"></a><a name="p234135724312"></a>java的jar压缩文件。</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  扩展名（后缀）   |说明  |
+|:---  |:----  |
+| .java| java语言源代码文件。 |
+| .class| java的字节码文件，是一种和任何具体机器环境及操作系统环境无关的中间代码。它是一种二进制文件，是Java 源文件由 Java 编译器编译后生成的目标代码文件。 |
+| .jar| java的jar压缩文件。 |
+
 
 **表 2**  JDK常用的工具
 
-<a name="table103504146433"></a>
-<table><thead align="left"><tr id="row635141416437"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p2351151419430"><a name="p2351151419430"></a><a name="p2351151419430"></a>工具名称</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p123511714144311"><a name="p123511714144311"></a><a name="p123511714144311"></a>说明</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row3351114184314"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p235131434319"><a name="p235131434319"></a><a name="p235131434319"></a>java</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p17382051105812"><a name="p17382051105812"></a><a name="p17382051105812"></a>Java运行工具，用于运行.class字节码文件或.jar文件。</p>
-</td>
-</tr>
-<tr id="row3351201464315"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p18351214144315"><a name="p18351214144315"></a><a name="p18351214144315"></a>javac</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1035141464315"><a name="p1035141464315"></a><a name="p1035141464315"></a><span>Java编程语言的编译器</span>，将.java的源代码文件编译成.class的字节码文件。</p>
-</td>
-</tr>
-<tr id="row1351914134311"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p12351191464311"><a name="p12351191464311"></a><a name="p12351191464311"></a>jar</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p17351714184311"><a name="p17351714184311"></a><a name="p17351714184311"></a><span>创建和管理Jar文件</span>。</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  工具名称   |说明  |
+|:---  |:----  |
+| java| Java运行工具，用于运行.class字节码文件或.jar文件。 |
+| javac| Java编程语言的编译器，将.java的源代码文件编译成.class的字节码文件。 |
+| jar| 创建和管理Jar文件。 |
 
 ### java程序生成流程
 
@@ -94,71 +57,16 @@ javac是java编译器，其 _options_ 参数取值很多，但有些大部分并
 
 **表 3**  javac常用的编译选项
 
-<a name="table1342946175212"></a>
-<table><thead align="left"><tr id="row1242184611523"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p1142134616527"><a name="p1142134616527"></a><a name="p1142134616527"></a><em id="i196115187577"><a name="i196115187577"></a><a name="i196115187577"></a>options</em>取值</p>
-</th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p174244605210"><a name="p174244605210"></a><a name="p174244605210"></a>说明</p>
-</th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="p442204645214"><a name="p442204645214"></a><a name="p442204645214"></a>示例</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row1642124685214"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p44294645211"><a name="p44294645211"></a><a name="p44294645211"></a>-d <em id="i20380213283"><a name="i20380213283"></a><a name="i20380213283"></a>path</em></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p34284619521"><a name="p34284619521"></a><a name="p34284619521"></a><span>指定存放生成的类文件的路径</span>。</p>
-<p id="p5504192417282"><a name="p5504192417282"></a><a name="p5504192417282"></a><span>默认情况下，编译生成的类文件与源文件在同一路径下。使用-d选项可以将类文件输出到指定路径。</span></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p14019112140"><a name="p14019112140"></a><a name="p14019112140"></a><span>#使用</span>-d<span>选项将所有类文件输出到bin路径下</span></p>
-<p id="p1942746165211"><a name="p1942746165211"></a><a name="p1942746165211"></a>javac /src/*.java -d /bin</p>
-</td>
-</tr>
-<tr id="row375616513198"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p8756125113199"><a name="p8756125113199"></a><a name="p8756125113199"></a>-s <em id="i764464192010"><a name="i764464192010"></a><a name="i764464192010"></a>path</em></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1475675181912"><a name="p1475675181912"></a><a name="p1475675181912"></a><span>指定存放生成的源文件的路径</span>。</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p275614511197"><a name="p275614511197"></a><a name="p275614511197"></a>-</p>
-</td>
-</tr>
-<tr id="row3421646125214"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p24254614529"><a name="p24254614529"></a><a name="p24254614529"></a>-cp <em id="i457411173112"><a name="i457411173112"></a><a name="i457411173112"></a>path</em>或-classpath <em id="i778195173018"><a name="i778195173018"></a><a name="i778195173018"></a>path</em></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p18626736181820"><a name="p18626736181820"></a><a name="p18626736181820"></a><span>搜索编译所需的class文件，指出编译所用到的class文件的位置。</span></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p16112433132010"><a name="p16112433132010"></a><a name="p16112433132010"></a>#<span>在Demo中要调用GetStringDemo类中的getLine()方法，而GetStringDemo类编译后的文件，即.class文件在bin目录下。</span></p>
-<p id="p13429467521"><a name="p13429467521"></a><a name="p13429467521"></a>javac -cp bin Demo.java -d bin</p>
-</td>
-</tr>
-<tr id="row642846145211"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p1342746115211"><a name="p1342746115211"></a><a name="p1342746115211"></a>-verbose</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p14710104517231"><a name="p14710104517231"></a><a name="p14710104517231"></a><span>输出关于编译器正在执行的操作的消息，如加载的类信息和编译的源文件信息。</span></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p13427463528"><a name="p13427463528"></a><a name="p13427463528"></a>#<span>输出关于编译器正在执行的操作的消息。</span></p>
-<p id="p597061913259"><a name="p597061913259"></a><a name="p597061913259"></a>javac -verbose -cp bin Demo.java</p>
-</td>
-</tr>
-<tr id="row2428463528"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p105251952881"><a name="p105251952881"></a><a name="p105251952881"></a>-source <em id="i9779313155317"><a name="i9779313155317"></a><a name="i9779313155317"></a>sourceversion</em></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1983024422919"><a name="p1983024422919"></a><a name="p1983024422919"></a><span>指定查找输入源文件的位置。</span></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p13782338155311"><a name="p13782338155311"></a><a name="p13782338155311"></a>-</p>
-</td>
-</tr>
-<tr id="row176441743349"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p176441749342"><a name="p176441749342"></a><a name="p176441749342"></a>-sourcepath <em id="i076711126546"><a name="i076711126546"></a><a name="i076711126546"></a>path</em></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p26440463410"><a name="p26440463410"></a><a name="p26440463410"></a>用于搜索编译所需的源文件（即java文件），指定要搜索的源文件的位置，如jar、zip或其他包含java文件的目录。</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p11644444347"><a name="p11644444347"></a><a name="p11644444347"></a>-</p>
-</td>
-</tr>
-<tr id="row143691297164"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p4369112911615"><a name="p4369112911615"></a><a name="p4369112911615"></a>-target <em id="i14257152018569"><a name="i14257152018569"></a><a name="i14257152018569"></a>targetversion</em></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p136932971616"><a name="p136932971616"></a><a name="p136932971616"></a><span>生成特定JVM版本的类文件</span>。取值为1.1，1.2，1.3，1.4，1.5（或5），1.6（或6），1.7（或7），1.8（或8）。<em id="i11835571336"><a name="i11835571336"></a><a name="i11835571336"></a>targetversion</em>的默认取值与-source选项的<em id="i18928115712016"><a name="i18928115712016"></a><a name="i18928115712016"></a>sourceversion</em>有关。<em id="i560815481816"><a name="i560815481816"></a><a name="i560815481816"></a>sourceversion</em>取值：</p>
-<a name="ul13412711218"></a><a name="ul13412711218"></a><ul id="ul13412711218"><li>1.2，<em id="i437819161143"><a name="i437819161143"></a><a name="i437819161143"></a>targetversion</em>为1.4；</li><li>1.3，<em id="i14587926649"><a name="i14587926649"></a><a name="i14587926649"></a>targetversion</em>为1.4；</li><li>1.5、1.6、1.7、未指定，<em id="i1177610203514"><a name="i1177610203514"></a><a name="i1177610203514"></a>targetversion</em>为1.8。</li><li>其他值，<em id="i54016231762"><a name="i54016231762"></a><a name="i54016231762"></a>targetversion</em>与<em id="i1126619201169"><a name="i1126619201169"></a><a name="i1126619201169"></a>sourceversion</em>取值相同。</li></ul>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1037012921612"><a name="p1037012921612"></a><a name="p1037012921612"></a>-</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  options取值   |说明  |示例  |
+|:---  |:----  |:----  |
+| -d *path*| 指定存放生成的类文件的路径。<br/>默认情况下，编译生成的类文件与源文件在同一路径下。使用-d选项可以将类文件输出到指定路径。 |#使用-d选项将所有类文件输出到bin路径下<br/>javac /src/*.java -d /bin  |
+| -s *path* | 指定存放生成的源文件的路径。  | -  |
+| -cp *path*或-classpath *path* | 搜索编译所需的class文件，指出编译所用到的class文件的位置。  | #在Demo中要调用GetStringDemo类中的getLine()方法，而GetStringDemo类编译后的文件，即.class文件在bin目录下。<br/>javac -cp bin Demo.java -d bin  |
+|  -verbose| 输出关于编译器正在执行的操作的消息，如加载的类信息和编译的源文件信息。 | #输出关于编译器正在执行的操作的消息。<br/>javac -verbose -cp bin Demo.java  |
+|-source *sourceversion*  | 指定查找输入源文件的位置。  | -  |
+| -sourcepath *path* |  用于搜索编译所需的源文件（即java文件），指定要搜索的源文件的位置，如jar、zip或其他包含java文件的目录。 | -  |
+| -target *targetversion* |  生成特定JVM版本的类文件。取值为1.1，1.2，1.3，1.4，1.5（或5），1.6（或6），1.7（或7），1.8（或8）。targetversion的默认取值与-source选项的sourceversion有关。sourceversion取值：<br/>1.2，targetversion为1.4；<br/>1.3，targetversion为1.4；<br/>1.5、1.6、1.7、未指定，targetversion为1.8。<br/>其他值，targetversion与sourceversion取值相同。 |  - |
+
 
 #### java运行选项
 
@@ -182,33 +90,10 @@ java是运行java应用程序的工具，其 _options_ 参数取值很多，但�
 
 **表 4**  java常用的运行选项
 
-<a name="table371918587238"></a>
-<table><thead align="left"><tr id="row19719155892316"><th class="cellrowborder" valign="top" width="33.333333333333336%" id="mcps1.2.4.1.1"><p id="p127195582239"><a name="p127195582239"></a><a name="p127195582239"></a><em id="i4719195817238"><a name="i4719195817238"></a><a name="i4719195817238"></a>options</em>取值</p>
-</th>
-<th class="cellrowborder" valign="top" width="33.473347334733475%" id="mcps1.2.4.1.2"><p id="p1771955817233"><a name="p1771955817233"></a><a name="p1771955817233"></a>说明</p>
-</th>
-<th class="cellrowborder" valign="top" width="33.193319331933196%" id="mcps1.2.4.1.3"><p id="p14719175810236"><a name="p14719175810236"></a><a name="p14719175810236"></a>示例</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row37191558122312"><td class="cellrowborder" valign="top" width="33.333333333333336%" headers="mcps1.2.4.1.1 "><p id="p1671955816237"><a name="p1671955816237"></a><a name="p1671955816237"></a>-cp <em id="i1871935862315"><a name="i1871935862315"></a><a name="i1871935862315"></a>path</em>或-classpath <em id="i11719858102316"><a name="i11719858102316"></a><a name="i11719858102316"></a>path</em></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.473347334733475%" headers="mcps1.2.4.1.2 "><p id="p1152514674520"><a name="p1152514674520"></a><a name="p1152514674520"></a>指定要运行的文件所在的位置以及需要用到的类路径，包括jar、zip和class文件目录。</p>
-<p id="p540484613433"><a name="p540484613433"></a><a name="p540484613433"></a>当路径有多个是，使用“:”分隔。</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.193319331933196%" headers="mcps1.2.4.1.3 "><p id="p293442512447"><a name="p293442512447"></a><a name="p293442512447"></a>-</p>
-</td>
-</tr>
-<tr id="row1471945892312"><td class="cellrowborder" valign="top" width="33.333333333333336%" headers="mcps1.2.4.1.1 "><p id="p117191858152310"><a name="p117191858152310"></a><a name="p117191858152310"></a>-verbose</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.473347334733475%" headers="mcps1.2.4.1.2 "><p id="p15719458172315"><a name="p15719458172315"></a><a name="p15719458172315"></a><span>输出关于编译器正在执行的操作的消息，如加载的类信息和编译的源文件信息。</span></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.193319331933196%" headers="mcps1.2.4.1.3 "><p id="p1371985892314"><a name="p1371985892314"></a><a name="p1371985892314"></a>#<span>输出关于编译器正在执行的操作的消息。</span></p>
-<p id="p1271918588236"><a name="p1271918588236"></a><a name="p1271918588236"></a>java -verbose -cp bin Demo.java</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  options取值   |说明  |示例  |
+|:---  |:----  |:----  |
+| -cp path或-classpath path| 指定要运行的文件所在的位置以及需要用到的类路径，包括jar、zip和class文件目录。<br/>当路径有多个是，使用“:”分隔。 | - |
+|  -verbose | 输出关于编译器正在执行的操作的消息，如加载的类信息和编译的源文件信息。 | #输出关于编译器正在执行的操作的消息。<br/>java -verbose -cp bin Demo.java |
 
 #### jar打包选项
 

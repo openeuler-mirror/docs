@@ -89,58 +89,15 @@ You can modify the vsftpd configuration file to control user permissions.  [Tabl
 
 **Table  1**  vsftpd configuration files
 
-<a name="table1541615718372"></a>
-<table><thead align="left"><tr id="row1041620733716"><th class="cellrowborder" valign="top" width="26.16%" id="mcps1.2.3.1.1"><p id="p141619753716"><a name="p141619753716"></a><a name="p141619753716"></a>Configuration File</p>
-</th>
-<th class="cellrowborder" valign="top" width="73.83999999999999%" id="mcps1.2.3.1.2"><p id="p16416187153714"><a name="p16416187153714"></a><a name="p16416187153714"></a>Description</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row541716723710"><td class="cellrowborder" valign="top" width="26.16%" headers="mcps1.2.3.1.1 "><p id="p1071316355299"><a name="p1071316355299"></a><a name="p1071316355299"></a>/etc/vsftpd/vsftpd.conf</p>
-</td>
-<td class="cellrowborder" valign="top" width="73.83999999999999%" headers="mcps1.2.3.1.2 "><p id="p04178718376"><a name="p04178718376"></a><a name="p04178718376"></a>Main configuration file of the vsftpd process. The configuration format is Parameter=Parameter value. The parameter and parameter value cannot be empty.</p>
-<p id="p153451439183513"><a name="p153451439183513"></a><a name="p153451439183513"></a>You can run the following command to view details about the vsftpd.conf file:</p>
-<p id="p128951154173518"><a name="p128951154173518"></a><a name="p128951154173518"></a>man 5 vsftpd.conf</p>
-</td>
-</tr>
-<tr id="row1341710763719"><td class="cellrowborder" valign="top" width="26.16%" headers="mcps1.2.3.1.1 "><p id="p18697219193716"><a name="p18697219193716"></a><a name="p18697219193716"></a>/etc/pam.d/vsftpd</p>
-</td>
-<td class="cellrowborder" valign="top" width="73.83999999999999%" headers="mcps1.2.3.1.2 "><p id="p941714720378"><a name="p941714720378"></a><a name="p941714720378"></a>Pluggable authentication modules (PAMs) are used for identity authentication and restrict some user operations.</p>
-</td>
-</tr>
-<tr id="row194171773716"><td class="cellrowborder" valign="top" width="26.16%" headers="mcps1.2.3.1.1 "><p id="p1024763374812"><a name="p1024763374812"></a><a name="p1024763374812"></a>/etc/vsftpd/ftpusers</p>
-</td>
-<td class="cellrowborder" valign="top" width="73.83999999999999%" headers="mcps1.2.3.1.2 "><p id="p74171174375"><a name="p74171174375"></a><a name="p74171174375"></a>List of users who are not allowed to use the vsftpd. By default, the system account is also in this file. Therefore, the system account cannot use vsftpd by default.</p>
-</td>
-</tr>
-<tr id="row441787153712"><td class="cellrowborder" valign="top" width="26.16%" headers="mcps1.2.3.1.1 "><p id="p174183753711"><a name="p174183753711"></a><a name="p174183753711"></a>/etc/vsftpd/user_list</p>
-</td>
-<td class="cellrowborder" valign="top" width="73.83999999999999%" headers="mcps1.2.3.1.2 "><p id="p897451702311"><a name="p897451702311"></a><a name="p897451702311"></a>List of users who are allowed or not allowed to log in to the vsftpd server. Whether the file takes effect depends on the following parameters in the main configuration file vsftpd.conf:</p>
-<p id="p235712118232"><a name="p235712118232"></a><a name="p235712118232"></a>userlist_enable: indicates whether to enable the userlist mechanism. The value YES indicates that the userlist mechanism is enabled. In this case, the userlist_deny configuration is valid. The value NO indicates that the userlist mechanism is disabled.</p>
-<p id="p38688486536"><a name="p38688486536"></a><a name="p38688486536"></a>userlist_deny: indicates whether to forbid users in the user list to log in. YES indicates that users in the user list are forbidden to log in. NO indicates that users in the command are allowed to log in.</p>
-<p id="p15866735202619"><a name="p15866735202619"></a><a name="p15866735202619"></a>For example, if userlist_enable is set to YES and userlist_deny is set to YES, all users in the user list cannot log in.</p>
-</td>
-</tr>
-<tr id="row9535948142112"><td class="cellrowborder" valign="top" width="26.16%" headers="mcps1.2.3.1.1 "><p id="p17719134152118"><a name="p17719134152118"></a><a name="p17719134152118"></a>/etc/vsftpd/chroot_list</p>
-</td>
-<td class="cellrowborder" valign="top" width="73.83999999999999%" headers="mcps1.2.3.1.2 "><p id="p6618142417163"><a name="p6618142417163"></a><a name="p6618142417163"></a>Whether to restrict the user list in the home directory. By default, this file does not exist. You need to create it manually. It is the value of chroot_list_file in the vsftpd.conf file.</p>
-<p id="p3279143081618"><a name="p3279143081618"></a><a name="p3279143081618"></a>The function of this parameter is determined by the following parameters in the vsftpd.conf file:</p>
-<a name="ul1455581412205"></a><a name="ul1455581412205"></a><ul id="ul1455581412205"><li>chroot_local_user: indicates whether to restrict all users to the home directory. The value YES indicates that all users are restricted to the home directory, and the value NO indicates that all users are not restricted to the home directory.</li><li>chroot_list_enable: indicates whether to enable the list of restricted users. The value YES indicates that the list is enabled, and the value NO indicates that the list is disabled.</li></ul>
-<p id="p197351059141313"><a name="p197351059141313"></a><a name="p197351059141313"></a>For example, if chroot_local_user is set to YES, chroot_list_enable is set to YES, and chroot_list_file is set to /etc/vsftpd/chroot_list, all users are restricted to their home directories, and users in chroot_list are not restricted.</p>
-</td>
-</tr>
-<tr id="row12536248192116"><td class="cellrowborder" valign="top" width="26.16%" headers="mcps1.2.3.1.1 "><p id="p6724834162111"><a name="p6724834162111"></a><a name="p6724834162111"></a>/usr/sbin/vsftpd</p>
-</td>
-<td class="cellrowborder" valign="top" width="73.83999999999999%" headers="mcps1.2.3.1.2 "><p id="p1253634815218"><a name="p1253634815218"></a><a name="p1253634815218"></a>Unique execution file of vsftpd.</p>
-</td>
-</tr>
-<tr id="row35371648162119"><td class="cellrowborder" valign="top" width="26.16%" headers="mcps1.2.3.1.1 "><p id="p772716348217"><a name="p772716348217"></a><a name="p772716348217"></a>/var/ftp/</p>
-</td>
-<td class="cellrowborder" valign="top" width="73.83999999999999%" headers="mcps1.2.3.1.2 "><p id="p25371248172114"><a name="p25371248172114"></a><a name="p25371248172114"></a>Default root directory for anonymous users to log in. The root directory is related to the home directory of the ftp user.</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  Configuration File   |Description  |
+|:---  |:----  |
+| /etc/vsftpd/vsftpd.conf|Main configuration file of the vsftpd process. The configuration format is Parameter=Parameter value. The parameter and parameter value cannot be empty.<br/>You can run the following command to view details about the vsftpd.conf file:<br/>man 5 vsftpd.conf |
+| /etc/pam.d/vsftpd | Pluggable authentication modules (PAMs) are used for identity authentication and restrict some user operations. |
+| /etc/vsftpd/ftpusers |List of users who are not allowed to use the vsftpd. By default, the system account is also in this file. Therefore, the system account cannot use vsftpd by default. |
+| /etc/vsftpd/user_list |List of users who are allowed or not allowed to log in to the vsftpd server. Whether the file takes effect depends on the following parameters in the main configuration file vsftpd.conf:<br /><br/>userlist_enable: indicates whether to enable the userlist mechanism. The value YES indicates that the userlist mechanism is enabled. In this case, the userlist_deny configuration is valid. The value NO indicates that the userlist mechanism is disabled.<br/>userlist_deny: indicates whether to forbid users in the user list to log in. YES indicates that users in the user list are forbidden to log in. NO indicates that users in the command are allowed to log in.<br/><br />For example, if userlist_enable is set to YES and userlist_deny is set to YES, all users in the user list cannot log in.。 |
+| /etc/vsftpd/chroot_list |Whether to restrict the user list in the home directory. By default, this file does not exist. You need to create it manually. It is the value of chroot_list_file in the vsftpd.conf file.<br /><br/>The function of this parameter is determined by the following parameters in the vsftpd.conf file:<br/>chroot_local_user: indicates whether to restrict all users to the home directory. The value YES indicates that all users are restricted to the home directory, and the value NO indicates that all users are not restricted to the home directory.<br/>chroot_list_enable: indicates whether to enable the list of restricted users. The value YES indicates that the list is enabled, and the value NO indicates that the list is disabled.<br/><br />For example, if chroot_local_user is set to YES, chroot_list_enable is set to YES, and chroot_list_file is set to /etc/vsftpd/chroot_list, all users are restricted to their home directories, and users in chroot_list are not restricted. |
+| /usr/sbin/vsftpd | Unique execution file of vsftpd. |
+| /var/ftp/ |  Default root directory for anonymous users to log in. The root directory is related to the home directory of the ftp user.|
 
 
 ### Default Configuration Description
@@ -170,80 +127,22 @@ userlist_enable=YES
 
 **Table  2**  Parameter description
 
-<a name="table18185162512499"></a>
-<table><thead align="left"><tr id="row101877257495"><th class="cellrowborder" valign="top" width="22.78%" id="mcps1.2.3.1.1"><p id="p21871725144910"><a name="p21871725144910"></a><a name="p21871725144910"></a>Parameter</p>
-</th>
-<th class="cellrowborder" valign="top" width="77.22%" id="mcps1.2.3.1.2"><p id="p19187162564910"><a name="p19187162564910"></a><a name="p19187162564910"></a>Description</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row3187425134916"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p4968173712497"><a name="p4968173712497"></a><a name="p4968173712497"></a>anonymous_enable</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p74773423490"><a name="p74773423490"></a><a name="p74773423490"></a>Indicates whether to allow anonymous users to log in. YES indicates that anonymous users are allowed to log in; NO indicates that anonymous users are not allowed to log in.</p>
-</td>
-</tr>
-<tr id="row19187225114911"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p8968237174919"><a name="p8968237174919"></a><a name="p8968237174919"></a>local_enable</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p104782422495"><a name="p104782422495"></a><a name="p104782422495"></a>Whether to allow local users to log in. YES indicates that local users are allowed to log in. NO indicates that local users are not allowed to log in.</p>
-</td>
-</tr>
-<tr id="row1418772574910"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p8968737114910"><a name="p8968737114910"></a><a name="p8968737114910"></a>write_enable</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p81871825104914"><a name="p81871825104914"></a><a name="p81871825104914"></a>Whether to allow the login user to have the write permission. YES indicates that the upload and write function is enabled, and NO indicates that the function is disabled.</p>
-</td>
-</tr>
-<tr id="row018722564917"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p3969163704915"><a name="p3969163704915"></a><a name="p3969163704915"></a>local_umask</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p01856127552"><a name="p01856127552"></a><a name="p01856127552"></a>Indicates the umask value when a local user adds a profile.</p>
-</td>
-</tr>
-<tr id="row171881425194917"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p1796983716496"><a name="p1796983716496"></a><a name="p1796983716496"></a>dirmessage_enable</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p1718872516496"><a name="p1718872516496"></a><a name="p1718872516496"></a>Indicates whether to display the contents that users need to pay attention to when a user accesses a directory. The options are YES (yes) and NO (no).</p>
-</td>
-</tr>
-<tr id="row1718862584912"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p16969937194918"><a name="p16969937194918"></a><a name="p16969937194918"></a>xferlog_enable</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p11188725164915"><a name="p11188725164915"></a><a name="p11188725164915"></a>Indicates whether to record file upload and download operations. The options are YES (record operations) and NO (not record operations).</p>
-</td>
-</tr>
-<tr id="row131884252495"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p1497053713498"><a name="p1497053713498"></a><a name="p1497053713498"></a>connect_from_port_20</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p0223715115717"><a name="p0223715115717"></a><a name="p0223715115717"></a>Indicates whether port 20 is used for data transmission in port mode. YES indicates that port 20 is used, and NO indicates that port 20 is not used.</p>
-</td>
-</tr>
-<tr id="row54729324499"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p1797093744914"><a name="p1797093744914"></a><a name="p1797093744914"></a>xferlog_std_format</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p151867233590"><a name="p151867233590"></a><a name="p151867233590"></a>Indicates whether the transfer log file is written in the standard xferlog format. The options are YES (yes) and NO (no).</p>
-</td>
-</tr>
-<tr id="row18472163284918"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p1897013717499"><a name="p1897013717499"></a><a name="p1897013717499"></a>listen</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p1047214329495"><a name="p1047214329495"></a><a name="p1047214329495"></a>Indicates whether the vsftpd service is started in standalone mode. The options are YES (yes) and NO (no).</p>
-</td>
-</tr>
-<tr id="row65527244272"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p1955372410278"><a name="p1955372410278"></a><a name="p1955372410278"></a>pam_service_name</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p85531424172712"><a name="p85531424172712"></a><a name="p85531424172712"></a>Support for PAM management. The value is a service name, for example, vsftpd.</p>
-</td>
-</tr>
-<tr id="row137361028142713"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p3737132822713"><a name="p3737132822713"></a><a name="p3737132822713"></a>userlist_enable</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p573792872715"><a name="p573792872715"></a><a name="p573792872715"></a>Indicates whether to support account login control in the /etc/vsftpd/user_list file. The options are YES (yes) and NO (no).</p>
-</td>
-</tr>
-<tr id="row1712712332278"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p1512763312712"><a name="p1512763312712"></a><a name="p1512763312712"></a>tcp_wrappers</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p15127033152712"><a name="p15127033152712"></a><a name="p15127033152712"></a>Indicates whether to support the firewall mechanism of the TCP Wrappers. The options are YES (yes) and NO (no).</p>
-</td>
-</tr>
-<tr id="row163601306111"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p1597123717499"><a name="p1597123717499"></a><a name="p1597123717499"></a>listen_ipv6</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p0361200613"><a name="p0361200613"></a><a name="p0361200613"></a>Indicates whether to listen to IPv6 FTP requests. The options are YES (yes) and NO (no). listen and listen_ipv6 cannot be enabled at the same time.</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  Parameter   |Description  |
+|:---  |:----  |
+|  anonymous_enable| Indicates whether to allow anonymous users to log in. YES indicates that anonymous users are allowed to log in; NO indicates that anonymous users are not allowed to log in. |
+| local_enable | Whether to allow local users to log in. YES indicates that local users are allowed to log in. NO indicates that local users are not allowed to log in. |
+| write_enable | Whether to allow the login user to have the write permission. YES indicates that the upload and write function is enabled, and NO indicates that the function is disabled. |
+| local_umask | Indicates the umask value when a local user adds a profile. |
+| dirmessage_enable | Indicates whether to display the contents that users need to pay attention to when a user accesses a directory. The options are YES (yes) and NO (no). |
+| xferlog_enable |  Indicates whether to record file upload and download operations. The options are YES (record operations) and NO (not record operations).|
+| connect_from_port_20 |  Indicates whether port 20 is used for data transmission in port mode. YES indicates that port 20 is used, and NO indicates that port 20 is not used.|
+| xferlog_std_format | Indicates whether the transfer log file is written in the standard xferlog format. The options are YES (yes) and NO (no). |
+| listen | Indicates whether the vsftpd service is started in standalone mode. The options are YES (yes) and NO (no). |
+| pam_service_name | Support for PAM management. The value is a service name, for example, vsftpd. |
+| userlist_enable | Indicates whether to support account login control in the /etc/vsftpd/user_list file. The options are YES (yes) and NO (no). |
+|  tcp_wrappers| Indicates whether to support the firewall mechanism of the TCP Wrappers. The options are YES (yes) and NO (no). |
+|listen_ipv6  | Indicates whether to listen to IPv6 FTP requests. The options are YES (yes) and NO (no). listen and listen_ipv6 cannot be enabled at the same time. |
+
 
 ### Setting the Local Time
 

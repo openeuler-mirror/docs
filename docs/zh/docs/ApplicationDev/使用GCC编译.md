@@ -18,75 +18,20 @@ GCC（GNU Compiler Collection）是GNU推出的功能强大、性能优越的多
 
 **表 1**  GCC常用的文件类型
 
-<a name="table634145764320"></a>
-<table><thead align="left"><tr id="row53445724319"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p134175716436"><a name="p134175716436"></a><a name="p134175716436"></a>扩展名（后缀）</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p3341573439"><a name="p3341573439"></a><a name="p3341573439"></a>说明</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row2341857174311"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p143419579434"><a name="p143419579434"></a><a name="p143419579434"></a>.c</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1634125794311"><a name="p1634125794311"></a><a name="p1634125794311"></a>C语言源代码文件。</p>
-</td>
-</tr>
-<tr id="row334185744314"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p134105764319"><a name="p134105764319"></a><a name="p134105764319"></a>.C，.cc或.cxx</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13425717436"><a name="p13425717436"></a><a name="p13425717436"></a>C++源代码文件。</p>
-</td>
-</tr>
-<tr id="row1934157104315"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1234957124317"><a name="p1234957124317"></a><a name="p1234957124317"></a>.m</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p234135724312"><a name="p234135724312"></a><a name="p234135724312"></a>Objective-C源代码文件。</p>
-</td>
-</tr>
-<tr id="row1934195713439"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p434195712430"><a name="p434195712430"></a><a name="p434195712430"></a>.s</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1341057124316"><a name="p1341057124316"></a><a name="p1341057124316"></a>汇编语言源代码文件。</p>
-</td>
-</tr>
-<tr id="row20349573432"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p4348576435"><a name="p4348576435"></a><a name="p4348576435"></a>.i</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p934175704316"><a name="p934175704316"></a><a name="p934175704316"></a>已经预处理的C源代码文件。</p>
-</td>
-</tr>
-<tr id="row934195710435"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p33435704312"><a name="p33435704312"></a><a name="p33435704312"></a>.ii</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1834957144314"><a name="p1834957144314"></a><a name="p1834957144314"></a>已经预处理的C++源代码文件。</p>
-</td>
-</tr>
-<tr id="row16341457154318"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1034185714318"><a name="p1034185714318"></a><a name="p1034185714318"></a>.S</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p134115724318"><a name="p134115724318"></a><a name="p134115724318"></a>已经预处理的汇编语言源代码文件。</p>
-</td>
-</tr>
-<tr id="row4551040124512"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p165594012459"><a name="p165594012459"></a><a name="p165594012459"></a>.h</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p255164014456"><a name="p255164014456"></a><a name="p255164014456"></a>程序所包含的头文件。</p>
-</td>
-</tr>
-<tr id="row96405211469"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p136405215463"><a name="p136405215463"></a><a name="p136405215463"></a>.o</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1064015220466"><a name="p1064015220466"></a><a name="p1064015220466"></a>编译后的目标文件。</p>
-</td>
-</tr>
-<tr id="row18053369399"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p38051366398"><a name="p38051366398"></a><a name="p38051366398"></a>.so</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1380515367395"><a name="p1380515367395"></a><a name="p1380515367395"></a><span>动态链接库</span><span>，它是一种特殊的目标文件。</span></p>
-</td>
-</tr>
-<tr id="row473710516467"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p157371654468"><a name="p157371654468"></a><a name="p157371654468"></a>.a</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1673795154616"><a name="p1673795154616"></a><a name="p1673795154616"></a>静态链接库。</p>
-</td>
-</tr>
-<tr id="row1052198114615"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1521682462"><a name="p1521682462"></a><a name="p1521682462"></a>.out</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p052114814615"><a name="p052114814615"></a><a name="p052114814615"></a>可执行文件，但可执行文件没有统一的后缀，系统从文件的属性来区分可执行文件和不可执行文件。如果没有给出可执行文件的名字，GCC将生成一个名为a.out的文件。</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  扩展名（后缀）   |说明  |
+|:---  |:----  |
+| .c| C语言源代码文件。 |
+| .C，.cc或.cxx|  C++源代码文件。|
+|.m | Objective-C源代码文件。 |
+| .s| 汇编语言源代码文件。 |
+|.i | 已经预处理的C源代码文件。 |
+|.ii | 已经预处理的C++源代码文件。 |
+| .S| 已经预处理的汇编语言源代码文件。 |
+|.h | 程序所包含的头文件。 |
+| .o| 编译后的目标文件。 |
+|.so |动态链接库，它是一种特殊的目标文件。 |
+|.a | 静态链接库。 |
+| .out|可执行文件，但可执行文件没有统一的后缀，系统从文件的属性来区分可执行文件和不可执行文件。如果没有给出可执行文件的名字，GCC将生成一个名为a.out的文件。 |
 
 ### 编译流程
 
@@ -113,104 +58,21 @@ GCC是一个功能强大的编译器，其 _options_ 参数取值很多，但有
 
 **表 2**  GCC常用的编译选项
 
-<a name="table1342946175212"></a>
-<table><thead align="left"><tr id="row1242184611523"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p1142134616527"><a name="p1142134616527"></a><a name="p1142134616527"></a><em id="i196115187577"><a name="i196115187577"></a><a name="i196115187577"></a>options</em>取值</p>
-</th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p174244605210"><a name="p174244605210"></a><a name="p174244605210"></a>说明</p>
-</th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="p442204645214"><a name="p442204645214"></a><a name="p442204645214"></a>示例</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row1642124685214"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p44294645211"><a name="p44294645211"></a><a name="p44294645211"></a>-c</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p34284619521"><a name="p34284619521"></a><a name="p34284619521"></a>编译、汇编指定的源文件生成目标文件，但不进行链接。通常用于编译不包含主程序的子程序文件。</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p14019112140"><a name="p14019112140"></a><a name="p14019112140"></a><span>#使用</span>-c<span>选项编译test1.c、test2.c源文件</span></p>
-<p id="p1942746165211"><a name="p1942746165211"></a><a name="p1942746165211"></a>gcc -c test1.c test2.c</p>
-</td>
-</tr>
-<tr id="row3421646125214"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p24254614529"><a name="p24254614529"></a><a name="p24254614529"></a>-S</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p18626736181820"><a name="p18626736181820"></a><a name="p18626736181820"></a>编译指定的源文件<span>生成以</span>.s<span>作为后缀的汇编语言文件</span>，但不进行汇编。</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p16112433132010"><a name="p16112433132010"></a><a name="p16112433132010"></a>#<span>编译器预处理 circle.c，将其翻译成汇编语言，并将结果存储在 circle.s 文件中。</span></p>
-<p id="p13429467521"><a name="p13429467521"></a><a name="p13429467521"></a>gcc -S circle.c</p>
-</td>
-</tr>
-<tr id="row642846145211"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p1342746115211"><a name="p1342746115211"></a><a name="p1342746115211"></a>-E</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p7422046195217"><a name="p7422046195217"></a><a name="p7422046195217"></a>预处理指定的源文件，但不进行编译。</p>
-<p id="p14710104517231"><a name="p14710104517231"></a><a name="p14710104517231"></a><span>默认情况下，预处理器的输出会被导入到标准输出流（如显示器），可以利用</span>-o<span>选项把它导入到某个输出文件。</span></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p13427463528"><a name="p13427463528"></a><a name="p13427463528"></a>#<span>预处理的结果导出到 circle.i 文件。</span></p>
-<p id="p597061913259"><a name="p597061913259"></a><a name="p597061913259"></a>gcc -E circle.c -o circle.i</p>
-</td>
-</tr>
-<tr id="row2428463528"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p105251952881"><a name="p105251952881"></a><a name="p105251952881"></a>-o <em id="i173821510183619"><a name="i173821510183619"></a><a name="i173821510183619"></a>file</em></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1983024422919"><a name="p1983024422919"></a><a name="p1983024422919"></a>用在生成可执行文件时，生成指定的输出文件<em id="i11398171815369"><a name="i11398171815369"></a><a name="i11398171815369"></a>file</em>。同时该名称不能和源文件同名。如果不给出这个选项，gcc就给出预设的可执行文件a.out。</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1421946155218"><a name="p1421946155218"></a><a name="p1421946155218"></a>#<span>将源文件作为输入文件，将可执行文件作为输出文件，也即完整地编译整个程序。</span></p>
-<p id="p62691423153012"><a name="p62691423153012"></a><a name="p62691423153012"></a>gcc main.c func.c -o app.out</p>
-</td>
-</tr>
-<tr id="row176441743349"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p176441749342"><a name="p176441749342"></a><a name="p176441749342"></a>-g</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p26440463410"><a name="p26440463410"></a><a name="p26440463410"></a>在可执行程序中包含标准调试信息。</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p11644444347"><a name="p11644444347"></a><a name="p11644444347"></a>-</p>
-</td>
-</tr>
-<tr id="row143691297164"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p4369112911615"><a name="p4369112911615"></a><a name="p4369112911615"></a>-L <em id="i599713033614"><a name="i599713033614"></a><a name="i599713033614"></a>libary_path</em></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p136932971616"><a name="p136932971616"></a><a name="p136932971616"></a>在库文件的搜索路径列表中添加<em id="i1847052212361"><a name="i1847052212361"></a><a name="i1847052212361"></a>libary_path</em>路径。</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1037012921612"><a name="p1037012921612"></a><a name="p1037012921612"></a>-</p>
-</td>
-</tr>
-<tr id="row842104610528"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p5424465527"><a name="p5424465527"></a><a name="p5424465527"></a>-I<em id="i10991558173512"><a name="i10991558173512"></a><a name="i10991558173512"></a>library</em></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p18320171014373"><a name="p18320171014373"></a><a name="p18320171014373"></a>链接时搜索指定的函数库<em id="i923813323617"><a name="i923813323617"></a><a name="i923813323617"></a>library</em>。</p>
-<p id="p16725256915"><a name="p16725256915"></a><a name="p16725256915"></a><span>使用 GCC 编译和链接程序时，GCC 默认会链接 libc.a 或者 libc.so，但是对于其他的库（例如非标准库、第三方库等），就需要手动添加。</span></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p74284665213"><a name="p74284665213"></a><a name="p74284665213"></a><span>#使用</span>-l<span>选项，以链接数学库。</span></p>
-<p id="p38153114016"><a name="p38153114016"></a><a name="p38153114016"></a>gcc main.c -o main.out -lm</p>
-<div class="note" id="note267663724120"><a name="note267663724120"></a><a name="note267663724120"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p14677203718413"><a name="p14677203718413"></a><a name="p14677203718413"></a><span>数学库的文件名是 libm.a。前缀</span>lib<span>和后缀</span>.a<span>是标准的，</span>m<span>是基本名称，GCC 会在</span>-l<span>选项后紧跟着的基本名称的基础上自动添加这些前缀、后缀，本例中，基本名称为 m。</span></p>
-</div></div>
-</td>
-</tr>
-<tr id="row52061353193420"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p7206175319346"><a name="p7206175319346"></a><a name="p7206175319346"></a>-I <em id="i19693154753619"><a name="i19693154753619"></a><a name="i19693154753619"></a>head_path</em></p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p120610535342"><a name="p120610535342"></a><a name="p120610535342"></a>在头文件的搜索路径列表中添加<em id="i16120553183714"><a name="i16120553183714"></a><a name="i16120553183714"></a>head_path</em>路径。</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p82061053203413"><a name="p82061053203413"></a><a name="p82061053203413"></a>-</p>
-</td>
-</tr>
-<tr id="row366111303814"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p266713193820"><a name="p266713193820"></a><a name="p266713193820"></a>-static</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p96691363816"><a name="p96691363816"></a><a name="p96691363816"></a>进行静态编译，及链接静态库，禁止链接动态库。</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1266913103816"><a name="p1266913103816"></a><a name="p1266913103816"></a>-</p>
-</td>
-</tr>
-<tr id="row19323190113910"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p8323190153911"><a name="p8323190153911"></a><a name="p8323190153911"></a>-shared</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p18490202055012"><a name="p18490202055012"></a><a name="p18490202055012"></a>默认选项，可省略。</p>
-<a name="ul192366134394"></a><a name="ul192366134394"></a><ul id="ul192366134394"><li>可以生成动态库文件。</li><li>进行动态编译，优先链接动态库，只有没有动态库是才会链接同名的静态库。</li></ul>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p18323150113918"><a name="p18323150113918"></a><a name="p18323150113918"></a>-</p>
-</td>
-</tr>
-<tr id="row1867594174012"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p14675641184011"><a name="p14675641184011"></a><a name="p14675641184011"></a>-fPIC（或-fpic）</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1267518411405"><a name="p1267518411405"></a><a name="p1267518411405"></a>生成使用相对地址的位置无关的目标代码。通常使用-static选项从该PIC目标文件生成动态库文件。</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p26751941134013"><a name="p26751941134013"></a><a name="p26751941134013"></a>-</p>
-</td>
-</tr>
-</tbody>
-</table>
+
+|  options取值   |说明  |示例  |
+|:---  |:----  |:----  |
+| -c| 编译、汇编指定的源文件生成目标文件，但不进行链接。通常用于编译不包含主程序的子程序文件。 | #使用-c选项编译test1.c、test2.c源文件<br/>gcc -c test1.c test2.c |
+| -S | 编译指定的源文件生成以.s作为后缀的汇编语言文件，但不进行汇编。 | #编译器预处理 circle.c，将其翻译成汇编语言，并将结果存储在 circle.s 文件中。<br/>gcc -S circle.c |
+| -E |  预处理指定的源文件，但不进行编译。<br/>默认情况下，预处理器的输出会被导入到标准输出流（如显示器），可以利用-o选项把它导入到某个输出文件。|  #预处理的结果导出到 circle.i 文件。<br/>gcc -E circle.c -o circle.i|
+| -o *file* |用在生成可执行文件时，生成指定的输出文件file。同时该名称不能和源文件同名。如果不给出这个选项，gcc就给出预设的可执行文件a.out。  | #将源文件作为输入文件，将可执行文件作为输出文件，也即完整地编译整个程序。<br/>gcc main.c func.c -o app.out |
+| -g | 在可执行程序中包含标准调试信息。 | - |
+|-L *libary_path*  | 在库文件的搜索路径列表中添加*libary_path*路径。 |-  |
+|-l *libary_path*   | 链接时搜索指定的函数库library。<br/>使用 GCC 编译和链接程序时，GCC 默认会链接 libc.a 或者 libc.so，但是对于其他的库（例如非标准库、第三方库等），就需要手动添加。 | #使用-l选项，以链接数学库。<br/>gcc main.c -o main.out -lm<br/>说明：<br/>数学库的文件名是 libm.a。前缀lib和后缀.a是标准的，m是基本名称，GCC 会在-l选项后紧跟着的基本名称的基础上自动添加这些前缀、后缀，本例中，基本名称为 m。 |
+| -I *head_path* | 在头文件的搜索路径列表中添加*head_path*路径。 | - |
+| -static | 进行静态编译，及链接静态库，禁止链接动态库。 | - |
+| -shared | 默认选项，可省略。<br/>可以生成动态库文件。<br/>进行动态编译，优先链接动态库，只有没有动态库是才会链接同名的静态库。  | - |
+| -fPIC（或-fpic） | 生成使用相对地址的位置无关的目标代码。通常使用-static选项从该PIC目标文件生成动态库文件。 |  - |
+
 
 ### 多源文件编译
 
