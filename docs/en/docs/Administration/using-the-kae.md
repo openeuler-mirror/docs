@@ -21,35 +21,13 @@ The KAE applies to the following scenarios, as shown in  [Table 1](#table1191582
 
 **Table  1**  Application scenarios
 
-<a name="table11915824163418"></a>
-<table><thead align="left"><tr id="row12819762"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p31767774"><a name="p31767774"></a><a name="p31767774"></a>Scenario</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p55347837"><a name="p55347837"></a><a name="p55347837"></a>Data</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row53989823"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p11099566"><a name="p11099566"></a><a name="p11099566"></a>Big data</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p11137969"><a name="p11137969"></a><a name="p11137969"></a>Stream data</p>
-</td>
-</tr>
-<tr id="row33132859"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p66515904"><a name="p66515904"></a><a name="p66515904"></a>Data encryption</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1907972"><a name="p1907972"></a><a name="p1907972"></a>Block data</p>
-</td>
-</tr>
-<tr id="row17171756"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p48735027"><a name="p48735027"></a><a name="p48735027"></a>Intelligent security protection</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p43884268"><a name="p43884268"></a><a name="p43884268"></a>Video stream data</p>
-</td>
-</tr>
-<tr id="row59414099"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p47812724"><a name="p47812724"></a><a name="p47812724"></a>Web service</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p32455223"><a name="p32455223"></a><a name="p32455223"></a>Handshake connections</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  Scenario   |Data  |
+|:---  |:----  |
+| Big data| Stream data |
+| Data encryption | Block data  |
+| Intelligent security protection | Video stream data |
+|Web service  | Handshake connections |
+
 
 ## Installing, Running, and Uninstalling the KAE
 
@@ -74,34 +52,11 @@ The KAE applies to the following scenarios, as shown in  [Table 1](#table1191582
 ##### KAE Software Description
 **Table  2**  RPM software packages of the KAE
 
-<a name="table9060076"></a>
-<table><thead align="left"><tr id="row36699979"><th class="cellrowborder" valign="top" width="48.57%" id="mcps1.2.3.1.1"><p id="p19908318"><a name="p19908318"></a><a name="p19908318"></a><strong id="b842352706103848"><a name="b842352706103848"></a><a name="b842352706103848"></a>Software Package</strong></p>
-</th>
-<th class="cellrowborder" valign="top" width="51.43%" id="mcps1.2.3.1.2"><p id="p1961070"><a name="p1961070"></a><a name="p1961070"></a><strong id="b842352706154240"><a name="b842352706154240"></a><a name="b842352706154240"></a>Description</strong></p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row48788899"><td class="cellrowborder" valign="top" width="48.57%" headers="mcps1.2.3.1.1 "><p id="p59586712"><a name="p59586712"></a><a name="p59586712"></a>kae_driver-<em id="i93394206582"><a name="i93394206582"></a><a name="i93394206582"></a>version number</em>-<em id="i184257245581"><a name="i184257245581"></a><a name="i184257245581"></a>1.OS type</em>.aarch64.rpm</p>
-</td>
-<td class="cellrowborder" valign="top" width="51.43%" headers="mcps1.2.3.1.2 "><p id="p61794345"><a name="p61794345"></a><a name="p61794345"></a>Accelerator driver, including the uacce.ko, hisi_qm.ko, hisi_sec2.ko, and hisi_hpre.ko kernel modules.</p>
-<p id="p186913584617"><a name="p186913584617"></a><a name="p186913584617"></a>Support: SM3, SM4, AES, RSA, and DH algorithms.</p>
-</td>
-</tr>
-<tr id="row49528506"><td class="cellrowborder" valign="top" width="48.57%" headers="mcps1.2.3.1.1 "><p id="p52386074"><a name="p52386074"></a><a name="p52386074"></a>libwd-<em id="i071418435561"><a name="i071418435561"></a><a name="i071418435561"></a>version number</em>-<em id="i096243095817"><a name="i096243095817"></a><a name="i096243095817"></a>1.OS type</em>.aarch64.rpm</p>
-</td>
-<td class="cellrowborder" valign="top" width="51.43%" headers="mcps1.2.3.1.2 "><p id="p15413619"><a name="p15413619"></a><a name="p15413619"></a>Coverage: <strong id="b4202013529"><a name="b4202013529"></a><a name="b4202013529"></a>libwd.so</strong> dynamic link library.</p>
-<p id="p4504844"><a name="p4504844"></a><a name="p4504844"></a>It provides interfaces for the KAE.</p>
-</td>
-</tr>
-<tr id="row40543596"><td class="cellrowborder" valign="top" width="48.57%" headers="mcps1.2.3.1.1 "><p id="p62805805"><a name="p62805805"></a><a name="p62805805"></a>libkae-<em id="i34342116598"><a name="i34342116598"></a><a name="i34342116598"></a>version number</em>-<em id="i1643152113599"><a name="i1643152113599"></a><a name="i1643152113599"></a>1.OS type</em>.aarch64.rpm</p>
-</td>
-<td class="cellrowborder" valign="top" width="51.43%" headers="mcps1.2.3.1.2 "><p id="p54105439"><a name="p54105439"></a><a name="p54105439"></a>Dependency: libwd RPM package.</p>
-<p id="p17186905"><a name="p17186905"></a><a name="p17186905"></a>Coverage: <strong id="b121301253165118"><a name="b121301253165118"></a><a name="b121301253165118"></a>libkae.so</strong> dynamic library.</p>
-<p id="p20464425"><a name="p20464425"></a><a name="p20464425"></a>Support: SM3, SM4, AES, RSA, and DH algorithms.</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  Software Package   |Description  |
+|:---  |:----  |
+| kae_driver-version number-1.OS type.aarch64.rpm|Accelerator driver, including the uacce.ko, hisi_qm.ko, hisi_sec2.ko, and hisi_hpre.ko kernel modules.<br/>Support: SM3, SM4, AES, RSA, and DH algorithms. |
+| libwd-version number-1.OS type.aarch64.rpm |Coverage: libwd.so dynamic link library.It provides interfaces for the KAE.|
+| libkae-version number-1.OS type.aarch64.rpm | Dependency: libwd RPM package. <br/>Coverage: libkae.so dynamic library.<br/>Support: SM3, SM4, AES, RSA, and DH algorithms. |
 
 #### Installing the Accelerator Software Package
 
@@ -460,38 +415,12 @@ You do not need the accelerator engine software or you want to install new accel
 
 **Table  3**  Log information
 
-<a name="table52821836"></a>
-<table><thead align="left"><tr id="row62537016"><th class="cellrowborder" valign="top" width="28.28282828282828%" id="mcps1.2.4.1.1"><p id="p32333556"><a name="p32333556"></a><a name="p32333556"></a>Directory</p>
-</th>
-<th class="cellrowborder" valign="top" width="27.27272727272727%" id="mcps1.2.4.1.2"><p id="p1772413"><a name="p1772413"></a><a name="p1772413"></a>File</p>
-</th>
-<th class="cellrowborder" valign="top" width="44.44444444444445%" id="mcps1.2.4.1.3"><p id="p9347770"><a name="p9347770"></a><a name="p9347770"></a>Description</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row18971924"><td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.4.1.1 "><p id="p60330866"><a name="p60330866"></a><a name="p60330866"></a>/var/log/</p>
-</td>
-<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.4.1.2 "><p id="p54961981"><a name="p54961981"></a><a name="p54961981"></a>kae.log</p>
-</td>
-<td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p22735452"><a name="p22735452"></a><a name="p22735452"></a>By default, the log level of the OpenSSL engine log is <strong id="b0271153255912"><a name="b0271153255912"></a><a name="b0271153255912"></a>error</strong>. To set the log level, perform the following procedure:</p>
-<a name="ol3292479"></a><a name="ol3292479"></a><ol id="ol3292479"><li>Run <strong id="b3236183234914"><a name="b3236183234914"></a><a name="b3236183234914"></a>export KAE_CONF_ENV=/var/log/</strong>.</li><li>Create the <strong id="b10293194619016"><a name="b10293194619016"></a><a name="b10293194619016"></a>kae.cnf</strong> file in <strong id="b82946461903"><a name="b82946461903"></a><a name="b82946461903"></a>/var/log/</strong>.</li><li>In the <strong id="b162251191116"><a name="b162251191116"></a><a name="b162251191116"></a>kae.cnf</strong> file, configure the content as follows:<p id="p60010105"><a name="p60010105"></a><a name="p60010105"></a>[LogSection]</p>
-<p id="p3220036"><a name="p3220036"></a><a name="p3220036"></a>debug_level=error #Value: <strong id="b203790579120"><a name="b203790579120"></a><a name="b203790579120"></a>none</strong>, <strong id="b46045913113"><a name="b46045913113"></a><a name="b46045913113"></a>error</strong>, <strong id="b4532501620"><a name="b4532501620"></a><a name="b4532501620"></a>info</strong>, <strong id="b119954316214"><a name="b119954316214"></a><a name="b119954316214"></a>warning</strong> or <strong id="b27231361722"><a name="b27231361722"></a><a name="b27231361722"></a>debug</strong></p>
-</li></ol>
-<div class="note" id="note28980331"><a name="note28980331"></a><a name="note28980331"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p class="textintable" id="p59496389"><a name="p59496389"></a><a name="p59496389"></a>In normal cases, you are advised not to enable the <strong id="b21311424624"><a name="b21311424624"></a><a name="b21311424624"></a>info</strong> or <strong id="b99951227621"><a name="b99951227621"></a><a name="b99951227621"></a>debug</strong> log level. Otherwise, the accelerator performance will deteriorate.</p>
-</div></div>
-</td>
-</tr>
-<tr id="row65705461"><td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.4.1.1 "><p id="p20542144"><a name="p20542144"></a><a name="p20542144"></a>/var/log/</p>
-</td>
-<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.4.1.2 "><p id="p53300980"><a name="p53300980"></a><a name="p53300980"></a>message/syslog</p>
-</td>
-<td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><a name="ul22412087"></a><a name="ul22412087"></a><ul id="ul22412087"><li>Kernel logs are stored in the <strong id="b24957411319"><a name="b24957411319"></a><a name="b24957411319"></a>/var/log/message</strong> directory.</li></ul>
-<div class="note" id="note30958167"><a name="note30958167"></a><a name="note30958167"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p class="textintable" id="p10188049"><a name="p10188049"></a><a name="p10188049"></a>Alternatively, you can run the <strong id="b43486522218"><a name="b43486522218"></a><a name="b43486522218"></a>dmesg &gt; /var/log/dmesg.log</strong> command to collect driver and kernel logs.</p>
-</div></div>
-</td>
-</tr>
-</tbody>
-</table>
+
+|  Directory   |File  | Description  |
+|:---  |:----  |:----  |
+| /var/log/| kae.log |By default, the log level of the OpenSSL engine log is error. To set the log level, perform the following procedure:<br/>1. Run export KAE_CONF_ENV=/var/log/.<br/>2. Create the kae.cnf file in /var/log/.<br/>3. In the kae.cnf file, configure the content as follows:<br/>    [LogSection]<br/>    debug_level=error #Value <br/>    none/error/info/warning/debug<br/>NOTE:<br/>In normal cases, you are advised not to enable the info or debug log level. Otherwise, the accelerator performance will deteriorate.  |
+| /var/log/ | message/syslog | Kernel logs are stored in the /var/log/message directory.<br/>NOTE:<br/>Alternatively, you can run the dmesg > /var/log/dmesg.log command to collect driver and kernel logs. |
+
 
 ## Acceleration Engine Application
 

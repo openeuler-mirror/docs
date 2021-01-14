@@ -92,58 +92,15 @@ FTP的正常工作需要使用到多个网络端口，服务器端会使用到�
 
 **表 1**  vsftpd配置文件介绍
 
-<a name="table1541615718372"></a>
-<table><thead align="left"><tr id="row1041620733716"><th class="cellrowborder" valign="top" width="26.16%" id="mcps1.2.3.1.1"><p id="p141619753716"><a name="p141619753716"></a><a name="p141619753716"></a>配置文件</p>
-</th>
-<th class="cellrowborder" valign="top" width="73.83999999999999%" id="mcps1.2.3.1.2"><p id="p16416187153714"><a name="p16416187153714"></a><a name="p16416187153714"></a>含义</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row541716723710"><td class="cellrowborder" valign="top" width="26.16%" headers="mcps1.2.3.1.1 "><p id="p1071316355299"><a name="p1071316355299"></a><a name="p1071316355299"></a>/etc/vsftpd/vsftpd.conf</p>
-</td>
-<td class="cellrowborder" valign="top" width="73.83999999999999%" headers="mcps1.2.3.1.2 "><p id="p04178718376"><a name="p04178718376"></a><a name="p04178718376"></a>vsftpd进程的主配置文件，配置内容格式为“参数=参数值”，且参数和参数值不能为空。</p>
-<p id="p153451439183513"><a name="p153451439183513"></a><a name="p153451439183513"></a>vsftpd.conf 的详细介绍可以使用如下命令查看：</p>
-<p id="p128951154173518"><a name="p128951154173518"></a><a name="p128951154173518"></a>man 5 vsftpd.conf</p>
-</td>
-</tr>
-<tr id="row1341710763719"><td class="cellrowborder" valign="top" width="26.16%" headers="mcps1.2.3.1.1 "><p id="p18697219193716"><a name="p18697219193716"></a><a name="p18697219193716"></a>/etc/pam.d/vsftpd</p>
-</td>
-<td class="cellrowborder" valign="top" width="73.83999999999999%" headers="mcps1.2.3.1.2 "><p id="p941714720378"><a name="p941714720378"></a><a name="p941714720378"></a>PAM（Pluggable Authentication Modules）认证文件，主要用于身份认证和限制一些用户的操作。</p>
-</td>
-</tr>
-<tr id="row194171773716"><td class="cellrowborder" valign="top" width="26.16%" headers="mcps1.2.3.1.1 "><p id="p1024763374812"><a name="p1024763374812"></a><a name="p1024763374812"></a>/etc/vsftpd/ftpusers</p>
-</td>
-<td class="cellrowborder" valign="top" width="73.83999999999999%" headers="mcps1.2.3.1.2 "><p id="p74171174375"><a name="p74171174375"></a><a name="p74171174375"></a><span>禁用使用vsftpd的用户列表文件</span>。默认情况下，系统帐号也在该文件中，因此系统帐号默认无法使用vsftpd。</p>
-</td>
-</tr>
-<tr id="row441787153712"><td class="cellrowborder" valign="top" width="26.16%" headers="mcps1.2.3.1.1 "><p id="p174183753711"><a name="p174183753711"></a><a name="p174183753711"></a>/etc/vsftpd/user_list</p>
-</td>
-<td class="cellrowborder" valign="top" width="73.83999999999999%" headers="mcps1.2.3.1.2 "><p id="p897451702311"><a name="p897451702311"></a><a name="p897451702311"></a><span>禁止或允许登录vsftpd服务器的用户列表文件</span>。该文件是否生效，取决于主配置文件vsftpd.conf中的如下参数：</p>
-<p id="p235712118232"><a name="p235712118232"></a><a name="p235712118232"></a>userlist_enable：是否启用userlist机制，YES为启用，此时userlist_deny配置有效，NO为禁用。</p>
-<p id="p38688486536"><a name="p38688486536"></a><a name="p38688486536"></a>userlist_deny：是否禁止user_list中的用户登录，YES为禁止名单中的用户登录，NO为允许命令中的用户登录。</p>
-<p id="p15866735202619"><a name="p15866735202619"></a><a name="p15866735202619"></a>例如userlist_enable=YES，userlist_deny=YES，则user_list中的用户都无法登录。</p>
-</td>
-</tr>
-<tr id="row9535948142112"><td class="cellrowborder" valign="top" width="26.16%" headers="mcps1.2.3.1.1 "><p id="p17719134152118"><a name="p17719134152118"></a><a name="p17719134152118"></a>/etc/vsftpd/chroot_list</p>
-</td>
-<td class="cellrowborder" valign="top" width="73.83999999999999%" headers="mcps1.2.3.1.2 "><p id="p6618142417163"><a name="p6618142417163"></a><a name="p6618142417163"></a>是否限制在主目录下的用户列表。该文件默认不存在，需要手动建立。它是主配置文件vsftpd.conf中参数chroot_list_file的参数值。</p>
-<p id="p3279143081618"><a name="p3279143081618"></a><a name="p3279143081618"></a>其作用是限制还是允许，取决于主配置文件vsftpd.conf中的如下参数：</p>
-<a name="ul1455581412205"></a><a name="ul1455581412205"></a><ul id="ul1455581412205"><li><span>chroot_local_user：是否将所有用户限制在主目录，YES为启用，NO禁用</span>。</li><li><span>chroot_list_enable：</span>是否启用限制用户的名单，YES为启用，NO禁用。</li></ul>
-<p id="p197351059141313"><a name="p197351059141313"></a><a name="p197351059141313"></a>例如<span>chroot_local_user</span>=YES，<span>chroot_list_enable</span>=YES，且指定chroot_list_file=/etc/vsftpd/chroot_list时，表示所有用户被限制在其主目录下，而chroot_list中的用户不受限制。</p>
-</td>
-</tr>
-<tr id="row12536248192116"><td class="cellrowborder" valign="top" width="26.16%" headers="mcps1.2.3.1.1 "><p id="p6724834162111"><a name="p6724834162111"></a><a name="p6724834162111"></a>/usr/sbin/vsftpd</p>
-</td>
-<td class="cellrowborder" valign="top" width="73.83999999999999%" headers="mcps1.2.3.1.2 "><p id="p1253634815218"><a name="p1253634815218"></a><a name="p1253634815218"></a>vsftpd的唯一执行文件。</p>
-</td>
-</tr>
-<tr id="row35371648162119"><td class="cellrowborder" valign="top" width="26.16%" headers="mcps1.2.3.1.1 "><p id="p772716348217"><a name="p772716348217"></a><a name="p772716348217"></a>/var/ftp/</p>
-</td>
-<td class="cellrowborder" valign="top" width="73.83999999999999%" headers="mcps1.2.3.1.2 "><p id="p25371248172114"><a name="p25371248172114"></a><a name="p25371248172114"></a>匿名用户登录的默认根目录，与ftp帐户的用户主目录有关。</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  配置文件   |含义  |
+|:---  |:----  |
+| /etc/vsftpd/vsftpd.conf|vsftpd进程的主配置文件，配置内容格式为“参数=参数值”，且参数和参数值不能为空。<br/>vsftpd.conf 的详细介绍可以使用如下命令查看：<br/>man 5 vsftpd.conf |
+| /etc/pam.d/vsftpd | PAM（Pluggable Authentication Modules）认证文件，主要用于身份认证和限制一些用户的操作。 |
+| /etc/vsftpd/ftpusers |禁用使用vsftpd的用户列表文件。默认情况下，系统帐号也在该文件中，因此系统帐号默认无法使用vsftpd。 |
+| /etc/vsftpd/user_list |禁止或允许登录vsftpd服务器的用户列表文件。该文件是否生效，取决于主配置文件vsftpd.conf中的如下参数：<br/><br/>userlist_enable：是否启用userlist机制，YES为启用，此时userlist_deny配置有效，NO为禁用。<br/>userlist_deny：是否禁止user_list中的用户登录，YES为禁止名单中的用户登录，NO为允许命令中的用户登录。<br/><br/>例如userlist_enable=YES，userlist_deny=YES，则user_list中的用户都无法登录。 |
+| /etc/vsftpd/chroot_list |是否限制在主目录下的用户列表。该文件默认不存在，需要手动建立。它是主配置文件vsftpd.conf中参数chroot_list_file的参数值。<br/>其作用是限制还是允许，取决于主配置文件vsftpd.conf中的如下参数：<br/><br/>chroot_local_user：是否将所有用户限制在主目录，YES为启用，NO禁用。<br/>chroot_list_enable：是否启用限制用户的名单，YES为启用，NO禁用。<br/><br/>例如chroot_local_user=YES，chroot_list_enable=YES，且指定chroot_list_file=/etc/vsftpd/chroot_list时，表示所有用户被限制在其主目录下，而chroot_list中的用户不受限制。 |
+| /usr/sbin/vsftpd | vsftpd的唯一执行文件。 |
+| /var/ftp/ |  匿名用户登录的默认根目录，与ftp帐户的用户主目录有关。|
 
 
 ### 默认配置说明
@@ -173,80 +130,22 @@ userlist_enable=YES
 
 **表 2**  参数说明
 
-<a name="table18185162512499"></a>
-<table><thead align="left"><tr id="row101877257495"><th class="cellrowborder" valign="top" width="22.78%" id="mcps1.2.3.1.1"><p id="p21871725144910"><a name="p21871725144910"></a><a name="p21871725144910"></a>参数</p>
-</th>
-<th class="cellrowborder" valign="top" width="77.22%" id="mcps1.2.3.1.2"><p id="p19187162564910"><a name="p19187162564910"></a><a name="p19187162564910"></a>含义</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row3187425134916"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p4968173712497"><a name="p4968173712497"></a><a name="p4968173712497"></a>anonymous_enable</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p74773423490"><a name="p74773423490"></a><a name="p74773423490"></a>是否允许匿名用户登录，YES为允许匿名登录，NO为不允许。</p>
-</td>
-</tr>
-<tr id="row19187225114911"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p8968237174919"><a name="p8968237174919"></a><a name="p8968237174919"></a>local_enable</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p104782422495"><a name="p104782422495"></a><a name="p104782422495"></a>是否允许本地用户登入，YES 为允许本地用户登入，NO为不允许。</p>
-</td>
-</tr>
-<tr id="row1418772574910"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p8968737114910"><a name="p8968737114910"></a><a name="p8968737114910"></a>write_enable</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p81871825104914"><a name="p81871825104914"></a><a name="p81871825104914"></a>是否允许登录用户有写权限，YES为启用上传写入功能，NO为禁用。</p>
-</td>
-</tr>
-<tr id="row018722564917"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p3969163704915"><a name="p3969163704915"></a><a name="p3969163704915"></a>local_umask</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p01856127552"><a name="p01856127552"></a><a name="p01856127552"></a>本地用户新增档案时的umask值。</p>
-</td>
-</tr>
-<tr id="row171881425194917"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p1796983716496"><a name="p1796983716496"></a><a name="p1796983716496"></a>dirmessage_enable</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p1718872516496"><a name="p1718872516496"></a><a name="p1718872516496"></a>当用户进入某个目录时，是否显示该目录需要注意的内容，YES为显示注意内容，NO为不显示。</p>
-</td>
-</tr>
-<tr id="row1718862584912"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p16969937194918"><a name="p16969937194918"></a><a name="p16969937194918"></a>xferlog_enable</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p11188725164915"><a name="p11188725164915"></a><a name="p11188725164915"></a>是否记录使用者上传与下载文件的操作，YES为记录操作，NO为不记录。</p>
-</td>
-</tr>
-<tr id="row131884252495"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p1497053713498"><a name="p1497053713498"></a><a name="p1497053713498"></a>connect_from_port_20</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p0223715115717"><a name="p0223715115717"></a><a name="p0223715115717"></a>Port模式进行数据传输是否使用端口20，YES为使用端口20，NO为不使用端口20。</p>
-</td>
-</tr>
-<tr id="row54729324499"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p1797093744914"><a name="p1797093744914"></a><a name="p1797093744914"></a>xferlog_std_format</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p151867233590"><a name="p151867233590"></a><a name="p151867233590"></a>传输日志文件是否以标准xferlog格式书写，YES为使用该格式书写，NO为不使用。</p>
-</td>
-</tr>
-<tr id="row18472163284918"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p1897013717499"><a name="p1897013717499"></a><a name="p1897013717499"></a>listen</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p1047214329495"><a name="p1047214329495"></a><a name="p1047214329495"></a>设置vsftpd是否以stand alone的方式启动，YES为使用stand alone方式启动，NO为不使用该方式。</p>
-</td>
-</tr>
-<tr id="row65527244272"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p1955372410278"><a name="p1955372410278"></a><a name="p1955372410278"></a>pam_service_name</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p85531424172712"><a name="p85531424172712"></a><a name="p85531424172712"></a>支持PAM模块的管理，配置值为服务名称，例如vsftpd。</p>
-</td>
-</tr>
-<tr id="row137361028142713"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p3737132822713"><a name="p3737132822713"></a><a name="p3737132822713"></a>userlist_enable</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p573792872715"><a name="p573792872715"></a><a name="p573792872715"></a>是否支持/etc/vsftpd/user_list文件内的账号登录控制，YES为支持，NO为不支持。</p>
-</td>
-</tr>
-<tr id="row1712712332278"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p1512763312712"><a name="p1512763312712"></a><a name="p1512763312712"></a>tcp_wrappers</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p15127033152712"><a name="p15127033152712"></a><a name="p15127033152712"></a>是否支持TCP Wrappers的防火墙机制，YES为支持，NO为不支持。</p>
-</td>
-</tr>
-<tr id="row163601306111"><td class="cellrowborder" valign="top" width="22.78%" headers="mcps1.2.3.1.1 "><p id="p1597123717499"><a name="p1597123717499"></a><a name="p1597123717499"></a>listen_ipv6</p>
-</td>
-<td class="cellrowborder" valign="top" width="77.22%" headers="mcps1.2.3.1.2 "><p id="p0361200613"><a name="p0361200613"></a><a name="p0361200613"></a>是否侦听IPv6的FTP请求，YES为侦听，NO为不侦听。listen和listen_ipv6不能同时开启。</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  参数   |含义  |
+|:---  |:----  |
+|  anonymous_enable| 是否允许匿名用户登录，YES为允许匿名登录，NO为不允许。 |
+| local_enable | 是否允许本地用户登入，YES 为允许本地用户登入，NO为不允许。 |
+| write_enable | 是否允许登录用户有写权限，YES为启用上传写入功能，NO为禁用。 |
+| local_umask | 本地用户新增档案时的umask值。 |
+| dirmessage_enable | 当用户进入某个目录时，是否显示该目录需要注意的内容，YES为显示注意内容，NO为不显示。 |
+| xferlog_enable |  是否记录使用者上传与下载文件的操作，YES为记录操作，NO为不记录。|
+| connect_from_port_20 |  Port模式进行数据传输是否使用端口20，YES为使用端口20，NO为不使用端口20。|
+| xferlog_std_format | 传输日志文件是否以标准xferlog格式书写，YES为使用该格式书写，NO为不使用。 |
+| listen | 设置vsftpd是否以stand alone的方式启动，YES为使用stand alone方式启动，NO为不使用该方式。 |
+| pam_service_name | 支持PAM模块的管理，配置值为服务名称，例如vsftpd。 |
+| userlist_enable | 是否支持/etc/vsftpd/user_list文件内的账号登录控制，YES为支持，NO为不支持。 |
+|  tcp_wrappers| 是否支持TCP Wrappers的防火墙机制，YES为支持，NO为不支持。 |
+|listen_ipv6  | 是否侦听IPv6的FTP请求，YES为侦听，NO为不侦听。listen和listen_ipv6不能同时开启。 |
+
 
 ### 配置本地时间
 
