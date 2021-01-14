@@ -931,4 +931,11 @@
         
       ]
     }
+    {
+      "label": "HA用户指南",
+      "path": "docs/userguide/HAuserguide",
+      "children": [
+        
+      ]
+    }
 ]
