@@ -1,75 +1,163 @@
-# Resolved Issues<a name="EN-US_TOPIC_0225731125"></a>
+# Resolved Issues
 
-For details about the complete issue list, click  [https://gitee.com/organizations/src-openeuler/issues](https://gitee.com/organizations/src-openeuler/issues).
+For details about the resolved issues, see [Table 1](#table249714911433).
 
-For details about the complete kernel submission records, click  [https://gitee.com/openeuler/kernel/commits/openEuler-1.0-LTS](https://gitee.com/openeuler/kernel/commits/openEuler-1.0-LTS).
+Table 1 Resolved issues
 
-[Table 1](#table249714911433)  lists the resolved issues.
-
-**Table  1**  Resolved issues
-
-<a name="table249714911433"></a>
-<table><thead align="left"><tr id="row104971596432"><th class="cellrowborder" valign="top" width="15%" id="mcps1.2.3.1.1"><p id="p1649720994313"><a name="p1649720994313"></a><a name="p1649720994313"></a>Issue</p>
-</th>
-<th class="cellrowborder" valign="top" width="85%" id="mcps1.2.3.1.2"><p id="p8497129114312"><a name="p8497129114312"></a><a name="p8497129114312"></a>Description</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row449716974316"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p34974920436"><a name="p34974920436"></a><a name="p34974920436"></a><a href="https://gitee.com/openeuler/kernel/issues/I1BJTF?from=project-issue" target="_blank" rel="noopener noreferrer">I1BJTF</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p74971293436"><a name="p74971293436"></a><a name="p74971293436"></a>[Kernel bug] The <strong id="b1578853092814"><a name="b1578853092814"></a><a name="b1578853092814"></a>lscpu </strong>command on the ARM server cannot be used to display the CPU dominant frequency, and the CPU cache is incorrect.</p>
-</td>
-</tr>
-<tr id="row20574203616567"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p1357415364563"><a name="p1357415364563"></a><a name="p1357415364563"></a><a href="https://gitee.com/openeuler/iSulad-img/issues/I1BWPD?from=project-issue" target="_blank" rel="noopener noreferrer">I1BWPD</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p85749369567"><a name="p85749369567"></a><a name="p85749369567"></a>Failed to pull an image using the <strong id="b19671122163015"><a name="b19671122163015"></a><a name="b19671122163015"></a>isula pull</strong> or <strong id="b38112315303"><a name="b38112315303"></a><a name="b38112315303"></a>curl pull</strong> command.</p>
-</td>
-</tr>
-<tr id="row20773194665915"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p6774164645917"><a name="p6774164645917"></a><a name="p6774164645917"></a><a href="https://gitee.com/src-openeuler/shadow/issues/I1BV56?from=project-issue" target="_blank" rel="noopener noreferrer">I1BV56</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p77741646115916"><a name="p77741646115916"></a><a name="p77741646115916"></a>Delete redundant gpg sig file for shadow-4.6.</p>
-</td>
-</tr>
-<tr id="row442920506594"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p154294507593"><a name="p154294507593"></a><a name="p154294507593"></a><a href="https://gitee.com/src-openeuler/expect/issues/I1BV38?from=project-issue" target="_blank" rel="noopener noreferrer">I1BV38</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p19429165016596"><a name="p19429165016596"></a><a name="p19429165016596"></a>The <strong id="b0171131110319"><a name="b0171131110319"></a><a name="b0171131110319"></a>unbuffer</strong> command is unavailable.</p>
-</td>
-</tr>
-<tr id="row640673815415"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p12406103810410"><a name="p12406103810410"></a><a name="p12406103810410"></a><a href="https://gitee.com/src-openeuler/iputils/issues/I1BA9B?from=project-issue" target="_blank" rel="noopener noreferrer">I1BA9B</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p134061138343"><a name="p134061138343"></a><a name="p134061138343"></a>The <strong id="b23371742133118"><a name="b23371742133118"></a><a name="b23371742133118"></a>arping -w</strong> parameter is invalid.</p>
-</td>
-</tr>
-<tr id="row1967874117414"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p16679204110411"><a name="p16679204110411"></a><a name="p16679204110411"></a><a href="https://gitee.com/openeuler/kernel/issues/I1AV3S?from=project-issue" target="_blank" rel="noopener noreferrer">I1AV3S</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p176790413419"><a name="p176790413419"></a><a name="p176790413419"></a>The oops error occurs when the latest LTP pty03 test case is executed.</p>
-</td>
-</tr>
-<tr id="row1076072510202"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p776062513206"><a name="p776062513206"></a><a name="p776062513206"></a><a href="https://gitee.com/src-openeuler/cronie/issues/I1AZ1I?from=project-issue" target="_blank" rel="noopener noreferrer">I1AZ1I</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p147601725112012"><a name="p147601725112012"></a><a name="p147601725112012"></a>500 scheduled tasks are started. After 4 to 5 minutes, the tasks cannot be processed and the system stops responding.</p>
-</td>
-</tr>
-<tr id="row3131122913207"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p81318296202"><a name="p81318296202"></a><a name="p81318296202"></a><a href="https://gitee.com/openeuler/iSulad/issues/I1AH2C?from=project-issue" target="_blank" rel="noopener noreferrer">I1AH2C</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p19131152918200"><a name="p19131152918200"></a><a name="p19131152918200"></a>The warning information captured when the Kata container fails to be started is insufficient for fault locating. More errors need to be printed.</p>
-</td>
-</tr>
-<tr id="row1494114212318"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p129415428238"><a name="p129415428238"></a><a name="p129415428238"></a><a href="https://gitee.com/openeuler/iSulad/issues/I1AGXO?from=project-issue" target="_blank" rel="noopener noreferrer">I1AGXO</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p794174219231"><a name="p794174219231"></a><a name="p794174219231"></a>In kata-runtime remote mode, the <strong id="b494117574545"><a name="b494117574545"></a><a name="b494117574545"></a>kata-runtime kill</strong> is not called when the <strong id="b12947271339"><a name="b12947271339"></a><a name="b12947271339"></a>isula rm -f</strong> command is executed. As a result, residual data exists.</p>
-</td>
-</tr>
-<tr id="row19391546182314"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p164044613233"><a name="p164044613233"></a><a name="p164044613233"></a><a href="https://gitee.com/openeuler/kernel/issues/I1AF39?from=project-issue" target="_blank" rel="noopener noreferrer">I1AF39</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p164094682313"><a name="p164094682313"></a><a name="p164094682313"></a>The soft lockup is found when the open function is triggered in the ext4 file system.</p>
-</td>
-</tr>
-<tr id="row154698862716"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p846910816275"><a name="p846910816275"></a><a name="p846910816275"></a><a href="https://gitee.com/openeuler/iSulad/issues/I1ADUD?from=project-issue" target="_blank" rel="noopener noreferrer">I1ADUD</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p5694192512715"><a name="p5694192512715"></a><a name="p5694192512715"></a>Isulad breaks down when a pod is created using kubectl.</p>
-</td>
-</tr>
-</tbody>
-</table>
+| Issue| Description|
+|:----------|:----------|
+| [I29U62](https://gitee.com/src-openEuler/docker/issues/I29U62?from=project-issue)| With Docker Engine installed, permission issues occur after some services in the environment are restarted.|
+| [I29OSH](https://gitee.com/src-openEuler/python-uwsgidecorators/issues/I29OSH?from=project-issue)| \[SP1] A conflict occurs when **python3-uwsgidecorators** and **python3-uWSGI** packages are installed at the same time. |
+| [I29O11](https://gitee.com/src-openEuler/openssh/issues/I29O11?from=project-issue)| \[20.03-LTS-SP1] \[Inevitably] When a user selects virtualization and all components on the installation page, the **sshd** service fails to be started. |
+| [I29MIC](https://gitee.com/openEuler/docs/issues/I29MIC?from=project-issue)| Modify the repo example document: The ''Add the openEuler repo source as the root user'' should be changed to ''Add the openEuler repo source as the administrator''.|
+| [I29HSE](https://gitee.com/src-openEuler/createrepo_c/issues/I29HSE?from=project-issue)| The **createrepo\_c** test case fails to be executed. |
+| [I29HEH](https://gitee.com/src-openEuler/deepin-default-settings/issues/I29HEH?from=project-issue)| Users created during the installation do not have desktop icons.|
+| [I29G7B](https://gitee.com/src-openEuler/util-linux/issues/I29G7B?from=project-issue)| Some LTS SP1 **util-linux** open source cases fail to be executed. |
+| [I29LV1](https://gitee.com/src-openEuler/systemd/issues/I29LV1?from=project-issue)| By default, **systemd journald** logs are stored in the **/run/log/journal** path. |
+| [I29L21](https://gitee.com/src-openEuler/kernel/issues/I29L21?from=project-issue)| \[20.03-SP1] When the onboard NIC is used to test the Nginx performance, the CPU usage of the client reaches 100% with low traffic.|
+| [I29E28](https://gitee.com/src-openEuler/linux-firmware/issues/I29E28?from=project-issue)| dnf check error for obsoleted define |
+| [I29COO](https://gitee.com/openEuler/docs/issues/I29COO?from=project-issue)| \[20.03-LTS-SP1] The installation method of the **netinst** image network needs to be added. |
+| [I29CFN](https://gitee.com/src-openEuler/dhcp/issues/I29CFN?from=project-issue)| Port 68 of the **DHCP** service needs to be disabled by default. |
+| [I29CBL](https://gitee.com/src-openEuler/dde/issues/I29CBL?from=project-issue)| \[20.03-LTS-SP1] \[arm/x86] An error occurs during DDE installation.|
+| [I29BAZ](https://gitee.com/openEuler/docs/issues/I29BAZ?from=project-issue)| \[OpenStack-Train] Add description of different commands executed on ARM- and x86-based servers.|
+| [I29AHP](https://gitee.com/src-openEuler/systemd/issues/I29AHP?from=project-issue)| After the LTS branch systemd is upgraded from 20.03 release 18 to release 28, the restart fails. |
+| [I2963S](https://gitee.com/src-openEuler/python-docutils/issues/I2963S?from=project-issue)| \[20.03-LTS-SP1] The **python-docutils-help** package is not installed during the installation of the **python3-docutils** package.|
+| [I2960L](https://gitee.com/src-openEuler/multipath-tools/issues/I2960L?from=project-issue)| \[20.03-LTS-SP1] The **multipath-tools-help** package is not installed during the installation of the **kpartx** package.|
+| [I293B6](https://gitee.com/src-openEuler/rpm/issues/I293B6?from=project-issue)| The file name extension of the RPM package in the source is incorrect.|
+| [I2938W](https://gitee.com/src-openEuler/ntp/issues/I2938W?from=project-issue)| \[20.03-SP1] After the **ntpd** service is restarted, **failed** is displayed when you view the status.|
+| [I292AO](https://gitee.com/src-openEuler/tomcat/issues/I292AO?from=project-issue)| Error logs exist after the service is started.|
+| [I29079](https://gitee.com/src-openEuler/emacs/issues/I29079?from=project-issue)| \[20.03-SP1] The Emacs on ARM-based servers fails to be started.|
+| [I28YLC](https://gitee.com/openEuler/docs/issues/I28YLC?from=project-issue)| \[Spring Framework] When the Spring Framework source code package is compiled on x86-based servers, an error is reported and the installation fails.|
+| [I28XMV](https://gitee.com/src-openEuler/libselinux/issues/I28XMV?from=project-issue)| \[SP1] After LTS is fully upgraded to SP1 and the server is restarted, the SSH connection fails.|
+| [I28XJR](https://gitee.com/openEuler/community/issues/I28XJR?from=project-issue)| \[20.03-SP1] \[arm/x86] In the newly installed LTS and SP1 environments, the permissions on some file directories are different.|
+| [I28M85](https://gitee.com/src-openEuler/anaconda/issues/I28M85?from=project-issue)| \[20.03-LTS-SP1] \[Inevitably] An unknown error occurs when the host name is set to a string with multiple dots.|
+| [I29B9O](https://gitee.com/openEuler/kernel/issues/I29B9O?from=project-issue)| The system does not respond after the hifc driver is connected to an optical attenuator and services run for a long time.|
+| [I28SOI](https://gitee.com/src-openEuler/iproute/issues/I28SOI?from=project-issue)| An error message is displayed indicating that the **normal.dist** file cannot be found when the **normal** command is executed for the typical TC latency distribution configuration.|
+| [I28S4S](https://gitee.com/src-openEuler/NetworkManager/issues/I28S4S?from=project-issue)| The DBUS exception triggers NetworkManager self-healing. The NetworkManager self-healing fails due to the DBUS modification mechanism change. |
+| [I28S1U](https://gitee.com/src-openEuler/iputils/issues/I28S1U?from=project-issue)| ARP entries cannot be updated by running the **arping** command after the sub NIC IP address is configured.|
+| [I28RT6](https://gitee.com/src-openEuler/sg3_utils/issues/I28RT6?from=project-issue)| The ShellCheck detects syntax errors in the **/usr/bin/rescan-scsi-bus.sh** script. |
+| [I28RQ0](https://gitee.com/openEuler/kernel/issues/I28RQ0?from=project-issue)| \[20.03] \[iputils] In the forcible synchronization mode of the arping -U, no value is expected to be returned. However, the MAC address is returned to the openEuler.|
+| [I28PGY](https://gitee.com/src-openEuler/libhugetlbfs/issues/I28PGY?from=project-issue)| \[20.03 LTS] \[x86] The error message of "**Segments would overlap**" is reported in the **libhugetlbfs** library. |
+| [I28OD1](https://gitee.com/src-openEuler/emacs/issues/I28OD1?from=project-issue)| \[20.03 SP1] After a text file is modified and saved, the generated temporary file is not automatically deleted.|
+| [I28O9I](https://gitee.com/src-openEuler/python-qt5/issues/I28O9I?from=project-issue)| \[SP1] The dependencies of **python2-qt5-webengine** and **python3-qt5-webengine** packages are missing. |
+| [I28O6X](https://gitee.com/src-openEuler/qt5-qtwebengine/issues/I28O6X?from=project-issue)| \[SP1] The dependencies of **qt5-qtwebengine-devel** and **qt5-qtwebengine-examples** packages are missing. |
+| [I28O02](https://gitee.com/src-openEuler/ukui-greeter/issues/I28O02?from=project-issue)| \[20.03 SP1] The text display is abnormal.|
+| [I28N9J](https://gitee.com/src-openEuler/kernel/issues/I28N9J?from=project-issue)| If you restart the operating system without logging out of the iSCSI host, the restart process will be suspended. |
+| [I28LBH](https://gitee.com/src-openEuler/ukui-greeter/issues/I28LBH?from=project-issue)| \[20.03 SP1] Redundant and invalid sessions exist on the login page.|
+| [I28JGY](https://gitee.com/src-openEuler/vim/issues/I28JGY?from=project-issue)| After a swap file is generated by Vim, the file can still be accessed with switch user.|
+| [I28ILC](https://gitee.com/src-openEuler/peony-extensions/issues/I28ILC?from=project-issue)| \[20.03 SP1] The Peony fails to share a folder.|
+| [I28HN4](https://gitee.com/src-openEuler/bind/issues/I28HN4?from=project-issue)| When the **dig** command is executed for multiple times, the time to live (TTL) obtained during the second execution is very long.|
+| [I28FXC](https://gitee.com/src-openEuler/dhcp/issues/I28FXC?from=project-issue)| The modification is not incorporated into the SP1 branch.|
+| [I28FO8](https://gitee.com/src-openEuler/zip/issues/I28FO8?from=project-issue)| When the partition is fully occupied, residual temporary files are generated during ZIP compression.|
+| [I28FHH](https://gitee.com/src-openEuler/systemd/issues/I28FHH?from=project-issue)| An error is reported when the **timedatectl** command is executed to change the time zone after some time zone service operations are performed.|
+| [I28DTL](https://gitee.com/src-openEuler/internal-issue/issues/I28DTL?from=project-issue)| \[Virtualization] \[arm] \[LTS SP1] When the **Avocado** case is executed, memory leakage occurs in **qdict.c:29**. |
+| [I28DSO](https://gitee.com/src-openEuler/internal-issue/issues/I28DSO?from=project-issue)| \[Virtualization] \[arm] \[LTS SP1] When the **Avocado** case is executed, memory leakage occurs in **hostmem.c:94**. |
+| [I288L7](https://gitee.com/src-openEuler/python-pid/issues/I288L7?from=project-issue)| The test case fails to be executed in pid 3.0.4.|
+| [I2872V](https://gitee.com/src-openEuler/cloud-init/issues/I2872V?from=project-issue)| \[20.03-SP1] \[arm/x86] After the **cloud-init** package is installed and restarted, the permissions on some files in the **/etc/ssh** directory are modified. |
+| [I2870F](https://gitee.com/src-openEuler/kernel/issues/I2870F?from=project-issue)| \[20.03-LTS-SP1] On the installation wizard page of the ARM/x86-based physical machine, the error message "**mod cmd fail:Feature not supported**" is displayed after the installation is successful. |
+| [I286YJ](https://gitee.com/src-openEuler/net-snmp/issues/I286YJ?from=project-issue)| \[20.03-LTS-SP1] After the **Net-SNMP** is upgraded, the file permission is changed. |
+| [I286P9](https://gitee.com/src-openEuler/kexec-tools/issues/I286P9?from=project-issue)| \[20.03-SP1] **kdump** fails to start after the Everything ISO is installed on an x86-based physical machine. |
+| [I28666](https://gitee.com/src-openEuler/postgresql/issues/I28666?from=project-issue)| \[20.03-LTS-SP1] The file permissions in the **postgresql-server** and **postgresql-test-rpm-macros** packages are changed.|
+| [I285WT](https://gitee.com/src-openEuler/libvirt/issues/I285WT?from=project-issue)| The rules in the **/usr/lib/firewalld/zones/libvirt.xml** file of libvirt 20.03-sp1 cannot be identified by firewalld of libvirt 20.03-sp1.|
+| [I285RM](https://gitee.com/src-openEuler/ppp/issues/I285RM?from=project-issue)| \[20.03-LTS-SP1] The file permission in the **PPP** package is changed.|
+| [I283XY](https://gitee.com/src-openEuler/ukui-control-center/issues/I283XY?from=project-issue)| After the resolution is adjusted, the confirmation dialog box is displayed twice.|
+| [I283XQ](https://gitee.com/openEuler/kernel/issues/I283XQ?from=project-issue)| The name of the vmlinux installation package is incorrect.|
+| [I283CE](https://gitee.com/src-openEuler/ebtables/issues/I283CE?from=project-issue)| \[20.03-LTS-SP1] After **ebtables** is upgraded to 2.0.11, the permission on the configuration file **/etc/sysconfig/ebtables-config** is changed to **755**. |
+| [I283BK](https://gitee.com/src-openEuler/libreswan/issues/I283BK?from=project-issue)| \[20.03-LTS-SP1] Failed to create a VPN connection.|
+| [I283BC](https://gitee.com/使用的是默认权限)| \[20.03-LTS-SP1] No permission is specified for some files in the **gRPC** package.|
+| [I2827H](https://gitee.com/src-openEuler/ModemManager/issues/I2827H?from=project-issue)| \[LTS] The **ModemManager** service fails to be started.|
+| [I2822Q](https://gitee.com/src-openEuler/zenity/issues/I2822Q?from=project-issue)| \[SP1] The permission for some files in the **zenity** directory is changed. |
+| [I281FY](https://gitee.com/src-openEuler/libsass/issues/I281FY?from=project-issue)| \[fuzz] use-of-uninitialized-value|
+| [I2813F](https://gitee.com/src-openEuler/deepin-desktop-base/issues/I2813F?from=project-issue)| \[dde] \[GUI Display] UOS-related icons are deleted.|
+| [I2811J](https://gitee.com/src-openEuler/libsass/issues/I2811J?from=project-issue)| \[fuzz] heap-buffer-overflow|
+| [I27ZBD](https://gitee.com/openEuler/raspberrypi/issues/I27ZBD?from=project-issue)| \[openEuler 20.03 LTS SP1] The default source of the RC2 image for Raspberry Pi cannot be used.|
+| [I27ZA7](https://gitee.com/openEuler/raspberrypi/issues/I27ZA7?from=project-issue)| \[openEuler 20.03 LTS SP1] An error message is displayed in the **NetworkManager** service of the RC2 image for Raspberry Pi.|
+| [I27X28](https://gitee.com/src-openEuler/nfs-utils/issues/I27X28?from=project-issue)| \[20.03-LTS-SP1] The NFS source mounts the image of the first version. After the mounting is canceled, the NFS source mounts the image of the second version. In this case, the Yum source contains the kernel 48 version. After the mounting, the kernel 47 version is contained. |
+| [I27X1T](https://gitee.com/src-openEuler/ModemManager/issues/I27X1T?from=project-issue)| \[20.03-SP1] Failed to start the **ModemManager** service.|
+| [I27WZN](https://gitee.com/src-openEuler/sleuthkit/issues/I27WZN?from=project-issue)| \[fuzz] memory leaks |
+| [I27WZ5](https://gitee.com/src-openEuler/sleuthkit/issues/I27WZ5?from=project-issue)| \[fuzz] heap-buffer-overflow|
+| [I27UT7](https://gitee.com/src-openEuler/re2/issues/I27UT7?from=project-issue)| \[fuzz] runtime error|
+| [I27UMK](https://gitee.com/src-openEuler/re2/issues/I27UMK?from=project-issue)| \[fuzz] use-of-uninitialized-value|
+| [I27RB5](https://gitee.com/openEuler/community/issues/I27RB5?from=project-issue)| \[SP1] \[x86 physical machine] \[Inevitably] After LTS is fully upgraded to SP1, the restart fails.|
+| [I27R99](https://gitee.com/src-openEuler/kernel/issues/I27R99?from=project-issue)| \[SP1] \[ARM physical machine] An error message is displayed during the kernel upgrade, and a black screen is displayed during the restart.|
+| [I27QZM](https://gitee.com/src-openEuler/containerd/issues/I27QZM?from=project-issue)| \[SP1] The upgrade of **containerd** conflicts with that of the LTS Docker Engine.|
+| [I27QJX](https://gitee.com/src-openEuler/python-scons/issues/I27QJX?from=project-issue)| \[SP1] The upgrade of **python2-scons** and **python3-scons** conflicts with that of the **LTS scons-help**. |
+| [I27P9B](https://gitee.com/src-openEuler/time-shutdown/issues/I27P9B?from=project-issue)| An unnecessary title bar is displayed on the top of the **time-shutdown** page. |
+| [I27OMC](https://gitee.com/src-openEuler/ukui-menu/issues/I27OMC?from=project-issue)| The shutdown does not take effect. After you click the shutdown button, the login page is displayed.|
+| [I27NTJ](https://gitee.com/src-openEuler/opusfile/issues/I27NTJ?from=project-issue)| \[fuzz] use-of-uninitialized-value|
+| [I29HA7](https://gitee.com/src-openEuler/kde-filesystem/issues/I29HA7?from=project-issue)| \[SP1] The dnf check result shows that the **kde-filesystem** package is discarded.|
+| [I294SX](https://gitee.com/src-openEuler/LibRaw/issues/I294SX?from=project-issue)| \[fuzz] runtime error|
+| [I293DV](https://gitee.com/src-openEuler/glibc/issues/I293DV?from=project-issue)| \[20.03-SP1] After the **NSCD** service is restarted, "**failed**" is displayed when you view the service status. |
+| [I2932J](https://gitee.com/src-openEuler/afflib/issues/I2932J?from=project-issue)| \[SP1] The Advanced Forensic Format Library (afflib) self-compilation fails.|
+| [I292Z2](https://gitee.com/src-openEuler/firewalld/issues/I292Z2?from=project-issue)| \[20.03-SP1] After the Everything ISO is installed and all services are restarted, an alarm is generated when you run the **journalctl -u firewalld** command.|
+| [I292QX](https://gitee.com/src-openEuler/rtkit/issues/I292QX?from=project-issue)| \[20.03-SP1] After the **rtkit** service is restarted, "**failedx**" is displayed when you view the status. |
+| [I28ZWL](https://gitee.com/src-openEuler/gdm/issues/I28ZWL?from=project-issue)| \[20.03-SP1] When the **gdm** service is restarted, an error message is displayed.|
+| [I28YB4](https://gitee.com/src-openEuler/kernel/issues/I28YB4?from=project-issue)| \[20.03-SP1] An error message is displayed after the server and all components are successfully installed.|
+| [I28XYR](https://gitee.com/src-openEuler/pcp/issues/I28XYR?from=project-issue)| \[20.03-SP1] An error message is displayed after the server and all components are successfully installed.|
+| [I28XT4](https://gitee.com/openEuler/community/issues/I28XT4?from=project-issue)| \[20.03-SP1] After the x86-based VM is successfully installed, the error message ''**acpi PNP0A03:00: _OSC failed**'' is reported in the **dmesg** command. |
+| [I28XP6](https://gitee.com/src-openEuler/dnssec-trigger/issues/I28XP6?from=project-issue)| \[20.03-SP1] After the **NetworkManager-dispatcher** service is disabled, an error message is displayed when you view the status. |
+| [I28XJM](https://gitee.com/src-openEuler/rng-tools/issues/I28XJM?from=project-issue)| \[20.03-SP1] An error is reported during the minimum installation of OS on a x86/ARM-based server: **rngd.service: Failed with result 'core-dump'**.|
+| [I28XBB](https://gitee.com/src-openEuler/libsass/issues/I28XBB?from=project-issue)| \[fuzz] memory leaks|
+| [I28WWB](https://gitee.com/src-openEuler/open-iscsi/issues/I28WWB?from=project-issue)| \[20.03-LTS-SP1] After all plug-ins are selected for installation on the VM, an error occurs in the message log of the x86-based VM.|
+| [I28T8E](https://gitee.com/src-openEuler/rng-tools/issues/I28T8E?from=project-issue)| \[20.03-SP1] An error is reported during the minimum installation of OS on a x86/ARM-based server: **rngd\[154]: Failed to init entropy source 2**.|
+| [I28T5X](https://gitee.com/src-openEuler/mdadm/issues/I28T5X?from=project-issue)| \[20.03-SP1] When the OS is installed on a RAID drive in a x86/ARM-based server, the error message **''Process '/usr/sbin/mdadm -I /dev/vda1''** is displayed, indicating that the installation fails.|
+| [I28T1K](https://gitee.com/src-openEuler/firewalld/issues/I28T1K?from=project-issue)| \[20.03-SP1] An error message is displayed during the minimum installation of OS on a x86/ARM-based server: **Failed to load zone file**.|
+| [I28SZH](https://gitee.com/src-openEuler/lvm2/issues/I28SZH?from=project-issue)| \[20.03-SP1] An error message is displayed during the minimum installation of OS on a x86/ARM-based server: **/etc/lvm/backup/openeuler: stat failed**.|
+| [I28SYE](https://gitee.com/src-openEuler/systemd/issues/I28SYE?from=project-issue)| \[20.03-SP1] An error message is displayed during the minimum installation of OS on a x86/ARM-based server: **failed to open file /etc/ndctl/keys/nvdimm-master.blob**.|
+| [I289M6](https://gitee.com/src-openEuler/python-pygments/issues/I289M6?from=project-issue)| The make check fails.|
+| [I2896O](https://gitee.com/src-openEuler/perl-Archive-Zip/issues/I2896O?from=project-issue)| The make test fails.|
+| [I28202](https://gitee.com/src-openEuler/python-sqlalchemy/issues/I28202?from=project-issue)| The **test\_order\_by\_nulls** test case fails.|
+| [I27TIL](https://gitee.com/src-openEuler/doxygen/issues/I27TIL?from=project-issue)| The test case fails.|
+| [I27RAH](https://gitee.com/openEuler/kernel/issues/I27RAH?from=project-issue)| The NPIV cannot be deleted.|
+| [I27IVM](https://gitee.com/src-openEuler/python-scons/issues/I27IVM?from=project-issue)| The **python-help** package fails to be upgraded or rolled back to the **python-doc** package.|
+| [I27BAL](https://gitee.com/src-openEuler/anaconda/issues/I27BAL?from=project-issue)| \[20.03-LTS-SP1] The default language of the x86 installation page varies. Sometime it is Chinese and sometimes English.|
+| [I279J4](https://gitee.com/src-openEuler/rust/issues/I279J4?from=project-issue)| \[SP1] The **rust** fails to be downgraded from SP1 to LTS due to a conflict. |
+| [I279DP](https://gitee.com/src-openEuler/A-Tune/issues/I279DP?from=project-issue)| \[SP1] The **atune atune-db** fails to be downgraded from SP1 to LTS due to a conflict. |
+| [I2799F](https://gitee.com/src-openEuler/curl/issues/I2799F?from=project-issue)| \[SP1] The **curl** fails to be downgraded from SP1 to LTS due to a conflict. |
+| [I278UK](https://gitee.com/src-openEuler/firefox/issues/I278UK?from=project-issue)| \[SP1] The **firefox** fails to be downgraded from SP1 to LTS due to a conflict. |
+| [I277EK](https://gitee.com/src-openEuler/wavpack/issues/I277EK?from=project-issue)| \[fuzz] runtime error|
+| [I2778G](https://gitee.com/src-openEuler/wavpack/issues/I2778G?from=project-issue)| \[fuzz] use-of-uninitialized-value|
+| [I2775G](https://gitee.com/src-openEuler/lame/issues/I2775G?from=project-issue)| \[fuzz] runtime error|
+| [I276EF](https://gitee.com/src-openEuler/postgresql-jdbc/issues/I276EF?from=project-issue)| \[20.03-LTS-SP1] Failed to install the **postgresql-jdbc** package.|
+| [I2743Q](https://gitee.com/src-openEuler/haveged/issues/I2743Q?from=project-issue)| The **haveged** service cannot run normally.|
+| [I273NI](https://gitee.com/src-openEuler/LibRaw/issues/I273NI?from=project-issue)| \[fuzz] Buffer overflow|
+| [I273ET](https://gitee.com/src-openEuler/iSulad-img/issues/I273ET?from=project-issue)| The RPM package compiled by the LTS-SP1 branch of **iSulad-img** is not striped, the **debuginfo** package is not available, and the **ftrapv** option is not enabled. |
+| [I272S5](https://gitee.com/src-openEuler/nodejs/issues/I272S5?from=project-issue)| \[SP1] The **nodejs** fails to be upgraded to SP1, and the **nodejs-docs** fails to be installed. |
+| [I272LU](https://gitee.com/src-openEuler/rust/issues/I272LU?from=project-issue)| \[SP1] The **rust cargo** fails to be upgraded from LTS to SP1. |
+| [I272KJ](https://gitee.com/src-openEuler/rabbitmq-server/issues/I272KJ?from=project-issue)| \[20.03-SP1] An error occurs when the **rabbitmqctl hipe\_compile /tmp/rabbit-hipe/ebin/** command is executed.|
+| [I272J7](https://gitee.com/src-openEuler/rabbitmq-server/issues/I272J7?from=project-issue)| \[20.03-SP1] An error occurs when a queue is created by running the **rabbitmqctl** command. |
+| [I2708N](https://gitee.com/src-openEuler/boost/issues/I2708N?from=project-issue)| \[SP1] The **boost-regex** fails to be upgraded from LTS to SP1. |
+| [I26ZSZ](https://gitee.com/src-openEuler/ceph/issues/I26ZSZ?from=project-issue)| \[LTS] An error message is displayed when the Ceph subpackage is installed or uninstalled.|
+| [I26ZIS](https://gitee.com/src-openEuler/lxcfs/issues/I26ZIS?from=project-issue)| \[20.03-LTS-SP1] After the **lxcfs** service is started on a x86/ARM-based server and the **lxcfs** and **lxcfs-tools** packages are uninstalled and installed, an error is reported during the installation.|
+| [I26ZHQ](https://gitee.com/openEuler/community/issues/I26ZHQ?from=project-issue)| \[20.03-SP1] After the minimum installation is complete, click **reboot**. The system restarts twice.|
+| [I26ZGD](https://gitee.com/src-openEuler/wavpack/issues/I26ZGD?from=project-issue)| \[fuzz] Memory leak: The message of ''ERROR: LeakSanitizer: detected memory leaks'' is displayed. |
+| [I26ZE9](https://gitee.com/src-openEuler/festival/issues/I26ZE9?from=project-issue)| \[SP1] An error message is displayed when **festival-help** is uninstalled. |
+| [I26Z87](https://gitee.com/src-openEuler/clamav/issues/I26Z87?from=project-issue)| \[SP1] A message is displayed indicating that the **clamd** fails to be uninstalled.|
+| [I26YFR](https://gitee.com/src-openEuler/iSulad/issues/I26YFR?from=project-issue)| \[20.03-SP1] The security compilation option does not meet the requirements. The **chrpath** needs to be added.|
+| [I26XL0](https://gitee.com/openEuler/docs/issues/I26XL0?from=project-issue)| The name of the Raspberry Pi image in the document is inconsistent with the actual one.|
+| [I26XI4](https://gitee.com/src-openEuler/obs-server/issues/I26XI4?from=project-issue)| \[SP1] An error message is displayed when **obs-api** is installed or uninstalled.|
+| [I26XFP](https://gitee.com/src-openEuler/ntp/issues/I26XFP?from=project-issue)| The **ntpd** service fails to be started.|
+| [I26X9U](https://gitee.com/src-openEuler/anaconda/issues/I26X9U?from=project-issue)| \[20.03-SP1] During the installation, an unknown error of NTP time synchronization occurs occasionally.|
+| [I26X8U](https://gitee.com/src-openEuler/firewalld/issues/I26X8U?from=project-issue)| \[20.03-LTS-SP1] An error is reported when the **firewall-cmd --check-config** is executed to check the default configuration. |
+| [I26X8Q](https://gitee.com/src-openEuler/lm_sensors/issues/I26X8Q?from=project-issue)| \[20.03-LTS-SP1] The **lm\_sensors** service fails to be started after all plug-ins are selected for installation on a VM. |
+| [I26X6E](https://gitee.com/src-openEuler/libreswan/issues/I26X6E?from=project-issue)| \[20.03-LTS-SP1] The **ipsec** service fails to be started.|
+| [I26X4E](https://gitee.com/src-openEuler/xhtml1-dtds/issues/I26X4E?from=project-issue)| \[SP1] An error message is displayed during the installation of **xhtml1-dtds**.|
+| [I26X12](https://gitee.com/src-openEuler/nagios/issues/I26X12?from=project-issue)| \[SP1] An error message is displayed during the installation of **nagios-selinux**.|
+| [I26WUI](https://gitee.com/src-openEuler/system-config-printer/issues/I26WUI?from=project-issue)| \[SP1] \[arm/x86] The **system-config-printer** fails to be installed.|
+| [I26WOV](https://gitee.com/src-openEuler/gutenprint/issues/I26WOV?from=project-issue)| \[SP1] \[arm/x86] An error message is displayed when the **guestprint** is installed.|
+| [I26WFT](https://gitee.com/src-openEuler/selinux-policy/issues/I26WFT?from=project-issue)| \[20.03-SP1] After the minimum installation of OS on a x86-based server is successful, the system does not respond after the **touch /.autorelabel** command is executed to restart the system.|
+| [I26W4R](https://gitee.com/src-openEuler/kernel/issues/I26W4R?from=project-issue)| \[20.03-SP1] After the minimum installation of OS on a x86-based server is successful, run the **reboot** command in the system, and a crash occurs.|
+| [I26VDM](https://gitee.com/src-openEuler/openEuler-repos/issues/I26VDM?from=project-issue)| \[20.03-LTS-SP1] The repo source needs to be changed to the SP1 source.|
+| [I26VC4](https://gitee.com/src-openEuler/openEuler-release/issues/I26VC4?from=project-issue)| \[20.03-LTS-SP1] The content of the **/etc/os-release** and **/etc/openEuler-release** files is incorrect.|
+| [I26TUI](https://gitee.com/src-openEuler/pcp/issues/I26TUI?from=project-issue)| \[20.03-LTS-SP1] \[arm/x86] A syntax error is reported on the **pcp-iostat** command in the **pcp-system-tools** package.|
+| [I26TU9](https://gitee.com/src-openEuler/pcp/issues/I26TU9?from=project-issue)| \[20.03-LTS-SP1] \[arm/x86] An error is reported when the **pcp-pidstat** command in the **pcp-system-tools** package is executed.|
+| [I26TS3](https://gitee.com/openEuler/community/issues/I26TS3?from=project-issue)| \[20.03-SP1] The error message "**db\_root:cannot open /etc/target**" is displayed during the startup process.|
+| [I26TDO](https://gitee.com/openEuler/community/issues/I26TDO?from=project-issue)| \[20.03-SP1] During the installation, the **iscsi\_tcp** and **sha256** modules cannot be found, and the error message ''**ERROR: could not insert 'edd': No such device**'' is displayed. |
+| [I26STP](https://gitee.com/src-openEuler/kexec-tools/issues/I26STP?from=project-issue)| \[20.03-SP1] **kdump** fails to start on a physical machine. |
+| [I26RLN](https://gitee.com/src-openEuler/cmake/issues/I26RLN?from=project-issue)| \[20.03-LTS-SP1] An error is reported when the **cpack -B** command is executed to define the packing directory.|
+| [I26QWU](https://gitee.com/src-openEuler/selinux-policy/issues/I26QWU?from=project-issue)| \[20.03-SP1] After the minimum installation and the installation of all plug-ins are complete, click **reboot** and the system fails to be restarted.|
+| [I26APR](https://gitee.com/src-openEuler/re2/issues/I26APR?from=project-issue)| Upgrade re2 to the version of 2020-08-01.|
+| [I2612O](https://gitee.com/src-openEuler/tuned/issues/I2612O?from=project-issue)| \[20.03-SP1] The **tuned** service fails to be started by default upon system startup. |
+| [I26074](https://gitee.com/src-openEuler/openvswitch/issues/I26074?from=project-issue)| \[20.03-SP1] An error message is displayed during Open vSwitch installation.|
+| [I1TIED](https://gitee.com/src-openEuler/zopfli/issues/I1TIED?from=project-issue)| \[fuzz] read-heap-buffer-overflow in ZopfliWarmupHash()|
 
