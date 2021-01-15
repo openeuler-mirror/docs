@@ -294,8 +294,7 @@
 
 ## 查看系统信息
 
-系统安装完成并重启后直接进入系统命令行登录界面，输入安装过程中设置的用户和密码，进入openEuler操作系统，查看如下系统信息。若需要进行系统管理和配置操作，请参考《[openEuler 20.03-LTS-SP1 管理员指南](https://openeuler.org/zh/docs/20.03-LTS-SP1/docs/Administration/administration.html)》。
-
+系统安装完成并重启后直接进入系统命令行登录界面，输入安装过程中设置的用户和密码，进入openEuler操作系统，查看如下系统信息。若需要进行系统管理和配置操作，请参考《[openEuler 20.03-LTS-SP1 管理员指南](https://openeuler.org/zh/docs/20.03_LTS_SP1/docs/Administration/administration.html)》。
 -   查看系统信息，命令如下：
 
     ```
