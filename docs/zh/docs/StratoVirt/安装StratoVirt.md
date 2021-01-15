@@ -25,7 +25,7 @@
 1. 使用root权限，安装StratoVirt组件，参考命令如下。
 
    ```
-   $ yum install stratovirt
+   # yum install stratovirt
    ```
 
    

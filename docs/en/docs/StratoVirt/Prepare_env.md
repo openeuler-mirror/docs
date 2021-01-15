@@ -39,7 +39,7 @@ The following environment is required for running StratoVirt:
 - To use QMP commands, install the nmap tool. After configuring the yum source, run the following command to install the nmap tool:
 
   ```
-  $ yum install nmap
+  # yum install nmap
   ```
 
 ## Preparing Images

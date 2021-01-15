@@ -54,7 +54,6 @@ The format of the command configured by running the cmdline command is as follow
    $rm [parameter] [user-defined socket file path]
    ```
 
-   
 
 2. Run the cmdline command.
 
@@ -62,7 +61,6 @@ The format of the command configured by running the cmdline command is as follow
    $ /path/to/stratovirt -[Parameter 1] [Parameter Option] -[Parameter 2] [Parameter Option] ...
    ```
 
-   
 
 **Parameter Description**
 
@@ -100,14 +98,13 @@ The following table lists the parameters of the cmdline command.
    $ rm -f /tmp/stratovirt.socket
    ```
 
-   
 
 2. Run StratoVirt.
 
    ```
    $ /path/to/stratovirt \
        -kernel /path/to/vmlinux.bin \
-       -append console=ttyS0 root=/dev/vda reboot=k panic=1 \
+       -append console=ttyS0 root=/dev/vda rw reboot=k panic=1 \
        -drive file=/home/rootfs.ext4,id=rootfs,readonly=false \
        -api-channel unix:/tmp/stratovirt.socket \
        -serial stdio
