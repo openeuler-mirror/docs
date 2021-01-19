@@ -931,5 +931,12 @@
       "children": [
         
       ]
-    }
+    },
+    {
+      "label": "DDE User Guide ",
+      "path": "docs/userguide/DDE-User-Manual",
+      "children": [
+        
+      ]
+    }     
 ]
