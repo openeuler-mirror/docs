@@ -1,24 +1,24 @@
-[TOC]
+
 
 # DDE桌面环境用户手册
-
+[[toc]]
 ## 概述
 
 DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。桌面环境主要由桌面、任务栏、启动器、控制中心等组成，是您使用该操作系统的基础，主界面如下图所示。
 
-![1|desk](figures/43.jpg)
+![1|desk](./figures/43.jpg)
 
 ### 欢迎
 
 初次进入DDE桌面环境，会自动打开欢迎程序。您可以观看视频了解系统功能，选择桌面样式和图标主题，进一步了解该系统。
 
-![welcome](figures/64.png)
+![welcome](./figures/64.png)
 
 ## 桌面
 
 桌面是您登录后看到的主屏幕区域。在桌面上，您可以新建文件/文件夹、排列文件、打开终端、设置壁纸和屏保等，还可以通过启动器 [发送到桌面](#设置快捷方式) 向桌面添加应用的快捷方式。
 
-![0|rightbuttonmenu](figures/41.png)
+![0|rightbuttonmenu](./figures/41.png)
 
 ### 新建文件夹/文档
 
@@ -52,7 +52,7 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
    - 单击 **类型**，将按文件的类型顺序显示。
    - 单击 **修改时间**，文件将按最近一次的修改日期顺序显示。
 
-> ![tips](figures/icon125-o.svg)窍门：*您也可以勾选 **自动排列**，桌面图标将从上往下，从左往右按照当前排序规则排列，有图标被删除时后面的图标会自动向前填充。*
+> ![tips](./figures/icon125-o.svg)窍门：*您也可以勾选 **自动排列**，桌面图标将从上往下，从左往右按照当前排序规则排列，有图标被删除时后面的图标会自动向前填充。*
 
 ### 调整图标大小
 
@@ -60,7 +60,7 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 2. 单击 **图标大小**。
 3. 选择一个合适的图标大小。
 
-> ![tips](figures/icon125-o.svg)窍门：*您也可以用 **Ctrl** + ![=](figures/icon134-o.svg)/![-](figures/icon132-o.svg) 鼠标滚动来调整桌面和启动器中的图标大小。*
+> ![tips](./figures/icon125-o.svg)窍门：*您也可以用 **Ctrl** + ![=](./figures/icon134-o.svg)/![-](./figures/icon132-o.svg) 鼠标滚动来调整桌面和启动器中的图标大小。*
 
 ### 设置显示器
 
@@ -69,7 +69,7 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 1. 在桌面上，单击鼠标右键。
 2. 单击 **显示设置**，快速进入控制中心的显示设置界面。
 
-> ![notes](figures/icon99-o.svg)说明：*关于显示的设置，具体操作请参阅 [显示设置](#显示设置) 。*
+> ![notes](./figures/icon99-o.svg)说明：*关于显示的设置，具体操作请参阅 [显示设置](#显示设置) 。*
 
  ### 更改壁纸
 
@@ -81,11 +81,11 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 3. 选择某一壁纸后，壁纸就会在桌面和锁屏中生效。
 4. 您可以单击 **仅设置桌面** 和 **仅设置锁屏** 来控制壁纸的生效范围。
 
-![1|wallpaper](figures/63.jpg)
+![1|wallpaper](./figures/63.jpg)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-> ![tips](figures/icon125-o.svg)窍门： *您还可以在图片查看器中设置您喜欢的图片为桌面壁纸。*
+> ![tips](./figures/icon125-o.svg)窍门： *您还可以在图片查看器中设置您喜欢的图片为桌面壁纸。*
 
 ### 剪贴板
 
@@ -94,9 +94,9 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 1. 使用快捷键 **Ctrl** + **Alt** + **V** 唤出剪贴板。
 2. 双击剪贴板内的某一区块，会快速复制当前内容， 且当前区块会被移动到剪贴板顶部。
 3. 选择目标位置粘贴。
-4. 鼠标移入剪贴板的某一区块，单击上方的![close](figures/icon57-o.svg)，删除当前内容；单击顶部的 **全部清除**，清空剪贴板。
+4. 鼠标移入剪贴板的某一区块，单击上方的![close](./figures/icon57-o.svg)，删除当前内容；单击顶部的 **全部清除**，清空剪贴板。
 
-![1|clipboard](figures/40.png)
+![1|clipboard](./figures/40.png)
 
 ## 任务栏
 
@@ -106,28 +106,28 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 
 任务栏图标包括启动器图标、应用程序图标、托盘区图标、系统插件图标等。
 
-![1|fashion](figures/45.png)
+![1|fashion](./figures/45.png)
 
-| 图标                                      | 说明                                        | 图标                                           | 说明                                  |
-| ----------------------------------------- | :------------------------------------------ | ---------------------------------------------- | ------------------------------------- |
-| ![launcher](figures/icon66-o.svg)         | 启动器 - 点击查看所有已安装的应用。         | ![deepin-toggle-desktop](figures/icon69-o.svg) | 显示桌面。                            |
-| ![dde-file-manager](figures/icon63-o.svg) | 文件管理器 - 点击查看磁盘中的文件、文件夹。 | ![dde-calendar](figures/icon62-o.svg)          | 日历 - 查看日期、新建日程。           |
-| ![controlcenter](figures/icon58-o.svg)    | 控制中心 - 点击进入系统设置。               | ![notification](figures/icon101-o.svg)         | 通知中心 - 显示所有系统和应用的通知。 |
-| ![onboard](figures/icon103-o.svg)         | 屏幕键盘 - 点击使用虚拟键盘。               | ![shutdown](figures/icon122-o.svg)             | 电源 - 点击进入关机界面。             |
-| ![trash](figures/icon126-o.svg)           | 回收站。                                    |                                                |                                       |
+| 图标                                        | 说明                                        | 图标                                             | 说明                                  |
+| ------------------------------------------- | :------------------------------------------ | ------------------------------------------------ | ------------------------------------- |
+| ![launcher](./figures/icon66-o.svg)         | 启动器 - 点击查看所有已安装的应用。         | ![deepin-toggle-desktop](./figures/icon69-o.svg) | 显示桌面。                            |
+| ![dde-file-manager](./figures/icon63-o.svg) | 文件管理器 - 点击查看磁盘中的文件、文件夹。 | ![dde-calendar](./figures/icon62-o.svg)          | 日历 - 查看日期、新建日程。           |
+| ![controlcenter](./figures/icon58-o.svg)    | 控制中心 - 点击进入系统设置。               | ![notification](./figures/icon101-o.svg)         | 通知中心 - 显示所有系统和应用的通知。 |
+| ![onboard](./figures/icon103-o.svg)         | 屏幕键盘 - 点击使用虚拟键盘。               | ![shutdown](./figures/icon122-o.svg)             | 电源 - 点击进入关机界面。             |
+| ![trash](./figures/icon126-o.svg)           | 回收站。                                    |                                                  |                                       |
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-> ![tips](figures/icon125-o.svg)窍门：*在高效模式下，单击任务栏最右侧可显示桌面。将鼠标指针移到任务栏上已打开窗口的图标时，会显示相应的预览窗口。*
+> ![tips](./figures/icon125-o.svg)窍门：*在高效模式下，单击任务栏最右侧可显示桌面。将鼠标指针移到任务栏上已打开窗口的图标时，会显示相应的预览窗口。*
 
 ### 切换显示模式
 
 任务栏提供两种显示模式：时尚模式和高效模式，显示不同的图标大小和应用窗口激活效果。
 
 
-![1|fashion](figures/46.png)
+![1|fashion](./figures/46.png)
 
-![1|efficient](figures/63.png)
+![1|efficient](./figures/63.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -156,11 +156,11 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 
 当有系统或应用通知时，会在桌面上方弹出通知消息。若有按钮，单击按钮执行对应操作；若无按钮，单击关闭此消息。
 
-![message](figures/51.png)
+![message](./figures/51.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-您还可以单击任务栏上的 ![notification](figures/icon101-o.svg)， 打开通知中心，查看所有通知。
+您还可以单击任务栏上的 ![notification](./figures/icon101-o.svg)， 打开通知中心，查看所有通知。
 
 ### 查看日期时间
 
@@ -169,20 +169,20 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 
 ### 进入关机界面
 
-您可以单击任务栏上的 ![shutdown](figures/icon136-o.svg) 进入关机界面，也可以在启动器的小窗口模式中单击 ![poweroff_normal](figures/icon136-o.svg)。
+您可以单击任务栏上的 ![shutdown](./figures/icon136-o.svg) 进入关机界面，也可以在启动器的小窗口模式中单击 ![poweroff_normal](./figures/icon136-o.svg)。
 
-| 功能                                                         | 说明                                                    |
-| ------------------------------------------------------------ | ------------------------------------------------------- |
-| 关机![poweroff_normal](figures/icon136-o.svg) | 关闭电脑。                                              |
-| 重启![reboot_normal](figures/icon110-o.svg) | 关机后再次重新运行您的电脑。                            |
-| 锁定![lock_normal](figures/icon90-o.svg)    | 锁定电脑，或按下键盘上的 **Super** + **L** 组合键锁定。 |
-| 切换用户![userswitch_normal](figures/icon128-o.svg) | 选择另一个用户帐户登录。                                |
-| 注销![logout_normal](figures/icon92-o.svg) | 清除当前登录用户的信息。                                |
-| 系统监视器![deepin-system-monitor](figures/icon68-o.svg) | 快速启动系统监视器。                                    |
+| 功能                                                       | 说明                                                    |
+| ---------------------------------------------------------- | ------------------------------------------------------- |
+| 关机![poweroff_normal](./figures/icon136-o.svg)            | 关闭电脑。                                              |
+| 重启![reboot_normal](./figures/icon110-o.svg)              | 关机后再次重新运行您的电脑。                            |
+| 锁定![lock_normal](./figures/icon90-o.svg)                 | 锁定电脑，或按下键盘上的 **Super** + **L** 组合键锁定。 |
+| 切换用户![userswitch_normal](./figures/icon128-o.svg)      | 选择另一个用户帐户登录。                                |
+| 注销![logout_normal](./figures/icon92-o.svg)               | 清除当前登录用户的信息。                                |
+| 系统监视器![deepin-system-monitor](./figures/icon68-o.svg) | 快速启动系统监视器。                                    |
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-> ![notes](figures/icon99-o.svg)说明：*当系统存在多个帐户时才显示 ![userswitch_normal](figures/icon128-o.svg)。*
+> ![notes](./figures/icon99-o.svg)说明：*当系统存在多个帐户时才显示 ![userswitch_normal](./figures/icon128-o.svg)。*
 
 
 ### 回收站
@@ -197,7 +197,7 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 2. 单击鼠标右键，选择 **还原**。
 3. 还原文件到原来的存储路径下。
 
-> ![attention](figures/icon52-o.svg)注意：*如果原来所在的文件夹已经删除，还原文件时会自动新建文件夹*。
+> ![attention](./figures/icon52-o.svg)注意：*如果原来所在的文件夹已经删除，还原文件时会自动新建文件夹*。
 
 #### 清空回收站
 
@@ -205,9 +205,9 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 
 ## 启动器
 
-启动器 ![launcher](figures/icon66-o.svg) 帮助您管理系统中已安装的所有应用，在启动器中使用分类导航或搜索功能可以快速找到您需要的应用程序。
+启动器 ![launcher](./figures/icon66-o.svg) 帮助您管理系统中已安装的所有应用，在启动器中使用分类导航或搜索功能可以快速找到您需要的应用程序。
 
-> ![tips](figures/icon125-o.svg)窍门：*您可以进入启动器查看新安装的应用。新安装应用的旁边会出现一个小蓝点提示*。
+> ![tips](./figures/icon125-o.svg)窍门：*您可以进入启动器查看新安装的应用。新安装应用的旁边会出现一个小蓝点提示*。
 
 ### 切换模式
 
@@ -217,7 +217,7 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 
 小窗口模式还支持快速打开文件管理器，控制中心和进入关机界面等功能。
 
-![1|fullscreen](figures/47.jpg)![1|ini](figures/52.png)
+![1|fullscreen](./figures/47.jpg)![1|ini](./figures/52.png)
 
 
 ### 排列应用
@@ -225,9 +225,9 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 在全屏模式下，系统默认按照安装时间排列所有应用。
 
 - 将鼠标悬停在应用图标上，按住鼠标左键不放，将应用图标拖拽到指定的位置自由排列。
-- 单击启动器界面左上角分类图标![category](figures/icon56-o.svg)进行排列。
+- 单击启动器界面左上角分类图标![category](./figures/icon56-o.svg)进行排列。
 
-![1|sortapp](figures/60.jpg)
+![1|sortapp](./figures/60.jpg)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -253,9 +253,9 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 
 - 单击 **发送到任务栏**，将应用固定到任务栏。
 
-![0|sendto](figures/58.png)
+![0|sendto](./figures/58.png)
 
-> ![notes](figures/icon99-o.svg)说明：*您还可以从启动器拖拽应用图标到任务栏上放置。但是当应用处于运行状态时您将无法拖拽固定，此时您可以右键单击任务栏上的应用图标，选择 **驻留** 将应用固定到任务栏，以便下次使用时从任务栏上快速打开。*
+> ![notes](./figures/icon99-o.svg)说明：*您还可以从启动器拖拽应用图标到任务栏上放置。但是当应用处于运行状态时您将无法拖拽固定，此时您可以右键单击任务栏上的应用图标，选择 **驻留** 将应用固定到任务栏，以便下次使用时从任务栏上快速打开。*
 
 #### 删除快捷方式
 
@@ -273,7 +273,7 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 - 单击 **从桌面上移除**，删除桌面快捷方式。
 - 单击 **从任务栏上移除**，将固定到任务栏上的应用移除。
 
-> ![notes](figures/icon99-o.svg)说明：*以上操作，只会删除应用的快捷方式，而不会卸载应用。*
+> ![notes](./figures/icon99-o.svg)说明：*以上操作，只会删除应用的快捷方式，而不会卸载应用。*
 
 ### 运行应用
 
@@ -284,24 +284,24 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 
 在启动器中，直接单击应用图标打开，或右键单击应用图标选择 **打开**。
 
-> ![tips](figures/icon125-o.svg)窍门：*对于经常使用的应用，您可以在启动器中，右键单击应用图标选择 **开机自动启动**。*
+> ![tips](./figures/icon125-o.svg)窍门：*对于经常使用的应用，您可以在启动器中，右键单击应用图标选择 **开机自动启动**。*
 
 
 ## 控制中心
 
-DDE桌面操作系统通过控制中心来管理系统的基本设置，包括帐户管理、网络设置、日期和时间、个性化设置、显示设置、系统信息查看等。当您进入桌面环境后，单击任务栏上的 ![controlcenter](figures/icon58-o.svg) 即可打开控制中心窗口。
+DDE桌面操作系统通过控制中心来管理系统的基本设置，包括帐户管理、网络设置、日期和时间、个性化设置、显示设置、系统信息查看等。当您进入桌面环境后，单击任务栏上的 ![controlcenter](./figures/icon58-o.svg) 即可打开控制中心窗口。
 
 ### 首页介绍
 
 控制中心首页主要展示各个设置模块，方便日常查看和快速设置。
 
-![2|dcchomepage](figures/42.png)
+![2|dcchomepage](./figures/42.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 打开控制中心的某一设置模块后，可以通过左侧导航栏快速切换到另一设置模块。
 
-![2|cc-navigation](figures/39.png)
+![2|cc-navigation](./figures/39.png)
 
 
 
@@ -309,20 +309,20 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 
 标题栏包含返回按钮，搜索框，主菜单及窗口按钮。
 
-- 返回按钮：若要返回首页，单击 ![back](figures/icon53-o.svg)。
+- 返回按钮：若要返回首页，单击 ![back](./figures/icon53-o.svg)。
 - 搜索框：输入关键字后，回车，搜索相应设置。
-- 主菜单：单击![menu](figures/icon83-o.svg) 进入主菜单。在主菜单中，您可以设置窗口主题，查看版本，或退出控制中心。
+- 主菜单：单击![menu](./figures/icon83-o.svg) 进入主菜单。在主菜单中，您可以设置窗口主题，查看版本，或退出控制中心。
 
 ### 帐户设置
 
 在安装系统时您已经创建了一个帐户。在这里，您可以修改帐户设置或创建一个新帐户。
 
-![0|account](figures/38.png)
+![0|account](./figures/38.png)
 
 #### 创建新帐户
 
-1. 在控制中心首页，单击 ![account_normal](figures/icon49-o.svg)。
-2. 单击![add](figures/icon50-o.svg)。
+1. 在控制中心首页，单击 ![account_normal](./figures/icon49-o.svg)。
+2. 单击![add](./figures/icon50-o.svg)。
 3. 输入用户名、密码和重复密码。
 4. 单击 **创建**。
 5. 在授权对话框输入当前帐户的密码，新帐户就会添加到帐户列表中。
@@ -331,7 +331,7 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 
 #### 更改头像
 
-1. 在控制中心首页，单击 ![account_normal](figures/icon49-o.svg)。
+1. 在控制中心首页，单击 ![account_normal](./figures/icon49-o.svg)。
 2. 单击列表中的帐户。
 3. 单击帐户头像，选择一个头像或添加本地头像，头像就替换完成了。
 
@@ -339,14 +339,14 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 
 帐户全名会显示在帐户列表和系统登录界面，可根据需要设置。
 
-1. 在控制中心首页，单击 ![account_normal](figures/icon49-o.svg)。
+1. 在控制中心首页，单击 ![account_normal](./figures/icon49-o.svg)。
 2. 单击列表中的帐户。
-3. 单击 **设置全名** 后的 ![edit](figures/icon75-o.svg)，输入帐户全名。
+3. 单击 **设置全名** 后的 ![edit](./figures/icon75-o.svg)，输入帐户全名。
 
 
 #### 修改密码
 
-1. 在控制中心首页，单击 ![account_normal](figures/icon49-o.svg)。
+1. 在控制中心首页，单击 ![account_normal](./figures/icon49-o.svg)。
 2. 单击当前帐户。
 3. 单击 **修改密码**，进入修改密码页面。
 4. 输入当前密码、新密码和重复密码。
@@ -354,12 +354,12 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 
 #### 删除帐户
 
-1. 在控制中心首页，单击 ![account_normal](figures/icon49-o.svg)。
+1. 在控制中心首页，单击 ![account_normal](./figures/icon49-o.svg)。
 2. 单击其他未登录的帐户。
 3. 单击 **删除帐户** 。
 4. 在弹出的确认界面中单击 **删除**。
 
-> ![attention](figures/icon52-o.svg)注意: *已登录的帐户无法被删除。*
+> ![attention](./figures/icon52-o.svg)注意: *已登录的帐户无法被删除。*
 
 #### 权限设置
 
@@ -377,20 +377,20 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 
 设置显示器的分辨率、亮度、屏幕方向等，让您的电脑显示到达最佳状态。
 
-![0|video](figures/44.png)
+![0|video](./figures/44.png)
 
 #### 单屏设置
 
 ##### 更改分辨率
 
-1. 在控制中心首页，单击 ![display_normal](figures/icon72-o.svg)。
+1. 在控制中心首页，单击 ![display_normal](./figures/icon72-o.svg)。
 2. 单击 **分辨率**，进入分辨率设置界面。
 3. 在列表中选择合适的分辨率参数。
 4. 单击 **保存**。
 
 ##### 调节亮度
 
-1. 在控制中心首页，单击 ![display_normal](figures/icon72-o.svg)。
+1. 在控制中心首页，单击 ![display_normal](./figures/icon72-o.svg)。
 2. 单击 **亮度**，进入亮度设置界面。
 
  - 拖动亮度条滑块，调节屏幕亮度。
@@ -399,14 +399,14 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 
 ##### 设置屏幕刷新率
 
-1. 在控制中心首页，单击 ![display_normal](figures/icon72-o.svg)。
+1. 在控制中心首页，单击 ![display_normal](./figures/icon72-o.svg)。
 2. 单击 **刷新率**。
 3. 选择一个合适的刷新率，单击 **保存**。
 
 ##### 改变屏幕方向
 
-1. 在控制中心首页，单击 ![display_normal](figures/icon72-o.svg)。
-2. 单击 ![rotate](figures/icon112-o.svg) 。
+1. 在控制中心首页，单击 ![display_normal](./figures/icon72-o.svg)。
+2. 单击 ![rotate](./figures/icon112-o.svg) 。
 3. 每单击一下鼠标左键，屏幕逆时针旋转90°。
 4. 要还原为之前的屏幕方向，单击鼠标右键退出；要使用当前屏幕方向，请按下组合键 **Ctrl** + **S** 保存。
 
@@ -414,7 +414,7 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 
 多屏显示，让您的视野无限延伸！使用VGA、HDMI、EDP等线缆将您的电脑和另一台显示器、投影仪等连接起来，同时在多个屏幕显示您电脑上的内容。
 
-1. 在控制中心首页，单击 ![display_normal](figures/icon72-o.svg)。
+1. 在控制中心首页，单击 ![display_normal](./figures/icon72-o.svg)。
 2. 单击 **多屏显示模式**。
 3. 选择一种显示模式。
    - **复制 **将主屏的显示内容复制到其他屏幕。
@@ -428,18 +428,18 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 1. 按住 **Super** 不放，再按下 **P** 或鼠标单击来进行模式选择。
 2. 松开按键，确认选择，模式生效。
 
-> ![notes](figures/icon99-o.svg)说明：*当多屏显示模式为扩展模式时，仅主屏支持桌面图标显示、操作右键菜单等功能，而副屏不支持。*
+> ![notes](./figures/icon99-o.svg)说明：*当多屏显示模式为扩展模式时，仅主屏支持桌面图标显示、操作右键菜单等功能，而副屏不支持。*
 
 
 ##### 自定义设置
 
-1. 在控制中心首页，单击 ![display_normal](figures/icon72-o.svg)。
+1. 在控制中心首页，单击 ![display_normal](./figures/icon72-o.svg)。
 2. 单击 **多屏显示模式** > **自定义**。
 3. 单击 “识别”，查看屏幕名称。
 4. 选择“合并”或“拆分”，然后对多个屏幕进行设置，如主屏、分辨率、刷新率，旋转屏幕等。
 5. 单击 **保存**。
 
-> ![notes](figures/icon99-o.svg)说明：*合并即复制模式，拆分即扩展模式。*
+> ![notes](./figures/icon99-o.svg)说明：*合并即复制模式，拆分即扩展模式。*
 
 
 
@@ -447,7 +447,7 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 
 当安装有多个功能相似的应用程序时，可以选择其中的一个应用作为对应文件类型的默认启动程序。
 
-![0|default](figures/39.png)
+![0|default](./figures/39.png)
 
 #### 设置默认程序
 
@@ -457,15 +457,15 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 
 #### 更改默认程序
 
-1. 在控制中心首页，单击 ![default_applications_normal](figures/icon70-o.svg)。
+1. 在控制中心首页，单击 ![default_applications_normal](./figures/icon70-o.svg)。
 2. 选择一个文件类型进入默认程序列表。
 3. 在列表中选择另一个应用程序。
 
 #### 添加默认程序
 
-1. 在控制中心首页，单击 ![default_applications_normal](figures/icon70-o.svg)。
+1. 在控制中心首页，单击 ![default_applications_normal](./figures/icon70-o.svg)。
 2. 选择文件类型进入默认程序列表。
-3. 单击列表下的![add](figures/icon50-o.svg)，选择desktop文件（一般在/usr/share/applications)，或特定的二进制文件。
+3. 单击列表下的![add](./figures/icon50-o.svg)，选择desktop文件（一般在/usr/share/applications)，或特定的二进制文件。
 4. 该程序将添加到列表，并自动设置为默认程序。
 
 #### 删除默认程序
@@ -474,45 +474,45 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 
 可用以下方法删除自己添加的默认程序。
 
-1. 在控制中心首页，单击 ![default_applications_normal](figures/icon70-o.svg)。
+1. 在控制中心首页，单击 ![default_applications_normal](./figures/icon70-o.svg)。
 2. 选择文件类型进入默认程序列表。
-3. 单击程序后面的![close](figures/icon57-o.svg)，删除默认程序。
+3. 单击程序后面的![close](./figures/icon57-o.svg)，删除默认程序。
 
 ### 个性化设置
 
 在这里，您可以设置系统主题、活动用色、字体等，改变桌面和窗口的外观，设置成您喜欢的显示风格。
 
-![0|personalise](figures/56.png)
+![0|personalise](./figures/56.png)
 
 #### 设置窗口主题
 
-1. 在控制中心首页，单击 ![personalization_normal](figures/icon105-o.svg)。
+1. 在控制中心首页，单击 ![personalization_normal](./figures/icon105-o.svg)。
 2. 单击 **通用**，选择一种窗口主题。
 3. 该主题即为系统窗口主题。
 
-> ![tips](figures/icon125-o.svg)窍门：*自动主题表示根据当前时区的时间，根据日出日落的时间自动更换窗口主题。日出后是浅色，日落后是深色。*
+> ![tips](./figures/icon125-o.svg)窍门：*自动主题表示根据当前时区的时间，根据日出日落的时间自动更换窗口主题。日出后是浅色，日落后是深色。*
 
 #### 更改活动用色
 
 活动用色是指选中某一选项时的强调色。
 
-1. 在控制中心首页，单击 ![personalization_normal](figures/icon105-o.svg)。
+1. 在控制中心首页，单击 ![personalization_normal](./figures/icon105-o.svg)。
 2. 单击 **通用**。
 3. 单击 **活动用色** 下的一种颜色，可实时查看该颜色效果。
 
 #### 设置图标主题
 
-1. 在控制中心首页，单击 ![personalization_normal](figures/icon105-o.svg)。
+1. 在控制中心首页，单击 ![personalization_normal](./figures/icon105-o.svg)。
 2. 单击 **图标主题**，选择一款图标样式。
 
 #### 设置光标主题
 
-1. 在控制中心首页，单击 ![personalization_normal](figures/icon105-o.svg)。
+1. 在控制中心首页，单击 ![personalization_normal](./figures/icon105-o.svg)。
 2. 单击 **光标主题**，选择一款光标样式。
 
 #### 更改系统字体
 
-1. 在控制中心首页，单击 ![personalization_normal](figures/icon105-o.svg)。
+1. 在控制中心首页，单击 ![personalization_normal](./figures/icon105-o.svg)。
 2. 单击 **字体**，进入设置字体界面。
 3. 设置系统字号和字体。
 
@@ -520,9 +520,9 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 
 登录系统后，您需要连接网络，才能接收邮件、浏览新闻、下载文件、聊天、网上购物等。
 
-> ![tips](figures/icon125-o.svg)窍门：*您可以单击任务栏托盘区的网络图标，查看当前网络状态。*
+> ![tips](./figures/icon125-o.svg)窍门：*您可以单击任务栏托盘区的网络图标，查看当前网络状态。*
 
-![0|network](figures/54.png)
+![0|network](./figures/54.png)
 
 #### 有线网络
 
@@ -530,7 +530,7 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 
 1. 将网线插入电脑上的网络插孔。
 2. 将网线的另一端插入路由器或网络端口。
-3. 在控制中心首页，单击  ![network_normal](figures/icon97-o.svg)。
+3. 在控制中心首页，单击  ![network_normal](./figures/icon97-o.svg)。
 4. 单击 **有线网络**，进入有线网络设置界面。
 5. 打开 **有线网卡**，开启有线网络连接功能。
 6. 当网络连接成功后，桌面右上角将弹出“已连接有线连接”的提示信息。
@@ -543,7 +543,7 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 
 1. 将移动网卡插入电脑上的USB接口中。
 2. 电脑将根据移动网卡和运营商信息，自动适配并自动连接网络。
-3. 在控制中心首页，单击  ![network_normal](figures/icon97-o.svg)。
+3. 在控制中心首页，单击  ![network_normal](./figures/icon97-o.svg)。
 4. 单击 **移动网络**，查看详细设置信息。
 
 #### 拨号网络
@@ -552,8 +552,8 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 
 ##### 新建拨号连接
 
-1. 在控制中心首页，单击  ![network_normal](figures/icon97-o.svg)。
-2. 单击 **DSL**，单击 ![add](figures/icon50-o.svg)。
+1. 在控制中心首页，单击  ![network_normal](./figures/icon97-o.svg)。
+2. 单击 **DSL**，单击 ![add](./figures/icon50-o.svg)。
 3. 输入宽带名称、帐户、密码。
 4. 单击 **保存**，系统自动创建宽带连接并尝试连接。
 
@@ -561,17 +561,17 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 
 VPN即虚拟专用网络，其主要功能是在公用网络上建立专用网络，进行加密通讯。无论您是在外地出差还是在家中办公，只要能上网就能利用VPN访问企业的内网资源。您还可以使用VPN加速访问其他国家的网站。
 
-1. 在控制中心首页，单击  ![network_normal](figures/icon97-o.svg)。
-2. 单击 **VPN**，选择 ![add](figures/icon50-o.svg) 或 ![import](figures/icon84-o.svg)。
+1. 在控制中心首页，单击  ![network_normal](./figures/icon97-o.svg)。
+2. 单击 **VPN**，选择 ![add](./figures/icon50-o.svg) 或 ![import](./figures/icon84-o.svg)。
 3. 选择VPN协议类型，并输入名称、网关、帐号、密码等信息。（导入VPN会自动填充信息）
 4. 单击 **保存**，系统自动尝试连接VPN网络。
 5. 您可以将VPN设置导出，备用或共享给其他用户。
 
-> ![notes](figures/icon99-o.svg)说明：*打开 **仅用于相对应的网络上的资源** 开关，可以不将VPN设置为默认路由，只在特定的网络资源上生效。*
+> ![notes](./figures/icon99-o.svg)说明：*打开 **仅用于相对应的网络上的资源** 开关，可以不将VPN设置为默认路由，只在特定的网络资源上生效。*
 
 #### 系统代理
 
-1. 在控制中心首页，单击  ![network_normal](figures/icon97-o.svg)。
+1. 在控制中心首页，单击  ![network_normal](./figures/icon97-o.svg)。
 2. 单击 **系统代理**，进入系统代理界面。
 
  - 单击 **无**，关闭代理服务器功能。
@@ -580,19 +580,19 @@ VPN即虚拟专用网络，其主要功能是在公用网络上建立专用网�
 
 #### 应用代理
 
-1. 在控制中心首页，单击  ![network_normal](figures/icon97-o.svg)。
+1. 在控制中心首页，单击  ![network_normal](./figures/icon97-o.svg)。
 2. 单击 **应用代理**。
 3. 设置应用代理参数。
 4. 单击 **保存**。
 
-> ![notes](figures/icon99-o.svg)说明：*应用代理设置成功后，打开启动器，右键单击应用图标，可以选择 **使用代理**。*
+> ![notes](./figures/icon99-o.svg)说明：*应用代理设置成功后，打开启动器，右键单击应用图标，可以选择 **使用代理**。*
 
 
 #### 网络详情
 
 在网络详情界面，您可以查看MAC、IP地址、网关和其他网络信息。
 
-1. 在控制中心首页，单击 ![network_normal](figures/icon97-o.svg)。
+1. 在控制中心首页，单击 ![network_normal](./figures/icon97-o.svg)。
 2. 单击 **网络详情**，进入网络信息界面。
 3. 查看当前有线网络或无线网络的信息。
 
@@ -600,12 +600,12 @@ VPN即虚拟专用网络，其主要功能是在公用网络上建立专用网�
 
 输入输出设备声音的设置（如设置扬声器和麦克风），让您听得更舒适，录音更清晰。
 
-![0|sound](figures/61.png)
+![0|sound](./figures/61.png)
 
 
 #### 输出设备
 
-1. 在控制中心首页，单击 ![sound_normal](figures/icon116-o.svg)。
+1. 在控制中心首页，单击 ![sound_normal](./figures/icon116-o.svg)。
 2. 单击 **输出**，进入输出设备配置界面，您可以：
    - 在输出设备后面的下拉框中选择输出设备类型。
    - 通过拖曳滑块调节输出音量和左/右声道平衡。
@@ -613,33 +613,33 @@ VPN即虚拟专用网络，其主要功能是在公用网络上建立专用网�
 
 #### 输入设备
 
-1. 在控制中心首页，单击 ![sound_normal](figures/icon116-o.svg)。
+1. 在控制中心首页，单击 ![sound_normal](./figures/icon116-o.svg)。
 2. 单击 **输入**，进入输入设备配置界面，您可以：
    - 在输入设备后面的下拉框中选择输入设备类型。
    - 通过拖曳滑块调节输入音量。
    - 打开 **开启** 按钮，还可以设置 **噪音抑制** 功能。
 
-> ![tips](figures/icon125-o.svg)窍门：*通常，需要调大输入音量，确保能够听到声源的声音，但是音量不宜过大，因为这会导致声音失真。可以对着麦克风以正常说话的音量讲话，并观察反馈音量的变化，变化较明显，则说明输入音量合适。*
+> ![tips](./figures/icon125-o.svg)窍门：*通常，需要调大输入音量，确保能够听到声源的声音，但是音量不宜过大，因为这会导致声音失真。可以对着麦克风以正常说话的音量讲话，并观察反馈音量的变化，变化较明显，则说明输入音量合适。*
 
 #### 系统音效
 
-1. 在控制中心首页，单击 ![sound_normal](figures/icon116-o.svg)。
+1. 在控制中心首页，单击 ![sound_normal](./figures/icon116-o.svg)。
 2. 单击 **系统音效**，勾选选项，开启某一事件发生时的声音效果。
 
-> ![tips](figures/icon125-o.svg)窍门：*您可以单击试听音效。*
+> ![tips](./figures/icon125-o.svg)窍门：*您可以单击试听音效。*
 
 
 ### 时间日期
 
 正确选择您所在的时区，一般即可显示正确的日期和时间。您也可以手动修改时间和日期。
 
-![0|time](figures/62.png)
+![0|time](./figures/62.png)
 
 #### 修改时区
 
 在您安装系统时，已选择了系统时区。若要修改系统时区，请按如下步骤设置。
 
-1. 在控制中心首页，单击 ![time](figures/icon124-o.svg)。
+1. 在控制中心首页，单击 ![time](./figures/icon124-o.svg)。
 2. 单击 **时区列表**。
 3. 单击 **修改系统时区**， 通过搜索或单击地图选择时区。
 4. 单击 **确定**。
@@ -648,23 +648,23 @@ VPN即虚拟专用网络，其主要功能是在公用网络上建立专用网�
 
 您可以同时使用多个时区，以便查看另一时区的时间。
 
-1. 在控制中心首页，单击 ![time](figures/icon124-o.svg)。
+1. 在控制中心首页，单击 ![time](./figures/icon124-o.svg)。
 2. 单击 **时区列表**。
-3. 单击![add](figures/icon50-o.svg)，通过搜索或单击地图选择时区。
+3. 单击![add](./figures/icon50-o.svg)，通过搜索或单击地图选择时区。
 4. 单击 **添加**。
 
 #### 删除时区
 
-1. 在控制中心首页，单击 ![time](figures/icon124-o.svg)。
+1. 在控制中心首页，单击 ![time](./figures/icon124-o.svg)。
 2. 单击 **时区列表**。
 3. 单击时区列表后面的 **编辑**。
-4. 单击 ![delete](figures/icon71-o.svg)，删除已添加的时区。
+4. 单击 ![delete](./figures/icon71-o.svg)，删除已添加的时区。
 
 #### 修改时间和日期
 
 默认情况下，系统通过网络自动同步该时区的本地时间和日期。您也可以手动修改时间和日期。手动设置后，自动同步功能会被关闭。
 
-1. 在控制中心首页，单击 ![time](figures/icon124-o.svg)。
+1. 在控制中心首页，单击 ![time](./figures/icon124-o.svg)。
 2. 单击 **时间设置** 。
    - 开启或关闭自动同步配置。
    - 设置正确的时间和日期。
@@ -674,32 +674,32 @@ VPN即虚拟专用网络，其主要功能是在公用网络上建立专用网�
 
 支持即时设置时间日期的格式。
 
-1. 在控制中心首页，单击 ![time](figures/icon124-o.svg)。
+1. 在控制中心首页，单击 ![time](./figures/icon124-o.svg)。
 2. 单击 **格式设置**，可以设置星期、长短日期、长短时间等格式。
 
 ### 电源管理
 
 对系统电源进行一些设置，让系统更安全。
 
-![0|power](figures/57.png)
+![0|power](./figures/57.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 #### 设置显示器关闭时间
 
-1. 在控制中心首页，单击 ![power_normal](figures/icon107-o.svg)。
+1. 在控制中心首页，单击 ![power_normal](./figures/icon107-o.svg)。
 2. 单击 **使用电源**。
 3. 选择关闭显示器的时间。
 
 #### 设置自动锁屏时间
 
-1. 在控制中心首页，单击 ![power_normal](figures/icon107-o.svg)。
+1. 在控制中心首页，单击 ![power_normal](./figures/icon107-o.svg)。
 2. 单击 **使用电源**。
 3. 选择自动锁屏的时间。
 
 #### 设置电源按钮
 
-1. 在控制中心首页，单击 ![power_normal](figures/icon107-o.svg)。
+1. 在控制中心首页，单击 ![power_normal](./figures/icon107-o.svg)。
 2. 单击 **使用电源**。
 3. 选择电源按钮 **关机**、**关闭显示器** 或 **无任何操作**，更改电源设置。
 
@@ -709,26 +709,26 @@ VPN即虚拟专用网络，其主要功能是在公用网络上建立专用网�
 
 鼠标是计算机的常用输入设备。使用鼠标，可以使操作更加简便快捷。
 
-![0|mouse](figures/53.png)
+![0|mouse](./figures/53.png)
 
 #### 通用设置
 
-1. 在控制中心首页，单击 ![mouse_touchpad_normal](figures/icon94-o.svg)。
+1. 在控制中心首页，单击 ![mouse_touchpad_normal](./figures/icon94-o.svg)。
 2. 单击 **通用**。
 3. 开启 **左手模式**，调节鼠标和触控板的**滚动速度**，**双击速度**。
 
-> ![notes](figures/icon99-o.svg)说明：*开启左手模式后，鼠标的左右键功能互换。*
+> ![notes](./figures/icon99-o.svg)说明：*开启左手模式后，鼠标的左右键功能互换。*
 
 #### 鼠标设置
 
 插入或连接鼠标后，在控制中心进行相关设置，让其更符合您的使用习惯。
 
-1. 在控制中心首页，单击 ![mouse_touchpad_normal](figures/icon94-o.svg)。
+1. 在控制中心首页，单击 ![mouse_touchpad_normal](./figures/icon94-o.svg)。
 2. 单击 **鼠标**。
 3. 调节 **指针速度**， 控制鼠标移动时指针移动的速度。
 4. 单击 **自然滚动** / **鼠标加速** 开关，开启相应功能。
 
-> ![notes](figures/icon99-o.svg)说明：
+> ![notes](./figures/icon99-o.svg)说明：
 >
 > - *开启鼠标加速，提高了指针精确度，鼠标指针在屏幕上的移动距离会根据移动速度的加快而增加。可以根据使用情况开启或关闭。*
 > - *自然滚动开启后，鼠标滚轮向下滚动，内容会向下滚动；鼠标滚轮向上滚动，内容会向上滚动。*
@@ -737,11 +737,11 @@ VPN即虚拟专用网络，其主要功能是在公用网络上建立专用网�
 
 在此模块，您可以设置键盘属性，以便符合您的输入习惯，还可以根据国家和语言调整键盘布局，设置系统语言，以及自定义快捷键。
 
-![0|keyboard](figures/59.png)
+![0|keyboard](./figures/59.png)
 
 #### 键盘属性
 
-1. 在控制中心首页，单击 ![keyboard_normal](figures/icon86-o.svg)。
+1. 在控制中心首页，单击 ![keyboard_normal](./figures/icon86-o.svg)。
 2. 单击 **通用**。
 3. 调节 **重复延迟**/**重复速度**。
 4. 单击“请在此测试”，按下键盘上的任意字符不松开，查看调节效果。
@@ -753,29 +753,29 @@ VPN即虚拟专用网络，其主要功能是在公用网络上建立专用网�
 
 一般在安装系统时，就已经设置了键盘布局，您也可以添加其他的键盘布局。
 
-![layout](figures/50.png)
+![layout](./figures/50.png)
 
 ##### 添加键盘布局
 
-1. 在控制中心首页，单击 ![keyboard_normal](figures/icon86-o.svg)。
+1. 在控制中心首页，单击 ![keyboard_normal](./figures/icon86-o.svg)。
 2. 单击 **键盘布局**，进入键盘布局界面。
-3. 单击![add](figures/icon50-o.svg)，单击某一键盘布局即可添加到列表。
+3. 单击![add](./figures/icon50-o.svg)，单击某一键盘布局即可添加到列表。
 
 ##### 删除键盘布局
 
-1. 在控制中心首页，单击 ![keyboard_normal](figures/icon86-o.svg)。
+1. 在控制中心首页，单击 ![keyboard_normal](./figures/icon86-o.svg)。
 2. 单击 **键盘布局**，进入键盘布局界面。
 3. 单击”键盘布局“后的 **编辑**。
-4. 单击 ![delete](figures/icon71-o.svg)，删除该键盘布局。
+4. 单击 ![delete](./figures/icon71-o.svg)，删除该键盘布局。
 
 ##### 切换键盘布局
 
-1. 在控制中心首页，单击 ![keyboard_normal](figures/icon86-o.svg)。
+1. 在控制中心首页，单击 ![keyboard_normal](./figures/icon86-o.svg)。
 2. 单击 **键盘布局**，进入键盘布局界面。
 3. 选择一个键盘布局进行切换。
 4. 切换成功后，该键盘布局将标记为已选择。
 
-> ![tips](figures/icon125-o.svg)窍门：*您也可以选择一组或多组快捷键，按顺序切换已添加的键盘布局。选择 **切换方式**， 让切换后的键盘布局应用于整个系统或当前应用。*
+> ![tips](./figures/icon125-o.svg)窍门：*您也可以选择一组或多组快捷键，按顺序切换已添加的键盘布局。选择 **切换方式**， 让切换后的键盘布局应用于整个系统或当前应用。*
 
 #### 系统语言
 
@@ -785,77 +785,77 @@ VPN即虚拟专用网络，其主要功能是在公用网络上建立专用网�
 
 您可以添加多个语言到系统语言列表，以便切换系统语言。
 
-1. 在控制中心首页，单击 ![keyboard_normal](figures/icon86-o.svg)。
+1. 在控制中心首页，单击 ![keyboard_normal](./figures/icon86-o.svg)。
 2. 单击 **系统语言**，进入系统语言界面。
-3. 单击 ![add](figures/icon50-o.svg) 进入语言列表。
+3. 单击 ![add](./figures/icon50-o.svg) 进入语言列表。
 4. 选择语言，该语言将自动添加到系统语言列表。
 
 ##### 切换系统语言
 
-1. 在控制中心首页，单击 ![keyboard_normal](figures/icon86-o.svg)。
+1. 在控制中心首页，单击 ![keyboard_normal](./figures/icon86-o.svg)。
 2. 单击 **系统语言**，进入系统语言界面。
 3. 选择要切换的语言，系统将自动开始安装语言包。
 4. 语言包安装完成后，需要注销后重新登录，以便设置生效。
 
-> ![attention](figures/icon52-o.svg)注意：*更改系统语言后，键盘布局可能也会发生改变。重新登录时，请确保使用正确的键盘布局来输入密码。*
+> ![attention](./figures/icon52-o.svg)注意：*更改系统语言后，键盘布局可能也会发生改变。重新登录时，请确保使用正确的键盘布局来输入密码。*
 
 
 #### 快捷键
 
 快捷键列表显示了系统所有的快捷键。您可以在这里查看、修改和自定义快捷键。
 
-![0|shortcut](figures/59.png)
+![0|shortcut](./figures/59.png)
 
 ##### 查看快捷键
 
-1. 在控制中心首页，单击 ![keyboard_normal](figures/icon86-o.svg)。
+1. 在控制中心首页，单击 ![keyboard_normal](./figures/icon86-o.svg)。
 2. 单击 **快捷键**，进入快捷键设置界面。
 3. 搜索或查看默认的系统快捷键、窗口快捷键和工作区快捷键。
 
 ##### 修改快捷键
 
-1. 在控制中心首页，单击 ![keyboard_normal](figures/icon86-o.svg)。
+1. 在控制中心首页，单击 ![keyboard_normal](./figures/icon86-o.svg)。
 2. 单击 **快捷键**，进入快捷键设置界面。
 3. 单击需要修改的快捷键。
 4. 使用键盘输入新的快捷键。
 
-> ![tips](figures/icon125-o.svg)窍门：*若要禁用快捷键，请按下键盘上的 ![Backspace](figures/icon54-o.svg)。若要取消修改快捷键，按下键盘上 **Esc** 键， 或单击下方的”恢复默认”按钮。*
+> ![tips](./figures/icon125-o.svg)窍门：*若要禁用快捷键，请按下键盘上的 ![Backspace](./figures/icon54-o.svg)。若要取消修改快捷键，按下键盘上 **Esc** 键， 或单击下方的”恢复默认”按钮。*
 
 ##### 自定义快捷键
 
 您可以为常用的应用自定义一个快捷键。
 
-1. 在控制中心首页，单击 ![keyboard_normal](figures/icon86-o.svg)。
+1. 在控制中心首页，单击 ![keyboard_normal](./figures/icon86-o.svg)。
 2. 单击 **快捷键**。
-3. 单击![add](figures/icon50-o.svg)，进入添加快捷键界面。
+3. 单击![add](./figures/icon50-o.svg)，进入添加快捷键界面。
 4. 输入快捷键名称、命令和快捷键。
 5. 单击 **添加**。
 6. 添加成功后，单击”自定义快捷键“后的 **编辑**。
-7. 单击某个快捷键后 ![delete](figures/icon71-o.svg)， 删除自定义的快捷键。
+7. 单击某个快捷键后 ![delete](./figures/icon71-o.svg)， 删除自定义的快捷键。
 
-> ![tips](figures/icon125-o.svg)窍门：*若要修改快捷键，单击输入新的快捷键即可。若要修改自定义快捷键的名称和命令，单击“自定义快捷键”后的 **编辑** ，单击快捷键名称后的 ![edit](figures/icon75-o.svg)，进入修改页面。*
+> ![tips](./figures/icon125-o.svg)窍门：*若要修改快捷键，单击输入新的快捷键即可。若要修改自定义快捷键的名称和命令，单击“自定义快捷键”后的 **编辑** ，单击快捷键名称后的 ![edit](./figures/icon75-o.svg)，进入修改页面。*
 
 
 ### 系统信息
 
 您可以查看系统版本、版本授权和电脑硬件等信息，以及该系统的一些协议。
 
-![0|info](figures/48.png)
+![0|info](./figures/48.png)
 
 #### 关于本机
 
-1. 在控制中心首页，单击 ![system_info_normal](figures/icon120-o.svg)。
+1. 在控制中心首页，单击 ![system_info_normal](./figures/icon120-o.svg)。
 2. 在 **关于本机** 下，您可以查看当前系统版本、版本授权及电脑硬件信息；
 3. 若系统未激活，可在此页面单击 **激活**，进行系统激活。
 
 #### 版本协议
 
-1. 在控制中心首页，单击 ![system_info_normal](figures/icon120-o.svg)。
+1. 在控制中心首页，单击 ![system_info_normal](./figures/icon120-o.svg)。
 2. 在 **版本协议** 下，查看系统版本协议。
 
 #### 最终用户许可协议
 
-1. 在控制中心首页，单击 ![system_info_normal](figures/icon120-o.svg)。
+1. 在控制中心首页，单击 ![system_info_normal](./figures/icon120-o.svg)。
 2. 在 **最终用户许可协议** 下，查看最终用户许可协议。
 
 
@@ -867,7 +867,7 @@ VPN即虚拟专用网络，其主要功能是在公用网络上建立专用网�
 | 按键                                                         | 功能                                                         |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | **Tab**                                                      | 在不同区域或对话框按钮之间切换。                             |
-| ![Up](figures/icon127-o.svg) ![Down](figures/icon73-o.svg)     ![Left](figures/icon88-o.svg) ![Right](figures/icon111-o.svg) | 在同区域内对不同的对象进行选择。使用 ![Right](figures/icon111-o.svg) 进入下级菜单,使用 ![Left](figures/icon88-o.svg) 返回上级菜单。使用![Up](figures/icon127-o.svg)![Down](figures/icon73-o.svg) 键进行上下切换 。 |
+| ![Up](./figures/icon127-o.svg) ![Down](./figures/icon73-o.svg)     ![Left](./figures/icon88-o.svg) ![Right](./figures/icon111-o.svg) | 在同区域内对不同的对象进行选择。使用 ![Right](./figures/icon111-o.svg) 进入下级菜单,使用 ![Left](./figures/icon88-o.svg) 返回上级菜单。使用![Up](./figures/icon127-o.svg)![Down](./figures/icon73-o.svg) 键进行上下切换 。 |
 | **Enter**                                                    | 执行选定对象。                                               |
 | **Space**                                                    | 在文件管理器中，预览选定对象；在影院和音乐中，开始/暂停播放；在下拉列表中，展开下拉选项（也可使用回车键）。 |
 | **Ctrl**+**M**                                               | 打开右键菜单。                                               |
