@@ -21,7 +21,7 @@ Different from Libvirt that uses XML files to configure VMs, StratoVirt can use 
 - Number of VM disks (including hot swap disks): [0,6]
 - Number of VM NICs (including hot swap NICs): [0,2]
 - The VM console device supports only single way connection.
-- On the x86_64 platform, a maximum of two other devices except disks and NICs can be configured. On the AArch64 platform, the maximum of other devices is 12, also excluding disks and NICs.
+- On the x86_64 platform, a maximum of 11 mmio devices can be configured. But a maximum of two other devices except disks and NICs is recommended. On the AArch64 platform, the maximum of mmio devices is 160, but the maximum of other devices is recommend to be 12, also excluding disks and NICs.
 
 ## Minimum Configuration
 
