@@ -29,7 +29,7 @@ Authorized users only. All activities may be monitored and reported.
 
 ### Description
 
-By default, you can restart the OS by holding down  **Ctrl**,  **Alt**, and  **Delete**. Disabling this feature can prevent data loss caused by misoperations.
+By default, you can restart the OS by holding down  **Ctrl**,  **Alt**, and  **Delete**. It is advised to disable this feature to prevent data loss caused by misoperations.
 
 ### Implementation
 
@@ -53,7 +53,7 @@ To disable the feature of restarting the system by holding down  **Ctrl**,  **Al
 
 ### Description
 
-An unattended shell is prone to listening or attacks. Therefore, a mechanism must be configured to ensure that a shell can automatically exit when it does not run for a period.
+An unattended shell is prone to listening or attacks. Therefore, it is advised that a mechanism be configured to ensure that a shell can automatically exit when it does not run for a period.
 
 ### Implementation
 
