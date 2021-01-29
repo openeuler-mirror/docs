@@ -373,6 +373,11 @@
           "children": []
         },
         {
+            "label": "Querying VM Information",
+            "path": "docs/StratoVirt/Query_VM_information",
+            "children": []
+          },
+        {
           "label": "Managing the VM Lifecycle",
           "path": "docs/StratoVirt/Manage_life_cycle",
           "children": []
