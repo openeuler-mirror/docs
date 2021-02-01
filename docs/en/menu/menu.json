@@ -933,6 +933,13 @@
       ]
     },
     {
+      "label": "HA User Guide",
+      "path": "docs/userguide/HAuserguide",
+      "children": [
+        
+      ]
+    },
+    {
       "label": "DDE User Guide ",
       "path": "docs/userguide/DDE-User-Manual",
       "children": [
