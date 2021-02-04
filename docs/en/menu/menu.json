@@ -132,16 +132,6 @@
               "children": []
             },
             {
-              "label": "Installation UKUI",
-              "path": "docs/Installation/install-UKUI",
-              "children": []
-            },
-            {
-              "label": "Installation DDE",
-              "path": "docs/Installation/install-DDE",
-              "children": []
-            },
-            {
               "label": "FAQs",
               "path": "docs/Installation/faqs",
               "children": []
@@ -926,10 +916,41 @@
       ]
     },
     {
-      "label": "UKUI User Guide ",
-      "path": "docs/userguide/UKUI-user-guide",
+      "label": "Desktop Environment User Guide",
+      "path": "docs/desktop/desktop",
       "children": [
-        
+        {
+          "label": "UKUI",
+          "path": "docs/desktop/ukui",
+          "children": [
+            {
+              "label": "Installation UKUI ",
+              "path": "docs/desktop/install-UKUI",
+              "children": []
+            },
+            {
+              "label": "UKUI User Guide ",
+              "path": "docs/desktop/UKUI-user-guide",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "DDE",
+          "path": "docs/desktop/dde",
+          "children": [
+            {
+              "label": "install-DDE ",
+              "path": "docs/desktop/install-DDE",
+              "children": []
+            },
+            {
+              "label": "DDE User Guide ",
+              "path": "docs/desktop/DDE-User-Manual",
+              "children": []
+            }
+          ]
+        }
       ]
     },
     {
@@ -938,12 +959,5 @@
       "children": [
         
       ]
-    },
-    {
-      "label": "DDE User Guide ",
-      "path": "docs/userguide/DDE-User-Manual",
-      "children": [
-        
-      ]
-    }     
+    }    
 ]
