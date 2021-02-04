@@ -132,16 +132,6 @@
               "children": []
             },
             {
-              "label": "安装UKUI",
-              "path": "docs/Installation/安装UKUI",
-              "children": []
-            },
-            {
-              "label": "安装DDE",
-              "path": "docs/Installation/安装DDE",
-              "children": []
-            },
-            {
               "label": "FAQ",
               "path": "docs/Installation/FAQ",
               "children": []
@@ -925,24 +915,48 @@
       ]
     },
     {
-      "label": "UKUI用户指南",
-      "path": "docs/userguide/UKUIuserguide",
+      "label": "桌面环境用户指南",
+      "path": "docs/desktop/desktop",
       "children": [
-        
+        {
+          "label": "UKUI",
+          "path": "docs/desktop/ukui",
+          "children": [
+            {
+              "label": "安装 UKUI",
+              "path": "docs/desktop/安装UKUI",
+              "children": []
+            },
+            {
+              "label": "UKUI 用户指南",
+              "path": "docs/desktop/UKUIuserguide",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "DDE",
+          "path": "docs/desktop/dde",
+          "children": [
+            {
+              "label": "安装 DDE",
+              "path": "docs/desktop/安装DDE",
+              "children": []
+            },
+            {
+              "label": "DDE 用户指南",
+              "path": "docs/desktop/DDE-User-Manual",
+              "children": []
+            }
+          ]
+        }
       ]
     },
     {
       "label": "HA用户指南",
-      "path": "docs/userguide/HAuserguide",
+      "path": "docs/desktop/HAuserguide",
       "children": [
         
       ]
-    },
-    {
-      "label": "DDE用户指南",
-      "path": "docs/userguide/DDE-User-Manual",
-      "children": [
-        
-      ]
-    }      
+    }     
 ]
