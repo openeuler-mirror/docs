@@ -954,7 +954,7 @@
     },
     {
       "label": "HA用户指南",
-      "path": "docs/userguide/HAuserguide",
+      "path": "docs/desktop/HAuserguide",
       "children": [
         
       ]
