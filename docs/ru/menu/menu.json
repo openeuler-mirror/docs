@@ -153,7 +153,7 @@
           "children": []
         },
         {
-          "label": "User and User Group Management",
+          "label": "Управление пользователями и группами пользователей",
           "path": "docs/Administration/user-and-user-group-management",
           "children": []
         },
@@ -178,7 +178,7 @@
           "children": []
         },
         {
-          "label": "Managing Hard Disks Through LVM",
+          "label": "Управление жесткими дисками через диспетчер логических томов (LVM)",
           "path": "docs/Administration/managing-hard-disks-through-lvm",
           "children": []
         },
@@ -192,7 +192,7 @@
           "path": "docs/Administration/configuring-services",
           "children": [
             {
-              "label": "Configuring the Repo Server",
+              "label": "Конфигурирование сервера-репозитория",
               "path": "docs/Administration/configuring-the-repo-server",
               "children": []
             },
@@ -219,7 +219,7 @@
           "children": []
         },
         {
-          "label": "FAQs",
+          "label": "Вопросы и ответы",
           "path": "docs/Administration/faqs",
           "children": []
         }
@@ -349,41 +349,41 @@
       ]
     },
     {
-      "label": "StratoVirt User Guide",
+      "label": "Руководство пользователя платформы виртуализации StratoVirt",
       "path": "docs/StratoVirt/StratoVrit_guidence",
       "children": [
         {
-          "label": "Introduction to StratoVirt",
+          "label": "Основы StratoVirt",
           "path": "docs/StratoVirt/StratoVirt_Intoduction",
           "children": []
         },
         {
-          "label": "Installing StratoVirt",
+          "label": "Установка StratoVirt",
           "path": "docs/StratoVirt/Install_StratoVirt",
           "children": []
         },
         {
-          "label": "Preparing the Environment",
+          "label": "Подготовка среды",
           "path": "docs/StratoVirt/Prepare_env",
           "children": []
         },
         {
-          "label": "Configuring a VM",
+          "label": "Конфигурирование виртуальной машины",
           "path": "docs/StratoVirt/VM_configuration",
           "children": []
         },
         {
-          "label": "Managing the VM Lifecycle",
+          "label": "Управление жизненным циклом виртуальной машины",
           "path": "docs/StratoVirt/Manage_life_cycle",
           "children": []
         },
         {
-          "label": "Managing VM resources",
+          "label": "Управление ресурсами виртуальных машин",
           "path": "docs/StratoVirt/Manage_resource",
           "children": []
         },
         {
-          "label": "Interconnecting with the iSula Secure Container",
+          "label": "Подключение с помощью безопасного контейнера iSula",
           "path": "docs/StratoVirt/Interconnect_isula",
           "children": []
         }
@@ -660,31 +660,31 @@
       ]
     },
     {
-      "label": "A-Tune User Guide",
+      "label": "Руководство пользователя A-Tune",
       "path": "docs/A-Tune/A-Tune",
       "children": [
         {
-          "label": "Getting to Know A-Tune",
+          "label": "Ознакомительная информация о приложении A-Tune",
           "path": "docs/A-Tune/getting-to-know-a-tune",
           "children": []
         },
         {
-          "label": "Installation and Deployment",
+          "label": "Установка и развертывание",
           "path": "docs/A-Tune/installation-and-deployment",
           "children": []
         },
         {
-          "label": "Application Scenarios",
+          "label": "Сценарии применения",
           "path": "docs/A-Tune/application-scenarios",
           "children": []
         },
         {
-          "label": "FAQs",
+          "label": "Вопросы и ответы",
           "path": "docs/A-Tune/faqs",
           "children": []
         },
         {
-          "label": "Appendixes",
+          "label": "Приложения",
           "path": "docs/A-Tune/appendixes",
           "children": []
         }
