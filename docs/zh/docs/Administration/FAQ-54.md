@@ -308,11 +308,11 @@ Press any key to continue...
 ### 解决方案
 
 1.  在引导界面按e进行grub2配置修改界面，修改内核与initrd部分的路径，如：
-```
-linux ($root)/vmlinuz-4.19-xxx root=xxx --->>> linux ($root)/boot/vmlinuz-4.19-xxx root=xxx
-initrd ($root)/initramfs-4.19-xxx       --->>> initrd ($root)/boot/initramfs-4.19-xxx 
-```
-随后，按ctrl+x引导系统启动。
+    ```
+    linux ($root)/vmlinuz-4.19-xxx root=xxx --->>> linux ($root)/boot/vmlinuz-4.19-xxx root=xxx
+    initrd ($root)/initramfs-4.19-xxx       --->>> initrd ($root)/boot/initramfs-4.19-xxx 
+    ```
+    随后，按ctrl+x引导系统启动。
 
 2. 重新安装grub2-2.04-8及以后的版本
 3. 重新生成cfg文件，grub2-mkconfig -o /boot/grub2/grub.cfg
