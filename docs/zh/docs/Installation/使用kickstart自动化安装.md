@@ -321,7 +321,6 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
     }
     ```
 
-
 6.  DHCP的配置（可以使用dnsmasq代替 ）。
 
     ```
