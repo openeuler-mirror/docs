@@ -24,7 +24,7 @@ Before installation, obtain the openEuler Raspberry Pi image and its verificatio
 
 3. Click the **Link** provided after **Download ISO**. The download list is displayed.
 
-4. Click **openEuler-20.09**. The openEuler 20.09 version download list is displayed.
+4. Click **openEuler-21.03**. The openEuler 21.03 version download list is displayed.
 
 5. Click **Raspberry Pi**. The Raspberry Pi image download list is displayed.
    
@@ -32,9 +32,9 @@ Before installation, obtain the openEuler Raspberry Pi image and its verificatio
 
 6. Click **aarch64** to download the Raspberry Pi AArch64 image download list.
 
-7. Click **openEuler-20.09-raspi-aarch64.img.xz** to download the openEuler Raspberry Pi image to the local PC.
+7. Click **openEuler-21.03-raspi-aarch64.img.xz** to download the openEuler Raspberry Pi image to the local PC.
 
-8. Click **openEuler-20.09-raspi-aarch64.img.xz.sha256sum** to download the verification file of the openEuler Raspberry Pi image to the local PC.
+8. Click **openEuler-21.03-raspi-aarch64.img.xz.sha256sum** to download the verification file of the openEuler Raspberry Pi image to the local PC.
 
 ## Verifying the Image Integrity
 
@@ -48,9 +48,9 @@ Compare the verification value recorded in the verification file with the verifi
 
 Before verifying the integrity of the image file, ensure that the following files are available:
 
-Image file: **openEuler-20.09-raspi-aarch64.img.xz**
+Image file: **openEuler-21.03-raspi-aarch64.img.xz**
 
-Verification file: **openEuler-20.09-raspi-aarch64.img.xz.sha256sum**
+Verification file: **openEuler-21.03-raspi-aarch64.img.xz.sha256sum**
 
 ### Procedure
 
@@ -59,13 +59,13 @@ To verify the file integrity, perform the following procedure:
 1. Obtain the verification value from the verification file. Run the following command:
    
    ```
-   $ cat openEuler-20.09-raspi-aarch64.img.xz.sha256sum
+   $ cat openEuler-21.03-raspi-aarch64.img.xz.sha256sum
    ```
 
 2. Calculate the SHA256 verification value of the file. Run the following command:
    
    ```
-   $ sha256sum openEuler-20.09-raspi-aarch64.img.xz
+   $ sha256sum openEuler-21.03-raspi-aarch64.img.xz
    ```
    
    After the command is executed, the verification value is displayed.
