@@ -279,7 +279,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
     ...
     ```
 
-5.  修改pxe配置文件grub.cfg， 可参考如下内容。
+5.  修改pxe配置文件grub.cfg， 可参考如下内容(注意：openEuler当前不支持bls格式的cfg文件)。
 
     ```
     # cp -r /mnt/images/pxeboot/* /var/lib/tftpboot/
