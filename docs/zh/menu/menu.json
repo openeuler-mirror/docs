@@ -99,6 +99,11 @@
               "children": []
             },
             {
+              "label": "安装XFCE",
+              "path": "docs/Installation/Install_XFCE",
+              "children": []
+            },
+            {
               "label": "FAQ",
               "path": "docs/Installation/FAQ",
               "children": []
