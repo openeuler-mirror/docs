@@ -1,136 +1,136 @@
 [
     {
-      "label": "Terms of Use",
+      "label": "Условия использования",
       "path": "docs/Releasenotes/terms-of-use",
       "children": []
     },
     {
-      "label": "Release Notes",
+      "label": "Примечания к релизу",
       "path": "docs/Releasenotes/release_notes",
       "children": [
         {
-          "label": "User Notice",
+          "label": "Уведомление пользователя",
           "path": "docs/Releasenotes/user-notice",
           "children": []
         },
         {
-          "label": "Introduction",
+          "label": "Введение",
           "path": "docs/Releasenotes/introduction",
           "children": []
         },
         {
-          "label": "Installing the OS",
+          "label": "Установка операционной системы",
           "path": "docs/Releasenotes/installing-the-os",
           "children": []
         },
         {
-          "label": "Key Features",
+          "label": "Ключевые особенности",
           "path": "docs/Releasenotes/key-features",
           "children": []
         },
         {
-          "label": "Known Issues",
+          "label": "Известные проблемы",
           "path": "docs/Releasenotes/known-issues",
           "children": []
         },
         {
-          "label": "Resolved Issues",
+          "label": "Решенные проблемы",
           "path": "docs/Releasenotes/resolved-issues",
           "children": []
         },
         {
-          "label": "Common Vulnerabilities and Exposures \\(CVE\\)",
+          "label": "База данных общеизвестных уязвимостей информационной безопасности (CVE)",
           "path": "docs/Releasenotes/common-vulnerabilities-and-exposures-(cve)",
           "children": []
         },
         {
-          "label": "Source Code",
+          "label": "Исходный код",
           "path": "docs/Releasenotes/source-code",
           "children": []
         },
         {
-          "label": "Contribution",
+          "label": "Вклад пользователей",
           "path": "docs/Releasenotes/contribution",
           "children": []
         },
         {
-          "label": "Acknowledgement",
+          "label": "Официальная благодарность",
           "path": "docs/Releasenotes/acknowledgement",
           "children": []
         }
       ]
     },
     {
-      "label": "Quick Start",
+      "label": "Быстрый запуск",
       "path": "docs/Quickstart/quick-start",
       "children": []
     },
     {
-      "label": "Installation Guide",
+      "label": "Руководство по установке",
       "path": "docs/Installation/Installation",
       "children": [
         {
-          "label": "Installation on Servers",
+          "label": "Установка на серверы",
           "path": "docs/Installation/install-server",
           "children": [
             {
-              "label": "Installation Preparations",
+              "label": "Подготовка к установке",
               "path": "docs/Installation/installation-preparations",
               "children": []
             },
             {
-              "label": "Installation Mode",
+              "label": "Режимы установки",
               "path": "docs/Installation/installation-mode",
               "children": []
             },
             {
-              "label": "Installation Guideline",
+              "label": "Инструкции по установке",
               "path": "docs/Installation/installation-guideline",
               "children": []
             },
             {
-              "label": "Using Kickstart for Automatic Installation",
+              "label": "Автоматическая установка с помощью инструмента kickstart",
               "path": "docs/Installation/using-kickstart-for-automatic-installation",
               "children": []
             },
             {
-              "label": "Installation UKUI",
+              "label": "Установка UKUI",
               "path": "docs/Installation/install-UKUI",
               "children": []
             },
             {
-              "label": "FAQs",
+              "label": "Вопросы и ответы",
               "path": "docs/Installation/faqs",
               "children": []
             }
           ]
         },
         {
-          "label": "Installation on Raspberry Pi",
+          "label": "Установка на Raspberry Pi",
           "path": "docs/Installation/install-pi",
           "children": [
             {
-              "label": "Installation Preparations",
+              "label": "Подготовка к установке",
               "path": "docs/Installation/Installation-Preparations1",
               "children": []
             },
             {
-              "label": "Installation Mode",
+              "label": "Режимы установки",
               "path": "docs/Installation/Installation-Modes1",
               "children": []
             },
             {
-              "label": "Installation Guideline",
+              "label": "Руководство по установке",
               "path": "docs/Installation/Installation-Guide1",
               "children": []
             },
             {
-              "label": "FAQs",
+              "label": "Вопросы и ответы",
               "path": "docs/Installation/FAQ1",
               "children": []
             },
             {
-              "label": "More Resources",
+              "label": "Справочная информация",
               "path": "docs/Installation/More-Resources",
               "children": []
             }
@@ -226,78 +226,78 @@
       ]
     },
     {
-      "label": "Security Hardening Guide",
+      "label": "Руководство по усилению мер безопасности",
       "path": "docs/SecHarden/secHarden",
       "children": [
         {
-          "label": "OS Hardening Overview",
+          "label": "Обзор мер усиления безопасности ОС",
           "path": "docs/SecHarden/os-hardening-overview",
           "children": []
         },
         {
-          "label": "Security Hardening Guide",
+          "label": "Руководство по усилению мер безопасности",
           "path": "docs/SecHarden/security-hardening-guide",
           "children": [
             {
-              "label": "Account Passwords",
+              "label": "Пароли учетных записей",
               "path": "docs/SecHarden/account-passwords",
               "children": []
             },
             {
-              "label": "Authentication and Authorization",
+              "label": "Аутентификация и авторизация",
               "path": "docs/SecHarden/authentication-and-authorization",
               "children": []
             },
             {
-              "label": "System Services",
+              "label": "Системные службы",
               "path": "docs/SecHarden/system-services",
               "children": []
             },
             {
-              "label": "File Permissions",
+              "label": "Разрешения на работу с файлами",
               "path": "docs/SecHarden/file-permissions",
               "children": []
             },
             {
-              "label": "Kernel Parameters",
+              "label": "Параметры ядра",
               "path": "docs/SecHarden/kernel-parameters",
               "children": []
             },
             {
-              "label": "SELinux Configuration",
+              "label": "Настройка политики SELinux",
               "path": "docs/SecHarden/selinux-configuration",
               "children": []
             }
           ]
         },
         {
-          "label": "Security Hardening Tools",
+          "label": "Инструменты усиления безопасности",
           "path": "docs/SecHarden/security-hardening-tools",
           "children": []
         },
         {
-          "label": "Appendix",
+          "label": "Приложение",
           "path": "docs/SecHarden/appendix",
           "children": []
         }
       ]
     },
     {
-      "label": "Virtualization User Guide",
+      "label": "Руководство пользователя платформы виртуализации",
       "path": "docs/Virtualization/virtualization",
       "children": [
         {
-          "label": "Introduction to Virtualization",
+          "label": "Введение в понятие виртуализации",
           "path": "docs/Virtualization/introduction-to-virtualization",
           "children": []
         },
         {
-          "label": "Installation to Virtualization",
+          "label": "Руководство по установке",
           "path": "docs/Virtualization/installation-to-virtualization",
           "children": []
         },
         {
-          "label": "Environment Preparation",
+          "label": "Подготовка среды",
           "path": "docs/Virtualization/environment-preparation",
           "children": []
         },
@@ -307,7 +307,7 @@
           "children": []
         },
         {
-          "label": "Managing VMs",
+          "label": "Управление виртуальными машинами",
           "path": "docs/Virtualization/managing-vms",
           "children": []
         },
@@ -317,7 +317,7 @@
           "children": []
         },
         {
-          "label": "System Resource Management",
+          "label": "Управление системными ресурсами",
           "path": "docs/Virtualization/system-resource-management",
           "children": []
         },
@@ -327,7 +327,7 @@
           "children": []
         },
         {
-          "label": "VM Maintainability Management",
+          "label": "Техобслуживание виртуальных машин",
           "path": "docs/Virtualization/vm-maintainability-management",
           "children": []
         },
@@ -394,15 +394,15 @@
       "path": "docs/Container/container",
       "children": [
         {
-          "label": "iSulad Container Engine",
+          "label": "Контейнерный движок iSulad",
           "path": "docs/Container/isulad-container-engine",
           "children": [
             {
-              "label": "Installation, Upgrade and Uninstallation",
+              "label": "Установка, обновление и удаление",
               "path": "docs/Container/installation-upgrade-Uninstallation",
               "children": [
                 {
-                  "label": "Installation and Configuration",
+                  "label": "Установка и настройка",
                   "path": "docs/Container/installation-configuration",
                   "children": []
                 },
@@ -491,7 +491,7 @@
           "path": "docs/Container/system-container",
           "children": [
             {
-              "label": "Installation Guideline",
+              "label": "Инструкции по установке",
               "path": "docs/Container/installation-guideline",
               "children": []
             },
@@ -540,7 +540,7 @@
                   "children": []
                 },
                 {
-                  "label": "Maximum Number of Handles",
+                  "label": "Максимальное количество дескрипторов",
                   "path": "docs/Container/maximum-number-of-handles",
                   "children": []
                 },
@@ -691,16 +691,16 @@
       ]
     },
     {
-      "label": "Application Development Guide",
+      "label": "Руководство по разработке приложений",
       "path": "docs/ApplicationDev/application-development",
       "children": [
         {
-          "label": "Preparation",
+          "label": "Подготовка",
           "path": "docs/ApplicationDev/preparation",
           "children": []
         },
         {
-          "label": "Using GCC for Compilation",
+          "label": "Применение компиляторов GCC",
           "path": "docs/ApplicationDev/using-gcc-for-compilation",
           "children": []
         },
@@ -715,7 +715,7 @@
           "children": []
         },
         {
-          "label": "Building an RPM Package",
+          "label": "Создание пакета в формате RPM",
           "path": "docs/ApplicationDev/building-an-rpm-package",
           "children": []
         },
