@@ -9,23 +9,44 @@ XFCE支持x86_64和aarch64两种架构。
 ```
 sudo dnf update
 ```
+
 2. 安装字库
 ```
-sudo dnf install dejavu-fonts liberation-fonts gnu-*-fonts google-*-fonts 
+sudo dnf install dejavu-fonts liberation-fonts gnu-*-fonts google-*-fonts
 ```
+
 3. 安装Xorg
 ```
-sudo dnf install xorg-* 
+sudo dnf install xorg-*
 ```
+
 4. 安装XFCE
 ```
 sudo dnf install xfwm4 xfdesktop xfce4-* xfce4-*-plugin
 ```
-5. 在确认正常安装后，如果希望以图形界面的方式启动，请在命令行运行以下代码，并重启（`reboot`）。
+
+5. 安装登录管理器
 ```
-systemctl set-default graphical.target
+sudo dnf install lightdm lightdm-gtk
 ```
-命令行启动XFCE桌面环境
+
+6. 使用登录管理器启动XFCE
+````
+sudo systemctl start lightdm
+````
+登录管理器启动后，在右上角左侧选择“XFCE会话”
+输入用户名、密码登录
+
+7. 设置开机自启动图形界面
 ```
-sudo startxfce4
+sudo systemctl enable lightdm
+sudo systemctl set-default graphical.target
+```
+如果默认默认安装了gdm，建议停用gdm
+```
+systemctl disable gdm
+```
+重启验证
+```
+sudo reboot
 ```
