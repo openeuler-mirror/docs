@@ -732,6 +732,19 @@
       ]
     },
     {
+      "label": "第三方软件安装指南",
+      "path": "docs/thirdparty_migration/thidrparty",
+      "children": [
+        {
+          "label": "OpenStack-Victoria 部署指南",
+          "path": "docs/thirdparty_migration/OpenStack-victoria",
+          "children": [
+            
+          ]
+        }
+      ]
+    },
+    {
       "label": "工具集用户指南",
       "path": "docs/userguide/overview",
       "children": [
