@@ -99,11 +99,6 @@
               "children": []
             },
             {
-              "label": "安装XFCE",
-              "path": "docs/Installation/Install_XFCE",
-              "children": []
-            },
-            {
               "label": "FAQ",
               "path": "docs/Installation/FAQ",
               "children": []
@@ -741,6 +736,49 @@
           "children": [
             
           ]
+        }
+      ]
+    },
+    {
+      "label": "桌面环境用户指南",
+      "path": "docs/desktop/desktop",
+      "children": [
+        {
+          "label": "UKUI",
+          "path": "docs/desktop/ukui",
+          "children": [
+            {
+              "label": "安装 UKUI",
+              "path": "docs/desktop/安装UKUI",
+              "children": []
+            },
+            {
+              "label": "UKUI 用户指南",
+              "path": "docs/desktop/UKUIuserguide",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "DDE",
+          "path": "docs/desktop/dde",
+          "children": [
+            {
+              "label": "安装 DDE",
+              "path": "docs/desktop/安装DDE",
+              "children": []
+            },
+            {
+              "label": "DDE 用户指南",
+              "path": "docs/desktop/DDE-User-Manual",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "安装XFCE",
+          "path": "docs/desktop/Install_XFCE",
+          "children": []
         }
       ]
     },
