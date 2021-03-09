@@ -736,6 +736,22 @@
           "children": [
             
           ]
+        },
+        {
+          "label": "HA 用户指南",
+          "path": "docs/desktop/ha",
+          "children": [
+            {
+              "label": "部署 HA",
+              "path": "docs/desktop/installha",
+              "children": []
+            },
+            {
+              "label": "HA 使用实例",
+              "path": "docs/desktop/usecase",
+              "children": []
+            }          
+          ]
         }
       ]
     },
