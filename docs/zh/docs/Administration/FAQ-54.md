@@ -11,7 +11,7 @@
     - [xfsprogs降级失败](#xfsprogs降级失败)
     - [cpython/Lib发现CVE-2019-9674:Zip炸弹漏洞](#cpython/Lib发现CVE-2019-9674:Zip炸弹漏洞)
     - [不合理使用glibc正则表达式引起ReDoS攻击](#不合理使用glibc正则表达式引起ReDoS攻击)
-    - [通过dnf update进行软件包全量升级，由20.03-LTS 升级到 20.03-LTS-SP1时，系统重启失败](#通过dnfupdate进行软件包全量升级由20.03-LTS升级到20.03-LTS-SP1时系统重启失败)
+
 
 <!-- /TOC -->
 
@@ -286,34 +286,3 @@ Segmentation fault (core dumped)
     # "a"*400000
     ```
 3.  用户程序在检测到进程异常之后，通过重启进程等手段恢复业务，提升程序的可靠性。
-
-## 通过dnf update进行软件包全量升级，由20.03-LTS 升级到 20.03-LTS-SP1时，系统重启失败
-
-### 问题现象
-
-x86_64架构 Legacy引导模式下，/boot目录未单独分区，通过dnf进行软件包全量升级，由20.03-LTS升级到20.03-LTS-SP1，出现系统升级成功但重启时引导失败，提示如下：
-```
-error: ../../grub-core/fs/fshelp.c:258:file
-'/vmlinuz-4.19.90-2012.5.0.0054.oe1.x86_64'
-not found.
-error: ../../grub-core/loader/i386/pc/linux.c:417:you need to load the kernel first.
-
-Press any key to continue...
-```
-
-### 原因分析
-
-20.03-LTS以前默认采用传统cfg，而20.03-LTS-SP1的grub2升级2.04版本后默认变为bls格式，openEuler目前对bls格式的cfg文件不做支持，导致重启后无法根据该格式的grub.cfg找到内核，启动失败。openEuler社区开发人员正在寻求进行此默认更改，以防由于cfg格式问题导致软件包升级后重启失败。
-
-### 解决方案
-
-1.  在引导界面按e进行grub2配置修改界面，修改内核与initrd部分的路径，如：
-    ```
-    linux ($root)/vmlinuz-4.19-xxx root=xxx --->>> linux ($root)/boot/vmlinuz-4.19-xxx root=xxx
-    initrd ($root)/initramfs-4.19-xxx       --->>> initrd ($root)/boot/initramfs-4.19-xxx 
-    ```
-    随后，按ctrl+x引导系统启动。
-
-2. 重新安装grub2-2.04-8及以后的版本
-3. 重新生成cfg文件，grub2-mkconfig -o /boot/grub2/grub.cfg
-4. 再次重启，系统成功引导

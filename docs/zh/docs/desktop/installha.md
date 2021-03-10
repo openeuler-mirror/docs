@@ -31,24 +31,24 @@
 ```
 [OS]
 name=OS
-baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/$basearch/
+baseurl=http://repo.openeuler.org/openEuler-21.03/OS/$basearch/
 enabled=1
 gpgcheck=1
-gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/$basearch/RPM-GPG-KEY-openEuler
+gpgkey=http://repo.openeuler.org/openEuler-21.03/OS/$basearch/RPM-GPG-KEY-openEuler
 
 [everything]
 name=everything
-baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP1/everything/$basearch/
+baseurl=http://repo.openeuler.org/openEuler-21.03/everything/$basearch/
 enabled=1
 gpgcheck=1
-gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP1/everything/$basearch/RPM-GPG-KEY-openEuler
+gpgkey=http://repo.openeuler.org/openEuler-21.03/everything/$basearch/RPM-GPG-KEY-openEuler
 
 [EPOL]
 name=EPOL
-baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP1/EPOL/$basearch/
+baseurl=http://repo.openeuler.org/openEuler-21.03/EPOL/$basearch/
 enabled=1
 gpgcheck=1
-gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/$basearch/RPM-GPG-KEY-openEuler
+gpgkey=http://repo.openeuler.org/openEuler-21.03/OS/$basearch/RPM-GPG-KEY-openEuler
 ```
 
 ### 安装HA软件包组件

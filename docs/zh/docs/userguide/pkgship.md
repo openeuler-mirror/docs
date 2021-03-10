@@ -43,7 +43,7 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 工具安装可通过以下两种方式中的任意一种实现。
 
 * 方法一，通过dnf挂载repo源实现。  
- 先使用dnf挂载pkgship软件在所在repo源（具体方法可参考[应用开发指南](https://openeuler.org/zh/docs/20.09/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装pkgship及其依赖。
+ 先使用dnf挂载pkgship软件在所在repo源（具体方法可参考[应用开发指南](https://openeuler.org/zh/docs/21.03/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装pkgship及其依赖。
 
     ```bash
     dnf install pkgship
@@ -150,7 +150,7 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
     conf.yaml 文件默认存放在 /etc/pkgship/ 路径下，pkgship会通过该配置读取要建立的数据库名称以及需要导入的sqlite文件。conf.yaml 示例如下所示。
 
     ```yaml
-    - dbname: openEuler-20.09
+    - dbname: openEuler-21.03
       src_db_file: /etc/pkgship/src.sqlite
       bin_db_file: /etc/pkgship/bin.sqlite
       lifecycle: enable
@@ -172,7 +172,7 @@ pkgshipd stop [manage/selfpkg]
 ## 工具使用
 
 1. 数据库初始化。  
-   > 使用场景：服务启动后，为了能查询对应的数据库（比如mainline， openEuler-20.09）中的包信息及包依赖关系，需要将这些数据库通过createrepo生成的sqlite（分为源码库和二进制库）导入进服务内，生成对应的db文件。当conf.yaml里配置数据库的参数项lifecycle声明为enable的时候，在lifecycle.db中会生成一张对应的表，用于记录数据库信息，后续需要读取数据库表名称(tablename)的操作会从此文件读取，[-filepath]为可选参数。
+   > 使用场景：服务启动后，为了能查询对应的数据库（比如mainline， openEuler-21.03）中的包信息及包依赖关系，需要将这些数据库通过createrepo生成的sqlite（分为源码库和二进制库）导入进服务内，生成对应的db文件。当conf.yaml里配置数据库的参数项lifecycle声明为enable的时候，在lifecycle.db中会生成一张对应的表，用于记录数据库信息，后续需要读取数据库表名称(tablename)的操作会从此文件读取，[-filepath]为可选参数。
 
     ```bash
     pkgship init [-filepath path]

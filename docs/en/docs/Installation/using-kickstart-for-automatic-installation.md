@@ -80,7 +80,7 @@ The environment requirements for semi-automatic installation of openEuler using 
 
 -   PM/VM \(for details about how to create VMs, see the documents from corresponding vendors\): includes the computer where kickstart is used for automatic installation and the computer where the kickstart tool is installed.
 -   Httpd: stores the kickstart file.
--   ISO: openEuler-20.09-aarch64-dvd.iso
+-   ISO: openEuler-21.03-aarch64-dvd.iso
 
 ### Procedure
 
@@ -175,7 +175,7 @@ To use kickstart to perform semi-automatic installation of openEuler, perform th
 **Installing the System**
 
 1.  The installation selection dialog box is displayed. 
-    1.  On the installation wizard page in [Starting the Installation](./installation-guideline.html#starting-the-installation), select  **Install openEuler 20.09**  and press  **e**.
+    1.  On the installation wizard page in [Starting the Installation](./installation-guideline.html#starting-the-installation), select  **Install openEuler 21.03**  and press  **e**.
     2.  Add  **inst.ks=http://server ip/ks/openEuler-ks.cfg**  to the startup parameters.
 
         ![](./figures/semi-automatic-installation.png)
@@ -199,7 +199,7 @@ The environment requirements for full-automatic installation of openEuler using 
 -   Httpd: stores the kickstart file.
 -   TFTP: provides vmlinuz and initrd files.
 -   DHCPD/PXE: provides the DHCP service.
--   ISO: openEuler-20.09-aarch64-dvd.iso
+-   ISO: openEuler-21.03-aarch64-dvd.iso
 
 ### Procedure
 
@@ -249,7 +249,7 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
 3.  <a name="en-us_topic_0229291289_l1692f6b9284e493683ffa2ef804bc7ca"></a>Run the following commands to prepare the installation source:
 
     ```
-    # mount openEuler-20.09-aarch64-dvd.iso /mnt
+    # mount openEuler-21.03-aarch64-dvd.iso /mnt
     # cp -r /mnt/* /var/www/html/openEuler/
     ```
 
@@ -314,7 +314,7 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
     
     
     ### BEGIN /etc/grub.d/10_linux ###
-    menuentry 'Install openEuler 20.09' --class red --class gnu-linux --class gnu --class os {
+    menuentry 'Install openEuler 21.03' --class red --class gnu-linux --class gnu --class os {
             set root=(tftp,192.168.122.1)
             linux /vmlinuz ro inst.geoloc=0 console=ttyAMA0 console=tty0 rd.iscsi.waitnet=0 inst.ks=http://192.168.122.1/ks/openEuler-ks.cfg
             initrd /initrd.img

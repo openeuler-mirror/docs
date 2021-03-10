@@ -117,7 +117,7 @@
 
 The openEuler OS is required.
 
-For details about how to install the openEuler OS, see the \[*openEuler 20.09 Installation Guide*\](./../Installation/Installation.html ). On the  **SOFTWARE SELECTION**  page, select  **Development Tools**  in the  **Add-Ons for Selected Environment**  area.
+For details about how to install the openEuler OS, see the \[*openEuler 21.03 Installation Guide*\](./../Installation/Installation.html ). On the  **SOFTWARE SELECTION**  page, select  **Development Tools**  in the  **Add-Ons for Selected Environment**  area.
 
 ## Configuring a Repo Source
 
@@ -147,10 +147,10 @@ Configure an online yum source by directly obtaining the online openEuler repo s
    ```
    [osrepo]
    name=osrepo
-   baseurl=http://repo.openeuler.org/openEuler-20.09/OS/aarch64/
+   baseurl=http://repo.openeuler.org/openEuler-21.03/OS/aarch64/
    enabled=1
    gpgcheck=1
-   gpgkey=http://repo.openeuler.org/openEuler-20.09/OS/aarch64/RPM-GPG-KEY-openEuler
+   gpgkey=http://repo.openeuler.org/openEuler-21.03/OS/aarch64/RPM-GPG-KEY-openEuler
    ```
    
    ****
@@ -169,7 +169,7 @@ Configure an online yum source by directly obtaining the online openEuler repo s
 ### Configuring a Repo Source by Mounting an ISO File
 
 > ![](./public_sys-resources/icon-note.gif) ********NOTE:********   
-> openEuler provides multiple ISO release packages. For details about each ISO release package, see [System Installation](./../Releasenotes/installing-the-os.html). This section uses the  **openEuler-20.09-aarch64-dvd.iso**  file and  **openEuler-20.09-aarch64-dvd.iso.sha256sum**  verification file as examples. Modify them based on the actual requirements.
+> openEuler provides multiple ISO release packages. For details about each ISO release package, see [System Installation](./../Releasenotes/installing-the-os.html). This section uses the  **openEuler-21.03-aarch64-dvd.iso**  file and  **openEuler-21.03-aarch64-dvd.iso.sha256sum**  verification file as examples. Modify them based on the actual requirements.
 
 1. Download the ISO release package.
    
@@ -181,7 +181,7 @@ Configure an online yum source by directly obtaining the online openEuler repo s
      
      3. Click the link provided after **Download ISO**. The download list is displayed.
      
-     4. Select the version to be downloaded, for example, openEuler 20.09. Then, click  **openEuler-20.09**. The download list is displayed.
+     4. Select the version to be downloaded, for example, openEuler 21.03. Then, click  **openEuler-21.03**. The download list is displayed.
      
      5. Click  **ISO**. The ISO download list is displayed.
         
@@ -191,9 +191,9 @@ Configure an online yum source by directly obtaining the online openEuler repo s
      
      6. Click  **aarch64**.
      
-     7. Click  **openEuler-20.09-aarch64-dvd.iso**  to download the openEuler release package to the local host.
+     7. Click  **openEuler-21.03-aarch64-dvd.iso**  to download the openEuler release package to the local host.
      
-     8. Click  **openEuler-20.09-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
+     8. Click  **openEuler-21.03-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
      
      9. Log in to the openEuler OS and create a directory for storing the release package and verification file, for example,  ~/iso\*\*.
         
@@ -211,7 +211,7 @@ Configure an online yum source by directly obtaining the online openEuler repo s
      
      3. Click the link provided after **Download ISO**. The download list is displayed.
      
-     4. Select the version to be downloaded, for example, openEuler 20.09. Then, click  **openEuler-20.09**. The download list is displayed.
+     4. Select the version to be downloaded, for example, openEuler 21.03. Then, click  **openEuler-21.03**. The download list is displayed.
      
      5. Click  **ISO**. The ISO download list is displayed.
         
@@ -221,9 +221,9 @@ Configure an online yum source by directly obtaining the online openEuler repo s
      
      6. Click  **aarch64**.
      
-     7. <a name="li62369349505"></a>Right-click  **openEuler-20.09-aarch64-dvd.iso**  and choose  **Copy URL**  from the shortcut menu to copy the address of the openEuler release package.
+     7. <a name="li62369349505"></a>Right-click  **openEuler-21.03-aarch64-dvd.iso**  and choose  **Copy URL**  from the shortcut menu to copy the address of the openEuler release package.
      
-     8. <a name="li9236203405015"></a>Right-click  **openEuler-20.09-aarch64-dvd.iso.sha256sum**  and choose  **Copy URL**  from the shortcut menu to copy the address of the openEuler verification file.
+     8. <a name="li9236203405015"></a>Right-click  **openEuler-21.03-aarch64-dvd.iso.sha256sum**  and choose  **Copy URL**  from the shortcut menu to copy the address of the openEuler verification file.
      
      9. Log in to the openEuler OS, create a directory (for example,  **~/iso**) for storing the release package and verification file, and switch to the directory.
         
@@ -244,13 +244,13 @@ Configure an online yum source by directly obtaining the online openEuler repo s
    1. Obtain the verification value in the verification file.
       
       ```
-      $ cat openEuler-20.09-aarch64-dvd.iso.sha256sum
+      $ cat openEuler-21.03-aarch64-dvd.iso.sha256sum
       ```
    
    2. Calculate the SHA256 verification value of the openEuler release package.
       
       ```
-      $ sha256sum openEuler-20.09-aarch64-dvd.iso 
+      $ sha256sum openEuler-21.03-aarch64-dvd.iso 
       ```
       
       After the command is run, the verification value is displayed.
@@ -266,7 +266,7 @@ Configure an online yum source by directly obtaining the online openEuler repo s
    The following is an example:
    
    ```
-   # mount /home/iso/openEuler-20.09-aarch64-dvd.iso /mnt/
+   # mount /home/iso/openEuler-21.03-aarch64-dvd.iso /mnt/
    ```
    
    The mounted  **mnt**  directory is as follows:

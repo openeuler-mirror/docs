@@ -11,10 +11,10 @@
     ```
     $ cat /etc/os-release
     NAME="openEuler"
-    VERSION="20.09"
+    VERSION="21.03"
     ID="openEuler"
-    VERSION_ID="20.09"
-    PRETTY_NAME="openEuler 20.09"
+    VERSION_ID="21.03"
+    PRETTY_NAME="openEuler 21.03"
     ANSI_COLOR="0;31"
     ```
 
