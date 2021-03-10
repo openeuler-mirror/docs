@@ -87,7 +87,7 @@
     </tr>
     <tr id="zh-cn_topic_0229291228_rd2c1ebd93ea64e85a5f3fc88dc5ba456"><td class="cellrowborder" valign="top" width="11.19111911191119%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0229291228_afd36954546334c1681b5a391bbc386ae"><a name="zh-cn_topic_0229291228_afd36954546334c1681b5a391bbc386ae"></a><a name="zh-cn_topic_0229291228_afd36954546334c1681b5a391bbc386ae"></a>硬盘</p>
     </td>
-    <td class="cellrowborder" valign="top" width="40.06400640064006%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0229291228_p1224172312719"><a name="zh-cn_topic_0229291228_p1224172312719"></a><a name="zh-cn_topic_0229291228_p1224172312719"></a>为了获得更好的应用体验，建议不小于120GB）</p>
+    <td class="cellrowborder" valign="top" width="40.06400640064006%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0229291228_p1224172312719"><a name="zh-cn_topic_0229291228_p1224172312719"></a><a name="zh-cn_topic_0229291228_p1224172312719"></a>为了获得更好的应用体验，建议不小于120GB</p>
     </td>
     <td class="cellrowborder" valign="top" width="48.74487448744874%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0229291228_acc0affdd82e34f32966171e21855ef40"><a name="zh-cn_topic_0229291228_acc0affdd82e34f32966171e21855ef40"></a><a name="zh-cn_topic_0229291228_acc0affdd82e34f32966171e21855ef40"></a>支持IDE、SATA、SAS等接口的硬盘。</p>
     </td>
@@ -99,9 +99,6 @@
 ## 获取安装源
 
 请按以下步骤获取openEuler的发布包和校验文件：
-
-> ![](./public_sys-resources/icon-note.gif) **说明：**   
-> AArch64架构的发布包支持UEFI模式，x86\_64架构的发布包支持UEFI模式和Legacy模式。
 
 1.  登录[openEuler社区](https://openeuler.org)网站。
 2.  单击“下载”。
@@ -170,7 +167,7 @@
     弹出镜像对话框，如下图所示。
 
     **图 3**  镜像对话框<a name="zh-cn_topic_0229291223_zh-cn_topic_0151920806_fb74fb37f86cd423aacf34bddedd6841a"></a>  
-    ![](./figures/Image_dialog_box.png "镜像对话框")
+    ![](./figures/Image_dialog_box.png)
 
 5.  在镜像对话框中，选择“镜像文件”， 并单击“浏览”。弹出“打开”对话框。
 6.  选择镜像文件，单击“打开”。然后在镜像对话框中，单击“连接”。当“连接”显示为“断开”后，表示虚拟光驱已连接到服务器。
@@ -197,9 +194,9 @@
 1.  设置安装语言，默认为英语，用户可根据实际情况进行调整，如[图6](#fig874344811484)所示，选择“中文”。
 
     **图 6**  选择语言<a name="fig874344811484"></a>  
-    ![](./figures/chooselanguage.png)
+    ![](./figures/selectlanguage.png)
 
-2. 在安装概览界面，根据实际情况设置各配置项。
+2.  在安装概览界面，根据实际情况设置各配置项。
 
     -   配置项有告警符号的，表示用户必须完成该选项配置后，告警符号消失，才能进行下一步操作。
     -   配置项无告警符号的，表示该配置项已有默认配置。
@@ -213,7 +210,7 @@
         用户需要根据实际的业务需求，在左侧选择一个“最小安装”，在右侧选择安装环境的附加选项，如[图8](#fig1133717611109)所示。
 
         **图 8**  软件选择<a name="fig1133717611109"></a>  
-        ![](./figures/selectsoftware.png)
+        ![](./figures/choosesoftware.png)
 
         >![](./public_sys-resources/icon-note.gif) **说明：**   
         >-   在最小安装的环境下，并非安装源中所有的包都会安装。如果用户需要使用的包未安装，可将安装源挂载到本地制作repo源，通过DNF工具单独安装。  
@@ -239,7 +236,7 @@
         >-   如果需要拆分逻辑卷组则需要选择“自定义”进行手动分区，并在“手动分区”界面单击“卷组”区域中的“修改”按钮重新配置卷组。  
 
         设置完成后，请单击左上角“完成”返回“安装概览”页面。
-
+		
     3. 选择“根密码”，设置“根密码”配置项。
 
         在“ROOT密码”页面中，如[图10](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018)所示，根据[密码复杂度](#密码复杂度)输入密码并再次输入密码进行确认。
@@ -266,7 +263,7 @@
             > 在已装好的openEuler环境中，可以通过`cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt`命令导出字典库文件dictionary.txt，用户可以查询密码是否在该字典中。
 
         **图 10**  root密码<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018"></a>  
-        ![](./figures/rootpassword.png)
+        ![](./figures/root_password.png)
 
         设置完成后，单击左上角的“完成”返回“安装概览”页面。
 
@@ -287,20 +284,17 @@
 3.  单击“开始安装”进行系统安装，如[图13](#fig1717019357392)所示。
 
     **图 13**  开始安装<a name="fig1717019357392"></a>  
-    ![](./figures/startinstall.png)
+    ![](./figures/Installation_Procedure.png)
+4.  安装完成后重启系统。
 
-6.  安装完成后重启系统。
+    openEuler完成安装后，单击“重启”按钮，系统将重新启动。
 
-    openEuler完成安装，如[图14](#zh-cn_topic_0186390267_zh-cn_topic_0122145917_fig1429512116338)所示。单击“重启”后，系统将重新启动。
-
-    **图 14**  完成安装<a name="zh-cn_topic_0186390267_zh-cn_topic_0122145917_fig1429512116338"></a>  
-    ![](./figures/completeinstall.png)
+    
 
 
 ## 查看系统信息
 
-系统安装完成并重启后直接进入系统命令行登录界面，输入安装过程中设置的用户和密码，进入openEuler操作系统，查看如下系统信息。若需要进行系统管理和配置操作，请参考《[管理员指南](./../Administration/administration.html)》。
-
+系统安装完成并重启后直接进入系统命令行登录界面，输入安装过程中设置的用户和密码，进入openEuler操作系统，查看如下系统信息。若需要进行系统管理和配置操作，请参考《[管理员指南](https://openeuler.org/zh/docs/21.03/docs/Administration/administration.html)》。
 -   查看系统信息，命令如下：
 
     ```
@@ -310,11 +304,11 @@
     例如，命令和输出如下：
 
     ```
-    $ cat /etc/os-release
+    # cat /etc/os-release
     NAME="openEuler"
     VERSION="21.03"
     ID="openEuler"
-    VERSION_ID="21.03"
+    VERSION_ID="20.03"
     PRETTY_NAME="openEuler 21.03"
     ANSI_COLOR="0;31"
     ```
