@@ -1,6 +1,6 @@
 # Quick Start
 
-This document uses openEuler 20.03-LTS-SP1 installed on the TaiShan 200 server as an example to describe how to quickly install and use openEuler OS. For details about the installation requirements and methods, see  [ Installation Guide](./../Installation/Installation.html).
+This document uses openEuler 21.03 installed on the TaiShan 200 server as an example to describe how to quickly install and use openEuler OS. For details about the installation requirements and methods, see  [ Installation Guide](./../Installation/Installation.html).
 
 <!-- TOC -->
 
@@ -111,7 +111,7 @@ The release packages of the AArch64 architecture support the UEFI mode, and the 
 
 3. Click the link provided after  **Download ISO**. The download list is displayed.
 
-4. Click **openEuler-20.03-LTS-SP1**. The openEuler 20.03-LTS-SP1  version download list is displayed.
+4. Click **openEuler-21.03**. The openEuler 21.03  version download list is displayed.
 
 5. Click  **ISO**. The ISO download list is displayed.
    
@@ -124,14 +124,14 @@ The release packages of the AArch64 architecture support the UEFI mode, and the 
    - If the AArch64 architecture is used:
      
      1. Click  **aarch64**.
-     2. Click  **openEuler-20.03-LTS-SP1-aarch64-dvd.iso**  to download the openEuler release package to the local host.
-     3. Click  **openEuler-20.03-LTS-SP1-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
+     2. Click  **openEuler-21.031-aarch64-dvd.iso**  to download the openEuler release package to the local host.
+     3. Click  **openEuler-21.03-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
    
    - If the x86\_64 architecture is used:
      
      1. Click  **x86\_64**.
-     2. Click  **openEuler-20.03-LTS-SP1-x86\_64-dvd.iso**  to download the openEuler release package to the local host.
-     3. Click  **openEuler-20.03-LTS-SP1-x86\_64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
+     2. Click  **openEuler-21.03-x86\_64-dvd.iso**  to download the openEuler release package to the local host.
+     3. Click  **openEuler-21.03-x86\_64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
 
 ## Release Package Integrity Check
 
@@ -140,13 +140,13 @@ To prevent incomplete download of the software package due to network or storage
 1. Obtain the verification value in the verification file. Run the following command:
    
    ```
-   $cat openEuler-20.03-LTS-SP1-aarch64-dvd.iso.sha256sum 
+   $cat openEuler-21.03-aarch64-dvd.iso.sha256sum 
    ```
 
 2. Calculate the SHA256 verification value of the file. Run the following command:
    
    ```
-   $sha256sum openEuler-20.03-LTS-SP1-aarch64-dvd.iso
+   $sha256sum openEuler-21.03-aarch64-dvd.iso
    ```
    
    After the command is run, the verification value is displayed.
@@ -308,7 +308,7 @@ After entering the GUI installation page, perform the following operations to in
 
 ## Viewing System Information
 
-After the system is installed and restarted, the system CLI login page is displayed. Enter the username and password set during the installation to log in to openEuler OS and view the following system information. For details about system management and configuration, see the  [openEuler 20.03-LTS-SP1 Administrator Guide](./../Administration/administration.html).
+After the system is installed and restarted, the system CLI login page is displayed. Enter the username and password set during the installation to log in to openEuler OS and view the following system information. For details about system management and configuration, see the  [openEuler 21.03 Administrator Guide](./../Administration/administration.html).
 
 - Run the following command to view the system information:
   
@@ -321,10 +321,10 @@ After the system is installed and restarted, the system CLI login page is displa
   ```
   $ cat /etc/os-release
   NAME="openEuler"
-  VERSION="20.03 (LTS-SP1)"
+  VERSION="21.03"
   ID="openEuler"
   VERSION_ID="20.03"
-  PRETTY_NAME="openEuler 20.03 (LTS-SP1)"
+  PRETTY_NAME="openEuler 21.03"
   ANSI_COLOR="0;31"
   ```
 

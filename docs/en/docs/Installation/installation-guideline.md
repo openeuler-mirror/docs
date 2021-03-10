@@ -58,11 +58,11 @@ Load the ISO image of openEuler from the CD/DVD-ROM drive of the server and rest
 
 ### Installation Wizard
 
-A boot menu is displayed after the system is booted using the boot medium. In addition to options for starting the installation program, some other options are available on the boot menu. During system installation, the  **Test this media \& install openEuler 20.03-LTS-SP1**  mode is used by default. Press the arrow keys on the keyboard to change the selection, and press  **Enter**  when the desired option is highlighted.
+A boot menu is displayed after the system is booted using the boot medium. In addition to options for starting the installation program, some other options are available on the boot menu. During system installation, the  **Test this media \& install openEuler 21.03**  mode is used by default. Press the arrow keys on the keyboard to change the selection, and press  **Enter**  when the desired option is highlighted.
 
 >![](./public_sys-resources/icon-note.gif) **NOTE:**  
 > 
->-   If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media \& install openEuler 20.03-LTS-SP1**  and enters the installation page.  
+>-   If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media \& install openEuler 21.03**  and enters the installation page.  
 >-   During PM installation, if you cannot use the arrow keys to select boot options and the system does not respond after you press  **Enter**, click  ![](./figures/en-us_image_0229420473.png)  on the BMC page and configure  **Key & Mouse Reset**.  
 
 **Figure  4**  Installation Wizard<a name="fig1601161484619"></a>  
@@ -70,20 +70,20 @@ A boot menu is displayed after the system is booted using the boot medium. In ad
 
 Installation wizard options are described as follows:
 
--   **Install openEuler 20.03-LTS-SP1**: Install openEuler on your server in GUI mode.
+-   **Install openEuler 21.03**: Install openEuler on your server in GUI mode.
 
--   **Test this media & install openEuler 20.03-LTS-SP1**: Default option. Install openEuler on your server in GUI mode. The integrity of the installation medium is checked before the installation program is started.
+-   **Test this media & install openEuler 21.03**: Default option. Install openEuler on your server in GUI mode. The integrity of the installation medium is checked before the installation program is started.
 
 -   **Troubleshooting**: Troubleshooting mode, which is used when the system cannot be installed properly. In troubleshooting mode, the following options are available:
     
-    -   **Install openEuler 20.03-LTS-SP1 in basic graphics mode**: Basic graphics installation mode. In this mode, the video driver is not started before the system starts and runs.
+    -   **Install openEuler 21.03 in basic graphics mode**: Basic graphics installation mode. In this mode, the video driver is not started before the system starts and runs.
     -   **Rescue the openEuler system**: Rescue mode, which is used to restore the system. In rescue mode, the installation process is printed in the VNC or BMC, and the serial port is unavailable.
 
 On the installation wizard screen, press  **e**  to go to the parameter editing screen of the selected option, and press  **c**  to go to the command-line interface (CLI). 
 
 ### Installation in GUI Mode
 
-On the installation wizard page, select  **Test this media \& install openEuler 20.03-LTS-SP1**  to enter the GUI installation mode.
+On the installation wizard page, select  **Test this media \& install openEuler 21.03**  to enter the GUI installation mode.
 
 Perform graphical installation operations using a keyboard.
 
@@ -178,7 +178,7 @@ On the **INSTALLATION SUMMARY** page, click **INSTALLATION SOURCE** to locate th
     
     If the HTTPS server uses a private certificate, press **e** on the installation wizard page to go to the parameter editing page of the selected option, and add the **inst.noverifyssl** parameter.
     
-    Enter the actual installation source address, for example, **https://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/x86_64**, in the text box. **openEuler-20.03-LTS-SP1** indicates the version number, and **x86\_64** indicates the CPU architecture.
+    Enter the actual installation source address, for example, **https://repo.openeuler.org/openEuler-21.03/OS/x86_64**, in the text box. **openEuler-21.03** indicates the version number, and **x86\_64** indicates the CPU architecture.
   
   - FTP mode
     
@@ -186,7 +186,7 @@ On the **INSTALLATION SUMMARY** page, click **INSTALLATION SOURCE** to locate th
     
     ![](./figures/sourceftp.png)
     
-    You need to set up an FTP server, mount the **openEuler-20.03-LTS-SP1-x86\_64-dvd.iso** image, and copy the mounted files to the shared directory on the FTP server. **x86\_64** indicates the CPU architecture. You can use images as required.
+    You need to set up an FTP server, mount the **openEuler-21.03-x86\_64-dvd.iso** image, and copy the mounted files to the shared directory on the FTP server. **x86\_64** indicates the CPU architecture. You can use images as required.
   
   - NFS mode
     
@@ -194,7 +194,7 @@ On the **INSTALLATION SUMMARY** page, click **INSTALLATION SOURCE** to locate th
     
     ![](./figures/sourcenfs.png)
     
-    You need to set up an NFS server, mount the **openEuler-20.03-LTS-SP1-x86\_64-dvd.iso** image, and copy the mounted file to the shared directory on the NFS server. **x86\_64** indicates the CPU architecture. You can use images as required.
+    You need to set up an NFS server, mount the **openEuler-21.03-x86\_64-dvd.iso** image, and copy the mounted file to the shared directory on the NFS server. **x86\_64** indicates the CPU architecture. You can use images as required.
 
 During the installation, if you have any questions about configuring the installation source, see [An Exception Occurs During the Selection of the Installation Source](./faqs.html#an-exception-occurs-during-the-selection-of-the-installation-source).
 
