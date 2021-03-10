@@ -80,7 +80,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
 
 -   物理机/虚拟机（虚拟机创建可参考对应厂商的资料）。包括使用kickstart工具进行自动化安装的计算机和被安装的计算机。
 -   httpd：存放kickstart文件。
--   ISO： openEuler-21.03-aarch64-dvd.iso
+-   ISO： openEuler-20.03-LTS-SP1-aarch64-dvd.iso
 
 ### 操作步骤
 
@@ -158,15 +158,17 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
 
     >![](./public_sys-resources/icon-note.gif) **说明：**   
     >密码密文生成方式：  
-    >\# python3  
-    >Python 3.7.0 \(default, Apr  1 2019, 00:00:00\)  
-    >\[GCC 7.3.0\] on linux  
+	>```
+    ># python3  
+    >Python 3.7.0 (default, Apr  1 2019, 00:00:00)  
+    >[GCC 7.3.0] on linux  
     >Type "help", "copyright", "credits" or "license" for more information.  
-    >\>\>\> import crypt  
-    >\>\>\> passwd = crypt.crypt\("myPasswd"\)  
-    >\>\>\> print\(passwd\)  
+    >>>> import crypt  
+    >>>> passwd = crypt.crypt("myPasswd")  
+    >>>> print (passwd)  
     >$6$63c4tDmQGn5SDayV$mZoZC4pa9Jdt6/ALgaaDq6mIExiOO2EjzomB.Rf6V1BkEMJDcMddZeGdp17cMyc9l9ML9ldthytBEPVcnboR/0  
-
+    >```
+	
 3.  将ISO镜像文件挂载到需要安装openEuler计算机的光驱上。
 
     另外，也可以选择NFS等网络安装，kickstart文件中需要指定安装源位置（默认是cdrom）。
@@ -175,16 +177,16 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
 **安装系统**
 
 1.  启动系统进入安装选择界面。
-    1.  在“[启动安装](./安装指导.html#启动安装)”中的“安装引导界面”中选择“Install openEuler 21.03”，并按下“e”键。
+    1.  在“[启动安装](./安装指导.html#启动安装)”中的“安装引导界面”中选择“Install openEuler 20.03 LTS SP1”，并按下“e”键。
     2.  启动参数中追加“inst.ks=http://server ip/ks/openEuler-ks.cfg”。
 
-        ![](./figures/add_inst-noverifyssl.png)
+        ![](./figures/startparam.png)
 
     3.  按“Ctrl+x”，开始系统的自动安装。
 
 2.  确认系统安装完毕。
 
-    系统安装完毕以后会自动重启，如果优先从光驱启动，会再次进入到安装界面。此时关闭计算机，调整启动顺序（优先从硬盘启动）。
+    系统安装完毕以后会自动重启，如果优先从光驱启动，会再次进入到安装界面，此时关闭计算机，调整启动顺序（优先从硬盘启动）。
 
     ![](./figures/Automatic_installation_complete.png)
 
@@ -199,7 +201,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
 -   httpd：存放kickstart文件。
 -   tftp：提供vmlinuz和initrd文件。
 -   dhcpd/pxe：提供DHCP服务。
--   ISO：openEuler-21.03-aarch64-dvd.iso。
+-   ISO：openEuler-20.03-LTS-SP1-aarch64-dvd.iso。
 
 ### 操作步骤
 
@@ -249,7 +251,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
 3.  <a name="zh-cn_topic_0151920754_l1692f6b9284e493683ffa2ef804bc7ca"></a>安装源的制作。
 
     ```
-    # mount openEuler-21.03-aarch64-dvd.iso /mnt
+    # mount openEuler-20.03-LTS-SP1-aarch64-dvd.iso /mnt
     # cp -r /mnt/* /var/www/html/openEuler/
     ```
 
@@ -271,7 +273,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
     # System language
     lang zh_CN.UTF-8
     #Use http installation source
-    url  --url=http://192.168.122.1/openEuler/
+    url --url=http://192.168.122.1/openEuler/
     %post
     #enable kdump
     sed  -i "s/ ro / ro crashkernel=1024M,high /" /boot/efi/EFI/openEuler/grub.cfg
@@ -314,8 +316,8 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
     
     
     ### BEGIN /etc/grub.d/10_linux ###
-    menuentry 'Install openEuler 21.03' --class red --class gnu-linux --class gnu --class os {
-            set root=(tftp,192.168.122.1)
+    menuentry 'Install openEuler 20.03 LTS SP1' --class red --class gnu-linux --class gnu --class os {
+            set root=(tftp,192.168.1.1)
             linux /vmlinuz ro inst.geoloc=0 console=ttyAMA0 console=tty0 rd.iscsi.waitnet=0 inst.ks=http://192.168.122.1/ks/openEuler-ks.cfg
             initrd /initrd.img
     }

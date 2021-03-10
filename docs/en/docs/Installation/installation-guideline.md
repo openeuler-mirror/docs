@@ -34,7 +34,7 @@ This section describes how to install openEuler using a CD-ROM. The installation
 Load the ISO image of openEuler from the CD/DVD-ROM drive of the server and restart the server. The procedure is as follows:
 
 > ![](./public_sys-resources/icon-note.gif) **NOTE:**   
-Before the installation, ensure that the server boots from the CD/DVD-ROM drive preferentially. The following steps describe how to install the openEuler using the virtual CD/DVD-ROM drive on the baseboard management controller (BMC). Installing the openEuler from a physical drive is simple. After the installation starts, the procedure for the physical drive is the same as that of the virtual drive.  
+> Before the installation, ensure that the server boots from the CD/DVD-ROM drive preferentially. The following steps describe how to install the openEuler using the virtual CD/DVD-ROM drive on the baseboard management controller (BMC). Installing the openEuler from a physical drive is simple. After the installation starts, the procedure for the physical drive is the same as that of the virtual drive.  
 
 1.  On the toolbar, click the icon shown in the following figure.
 
@@ -58,32 +58,32 @@ Before the installation, ensure that the server boots from the CD/DVD-ROM drive 
 
 ### Installation Wizard
 
-A boot menu is displayed after the system is booted using the boot medium. In addition to options for starting the installation program, some other options are available on the boot menu. During system installation, the  **Test this media \& install openEuler 21.03**  mode is used by default. Press the arrow keys on the keyboard to change the selection, and press  **Enter**  when the desired option is highlighted.
+A boot menu is displayed after the system is booted using the boot medium. In addition to options for starting the installation program, some other options are available on the boot menu. During system installation, the  **Test this media \& install openEuler 20.03-LTS-SP1**  mode is used by default. Press the arrow keys on the keyboard to change the selection, and press  **Enter**  when the desired option is highlighted.
 
 >![](./public_sys-resources/icon-note.gif) **NOTE:**  
 > 
->-   If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media \& install openEuler 21.03**  and enters the installation page.  
+>-   If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media \& install openEuler 20.03-LTS-SP1**  and enters the installation page.  
 >-   During PM installation, if you cannot use the arrow keys to select boot options and the system does not respond after you press  **Enter**, click  ![](./figures/en-us_image_0229420473.png)  on the BMC page and configure  **Key & Mouse Reset**.  
 
 **Figure  4**  Installation Wizard<a name="fig1601161484619"></a>  
-![](./figures/installation-wizard.png "installation-wizard")
+![](./figures/Installation_wizard.png "installation-wizard")
 
 Installation wizard options are described as follows:
 
--   **Install openEuler 21.03**: Install openEuler on your server in GUI mode.
+-   **Install openEuler 20.03-LTS-SP1**: Install openEuler on your server in GUI mode.
 
--   **Test this media & install openEuler 21.03**: Default option. Install openEuler on your server in GUI mode. The integrity of the installation medium is checked before the installation program is started.
+-   **Test this media & install openEuler 20.03-LTS-SP1**: Default option. Install openEuler on your server in GUI mode. The integrity of the installation medium is checked before the installation program is started.
 
 -   **Troubleshooting**: Troubleshooting mode, which is used when the system cannot be installed properly. In troubleshooting mode, the following options are available:
     
-    -   **Install openEuler 21.03 in basic graphics mode**: Basic graphics installation mode. In this mode, the video driver is not started before the system starts and runs.
+    -   **Install openEuler 20.03-LTS-SP1 in basic graphics mode**: Basic graphics installation mode. In this mode, the video driver is not started before the system starts and runs.
     -   **Rescue the openEuler system**: Rescue mode, which is used to restore the system. In rescue mode, the installation process is printed in the VNC or BMC, and the serial port is unavailable.
 
 On the installation wizard screen, press  **e**  to go to the parameter editing screen of the selected option, and press  **c**  to go to the command-line interface (CLI). 
 
 ### Installation in GUI Mode
 
-On the installation wizard page, select  **Test this media \& install openEuler 21.03**  to enter the GUI installation mode.
+On the installation wizard page, select  **Test this media \& install openEuler 20.03-LTS-SP1**  to enter the GUI installation mode.
 
 Perform graphical installation operations using a keyboard.
 
@@ -155,36 +155,58 @@ If your city is not displayed on the map or in the drop-down list, select the ne
 >- If you want to use the network time, ensure that the network can connect to the remote NTP server. For details about how to set the network, see [Setting the Network and Host Name](#setting-the-network-and-host-name).  
 
 **Figure  9**  Setting date and time<a name="en-us_topic_0186390096_en-us_topic_0122145900_fig1260162652312"></a>  
-![](./figures/dateandtime.png "setting-date-and-time")
+![](./figures/setting-date-and-time.png "setting-date-and-time")
 
 After the setting is complete, click  **Done**  in the upper left corner to go back to the  **INSTALLATION SUMMARY**  page.
 
 ## Setting the Installation Source
 
-On the  **INSTALLATION SUMMARY**  page, click  **INSTALLATION SOURCE**  to locate the installation source.
+On the **INSTALLATION SUMMARY** page, click **INSTALLATION SOURCE** to locate the installation source.
 
-If you use a CD/DVD-ROM for installation, the installation program automatically detects and displays the installation source information. You can use the default settings.  [Figure 10](#en-us_topic_0186390100_en-us_topic_0144427079_fig93633295132)  shows an example.
+* When you use the complete CD-ROM for installation, the installation program automatically detects and displays the installation source information. You can use the default settings, as shown in [Figure 10](#zh-cn_topic_0186390100_zh-cn_topic_0144427079_fig93633295132):
+  
+  **Figure 10** Installation source<a name="zh-cn_topic_0186390100_zh-cn_topic_0144427079_fig93633295132"></a>  
+![](./figures/Installation_source.png)
 
-**Figure  10**  Setting the installation source<a name="en-us_topic_0186390100_en-us_topic_0144427079_fig93633295132"></a>  
-![](./figures/setting-the-installation-source.png "setting-the-installation-source")
+* When the network source is used for installation, you need to set the URL of the network source.
+  
+  - HTTP or HTTPS mode
+    
+    The following figure shows the installation source in HTTP or HTTPS mode:
+    
+    ![](./figures/installsourceen.png)
+    
+    If the HTTPS server uses a private certificate, press **e** on the installation wizard page to go to the parameter editing page of the selected option, and add the **inst.noverifyssl** parameter.
+    
+    Enter the actual installation source address, for example, **https://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/x86_64**, in the text box. **openEuler-20.03-LTS-SP1** indicates the version number, and **x86\_64** indicates the CPU architecture.
+  
+  - FTP mode
+    
+    The following figure shows the installation source in FTP mode. Enter the FTP address in the text box.
+    
+    ![](./figures/sourceftp.png)
+    
+    You need to set up an FTP server, mount the **openEuler-20.03-LTS-SP1-x86\_64-dvd.iso** image, and copy the mounted files to the shared directory on the FTP server. **x86\_64** indicates the CPU architecture. You can use images as required.
+  
+  - NFS mode
+    
+    The following figure shows the installation source in NFS mode. Enter the NFS address in the text box.
+    
+    ![](./figures/sourcenfs.png)
+    
+    You need to set up an NFS server, mount the **openEuler-20.03-LTS-SP1-x86\_64-dvd.iso** image, and copy the mounted file to the shared directory on the NFS server. **x86\_64** indicates the CPU architecture. You can use images as required.
 
-When you use the network for installation, if the HTTPS server uses a private certificate, press  **e**  on the installation wizard page to go to the parameter editing page and add the  **inst.noverifyssl**  parameter, as shown in  [Figure 11](#fig113517811415).
-
-**Figure  11**  Adding the  **inst.noverifyssl**  parameter<a name="fig113517811415"></a>  
-![](./figures/adding-the-inst-noverifyssl-parameter.png "adding-the-inst-noverifyssl-parameter")
+During the installation, if you have any questions about configuring the installation source, see [An Exception Occurs During the Selection of the Installation Source](./faqs.html#an-exception-occurs-during-the-selection-of-the-installation-source).
 
 After the setting is complete, click  **Done**  in the upper left corner to go back to the  **INSTALLATION SUMMARY**  page.
-
->![](./public_sys-resources/icon-note.gif) **NOTE:**   
-During the installation, if you have any questions about configuring the installation source, see [An Exception Occurs During the Selection of the Installation Source](./faqs.html#an-exception-occurs-during-the-selection-of-the-installation-source).  
 
 ## Selecting Installation Software
 
 On the  **INSTALLATION SUMMARY**  page, click  **SOFTWARE SELECTION**  to specify the software package to be installed.
 
-Based on the actual requirements, select  **Minimal Install**  on the left box and select an add-on in the  **Add-Ons for Selected Environment**  area on the right, as shown in  [Figure 12](#en-us_topic_0186390261_en-us_topic_0122145865_fig03031519101414).
+Based on the actual requirements, select  **Minimal Install**  on the left box and select an add-on in the  **Add-Ons for Selected Environment**  area on the right, as shown in  [Figure 11](#en-us_topic_0186390261_en-us_topic_0122145865_fig03031519101414).
 
-**Figure  12**  Selecting installation software<a name="en-us_topic_0186390261_en-us_topic_0122145865_fig03031519101414"></a>  
+**Figure  11**  Selecting installation software<a name="en-us_topic_0186390261_en-us_topic_0122145865_fig03031519101414"></a>  
 ![](./figures/selecting-installation-software.png "selecting-installation-software")
 
 > ![](./public_sys-resources/icon-note.gif) **NOTE:**   
@@ -197,12 +219,12 @@ After the setting is complete, click  **Done**  in the upper left corner to go b
 
 On the  **INSTALLATION SUMMARY**  page, click  **INSTALLATION DESTINATION**  to select the OS installation disk and partition.
 
-You can view available local storage devices in  [Figure 13](#fig1195417125015).
+You can view available local storage devices in  [Figure 12](#fig1195417125015).
 
 > ![](./public_sys-resources/icon-notice.gif) **NOTICE:**
 When selecting the device to be installed, you are advised not to use the NVMe SSD storage medium as the OS installation disk.  
 
-**Figure  13**  Setting the installation destination<a name="fig1195417125015"></a>  
+**Figure  12**  Setting the installation destination<a name="fig1195417125015"></a>  
 ![](./figures/setting-the-installation-destination.png "setting-the-installation-destination")
 
 ### Storage Configuration
@@ -231,32 +253,28 @@ On the  **MANUAL PARTITIONING**  page, you can partition the disk in either of t
   >![](./public_sys-resources/icon-note.gif) **NOTE:**   
 If the expected capacity of the mount point exceeds the available space, the system allocates the remaining available space to the mount point.  
 
-**Figure 14** Manual partitioning<a name="fig1277151815248"></a>  
-![](./figures/manual-partitioning-page.png "Manual partitioning")
+**Figure  13**  MANUAL PARTITIONING page<a name="fig1277151815248"></a>  
+![](./figures/manual-partitioning-page.png "manual-partitioning-page")
 
 After the setting is complete, click  **Done**  in the upper left corner to go back to the  **SUMMARY OF CHANGES**  page.
-
-**Figure 15** Manual partitioning<a name="fig1277151815248"></a>  
-![](./figures/change.png "Manual partitioning")
-
 click  **Accept Changes**  to go back to the  **INSTALLATION SUMMARY**  page.
 
 ## Setting the Network and Host Name
 
 On the  **INSTALLATION SUMMARY**  page, select  **NETWORK \& HOST NAME**  to configure the system network functions.
 
-The installation program automatically detects a local access interface. The detected interface is listed in the left box, and the interface details are displayed in the right-hand area, as shown in  [Figure 16](#en-us_topic_0186390264_en-us_topic_0122145831_fig123700157297). In the upper right corner, click the switchover button to enable or disable the network interface. You can also click  **Configure**  to configure the selected interface.
+The installation program automatically detects a local access interface. The detected interface is listed in the left box, and the interface details are displayed in the right-hand area, as shown in  [Figure 14](#en-us_topic_0186390264_en-us_topic_0122145831_fig123700157297). In the upper right corner, click the switchover button to enable or disable the network interface. You can also click  **Configure**  to configure the selected interface.
 
 In the lower left box, enter the host name. The host name can be the fully quantified domain name (FQDN) in the format of hostname.domainname or the brief host name in the format of hostname.
 
-**Figure  16**  Setting the network and host name<a name="en-us_topic_0186390264_en-us_topic_0122145831_fig123700157297"></a>  
+**Figure  14**  Setting the network and host name<a name="en-us_topic_0186390264_en-us_topic_0122145831_fig123700157297"></a>  
 ![](./figures/setting-the-network-and-host-name.png "setting-the-network-and-host-name")
 
 After the setting is complete, click **Done** in the upper left corner to go back to the **INSTALLATION SUMMARY** page.
 
 ## Setting the Root Password
 
-Select **Root Password** on the **INSTALLATION SUMMARY** page. The **Root Password** page is displayed, as shown in [Figure 17](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018). Enter a password based on [Password Complexity](#密码复杂度) requirements and confirm the password.
+Select **Root Password** on the **INSTALLATION SUMMARY** page. The **Root Password** page is displayed, as shown in [Figure 15](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018). Enter a password based on [Password Complexity](#密码复杂度) requirements and confirm the password.
 
 > ![](./public_sys-resources/icon-note.gif) **NOTE:**
 > 
@@ -264,7 +282,7 @@ Select **Root Password** on the **INSTALLATION SUMMARY** page. The **Root Passwo
 > 
 > - If you select **Lock root account** on the **Root Password** page, the root account will be disabled.
 
-**Figure 17** Root password<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018"></a>  
+**Figure 15** Root password<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018"></a>  
 ![](./figures/password-of-the-root-account.png "Root password")
 
 ### Password Complexity
@@ -286,12 +304,12 @@ After the settings are completed, click **Done** in the upper left corner to ret
 
 ## Creating a User
 
-Click  **User Creation**.  [Figure 18](#en-us_topic_0186390266_en-us_topic_0122145909_fig1237715313319)  shows the page for creating a user. Enter a username and set a password. By clicking  **Advanced**, you can also configure a home directory and a user group, as shown in  [Figure 19](#en-us_topic_0186390266_en-us_topic_0122145909_fig128716531312).
+Click  **User Creation**.  [Figure 16](#en-us_topic_0186390266_en-us_topic_0122145909_fig1237715313319)  shows the page for creating a user. Enter a username and set a password. By clicking  **Advanced**, you can also configure a home directory and a user group, as shown in  [Figure 17](#en-us_topic_0186390266_en-us_topic_0122145909_fig128716531312).
 
-**Figure  18**  Creating a user<a name="en-us_topic_0186390266_en-us_topic_0122145909_fig1237715313319"></a>  
+**Figure  16**  Creating a user<a name="en-us_topic_0186390266_en-us_topic_0122145909_fig1237715313319"></a>  
 ![](./figures/creating-a-user.png "creating-a-user")
 
-**Figure  19**  Advanced user configuration<a name="en-us_topic_0186390266_en-us_topic_0122145909_fig128716531312"></a>  
+**Figure  17**  Advanced user configuration<a name="en-us_topic_0186390266_en-us_topic_0122145909_fig128716531312"></a>  
 ![](./figures/advanced-user-configuration.png "advanced-user-configuration")
 
 After configuration, click  **Done**  in the left-upper corner to switch back to the installation process page.
@@ -300,9 +318,6 @@ After configuration, click  **Done**  in the left-upper corner to switch back to
 
 On the installation page, after all the mandatory items are configured, the safety symbols will disappear. Then, you can click  **Begin Installation**  to install the system.
 
-**Figure  20**  Starting installation<a name="en-us_topic_0186390265_en-us_topic_0122145912_fig75022040305"></a>  
-![](./figures/starting-installation.png "starting-installation")
-
 ## Installation Procedure
 
 After the installation starts, the overall installation progress and the progress of writing the software package to the system are displayed. 
@@ -310,15 +325,15 @@ After the installation starts, the overall installation progress and the progres
   >![](./public_sys-resources/icon-note.gif) **NOTE:**    
 If you click **Exit** or reset or power off the server during the installation, the installation is interrupted and the system is unavailable. In this case, you need to reinstall the system.
 
-**Figure  21**  Installation process<a name="en-us_topic_0186390266_en-us_topic_0122145909_fig1590863119306"></a>  
+**Figure  18**  Installation process<a name="en-us_topic_0186390266_en-us_topic_0122145909_fig1590863119306"></a>  
 ![](./figures/installation-process.png "installation-process")
 
 ## Completing the Installation
 
-openEuler has been installed, as shown in  [Figure 22](#en-us_topic_0186390267_en-us_topic_0122145917_fig1429512116338). Click  **Reboot**  to restart the system.
+openEuler has been installed, Click  **Reboot**  to restart the system.
 
-**Figure  22**  Completing the installation<a name="en-us_topic_0186390267_en-us_topic_0122145917_fig1429512116338"></a>  
-![](./figures/completing-the-installation.png "completing-the-installation")
+>![](./public_sys-resources/icon-note.gif) **NOTE:**    
+> - If the physical DVD-ROM is used to install the OS and the DVD-ROM drive is not automatically ejected during the restart, manually remove the DVD-ROM. Then, the openEuler CLI login page is displayed.
+> - If the virtual DVD-ROM drive is used to install the OS, change the server boot option to  **Hard Disk**  and restart the server. Then, the openEuler CLI login page is displayed.
 
--   If the physical DVD-ROM is used to install the OS and the DVD-ROM drive is not automatically ejected during the restart, manually remove the DVD-ROM. Then, the openEuler CLI login page is displayed.
--   If the virtual DVD-ROM drive is used to install the OS, change the server boot option to  **Hard Disk**  and restart the server. Then, the openEuler CLI login page is displayed.
+

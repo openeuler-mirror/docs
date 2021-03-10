@@ -80,7 +80,7 @@ The environment requirements for semi-automatic installation of openEuler using 
 
 -   PM/VM \(for details about how to create VMs, see the documents from corresponding vendors\): includes the computer where kickstart is used for automatic installation and the computer where the kickstart tool is installed.
 -   Httpd: stores the kickstart file.
--   ISO: openEuler-21.03-aarch64-dvd.iso
+-   ISO: openEuler-20.03-LTS-SP1-aarch64-dvd.iso
 
 ### Procedure
 
@@ -106,7 +106,7 @@ To use kickstart to perform semi-automatic installation of openEuler, perform th
 
     ```
     # mkdir /var/www/html/ks
-    #vim /var/www/html/ks/openEuler-ks.cfg ===>The file can be obtained by modifying the anaconda-ks.cfg file automatically generated from openEuler.
+    #vim /var/www/html/ks/openEuler-ks.cfg ===>The file can be obtained by modifying the anaconda-ks.cfg file automatically generated from openEuler, or can be created using the system-config-kickstart tool.
     ====================================
     ***Modify the following information as required.***
     #version=DEVEL
@@ -158,14 +158,16 @@ To use kickstart to perform semi-automatic installation of openEuler, perform th
 
     >![](./public_sys-resources/icon-note.gif) **NOTE:**   
     >The method of generating the password ciphertext is as follows:  
-    >\# python3  
-    >Python 3.7.0 \(default, Apr  1 2019, 00:00:00\)  
-    >\[GCC 7.3.0\] on linux  
+	>```
+    ># python3  
+    >Python 3.7.0 (default, Apr  1 2019, 00:00:00)  
+    >[GCC 7.3.0] on linux  
     >Type "help", "copyright", "credits" or "license" for more information.  
-    >\>\>\> import crypt  
-    >\>\>\> passwd = crypt.crypt\("myPasswd"\)  
-    >\>\>\> print\(passwd\)  
+    >>>> import crypt  
+    >>>> passwd = crypt.crypt("myPasswd")  
+    >>>> print (passwd)  
     >$6$63c4tDmQGn5SDayV$mZoZC4pa9Jdt6/ALgaaDq6mIExiOO2EjzomB.Rf6V1BkEMJDcMddZeGdp17cMyc9l9ML9ldthytBEPVcnboR/0  
+    >```
 
 3.  Mount the ISO image file to the CD-ROM drive of the computer where openEuler is to be installed.
 
@@ -175,16 +177,16 @@ To use kickstart to perform semi-automatic installation of openEuler, perform th
 **Installing the System**
 
 1.  The installation selection dialog box is displayed. 
-    1.  On the installation wizard page in [Starting the Installation](./installation-guideline.html#starting-the-installation), select  **Install openEuler 21.03**  and press  **e**.
+    1.  On the installation wizard page in [Starting the Installation](./installation-guideline.html#starting-the-installation), select  **Install openEuler 20.03 LTS SP1**  and press  **e**.
     2.  Add  **inst.ks=http://server ip/ks/openEuler-ks.cfg**  to the startup parameters.
 
-        ![](./figures/semi-automatic-installation.png)
+        ![](./figures/startparam.png)
 
     3.  Press  **Ctrl**+**x**  to start the automatic installation.
 
 2.  Verify that the installation is complete.
 
-    After the installation is complete, the system automatically boots. if the first boot option of the system is set to the CD-ROM drive, the installation screen will be displayed again. Shut down the computer and change startup option to start from the hard disk preferentially.
+    After the installation is complete, the system automatically boots. If the first boot option of the system is set to the CD_ROM, the installation page is displayed again. Shut down the computer and change startup option to start from the hard disk preferentially.
 
     ![](./figures/completing-the-automatic-installation.png)
 
@@ -199,7 +201,7 @@ The environment requirements for full-automatic installation of openEuler using 
 -   Httpd: stores the kickstart file.
 -   TFTP: provides vmlinuz and initrd files.
 -   DHCPD/PXE: provides the DHCP service.
--   ISO: openEuler-21.03-aarch64-dvd.iso
+-   ISO: openEuler-20.03-LTS-SP1-aarch64-dvd.iso
 
 ### Procedure
 
@@ -249,7 +251,7 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
 3.  <a name="en-us_topic_0229291289_l1692f6b9284e493683ffa2ef804bc7ca"></a>Run the following commands to prepare the installation source:
 
     ```
-    # mount openEuler-21.03-aarch64-dvd.iso /mnt
+    # mount openEuler-20.03-LTS-SP1-aarch64-dvd.iso /mnt
     # cp -r /mnt/* /var/www/html/openEuler/
     ```
 
@@ -271,7 +273,7 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
     # System language
     lang zh_CN.UTF-8
     #Use http installation source
-    url  --url=http://192.168.122.1/openEuler/
+    url  --url=//192.168.122.1/openEuler/
     %post
     #enable kdump
     sed  -i "s/ ro / ro crashkernel=1024M,high /" /boot/efi/EFI/openEuler/grub.cfg
@@ -314,8 +316,8 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
     
     
     ### BEGIN /etc/grub.d/10_linux ###
-    menuentry 'Install openEuler 21.03' --class red --class gnu-linux --class gnu --class os {
-            set root=(tftp,192.168.122.1)
+    menuentry 'Install openEuler 20.03 LTS SP1' --class red --class gnu-linux --class gnu --class os {
+            set root=(tftp,192.168.1.1)
             linux /vmlinuz ro inst.geoloc=0 console=ttyAMA0 console=tty0 rd.iscsi.waitnet=0 inst.ks=http://192.168.122.1/ks/openEuler-ks.cfg
             initrd /initrd.img
     }
@@ -336,7 +338,7 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
     filename "grubaa64.efi";  # pxelinux location of the startup file;
     next-server 192.168.122.1;     # (IMPORTANT) TFTP server IP address;
     subnet 192.168.122.0 netmask 255.255.255.0 {
-    option routers 192.168.122.1; # Gateway address
+    option routers 192.168.111.1; # Gateway address
     option subnet-mask 255.255.255.0; # Subnet mask
     range dynamic-bootp 192.168.122.50 192.168.122.200; # Dynamic IP address range
     default-lease-time 21600;

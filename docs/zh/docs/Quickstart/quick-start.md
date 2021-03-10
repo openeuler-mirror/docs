@@ -1,6 +1,6 @@
 # 快速入门
 
-本文档以TaiShan 200服务器上安装openEuler 21.03 为例，旨在指导用户快速地安装和使用openEuler操作系统，更详细的安装要求和安装方法请参考《[安装指南](./../Installation/installation.html)》。
+本文档以TaiShan 200服务器上安装openEuler 20.03-LTS-SP1为例，旨在指导用户快速地安装和使用openEuler操作系统，更详细的安装要求和安装方法请参考《[openEuler 20.03-LTS-SP1 安装指南](./../Installation/installation.html)》。
 <!-- TOC -->
 
 - [快速入门](#快速入门)
@@ -87,7 +87,7 @@
     </tr>
     <tr id="zh-cn_topic_0229291228_rd2c1ebd93ea64e85a5f3fc88dc5ba456"><td class="cellrowborder" valign="top" width="11.19111911191119%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0229291228_afd36954546334c1681b5a391bbc386ae"><a name="zh-cn_topic_0229291228_afd36954546334c1681b5a391bbc386ae"></a><a name="zh-cn_topic_0229291228_afd36954546334c1681b5a391bbc386ae"></a>硬盘</p>
     </td>
-    <td class="cellrowborder" valign="top" width="40.06400640064006%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0229291228_p1224172312719"><a name="zh-cn_topic_0229291228_p1224172312719"></a><a name="zh-cn_topic_0229291228_p1224172312719"></a>为了获得更好的应用体验，建议不小于120GB）</p>
+    <td class="cellrowborder" valign="top" width="40.06400640064006%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0229291228_p1224172312719"><a name="zh-cn_topic_0229291228_p1224172312719"></a><a name="zh-cn_topic_0229291228_p1224172312719"></a>为了获得更好的应用体验，建议不小于120GB</p>
     </td>
     <td class="cellrowborder" valign="top" width="48.74487448744874%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0229291228_acc0affdd82e34f32966171e21855ef40"><a name="zh-cn_topic_0229291228_acc0affdd82e34f32966171e21855ef40"></a><a name="zh-cn_topic_0229291228_acc0affdd82e34f32966171e21855ef40"></a>支持IDE、SATA、SAS等接口的硬盘。</p>
     </td>
@@ -100,13 +100,10 @@
 
 请按以下步骤获取openEuler的发布包和校验文件：
 
-> ![](./public_sys-resources/icon-note.gif) **说明：**   
-> AArch64架构的发布包支持UEFI模式，x86\_64架构的发布包支持UEFI模式和Legacy模式。
-
 1.  登录[openEuler社区](https://openeuler.org)网站。
 2.  单击“下载”。
 3.  单击“获取ISO：”后面的“Link”，显示版本列表。
-4.  单击“openEuler-21.03”，进入openEuler 21.03版本下载列表。
+4.  单击“openEuler-20.03-LTS-SP1”，进入openEuler 20.03-LTS-SP1版本下载列表。
 5.  单击“ISO”，进入ISO下载列表。
     -   aarch64：AArch64架构的ISO。
     -   x86\_64：x86\_64架构的ISO。
@@ -115,13 +112,13 @@
 6.  根据实际待安装环境的架构选择需要下载的openEuler的发布包和校验文件。
     -   若为AArch64架构。
         1.  单击“aarch64”。
-        2.  单击“openEuler-21.03-aarch64-dvd.iso”，将openEuler发布包下载到本地。
-        3.  单击“openEuler-21.03-aarch64-dvd.iso.sha256sum”，将openEuler校验文件下载到本地。
+        2.  单击“openEuler-20.03-LTS-SP1-aarch64-dvd.iso”，将openEuler发布包下载到本地。
+        3.  单击“openEuler-20.03-LTS-SP1-aarch64-dvd.iso.sha256sum”，将openEuler校验文件下载到本地。
 
     -   若为x86\_64架构。
         1.  单击“x86\_64”。
-        2.  单击“openEuler-21.03-x86\_64-dvd.iso”，将openEuler发布包下载到本地。
-        3.  单击“openEuler-21.03-x86\_64-dvd.iso.sha256sum”，将openEuler校验文件下载到本地。
+        2.  单击“openEuler-20.03-LTS-SP1-x86\_64-dvd.iso”，将openEuler发布包下载到本地。
+        3.  单击“openEuler-20.03-LTS-SP1-x86\_64-dvd.iso.sha256sum”，将openEuler校验文件下载到本地。
 
 
 
@@ -132,13 +129,13 @@
 1.  获取校验文件中的校验值。执行命令如下：
 
     ```
-    $ cat openEuler-21.03-aarch64-dvd.iso.sha256sum 
+    $ cat openEuler-20.03-LTS-SP1-aarch64-dvd.iso.sha256sum 
     ```
 
 2.  计算文件的sha256校验值。执行命令如下：
 
     ```
-    $ sha256sum openEuler-21.03-aarch64-dvd.iso
+    $ sha256sum openEuler-20.03-LTS-SP1-aarch64-dvd.iso
     ```
 
     命令执行完成后，输出校验值。
@@ -170,7 +167,7 @@
     弹出镜像对话框，如下图所示。
 
     **图 3**  镜像对话框<a name="zh-cn_topic_0229291223_zh-cn_topic_0151920806_fb74fb37f86cd423aacf34bddedd6841a"></a>  
-    ![](./figures/Image_dialog_box.png "镜像对话框")
+    ![](./figures/Image_dialog_box.png)
 
 5.  在镜像对话框中，选择“镜像文件”， 并单击“浏览”。弹出“打开”对话框。
 6.  选择镜像文件，单击“打开”。然后在镜像对话框中，单击“连接”。当“连接”显示为“断开”后，表示虚拟光驱已连接到服务器。
@@ -182,13 +179,13 @@
 8.  设备重启后进入到openEuler操作系统安装引导界面，如[图5](#fig1648754873314)所示。
 
     >![](./public_sys-resources/icon-note.gif) **说明：**   
-    >-   如果60秒内未按任何键，系统将从默认选项“Test this media & install openEuler 21.03”自动进入安装界面。  
+    >-   如果60秒内未按任何键，系统将从默认选项“Test this media & install openEuler 20.03-LTS-SP1”自动进入安装界面。  
     >-   安装物理机时，如果使用键盘上下键无法选择启动选项，按“Enter”键无响应，可以单击BMC界面上的鼠标控制图标“![](./figures/zh-cn_image_0229420473.png)”，设置“键鼠复位”。  
 
     **图 5**  安装引导界面<a name="fig1648754873314"></a>  
     ![](./figures/Installation_wizard.png)
 
-9.  在安装引导界面，按“Enter”，进入默认选项“Test this media & install openEuler 21.03”的图形化安装界面。
+9.  在安装引导界面，按“Enter”，进入默认选项“Test this media & install openEuler 20.03-LTS-SP1”的图形化安装界面。
 
 ## 安装
 
@@ -197,9 +194,9 @@
 1.  设置安装语言，默认为英语，用户可根据实际情况进行调整，如[图6](#fig874344811484)所示，选择“中文”。
 
     **图 6**  选择语言<a name="fig874344811484"></a>  
-    ![](./figures/chooselanguage.png)
+    ![](./figures/selectlanguage.png)
 
-2. 在安装概览界面，根据实际情况设置各配置项。
+2.  在安装概览界面，根据实际情况设置各配置项。
 
     -   配置项有告警符号的，表示用户必须完成该选项配置后，告警符号消失，才能进行下一步操作。
     -   配置项无告警符号的，表示该配置项已有默认配置。
@@ -213,7 +210,7 @@
         用户需要根据实际的业务需求，在左侧选择一个“最小安装”，在右侧选择安装环境的附加选项，如[图8](#fig1133717611109)所示。
 
         **图 8**  软件选择<a name="fig1133717611109"></a>  
-        ![](./figures/selectsoftware.png)
+        ![](./figures/choosesoftware.png)
 
         >![](./public_sys-resources/icon-note.gif) **说明：**   
         >-   在最小安装的环境下，并非安装源中所有的包都会安装。如果用户需要使用的包未安装，可将安装源挂载到本地制作repo源，通过DNF工具单独安装。  
@@ -239,7 +236,7 @@
         >-   如果需要拆分逻辑卷组则需要选择“自定义”进行手动分区，并在“手动分区”界面单击“卷组”区域中的“修改”按钮重新配置卷组。  
 
         设置完成后，请单击左上角“完成”返回“安装概览”页面。
-
+		
     3. 选择“根密码”，设置“根密码”配置项。
 
         在“ROOT密码”页面中，如[图10](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018)所示，根据[密码复杂度](#密码复杂度)输入密码并再次输入密码进行确认。
@@ -266,7 +263,7 @@
             > 在已装好的openEuler环境中，可以通过`cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt`命令导出字典库文件dictionary.txt，用户可以查询密码是否在该字典中。
 
         **图 10**  root密码<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018"></a>  
-        ![](./figures/rootpassword.png)
+        ![](./figures/root_password.png)
 
         设置完成后，单击左上角的“完成”返回“安装概览”页面。
 
@@ -287,20 +284,17 @@
 3.  单击“开始安装”进行系统安装，如[图13](#fig1717019357392)所示。
 
     **图 13**  开始安装<a name="fig1717019357392"></a>  
-    ![](./figures/startinstall.png)
+    ![](./figures/Installation_Procedure.png)
+4.  安装完成后重启系统。
 
-6.  安装完成后重启系统。
+    openEuler完成安装后，单击“重启”按钮，系统将重新启动。
 
-    openEuler完成安装，如[图14](#zh-cn_topic_0186390267_zh-cn_topic_0122145917_fig1429512116338)所示。单击“重启”后，系统将重新启动。
-
-    **图 14**  完成安装<a name="zh-cn_topic_0186390267_zh-cn_topic_0122145917_fig1429512116338"></a>  
-    ![](./figures/completeinstall.png)
+    
 
 
 ## 查看系统信息
 
-系统安装完成并重启后直接进入系统命令行登录界面，输入安装过程中设置的用户和密码，进入openEuler操作系统，查看如下系统信息。若需要进行系统管理和配置操作，请参考《[管理员指南](./../Administration/administration.html)》。
-
+系统安装完成并重启后直接进入系统命令行登录界面，输入安装过程中设置的用户和密码，进入openEuler操作系统，查看如下系统信息。若需要进行系统管理和配置操作，请参考《[openEuler 20.03-LTS-SP1 管理员指南](https://openeuler.org/zh/docs/20.03_LTS_SP1/docs/Administration/administration.html)》。
 -   查看系统信息，命令如下：
 
     ```
@@ -310,12 +304,12 @@
     例如，命令和输出如下：
 
     ```
-    $ cat /etc/os-release
+    # cat /etc/os-release
     NAME="openEuler"
-    VERSION="21.03"
+    VERSION="20.03 (LTS-SP1)"
     ID="openEuler"
-    VERSION_ID="21.03"
-    PRETTY_NAME="openEuler 21.03"
+    VERSION_ID="20.03"
+    PRETTY_NAME="openEuler 20.03 (LTS-SP1)"
     ANSI_COLOR="0;31"
     ```
 

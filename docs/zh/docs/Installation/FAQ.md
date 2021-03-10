@@ -1,16 +1,6 @@
 # FAQ
-<!-- TOC -->
 
-- [FAQ](#faq)
-    - [安装openEuler时选择第二盘位为安装目标，操作系统无法启动](#安装openeuler时选择第二盘位为安装目标操作系统无法启动)
-    - [openEuler开机后进入emergency模式](#openeuler开机后进入emergency模式)
-    - [系统中存在无法激活的逻辑卷组时，重装系统失败](#系统中存在无法激活的逻辑卷组时重装系统失败)
-    - [选择安装源出现异常](#选择安装源出现异常)
-    - [如何手动开启kdump服务](#如何手动开启kdump服务)
-    - [多块磁盘组成逻辑卷安装系统后，再次安装不能只选其中一块磁盘](#多块磁盘组成逻辑卷安装系统后再次安装不能只选其中一块磁盘)
-    - [x86物理机UEFI模式由于security boot安全选项问题无法安装](#x86物理机uefi模式由于security-boot安全选项问题无法安装)
-
-<!-- /TOC -->
+[[toc]]
 
 ## 安装openEuler时选择第二盘位为安装目标，操作系统无法启动
 
@@ -270,7 +260,7 @@ kdump内核预留内存参数说明如下：
 x86物理机安装系统时，由于设置了BIOS选项security boot 为enable（默认是disable），导致系统一直停留在“No bootable device”提示界面，无法继续安装，如[图2](#fig115949762617)所示。
 
 **图 2**  “No bootable device”提示界面<a name="fig115949762617"></a>  
-![](./figures/No-bootable-device-page.png)
+![](./figures/No-bootable-device.png)
 
 ### 原因分析
 
@@ -290,8 +280,48 @@ x86物理机安装系统时，由于设置了BIOS选项security boot 为enable�
 
 3.  设置Enforce Secure Boot为Disabled。
 
-    ![](./figures/choice.png)
+    ![](./figures/select.png)
 
     >![](./public_sys-resources/icon-note.gif) **说明：**   
     >设置security boot为disable之后，保存退出，重新安装即可。  
 
+## 安装openEuler时，软件选择页面选择“服务器-性能工具”，安装后messages日志有pmie_check报错信息
+
+### 问题现象
+
+安装系统时软件选择勾选服务器-性能工具，会安装pcp相关软件包，正常安装并重启后，/var/log/messages日志文件中会产生报错：pmie_check failed in /usr/share/pcp/lib/pmie。
+
+### 原因分析
+
+anaconda不支持在chroot环境中安装selinux策略模块，当安装pcp-selinux时，postin脚本安装pcp相关selinux策略模块执行失败，从而导致重启后产生报错。
+
+### 解决办法
+
+完成安装并重启后，以下方法选择其一。
+
+1. 执行如下命令，安装selinux策略模块pcpupstream
+    ```
+    /usr/libexec/pcp/bin/selinux-setup /var/lib/pcp/selinux install "pcpupstream"
+    ```
+
+2. 重新安装pcp-selinux
+    ```
+    sudo dnf reinstall pcp-selinux
+    ```
+
+## 在两块已经安装了系统的磁盘上进行重复选择，并自定义分区时，安装失败
+
+### 问题现象
+用户在安装操作系统过程中，存在两块都已经安装过的磁盘，此时如果先选择一块盘，进行自定义分区，然后点击取消按钮，再选择第二块盘，并进行自定义分区时，会出现安装失败。
+
+![](./figures/cancle_disk.png)
+![](./figures/custom_paratition.png)
+
+### 原因分析
+用户存在两次选择磁盘的操作，当前点击取消后，再选择第二块磁盘，磁盘信息不正确，导致安装失败。
+
+### 解决方法
+直接选择目标磁盘进行自定义分区，请勿频繁取消操作，如果一定要进行取消重选建议重新安装。
+
+### issue访问链接
+https://gitee.com/src-openeuler/anaconda/issues/I29P84?from=project-issue

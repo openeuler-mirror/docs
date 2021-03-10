@@ -1,6 +1,6 @@
 # Quick Start
 
-This document uses openEuler 21.03 installed on the TaiShan 200 server as an example to describe how to quickly install and use openEuler OS. For details about the installation requirements and methods, see  [ Installation Guide](./../Installation/Installation.html).
+This document uses openEuler 20.03-LTS-SP1 installed on the TaiShan 200 server as an example to describe how to quickly install and use openEuler OS. For details about the installation requirements and methods, see  [ Installation Guide](./../Installation/Installation.html).
 
 <!-- TOC -->
 
@@ -111,7 +111,7 @@ The release packages of the AArch64 architecture support the UEFI mode, and the 
 
 3. Click the link provided after  **Download ISO**. The download list is displayed.
 
-4. Click **openEuler-21.03**. The openEuler 21.03 version download list is displayed.
+4. Click **openEuler-20.03-LTS-SP1**. The openEuler 20.03-LTS-SP1  version download list is displayed.
 
 5. Click  **ISO**. The ISO download list is displayed.
    
@@ -124,14 +124,14 @@ The release packages of the AArch64 architecture support the UEFI mode, and the 
    - If the AArch64 architecture is used:
      
      1. Click  **aarch64**.
-     2. Click  **openEuler-21.03-aarch64-dvd.iso**  to download the openEuler release package to the local host.
-     3. Click  **openEuler-21.03-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
+     2. Click  **openEuler-20.03-LTS-SP1-aarch64-dvd.iso**  to download the openEuler release package to the local host.
+     3. Click  **openEuler-20.03-LTS-SP1-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
    
    - If the x86\_64 architecture is used:
      
      1. Click  **x86\_64**.
-     2. Click  **openEuler-21.03-x86\_64-dvd.iso**  to download the openEuler release package to the local host.
-     3. Click  **openEuler-21.03-x86\_64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
+     2. Click  **openEuler-20.03-LTS-SP1-x86\_64-dvd.iso**  to download the openEuler release package to the local host.
+     3. Click  **openEuler-20.03-LTS-SP1-x86\_64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
 
 ## Release Package Integrity Check
 
@@ -140,13 +140,13 @@ To prevent incomplete download of the software package due to network or storage
 1. Obtain the verification value in the verification file. Run the following command:
    
    ```
-   $cat openEuler-21.03-aarch64-dvd.iso.sha256sum 
+   $cat openEuler-20.03-LTS-SP1-aarch64-dvd.iso.sha256sum 
    ```
 
 2. Calculate the SHA256 verification value of the file. Run the following command:
    
    ```
-   $sha256sum openEuler-21.03-aarch64-dvd.iso
+   $sha256sum openEuler-20.03-LTS-SP1-aarch64-dvd.iso
    ```
    
    After the command is run, the verification value is displayed.
@@ -195,13 +195,13 @@ To prevent incomplete download of the software package due to network or storage
    
    > ![](./public_sys-resources/icon-note.gif) **NOTE:**
    > 
-   > - If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media \& install openEuler 21.03**  and enters the installation page.
+   > - If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media \& install openEuler 20.09**  and enters the installation page.
    > - During PM installation, if you cannot use the arrow keys to select boot options and the system does not respond after you press  **Enter**, click  ![](./figures/en-us_image_0229420473.png)  on the BMC page and configure  **Key \& Mouse Reset**.
    
-   **Figure  5**  Installation Wizard<a name="fig1648754873314"></a>  
-<img src="figures/installation-wizard.png" title="installation-wizard"  />
+    **Figure  5**  Installation Wizard<a name="fig1648754873314"></a>  
+    ![](./figures/Installation_wizard.png "Installation_wizard")
 
-9. On the installation wizard page, press  **Enter**  to select the default option  **Test this media \& install openEuler 21.03**  to enter the GUI installation page.
+9. On the installation wizard page, press  **Enter**  to select the default option  **Test this media \& install openEuler 20.09**  to enter the GUI installation page.
 
 ## Installation
 
@@ -209,8 +209,8 @@ After entering the GUI installation page, perform the following operations to in
 
 1. Set an installation language. The default language is English. You can change the language based on the site requirements, as shown in  [Figure 6](#fig874344811484).
    
-   **Figure  6**  Selecting a language<a name="fig874344811484"></a>  
-<img src="figures/selecting-a-language.png" title="selecting-a-language"  />
+    **Figure  6**  Selecting a language<a name="fig874344811484"></a>  
+    ![](./figures/selecting-a-language.png "selecting-a-language")
 
 2. On the  **INSTALLATION SUMMARY**  page, set configuration items based on the site requirements.
    
@@ -218,104 +218,97 @@ After entering the GUI installation page, perform the following operations to in
    - A configuration item without an alarm symbol is configured by default.
    - You can click  **Begin Installation**  to install the system only when all alarms are cleared.
    
-   **Figure  7**  Installation summary<a name="fig24261457656"></a>  
-<img src="figures/installation-summary.png" title="installation-summary"  />
-   
+    **Figure  7**  Installation summary<a name="fig24261457656"></a>  
+    ![](./figures/installation-summary.png "installation-summary") 
+	
    1. Select  **Software Selection**  to set configuration items.
       
-      Based on the site requirements, select  **Minimal Install**  on the left box and select an add-on in the  **Add-Ons for Selected Environment**  area on the right, as shown in  [Figure 8](#fig1133717611109).
+        Based on the site requirements, select  **Minimal Install**  on the left box and select an add-on in the  **Add-Ons for Selected Environment**  area on the right, as shown in  [Figure 8](#fig1133717611109).
       
-      **Figure  8**  Selecting installation software<a name="fig1133717611109"></a>  
-<img src="figures/selecting-installation-software.png" title="selecting-installation-software"  />
+        **Figure  8**  Selecting installation software<a name="fig1133717611109"></a>  
+        ![](./figures/selecting-installation-software.png "selecting-installation-software") 
       
-      > ![](./public_sys-resources/icon-note.gif) **NOTE:**
-      > 
-      > - In  **Minimal Install**  mode, not all packages in the installation source will be installed. If the required package is not installed, you can mount the installation source to the local PC and configure a repo source, and use DNF to install the package.
-      > - If you select  **Virtual Host**, the virtualization components QEMU, libvirt, and edk2 are installed by default. You can select whether to install the OVS component in the add-on area.
+        > ![](./public_sys-resources/icon-note.gif) **NOTE:**
+        > 
+        > - In  **Minimal Install**  mode, not all packages in the installation source will be installed. If the required package is not installed, you can mount the installation source to the local PC and configure a repo source, and use DNF to install the package.
+        > - If you select  **Virtual Host**, the virtualization components QEMU, libvirt, and edk2 are installed by default. You can select whether to install the OVS component in the add-on area.
       
-      After the setting is complete, click  **Done**  in the upper left corner to go back to the  **INSTALLATION SUMMARY**  page.
+        After the setting is complete, click  **Done**  in the upper left corner to go back to the  **INSTALLATION SUMMARY**  page.
    
    2. Select  **Installation Destination**  to set configuration items.
       
-      On the  **INSTALLATION DESTINATION**  page, select a local storage device.
+        On the  **INSTALLATION DESTINATION**  page, select a local storage device.
       
-      > ![](./public_sys-resources/icon-notice.gif) **NOTICE:**  
-When selecting the device to be installed, you are advised not to use the NVMe SSD storage medium as the OS installation disk.
+        > ![](./public_sys-resources/icon-notice.gif) **NOTICE:**  
+        > When selecting the device to be installed, you are advised not to use the NVMe SSD storage medium as the OS installation disk.
       
-      You also need to configure the storage to partition the system. You can either manually configure partitions or select  **Automatic**  to automatically configure partitioning. Select  **Automatic**  if the software is installed in a new storage device or the data in the storage device is not required, as shown in  [Figure 9](#fig153381468101).
+        You also need to configure the storage to partition the system. You can either manually configure partitions or select  **Automatic**  to automatically configure partitioning. Select  **Automatic**  if the software is installed in a new storage device or the data in the storage device is not required, as shown in  [Figure 9](#fig153381468101).
       
-      **Figure  9**  Setting the installation destination<a name="fig153381468101"></a>  
-      <img src="figures/setting-the-installation-destination.png" title="setting-the-installation-destination"  />
+        **Figure  9**  Setting the installation destination<a name="fig153381468101"></a>  
+        ![](./figures/setting-the-installation-destination.png "setting-the-installation-destination") 
       
-      > ![](./public_sys-resources/icon-note.gif) **NOTE:**
-      > 
-      > - During partitioning, to ensure system security and performance, you are advised to divide the device into the following partitions:  **/boot**,  **/var**,  **/var/log**,  **/var/log/audit**,  **/home**, and  **/tmp**.
-      > - If the system is configured with the swap partition, the swap partition is used when the physical memory of the system is insufficient. Although the swap partition can be used to expand the physical memory, if the swap partition is used due to insufficient memory, the system response slows and the system performance deteriorates. Therefore, you are not advised to configure the swap partition in the system with sufficient physical memory or the performance sensitive system.
-      > - If you need to split a logical volume group, select  **Custom**  to manually partition the logical volume group. On the  **MANUAL PARTITIONING**  page, click  **Modify**  in the  **Volume Group**  area to reconfigure the logical volume group.
+        > ![](./public_sys-resources/icon-note.gif) **NOTE:**
+        > 
+        > - During partitioning, to ensure system security and performance, you are advised to divide the device into the following partitions:  **/boot**,  **/var**,  **/var/log**,  **/var/log/audit**,  **/home**, and  **/tmp**.
+        > - If the system is configured with the swap partition, the swap partition is used when the physical memory of the system is insufficient. Although the swap partition can be used to expand the physical memory, if the swap partition is used due to insufficient memory, the system response slows and the system performance deteriorates. Therefore, you are not advised to configure the swap partition in the system with sufficient physical memory or the performance sensitive system.
+        > - If you need to split a logical volume group, select  **Custom**  to manually partition the logical volume group. On the  **MANUAL PARTITIONING**  page, click  **Modify**  in the  **Volume Group**  area to reconfigure the logical volume group.
 
-      After the setting is complete, click  **Done**  in the upper left corner to go back to the  **INSTALLATION SUMMARY**  page.
+        After the setting is complete, click  **Done**  in the upper left corner to go back to the  **INSTALLATION SUMMARY**  page.
 
    3. Select **Root Password** and set the root password.
       
-      On the **ROOT PASSWORD** page, enter a password that meets the [Password Complexity](#密码复杂度) requirements and confirm the password, as shown in [Figure 10](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018).
+        On the **ROOT PASSWORD** page, enter a password that meets the [Password Complexity](#密码复杂度) requirements and confirm the password, as shown in [Figure 10](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018).
       
-      > ![](./public_sys-resources/icon-note.gif) **NOTE:**
-      > 
-      > - The root account is used to perform key system management tasks. You are not advised to use the root account for daily work or system access.
-      > 
-      > - If you select **Lock root account** on the **Root Password** page, the root account will be disabled.
+        > ![](./public_sys-resources/icon-note.gif) **NOTE:**
+        > 
+        > - The root account is used to perform key system management tasks. You are not advised to use the root account for daily work or system access.
+        > 
+        > - If you select **Lock root account** on the **Root Password** page, the root account will be disabled.
       
-      **Password Complexity** <a name = "Password complexity"></a>
+        **Password Complexity** <a name = "Password complexity"></a>
       
-      The password of user root or a new user must meet the password complexity requirements. Otherwise, the password setting or user creation will fail. The password must meet the following requirements:
+        The password of user root or a new user must meet the password complexity requirements. Otherwise, the password setting or user creation will fail. The password must meet the following requirements:
       
-      1. Contain at least eight characters.
-      
-      2. Contain at least three of the following: uppercase letters, lowercase letters, digits, and special characters.
-      
-      3. Different from the user name.
-      
-      4. Not allowed to contain words in the dictionary.
+        1. Contain at least eight characters.
          
-         > ![](./public_sys-resources/icon-note.gif) **NOTE:**   
-      In the openEuler environment, you can run the `cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt` command to export the dictionary library file **dictionary.txt**. You can check whether the password is in this dictionary.
-      
-
-   **Figure 10** Root password<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018"></a>  
-   ![](./figures/password-of-the-root-account.png "Root password")
+        2. Contain at least three of the following: uppercase letters, lowercase letters, digits, and special characters.
+         
+        3. Different from the user name.
+         
+        4. Not allowed to contain words in the dictionary.
+        
+        > ![](./public_sys-resources/icon-note.gif) **NOTE:**   
+        > In the openEuler environment, you can run the `cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt` command to export the dictionary library file **dictionary.txt**. You can check whether the password is in this dictionary.
+		
+        **Figure 10** Root password<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018"></a>  
+        ![](./figures/password-of-the-root-account.png "Root password")
    
-   After the settings are completed, click **Done** in the upper left corner to return to the **INSTALLATION SUMMARY** page.
+        After the settings are completed, click **Done** in the upper left corner to return to the **INSTALLATION SUMMARY** page.
 
    4. Select **Create a User** and set the parameters.
       
-      [Figure 11](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319) shows the page for creating a user. Enter the user name and set the password. The password complexity must be the same as that of the root password. In addition, you can set the home directory and user group by clicking **Advanced**, as shown in [Figure 12](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319).
+        Figure 11](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319) shows the page for creating a user. Enter the user name and set the password. The password complexity must be the same as that of the root password. In addition, you can set the home directory and user group by clicking **Advanced**, as shown in [Figure 12](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319).
       
-      **Figure 11** Creating a user<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319"></a>  
-      <img src="figures/creating-a-user.png" title="Creating a user"  />
-      
+        **Figure 11** Creating a user<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319"></a>  
+        ![](./figures/creating-a-user.png "creating-a-user")     
 
-   **Figure 12** Advanced user configuration<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig128716531312"></a>  
-   ![](./figures/advanced-user-configuration.png "Advanced user configuration")
-   
-   After the settings are completed, click **Done** in the upper left corner to return to the **INSTALLATION SUMMARY** page.
+        **Figure 12** Advanced user configuration<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig128716531312"></a>  
+        ![](./figures/advanced-user-configuration.png "Advanced user configuration")
+        After the settings are completed, click **Done** in the upper left corner to return to the **INSTALLATION SUMMARY** page.
 
    5. Set other configuration items. You can use the default values for other configuration items.
    
 3. Click **Start the Installation** to install the system, as shown in [Figure 13](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319).
    
    **Figure 13** Starting the installation<a name="fig1717019357392"></a>  
-<img src="figures/starting-installation.png" title="Starting the installation"  />
-
+    ![](./figures/installation-process.png "installation-process")
 4. After the installation is completed, restart the system.
    
-   openEuler has been installed, as shown in  [Figure 14](#en-us_topic_0186390267_en-us_topic_0122145917_fig1429512116338). Click  **Reboot**  to restart the system.
-   
-   **Figure  14**  Completing the installation<a name="en-us_topic_0186390267_en-us_topic_0122145917_fig1429512116338"></a>  
-<img src="figures/completing-the-installation.png" title="completing-the-installation"  />
+   openEuler has been installed. Click  **Reboot**  to restart the system.
 
 ## Viewing System Information
 
-After the system is installed and restarted, the system CLI login page is displayed. Enter the username and password set during the installation to log in to openEuler OS and view the following system information. For details about system management and configuration, see the  [openEuler 21.03 Administrator Guide](./../Administration/administration.html).
+After the system is installed and restarted, the system CLI login page is displayed. Enter the username and password set during the installation to log in to openEuler OS and view the following system information. For details about system management and configuration, see the  [openEuler 20.03-LTS-SP1 Administrator Guide](./../Administration/administration.html).
 
 - Run the following command to view the system information:
   
@@ -328,10 +321,10 @@ After the system is installed and restarted, the system CLI login page is displa
   ```
   $ cat /etc/os-release
   NAME="openEuler"
-  VERSION="21.03"
+  VERSION="20.03 (LTS-SP1)"
   ID="openEuler"
-  VERSION_ID="21.03"
-  PRETTY_NAME="openEuler 21.03"
+  VERSION_ID="20.03"
+  PRETTY_NAME="openEuler 20.03 (LTS-SP1)"
   ANSI_COLOR="0;31"
   ```
 
