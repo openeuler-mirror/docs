@@ -31,7 +31,7 @@ Perform the following operations to obtain the openEuler release package:
 1.  Log in to the  [openEuler Community](https://openeuler.org)  website.
 2.  Click  **Download**. 
 3.  Click the link provided after  **Download ISO**. The download list is displayed.
-4.  Click  **openEuler-20.09**. The openEuler 20.09 version download list is displayed.
+4.  Click  **openEuler-21.03**. The openEuler 21.03 version download list is displayed.
 5.  Click  **ISO**. The ISO download list is displayed.
     -   **aarch64**: ISO image file of the AArch64 architecture
     -   **x86\_64**: ISO image file of the x86\_64 architecture
@@ -40,13 +40,13 @@ Perform the following operations to obtain the openEuler release package:
 6.  Select the openEuler release package and verification file to be downloaded based on the architecture of the environment to be installed.
     -   If the AArch64 architecture is used:
         1.  Click  **aarch64**.
-        2.  Click  **openEuler-20.09-aarch64-dvd.iso**  to download the openEuler release package to the local host.
-        3.  Click  **openEuler-20.09-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
+        2.  Click  **openEuler-21.03-aarch64-dvd.iso**  to download the openEuler release package to the local host.
+        3.  Click  **openEuler-21.03-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
 
     -   If the x86\_64 architecture is used:
         1.  Click  **x86\_64**.
-        2.  Click  **openEuler-20.09-x86\_64-dvd.iso**  to download the openEuler release package to the local host.
-        3.  Click  **openEuler-20.09-x86\_64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
+        2.  Click  **openEuler-21.03-x86\_64-dvd.iso**  to download the openEuler release package to the local host.
+        3.  Click  **openEuler-21.03-x86\_64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
 
 ## Release Package Integrity Check
 
@@ -63,9 +63,9 @@ Compare the verification value recorded in the verification file with the .iso f
 
 Before verifying the integrity of the release package, you need to prepare the following files:
 
-ISO file:  **openEuler-20.09-aarch64-dvd.iso**
+ISO file:  **openEuler-21.03-aarch64-dvd.iso**
 
-Verification file:  **openEuler-20.09-aarch64-dvd.iso.sha256sum**
+Verification file:  **openEuler-21.03-aarch64-dvd.iso.sha256sum**
 
 ### Procedure
 
@@ -74,13 +74,13 @@ To verify the file integrity, perform the following operations:
 1.  Obtain the verification value in the verification file. Run the following command:
 
     ```
-    $cat openEuler-20.09-aarch64-dvd.iso.sha256sum 
+    $cat openEuler-21.03-aarch64-dvd.iso.sha256sum 
     ```
 
 2.  Calculate the SHA256 verification value of the file. Run the following command:
 
     ```
-    $sha256sum openEuler-20.09-aarch64-dvd.iso
+    $sha256sum openEuler-21.03-aarch64-dvd.iso
     ```
 
     After the command is run, the verification value is displayed.

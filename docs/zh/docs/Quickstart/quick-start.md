@@ -1,6 +1,6 @@
 # 快速入门
 
-本文档以TaiShan 200服务器上安装openEuler 20.09 为例，旨在指导用户快速地安装和使用openEuler操作系统，更详细的安装要求和安装方法请参考《[openEuler 20.09 安装指南](./../Installation/installation.html)》。
+本文档以TaiShan 200服务器上安装openEuler 21.03 为例，旨在指导用户快速地安装和使用openEuler操作系统，更详细的安装要求和安装方法请参考《[安装指南](./../Installation/installation.html)》。
 <!-- TOC -->
 
 - [快速入门](#快速入门)
@@ -106,7 +106,7 @@
 1.  登录[openEuler社区](https://openeuler.org)网站。
 2.  单击“下载”。
 3.  单击“获取ISO：”后面的“Link”，显示版本列表。
-4.  单击“openEuler-20.09”，进入openEuler 20.09版本下载列表。
+4.  单击“openEuler-21.03”，进入openEuler 21.03版本下载列表。
 5.  单击“ISO”，进入ISO下载列表。
     -   aarch64：AArch64架构的ISO。
     -   x86\_64：x86\_64架构的ISO。
@@ -115,13 +115,13 @@
 6.  根据实际待安装环境的架构选择需要下载的openEuler的发布包和校验文件。
     -   若为AArch64架构。
         1.  单击“aarch64”。
-        2.  单击“openEuler-20.09-aarch64-dvd.iso”，将openEuler发布包下载到本地。
-        3.  单击“openEuler-20.09-aarch64-dvd.iso.sha256sum”，将openEuler校验文件下载到本地。
+        2.  单击“openEuler-21.03-aarch64-dvd.iso”，将openEuler发布包下载到本地。
+        3.  单击“openEuler-21.03-aarch64-dvd.iso.sha256sum”，将openEuler校验文件下载到本地。
 
     -   若为x86\_64架构。
         1.  单击“x86\_64”。
-        2.  单击“openEuler-20.09-x86\_64-dvd.iso”，将openEuler发布包下载到本地。
-        3.  单击“openEuler-20.09-x86\_64-dvd.iso.sha256sum”，将openEuler校验文件下载到本地。
+        2.  单击“openEuler-21.03-x86\_64-dvd.iso”，将openEuler发布包下载到本地。
+        3.  单击“openEuler-21.03-x86\_64-dvd.iso.sha256sum”，将openEuler校验文件下载到本地。
 
 
 
@@ -132,13 +132,13 @@
 1.  获取校验文件中的校验值。执行命令如下：
 
     ```
-    $ cat openEuler-20.09-aarch64-dvd.iso.sha256sum 
+    $ cat openEuler-21.03-aarch64-dvd.iso.sha256sum 
     ```
 
 2.  计算文件的sha256校验值。执行命令如下：
 
     ```
-    $ sha256sum openEuler-20.09-aarch64-dvd.iso
+    $ sha256sum openEuler-21.03-aarch64-dvd.iso
     ```
 
     命令执行完成后，输出校验值。
@@ -182,13 +182,13 @@
 8.  设备重启后进入到openEuler操作系统安装引导界面，如[图5](#fig1648754873314)所示。
 
     >![](./public_sys-resources/icon-note.gif) **说明：**   
-    >-   如果60秒内未按任何键，系统将从默认选项“Test this media & install openEuler 20.09”自动进入安装界面。  
+    >-   如果60秒内未按任何键，系统将从默认选项“Test this media & install openEuler 21.03”自动进入安装界面。  
     >-   安装物理机时，如果使用键盘上下键无法选择启动选项，按“Enter”键无响应，可以单击BMC界面上的鼠标控制图标“![](./figures/zh-cn_image_0229420473.png)”，设置“键鼠复位”。  
 
     **图 5**  安装引导界面<a name="fig1648754873314"></a>  
     ![](./figures/Installation_wizard.png)
 
-9.  在安装引导界面，按“Enter”，进入默认选项“Test this media & install openEuler 20.09”的图形化安装界面。
+9.  在安装引导界面，按“Enter”，进入默认选项“Test this media & install openEuler 21.03”的图形化安装界面。
 
 ## 安装
 
@@ -312,10 +312,10 @@
     ```
     $ cat /etc/os-release
     NAME="openEuler"
-    VERSION="20.09"
+    VERSION="21.03"
     ID="openEuler"
-    VERSION_ID="20.09"
-    PRETTY_NAME="openEuler 20.09"
+    VERSION_ID="21.03"
+    PRETTY_NAME="openEuler 21.03"
     ANSI_COLOR="0;31"
     ```
 

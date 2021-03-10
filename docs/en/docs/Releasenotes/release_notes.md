@@ -1,3 +1,3 @@
 # Release Notes
 
-This document is the release notes for the openEuler 20.09 release version.
+This document is the release notes for the openEuler 21.03 release version.

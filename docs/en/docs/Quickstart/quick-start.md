@@ -1,6 +1,6 @@
 # Quick Start
 
-This document uses openEuler 20.09 installed on the TaiShan 200 server as an example to describe how to quickly install and use openEuler OS. For details about the installation requirements and methods, see  [ Installation Guide](./../Installation/Installation.html).
+This document uses openEuler 21.03 installed on the TaiShan 200 server as an example to describe how to quickly install and use openEuler OS. For details about the installation requirements and methods, see  [ Installation Guide](./../Installation/Installation.html).
 
 <!-- TOC -->
 
@@ -111,7 +111,7 @@ The release packages of the AArch64 architecture support the UEFI mode, and the 
 
 3. Click the link provided after  **Download ISO**. The download list is displayed.
 
-4. Click **openEuler-20.09**. The openEuler 20.09 version download list is displayed.
+4. Click **openEuler-21.03**. The openEuler 21.03 version download list is displayed.
 
 5. Click  **ISO**. The ISO download list is displayed.
    
@@ -124,14 +124,14 @@ The release packages of the AArch64 architecture support the UEFI mode, and the 
    - If the AArch64 architecture is used:
      
      1. Click  **aarch64**.
-     2. Click  **openEuler-20.09-aarch64-dvd.iso**  to download the openEuler release package to the local host.
-     3. Click  **openEuler-20.09-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
+     2. Click  **openEuler-21.03-aarch64-dvd.iso**  to download the openEuler release package to the local host.
+     3. Click  **openEuler-21.03-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
    
    - If the x86\_64 architecture is used:
      
      1. Click  **x86\_64**.
-     2. Click  **openEuler-20.09-x86\_64-dvd.iso**  to download the openEuler release package to the local host.
-     3. Click  **openEuler-20.09-x86\_64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
+     2. Click  **openEuler-21.03-x86\_64-dvd.iso**  to download the openEuler release package to the local host.
+     3. Click  **openEuler-21.03-x86\_64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
 
 ## Release Package Integrity Check
 
@@ -140,13 +140,13 @@ To prevent incomplete download of the software package due to network or storage
 1. Obtain the verification value in the verification file. Run the following command:
    
    ```
-   $cat openEuler-20.09-aarch64-dvd.iso.sha256sum 
+   $cat openEuler-21.03-aarch64-dvd.iso.sha256sum 
    ```
 
 2. Calculate the SHA256 verification value of the file. Run the following command:
    
    ```
-   $sha256sum openEuler-20.09-aarch64-dvd.iso
+   $sha256sum openEuler-21.03-aarch64-dvd.iso
    ```
    
    After the command is run, the verification value is displayed.
@@ -195,13 +195,13 @@ To prevent incomplete download of the software package due to network or storage
    
    > ![](./public_sys-resources/icon-note.gif) **NOTE:**
    > 
-   > - If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media \& install openEuler 20.09**  and enters the installation page.
+   > - If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media \& install openEuler 21.03**  and enters the installation page.
    > - During PM installation, if you cannot use the arrow keys to select boot options and the system does not respond after you press  **Enter**, click  ![](./figures/en-us_image_0229420473.png)  on the BMC page and configure  **Key \& Mouse Reset**.
    
    **Figure  5**  Installation Wizard<a name="fig1648754873314"></a>  
 <img src="figures/installation-wizard.png" title="installation-wizard"  />
 
-9. On the installation wizard page, press  **Enter**  to select the default option  **Test this media \& install openEuler 20.09**  to enter the GUI installation page.
+9. On the installation wizard page, press  **Enter**  to select the default option  **Test this media \& install openEuler 21.03**  to enter the GUI installation page.
 
 ## Installation
 
@@ -315,7 +315,7 @@ When selecting the device to be installed, you are advised not to use the NVMe S
 
 ## Viewing System Information
 
-After the system is installed and restarted, the system CLI login page is displayed. Enter the username and password set during the installation to log in to openEuler OS and view the following system information. For details about system management and configuration, see the  [openEuler 20.09 Administrator Guide](./../Administration/administration.html).
+After the system is installed and restarted, the system CLI login page is displayed. Enter the username and password set during the installation to log in to openEuler OS and view the following system information. For details about system management and configuration, see the  [openEuler 21.03 Administrator Guide](./../Administration/administration.html).
 
 - Run the following command to view the system information:
   
@@ -328,10 +328,10 @@ After the system is installed and restarted, the system CLI login page is displa
   ```
   $ cat /etc/os-release
   NAME="openEuler"
-  VERSION="20.09"
+  VERSION="21.03"
   ID="openEuler"
-  VERSION_ID="20.09"
-  PRETTY_NAME="openEuler 20.09"
+  VERSION_ID="21.03"
+  PRETTY_NAME="openEuler 21.03"
   ANSI_COLOR="0;31"
   ```
 

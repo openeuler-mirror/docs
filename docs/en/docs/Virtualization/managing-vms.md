@@ -456,7 +456,7 @@ Libvirt component provides a group of commands for querying the VM status, inclu
      Target   Source
     ---------------------------------------------------------------------
      sda      /home/openeuler/vm/openEuler_aarch64.qcow2
-     sdb      /home/openeuler/vm/openEuler-20.03-LTS-aarch64-dvd.iso
+     sdb      /home/openeuler/vm/openEuler-21.03-aarch64-dvd.iso
     ```
 
 -   Run the  **virsh domiflist**  command to query the VM NIC information. The query result shows that the VM has one NIC, the backend is vnet0, which is on the br0 bridge of the host. The MAC address is 00:05:fe:d4:f1:cc.

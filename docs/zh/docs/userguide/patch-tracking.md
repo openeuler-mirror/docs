@@ -86,14 +86,14 @@ patch-tracking采用 C/S 架构。
 
 Repo 源地址：https://repo.openeuler.org/
 
-rpm 包获取地址：https://build.openeuler.org/package/show/openEuler:20.09/patch-tracking
+rpm 包获取地址：https://build.openeuler.org/package/show/openEuler:21.03/patch-tracking
 
 
 ### 安装工具
 
 方法1：从repo源安装
 
-1. 使用 dnf 挂载 repo源（需要 20.09 或更新的 repo 源，具体方法参考[应用开发指南](https://openeuler.org/zh/docs/20.09/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装 patch-tracking 及其依赖。
+1. 使用 dnf 挂载 repo源（需要 21.03 或更新的 repo 源，具体方法参考[应用开发指南](https://openeuler.org/zh/docs/21.03docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装 patch-tracking 及其依赖。
 
 2. 执行以下命令安装`patch-tracking`。
 
