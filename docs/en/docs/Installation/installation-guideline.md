@@ -178,7 +178,7 @@ On the **INSTALLATION SUMMARY** page, click **INSTALLATION SOURCE** to locate th
     
     If the HTTPS server uses a private certificate, press **e** on the installation wizard page to go to the parameter editing page of the selected option, and add the **inst.noverifyssl** parameter.
     
-    Enter the actual installation source address, for example, **https://repo.openeuler.org/openEuler-21.03/OS/x86_64**, in the text box. **openEuler-21.03** indicates the version number, and **x86\_64** indicates the CPU architecture.
+    Enter the actual installation source address, for example, **https://repo.openeuler.org/openEuler-21.03/OS/aarch64**, in the text box. **openEuler-21.03** indicates the version number, and **aarch64** indicates the CPU architecture.
   
   - FTP mode
     
@@ -186,7 +186,7 @@ On the **INSTALLATION SUMMARY** page, click **INSTALLATION SOURCE** to locate th
     
     ![](./figures/sourceftp.png)
     
-    You need to set up an FTP server, mount the **openEuler-21.03-x86\_64-dvd.iso** image, and copy the mounted files to the shared directory on the FTP server. **x86\_64** indicates the CPU architecture. You can use images as required.
+    You need to set up an FTP server, mount the **openEuler-21.03-aarch64-dvd.iso** image, and copy the mounted files to the shared directory on the FTP server. **aarch64** indicates the CPU architecture. You can use images as required.
   
   - NFS mode
     
@@ -194,7 +194,7 @@ On the **INSTALLATION SUMMARY** page, click **INSTALLATION SOURCE** to locate th
     
     ![](./figures/sourcenfs.png)
     
-    You need to set up an NFS server, mount the **openEuler-21.03-x86\_64-dvd.iso** image, and copy the mounted file to the shared directory on the NFS server. **x86\_64** indicates the CPU architecture. You can use images as required.
+    You need to set up an NFS server, mount the **openEuler-21.03-aarch64-dvd.iso** image, and copy the mounted file to the shared directory on the NFS server. **aarch64** indicates the CPU architecture. You can use images as required.
 
 During the installation, if you have any questions about configuring the installation source, see [An Exception Occurs During the Selection of the Installation Source](./faqs.html#an-exception-occurs-during-the-selection-of-the-installation-source).
 
