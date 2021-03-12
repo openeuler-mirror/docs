@@ -4,16 +4,16 @@
 
 ## 介绍
 
-pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系完整图谱的查询工具，pkgship提供软件包依赖查询、生命周期管理、补丁查询等功能。
+pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系完整图谱的查询工具，能提供软件包依赖查询、生命周期管理、补丁查询等功能。
 
-1. 软件包依赖查询：方便社区人员在软件包引入、更新和删除的时候了解软件的影响范围。
-2. 补丁查询：方便社区人员了解openEuler软件包的补丁情况以及提取补丁内容，详细内容请参见[patch-tracking](./../userguide/patch-tracking.md)。
+- 软件包依赖查询：方便社区人员在软件包引入、更新和删除的时候了解软件的影响范围。
+- 补丁查询：方便社区人员了解openEuler软件包的补丁情况以及提取补丁内容，详细内容请参见[patch-tracking](./../userguide/patch-tracking.md)。
 
 ## 架构
 
-系统采用flask-restful开发
+系统采用flask-restful开发，架构图如下。
 
-![avatar](./images/packagemanagement.jpg)
+![avatar](./images/packagemanagement.png)
 
 ## 软件下载
 
@@ -32,52 +32,49 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 
 **1、pkgship工具安装**
 
-工具安装可通过以下两种方式中的任意一种实现。
+您可通过如下两种方式完成工具安装。
 
-- 方法一，通过dnf挂载repo源实现。
-  先使用dnf挂载pkgship软件在所在repo源（具体方法可参考[应用开发指南](./../ApplicationDev/开发环境准备.md)），然后执行如下指令下载以及安装pkgship及其依赖。
+- 通过dnf挂载repo源实现
+    先使用dnf挂载pkgship软件在所在repo源（具体方法可参考[应用开发指南](./../ApplicationDev/开发环境准备.md)），然后执行如下指令下载以及安装pkgship及其依赖。
 
-  ```
-  dnf install pkgship
-  ```
+    ```
+    dnf install pkgship
+    ```
 
-- 方法二，通过安装rpm包实现。 先下载pkgship的rpm包，然后执行如下命令进行安装（其中“x.x-x”表示版本号，请用实际情况代替）。
+- 通过安装rpm包实现 
+    先下载pkgship的rpm包，然后执行如下命令进行安装（其中“x.x-x”表示版本号，请用实际情况代替）。
 
-  ```
-  rpm -ivh pkgship-x.x-x.oe1.noarch.rpm
-  ```
+    ```
+    rpm -ivh pkgship-x.x-x.oe1.noarch.rpm
+    ```
 
-  或者
+    或者
 
-  ```
-  dnf install pkgship-x.x-x.oe1.noarch.rpm
-  ```
+    ```
+    dnf install pkgship-x.x-x.oe1.noarch.rpm
+    ```
 
 **2、Elasticsearch和Redis安装**
 
-如果环境没有安装Elasticsearch或者Redis，可以在pkgship安装之后执行自动化安装脚本。
+如果环境没有安装Elasticsearch或者Redis，可以在pkgship安装之后执行以下自动化脚本来安装。
 
-脚本路径默认为：
+脚本路径默认为`/etc/pkgship/auto_install_pkgship_requires.sh`，您可执行如下命令安装Elasticsearch或者Redis。
 
-```
-/etc/pkgship/auto_install_pkgship_requires.sh
-```
+- 安装Elasticsearch
 
-执行方法为
+    ```
+    /bin/bash auto_install_pkgship_requires.sh elasticsearch
+    ```
 
-```
-/bin/bash auto_install_pkgship_requires.sh elasticsearch
-```
+- 安装Redis
 
-或者
-
-```
- /bin/bash auto_install_pkgship_requires.sh redis
-```
+    ```
+    /bin/bash auto_install_pkgship_requires.sh redis
+    ```
 
 ## 配置参数
 
-1.在配置文件中对相应参数进行配置，系统的默认配置文件存放在 `/etc/pkgship/packge.ini`，请根据实际情况进行配置更改。
+1. 系统的默认配置文件存放在 `/etc/pkgship/packge.ini`，请根据实际情况对相应参数进行配置。
 
 ```
 vim /etc/pkgship/package.ini
@@ -137,7 +134,7 @@ database_host=127.0.0.1
 database_port=9200
 ```
 
-2.创建初始化数据库的yaml配置文件： conf.yaml 文件默认存放在 /etc/pkgship/ 路径下，pkgship会通过该配置读取要建立的数据库名称以及需要导入的sqlite文件，也支持配置sqlite文件所在的repo地址。conf.yaml 示例如下所示。
+2. 您可根据如下示例创建初始化数据库的yaml文件`conf.yaml`,文件默认存放在 `/etc/pkgship/` 路径下，pkgship会通过该配置读取要建立的数据库名称以及需要导入的sqlite文件，也支持配置sqlite文件所在的repo地址。
 
 ```
 dbname: openEuler-20.03   #数据库名称
@@ -151,30 +148,32 @@ bin_db_file: https://repo.openeuler.org/openEuler-20.09/everything/aarch64 #二�
 priority: 2
 ```
 
+> **说明：**
 > 如需更改存放路径，请更改package.ini下的 init_conf_path 选项。
->
 > 不支持直接配置sqlite文件路径。
 
 ## 服务启动和停止
 
-pkgship启动和停止方式有两种，systemctl方式和pkgshipd方式，其中systemctl方式启动可以有异常停止自启动的机制。两种方式的执行命令为：
+pkgship有systemctl和pkgshipd两种启停方式，其中systemctl方式启动可以有异常停止自启动的机制。
 
-```
-systemctl start pkgship.service 启动服务
+- systemctl方式启停命令为：
+    ```
+    systemctl start pkgship.service 
+    systemctl stop pkgship.service 
+    systemctl restart pkgship.service 
+    ```
+- pkgshipd启停命令为：
+    ```
+    pkgshipd start
+    pkgshipd stop
+    ```
 
-systemctl stop pkgship.service 停止服务
-
-systemctl restart pkgship.service 重启服务
-pkgshipd start 启动服务
-
-pkgshipd stop 停止服务
-```
-
+>**说明：** 
 > 每次起停周期内仅支持一种方式，不允许两种操作同时使用。
 
 ## 工具使用
 
-1. 数据库初始化。
+1. 数据库初始化
 
    > 使用场景：服务启动后，为了能查询对应的数据库（比如openEuler-20.09， openEuler-21.03）中的包信息及包依赖关系，需要将这些数据库通过createrepo生成的sqlite（分为源码库和二进制库）导入进服务内，生成对应的包信息json体然后插入Elasticsearch对应的数据库中。数据库名为根据config.yaml中配置的dbname生成的dbname-source/binary，[-filepath]为可选参数。
 
@@ -185,7 +184,7 @@ pkgshipd stop 停止服务
    > 参数说明：
    > -filepath：指定初始化配置文件config.yaml的路径，可以使用相对路径和绝对路径，不带参数则使用默认配置初始化。
 
-2. 单包查询。
+2. 单包查询
 
    用户可查询源码包或者二进制包(packagename)在指定数据库表（database）中的具体信息。
 
@@ -201,7 +200,7 @@ pkgshipd stop 停止服务
    >
    > -s: 指定`-s`将查询的是`src`源码包信息;若未指定 默认查询`bin`二进制包信息
 
-3. 所有包查询。
+3. 所有包查询
 
    查询数据库下包含的所有包的信息。
 
@@ -215,7 +214,7 @@ pkgshipd stop 停止服务
    > database：指定具体的数据库名称。
    > -s: 指定`-s`将查询的是`src`源码包信息;若未指定 默认查询`bin`二进制包信息
 
-4. 安装依赖查询。
+4. 安装依赖查询
 
    查询二进制包(binaryName)的安装依赖。
 
@@ -232,7 +231,7 @@ pkgshipd stop 停止服务
    >
    > -level：指定需要查询的依赖层级,不传默认为0，查询所有层级；可选参数。
 
-5. 编译依赖查询。
+5. 编译依赖查询
 
    查询源码包(sourceName)的所有编译依赖。
 
@@ -249,7 +248,7 @@ pkgshipd stop 停止服务
    >
    > -level：指定需要查询的依赖层级,不传默认为0，查询所有层级；可选参数。
 
-6. 自编译自安装依赖查询。
+6. 自编译自安装依赖查询
 
    查询指定二进制包(binaryName)或源码包(sourceName )的安装及编译依赖，其中[pkgName]为查询的二进制包或者源码包的名称。当查询二进制包时，可以查询到该二进制包的所有安装依赖以及该二进制包对应的源码包的编译依赖，及这些编译依赖的所有安装依赖；当查询源码包时，可以查询该源码包的编译依赖，及这些编译依赖的所有安装依赖，并且查询该源码包生成的所有二进制包的所有安装依赖。同时，配合对应参数使用，该命令也支持查询软件包的自编译依赖查询，和包含子包的依赖查询。
 
@@ -271,7 +270,7 @@ pkgshipd stop 停止服务
    >
    > -w：指定-s表示引入某个二进制包的时候，查询结果会显示出该二进制包对应的源码包以及该源码包生成的所有二进制包；如果不指定-w参数表示引入某个二进制包的时候，查询结果只显示对应的源码包；可选参数。
 
-7. 被依赖查询。
+7. 被依赖查询
    查询源码包(sourceName)在某数据库(dbName)中被哪些包所依赖。
 
    > 使用场景：针对软件源码包A，在升级或删除的情况下会影响哪些软件包，可通过该命令查询。该命令会显示源码包A生成的所有二进制包被哪些源码包（比如B）编译依赖，被哪些二进制包（比如C1）安装依赖；以及B生成的二进制包及C1被哪些源码包（比如D）编译依赖，被哪些二进制包（比如E1）安装依赖，以此类推，遍历这些二进制包的被依赖。
@@ -290,13 +289,13 @@ pkgshipd stop 停止服务
    >
    > -install/build：指定`-install`表示查询的是安装被依赖,指定`-build`表示查询的是编译被依赖，默认查全部, 不能`-install`和`-build`同时存在；可选参数。
 
-8. 数据库信息。
+8. 数据库信息
 
    > 使用场景，查看Elasticsearch中初始化了哪些数据库，该功能会按照优先级顺序返回已经初始化的数据库列表。
 
    `pkgship db`
 
-9. 获取版本号。
+9. 获取版本号
 
    > 使用场景：获取pkgship软件的版本号。
 
