@@ -691,6 +691,27 @@
       ]
     },
     {
+      "label": "NVWA用户指南",
+      "path": "docs/NVWA/NVWA",
+      "children": [
+        {
+          "label": "安装与部署",
+          "path": "docs/NVWA/安装与部署",
+          "children": []
+        },
+        {
+          "label": "使用方法",
+          "path": "docs/NVWA/使用方法",
+          "children": []
+        },
+        {
+          "label": "常见问题与解决方法",
+          "path": "docs/NVWA/常见问题与解决方法",
+          "children": []
+        }
+      ]
+    },
+    {
       "label": "应用开发指南",
       "path": "docs/ApplicationDev/application-development",
       "children": [
