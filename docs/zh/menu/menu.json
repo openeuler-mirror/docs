@@ -373,18 +373,13 @@
           "children": []
         },
         {
-            "label": "查询虚拟机信息",
-            "path": "docs/StratoVirt/查询虚拟机信息",
+            "label": "虚拟机管理",
+            "path": "docs/StratoVirt/虚拟机管理",
             "children": []
           },
         {
-          "label": "管理虚拟机生命周期",
-          "path": "docs/StratoVirt/管理虚拟机生命周期",
-          "children": []
-        },
-        {
-          "label": "管理虚拟机资源",
-          "path": "docs/StratoVirt/管理虚拟机资源",
+          "label": "设备管理",
+          "path": "docs/StratoVirt/设备管理",
           "children": []
         },
         {
