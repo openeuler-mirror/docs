@@ -34,7 +34,7 @@
 
    ```
    $ stratovirt -version
-   StratoVirt 0.1.0
+   StratoVirt 0.2.0
    ```
 
 
