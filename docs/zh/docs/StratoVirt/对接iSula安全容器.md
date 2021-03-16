@@ -23,7 +23,7 @@
 
 2. 制作并配置存储 Storage：
 
-   需要用户规划好磁盘如/dev/sdx,该磁盘会被格式化。
+   需要用户规划好磁盘如/dev/sdxx,该磁盘会被格式化。
 
     ```shell
     # pvcreate /dev/sdxx
