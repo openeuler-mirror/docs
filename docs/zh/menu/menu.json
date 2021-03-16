@@ -173,11 +173,6 @@
           "children": []
         },
         {
-          "label": "管理内存",
-          "path": "docs/Administration/管理内存",
-          "children": []
-        },
-        {
           "label": "配置网络",
           "path": "docs/Administration/配置网络",
           "children": []
