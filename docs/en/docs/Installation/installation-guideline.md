@@ -263,12 +263,15 @@ click  **Accept Changes**  to go back to the  **INSTALLATION SUMMARY**  page.
 
 On the  **INSTALLATION SUMMARY**  page, select  **NETWORK \& HOST NAME**  to configure the system network functions.
 
-The installation program automatically detects a local access interface. The detected interface is listed in the left box, and the interface details are displayed in the right-hand area, as shown in  [Figure 14](#en-us_topic_0186390264_en-us_topic_0122145831_fig123700157297). In the upper right corner, click the switchover button to enable or disable the network interface. You can also click  **Configure**  to configure the selected interface.
+The installation program automatically detects a local access interface. The detected interface is listed in the left box, and the interface details are displayed in the right-hand area, as shown in  [Figure 14](#en-us_topic_0186390264_en-us_topic_0122145831_fig123700157297). You can enable or disable a network interface by clicking the switch in the upper right corner of the page. The switch is turned off by default. If the installation source is set to be the network, turn on the switch. You can also click **Configure** to configure the selected interface. Select **Connect automatically with priority** to enable the NIC to start automatically upon system startup, as shown in Figure 16.
 
 In the lower left box, enter the host name. The host name can be the fully quantified domain name (FQDN) in the format of hostname.domainname or the brief host name in the format of hostname.
 
 **Figure  14**  Setting the network and host name<a name="en-us_topic_0186390264_en-us_topic_0122145831_fig123700157297"></a>  
 ![](./figures/setting-the-network-and-host-name.png "setting-the-network-and-host-name")
+
+**Figure  15**  Config the network<a name="en-us_topic_0186390264_en-us_topic_0122145831_fig6"></a>  
+![](./figures/confignetwork.png "config-the-network")
 
 After the setting is complete, click **Done** in the upper left corner to go back to the **INSTALLATION SUMMARY** page.
 
