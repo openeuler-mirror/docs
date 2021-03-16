@@ -137,14 +137,14 @@ database_port=9200
 2. 您可根据如下示例创建初始化数据库的yaml文件`conf.yaml`,文件默认存放在 `/etc/pkgship/` 路径下，pkgship会通过该配置读取要建立的数据库名称以及需要导入的sqlite文件，也支持配置sqlite文件所在的repo地址。
 
 ```
-dbname: openEuler-20.03   #数据库名称
-src_db_file: /etc/pkgship/repo/openEuler-20.09/src  #源码包所在的本地路径
-bin_db_file: /etc/pkgship/repo/openEuler-20.09/bin  #二进制包所在的本地路径
+dbname: openEuler-21.03   #数据库名称
+src_db_file: /etc/pkgship/repo/openEuler-21.03/src  #源码包所在的本地路径
+bin_db_file: /etc/pkgship/repo/openEuler-21.03/bin  #二进制包所在的本地路径
 priority: 1 #数据库优先级
 
-dbname: openEuler-20.09
-src_db_file: https://repo.openeuler.org/openEuler-20.09/source  #源码包所在的repo源
-bin_db_file: https://repo.openeuler.org/openEuler-20.09/everything/aarch64 #二进制包所在的repo源
+dbname: openEuler-21.03
+src_db_file: https://repo.openeuler.org/openEuler-21.03/source  #源码包所在的repo源
+bin_db_file: https://repo.openeuler.org/openEuler-21.03/everything/aarch64 #二进制包所在的repo源
 priority: 2
 ```
 

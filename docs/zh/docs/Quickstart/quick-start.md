@@ -308,7 +308,7 @@
     NAME="openEuler"
     VERSION="21.03"
     ID="openEuler"
-    VERSION_ID="20.03"
+    VERSION_ID="21.03"
     PRETTY_NAME="openEuler 21.03"
     ANSI_COLOR="0;31"
     ```

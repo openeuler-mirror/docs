@@ -92,7 +92,7 @@ To use kickstart to perform semi-automatic installation of openEuler, perform th
 >Before the installation, ensure that the firewall of the HTTP server is disabled. Run the following command to disable the firewall:  
 >```  
 >iptables -F  
->```  
+>```
 
 1.  Install httpd and start the service.
 
@@ -177,7 +177,7 @@ To use kickstart to perform semi-automatic installation of openEuler, perform th
 **Installing the System**
 
 1.  The installation selection dialog box is displayed. 
-    1.  On the installation wizard page in [Starting the Installation](./installation-guideline.html#starting-the-installation), select  **Install openEuler 21.03 **  and press  **e**.
+    1.  On the installation wizard page in [Starting the Installation](./installation-guideline.html#starting-the-installation), select  **Install openEuler 21.03**  and press  **e**.
     2.  Add  **inst.ks=http://server ip/ks/openEuler-ks.cfg**  to the startup parameters.
 
         ![](./figures/startparam.png)
@@ -213,7 +213,7 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
 >Before the installation, ensure that the firewall of the HTTP server is disabled. Run the following command to disable the firewall:  
 >```  
 >iptables -F  
->```  
+>```
 
 1.  Install httpd and start the service.
 
