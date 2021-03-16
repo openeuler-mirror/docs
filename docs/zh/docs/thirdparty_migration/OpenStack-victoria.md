@@ -10,6 +10,13 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
 
 
 ## 准备环境
+### 环境配置
+
+在`/etc/hosts`中添加controller信息，例如节点IP是`10.0.0.11`，则新增：
+
+```shell
+10.0.0.11   controller
+```
 
 ### 安装 SQL DataBase
 
@@ -164,13 +171,6 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
 
     #vim /etc/httpd/conf.d/wsgi-keystone.conf
     ```
-    ...
-
-    TraceEnable off
-
-    LoadModule wsgi_module /usr/lib64/httpd/modules/mod_wsgi_python3.so
-
-    ...
 
 9. 完成安装，执行如下命令，启动Apache HTTP服务。
 
@@ -274,7 +274,7 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
     运行脚本加载环境变量：
 
     ```
-    $ . admin-openrc
+    $ source admin-openrc
     ```
 
 ### Glance安装
@@ -298,7 +298,7 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
     替换 GLANCE_DBPASS，为 glance 数据库设置密码。
 
     ```
-    $ . admin-openrc
+    $ source admin-openrc
     ```
     
 	执行以下命令，分别完成创建 glance 服务凭证、创建glance用户和添加‘admin’角色到用户‘glance’。
@@ -376,7 +376,8 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
 
 	下载镜像
 	```
-	$ . admin-openrc
+	$ source admin-openrc
+    # 注意：如果您使用的环境是鲲鹏架构，请下载arm64版本的镜像。
     $ wget http://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img
    ```
 
@@ -411,7 +412,7 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
     替换 PLACEMENT_DBPASS，为 placement 数据库设置密码
 
     ```
-    $ . admin-openrc
+    $ source admin-openrc
     ```
     执行如下命令，创建 placement 服务凭证、创建 placement 用户以及添加‘admin’角色到用户‘placement’。
 
@@ -465,20 +466,6 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
     ```
     其中，替换 PLACEMENT_DBPASS 为 placement 数据库的密码，替换 PLACEMENT_PASS 为 placement 用户的密码。
 
-    注：配置权限
-
-    ```
-    # vim /etc/httpd/conf.d/00-placement-api.conf
-    <Directory /usr/bin>
-    <IfVersion >= 2.4>
-    Require all granted
-    </IfVersion>
-    <IfVersion < 2.4>
-    Order allow,deny
-    Allow from all
-    </IfVersion>
-    </Directory>
-    ```
     同步数据库：
 
     ```
@@ -1039,7 +1026,9 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
     ```
     替换CINDER_DBPASS，为cinder数据库设置密码。
 
-    $ . admin-openrc
+    ```
+    $ source admin-openrc
+    ```
 
     创建cinder服务凭证：
 
@@ -1209,6 +1198,7 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
     ```
     [DEFAULT]
     # ...
+    # 注意: openEuler 21.03中没有提供OpenStack Swift软件包，需要用户自行安装。或者使用其他的备份后端，例如，NFS。NFS已经过测试验证，可以正常使用。
     backup_driver = cinder.backup.drivers.swift.SwiftBackupDriver
     backup_swift_url = SWIFT_URL
     ```
@@ -1227,7 +1217,7 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
 
     列出服务组件验证每个步骤成功：
     ```
-    $ . admin-openrc
+    $ source admin-openrc
     $ openstack volume service list
     ```
 	
@@ -1262,5 +1252,29 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
 5. 验证
     打开浏览器，输入网址http://<host_ip>，登录 horizon。
 
+### Tempest 安装
 
+Tempest是OpenStack的集成测试服务，如果用户需要全面自动化测试已安装的OpenStack环境的功能,则推荐使用该组件。否则，可以不用安装
 
+1. 安装Tempest
+    ```
+    yum install openstack-tempest
+    ```
+2. 初始化目录
+
+    ```
+    tempest init mytest
+    ```
+3. 修改配置文件。
+
+    ```
+    cd mytest
+    vi etc/tempest.conf
+    ```
+    tempest.conf中需要配置当前OpenStack环境的信息，具体内容可以参考[官方示例](https://docs.openstack.org/tempest/latest/sampleconf.html)
+
+4. 执行测试
+
+    ```
+    tempest run
+    ```
