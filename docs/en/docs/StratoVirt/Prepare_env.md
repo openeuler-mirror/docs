@@ -5,7 +5,7 @@
 ## Usage
 
 - StratoVirt supports only Linux VMs that use the x86_64 or AArch64 processor architecture and start the VM with same architecture.
-- StratoVirt can be compiled, commissioned, and deployed only on openEuler 20.09 and later versions.
+- It is advised to compile, commissione, and deploye the StratoVirt on openEuler 21.03.
 - StratoVirt can run with non-root permissions.
 
 ## Environment Requirements
