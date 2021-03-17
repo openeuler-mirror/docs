@@ -158,16 +158,14 @@ The repository part allows you to customize openEuler software source repositori
 
 
 -   Configuring the .repo file in the /etc/yum.repos.d directory
-
-
     openEuler provides multiple repo sources for users online. For details about the repo sources, see [System Installation](./../Releasenotes/installing-the-os.md.html).
-
+    
     For example, run the following command as the **root** user to add the openeuler repo source to the openEuler.repo file.
-
+    
     ```
     # vi /etc/yum.repos.d/openEuler.repo
     ```
-
+    
     ```
     [OS]
     name=openEuler-$releasever - OS
@@ -176,9 +174,9 @@ The repository part allows you to customize openEuler software source repositori
     gpgcheck=1
     gpgkey=https://repo.openeuler.org/openEuler-21.03/OS/$basearch/RPM-GPG-KEY-openEuler
     ```
-
+    
     >![](./public_sys-resources/icon-note.gif) **NOTE:**    
-	> - **enabled** indicates whether to enable the software source repository. The value can be **1** or **0**. The default value is **1**, indicating that the software source repository is enabled.
+    > - **enabled** indicates whether to enable the software source repository. The value can be **1** or **0**. The default value is **1**, indicating that the software source repository is enabled.
     > - **gpgkey** is the public key used to verify the signature.
 
 
@@ -222,7 +220,7 @@ To create a local repository of software sources, perform the following steps.
 3.  Run the following command to create a software source:
 
     ```
-    createrepo --database /mnt/local_repo
+    createrepo /mnt/local_repo
     ```
 
 
