@@ -65,7 +65,7 @@ To change the password of the userexample, run the following command:
 ```
 
 
-The password of the user must meet the password complexity requirements. The password complexity requirements are as follows:
+It is recommended that the new user password meet the complexity requirements. The password complexity requirements are as follows:
 
 1.  A password must contain at least eight characters.
 2.  A password must contain at least three of the following types: uppercase letters, lowercase letters, digits, and special characters.
