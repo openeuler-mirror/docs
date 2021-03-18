@@ -197,4 +197,5 @@ For details about how to install the management platform newly developed by the 
 
 ![](./figures/HA-api.png)
 
-For details about how to quickly use an HA cluster and add an instance, see the [HA instance documents.](./HA的使用实例.md)
+>**Note:**
+> only the Chinese version is available.
