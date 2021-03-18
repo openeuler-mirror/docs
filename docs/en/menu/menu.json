@@ -732,6 +732,26 @@
       ]
     },
     {
+      "label": "Third-Party Software Deployment Guide",
+      "path": "docs/thirdparty_migration/thidrparty",
+      "children": [
+        {
+          "label": "OpenStack Victoria Deployment Guide",
+          "path": "docs/thirdparty_migration/OpenStack-victoria",
+          "children": [
+            
+          ]
+        },
+        {
+          "label": "Installing and Deploying an HA Cluster",
+          "path": "docs/thirdparty_migration/installha",
+          "children": [
+            
+          ]
+        }
+      ]
+    },
+    {
       "label": "Toolset User Guide",
       "path": "docs/userguide/overview",
       "children": [
@@ -746,5 +766,59 @@
           "children": []
         }
       ]
-    }
+    },
+    {
+      "label": "Desktop Environment User Guide",
+      "path": "docs/desktop/desktop",
+      "children": [
+        {
+          "label": "UKUI",
+          "path": "docs/desktop/ukui",
+          "children": [
+            {
+              "label": "Installation UKUI ",
+              "path": "docs/desktop/install-UKUI",
+              "children": []
+            },
+            {
+              "label": "UKUI User Guide ",
+              "path": "docs/desktop/UKUI-user-guide",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "DDE",
+          "path": "docs/desktop/dde",
+          "children": [
+            {
+              "label": "install-DDE ",
+              "path": "docs/desktop/install-DDE",
+              "children": []
+            },
+            {
+              "label": "DDE User Guide ",
+              "path": "docs/desktop/DDE-User-Manual",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "XFCE",
+          "path": "docs/desktop/xfce",
+          "children": [
+            {
+              "label": "Xfce Installation Guide",
+              "path": "docs/desktop/Install_XFCE",
+              "children": []
+            },
+            {
+              "label": "Xfce User Guide",
+              "path": "docs/desktop/Xfce_userguide",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }	
   ]
