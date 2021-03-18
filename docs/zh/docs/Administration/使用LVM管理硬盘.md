@@ -274,7 +274,7 @@ vgextend [option] vgname pvname ...
 -   vgname：要扩展容量的卷组名称。
 -   pvname：要加入到卷组中的物理卷名称。
 
-示例：将卷组vg1中添加物理卷/dev/sdb。
+示例：向卷组vg1中添加物理卷/dev/sdb。
 
 ```
 # vgextend vg1 /dev/sdb

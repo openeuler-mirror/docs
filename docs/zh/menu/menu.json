@@ -808,9 +808,20 @@
           ]
         },
         {
-          "label": "安装XFCE",
-          "path": "docs/desktop/Install_XFCE",
-          "children": []
+          "label": "XFCE",
+          "path": "docs/desktop/xfce",
+          "children": [
+            {
+              "label": "安装 Xfce",
+              "path": "docs/desktop/Install_XFCE",
+              "children": []
+            },
+            {
+              "label": "Xfce 用户指南",
+              "path": "docs/desktop/Xfce_userguide",
+              "children": []
+            }
+          ]
         }
       ]
     },
