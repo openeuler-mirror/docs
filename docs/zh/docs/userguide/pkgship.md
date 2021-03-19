@@ -101,6 +101,9 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
  /bin/bash auto_install_pkgship_requires.sh redis
 ```
 
+>**说明:**
+>以rpm包方式安装Elasticsearch默认为无密码模式，且pkgship需使用无密码设置的Elasticsearch，因此，当前限制Elasticsearch和pkgship需安装在同一服务器，通过网络隔离提高安全性。后续版本将支持Elasticsearch设置用户名密码。
+
 **3、安装后添加用户**
 
 在安装pkgship软件后，会自动创建名为pkgshipuser的用户和名为pkgshipuser的用户组，无需手动创建，后续服务启动和运行时，都会以该用户角色操作。
@@ -169,7 +172,7 @@ redis_port=6379
 redis_max_connections=10
 
 [DATABASE-数据库]
-;数据库访问地址，默认为本机地址
+;数据库访问地址，目前只支持本机地址
 database_host=127.0.0.1
 
 ;数据库访问端口，默认为9200
