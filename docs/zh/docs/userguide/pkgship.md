@@ -102,7 +102,7 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 ```
 
 >**说明:**
->以rpm包方式安装Elasticsearch默认为无密码模式，且pkgship需使用无密码设置的Elasticsearch，因此，当前限制Elasticsearch和pkgship需安装在同一服务器，通过网络隔离提高安全性。后续版本将支持Elasticsearch设置用户名密码。
+>以rpm包方式安装Elasticsearch默认为无密码模式，且pkgship需使用无密码设置的Elasticsearch，因此，当前建议Elasticsearch和pkgship需安装在同一服务器，通过网络隔离提高安全性。后续版本将支持Elasticsearch设置用户名密码。
 
 **3、安装后添加用户**
 
