@@ -3,18 +3,20 @@
 <!-- TOC -->
 
 - [pkgship](#pkgship)
-    - [介绍](#介绍)
-    - [架构](#架构)
-    - [软件下载](#软件下载)
-    - [运行环境](#运行环境)
-    - [安装工具](#安装工具)
-    - [配置参数](#配置参数)
-    - [服务启动和停止](#服务启动和停止)
-    - [工具使用](#工具使用)
+  - [介绍](#介绍)
+  - [架构](#架构)
+  - [软件下载](#软件下载)
+  - [运行环境](#运行环境)
+  - [安装工具](#安装工具)
+  - [配置参数](#配置参数)
+  - [服务启动和停止](#服务启动和停止)
+  - [工具使用](#工具使用)
+  - [日志查看和转储](#日志查看和转储)
 
 <!-- /TOC -->
 
 ## 介绍
+
 pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系完整图谱的查询工具，pkgship提供软件包依赖查询、生命周期管理、补丁查询等功能。
 
 1. 软件包依赖查询：方便社区人员在软件包引入、更新和删除的时候了解软件的影响范围。
@@ -22,7 +24,7 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 
 ## 架构
 
-系统采用flask-restful开发
+系统采用flask-restful开发，架构如下图所示。
 
 ![avatar](./images/packagemanagement.png)
 
@@ -30,7 +32,7 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 
 * Repo源挂载正式发布地址：<https://repo.openeuler.org/>
 * 源码获取地址：<https://gitee.com/openeuler/pkgship>
-* rpm包版本获取地址：<https://117.78.1.88/project/show/openEuler:Mainline>
+* RPM包版本获取地址：<https://117.78.1.88/project/show/openEuler:Mainline>
 
 ## 运行环境
 
@@ -41,7 +43,7 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 | CPU      | 8核         |
 | 内存     | 32G，最小4G |
 | 网络带宽 | 300M        |
-| I/O      | 375 MB/s    |
+| I/O      | 375MB/sec   |
 
 - 软件配置：
 
@@ -52,28 +54,30 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 | Python        | 版本 3.8及以上                             |
 
 ## 安装工具
+
 **1、pkgship工具安装**
 
   工具安装可通过以下两种方式中的任意一种实现。
 
 * 方法一，通过dnf挂载repo源实现。  
- 先使用dnf挂载pkgship软件在所在repo源（具体方法可参考[应用开发指南](https://openeuler.org/zh/docs/20.09/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装pkgship及其依赖。
+  先使用dnf挂载pkgship软件在所在repo源（具体方法可参考[应用开发指南](https://openeuler.org/zh/docs/20.09/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)），然后执行如下指令下载以及安装pkgship及其依赖。
 
-    ```bash
-    dnf install pkgship
-    ```
+   ```bash
+   dnf install pkgship
+   ```
+
 * 方法二，通过安装rpm包实现。
- 先下载pkgship的rpm包，然后执行如下命令进行安装（其中“x.x-x”表示版本号，请用实际情况代替）。
+  先下载pkgship的rpm包，然后执行如下命令进行安装（其中“x.x-x”表示版本号，请用实际情况代替）。
 
-    ```bash
-    rpm -ivh pkgship-x.x-x.oe1.noarch.rpm
-    ```
+   ```bash
+   rpm -ivh pkgship-x.x-x.oe1.noarch.rpm
+   ```
 
-    或者
+   或者
 
-    ```bash
-    dnf install pkgship-x.x-x.oe1.noarch.rpm
-    ```
+   ```bash
+   dnf install pkgship-x.x-x.oe1.noarch.rpm
+   ```
 
 **2、Elasticsearch和Redis安装**
 
@@ -94,7 +98,7 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
  或者
 
 ```
-/bin/bash auto_install_pkgship_requires.sh redis
+ /bin/bash auto_install_pkgship_requires.sh redis
 ```
 
 **3、安装后添加用户**
@@ -111,23 +115,26 @@ vim /etc/pkgship/package.ini
 
 ```ini
 [SYSTEM-系统配置]
-; 初始化数据库时导入的yaml文件存放位置，该yaml中记录导入的sqlite文件位置。
+; 初始化数据库时导入的yaml文件存放位置，该yaml中记录导入的sqlite文件位置
 init_conf_path=/etc/pkgship/conf.yaml
 
-; 数据库端口。
+; 若部署为客户端-服务端方式，服务端需保证query_ip_addr为本机ip或者（0.0.0.0），
+; 客户端可通过query_ip_addr和query_port访问服务端，或者通过设置映射的remote_host访问服务端
+
+; 服务查询端口
 query_port=8090
 
-; 数据库ip地址。
+; 服务查询ip
 query_ip_addr=127.0.0.1
 
 ; 远程服务的地址，命令行可以直接调用远程服务来完成数据请求。
 remote_host=https://api.openeuler.org/pkgmanage
 
-; 初始化和下载临时文件存放目录，不会长时间占用，建议可用空间至少1G。
+; 初始化和下载临时文件存放目录，不会长时间占用，建议可用空间至少1G
 temporary_directory=/opt/pkgship/tmp/
 
 [LOG-日志]
-; 业务日志存放路径。
+; 业务日志存放路径
 log_path=/var/log/pkgship/
 
 ; 打印日志级别，支持如下：
@@ -141,17 +148,17 @@ max_bytes=31457280
 backup_count=30
 
 [UWSGI-Web服务器配置]
-; 操作日志路径。
+; 操作日志路径
 daemonize=/var/log/pkgship-operation/uwsgi.log
-; 前后端传输数据大小。
+; 前后端传输数据大小
 buffer-size=65536
-; 网络连接超时时间。
+; 网络连接超时时间
 http-timeout=600
-; 服务响应时间。
+; 服务响应时间
 harakiri=600
 
 [REDIS-缓存配置]
-; Redis缓存服务器的地址可以是已发布的可以正常访问的域或IP地址。
+; Redis缓存服务器的地址可以是已发布的可以正常访问的域或IP地址
 ;链接地址默认为127.0.0.1
 redis_host=127.0.0.1
 
@@ -194,6 +201,7 @@ priority: 2
 > dbname请使用小写字母或者数字，不支持大写字母。
 
 ## 服务启动和停止
+
 pkgship启动和停止方式有两种，systemctl方式和pkgshipd方式，其中systemctl方式启动可以有异常停止自启动的机制。两种方式的执行命令为：
 
 ```shell
@@ -218,7 +226,7 @@ pkgshipd stop 停止服务
 
 1. 数据库初始化。  
 
-   > 使用场景：服务启动后，为了能查询对应的数据库（比如oe20.03，oe20.09）中的包信息及包依赖关系，需要将这些数据库通过createrepo生成的sqlite（分为源码库和二进制库）导入进服务内，生成对应的包信息json体然后插入Elasticsearch对应的数据库中。数据库名为根据config.yaml中配置的dbname生成的dbname-source/binary。
+   > 使用场景：服务启动后，为了能查询对应的数据库（比如oe20.03，oe20.09）中的包信息及包依赖关系，需要将这些数据库通过createrepo生成的sqlite（分为源码库和二进制库）导入进服务内，生成对应的包信息json体然后插入Elasticsearch对应的数据库中。数据库名为根据conf.yaml中配置的dbname生成的dbname-source/binary。
 
     ```bash
     pkgship init [-filepath path]
@@ -354,7 +362,7 @@ pkgshipd stop 停止服务
 
  1、业务日志: 
 
-  路径：/var/log/pkgship/log_info.log（支持在conf.yaml中通过log_path字段自定义路径）。
+  路径：/var/log/pkgship/log_info.log（支持在package.ini中通过log_path字段自定义路径）。
 
   功能：主要记录代码内部运行的日志，方便问题定位。
 
@@ -362,7 +370,7 @@ pkgshipd stop 停止服务
 
 2、操作日志：
 
-路径：/var/log/pkgship-operation/uwsgi.log （支持在conf.yaml中通过daemonize字段自定义路径）。
+路径：/var/log/pkgship-operation/uwsgi.log （支持在package.ini中通过daemonize字段自定义路径）。
 
 功能：记录使用者操作信息，包括ip，访问时间，访问url，访问结果等，方便后续查阅以及记录攻击者信息。
 
