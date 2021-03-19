@@ -127,7 +127,7 @@ query_port=8090
 ; 服务查询ip
 query_ip_addr=127.0.0.1
 
-; 远程服务的地址，命令行可以直接调用远程服务来完成数据请求。
+; 远程服务的地址，命令行可以直接调用远程服务来完成数据请求
 remote_host=https://api.openeuler.org/pkgmanage
 
 ; 初始化和下载临时文件存放目录，不会长时间占用，建议可用空间至少1G
