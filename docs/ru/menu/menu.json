@@ -727,7 +727,7 @@
       ]
     },
     {
-      "label": "Toolset User Guide",
+      "label": "Руководство пользователя набора инструментов",
       "path": "docs/userguide/overview",
       "children": [
         {
