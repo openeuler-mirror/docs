@@ -316,4 +316,4 @@ During the operation of the patch-tracking, the following error message may occu
 
 #### Cause Analysis 
 
-The preceding problem is caused by the unstable network access between the patch-tracking and GitHub API. Ensure that the patch-tracking is operating in a stable network environment (for example, HUAWEI CLOUD Hong Kong).
+The preceding problem is caused by the unstable network access between the patch-tracking and GitHub API. Ensure that the patch-tracking is operating in a stable network environment (for example, any region in the HUAWEI CLOUD International Site).
