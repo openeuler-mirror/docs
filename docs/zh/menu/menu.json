@@ -1,7 +1,7 @@
 [
     {
       "label": "法律声明",
-      "path": "docs/Releasenotes/法律声明",
+      "path": "docs/Releasenotes/terms-of-use",
       "children": []
     },
     {
@@ -10,52 +10,52 @@
       "children": [
         {
           "label": "用户须知",
-          "path": "docs/Releasenotes/用户须知",
+          "path": "docs/Releasenotes/user-notice",
           "children": []
         },
         {
           "label": "简介",
-          "path": "docs/Releasenotes/简介",
+          "path": "docs/Releasenotes/introduction",
           "children": []
         },
         {
           "label": "系统安装",
-          "path": "docs/Releasenotes/系统安装",
+          "path": "docs/Releasenotes/installing-the-os",
           "children": []
         },
         {
           "label": "关键特性",
-          "path": "docs/Releasenotes/关键特性",
+          "path": "docs/Releasenotes/key-features",
           "children": []
         },
         {
           "label": "已知问题",
-          "path": "docs/Releasenotes/已知问题",
+          "path": "docs/Releasenotes/known-issues",
           "children": []
         },
         {
           "label": "已修复问题",
-          "path": "docs/Releasenotes/已修复问题",
+          "path": "docs/Releasenotes/resolved-issues",
           "children": []
         },
         {
           "label": "CVE漏洞",
-          "path": "docs/Releasenotes/CVE漏洞",
+          "path": "docs/Releasenotes/cve",
           "children": []
         },
         {
           "label": "源代码",
-          "path": "docs/Releasenotes/源代码",
+          "path": "docs/Releasenotes/source-code",
           "children": []
         },
         {
           "label": "参与贡献",
-          "path": "docs/Releasenotes/参与贡献",
+          "path": "docs/Releasenotes/contribution",
           "children": []
         },
         {
           "label": "致谢",
-          "path": "docs/Releasenotes/致谢",
+          "path": "docs/Releasenotes/acknowledgement",
           "children": []
         }
       ]
@@ -71,31 +71,26 @@
       "children": [
         {
           "label": "安装在服务器",
-          "path": "docs/Installation/安装在服务器",
+          "path": "docs/Installation/install-server",
           "children": [
             {
               "label": "安装准备",
-              "path": "docs/Installation/安装准备",
+              "path": "docs/Installation/installation-preparations",
               "children": []
             },
             {
               "label": "安装方式介绍",
-              "path": "docs/Installation/安装方式介绍",
+              "path": "docs/Installation/installation-mode",
               "children": []
             },
             {
               "label": "安装指导",
-              "path": "docs/Installation/安装指导",
+              "path": "docs/Installation/installation-guideline",
               "children": []
             },
             {
               "label": "使用kickstart自动化安装",
-              "path": "docs/Installation/使用kickstart自动化安装",
-              "children": []
-            },
-            {
-              "label": "安装UKUI",
-              "path": "docs/Installation/安装UKUI",
+              "path": "docs/Installation/using-kickstart-for-automatic-installation",
               "children": []
             },
             {
@@ -107,31 +102,31 @@
         },
         {
           "label": "安装在树莓派",
-          "path": "docs/Installation/安装在树莓派",
+          "path": "docs/Installation/install-pi",
           "children": [
             {
               "label": "安装准备",
-              "path": "docs/Installation/安装准备-1",
+              "path": "docs/Installation/Installation-Preparations1",
               "children": []
             },
             {
               "label": "安装方式介绍",
-              "path": "docs/Installation/安装方式介绍-1",
+              "path": "docs/Installation/Installation-Modes1",
               "children": []
             },
             {
               "label": "安装指导",
-              "path": "docs/Installation/安装指导-1",
+              "path": "docs/Installation/Installation-Guide1",
               "children": []
             },
             {
               "label": "FAQ",
-              "path": "docs/Installation/FAQ-1",
+              "path": "docs/Installation/FAQ1",
               "children": []
             },
             {
               "label": "更多资源",
-              "path": "docs/Installation/更多资源",
+              "path": "docs/Installation/More-Resources",
               "children": []
             }
           ]
@@ -144,78 +139,83 @@
       "children": [
         {
           "label": "查看系统信息",
-          "path": "docs/Administration/查看系统信息",
+          "path": "docs/Administration/viewing-system-information",
           "children": []
         },
         {
           "label": "基础配置",
-          "path": "docs/Administration/基础配置",
+          "path": "docs/Administration/basic-configuration",
           "children": []
         },
         {
           "label": "管理用户和用户组",
-          "path": "docs/Administration/管理用户和用户组",
+          "path": "docs/Administration/user-and-user-group-management",
           "children": []
         },
         {
           "label": "使用DNF管理软件包",
-          "path": "docs/Administration/使用DNF管理软件包",
+          "path": "docs/Administration/using-the-dnf-to-manage-software-packages",
           "children": []
         },
         {
           "label": "管理服务",
-          "path": "docs/Administration/管理服务",
+          "path": "docs/Administration/service-management",
           "children": []
         },
         {
           "label": "管理进程",
-          "path": "docs/Administration/管理进程",
+          "path": "docs/Administration/process-management",
+          "children": []
+        },
+        {
+          "label": "管理内存",
+          "path": "docs/Administration/memory-management",
           "children": []
         },
         {
           "label": "配置网络",
-          "path": "docs/Administration/配置网络",
+          "path": "docs/Administration/configuring-the-network",
           "children": []
         },
         {
           "label": "使用LVM管理硬盘",
-          "path": "docs/Administration/使用LVM管理硬盘",
+          "path": "docs/Administration/managing-hard-disks-through-lvm",
           "children": []
         },
         {
           "label": "使用KAE加速引擎",
-          "path": "docs/Administration/使用KAE加速引擎",
+          "path": "docs/Administration/using-the-kae",
           "children": []
         },
         {
           "label": "搭建服务",
-          "path": "docs/Administration/搭建服务",
+          "path": "docs/Administration/configuring-services",
           "children": [
             {
               "label": "搭建repo服务器",
-              "path": "docs/Administration/搭建repo服务器",
+              "path": "docs/Administration/configuring-the-repo-server",
               "children": []
             },
             {
               "label": "搭建FTP服务器",
-              "path": "docs/Administration/搭建FTP服务器",
+              "path": "docs/Administration/configuring-the-ftp-server",
               "children": []
             },
             {
               "label": "搭建web服务器",
-              "path": "docs/Administration/搭建web服务器",
+              "path": "docs/Administration/configuring-the-web-server",
               "children": []
             },
             {
               "label": "搭建数据库服务器",
-              "path": "docs/Administration/搭建数据库服务器",
+              "path": "docs/Administration/setting-up-the-database-server",
               "children": []
             }
           ]
         },
         {
           "label": "可信计算",
-          "path": "docs/Administration/可信计算",
+          "path": "docs/Administration/trusted-computing",
           "children": []
         },
         {
@@ -712,27 +712,27 @@
       "children": [
         {
           "label": "开发环境准备",
-          "path": "docs/ApplicationDev/开发环境准备",
+          "path": "docs/ApplicationDev/preparation",
           "children": []
         },
         {
           "label": "使用GCC编译",
-          "path": "docs/ApplicationDev/使用GCC编译",
+          "path": "docs/ApplicationDev/using-gcc-for-compilation",
           "children": []
         },
         {
           "label": "使用make编译",
-          "path": "docs/ApplicationDev/使用make编译",
+          "path": "docs/ApplicationDev/using-make-for-compilation",
           "children": []
         },
         {
           "label": "使用JDK编译",
-          "path": "docs/ApplicationDev/使用JDK编译",
+          "path": "docs/ApplicationDev/using-jdk-for-compilation",
           "children": []
         },
         {
           "label": "构建RPM包",
-          "path": "docs/ApplicationDev/构建RPM包",
+          "path": "docs/ApplicationDev/building-an-rpm-package",
           "children": []
         },
         {
@@ -781,7 +781,7 @@
           "children": [
             {
               "label": "安装 UKUI",
-              "path": "docs/desktop/安装UKUI",
+              "path": "docs/desktop/install-UKUI",
               "children": []
             },
             {
@@ -797,7 +797,7 @@
           "children": [
             {
               "label": "安装 DDE",
-              "path": "docs/desktop/安装DDE",
+              "path": "docs/desktop/install-DDE",
               "children": []
             },
             {

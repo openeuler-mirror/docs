@@ -172,7 +172,7 @@ redis_port=6379
 redis_max_connections=10
 
 [DATABASE-数据库]
-;数据库访问地址，目前只支持本机地址
+;数据库访问地址，建议设置为本机地址
 database_host=127.0.0.1
 
 ;数据库访问端口，默认为9200
