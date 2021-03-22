@@ -143,7 +143,7 @@
       "path": "docs/Administration/administration",
       "children": [
         {
-          "label": "Viewing System Information",
+          "label": "Просмотр информации о системе",
           "path": "docs/Administration/viewing-system-information",
           "children": []
         },
@@ -158,7 +158,7 @@
           "children": []
         },
         {
-          "label": "Using the DNF to Manage Software Packages",
+          "label": "Управление пакетами программного обеспечения с помощью DNF",
           "path": "docs/Administration/using-the-dnf-to-manage-software-packages",
           "children": []
         },
@@ -168,7 +168,7 @@
           "children": []
         },
         {
-          "label": "Process Management",
+          "label": "Управление процессами",
           "path": "docs/Administration/process-management",
           "children": []
         },
@@ -183,12 +183,12 @@
           "children": []
         },
         {
-          "label": "Using the KAE",
+          "label": "Использование KAE",
           "path": "docs/Administration/using-the-kae",
           "children": []
         },
         {
-          "label": "Configuring Services",
+          "label": "Настройка служб",
           "path": "docs/Administration/configuring-services",
           "children": [
             {
@@ -197,17 +197,17 @@
               "children": []
             },
             {
-              "label": "Configuring the FTP Server",
+              "label": "Настройка сервера FTP",
               "path": "docs/Administration/configuring-the-ftp-server",
               "children": []
             },
             {
-              "label": "Configuring the Web Server",
+              "label": "Настройка веб-сервера",
               "path": "docs/Administration/configuring-the-web-server",
               "children": []
             },
             {
-              "label": "Setting Up the Database Server",
+              "label": "Настройка сервера базы данных",
               "path": "docs/Administration/setting-up-the-database-server",
               "children": []
             }
@@ -302,7 +302,7 @@
           "children": []
         },
         {
-          "label": "VM Configuration",
+          "label": "Конфигурирование виртуальной машины",
           "path": "docs/Virtualization/vm-configuration",
           "children": []
         },
@@ -312,7 +312,7 @@
           "children": []
         },
         {
-          "label": "VM Live Migration",
+          "label": "Горячая миграция виртуальных машин",
           "path": "docs/Virtualization/vm-live-migration",
           "children": []
         },
@@ -322,7 +322,7 @@
           "children": []
         },
         {
-          "label": "Managing Devices",
+          "label": "Управление устройствами",
           "path": "docs/Virtualization/managing-devices",
           "children": []
         },
@@ -337,12 +337,12 @@
           "children": []
         },
         {
-          "label": "Tool Guide",
+          "label": "Руководство по инструментам",
           "path": "docs/Virtualization/tool-guide",
           "children": []
         },
         {
-          "label": "Appendix",
+          "label": "Приложение",
           "path": "docs/Virtualization/appendix",
           "children": []
         }
@@ -705,12 +705,12 @@
           "children": []
         },
         {
-          "label": "Using Make for Compilation",
+          "label": "Компиляция с использованием утилиты make",
           "path": "docs/ApplicationDev/using-make-for-compilation",
           "children": []
         },
         {
-          "label": "Using JDK for Compilation",
+          "label": "Применение компиляторов JDK",
           "path": "docs/ApplicationDev/using-jdk-for-compilation",
           "children": []
         },
@@ -720,7 +720,7 @@
           "children": []
         },
         {
-          "label": "FAQ",
+          "label": "Вопросы и ответы",
           "path": "docs/ApplicationDev/FAQ",
           "children": []
         }
