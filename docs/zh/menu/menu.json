@@ -376,11 +376,6 @@
             "label": "虚拟机管理",
             "path": "docs/StratoVirt/虚拟机管理",
             "children": []
-          },
-        {
-          "label": "设备管理",
-          "path": "docs/StratoVirt/设备管理",
-          "children": []
         },
         {
           "label": "对接iSula安全容器",
