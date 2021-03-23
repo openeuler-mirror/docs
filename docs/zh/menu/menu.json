@@ -686,7 +686,7 @@
       ]
     },
     {
-      "label": "NVWA用户指南",
+      "label": "内核热升级用户指南",
       "path": "docs/NVWA/NVWA",
       "children": [
         {
