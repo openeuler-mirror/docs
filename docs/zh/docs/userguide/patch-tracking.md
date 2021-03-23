@@ -322,6 +322,6 @@ patch-tracking 运行过程中，可能会出现如下报错：
 
 #### 原因分析  
 
-以上问题是 patch-tracking 与 GitHub API 服务之间网络访问不稳定导致，请确保在与 GitHub API 服务之间网络稳定的环境中（如华为云香港区域）运行 patch-tracking。
+以上问题是 patch-tracking 与 GitHub API 服务之间网络访问不稳定导致，请确保在与 GitHub API 服务之间网络稳定的环境中（如华为云任一国际站点）运行 patch-tracking。
 
 
