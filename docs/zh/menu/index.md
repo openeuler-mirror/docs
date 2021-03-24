@@ -42,7 +42,6 @@ headless: true
         -   [搭建repo服务器]({{< relref "./docs/Administration/搭建repo服务器.md" >}})
         -   [搭建FTP服务器]({{< relref "./docs/Administration/搭建FTP服务器.md" >}})
         -   [搭建web服务器]({{< relref "./docs/Administration/搭建web服务器.md" >}})
-        -   [FAQ]({{< relref "./docs/Installation/FAQ-1.md" >}})
         -   [搭建数据库服务器]({{< relref "./docs/Administration/搭建数据库服务器.md" >}})
     -   [可信计算]({{< relref "./docs/Administration/可信计算.md" >}})
     -   [FAQ]({{< relref "./docs/Administration/FAQ-54.md" >}})
