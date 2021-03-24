@@ -35,7 +35,7 @@ headless: true
         -   [搭建FTP服务器]({{< relref "./docs/Administration/搭建FTP服务器.md" >}})
         -   [搭建web服务器]({{< relref "./docs/Administration/搭建web服务器.md" >}})
         -   [搭建数据库服务器]({{< relref "./docs/Administration/搭建数据库服务器.md" >}})
-    -   [FAQ]({{< relref "./docs/Installation/FAQ-54.md" >}})
+    -   [FAQ]({{< relref "./docs/Administration/FAQ-54.md" >}})
 -   [安全加固指南]({{< relref "./docs/SecHarden/secHarden.md" >}})
     -   [操作系统加固概述]({{< relref "./docs/SecHarden/操作系统加固概述.md" >}})
     -   [加固指导]({{< relref "./docs/SecHarden/加固指导.md" >}})
