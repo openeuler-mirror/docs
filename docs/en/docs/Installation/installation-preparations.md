@@ -105,7 +105,7 @@ You need to take hardware compatibility into account during openEuler installati
 | Architecture | AArch64<br/> x86_64|64-bit Arm architecture<br/>64-bit Intel x86 architecture |
 | CPU | Huawei Kunpeng 920 series<br/>Intel ® Xeon® processor|- |
 | Memory | ≥ 4 GB (8 GB or higher recommended for better user experience)|- |
-| Hard disk | ≥ 120 GB (for better user experience) | The hard disk supports IDE, SATA, SAS interfaces.|
+| Hard disk | ≥ 32 GB (120 GB or higher recommended for better user experience) | The hard disk supports IDE, SATA, SAS interfaces.|
 
 
 ## Installation Requirements for VMs
