@@ -158,4 +158,4 @@ headless: true
         -   [DDE User Guide]({{< relref "./docs/desktop/DDE-User-Manual.md" >}})
     -   [XFCE]({{< relref "./docs/desktop/xfce.md" >}})
         -   [Xfce Installation Guide]({{< relref "./docs/desktop/Install_XFCE.md" >}})
-        -   [Xfce User Guide]({{< relref "./docs/desktop/Xfce_userguide.md" >}})
+  
