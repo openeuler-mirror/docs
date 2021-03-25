@@ -1,8 +1,9 @@
 $(function($) {
     var isEvaluate = false;
     var urlArr = (window.location.pathname).split("/");
-    var isAdd1 = $("#markdown").find("ul").first().find("li").find("a");
-    var isAdd2 = $("#markdown").find(".table-of-contents").first().find("ul");
+    var isAdd1 = $("#markdown>ul").first().find("li").children().is("ul");
+    var isAdd2 = $("#markdown>ul").first().find("li").children().is("a");
+    var isAdd3 = $("#markdown>.table-of-contents").first().find("ul");
     var  evaluateParams = {
         name: '',
         path: '',
@@ -48,10 +49,11 @@ $(function($) {
         });
         e.stopPropagation();
     });
-
-    if(isAdd1.length || isAdd2) {
-        var linkEle = isAdd1.length?$("#markdown").find("ul").first():isAdd2;
+    if(isAdd1 && isAdd2) {
+        let linkEle = $("#markdown>ul").first().clone();
         $("#title-evaluate>.title").append(linkEle);
+    }else if(isAdd3) {
+        $("#title-evaluate>.title").append(isAdd3);
     }
     $("#title-evaluate>.title").find("li").find("a").click(function (e) {
         $("#title-evaluate>.title").find("li").find("a").removeClass("active");

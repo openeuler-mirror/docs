@@ -125,7 +125,7 @@
     margin-bottom: 20px;
 }
 
-#menu-box .jstree-open>.jstree-anchor {
+#menu-box .jstree-open>.jstree-anchor,#menu-box .jstree-node>.jstree-anchor.jstree-clicked {
     color: #002FA7 !important;
 }
 
@@ -157,15 +157,13 @@
 .top-link {
     position: relative;
     border-bottom: 1px solid rgba(0, 0, 0, 0.09);
-    margin-left: 320px;
-    height: 50px;
+    width: 100%;
     padding: 17px 0;
 }
 
 .docscontainer .top-link .link-container {
     display: flex;
     flex-direction: row;
-    margin-left: 80px;
 }
 
 .top-link .docs-a {
@@ -249,11 +247,31 @@
 
 
 /* 中间文档 */
+
+#docsMenu {
+    animation: fadeIn .8s linear;
+    -webkit-animation: fadeIn .8s linear;
+    display: none;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      display: block;
+    }
+  }
+
 #page {  
     font-size: 14px;
     color: #36383D;
     line-height: 24px;
     margin-top: 40px;
+    padding-bottom: 400px;
 }
 
 #page h1,#page h2,#page h3,
@@ -308,7 +326,7 @@
 }
 
 #title-evaluate ul li {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 
@@ -318,6 +336,10 @@
 
 #title-evaluate .title .active{
     color: #002FA7;
+}
+
+#title-evaluate .title ul {
+    list-style: disc;
 }
 
 #title-evaluate .evaluate {
