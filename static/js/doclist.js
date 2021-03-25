@@ -1,5 +1,4 @@
 $(function($) {
-    
     $(".h5-right>.icon-lang,#lang").click(function (e) {
         $(this).find(".option").show();
         $(document).one("click", function(){
@@ -23,8 +22,10 @@ $(function($) {
     $("#LTS-value").click(function (e) {
         $(this).toggleClass("active");
         if($(this).attr("class")) {
+            $(".doc-box").addClass("active");
             $(".doc-box>.version").not("[key*='LTS']").hide();
         }else {
+            $(".doc-box").removeClass("active");
             $(".doc-box>.version").not("[key*='LTS']").show();
         }
     });

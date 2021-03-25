@@ -205,6 +205,29 @@
     margin: 100px 0 200px 0;
 }
 
+/* 文档链接写死样式 */
+html[lang="zh"] .doclist .doc-catalog .list[index="95"] .manage,
+html[lang="zh"] .doclist .doc-catalog .list[index="97"] .manage,
+html[lang="en"] .doclist .doc-catalog .list[index="95"] .manage,
+html[lang="en"] .doclist .doc-catalog .list[index="96"] .manage,
+html[lang="en"] .doclist .doc-catalog .list[index="98"] .manage,
+html[lang="en"] .doclist .doc-catalog .list[index="97"] .manage,
+html[lang="en"] .doclist .doc-catalog .list[index="95"] .migrate,
+html[lang="ru"] .doclist .doc-catalog .list[index="95"] .manage,
+html[lang="ru"] .doclist .doc-catalog .list[index="96"] .manage,
+html[lang="ru"] .doclist .doc-catalog .list[index="98"] .manage,
+html[lang="ru"] .doclist .doc-catalog .list[index="97"] .manage,
+html[lang="ru"] .doclist .doc-catalog .list[index="95"] .migrate,
+html[lang="zh"] .doclist .doc-catalog .list[index="95"] .migrate {
+    height: 106px;
+}
+
+html[lang="zh"] .doclist .doc-catalog .list[index="96"] .migrate {
+    height: 200px;
+}
+
+
+
 
 @media screen and (max-width: 1900px) {
     .doclist .doc-catalog .list>div {
@@ -266,6 +289,9 @@
 
     .doclist .doc-box .version:nth-of-type(2n) {
         margin-right: 0;
+    }
+    .doclist .doc-box.active .version:nth-of-type(2) {
+        margin-right: 25px;
     }
 
     .doclist .doc-catalog {
@@ -334,6 +360,23 @@
         color: #0B162B;
         line-height: 26px;
     }
+
+    html[lang="zh"] .doclist .doc-catalog .list[index="95"] .manage,
+    html[lang="zh"] .doclist .doc-catalog .list[index="97"] .manage,
+    html[lang="en"] .doclist .doc-catalog .list[index="95"] .manage,
+    html[lang="en"] .doclist .doc-catalog .list[index="96"] .manage,
+    html[lang="en"] .doclist .doc-catalog .list[index="98"] .manage,
+    html[lang="en"] .doclist .doc-catalog .list[index="97"] .manage,
+    html[lang="en"] .doclist .doc-catalog .list[index="95"] .migrate,
+    html[lang="ru"] .doclist .doc-catalog .list[index="95"] .manage,
+    html[lang="ru"] .doclist .doc-catalog .list[index="96"] .manage,
+    html[lang="ru"] .doclist .doc-catalog .list[index="98"] .manage,
+    html[lang="ru"] .doclist .doc-catalog .list[index="97"] .manage,
+    html[lang="ru"] .doclist .doc-catalog .list[index="95"] .migrate,
+    html[lang="zh"] .doclist .doc-catalog .list[index="95"] .migrate {
+        height: 142px;
+    }
+
 }
 
 
