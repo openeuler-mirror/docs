@@ -1,0 +1,641 @@
+/* 详情页面样式 */
+/* 版本选择 */
+
+
+#menu-box {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    background: rgba(0, 47, 167, 0.03);
+    z-index: 10;
+}
+
+
+#version-select {
+    display: flex;
+    width: 320px;
+    height: 50px;
+    font-size: 18px;
+    color: #002FA7;
+    line-height: 20px;
+    box-sizing: border-box;
+    padding: 40px;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+#version-select .option {
+    position: absolute;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 47, 167, 0.5);
+    left: 0;
+    top: 57px;
+    display: none;
+}
+
+#version-select .option a {
+    font-size: 18px;
+    padding: 0 40px;
+    display: block;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 30px;
+    height: 26px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 3;
+}
+
+#version-select .option a:hover {
+    background: rgba(0, 47, 167, 0.06);
+}
+
+#version-select .angle {
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid rgba(0, 47, 167, 0.5);
+    border-left: 1px solid rgba(0, 47, 167, 0.5);
+    background: #FFFFFF;
+    margin: 0 0 0 -5px;
+    transform: rotate(45deg);
+    z-index: 2;
+}
+
+#version-select .v-icon-down {
+    background-image: url('../img/detail/v-icon-down.svg');
+    margin-left: 8px;
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+}
+
+/* 左侧导航栏 */
+
+#docstreeview {
+    padding: 0 20px;
+    height: calc(100vh - 120px);
+    overflow: auto;
+}
+
+#menu-box .jstree-container-ul {
+    width: 220px;
+    padding: 0 20px;
+}
+
+#menu-box .jstree-container-ul>.jstree-node {
+    margin-bottom: 30px;
+}
+
+.jstree-open .jstree-closed .jstree-ocl,.jstree-closed .jstree-ocl{
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background-image: url('../img/detail/icon-right.svg');
+    margin-right: 9px;
+}
+
+#menu-box .jstree-node>.jstree-anchor {
+    display: inline-block;
+    width: 120px;
+    white-space: nowrap;
+}
+
+#menu-box .jstree-node>.jstree-anchor,
+#menu-box .jstree-node>.jstree-anchor p a{
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.85);
+    line-height: 16px;
+}
+
+#menu-box .jstree-node>.jstree-anchor:focus,#menu-box .jstree-node>.jstree-anchor p {
+    outline: 0;
+}
+
+.jstree-node .jstree-children {
+    padding: 20px 0 0 20px;
+}
+
+.jstree-node .jstree-children>li {
+    margin-bottom: 20px;
+}
+
+#menu-box .jstree-open>.jstree-anchor {
+    color: #002FA7 !important;
+}
+
+#menu-box .jstree-open>.jstree-icon {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-right: 9px;
+    background-image: url('../img/detail/blue-down.svg');
+    
+}
+
+#docstreeview::-webkit-scrollbar-track {
+	border-radius:4px;
+	background-color:#F5F5F5;
+}
+#docstreeview::-webkit-scrollbar {
+	width:6px;
+	background-color:#F5F5F5;
+}
+#docstreeview::-webkit-scrollbar-thumb {
+	border-radius:4px;
+    background: rgba(0, 47, 167, 0.1);
+}
+
+
+
+/* 头部链接 */
+.top-link {
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    margin-left: 320px;
+    height: 50px;
+    padding: 17px 0;
+}
+
+.docscontainer .top-link .link-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 80px;
+}
+
+.top-link .docs-a {
+    width: 400px;
+    margin-right: 294px;
+}
+
+.top-link .docs-a a{
+    font-size: 16px;
+    color: #002FA7;
+    line-height: 16px;
+}
+
+.top-link .docs-a a:focus {
+    outline: 0;
+}
+
+.top-link .docs-a>i {
+    display: inline-block;
+    width: 20px;
+    height: 16px;
+    background-image: url('../img/detail/slash.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-bottom: -3px;
+}
+
+.top-link .prev-next {
+    width: 172px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#source,#feedbook,#prev,#next {
+    cursor: pointer;
+}
+
+.top-link .prev-next .icon-prev,
+.top-link .prev-next .icon-next,
+.top-link .other-link .source-code,
+.top-link .other-link .feedbook {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-bottom: -3px;
+}
+
+.top-link .prev-next span,
+.top-link .other-link span {
+    font-size: 14px;
+    color: #002FA7;
+    line-height: 24px;
+}
+
+.top-link .prev-next .icon-prev {
+    background-image: url('../img/detail/icon-prev.svg');
+}
+
+.top-link .prev-next .icon-next {
+    background-image: url('../img/detail/icon-next.svg');
+}
+
+.top-link .other-link {
+    width: 196px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 64px;
+}
+
+
+.top-link .other-link .source-code {
+    background-image: url('../img/detail/source-code.png');
+}
+
+.top-link .other-link .feedbook {
+    background-image: url('../img/detail/feedback.png');
+}
+
+
+/* 中间文档 */
+#page {  
+    font-size: 14px;
+    color: #36383D;
+    line-height: 24px;
+    margin-top: 40px;
+}
+
+#page h1,#page h2,#page h3,
+#page h4,#page h5 {
+    color: #000000;
+}
+
+#page h1 {
+    font-size: 36px;
+    line-height: 46px;
+}
+
+#page h2 {
+    font-size: 24px;
+    line-height: 34px;
+}
+
+#page h3 {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+#page h4 {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+#page h5 {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+
+/* 标题导航栏 */
+
+#title-evaluate {
+    width: 320px;
+    padding: 37px 40px 0 0;
+    position: fixed;
+    top: 110px;
+    right: 0;
+}
+
+#title-evaluate a {
+    font-size: 14px;
+    color: #36383D;
+    line-height: 24px;
+}
+
+#title-evaluate li ul {
+    padding-left: 16px;
+}
+
+#title-evaluate ul li {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#title-evaluate ul li:last-of-type {
+    margin-bottom: 0;
+}
+
+#title-evaluate .title .active{
+    color: #002FA7;
+}
+
+#title-evaluate .evaluate {
+    margin-top: 54px;
+}
+
+#title-evaluate .evaluate span {
+    font-size: 14px;
+    color: #000000;
+    line-height: 17px;
+}
+
+#title-evaluate .evaluate i {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/detail/icon-star.svg');
+    cursor: pointer;
+    margin-bottom: -2px;
+    position: relative;
+}
+
+#title-evaluate .evaluate i>div {
+    width: 60px;
+    height: 20px;
+    box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top: 22px;
+    left: -21px;
+    display: none;
+}
+
+#title-evaluate .evaluate i[key="1"]>div {
+    background-image: url('../img/detail/1-star.png');
+}
+
+#title-evaluate .evaluate i[key="2"]>div {
+    background-image: url('../img/detail/2-star.png');
+}
+
+#title-evaluate .evaluate i[key="3"]>div {
+    background-image: url('../img/detail/3-star.png');
+}
+
+#title-evaluate .evaluate i[key="4"]>div {
+    background-image: url('../img/detail/4-star.png');
+}
+
+#title-evaluate .evaluate i[key="5"]>div {
+    background-image: url('../img/detail/5-star.png');
+}
+
+#title-evaluate .evaluate .active {
+    background-image: url('../img/detail/active-star.svg');
+}
+
+
+/* 文档内容样式重置 */
+#markdown table tr:nth-child(odd) td,#markdown table tr:nth-child(odd) th{
+    background-color: unset;
+}
+#markdown table td,#markdown table th{
+    border: 1px solid gray;
+}
+#markdown table thead{
+    background: #f7f7f7;
+}
+#markdown h1 a,#markdown h2 a,#markdown h3 a
+#markdown h4 a,#markdown h5 a,#markdown h6 a
+{
+    display: none;
+}
+
+#markdown a[href^='#'] {
+    display: inline;
+}
+
+#markdown pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#markdown pre,#markdown code,
+#markdown p,#markdown ul li,
+#markdown ol li,
+#markdown table tr {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#markdown p {
+    line-height: 24px;
+}
+
+#markdown pre p a,#markdown code p a,
+#markdown p a,#markdown ul li p a,
+#markdown ol li p a,
+#markdown table tr p a {
+    color: #002fa7;
+    text-decoration: none;
+}
+
+#markdown pre p img,#markdown code p img,
+#markdown p img,#markdown ul li p img,
+#markdown ol li p img,
+#markdown table tr p img {
+    max-width: 100%;
+}
+
+#markdown h1,#markdown h2,
+#markdown h3,#markdown  h4,
+#markdown h5 {
+    font-weight: bold;
+    margin: 30px 0 20px 0;
+}
+
+#markdown h1 a,#markdown h2 a,
+#markdown h3 a,#markdown  h4 a,
+#markdown h5 a {
+    display: none;
+}
+
+#markdown h1 {
+    font-size: 36px;
+    margin-top: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid;
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+#markdown h2 {
+    font-size: 24px;
+}
+#markdown h3 {
+    font-size: 20px;
+}
+#markdown h4 {
+    font-size: 18px;
+}
+#markdown h5 {
+    font-size: 16px;
+}
+
+#markdown ol li,
+#markdown ul li {
+    line-height: 24px;
+}
+
+#markdown ol li ol {
+    padding-left: 20px;
+}
+
+#markdown ul li a {
+    color: #002fa7;
+    text-decoration: none;
+}
+
+#h5-menu ul {
+    display: none;
+}
+
+#h5-menu-top {
+    display: none;
+}
+
+@media screen and (max-width: 1900px) {
+    
+    #version-select {
+        width: 260px;
+    }
+    .docscontainer .top-link .link-container{
+        margin-left: 0;
+    }
+    .top-link .docs-a {
+        margin-right: 120px;
+    }
+    #title-evaluate {
+        width: 258px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #menu-box,.top-link,#title-evaluate {
+        display: none;
+    }
+    #h5-menu-top {
+        display: block;
+    }
+    #h5-menu ul {
+        width: 100%;
+        height: 44px;
+        background: #FBFBFB;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+        padding: 12px 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #002FA7;
+        line-height: 24px;
+    }
+
+    #h5-menu a span {
+        color: #002FA7;
+    }
+    #h5-menu a i {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-bottom: -2px;
+    }
+    #h5-menu a .icon-next {
+        background-image: url('../img/detail/blue-right.svg');
+    }
+
+    #h5-menu a .icon-prev {
+        background-image: url('../img/detail/blue-left.svg');
+    }
+
+    #markdown {
+        width: 100%;
+    }
+
+    #markdown h1 {
+        font-size: 18px;
+        line-height: 18px;
+    }
+    
+    #markdown h2 {
+        font-size: 17px;
+        line-height: 17px;
+    }
+    #markdown h3 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    #markdown h4 {
+        font-size: 15px;
+        line-height: 15px;
+    }
+    #markdown h5 {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    
+    #markdown p,#markdown ul li,#markdown ol li {
+        line-height: 30px;
+    }
+
+    #markdown a,#markdown li,#markdown p {
+        word-break:break-all;
+        word-wrap:break-word; 
+    }
+
+    #markdown table tr {
+        height: 52px;
+    }
+
+    #markdown table tr th,#markdown table tr td {
+        padding-left: 10px;
+    }
+
+    #markdown pre,#markdown code,
+    #markdown p,#markdown ul li,
+    #markdown ol li,
+    #markdown table tr {
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    #menu-box {
+        background: #FBFBFB;
+        width: 100%;
+    }
+    
+    #version-select {
+        display: none;
+    }
+
+    #h5-menu-top p {
+        font-size: 14px;
+        color: #002FA7;
+        line-height: 24px;
+        text-align: center;
+        position: relative;
+        margin: 10px 0 20px 0;
+    }
+
+    #h5-menu-top p .icon-close{
+        display: block;
+        background-image: url('../img/search/icon-close.svg');
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        right: 20px;
+        top: 6px;
+    }
+
+    #h5-menu-top .container .select-box>span {
+        font-size: 16px;
+        color: #002FA7;
+        line-height: 24px;
+    }
+
+    #h5-menu-top .container .select-box {
+        margin: 30px 0 !important;
+        padding: 4px 12px;
+        align-items: center;
+        width: 158px;
+    }
+
+    /* #h5-menu-top .container .select-box .option {
+        display: block;
+    } */
+
+    #h5-menu-top .container .select-box .option a {
+        font-size: 13px;
+    }
+
+}   

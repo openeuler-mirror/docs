@@ -1,0 +1,37 @@
+<nav class="nav-box">
+    <div class="nav-menu container">
+        <div class="left">
+            <a href="https://openeuler.org/zh/"><img src="/openeuler.png" alt="" /></a>
+            <span class="home">{{ .Site.Params.navLink }}</span>
+        </div>
+        <div class="right">
+            <div id="nav-search">
+                <div>
+                    <input type="text" placeholder="Search" class="search-text" />
+                </div>
+                <i class="icon-search"></i>
+            </div>
+            <div name="lang" id="lang">
+                <span>{{ i18n "current_lang" }}</span>
+                <i class="icon-down"></i>
+                <div class="option">
+                    <a href="/zh/">{{ .Site.Params.languageZh }}</a>
+                    <a href="/en/">{{ .Site.Params.languageEn }}</a>
+                    <a href="/ru/">{{ .Site.Params.languageRu }}</a>
+                    <div class="angle"></div>
+                </div>
+            </div>
+        </div>
+        <div class="h5-right">
+            <i class="icon-lang">
+                <div class="option">
+                    <a href="/zh/">{{ .Site.Params.languageZh }}</a>
+                    <a href="/en/">{{ .Site.Params.languageEn }}</a>
+                    <a href="/ru/">{{ .Site.Params.languageRu }}</a>
+                    <div class="angle"></div>
+                </div>
+            </i>
+            <i class="icon-home home"></i>
+        </div>
+    </div>
+</nav>

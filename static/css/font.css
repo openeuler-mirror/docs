@@ -1,0 +1,15 @@
+@font-face {
+    font-display: swap;
+    font-family: "FZLT";
+    src: url("https://openeuler-website-beijing.obs.cn-north-4.myhuaweicloud.com/Font/FZLTHJW.TTF");
+}
+@font-face {
+    font-family: "Roboto";
+    font-display: swap;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: "Roboto-BoldCondensed";
+    font-display: swap;
+    src: url(../fonts/Roboto-BoldCondensed.ttf);
+}
