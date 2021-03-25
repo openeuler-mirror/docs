@@ -24,21 +24,12 @@ do
   mkdir -p ../website/content/en/docs/$b
   cp -r ./docs/en/* ../website/content/en/docs/$b/ 
   
-  if [ -d "./docs/ru" ]; then
-    mkdir -p ../website/content/ru/docs/$b
-        cp -r ./docs/ru/* ../website/content/ru/docs/$b/ 
-  fi
+  #if [ -d "./docs/ru" ]; then
+    #mkdir -p ../website/content/ru/docs/$b
+        #cp -r ./docs/ru/* ../website/content/ru/docs/$b/ 
+  #fi
   
   cd ..
   cd ./docs
 done
 cd ..
-if [ -d "./website/content/zh/docs/1.0_Base" ];then
-    rm -rf ./website/content/zh/docs/1.0_Base
-fi
-if [ -d "./website/content/en/docs/1.0_Base" ];then
-    rm -rf ./website/content/en/docs/1.0_Base
-fi
-if [ -d "./website/content/ru/docs/1.0_Base" ];then
-    rm -rf ./website/content/ru/docs/1.0_Base
-fi
