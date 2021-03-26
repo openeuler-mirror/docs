@@ -62,5 +62,5 @@ paginate = 10
     version_97 = "20.03 LTS"
     version_98 = "20.09"
 
-    navLink = "For Documentation"
+    navLink = "Documentation"
 

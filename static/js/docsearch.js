@@ -70,8 +70,12 @@ $(function($) {
         solveData: function (result,text) {
             $("#search-result>ul").empty();
             result.forEach((item) => {
+                let urlArr = item.path.split('/');
+                let name = item.title.replace("<em>","");
+                name = name.replace("</em>","");
+                let url = `/${urlArr[7]}/docs/${urlArr[6]}/docs/${urlArr[9]}/${name}.html` ;
                 $("#search-result>ul").append(`<li>
-                <div class="res-title">
+                <div class="res-title" href="${url}">
                 ${item.title}
                 </div>
                 <div class="res-desc">
@@ -82,7 +86,7 @@ $(function($) {
                 </div>
                 </li>`);
                 $("#search-result>ul li").find(".res-title").click(function (e) {
-                    window.location.href = item.path;
+                    window.location.href = $(this).attr("href");
                 });
             });
         }

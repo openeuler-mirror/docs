@@ -6,7 +6,7 @@
     position: fixed;
     top: 60px;
     left: 0;
-    background: rgba(0, 47, 167, 0.03);
+    background: #F7F8FC;
     z-index: 10;
 }
 
@@ -43,7 +43,7 @@
     cursor: pointer;
     color: rgba(0, 0, 0, 0.7);
     line-height: 30px;
-    height: 26px;
+    height: 30px;
     box-sizing: border-box;
     position: relative;
     z-index: 3;
@@ -84,8 +84,8 @@
 }
 
 #menu-box .jstree-container-ul {
-    width: 220px;
-    padding: 0 20px;
+    width: 275px;
+    padding: 0 0 0 20px;
 }
 
 #menu-box .jstree-container-ul>.jstree-node {
@@ -102,8 +102,26 @@
 
 #menu-box .jstree-node>.jstree-anchor {
     display: inline-block;
-    width: 120px;
-    white-space: nowrap;
+}
+
+#menu-box .jstree-node[aria-level="1"]>.jstree-anchor {
+    max-width: 235px;
+}
+
+#menu-box .jstree-node[aria-level="2"]>.jstree-anchor {
+    max-width: 215px;
+}
+
+#menu-box .jstree-node[aria-level="3"]>.jstree-anchor {
+    max-width: 195px;
+}
+
+#menu-box .jstree-node[aria-level="4"]>.jstree-anchor {
+    max-width: 175px;
+}
+
+#menu-box .jstree-node[aria-level="5"]>.jstree-anchor {
+    max-width: 155px;
 }
 
 #menu-box .jstree-node>.jstree-anchor,
@@ -155,21 +173,25 @@
 
 /* 头部链接 */
 .top-link {
-    position: relative;
+    position: fixed;
+    background-color: #FFFFFF;
     border-bottom: 1px solid rgba(0, 0, 0, 0.09);
     width: 100%;
     padding: 17px 0;
+    top: 60px;
 }
 
 .docscontainer .top-link .link-container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .top-link .docs-a {
     width: 400px;
-    margin-right: 294px;
+    margin-right: 30px;
 }
+
 
 .top-link .docs-a a{
     font-size: 16px;
@@ -203,6 +225,15 @@
     cursor: pointer;
 }
 
+.link-container .top-right {
+    display: flex;
+    flex-direction: row;
+}
+
+.link-container .top-right .other-link {
+    margin-right: 60px;
+}
+
 .top-link .prev-next .icon-prev,
 .top-link .prev-next .icon-next,
 .top-link .other-link .source-code,
@@ -211,6 +242,12 @@
     width: 16px;
     height: 16px;
     margin-bottom: -3px;
+    margin-right: 6px;
+}
+
+.top-link .prev-next .icon-next {
+    margin-right: 0;
+    margin-left: 6px;
 }
 
 .top-link .prev-next span,
@@ -229,11 +266,10 @@
 }
 
 .top-link .other-link {
-    width: 196px;
+    width: 250px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-right: 64px;
 }
 
 
@@ -309,28 +345,10 @@
 
 #title-evaluate {
     width: 320px;
-    padding: 37px 0 0 5px;
+    padding: 37px 40px 0 0;
     position: fixed;
     top: 120px;
     right: 0;
-    max-height: calc(100vh - 157px);
-    overflow-y: scroll;
-    overflow-x: auto;
-}
-
-#title-evaluate::-webkit-scrollbar-track {
-	border-radius:4px;
-	background-color:#F5F5F5;
-}
-
-#title-evaluate::-webkit-scrollbar {
-	width:6px;
-	background-color:#F5F5F5;
-}
-
-#title-evaluate::-webkit-scrollbar-thumb {
-	border-radius:4px;
-    background: rgba(0, 47, 167, 0.1);
 }
 
 #title-evaluate a {
@@ -344,7 +362,7 @@
 }
 
 #title-evaluate ul li {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 
@@ -358,18 +376,6 @@
 
 #title-evaluate .title ul {
     list-style: disc;
-}
-
-#title-evaluate .title > ul > li > ul {
-    margin-top: 20px;
-}
-
-#title-evaluate .title > ul > li > ul > li {
-    margin-bottom: 20px;
-}
-
-#title-evaluate .title > ul > li > ul > li > ul {
-    margin-top: 10px;
 }
 
 #title-evaluate .evaluate {
@@ -436,13 +442,6 @@
 }
 #markdown table td,#markdown table th{
     border: 1px solid gray;
-    padding: 16px;
-}
-#markdown blockquote {
-    border-radius: 6px;
-    background-color: rgba(203, 217, 255, 0.2);
-    border-left: 6px solid #002FA7;
-    padding: 20px;
 }
 #markdown table thead{
     background: #f7f7f7;
@@ -460,8 +459,6 @@
 #markdown pre, #markdown code {
     white-space: pre-wrap;
     word-wrap: break-word;
-    background-color: rgba(0, 0, 0, 0.03);
-    border-radius: 8px;
 }
 
 #markdown pre,#markdown code,
@@ -547,15 +544,8 @@
 }
 
 @media screen and (max-width: 1900px) {
-    
     #version-select {
         width: 260px;
-    }
-    .docscontainer .top-link .link-container{
-        margin-left: 0;
-    }
-    .top-link .docs-a {
-        margin-right: 120px;
     }
     #title-evaluate {
         width: 258px;

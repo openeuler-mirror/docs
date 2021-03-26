@@ -5,12 +5,12 @@ other = "Version"
 [current_lang]
 other = "Русский"
 
-[searech]
-other = "搜索"
+[search]
+other = "search"
 
 
 [catalog_text]
-other = "目录"
+other = "Content"
 
 [catalog_know]
 other = "About"
@@ -118,8 +118,6 @@ other = "/en/docs/20.09/docs/Virtualization/virtualization.html"
 other = "/en/docs/20.03_LTS/docs/SecHarden/secHarden.html"
 [use_97_2]
 other = "/en/docs/20.03_LTS/docs/Virtualization/virtualization.html"
-[use_97_3]
-other = "/en/docs/20.03_LTS/docs/StratoVirt/StratoVirtGuide.html"
 [use_97_4]
 other = "/en/docs/20.03_LTS/docs/Container/container.html"
 [use_97_5]
@@ -197,6 +195,7 @@ other = "/en/docs/21.03/docs/NVWA/NVWA.html"
 
 
 
+
 [official_text]
 other = "管网"
 
@@ -212,16 +211,16 @@ other = "Copyright © 2021 openEuler. All rights reserved."
 other = "WeChat Subscription"
 
 [source_code]
-other = "查看源码"
+other = "Source Code"
 
 [feedbook]
-other = "反馈问题"
+other = "Feedback"
 
 [previous]
-other = "上一篇"
+other = "Previous"
 
 [next]
-other = "下一篇"
+other = "Next"
 
 [evaluate]
-other = "评价"
+other = "Rating"

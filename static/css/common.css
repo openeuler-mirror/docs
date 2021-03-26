@@ -36,6 +36,9 @@ i {
 .nav-box {
     width: 100%;
     height: 60px;
+    position: fixed;
+    top: 0;
+    background-color: #FFFFFF;
 }
 
 .nav-box .nav-menu {
@@ -59,7 +62,7 @@ i {
     line-height: 16px;
     font-size: 16px;
     display: inline-block;
-    margin-left: 40px;
+    margin-left: 20px;
     cursor: pointer;
 }
 
