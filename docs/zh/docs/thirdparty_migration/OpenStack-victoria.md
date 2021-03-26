@@ -1,3 +1,5 @@
+
+
 # OpenStack-Victoria 部署指南
 
 ## OpenStack 简介
@@ -10,6 +12,13 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
 
 
 ## 准备环境
+### 环境配置
+
+在`/etc/hosts`中添加controller信息，例如节点IP是`10.0.0.11`，则新增：
+
+```shell
+10.0.0.11   controller
+```
 
 ### 安装 SQL DataBase
 
@@ -164,13 +173,6 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
 
     #vim /etc/httpd/conf.d/wsgi-keystone.conf
     ```
-    ...
-
-    TraceEnable off
-
-    LoadModule wsgi_module /usr/lib64/httpd/modules/mod_wsgi_python3.so
-
-    ...
 
 9. 完成安装，执行如下命令，启动Apache HTTP服务。
 
@@ -274,7 +276,7 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
     运行脚本加载环境变量：
 
     ```
-    $ . admin-openrc
+    $ source admin-openrc
     ```
 
 ### Glance安装
@@ -298,7 +300,7 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
     替换 GLANCE_DBPASS，为 glance 数据库设置密码。
 
     ```
-    $ . admin-openrc
+    $ source admin-openrc
     ```
     
 	执行以下命令，分别完成创建 glance 服务凭证、创建glance用户和添加‘admin’角色到用户‘glance’。
@@ -376,7 +378,8 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
 
 	下载镜像
 	```
-	$ . admin-openrc
+	$ source admin-openrc
+    # 注意：如果您使用的环境是鲲鹏架构，请下载arm64版本的镜像。
     $ wget http://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img
    ```
 
@@ -411,7 +414,7 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
     替换 PLACEMENT_DBPASS，为 placement 数据库设置密码
 
     ```
-    $ . admin-openrc
+    $ source admin-openrc
     ```
     执行如下命令，创建 placement 服务凭证、创建 placement 用户以及添加‘admin’角色到用户‘placement’。
 
@@ -465,20 +468,6 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
     ```
     其中，替换 PLACEMENT_DBPASS 为 placement 数据库的密码，替换 PLACEMENT_PASS 为 placement 用户的密码。
 
-    注：配置权限
-
-    ```
-    # vim /etc/httpd/conf.d/00-placement-api.conf
-    <Directory /usr/bin>
-    <IfVersion >= 2.4>
-    Require all granted
-    </IfVersion>
-    <IfVersion < 2.4>
-    Order allow,deny
-    Allow from all
-    </IfVersion>
-    </Directory>
-    ```
     同步数据库：
 
     ```
@@ -1039,7 +1028,9 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
     ```
     替换CINDER_DBPASS，为cinder数据库设置密码。
 
-    $ . admin-openrc
+    ```
+    $ source admin-openrc
+    ```
 
     创建cinder服务凭证：
 
@@ -1209,6 +1200,7 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
     ```
     [DEFAULT]
     # ...
+    # 注意: openEuler 21.03中没有提供OpenStack Swift软件包，需要用户自行安装。或者使用其他的备份后端，例如，NFS。NFS已经过测试验证，可以正常使用。
     backup_driver = cinder.backup.drivers.swift.SwiftBackupDriver
     backup_swift_url = SWIFT_URL
     ```
@@ -1227,7 +1219,7 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
 
     列出服务组件验证每个步骤成功：
     ```
-    $ . admin-openrc
+    $ source admin-openrc
     $ openstack volume service list
     ```
 	
@@ -1241,7 +1233,7 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
     yum install openstack-horizon
     ```
 2. 修改文件`/usr/share/openstack-dashboard/openstack_dashboard/local/local_settings.py`
-    
+   
 	修改变量 
 
     ```plain
@@ -1262,5 +1254,481 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
 5. 验证
     打开浏览器，输入网址http://<host_ip>，登录 horizon。
 
+### Tempest 安装
 
+Tempest是OpenStack的集成测试服务，如果用户需要全面自动化测试已安装的OpenStack环境的功能,则推荐使用该组件。否则，可以不用安装
 
+1. 安装Tempest
+    ```
+    yum install openstack-tempest
+    ```
+2. 初始化目录
+
+    ```
+    tempest init mytest
+    ```
+3. 修改配置文件。
+
+    ```
+    cd mytest
+    vi etc/tempest.conf
+    ```
+    tempest.conf中需要配置当前OpenStack环境的信息，具体内容可以参考[官方示例](https://docs.openstack.org/tempest/latest/sampleconf.html)
+
+4. 执行测试
+
+    ```
+    tempest run
+    ```
+
+### Ironic 安装
+
+Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则推荐使用该组件。否则，可以不用安装。
+
+1. 设置数据库
+
+   裸金属服务在数据库中存储信息，创建一个**ironic**用户可以访问的**ironic**数据库，替换**IRONIC_DBPASSWORD**为合适的密码
+
+   ```
+   # mysql -u root -p MariaDB [(none)]> CREATE DATABASE ironic CHARACTER SET utf8; 
+   
+   MariaDB [(none)]> GRANT ALL PRIVILEGES ON ironic.* TO 'ironic'@'localhost' \     
+   IDENTIFIED BY 'IRONIC_DBPASSWORD'; 
+   
+   MariaDB [(none)]> GRANT ALL PRIVILEGES ON ironic.* TO 'ironic'@'%' \     
+   IDENTIFIED BY 'IRONIC_DBPASSWORD';
+   ```
+
+2. 组件安装与配置
+
+   ##### 创建服务用户认证
+
+   1、创建Bare Metal服务用户
+
+   ```
+   $ openstack user create --password IRONIC_PASSWORD \ 
+   --email ironic@example.com ironic 
+   $ openstack role add --project service --user ironic admin 
+   $ openstack service create --name ironic --description \ 
+   "Ironic baremetal provisioning service" baremetal 
+   
+   $ openstack service create --name ironic-inspector --description     "Ironic inspector baremetal provisioning service" baremetal-introspection 
+   $ openstack user create --password IRONIC_INSPECTOR_PASSWORD --email ironic_inspector@example.com ironic_inspector 
+   $ openstack role add --project service --user ironic-inspector admin
+   ```
+
+   2、创建Bare Metal服务访问入口
+
+   ```
+   $ openstack endpoint create --region RegionOne baremetal admin http://$IRONIC_NODE:6385 
+   $ openstack endpoint create --region RegionOne baremetal public http://$IRONIC_NODE:6385 
+   $ openstack endpoint create --region RegionOne baremetal internal http://$IRONIC_NODE:6385 
+   $ openstack endpoint create --region RegionOne baremetal-introspection internal http://172.20.19.13:5050/v1 
+   $ openstack endpoint create --region RegionOne baremetal-introspection public http://172.20.19.13:5050/v1 
+   $ openstack endpoint create --region RegionOne baremetal-introspection admin http://172.20.19.13:5050/v1
+   ```
+
+   ##### 配置ironic-api服务
+
+   配置文件路径/etc/ironic/ironic.conf
+
+   1、通过**connection**选项配置数据库的位置，如下所示，替换**IRONIC_DBPASSWORD**为**ironic**用户的密码，替换**DB_IP**为DB服务器所在的IP地址：
+
+   ```
+   [database] 
+   
+   # The SQLAlchemy connection string used to connect to the 
+   # database (string value) 
+   
+   connection = mysql+pymysql://ironic:IRONIC_DBPASSWORD@DB_IP/ironic
+   ```
+
+   2、通过以下选项配置ironic-api服务使用RabbitMQ消息代理，替换**RPC_\***为RabbitMQ的详细地址和凭证
+
+   ```
+   [DEFAULT] 
+   
+   # A URL representing the messaging driver to use and its full 
+   # configuration. (string value) 
+   
+   transport_url = rabbit://RPC_USER:RPC_PASSWORD@RPC_HOST:RPC_PORT/
+   ```
+
+   用户也可自行使用json-rpc方式替换rabbitmq
+
+   3、配置ironic-api服务使用身份认证服务的凭证，替换**PUBLIC_IDENTITY_IP**为身份认证服务器的公共IP，替换**PRIVATE_IDENTITY_IP**为身份认证服务器的私有IP，替换**IRONIC_PASSWORD**为身份认证服务中**ironic**用户的密码：
+
+   ```
+   [DEFAULT] 
+   
+   # Authentication strategy used by ironic-api: one of 
+   # "keystone" or "noauth". "noauth" should not be used in a 
+   # production environment because all authentication will be 
+   # disabled. (string value) 
+   
+   auth_strategy=keystone 
+   
+   [keystone_authtoken] 
+   # Authentication type to load (string value) 
+   auth_type=password 
+   # Complete public Identity API endpoint (string value) 
+   www_authenticate_uri=http://PUBLIC_IDENTITY_IP:5000 
+   # Complete admin Identity API endpoint. (string value) 
+   auth_url=http://PRIVATE_IDENTITY_IP:5000 
+   # Service username. (string value) 
+   username=ironic 
+   # Service account password. (string value) 
+   password=IRONIC_PASSWORD 
+   # Service tenant name. (string value) 
+   project_name=service 
+   # Domain name containing project (string value) 
+   project_domain_name=Default 
+   # User's domain name (string value) 
+   user_domain_name=Default
+   ```
+
+   4、创建裸金属服务数据库表
+
+   ```
+   $ ironic-dbsync --config-file /etc/ironic/ironic.conf create_schema
+   ```
+
+   5、重启ironic-api服务
+
+   ```
+   sudo systemctl restart openstack-ironic-api
+   ```
+
+   ##### 配置ironic-conductor服务
+
+   1、替换**HOST_IP**为conductor host的IP
+
+   ```
+   [DEFAULT] 
+   
+   # IP address of this host. If unset, will determine the IP 
+   # programmatically. If unable to do so, will use "127.0.0.1". 
+   # (string value) 
+   
+   my_ip=HOST_IP
+   ```
+
+   2、配置数据库的位置，ironic-conductor应该使用和ironic-api相同的配置。替换**IRONIC_DBPASSWORD**为**ironic**用户的密码，替换DB_IP为DB服务器所在的IP地址：
+
+   ```
+   [database] 
+   
+   # The SQLAlchemy connection string to use to connect to the 
+   # database. (string value) 
+   
+   connection = mysql+pymysql://ironic:IRONIC_DBPASSWORD@DB_IP/ironic
+   ```
+
+   3、通过以下选项配置ironic-api服务使用RabbitMQ消息代理，ironic-conductor应该使用和ironic-api相同的配置，替换**RPC_\***为RabbitMQ的详细地址和凭证
+
+   ```
+   [DEFAULT] 
+   
+   # A URL representing the messaging driver to use and its full 
+   # configuration. (string value) 
+   
+   transport_url = rabbit://RPC_USER:RPC_PASSWORD@RPC_HOST:RPC_PORT/
+   ```
+
+   用户也可自行使用json-rpc方式替换rabbitmq
+
+   4、配置凭证访问其他OpenStack服务
+
+   为了与其他OpenStack服务进行通信，裸金属服务在请求其他服务时需要使用服务用户与OpenStack Identity服务进行认证。这些用户的凭据必须在与相应服务相关的每个配置文件中进行配置。
+
+   ```
+   [neutron] - 访问Openstack网络服务 
+   [glance] - 访问Openstack镜像服务 
+   [swift] - 访问Openstack对象存储服务 
+   [cinder] - 访问Openstack块存储服务 
+   [inspector] - 访问Openstack裸金属introspection服务 
+   [service_catalog] - 一个特殊项用于保存裸金属服务使用的凭证，该凭证用于发现注册在Openstack身份认证服务目录中的自己的API URL端点
+   ```
+
+   简单起见，可以对所有服务使用同一个服务用户。为了向后兼容，该用户应该和ironic-api服务的[keystone_authtoken]所配置的为同一个用户。但这不是必须的，也可以为每个服务创建并配置不同的服务用户。
+
+   在下面的示例中，用户访问openstack网络服务的身份验证信息配置为：
+
+   ```
+   网络服务部署在名为RegionOne的身份认证服务域中，仅在服务目录中注册公共端点接口
+   
+   请求时使用特定的CA SSL证书进行HTTPS连接
+   
+   与ironic-api服务配置相同的服务用户
+   
+   动态密码认证插件基于其他选项发现合适的身份认证服务API版本
+   ```
+
+   ```
+   [neutron] 
+   
+   # Authentication type to load (string value) 
+   auth_type = password 
+   # Authentication URL (string value) 
+   auth_url=https://IDENTITY_IP:5000/ 
+   # Username (string value) 
+   username=ironic 
+   # User's password (string value) 
+   password=IRONIC_PASSWORD 
+   # Project name to scope to (string value) 
+   project_name=service 
+   # Domain ID containing project (string value) 
+   project_domain_id=default 
+   # User's domain id (string value) 
+   user_domain_id=default 
+   # PEM encoded Certificate Authority to use when verifying 
+   # HTTPs connections. (string value) 
+   cafile=/opt/stack/data/ca-bundle.pem 
+   # The default region_name for endpoint URL discovery. (string 
+   # value) 
+   region_name = RegionOne 
+   # List of interfaces, in order of preference, for endpoint 
+   # URL. (list value) 
+   valid_interfaces=public
+   ```
+
+   默认情况下，为了与其他服务进行通信，裸金属服务会尝试通过身份认证服务的服务目录发现该服务合适的端点。如果希望对一个特定服务使用一个不同的端点，则在裸金属服务的配置文件中通过endpoint_override选项进行指定：
+
+   ```
+   [neutron] ... endpoint_override = <NEUTRON_API_ADDRESS>
+   ```
+
+   5、配置允许的驱动程序和硬件类型
+
+   通过设置enabled_hardware_types设置ironic-conductor服务允许使用的硬件类型：
+
+   ```
+   [DEFAULT] enabled_hardware_types = ipmi 
+   ```
+
+   配置硬件接口：
+
+   ```
+   enabled_boot_interfaces = pxe enabled_deploy_interfaces = direct,iscsi enabled_inspect_interfaces = inspector enabled_management_interfaces = ipmitool enabled_power_interfaces = ipmitool
+   ```
+
+   配置接口默认值：
+
+   ```
+   [DEFAULT] default_deploy_interface = direct default_network_interface = neutron
+   ```
+
+   如果启用了任何使用Direct deploy的驱动，必须安装和配置镜像服务的Swift后端。Ceph对象网关(RADOS网关)也支持作为镜像服务的后端。
+
+   6、重启ironic-conductor服务
+
+   ```
+   sudo systemctl restart openstack-ironic-conductor
+   ```
+
+   ##### 配置ironic-inspector服务
+
+   配置文件路径/etc/ironic-inspector/inspector.conf
+
+   1、创建数据库
+
+   ```
+   # mysql -u root -p 
+   
+   MariaDB [(none)]> CREATE DATABASE ironic_inspector CHARACTER SET utf8; 
+   
+   MariaDB [(none)]> GRANT ALL PRIVILEGES ON ironic_inspector.* TO 'ironic_inspector'@'localhost' \     IDENTIFIED BY 'IRONIC_INSPECTOR_DBPASSWORD'; 
+   MariaDB [(none)]> GRANT ALL PRIVILEGES ON ironic_inspector.* TO 'ironic_inspector'@'%' \     
+   IDENTIFIED BY 'IRONIC_INSPECTOR_DBPASSWORD';
+   ```
+
+   2、通过**connection**选项配置数据库的位置，如下所示，替换**IRONIC_INSPECTOR_DBPASSWORD**为**ironic_inspector**用户的密码，替换**DB_IP**为DB服务器所在的IP地址：
+
+   ```
+   [database] 
+   backend = sqlalchemy 
+   connection = mysql+pymysql://ironic_inspector:IRONIC_INSPECTOR_DBPASSWORD@DB_IP/ironic_inspector
+   ```
+
+   3、配置消息度列通信地址
+
+   ```
+   [DEFAULT] transport_url = rabbit://RPC_USER:RPC_PASSWORD@RPC_HOST:RPC_PORT/
+   ```
+
+   4、设置keystone认证
+
+   ```
+   [DEFAULT] 
+   
+   auth_strategy = keystone 
+   
+   [ironic] 
+   
+   api_endpoint = http://IRONIC_API_HOST_ADDRRESS:6385 
+   auth_type = password 
+   auth_url = http://PUBLIC_IDENTITY_IP:5000 
+   auth_strategy = keystone 
+   ironic_url = http://IRONIC_API_HOST_ADDRRESS:6385 
+   os_region = RegionOne 
+   project_name = service 
+   project_domain_name = default 
+   user_domain_name = default 
+   username = IRONIC_SERVICE_USER_NAME 
+   password = IRONIC_SERVICE_USER_PASSWORD
+   ```
+
+   5、配置ironic inspector dnsmasq服务
+
+   ```
+   # 配置文件地址：/etc/ironic-inspector/dnsmasq.conf 
+   port=0 
+   interface=enp3s0                         #替换为实际监听网络接口 
+   dhcp-range=172.20.19.100,172.20.19.110   #替换为实际dhcp地址范围 
+   bind-interfaces 
+   enable-tftp 
+   
+   dhcp-match=set:efi,option:client-arch,7 
+   dhcp-match=set:efi,option:client-arch,9 
+   dhcp-match=aarch64, option:client-arch,11 
+   dhcp-boot=tag:aarch64,grubaa64.efi 
+   dhcp-boot=tag:!aarch64,tag:efi,grubx64.efi 
+   dhcp-boot=tag:!aarch64,tag:!efi,pxelinux.0 
+   
+   tftp-root=/tftpboot                       #替换为实际tftpboot目录 
+   log-facility=/var/log/dnsmasq.log
+   ```
+
+   6、启动服务
+
+   ```
+   $ systemctl enable --now openstack-ironic-inspector.service 
+   $ systemctl enable --now openstack-ironic-inspector-dnsmasq.service
+   ```
+
+3. deploy ramdisk镜像制作
+
+   目前ramdisk镜像支持通过ironic python agent builder来进行制作，这里介绍下使用这个工具构建ironic使用的deploy镜像的完整过程。
+
+   ##### 安装 ironic-python-agent-builder
+
+   1. 本地安装python3，并且将本地的python切换到python3，然后解决下切换之后的问题（如yum源无法使用的问题）：
+
+      ```
+      yum install python36
+      ```
+
+   2. 安装工具：
+
+      ```
+      pip install ironic-python-agent-builder
+      ```
+
+   3. 修改以下文件中的python解释器：
+
+      ```
+      /usr/bin/yum /usr/libexec/urlgrabber-ext-down
+      ```
+
+   4. 安装其它必须的工具：
+
+      ```
+      yum install git
+      ```
+
+      由于`DIB`依赖`semanage`命令，所以在制作镜像之前确定该命令是否可用：`semanage --help`，如果提示无此命令，安装即可：
+
+      ```
+      # 先查询需要安装哪个包
+      [root@localhost ~]# yum provides /usr/sbin/semanage
+      已加载插件：fastestmirror
+      Loading mirror speeds from cached hostfile
+       * base: mirror.vcu.edu
+       * extras: mirror.vcu.edu
+       * updates: mirror.math.princeton.edu
+      policycoreutils-python-2.5-34.el7.aarch64 : SELinux policy core python utilities
+      源    ：base
+      匹配来源：
+      文件名    ：/usr/sbin/semanage
+      # 安装
+      [root@localhost ~]# yum install policycoreutils-python
+      ```
+
+   ##### 制作镜像
+
+   经过测试目前centos只支持8版本，而且centos8-minimal缺少部分网卡驱动，导致Dell的物理机启动之后所有的网卡都是down状态，所以我们这次使用centos8。添加如下环境变量：
+
+   ```
+   export DIB_PYTHON_VERSION=3 \ 
+   export DIB_RELEASE=8 \ 
+   export DIB_YUM_MINIMAL_CREATE_INTERFACES
+   ```
+
+   如果是`arm`架构，还需要添加：
+
+   ```
+   export ARCH=aarch64
+   ```
+
+   ###### 普通镜像
+
+   基本用法：
+
+   ```
+   usage: ironic-python-agent-builder [-h] [-r RELEASE] [-o OUTPUT] [-e ELEMENT]
+                                      [-b BRANCH] [-v] [--extra-args EXTRA_ARGS]
+                                      distribution
+    
+   positional arguments:
+     distribution          Distribution to use
+    
+   optional arguments:
+     -h, --help            show this help message and exit
+     -r RELEASE, --release RELEASE
+                           Distribution release to use
+     -o OUTPUT, --output OUTPUT
+                           Output base file name
+     -e ELEMENT, --element ELEMENT
+                           Additional DIB element to use
+     -b BRANCH, --branch BRANCH
+                           If set, override the branch that is used for ironic-
+                           python-agent and requirements
+     -v, --verbose         Enable verbose logging in diskimage-builder
+     --extra-args EXTRA_ARGS
+                           Extra arguments to pass to diskimage-builder
+   ```
+
+   举例说明：
+
+   ```
+   ironic-python-agent-builder centos -o /mnt/ironic-agent-ssh -b origin/stable/rocky
+   ```
+
+   ###### 允许ssh登陆
+
+   初始化环境变量，然后制作镜像：
+
+   ```
+   export DIB_DEV_USER_USERNAME=ipa \
+   export DIB_DEV_USER_PWDLESS_SUDO=yes \
+   export DIB_DEV_USER_PASSWORD='123'
+   ironic-python-agent-builder centos -o /mnt/ironic-agent-ssh -b origin/stable/rocky -e selinux-permissive -e devuser
+   ```
+
+   ###### 指定代码仓库
+
+   初始化对应的环境变量，然后制作镜像：
+
+   ```
+   # 指定仓库地址以及版本
+   DIB_REPOLOCATION_ironic_python_agent=git@172.20.2.149:liuzz/ironic-python-agent.git
+   DIB_REPOREF_ironic_python_agent=origin/develop
+    
+   # 直接从gerrit上clone代码
+   DIB_REPOLOCATION_ironic_python_agent=https://review.opendev.org/openstack/ironic-python-agent
+   DIB_REPOREF_ironic_python_agent=refs/changes/43/701043/1
+   ```
+
+   参考：[source-repositories](https://docs.openstack.org/diskimage-builder/latest/elements/source-repositories/README.html)。
+
+   指定仓库地址及版本验证成功。

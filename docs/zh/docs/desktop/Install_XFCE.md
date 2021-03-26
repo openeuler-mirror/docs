@@ -30,14 +30,20 @@ sudo dnf install xfwm4 xfdesktop xfce4-* xfce4-*-plugin network-manager-applet
 sudo dnf install lightdm lightdm-gtk
 ```
 
-6. 使用登录管理器登录XFCE
-````
+6. 设置默认桌面为XFCE
+通过root权限用户设置
+```
+echo 'user-session=xfce' >> /etc/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf
+```
+
+7. 使用登录管理器登录XFCE
+```
 sudo systemctl start lightdm
-````
-登录管理器启动后，在右上角左侧选择"xfce session"
+```
+登录管理器启动后，在右上角左侧选择"xfce-session"
 输入用户名、密码登录
 
-7. 设置开机自启动图形界面
+8. 设置开机自启动图形界面
 ```
 sudo systemctl enable lightdm
 sudo systemctl set-default graphical.target
@@ -51,13 +57,9 @@ systemctl disable gdm
 sudo reboot
 ```
 
-8. FAQ
-Q: 为什么lightdm登录界面背景是黑色的？
-A: 登录界面是黑色的是因为lghtdm-gtk默认配置文件/etc/lightdm/lightdm-gtk-greeter.conf中没有设置background
-可以在这个配置文件最后的[greeter]段中设置 background=/usr/share/backgrounds/xfce/xfce-blue.jpg
+9. FAQ
+
+Q:为什么lightdm登录界面背景是黑色的？
+A:登录界面是黑色的是因为lghtdm-gtk默认配置文件/etc/lightdm/lightdm-gtk-greeter.conf中没有设置background。
+可以在该配置文件最后的[greeter]段中设置 background=/usr/share/backgrounds/xfce/xfce-blue.jpg
 然后systemctl restart lightdm 就可以看到背景了。
-
-Q: 输入用户名密码登录后没有进入XFCE，退出到登录界面
-A: 第一次通过lightdm登录前在登录界面右上角选择xfce session，再登录，下次会自动记住上次登录的session。
-
-

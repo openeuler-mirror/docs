@@ -222,7 +222,7 @@ repository部分允许您定义定制化的openEuler软件源仓库，各个仓�
 3.  创建软件源，执行以下命令：
 
     ```
-    createrepo --database /mnt/local_repo
+    createrepo /mnt/local_repo
     ```
 
 

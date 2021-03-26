@@ -72,7 +72,21 @@
     Storage Driver: devicemapper
     ```
 
-    ​
+5. 打开/etc/isulad/daemon.json文件。如果没有配置kata-runtime，则配置runtime为kata-runtime。
+
+   ```json
+   "runtimes": {                                                                               
+       "kata-runtime": {                                                                   
+           "path": "/usr/bin/kata-runtime",                                                 
+           "runtimeArgs": [                                                                
+               "--kata-config",                                                               
+               "/usr/share/defaults/kata-containers/configuration.toml"                       
+           ]                                                                                 
+       }
+   },
+   ```
+
+   
 
 ### **对接指导**
 
