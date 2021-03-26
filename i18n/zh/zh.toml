@@ -119,8 +119,6 @@ other = "/zh/docs/20.09/docs/Virtualization/virtualization.html"
 other = "/zh/docs/20.03_LTS/docs/SecHarden/secHarden.html"
 [use_97_2]
 other = "/zh/docs/20.03_LTS/docs/Virtualization/virtualization.html"
-[use_97_3]
-other = "/zh/docs/20.03_LTS/docs/StratoVirt/StratoVirtGuide.html"
 [use_97_4]
 other = "/zh/docs/20.03_LTS/docs/Container/container.html"
 [use_97_5]

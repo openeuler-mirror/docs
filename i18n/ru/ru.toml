@@ -118,8 +118,6 @@ other = "/en/docs/20.09/docs/Virtualization/virtualization.html"
 other = "/en/docs/20.03_LTS/docs/SecHarden/secHarden.html"
 [use_97_2]
 other = "/en/docs/20.03_LTS/docs/Virtualization/virtualization.html"
-[use_97_3]
-other = "/en/docs/20.03_LTS/docs/StratoVirt/StratoVirtGuide.html"
 [use_97_4]
 other = "/en/docs/20.03_LTS/docs/Container/container.html"
 [use_97_5]
@@ -194,6 +192,7 @@ other = "/en/docs/20.03_LTS_SP1/docs/thirdparty_migration/openstack-train.html"
 other = "/en/docs/20.03_LTS_SP1/docs/thirdparty_migration/springframework.html"
 [migrate_95_1]
 other = "/en/docs/21.03/docs/NVWA/NVWA.html"
+
 
 
 
