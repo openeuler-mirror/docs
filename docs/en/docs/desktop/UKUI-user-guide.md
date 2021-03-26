@@ -1,7 +1,5 @@
 # UKUI Desktop Environment
 
-[[toc]]
-
 ## Overview
 Desktop Environment is the basis for the user's operation on the graphical interface, and provides multiple functions including taskbar, start menu, etc. The main interface is shown in figure below.
 

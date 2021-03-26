@@ -1,6 +1,5 @@
 # Preparing the Environment
 
-[[toc]]
 
 ## Usage
 

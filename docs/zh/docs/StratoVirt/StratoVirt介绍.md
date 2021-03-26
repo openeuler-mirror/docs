@@ -1,6 +1,5 @@
 # StratoVirt介绍
 
-[[toc]]
 
 ## 概述
 

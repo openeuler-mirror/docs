@@ -1,6 +1,5 @@
 # 安装StratoVirt
 
-[[toc]]
 
 ## 软硬件要求
 

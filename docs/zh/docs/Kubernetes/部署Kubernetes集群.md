@@ -1,6 +1,5 @@
 # 部署  Kubernetes 集群
 
-[[toc]]
 
 本章介绍部署 Kubernets 集群的方法。
 

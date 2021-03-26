@@ -1,6 +1,5 @@
 # Managing the VM Lifecycle
 
-[[toc]]
 
 ## Overview
 

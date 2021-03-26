@@ -1,6 +1,5 @@
 # Best Practices
 
-[[toc]]
 
 ## Performance Best Practices
 
