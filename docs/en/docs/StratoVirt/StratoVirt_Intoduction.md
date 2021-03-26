@@ -1,6 +1,5 @@
 # Introduction to StratoVirt
 
-[[toc]]
 
 ## Overview
 

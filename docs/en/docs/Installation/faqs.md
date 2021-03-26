@@ -1,7 +1,5 @@
 # FAQs
 
-[[toc]]
-
 ## Why Does openEuler Fail to Start After I Install It to the Second Disk?
 
 ### Symptom

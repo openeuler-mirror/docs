@@ -1,6 +1,5 @@
-#安装 secGear
+# 安装 secGear
 
-[[toc]]
 
 ## 环境要求
 

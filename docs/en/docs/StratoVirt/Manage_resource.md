@@ -1,6 +1,5 @@
-#Managing VM resources
+# Managing VM resources
 
-[[toc]]
 
 ## Overview
 

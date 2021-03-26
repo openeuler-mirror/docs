@@ -1,7 +1,5 @@
 # Connecting to the iSula Security Container
 
-[[toc]]
-
 ## Overview
 
 To provide a better isolation environment for containers and improve system security, it is recommended to use the iSula security container, that is, connect StratoVirt to the iSula security container.

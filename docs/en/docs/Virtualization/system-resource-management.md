@@ -1,6 +1,5 @@
 # system Resource Management
 
-[[toc]]
 
 
 The  **libvirt**  command manages VM system resources, such as vCPU and virtual memory resources.

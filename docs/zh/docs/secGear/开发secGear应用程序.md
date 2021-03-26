@@ -1,6 +1,5 @@
 # secGear 开发指南
 
-[[toc]]
 
 这里给出使用 secGear 开发一个 C 语言程序 helloworld 的例子，方便用户理解使用 secGear 开发应用程序。
 

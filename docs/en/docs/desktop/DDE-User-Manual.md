@@ -1,7 +1,7 @@
 
 
 # DDE Desktop Environment User Manual
-[[toc]]
+
 ## Overview
 DDE desktop environment is an elegant, secure, reliable and easy to use GUI comprised of the desktop, dock, launcher and control center. Acting as the key basis for our operating system, its main interface is shown as below.
 

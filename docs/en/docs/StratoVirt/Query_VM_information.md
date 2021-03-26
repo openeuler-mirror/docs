@@ -1,6 +1,5 @@
 # Querying VM Information
 
-[[toc]]
 
 ## Overview
 
