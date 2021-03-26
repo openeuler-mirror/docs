@@ -457,7 +457,7 @@
     display: inline;
 }
 
-#markdown pre, #markdown pre {
+#markdown pre, #markdown code {
     white-space: pre-wrap;
     word-wrap: break-word;
     background-color: rgba(0, 0, 0, 0.03);
