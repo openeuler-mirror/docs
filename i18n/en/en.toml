@@ -5,12 +5,12 @@ other = "Version"
 [current_lang]
 other = "English"
 
-[searech]
-other = "搜索"
+[search]
+other = "search"
 
 
 [catalog_text]
-other = "目录"
+other = "Content"
 
 [catalog_know]
 other = "About"
@@ -210,16 +210,16 @@ other = "Copyright © 2021 openEuler. All rights reserved."
 other = "WeChat Subscription"
 
 [source_code]
-other = "查看源码"
+other = "Source Code"
 
 [feedbook]
-other = "反馈问题"
+other = "Feedback"
 
 [previous]
-other = "上一篇"
+other = "Previous"
 
 [next]
-other = "下一篇"
+other = "Next"
 
 [evaluate]
-other = "评价"
+other = "Rating"
