@@ -36,6 +36,9 @@ i {
 .nav-box {
     width: 100%;
     height: 60px;
+    position: fixed;
+    top: 0;
+    background-color: #FFFFFF;
 }
 
 .nav-box .nav-menu {
