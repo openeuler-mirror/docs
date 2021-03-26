@@ -2,6 +2,7 @@ $(function($) {
     var isEvaluate = false;
     var urlArr = (window.location.pathname).split("/");
     var isAdd1 = $("#markdown>ul").first().find("li").children().is("ul");
+    var isAdd4 = $("#markdown>ul").first().find("li").children().is("p");
     var isAdd2 = $("#markdown>ul").first().find("li").children().is("a");
     var isAdd3 = $("#markdown>.table-of-contents").first().find("ul");
     var  evaluateParams = {
@@ -49,7 +50,7 @@ $(function($) {
         });
         e.stopPropagation();
     });
-    if(isAdd1 && isAdd2) {
+    if(isAdd1 && isAdd2 && !isAdd4) {
         let linkEle = $("#markdown>ul").first().clone();
         $("#title-evaluate>.title").append(linkEle);
     }else if(isAdd3) {
@@ -71,7 +72,7 @@ $(function($) {
             evaluateParams.stars = number;
             $.ajax({
                 type: "POST",
-                url: '/evaluate/docs/reviews',
+                url: '/docs-search/docs/reviews',
                 data: JSON.stringify(evaluateParams),
                 contentType: "application/json; charset=utf-8",
                 datatype: "json",

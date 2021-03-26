@@ -6,7 +6,7 @@
     position: fixed;
     top: 60px;
     left: 0;
-    background: rgba(0, 47, 167, 0.03);
+    background: #F7F8FC;
     z-index: 10;
 }
 
@@ -43,7 +43,7 @@
     cursor: pointer;
     color: rgba(0, 0, 0, 0.7);
     line-height: 30px;
-    height: 26px;
+    height: 30px;
     box-sizing: border-box;
     position: relative;
     z-index: 3;
@@ -171,6 +171,10 @@
     margin-right: 294px;
 }
 
+html[lang="en"] .top-link .docs-a {
+    margin-right: 240px;
+}
+
 .top-link .docs-a a{
     font-size: 16px;
     color: #002FA7;
@@ -211,6 +215,12 @@
     width: 16px;
     height: 16px;
     margin-bottom: -3px;
+    margin-right: 6px;
+}
+
+.top-link .prev-next .icon-next {
+    margin-right: 0;
+    margin-left: 6px;
 }
 
 .top-link .prev-next span,
@@ -236,6 +246,9 @@
     margin-right: 64px;
 }
 
+html[lang="en"] .top-link .other-link {
+    width: 250px;
+}
 
 .top-link .other-link .source-code {
     background-image: url('../img/detail/source-code.png');
@@ -508,12 +521,8 @@
 }
 
 @media screen and (max-width: 1900px) {
-    
     #version-select {
         width: 260px;
-    }
-    .docscontainer .top-link .link-container{
-        margin-left: 0;
     }
     .top-link .docs-a {
         margin-right: 120px;
