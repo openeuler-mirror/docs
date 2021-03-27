@@ -147,6 +147,7 @@
     color: #000000;
     font-weight: bold;
     line-height: 36px;
+    white-space: nowrap;
 }
 
 .doc-catalog .list>div .link-box {
