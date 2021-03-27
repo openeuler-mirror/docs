@@ -1,6 +1,6 @@
 # Terms of Use<a name="EN-US_TOPIC_0225731129"></a>
 
-**Copyright © 2020 openEuler Community**
+**Copyright © 2021 openEuler Community**
 
 Your replication, use, modification, and distribution of this document are governed by the Creative Commons License Attribution-ShareAlike 4.0 International Public License \(CC BY-SA 4.0\). You can visit  [https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)  to view a human-readable summary of \(and not a substitute for\) CC BY-SA 4.0. For the complete CC BY-SA 4.0, visit  [https://creativecommons.org/licenses/by-sa/4.0/legalcode](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
