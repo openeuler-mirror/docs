@@ -9,7 +9,7 @@ $(function($) {
     $("#nav-search").click(function (e) {
         $(this).find("input").animate({
             width: "300px"
-        },1000);
+        },300);
         $(this).addClass("search-active");
         $(document).one("click", function(){
             $("#nav-search").find("input").animate({
