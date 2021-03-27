@@ -15,7 +15,8 @@ $(function($) {
     evaluateParams.lang = lang;
     var versionStr = urlArr[3].split("_");
     versionStr = versionStr.join(" ");
-    var sourceHref = 'https://gitee.com/openeuler/docs/tree/stable2-' + urlArr[3] + '/';
+    var sourceLast = urlArr[6].replace("html","md");
+    var sourceHref = `https://gitee.com/openeuler/docs/tree/stable2-${urlArr[3]}/docs/${lang}/docs/${urlArr[5]}/${sourceLast}`;
     $("#source").attr("href",sourceHref);
     $("#version-select>span").text(versionStr);
     $("#h5-menu-top .select-box").find("span").text(versionStr);
