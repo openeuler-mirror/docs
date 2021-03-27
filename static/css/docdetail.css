@@ -345,11 +345,30 @@
 
 #title-evaluate {
     width: 320px;
-    padding: 37px 40px 0 0;
+    padding: 37px 0 0 5px;
     position: fixed;
     top: 120px;
     right: 0;
+    max-height: calc(100vh - 157px);
+    overflow-y: scroll;
+    overflow-x: auto;
 }
+
+#title-evaluate::-webkit-scrollbar-track {
+	border-radius:4px;
+	background-color:#F5F5F5;
+}
+
+#title-evaluate::-webkit-scrollbar {
+	width:6px;
+	background-color:#F5F5F5;
+}
+
+#title-evaluate::-webkit-scrollbar-thumb {
+	border-radius:4px;
+    background: rgba(0, 47, 167, 0.1);
+}
+
 
 #title-evaluate a {
     font-size: 14px;
@@ -362,7 +381,7 @@
 }
 
 #title-evaluate ul li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     cursor: pointer;
 }
 
@@ -377,6 +396,19 @@
 #title-evaluate .title ul {
     list-style: disc;
 }
+
+#title-evaluate .title > ul > li > ul {
+    margin-top: 20px;
+}
+
+#title-evaluate .title > ul > li > ul > li {
+    margin-bottom: 20px;
+}
+
+#title-evaluate .title > ul > li > ul > li > ul {
+    margin-top: 10px;
+}
+
 
 #title-evaluate .evaluate {
     margin-top: 54px;
@@ -442,6 +474,13 @@
 }
 #markdown table td,#markdown table th{
     border: 1px solid gray;
+    padding: 16px;
+}
+#markdown blockquote {
+    border-radius: 6px;
+    background-color: rgba(203, 217, 255, 0.2);
+    border-left: 6px solid #002FA7;
+    padding: 20px;
 }
 #markdown table thead{
     background: #f7f7f7;
