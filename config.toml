@@ -64,3 +64,5 @@ paginate = 10
 
     navLink = "Documentation"
 
+    notFound = "404"
+
