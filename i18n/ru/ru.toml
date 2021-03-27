@@ -49,6 +49,9 @@ other = "Quick Start"
 [install_guide]
 other = "Installation Guide"
 
+[third_sofeware]
+other = "第三方软件安装指南"
+
 [install_98_1]
 other = "/en/docs/20.09/docs/Quickstart/quick-start.html"
 [install_98_2]
@@ -65,6 +68,8 @@ other = "/en/docs/20.03_LTS_SP1/docs/Installation/installation.html"
 other = "/en/docs/21.03/docs/Quickstart/quick-start.html"
 [install_95_2]
 other = "/en/docs/21.03/docs/Installation/installation.html"
+[install_95_3]
+other = "/en/docs/21.03/docs/thirdparty_migration/thidrparty.html"
 
 
 
@@ -106,6 +111,9 @@ other = "Desktop Environment User Guide"
 [strato_virt]
 other = "StratoVirt User Guide"
 
+[ha_user]
+other = "HA用户指南"
+
 [use_98_1]
 other = "/en/docs/20.09/docs/Container/container.html"
 [use_98_2]
@@ -122,6 +130,8 @@ other = "/en/docs/20.03_LTS/docs/Virtualization/virtualization.html"
 other = "/en/docs/20.03_LTS/docs/Container/container.html"
 [use_97_5]
 other = "/en/docs/20.03_LTS/docs/A-Tune/A-Tune.html"
+[use_97_6]
+other = "/en/docs/20.03_LTS/docs/StratoVirt/StratoVirtGuide.html"
 [use_96_1]
 other = "/en/docs/20.03_LTS_SP1/docs/SecHarden/secHarden.html"
 [use_96_2]
@@ -132,6 +142,8 @@ other = "/en/docs/20.03_LTS_SP1/docs/desktop/desktop.html"
 other = "/en/docs/20.03_LTS_SP1/docs/Container/container.html"
 [use_96_5]
 other = "/en/docs/20.03_LTS_SP1/docs/A-Tune/A-Tune.html"
+[use_96_6]
+other = "/en/docs/20.03_LTS_SP1/docs/desktop/HAuserguide.html"
 [use_95_1]
 other = "/en/docs/21.03/docs/SecHarden/secHarden.html"
 [use_95_2]

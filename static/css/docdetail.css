@@ -27,23 +27,22 @@
 
 #version-select .option {
     position: absolute;
-    width: 100%;
+    width: 138px;
     background: #FFFFFF;
     box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 47, 167, 0.5);
-    left: 0;
+    left: 60px;
     top: 57px;
     display: none;
 }
 
 #version-select .option a {
-    font-size: 18px;
-    padding: 0 40px;
+    font-size: 14px;
+    padding-left: 13px;
     display: block;
     cursor: pointer;
     color: rgba(0, 0, 0, 0.7);
-    line-height: 30px;
-    height: 30px;
+    line-height: 24px;
     box-sizing: border-box;
     position: relative;
     z-index: 3;
@@ -307,7 +306,7 @@
     color: #36383D;
     line-height: 24px;
     margin-top: 40px;
-    padding-bottom: 400px;
+    padding: 150px 0 400px 0;
 }
 
 #page h1,#page h2,#page h3,
@@ -593,6 +592,27 @@
     }
 }
 
+@media screen and (max-width: 1900px) {
+    .container {
+        width: 960px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1660px) {
+    .container {
+        width: 800px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1490px) {
+    .container {
+        width: 640px;
+        margin: 0 auto;
+    }
+}
+
 @media screen and (max-width: 1000px) {
     #menu-box,.top-link,#title-evaluate {
         display: none;
@@ -600,6 +620,13 @@
     #h5-menu-top {
         display: block;
     }
+
+    #h5-menu {
+        position: fixed;
+        width: 100%;
+        top: 70px;
+    }
+
     #h5-menu ul {
         width: 100%;
         height: 44px;
@@ -631,6 +658,12 @@
         background-image: url('../img/detail/blue-left.svg');
     }
 
+    #h5-menu-top .container {
+        width: 315px;
+    }
+    #page {
+        width: 315px;
+    }
     #markdown {
         width: 100%;
     }

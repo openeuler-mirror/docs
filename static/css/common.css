@@ -216,8 +216,8 @@ i {
     z-index: 2;
 }
 
-
 /* 搜索部分 */
+
 .search-docs {
     width: 100%;
     height: 400px;
@@ -225,6 +225,7 @@ i {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 60px;
 }
 
 .search-docs>div {
@@ -324,27 +325,6 @@ i {
 
 .footer-content .footer-right p:last-of-type {
     display: none;
-}
-
-@media screen and (max-width: 1900px) {
-    .container {
-        width: 960px;
-        margin: 0 auto;
-    }
-}
-
-@media screen and (max-width: 1660px) {
-    .container {
-        width: 800px;
-        margin: 0 auto;
-    }
-}
-
-@media screen and (max-width: 1490px) {
-    .container {
-        width: 640px;
-        margin: 0 auto;
-    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -468,6 +448,7 @@ i {
     /* 搜索 */
     .search-docs {
         height: 300px;
+        margin-top: 70px;
     }
     .search-docs>div {
         flex-direction: column-reverse;
