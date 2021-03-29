@@ -1,0 +1,171 @@
+/* 文档内容样式重置 */
+#markdown table tr:nth-child(odd) td,#markdown table tr:nth-child(odd) th{
+    background-color: unset;
+    word-break: break-word;
+}
+#markdown table td,#markdown table th{
+    border: 1px solid gray;
+    padding: 16px;
+}
+#markdown blockquote {
+    border-radius: 6px;
+    background-color: rgba(203, 217, 255, 0.2);
+    border-left: 6px solid #002FA7;
+    padding: 20px;
+}
+#markdown table thead{
+    background: #f7f7f7;
+}
+#markdown h1 a,#markdown h2 a,#markdown h3 a
+#markdown h4 a,#markdown h5 a,#markdown h6 a
+{
+    display: none;
+}
+
+#markdown a[href^='#'] {
+    display: inline;
+}
+
+#markdown pre, #markdown code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+}
+
+#markdown pre,#markdown code,
+#markdown p,#markdown ul li,
+#markdown ol li,
+#markdown table tr {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#markdown p {
+    line-height: 24px;
+}
+
+#markdown pre p a,#markdown code p a,
+#markdown p a,#markdown ul li p a,
+#markdown ol li p a,
+#markdown table tr p a {
+    color: #002fa7;
+    text-decoration: none;
+}
+
+#markdown pre p img,#markdown code p img,
+#markdown p img,#markdown ul li p img,
+#markdown ol li p img,
+#markdown table tr p img {
+    max-width: 100%;
+}
+
+#markdown h1,#markdown h2,
+#markdown h3,#markdown  h4,
+#markdown h5 {
+    font-weight: bold;
+    margin: 30px 0 20px 0;
+}
+
+#markdown h1 a,#markdown h2 a,
+#markdown h3 a,#markdown  h4 a,
+#markdown h5 a {
+    display: none;
+}
+
+#markdown h1 {
+    font-size: 36px;
+    margin-top: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid;
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+#markdown h2 {
+    font-size: 24px;
+}
+#markdown h3 {
+    font-size: 20px;
+}
+#markdown h4 {
+    font-size: 18px;
+}
+#markdown h5 {
+    font-size: 16px;
+}
+
+#markdown ol li,
+#markdown ul li {
+    line-height: 24px;
+}
+
+#markdown ol li ol {
+    padding-left: 20px;
+}
+
+#markdown ul li a {
+    color: #002fa7;
+    text-decoration: none;
+}
+
+#markdown ul, ol {
+    list-style: initial;
+    padding-left: 30px;
+}
+#markdown ol {
+    list-style: decimal;
+}
+#markdown strong {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1000px) {
+    #markdown {
+        width: 100%;
+    }
+    
+    #markdown h1 {
+        font-size: 18px;
+        line-height: 18px;
+    }
+    
+    #markdown h2 {
+        font-size: 17px;
+        line-height: 17px;
+    }
+    #markdown h3 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    #markdown h4 {
+        font-size: 15px;
+        line-height: 15px;
+    }
+    #markdown h5 {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    
+    #markdown p,#markdown ul li,#markdown ol li {
+        line-height: 30px;
+    }
+    
+    #markdown a,#markdown li,#markdown p {
+        word-break:break-all;
+        word-wrap:break-word; 
+    }
+    
+    #markdown table tr {
+        height: 52px;
+    }
+    
+    #markdown table tr th,#markdown table tr td {
+        padding-left: 10px;
+    }
+    
+    #markdown pre,#markdown code,
+    #markdown p,#markdown ul li,
+    #markdown ol li,
+    #markdown table tr {
+        color: rgba(0, 0, 0, 0.5);
+    }
+}
