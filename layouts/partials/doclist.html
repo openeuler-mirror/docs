@@ -24,204 +24,50 @@
 
     <div class="doc-catalog">
         <p class="title">{{ i18n "catalog_text" }}</p>
-        <!-- 21.03 -->
-        <div class="list" index="95">
-            <div class="know">
-                <i class="icon-know"></i>
-                <span>{{ i18n "catalog_know" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "know_95_1"}}">{{ i18n "law_statement" }}</a>
-                    <a href="{{ i18n "know_95_2"}}">{{ i18n "release_notes" }}</a>
+        
+        {{ range .Site.Data.docsversion }}
+        <div class="list" index="{{ .index }}" style="display: {{ .display }};">
+            {{ if eq $lang "zh"}}
+                {{ range .zhmodule }}
+                    <div class="{{ .class }}">
+                        <i class="icon-{{ .class }}"></i>
+                        <span>{{ .name }}</span>
+                        <div class="link-box">
+                            {{ range .link }}
+                            <a href="{{ .href }}">{{ .title }}</a>
+                            {{ end }}
+                        </div>
+                    </div>
+                {{ end }}
+            {{ else if eq $lang "en" }}
+                {{ range .enmodule }}
+                <div class="{{ .class }}">
+                    <i class="icon-{{ .class }}"></i>
+                    <span>{{ .name }}</span>
+                    <div class="link-box">
+                        {{ range .link }}
+                        <a href="{{ .href }}">{{ .title }}</a>
+                        {{ end }}
+                    </div>
                 </div>
-            </div>
-            <div class="install">
-                <i class="icon-install"></i>
-                <span>{{ i18n "catalog_install" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "install_95_1"}}">{{ i18n "quick_start" }}</a>
-                    <a href="{{ i18n "install_95_2"}}">{{ i18n "install_guide" }}</a>
-                    <a href="{{ i18n "install_95_3"}}">{{ i18n "third_sofeware" }}</a>
+                {{ end }}
+            {{ else if eq $lang "ru" }}
+                {{ range .rumodule }}
+                <div class="{{ .class }}">
+                    <i class="icon-{{ .class }}"></i>
+                    <span>{{ .name }}</span>
+                    <div class="link-box">
+                        {{ range .link }}
+                        <a href="{{ .href }}">{{ .title }}</a>
+                        {{ end }}
+                    </div>
                 </div>
-            </div>
-            <div class="manage">
-                <i class="icon-manage"></i>
-                <span>{{ i18n "catalog_manage" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "manage_95_1"}}">{{ i18n "manager_guide" }}</a>
-                </div>
-            </div>
-            <div class="migrate">
-                <i class="icon-migrate"></i>
-                <span>{{ i18n "catalog_migrate" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "migrate_95_1"}}">{{ i18n "nvwa_user" }}</a>
-                </div>
-            </div>
-            <div class="use">
-                <i class="icon-use"></i>
-                <span>{{ i18n "catalog_use" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "use_95_1"}}">{{ i18n "safety_streng" }}</a>
-                    <a href="{{ i18n "use_95_2"}}">{{ i18n "virtual_user" }}</a>
-                    <a href="{{ i18n "use_95_4"}}">{{ i18n "container_user" }}</a>
-                    <a href="{{ i18n "use_95_5"}}">{{ i18n "atune_user" }}</a>
-                    <a href="{{ i18n "use_95_6"}}">{{ i18n "desktop_user" }}</a>
-                    <a href="{{ i18n "use_95_3"}}">{{ i18n "strato_virt" }}</a>
-                </div>
-            </div>
-            <div class="develop">
-                <i class="icon-develop"></i>
-                <span>{{ i18n "catalog_develop" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "develop_95_1"}}">{{ i18n "apply_develop" }}</a>
-                    <a href="{{ i18n "develop_95_2"}}">{{ i18n "tool_user" }}</a>
-                </div>
-            </div>
+                {{ end }}
+            {{ else }}
+            {{ end }}
         </div>
-        <!-- 20.03 LTS SP1 -->
-        <div class="list" index="96" style="display: none;">
-            <div class="know">
-                <i class="icon-know"></i>
-                <span>{{ i18n "catalog_know" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "know_96_1"}}">{{ i18n "law_statement" }}</a>
-                    <a href="{{ i18n "know_96_2"}}">{{ i18n "release_notes" }}</a>
-                </div>
-            </div>
-            <div class="install">
-                <i class="icon-install"></i>
-                <span>{{ i18n "catalog_install" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "install_96_1"}}">{{ i18n "quick_start" }}</a>
-                    <a href="{{ i18n "install_96_2"}}">{{ i18n "install_guide" }}</a>
-                </div>
-            </div>
-            <div class="manage">
-                <i class="icon-manage"></i>
-                <span>{{ i18n "catalog_manage" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "manage_96_1"}}">{{ i18n "manager_guide" }}</a>
-                </div>
-            </div>
-            <div class="develop">
-                <i class="icon-develop"></i>
-                <span>{{ i18n "catalog_develop" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "develop_96_1"}}">{{ i18n "apply_develop" }}</a>
-                </div>
-            </div>
-            <div class="use">
-                <i class="icon-use"></i>
-                <span>{{ i18n "catalog_use" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "use_96_1"}}">{{ i18n "safety_streng" }}</a>
-                    <a href="{{ i18n "use_96_2"}}">{{ i18n "virtual_user" }}</a>
-                    <a href="{{ i18n "use_96_4"}}">{{ i18n "container_user" }}</a>
-                    <a href="{{ i18n "use_96_5"}}">{{ i18n "atune_user" }}</a>
-                    <a href="{{ i18n "use_96_3"}}">{{ i18n "desktop_user" }}</a>
-                    <a href="{{ i18n "use_96_6"}}">{{ i18n "ha_user" }}</a>
-                </div>
-            </div>
-            <div class="migrate">
-                <i class="icon-migrate"></i>
-                <span>{{ i18n "catalog_migrate" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "migrate_96_1"}}">{{ i18n "k8s_migrate" }}</a>
-                    <a href="{{ i18n "migrate_96_2"}}">{{ i18n "openstack_migrate" }}</a>
-                    <a href="{{ i18n "migrate_96_3"}}">{{ i18n "spring_migrate" }}</a>
-                </div>
-            </div>
-        </div>
-        <!-- 20.09 -->
-        <div class="list" index="97" style="display: none;">
-            <div class="know">
-                <i class="icon-know"></i>
-                <span>{{ i18n "catalog_know" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "know_97_1"}}">{{ i18n "law_statement" }}</a>
-                    <a href="{{ i18n "know_97_2"}}">{{ i18n "release_notes" }}</a>
-                </div>
-            </div>
-            <div class="install">
-                <i class="icon-install"></i>
-                <span>{{ i18n "catalog_install" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "install_97_1"}}">{{ i18n "quick_start" }}</a>
-                    <a href="{{ i18n "install_97_2"}}">{{ i18n "install_guide" }}</a>
-                </div>
-            </div>
-            <div class="manage">
-                <i class="icon-manage"></i>
-                <span>{{ i18n "catalog_manage" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "manage_97_1"}}">{{ i18n "manager_guide" }}</a>
-                </div>
-            </div>
-            <div class="develop">
-                <i class="icon-develop"></i>
-                <span>{{ i18n "catalog_develop" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "develop_97_1"}}">{{ i18n "apply_develop" }}</a>
-                    <a href="{{ i18n "develop_97_2"}}">{{ i18n "tool_user" }}</a>
-                </div>
-            </div>
-            <div class="use">
-                <i class="icon-use"></i>
-                <span>{{ i18n "catalog_use" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "use_97_1"}}">{{ i18n "safety_streng" }}</a>
-                    <a href="{{ i18n "use_97_2"}}">{{ i18n "virtual_user" }}</a>
-                    <a href="{{ i18n "use_97_4"}}">{{ i18n "container_user" }}</a>
-                    <a href="{{ i18n "use_97_5"}}">{{ i18n "atune_user" }}</a>
-                    <a href="{{ i18n "use_97_6"}}">{{ i18n "strato_virt" }}</a>
-                </div>
-            </div>
-        </div>
-        <!-- 20.03 LTS -->
-        <div class="list" index="98" style="display: none;">
-            <div class="know">
-                <i class="icon-know"></i>
-                <span>{{ i18n "catalog_know" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "know_98_1"}}">{{ i18n "law_statement" }}</a>
-                    <a href="{{ i18n "know_98_2"}}">{{ i18n "release_notes" }}</a>
-                </div>
-            </div>
-            <div class="install">
-                <i class="icon-install"></i>
-                <span>{{ i18n "catalog_install" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "install_98_1"}}">{{ i18n "quick_start" }}</a>
-                    <a href="{{ i18n "install_98_2"}}">{{ i18n "install_guide" }}</a>
-                </div>
-            </div>
-            <div class="manage">
-                <i class="icon-manage"></i>
-                <span>{{ i18n "catalog_manage" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "manage_98_1"}}">{{ i18n "manager_guide" }}</a>
-                </div>
-            </div>
-            <div class="develop">
-                <i class="icon-develop"></i>
-                <span>{{ i18n "catalog_develop" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "develop_98_1"}}">{{ i18n "apply_develop" }}</a>
-                </div>
-            </div>
-            <div class="use">
-                <i class="icon-use"></i>
-                <span>{{ i18n "catalog_use" }}</span>
-                <div class="link-box">
-                    <a href="{{ i18n "use_98_3"}}">{{ i18n "safety_streng" }}</a>
-                    <a href="{{ i18n "use_98_4"}}">{{ i18n "virtual_user" }}</a>
-                    <a href="{{ i18n "use_98_1"}}">{{ i18n "container_user" }}</a>
-                    <a href="{{ i18n "use_98_2"}}">{{ i18n "atune_user" }}</a>
-                </div>
-            </div>
-        </div>
+        {{ end }}
     </div>
-    
     <div class="webpage">
         <div class="other">
             <P>{{ i18n "other_text" }}</P>
