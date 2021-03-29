@@ -315,6 +315,7 @@ i {
 .footer-content .footer-right img {
     display: block;
     width: 78px;
+    margin: 0 auto;
     height: 78px;
 }
 
@@ -483,10 +484,6 @@ i {
 
     .footer-content .footer-left {
         margin-bottom: 20px;
-    }
-
-    .footer-content .footer-right img {
-        margin: 0 auto;
     }
 
     .footer-content .footer-left p:last-of-type {

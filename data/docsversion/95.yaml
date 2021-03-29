@@ -1,2 +1,24 @@
 version : "21.03"
 index: "95"
+display: 'flex'
+zhmodule:
+  - {name: "了解",class: "know",link: [{title: "法律声明",href: "/zh/docs/21.03/docs/Releasenotes/法律声明.html"},{title: "发行说明",href: "/zh/docs/21.03/docs/Releasenotes/release_notes.html"}]}
+  - {name: "安装",class: "install",link: [{title: "快速入门",href: "/zh/docs/21.03/docs/Quickstart/quick-start.html"},{title: "安装指南",href: "/zh/docs/21.03/docs/Installation/installation.html"},{title: "第三方软件安装指南",href: "/zh/docs/21.03/docs/thirdparty_migration/thidrparty.html"}]}
+  - {name: "管理",class: "manage",link: [{title: "管理员指南",href: "/zh/docs/21.03/docs/Administration/administration.html"}]}
+  - {name: "迁移",class: "migrate",link: [{title: "内核热升级用户指南",href: "/zh/docs/21.03/docs/NVWA/NVWA.html"}]}
+  - {name: "使用",class: "use",link: [{title: "A-Tune用户指南",href: "/zh/docs/21.03/docs/A-Tune/A-Tune.html"},{title: "容器用户指南",href: "/zh/docs/21.03/docs/Container/container.html"},{title: "虚拟化用户指南",href: "/zh/docs/21.03/docs/Virtualization/virtualization.html"},{title: "安全加固指南",href: "/zh/docs/21.03/docs/SecHarden/secHarden.html"},{title: "桌面环境用户指南",href: "/zh/docs/21.03/docs/desktop/desktop.html"},{title: "StratoVirt用户指南",href: "/zh/docs/21.03/docs/StratoVirt/StratoVirtGuide.html"}]}
+  - {name: "开发",class: "develop",link: [{title: "应用开发指南",href: "/zh/docs/21.03/docs/ApplicationDev/application-development.html"},{title: "工具集用户指南",href: "/zh/docs/21.03/docs/userguide/overview.html"}]}
+enmodule:
+  - {name: "About",class: "know",link: [{title: "Terms of Use",href: "/en/docs/21.03/docs/Releasenotes/terms-of-use.html"},{title: "Release Notes",href: "/en/docs/21.03/docs/Releasenotes/release_notes.html"}]}
+  - {name: "Install",class: "install",link: [{title: "Quick Start",href: "/en/docs/21.03/docs/Quickstart/quick-start.html"},{title: "Installation Guide",href: "/zh/docs/21.03/docs/Installation/installation.html"},{title: "第三方软件安装指南",href: "/en/docs/21.03/docs/thirdparty_migration/thidrparty.html"}]}
+  - {name: "Mgmt",class: "manage",link: [{title: "Administrator Guide",href: "/en/docs/21.03/docs/Administration/administration.html"}]}
+  - {name: "Porting",class: "migrate",link: [{title: "内核热升级用户指南",href: "/zh/docs/21.03/docs/NVWA/NVWA.html"}]}
+  - {name: "Use",class: "use",link: [{title: "A-Tune User Guide",href: "/en/docs/21.03/docs/A-Tune/A-Tune.html"},{title: "Container User Guide",href: "/en/docs/21.03/docs/Container/container.html"},{title: "Virtualization User Guide",href: "/en/docs/21.03/docs/Virtualization/virtualization.html"},{title: "Security Hardening Guide",href: "/en/docs/21.03/docs/SecHarden/secHarden.html"},{title: "Desktop Environment User Guide",href: "/en/docs/21.03/docs/desktop/desktop.html"},{title: "StratoVirt User Guide",href: "/en/docs/21.03/docs/StratoVirt/StratoVirtGuide.html"}]}
+  - {name: "Dev",class: "develop",link: [{title: "Application Development Guide",href: "/en/docs/21.03/docs/ApplicationDev/application-development.html"},{title: "openEuler Toolset User Guide",href: "/en/docs/21.03/docs/userguide/overview.html"}]}
+rumodule:
+  - {name: "About",class: "know",link: [{title: "Terms of Use",href: "/en/docs/21.03/docs/Releasenotes/terms-of-use.html"},{title: "Release Notes",href: "/en/docs/21.03/docs/Releasenotes/release_notes.html"}]}
+  - {name: "Install",class: "install",link: [{title: "Quick Start",href: "/en/docs/21.03/docs/Quickstart/quick-start.html"},{title: "Installation Guide",href: "/zh/docs/21.03/docs/Installation/installation.html"},{title: "第三方软件安装指南",href: "/en/docs/21.03/docs/thirdparty_migration/thidrparty.html"}]}
+  - {name: "Mgmt",class: "manage",link: [{title: "Administrator Guide",href: "/en/docs/21.03/docs/Administration/administration.html"}]}
+  - {name: "Porting",class: "migrate",link: [{title: "内核热升级用户指南",href: "/zh/docs/21.03/docs/NVWA/NVWA.html"}]}
+  - {name: "Use",class: "use",link: [{title: "A-Tune User Guide",href: "/en/docs/21.03/docs/A-Tune/A-Tune.html"},{title: "Container User Guide",href: "/en/docs/21.03/docs/Container/container.html"},{title: "Virtualization User Guide",href: "/en/docs/21.03/docs/Virtualization/virtualization.html"},{title: "Security Hardening Guide",href: "/en/docs/21.03/docs/SecHarden/secHarden.html"},{title: "Desktop Environment User Guide",href: "/en/docs/21.03/docs/desktop/desktop.html"},{title: "StratoVirt User Guide",href: "/en/docs/21.03/docs/StratoVirt/StratoVirtGuide.html"}]}
+  - {name: "Dev",class: "develop",link: [{title: "Application Development Guide",href: "/en/docs/21.03/docs/ApplicationDev/application-development.html"},{title: "openEuler Toolset User Guide",href: "/en/docs/21.03/docs/userguide/overview.html"}]}

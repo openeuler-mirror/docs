@@ -1,2 +1,21 @@
 version : "20.03 LTS"
 index: "98"
+display: 'none'
+zhmodule:
+  - {name: "了解",class: "know",link: [{title: "法律声明",href: "/zh/docs/20.03_LTS/docs/Releasenotes/法律声明.html"},{title: "发行说明",href: "/zh/docs/20.03_LTS/docs/Releasenotes/release_notes.html"}]}
+  - {name: "安装",class: "install",link: [{title: "快速入门",href: "/zh/docs/20.03_LTS/docs/Quickstart/quick-start.html"},{title: "安装指南",href: "/zh/docs/20.03_LTS/docs/Installation/installation.html"}]}
+  - {name: "管理",class: "manage",link: [{title: "管理员指南",href: "/zh/docs/20.03_LTS/docs/Administration/administration.html"}]}
+  - {name: "开发",class: "develop",link: [{title: "应用开发指南",href: "/zh/docs/20.03_LTS/docs/ApplicationDev/application-development.html"}]}
+  - {name: "使用",class: "use",link: [{title: "安全加固指南",href: "/zh/docs/20.03_LTS/docs/SecHarden/secHarden.html"},{title: "虚拟化用户指南",href: "/zh/docs/20.03_LTS/docs/Virtualization/virtualization.html"},{title: "容器用户指南",href: "/zh/docs/20.03_LTS/docs/Container/container.html"},{title: "A-Tune用户指南",href: "/zh/docs/20.03_LTS/docs/A-Tune/A-Tune.html"}]}
+enmodule:
+  - {name: "About",class: "know",link: [{title: "Terms of Use",href: "/en/docs/20.03_LTS/docs/Releasenotes/terms-of-use.html"},{title: "Release Notes",href: "/en/docs/20.03_LTS/docs/Releasenotes/release_notes.html"}]}
+  - {name: "Install",class: "install",link: [{title: "Quick Start",href: "/en/docs/20.03_LTS/docs/Quickstart/quick-start.html"},{title: "Installation Guide",href: "/en/docs/20.03_LTS/docs/Installation/Installation.html"}]}
+  - {name: "Mgmt",class: "manage",link: [{title: "Administrator Guide",href: "/en/docs/20.03_LTS/docs/Administration/administration.html"}]}
+  - {name: "Dev",class: "develop",link: [{title: "Application Development Guide",href: "/en/docs/20.03_LTS/docs/ApplicationDev/application-development.html"}]}
+  - {name: "Use",class: "use",link: [{title: "Security Hardening Guide",href: "/en/docs/20.03_LTS/docs/SecHarden/secHarden.html"},{title: "Virtualization User Guide",href: "/en/docs/20.03_LTS/docs/Virtualization/virtualization.html"},{title: "Container User Guide",href: "/en/docs/20.03_LTS/docs/Container/container.html"},{title: "A-Tune User Guide",href: "/en/docs/20.03_LTS/docs/A-Tune/A-Tune.html"}]}
+rumodule:
+  - {name: "About",class: "know",link: [{title: "Terms of Use",href: "/en/docs/20.03_LTS/docs/Releasenotes/terms-of-use.html"},{title: "Release Notes",href: "/en/docs/20.03_LTS/docs/Releasenotes/release_notes.html"}]}
+  - {name: "Install",class: "install",link: [{title: "Quick Start",href: "/en/docs/20.03_LTS/docs/Quickstart/quick-start.html"},{title: "Installation Guide",href: "/en/docs/20.03_LTS/docs/Installation/Installation.html"}]}
+  - {name: "Mgmt",class: "manage",link: [{title: "Administrator Guide",href: "/en/docs/20.03_LTS/docs/Administration/administration.html"}]}
+  - {name: "Dev",class: "develop",link: [{title: "Application Development Guide",href: "/en/docs/20.03_LTS/docs/ApplicationDev/application-development.html"}]}
+  - {name: "Use",class: "use",link: [{title: "Security Hardening Guide",href: "/en/docs/20.03_LTS/docs/SecHarden/secHarden.html"},{title: "Virtualization User Guide",href: "/en/docs/20.03_LTS/docs/Virtualization/virtualization.html"},{title: "Container User Guide",href: "/en/docs/20.03_LTS/docs/Container/container.html"},{title: "A-Tune User Guide",href: "/en/docs/20.03_LTS/docs/A-Tune/A-Tune.html"}]}
