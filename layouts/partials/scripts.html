@@ -24,7 +24,8 @@
                 var href = wholeData[j].a_attr.href;
                 var text = wholeData[j].text;
                 //debugger;
-                if ((href == relativeURL) || (text.indexOf(relativeURL) >= 0)) {
+                //判断relativeURL是否和当前循环的节点的href值一致或者路径中是否含text值，后者用于判断中文路径
+                if ((href == relativeURL) || (relativeURL.indexOf(text) >= 0)) {
                     return wholeData[j].id;
                 } else {
                     if (wholeData[j].children.length > 0) {
@@ -73,7 +74,7 @@
                 
                 var relativeURL = getRelativePath();
                 var wholeData = $("#docstreeview").jstree().get_json();
-                var currentID = getCurrentID(wholeData, relativeURL);
+                var currentID = getCurrentID(wholeData, decodeURI(relativeURL));
                 
                 $("#docstreeview").jstree()._open_to(currentID);
                 $('#docstreeview').jstree().select_node(currentID);
