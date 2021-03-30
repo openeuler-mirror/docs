@@ -212,13 +212,8 @@
 
 /* 文档链接写死样式 */
 
-html[lang="en"] .doclist .doc-catalog .list[index="97"] .manage,
-html[lang="ru"] .doclist .doc-catalog .list[index="97"] .manage,
-html[lang="zh"] .doclist .doc-catalog .list[index="95"] .develop {
-    height: 106px;
-}
-
 html[lang="en"] .doclist .doc-catalog .list[index="95"] .develop,
+html[lang="zh"] .doclist .doc-catalog .list[index="95"] .develop,
 html[lang="ru"] .doclist .doc-catalog .list[index="95"] .develop {
     height: 172px;
 }
@@ -228,6 +223,12 @@ html[lang="en"] .doc-catalog .list[index="96"]>.migrate .link-box a {
     margin-bottom: 25px;
 }
 
+html[lang="zh"] .list[index="95"] .use .link-box a:first-of-type {
+    margin-right: 48px;
+}
+html[lang="zh"] .list[index="95"] .use .link-box a:nth-of-type(3) {
+    margin-right: 55px;
+}
 
 
 @media screen and (max-width: 1900px) {
@@ -359,15 +360,29 @@ html[lang="en"] .doc-catalog .list[index="96"]>.migrate .link-box a {
     }
 
 
-    html[lang="zh"] .doclist .doc-catalog .list[index="95"] .develop,
+
     html[lang="ru"] .doclist .doc-catalog .list[index="97"] .manage,
     html[lang="en"] .doclist .doc-catalog .list[index="97"] .manage{
         height: 162px;
     }
     html[lang="en"] .doclist .doc-catalog .list[index="95"] .develop, 
+    html[lang="zh"] .doclist .doc-catalog .list[index="95"] .develop,
     html[lang="ru"] .doclist .doc-catalog .list[index="95"] .develop {
         height: 198px;
     }
+    html[lang="en"] .list[index="95"] .install .link-box a:last-of-type,
+    html[lang="ru"] .list[index="95"] .install .link-box a:last-of-type,
+    html[lang="en"] .list[index="95"] .use .link-box a:nth-of-type(5),
+    html[lang="ru"] .list[index="95"] .use .link-box a:nth-of-type(5),
+    html[lang="en"] .list[index="96"] .migrate .link-box a:last-of-type, 
+    html[lang="ru"] .list[index="96"] .migrate .link-box a:last-of-type {
+        margin-right: 15px;
+    }
+    html[lang="zh"] .list[index="95"] .use .link-box a:first-of-type,
+    html[lang="zh"] .list[index="95"] .use .link-box a:nth-of-type(3) {
+        margin-right: 40px;
+    }
+    
 }
 
 
