@@ -20,6 +20,14 @@ other = "管网"
 other = "Reference Links"
 
 
+[know_95_1]
+other = "/en/docs/21.03/docs/Releasenotes/terms-of-use.html"
+[know_96_1]
+other = "/en/docs/20.03_LTS_SP1/docs/Releasenotes/terms-of-use.html"
+[know_97_1]
+other = "/en/docs/20.09/docs/Releasenotes/terms-of-use.html"
+[know_98_1]
+other = "/en/docs/20.03_LTS/docs/Releasenotes/terms-of-use.html"
 
 [copy_right]
 other = "Copyright © 2021 openEuler. All rights reserved."

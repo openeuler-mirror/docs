@@ -16,6 +16,14 @@ other = "目录"
 [other_text]
 other = "友好社区"
 
+[know_95_1]
+other = "/zh/docs/21.03/docs/Releasenotes/法律声明.html"
+[know_96_1]
+other = "/zh/docs/20.03_LTS_SP1/docs/Releasenotes/法律声明.html"
+[know_97_1]
+other = "/zh/docs/20.09/docs/Releasenotes/法律声明.html"
+[know_98_1]
+other = "/zh/docs/20.03_LTS/docs/Releasenotes/法律声明.html"
 
 
 [copy_right]
