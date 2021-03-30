@@ -59,8 +59,8 @@ paginate = 10
     ltsText = "LTS"
     version_95 = "21.03"
     version_96 = "20.03 LTS SP1"
-    version_97 = "20.03 LTS"
-    version_98 = "20.09"
+    version_97 = "20.09"
+    version_98 = "20.03 LTS"
 
     navLink = "Documentation"
 
