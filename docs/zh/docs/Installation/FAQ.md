@@ -324,3 +324,17 @@ anaconda不支持在chroot环境中安装selinux策略模块，当安装pcp-seli
 
 ### issue访问链接
 https://gitee.com/src-openeuler/anaconda/issues/I29P84?from=project-issue
+
+## 安装LSI MegaRAID卡的物理机kdump无法生成vmcore
+
+### 问题现象
+部署好kdump服务后，手动执行`echo c > /proc/sysrq-trigger`命令或由于kernel故障导致kernel宕机，触发kdump启动second kernel过程中，MegaRAID驱动报错“BRCM Debug mfi stat 0x2d，data len requested/completed 0x200/0x0”，报错信息如下图，最终导致无法生成vmcore。
+
+![](./figures/Megaraid_IO_Request_uncompleted.png)
+
+### 原因分析
+部署好kdump服务后，手动执行`echo c > /proc/sysrq-trigger`命令或由于kernel故障导致kernel宕机，触发kdump启动second kernel过程中，MegaRAID驱动报错“BRCM Debug mfi stat 0x2d，data len requested/completed 0x200/0x0”，报错信息如下图，最终导致无法生成vmcore。
+
+### 解决方法
+部署好kdump服务后，手动执行`echo c > /proc/sysrq-trigger`命令或由于kernel故障导致kernel宕机，触发kdump启动second kernel过程中，MegaRAID驱动报错“BRCM Debug mfi stat 0x2d，data len requested/completed 0x200/0x0”，报错信息如下图，最终导致无法生成vmcore。
+![](./figures/reset_devices.png)
