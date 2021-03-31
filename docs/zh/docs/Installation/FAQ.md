@@ -333,8 +333,8 @@ https://gitee.com/src-openeuler/anaconda/issues/I29P84?from=project-issue
 ![](./figures/Megaraid_IO_Request_uncompleted.png)
 
 ### 原因分析
-部署好kdump服务后，手动执行`echo c > /proc/sysrq-trigger`命令或由于kernel故障导致kernel宕机，触发kdump启动second kernel过程中，MegaRAID驱动报错“BRCM Debug mfi stat 0x2d，data len requested/completed 0x200/0x0”，报错信息如下图，最终导致无法生成vmcore。
+由于默认配置了reset_devices启动参数，second kernel启动过程中会触发设备复位(reset_devices)操作，设备复位操作导致MegaRAID控制器或磁盘状态故障，转储vmcore文件时访问MegaRAID卡的磁盘报错，进而无法生成vmcore。
 
 ### 解决方法
-部署好kdump服务后，手动执行`echo c > /proc/sysrq-trigger`命令或由于kernel故障导致kernel宕机，触发kdump启动second kernel过程中，MegaRAID驱动报错“BRCM Debug mfi stat 0x2d，data len requested/completed 0x200/0x0”，报错信息如下图，最终导致无法生成vmcore。
+在物理机`etc/sysconfig/kdump`文件中将second kernel默认启动参数`reset_devices`删除，可以规避second kernel启动过程中由于MegaRAID卡驱动复位设备所致IO请求未完成问题，以成功生成vmcore。
 ![](./figures/reset_devices.png)
