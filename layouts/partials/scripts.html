@@ -24,8 +24,8 @@
                 var href = wholeData[j].a_attr.href;
                 var text = wholeData[j].text;
                 //debugger;
-                //判断relativeURL是否和当前循环的节点的href值一致或者路径中是否含text值，后者用于判断中文路径
-                if ((href == relativeURL) || (relativeURL.indexOf(text) >= 0)) {
+                
+                if ((encodeURIComponent(href).toLowerCase() == encodeURIComponent(relativeURL).toLowerCase()) || (text.indexOf(relativeURL) >= 0)) {
                     return wholeData[j].id;
                 } else {
                     if (wholeData[j].children.length > 0) {
@@ -74,8 +74,7 @@
                 
                 var relativeURL = getRelativePath();
                 var wholeData = $("#docstreeview").jstree().get_json();
-                var currentID = getCurrentID(wholeData, decodeURI(relativeURL));
-                
+                var currentID = getCurrentID(wholeData, relativeURL);
                 $("#docstreeview").jstree()._open_to(currentID);
                 $('#docstreeview').jstree().select_node(currentID);
                 $('#docstreeview').jstree().open_node(currentID);
@@ -121,8 +120,6 @@
                 };
                 getAllData(wholeData);
                 nextAndPevious(nodeList, currentID);
-            
-                // 将 url 赋给按钮
                 result[0] == null ? $('#prev').addClass('disabled') : $('#prev a').attr('href', result[0]);
                 result[1] == null ? $('#next').addClass('disabled') : $('#next a').attr('href', result[1]);
                 result[0] == null ? $('#h5-menu .h5-prev').addClass('disabled') : $('#h5-menu .h5-prev a').attr('href', result[0]);
