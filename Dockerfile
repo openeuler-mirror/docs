@@ -19,7 +19,7 @@ RUN cd /src/ && \
     cd /src/website && /usr/local/bin/hugo -b / && /usr/local/bin/hugo --gc --minify && \
     cp -rf /src/website/public/* /usr/share/nginx/html/ && \
     chmod -R 755 /usr/share/nginx/html
-RUN rm -rf /src/*
+#RUN rm -rf /src/*
 #COPY ./deploy/nginx.conf /etc/nginx/nginx.conf
 ENV RUN_USER nginx
 ENV RUN_GROUP nginx
