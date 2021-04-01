@@ -20,7 +20,7 @@ RUN cd /src/ && \
     cp -rf /src/website/public/* /usr/share/nginx/html/ && \
     chmod -R 755 /usr/share/nginx/html
 RUN rm -rf /src/*
-
+COPY ./deploy/nginx.conf /etc/nginx/nginx.conf
 ENV RUN_USER nginx
 ENV RUN_GROUP nginx
 EXPOSE 80
