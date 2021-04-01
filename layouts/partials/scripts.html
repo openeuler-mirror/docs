@@ -235,6 +235,8 @@
             keyword = $(".h5-search").find("input").val();
             window.location.href = '/' + lang + '/search.html?keyword=' + keyword;
         });
+        let homeUrl = "https://openeuler.org/" + lang + "/";
+        $(".nav-menu>.left").find("a").attr("href",homeUrl);
     });
 </script>
 <script src="{{ "js/doclist.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>

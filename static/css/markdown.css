@@ -157,9 +157,9 @@
     #markdown table tr {
         height: 52px;
     }
-    
-    #markdown table tr th,#markdown table tr td {
-        padding-left: 10px;
+
+    #markdown table td,#markdown table th {
+        padding: 0;
     }
     
     #markdown pre,#markdown code,
