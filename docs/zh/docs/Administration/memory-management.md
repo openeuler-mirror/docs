@@ -18,6 +18,7 @@ etmem客户端通过socket通信机制与服务端进行交互，下发创建/�
    # git clone https://gitee.com/src-openeuler/etmem.git
 ```
 2. 编译和运行依赖
+
 etmem的编译和运行依赖于libboundscheck组件。
 
 3. 编译
