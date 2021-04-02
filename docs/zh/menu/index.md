@@ -133,7 +133,7 @@ headless: true
     -   [使用方法]({{< relref "./docs/A-Tune/使用方法.md" >}})
     -   [常见问题与解决方法]({{< relref "./docs/A-Tune/常见问题与解决方法.md" >}})
     -   [附录]({{< relref "./docs/A-Tune/附录.md" >}})
--   [内核热升级用户指南]({{< relref "./docs/KernelLiveUpgrade/KernelLiveUpgrade.md" >}})
+-   [内核热升级指南]({{< relref "./docs/KernelLiveUpgrade/KernelLiveUpgrade.md" >}})
     -   [安装与部署]({{< relref "./docs/KernelLiveUpgrade/安装与部署.md" >}})
     -   [使用方法]({{< relref "./docs/KernelLiveUpgrade/使用方法.md" >}})
     -   [常见问题与解决方法]({{< relref "./docs/KernelLiveUpgrade/常见问题与解决方法.md" >}})
