@@ -1,51 +1,65 @@
 # pkgship
 
 <!-- TOC -->
-
 - [pkgship](#pkgship)
-    - [Overview](#overview)
-    - [Architecture](#architecture)
-    - [Downloading Software](#downloading-software)
-    - [Operating Environments](#operating-environments)
-    - [Installing the Tool](#installing-the-tool)
-    - [Configuring Parameters](#configuring-parameters)
-    - [Starting and Stopping Services](#starting-and-stopping-services)
-    - [Tool Usage](#tool-usage)
+  - [Introduction](#Introduction)
+  - [Architecture](#Architecture)
+  - [Downloading the Software](#Downloading the Software)
+  - [Operating Environment](#Operating Environment)
+  - [Installing the Tool](#Installing the Tool)
+  - [Configuring Parameters](#Configuring Parameters)
+  - [Starting and Stopping the Service](#Starting and Stopping the Service)
+  - [Using the Tool](#Using the Tool)
+  - [Viewing and Dumping Logs](#Viewing and Dumping Logs)
 
 <!-- /TOC -->
 
-## Overview
+## Introduction
 
-pkgship is a query tool used to manage the dependency of OS software packages and provide a complete dependency graph. The pkgship provides functions such as software package dependency query, lifecycle management, and patch query.
+The pkgship is a query tool used to manage the dependency of OS software packages and provide a complete dependency graph. The pkgship provides functions such as software package dependency query, lifecycle management, and patch query.
 
-1. Software package dependency query: Allows community personnel to understand the impact on software when software packages are introduced, updated, or deleted.
-2. Lifecycle management: Tracks the release status of upstream software packages so that the maintenance personnel can learn about the current software status and upgrade the software properly in a timely manner.
-3. Patch query: Allows community personnel to learn about the patches in the openEuler software package and obtain the patch information. For details, see [patch-tracking](patch-tracking.md).
+1. Software package dependency query: Allow community personnel to understand the impact on software when software packages are introduced, updated, or deleted.
+2. Patch query: Allow community personnel to learn about the patches in the openEuler software package and obtain the patch information. For details, see [patch-tracking](../patch-tracking/README.md).
 
 ## Architecture
 
-The system is developed using Flask-RESTful and adopts the SQLAlchemy ORM query framework.
+The system uses the Flask-RESTful development mode. The following figure shows the architecture:
 
-![avatar](./images/pkgship_outline.png)
+![avatar](./images/packagemanagement.png)
 
-## Downloading Software
+## Downloading the Software
 
-* The repo source is officially released at <https://repo.openeuler.org/>
-* You can obtain the source code at <https://gitee.com/openeuler/openEuler-Advisor/tree/master/packageship>
-* You can obtain the RPM package of the beta version at <https://117.78.1.88/project/show/openEuler:Mainline>
+* The repo source is officially released at: <https://repo.openeuler.org/>
+* You can obtain the source code at: <https://gitee.com/openeuler/pkgship>
+* You can obtain the RPM package at: <https://117.78.1.88/project/show/openEuler:Mainline>
 
-## Operating Environments
+## Operating Environment
 
-* The available memory is greater than 700 MB.
-* The Python version is 3.8 or later.
-* The SQLite version is 3.32 or later.
+- Hardware configuration:
+
+| Item| Recommended Specification|
+|----------|----------|
+| CPU| 8 cores|
+| Memory| 32 GB (minimum: 4 GB)|
+| Network bandwidth| 300 Mbit/s|
+| I/O| 375 MB/s|
+
+- Software configuration:
+
+| Name| Specifications|
+|----------|----------|
+| Elasticsearch| 7.10.1. Single-node and cluster deployment is available.|
+| Redis| 5.0.4 or later is recommended. You are advised to set the size to 3/4 of the memory.|
+| Python| 3.8 or later.|
 
 ## Installing the Tool
 
-You can use either of the following methods to install the tool:
+**1\. Installing the pkgship**
+
+You can use either of the following methods to install the pkgship:
 
 * Method 1: Mount the repo source using DNF.   
-Use DNF to mount the repo source where the pkgship is located (for details, see the [Application Development Guide](https://openeuler.org/zh/docs/21.03/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)), run the following command to download and install the pkgship and its dependencies:
+Use DNF to mount the repo source where the pkgship is located (for details, see the [Application Development Guide](https://openeuler.org/zh/docs/20.09/docs/ApplicationDev/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87.html)). Then run the following command to download and install the pkgship and its dependencies:
   
   ```bash
   dnf install pkgship
@@ -57,343 +71,337 @@ Use DNF to mount the repo source where the pkgship is located (for details, see 
   rpm -ivh pkgship-x.x-x.oe1.noarch.rpm
   ```
   
-  or the following command:
+  Or
   
   ```bash
   dnf install pkgship-x.x-x.oe1.noarch.rpm
   ```
 
-## Configuring Parameters
+**2\. Installing Elasticsearch and Redis**
 
-1. Configure the parameters in the configuration file. The default configuration file of the system is stored in **/etc/pkgship/packge.ini**. Modify the configuration file as required.
-   
-   ```basn
-   vim /etc/pkgship/package.ini
-   ```
-   
-   ```ini
-   [SYSTEM CONFIGURATION]
-   
-   ; Directory for storing the YAML file imported during database initialization. The YAML file records the location of the imported SQLite file.
-   init_conf_path=/etc/pkgship/conf.yaml
-   
-   ; Path for storing the SQLite file that is successfully imported
-   data_base_path=/var/run/pkgship_dbs
-   
-   ; Write port
-   write_port=8080
-   
-   ; Query port
-   query_port=8090
-   
-   ; Write permission access IP address
-   write_ip_addr=127.0.0.1
-   
-   ; Query permission access IP address
-   query_ip_addr=127.0.0.1
-   
-   ; Address of the remote service. The command line can directly invoke the remote service to complete data requests. You only need to add the -remote parameter to the end of each command line.
-   remote_host=https://api.openeuler.org/pkgmanage
-   
-   [LOG]
-   
-   ; Path for storing logs
-   log_path=/var/log/pkgship/
-   
-   ; Log level as follows:
-   ; INFO DEBUG WARNING ERROR CRITICAL
-   log_level=INFO
-   
-   ; Log name
-   log_name=log_info.log
-   
-   ; Number of logs that are dynamically created after the size of a log file reaches the upper limit.
-   backup_count=10
-   
-   ; Size of each log file
-   max_bytes=314572800
-   
-   [uWSGI SERVICE CONFIGURATION]
-   
-   ; Path for storing uwsgi log
-   daemonize=/var/log/uwsgi.log
-   
-   ; Size of data transmitted at the front- and back-end
-   buffer-size=65536
-   
-   ; HTTP connection time
-   http-timeout=600
-   
-   ; Server response time
-   harakiri=600
-   
-   [TIMEDTASK]
-   
-   ; Whether to enable scheduled tasks
-   open=True
-   
-   ; Set the time when a scheduled task is triggered
-   hour=3
-   minute=0
-   
-   [LIFECYCLE]
-   ; Remote storage address of the YAML address of each package
-   warehouse_remote=https://gitee.com/openeuler/openEuler-Advisor/raw/master/upstream-info/
-   
-   ; When executing a scheduled task, you can enable multi-thread execution and set the number of threads in the thread pool based on the server configuration.
-   pool_workers=10
-   
-   ; Warehouse name
-   warehouse=src-openeuler
-   
-   ```
+If Elasticsearch or Redis is not installed in the environment, you can execute the automatic installation script after the pkgship is installed.
 
-2. Create a YAML configuration file to initialize the database. By default, the conf.yaml file is stored in the **/etc/pkgship/** directory. Based on this configuration, the pkgship reads the name of the database to be created and the SQLite file to be imported. An example of the conf.yaml file is as follows:
-   
-   ```yaml
-   - dbname: openEuler-21.03
-     src_db_file: /etc/pkgship/src.sqlite
-     bin_db_file: /etc/pkgship/bin.sqlite
-     lifecycle: enable
-     priority: 1
-   ```
+The default script path is as follows:
 
-> To change the storage path, change the value of **init\_conf\_path** in the **package.ini** file.
-
-## Starting and Stopping Services
-
-The pkgship uses the uWSGI web server. The commands for starting and stopping the service are as follows. You can specify whether to start the read-only (write-only) service or start the read and write services at the same time.
-
-```bash
-pkgshipd start [manage/selfpkg]
-
-pkgshipd stop [manage/selfpkg]
+```
+/etc/pkgship/auto_install_pkgship_requires.sh
 ```
 
-## Tool Usage
+Run the following command:
+
+```
+/bin/bash auto_install_pkgship_requires.sh elasticsearch
+```
+
+Or
+
+```
+ /bin/bash auto_install_pkgship_requires.sh redis
+```
+
+**3\. Adding a User After the Installation**
+
+After the pkgship software is installed, the system automatically creates a user named **pkgshipuser** and a user group named **pkgshipuser**. They will be used when the service is started and running.
+
+## Configuring Parameters
+
+1\. Configure the parameters in the configuration file. The default configuration file of the system is stored in **/etc/pkgship/packge.ini**. Modify the configuration file as required.
+
+```
+vim /etc/pkgship/package.ini
+```
+
+```ini
+[SYSTEM-System Configuration]
+; Path for storing the .yaml file imported during database initialization. The .yaml file records the location of the imported .sqlite file.
+init_conf_path=/etc/pkgship/conf.yaml
+
+; Service query port
+query_port=8090
+
+; Service query IP address
+query_ip_addr=127.0.0.1
+
+; Address of the remote service. The command line can directly call the remote service to complete the data request.
+remote_host=https://api.openeuler.org/pkgmanage
+
+; Directory for storing temporary files during initialization and download. The directory will not be occupied for a long time. It is recommended that the available space be at least 1 GB.
+temporary_directory=/opt/pkgship/tmp/
+
+[LOG-Logs]
+; Service log storage path
+log_path=/var/log/pkgship/
+
+; Log level. The options are as follows:
+; INFO DEBUG WARNING ERROR CRITICAL
+log_level=INFO
+
+; Maximum size of a service log file. If the size of a service log file exceeds the value of this parameter, the file is automatically compressed and dumped. The default value is 30 MB.
+max_bytes=31457280
+
+; Maximum number of backup log files. The default value is 30.
+backup_count=30
+
+[UWSGI-Web Server Configuration]
+; Operation log path
+daemonize=/var/log/pkgship-operation/uwsgi.log
+; Size of data transmitted between the front end and back end
+buffer-size=65536
+; Network connection timeout interval
+http-timeout=600
+; Service response time
+harakiri=600
+
+[REDIS-Cache Configuration]
+; The address of the Redis cache server can be the released domain or IP address that can be accessed.
+; The default link address is 127.0.0.1.
+redis_host=127.0.0.1
+
+; Port number of the Redis cache server. The default value is 6379.
+redis_port=6379
+
+; Maximum number of connections allowed by the Redis server at a time.
+redis_max_connections=10
+
+[DATABASE-Database]
+; Database access address. The default value is the IP address of the local host.
+database_host=127.0.0.1
+
+; Database access port. The default value is 9200.
+database_port=9200
+
+```
+
+2\. Create a YAML configuration file to initialize the database. The **conf.yaml** file is stored in the **/etc/pkgship/** directory by default. The pkgship reads the name of the database to be created and the SQLite file to be imported based on this configuration. You can also configure the repo address of the SQLite file. An example of the **conf.yaml** file is as follows:
+
+```yaml
+dbname: oe20.03   #Database name
+src_db_file: /etc/pkgship/repo/openEuler-20.09/src  #Local path of the source package
+bin_db_file: /etc/pkgship/repo/openEuler-20.09/bin  #Local path of the binary package
+priority: 1 #Database priority
+
+dbname: oe20.09
+src_db_file: https://repo.openeuler.org/openEuler-20.09/source  #Repo source of the source package
+bin_db_file: https://repo.openeuler.org/openEuler-20.09/everything/aarch64 #Repo source of the binary package
+priority: 2
+```
+
+> To change the storage path, change the value of **init\_conf\_path** in the **package.ini** file.
+> 
+> The SQLite file path cannot be configured directly.
+> 
+> The value of **dbname** can contain only lowercase letters and digits.
+
+## Starting and Stopping the Service
+
+The pkgship can be started and stopped in two modes: systemctl mode and pkgshipd mode. In systemctl mode, the automatic startup mechanism can be stopped when an exception occurs. You can run any of the following commands:
+
+```shell
+systemctl start pkgship.service Start the service.
+
+systemctl stop pkgship.service Stop the service.
+
+systemctl restart pkgship.service Restart the service.
+```
+
+```sh
+pkgshipd start Start the service.
+
+pkgshipd stop Stop the service.
+```
+
+> Only one mode is supported in each start/stop period. The two modes cannot be used at the same time.
+> 
+> The pkgshipd startup mode can be used only by the **pkgshipuser** user.
+
+## Using the Tool
 
 1. Initialize the database.
    
-   > Application scenario: After the service is started, to query the package information and package dependency in the corresponding database, such as Mainline and openEuler 21.03, you need to import the SQLite (including the source code library and binary library), which is generated by the database using createrepo, to the service, and generate the corresponding DB file. When the **lifecycle** parameter of the database is set to enable in the conf.yaml file, a corresponding table is generated in **lifecycle.db** to record database information. The database table name (**tablename**) is read from this file subsequently. The **\[-filepath]** parameter is optional.
+   > Application scenario: After the service is started, to query the package information and dependency in the corresponding database (for example, oe20.03 and oe20.09), you need to import the SQLite (including the source code library and binary library) generated by the **createrepo** to the service. Then insert the generated JSON body of the package information into the corresponding database of Elasticsearch. The database name is the value of d**bname-source/binary** generated based on the value of **dbname** in the **conf.yaml** file.
    
    ```bash
    pkgship init [-filepath path]
    ```
    
    > Parameter description:   
-**-filepath**: Specifies the path of the initialized configuration file. You can use either a relative path or an absolute path. If no parameter is specified, the default configuration is used for initialization.
+**-filepath**: (Optional) Specifies the path of the initialization configuration file **config.yaml.** You can use either a relative path or an absolute path. If no parameter is specified, the default configuration is used for initialization.
 
 2. Query a single package.
    
-   You can query the information about a source code package (**packagename**) in a specified database table (**tablename**).
+   You can query details about a source package or binary package (**packagename**) in the specified **database** table.
    
-   > Application scenario: You can query information about a specific source code package in a specified database. The **packagename** and **tablename** are mandatory.
+   > Application scenario: You can query the detailed information about the source package or binary package in a specified database.
    
    ```bash
-   pkgship single packagename tablename
+   pkgship pkginfo $packageName $database [-s]
    ```
    
    > Parameter description:   
-**packagename**: Specifies the name of the source code package to be queried.   
-**tablename**: Specifies the database name.
+**packagename**: (Mandatory) Specifies the name of the software package to be queried.   
+**database**: (Mandatory) Specifies the database name.
+   > 
+   > **-s**: (Optional) Specifies that the source package `src` is to be queried by `-s`. If this parameter is not specified, the binary package information of `bin` is queried by default.
 
 3. Query all packages.
    
    Query information about all packages in the database.
    
-   > Application scenario: You can query information about all software packages in a specified database. The **tablename** is mandatory, and the **\[-packagename]** and **\[-maintainer]** are optional.
+   > Application scenario: You can query information about all software packages in a specified database.
    
    ```bash
-   pkgship list tablename [-packagename pkgName] [-maintainer maintainer]
+   pkgship list $database [-s]
    ```
    
    > Parameter description:   
-**tablename**: Specifies the database name.   
-**-packagename**: Matches the package whose name contains the parameter string.   
-**-maintainer**: Matches the package in which **maintainer** is a parameter.
+**database**: (Mandatory) Specifies the database name.   
+**-s**: (Optional) Specifies that the source package `src` is to be queried by `-s`. If this parameter is not specified, the binary package information of `bin` is queried by default.
 
 4. Query the installation dependency.
    
-   Query the installation dependency of the binary package (binaryName).
+   Query the installation dependency of the binary package (**binaryName**).
    
-   > Application scenario: When you need to install the binary package A, you need to install B, the installation dependency of A, and C, the installation dependency of B, etc. A can be successfully installed only after all the installation dependencies are installed in the system. Therefore, before installing the binary package A, you may need to query all installation dependencies of A. You can run the following command to query multiple databases based on the default priority of the platform, and to customize the database query priority.
+   > Application scenario: When you need to install the binary package A, you need to install B, the installation dependency of A, and C, the installation dependency of B, etc. A can be installed only after all the installation dependencies are installed in the system. Therefore, before installing the binary package A, you may need to query all installation dependencies of A. You can run the following command to query multiple databases based on the default priority of the platform, and to customize the database query priority.
    
    ```bash
-   pkgship installdep binaryName [-dbs dbName1 dbName2...]
+   pkgship installdep [$binaryName $binaryName1 $binaryName2...] [-dbs] [db1 db2...] [-level] $level
    ```
    
    > Parameter description:   
-**-dbs**: Specifies the database query priority. **dbName** indicates the database name.
+**binaryName**: (Mandatory) Specifies the name of the dependent binary package to be queried. Multiple packages can be transferred.
+   > 
+   > **-dbs:** (Optional) Specifies the priority of the database to be queried. If this parameter is not specified, the database is queried based on the default priority.
+   > 
+   > **-level**: (Optional) Specifies the dependency level to be queried. If this parameter is not specified, the default value **0** is used, indicating that all levels are queried.
 
 5. Query the compilation dependency.
    
    Query all compilation dependencies of the source code package (**sourceName**).
    
-   > Application scenario: To compile the source code package A, you need to install B, the compilation dependency package of A. To install B, you need to obtain all installation dependency packages of B. Therefore, before compiling the source code package A, you may need to query the compilation dependencies of A and all installation dependencies of these compilation dependencies. You can run the following command to query multiple databases based on the default priority of the platform, and to customize the database query priority.
+   > Application scenario: To compile the source code package A, you need to install B, the compilation dependency package of A. To install B, you need to obtain all installation dependency packages of B. Therefore, before compiling the source code package A, you need to query the compilation dependencies of A and all installation dependencies of these compilation dependencies. You can run the following command to query multiple databases based on the default priority of the platform, and to customize the database query priority.
    
    ```bash
-   pkgship builddep sourceName [-dbs dbName1 dbName2...]
+   pkgship builddep [$sourceName $sourceName1 $sourceName2..] -dbs [db1 db2 ..] [-level] $level
    ```
    
    > Parameter description:   
-**-dbs**: Specifies the database query priority. **dbName** indicates the database name.
+**sourceName**: (Mandatory) Specifies the name of the source package on which the compilation depends. Multiple packages can be queried.
+   > 
+   > **-dbs:** (Optional) Specifies the priority of the database to be queried. If this parameter is not specified, the database is queried based on the default priority.
+   > 
+   > **-level**: (Optional) Specifies the dependency level to be queried. If this parameter is not specified, the default value **0** is used, indicating that all levels are queried.
 
 6. Query the self-compilation and self-installation dependencies.
    
-   Query the installation and compilation dependencies of a specified binary package (**binaryName**) or source code package (**sourceName**). In the command, **\[pkgName]** indicates the name of the binary package or source code package to be queried. When querying a binary package, you can query all installation dependencies of the binary package, and the compilation dependencies of the source code package corresponding to the binary package, as well as all installation dependencies of these compilation dependencies. When querying a source code package, you can query its compilation dependency, and all installation dependencies of these compilation dependencies, as well as all installation dependencies of the binary packages generated by the source code package. In addition, you can run this command together with the corresponding parameters to query the self-compilation dependency of a software package and the dependency of a subpackage.
+   Query the installation and compilation dependencies of a specified binary package (**binaryName**) or source package (**sourceName**). In the command, **\[pkgName]** indicates the name of the binary package or source package to be queried. When querying a binary package, you can query all installation dependencies of the binary package, and the compilation dependencies of the source package corresponding to the binary package, as well as all installation dependencies of these compilation dependencies. When querying a source package, you can query its compilation dependency, and all installation dependencies of the compilation dependency, as well as all installation dependencies of the binary packages generated by the source package. In addition, you can run this command together with the corresponding parameters to query the self-compilation dependency of a software package and the dependency of a subpackage.
    
-   > Application scenario: If you want to introduce a new software package based on the existing version library, you need to introduce all compilation and installation dependencies of the software package. You can run this command to query these two dependency types at the same time to know the packages introduced by the new software package, and to query binary packages and source code packages.
+   > Application scenario: If you want to introduce a new software package based on the existing version library, you need to introduce all compilation and installation dependencies of the software package. You can run this command to query these two dependency types at the same time to know the packages introduced by the new software package, and to query binary packages and source packages.
    
    ```bash
-    pkgship selfbuild [pkgName] [-dbs dbName1 dbName2 ] [-t source] [-s 1] [-w 1]
+    pkgship selfdepend [$pkgName1 $pkgName2 $pkgName3 ..] [-dbs] [db1 db2..] [-b] [-s] [-w]
    ```
    
-   > Parameter description:   
-**-dbs:** Specifies the database priority. **dbName** indicates the database name. The following is an example:
-   
-   > ```bash
-   > pkgship selfbuild pkgName -dbs dbName1 dbName2 
-   > ```
-   
-   > **-t source/binary**: Specifies whether the package **pkgName** to be queried is a source code package or a binary package. If **-t** is not added, the package is a binary package by default.   
-**-s**: This parameter is added to query all installation dependencies and compilation dependencies of the software package (that is, compilation dependencies of the source code package on which compilation depends), and all installation dependencies of the compilation dependencies. In the command, **0** following the **-s** indicates that the self-compilation dependency is not queried, and 1 indicates that the self-compilation dependency is queried. The default value is **0**, and you can specify the value to **1**. If the **-s** is not added, all installation dependencies, layer-1 compilation dependencies, and layer-1 compilation dependencies of the software package are queried. The following is an example of querying self-compilation dependencies:
-   
-   > ```bash
-   > pkgship selfbuild pkgName -t source -s 1
-   > ```
-   
-   > **-w**: When a binary package is introduced and this parameter is added, the source code package corresponding to the binary package and all binary packages generated by the source code package are displayed in the query result. In the command, **0** following **-w** indicates that the corresponding subpackage is not queried, and **1** indicates that the corresponding subpackage is queried. The default value is **0**, and you can specify the value to **1**. When **-w** is not added, only the corresponding source code package is displayed in the query result when a binary package is introduced. The following is an example of querying a subpackage:
-   
-   > ```bash
-   > pkgship selfbuild pkgName -w 1
-   > ```
+   > Parameter description:
+   > 
+   > **pkgName**: (Mandatory) Specifies the name of the software package on which the installation depends. Multiple software packages can be transferred.
+   > 
+   > **-dbs:** (Optional) Specifies the priority of the database to be queried. If this parameter is not specified, the database is queried based on the default priority.
+   > 
+   > **-b**: (Optional) Specifies that the package to be queried is a binary package. If this parameter is not specified, the source package is queried by default.
+   > 
+   > **-s**: (Optional) If **-s** is specified, all installation dependencies, compilation dependencies (that is, compilation dependencies of the source package on which compilation depends), and installation dependencies of all compilation dependencies of the software package are queried. If **-s** is not added, all installation dependencies and layer-1 compilation dependencies of the software package, as well as all installation dependencies of layer-1 compilation dependencies, are queried.
+   > 
+   > **-w**: (Optional) If **-s** is specified, when a binary package is introduced, the query result displays the source package corresponding to the binary package and all binary packages generated by the source package. If **-w** is not specified, only the corresponding source package is displayed in the query result when a binary package is imported.
 
 7. Query dependency.   
-Query the packages that depend on the source code package (**sourceName**) in a database (**dbName**).
+Query the packages that depend on the software package (**pkgName**) in a database (**dbName**).
    
-   > Application scenario: You can run this command to query the software packages that will be affected by the upgrade or deletion of the software source code package A. This command displays the source code packages (for example, B) whose compilation depends on all binary packages generated by the source code package A, and the binary packages (for example, C1) whose installation depends on all binary packages generated by A. This command also displays the source code packages (for example, D) whose compilation depends on C1 and the binary package generated by B, and the binary packages (for example, E1) whose installation depends on C1 and the binary package generated by B, etc. Iterate the packages that depend on these binary packages. **\[-w 0/1]** is an optional parameter. The following is an example:
-   
-   ```bash
-    pkgship bedepend sourceName dbName [-w 1]
-   ```
-   
-   > Parameter description   
-**-w (0/1)**: If the command does not contain configuration parameters or **\[-w 0]**, by default, the query result does not contain the subpackage of the corresponding binary package. When the command is followed by the configuration parameter or **\[-w 1]**, the dependency of the binary package C1 is queried, as well as the dependency of other binary packages (for example, C2 and C3) generated by C, the source code package corresponding to C1.
-
-8. Modify package information.
-   
-   > Application scenario: You can modify the information about the maintainer and maintenance level of a specified source code package. **[-Packagename]**, **\[-maintainer]**, **\[-maintainlevel]**, **\[-filefolder]**, and **\[--batch]** are optional parameters.
-   
-   You can modify the information with either of the following methods:   
-Method 1: Specify the source code package name (**packagename**) to modify the information about the maintainer (**Newmaintainer**) and maintenance level (**Newmaintainlevel**) of the source code package. The following is an example:
+   > Application scenario: You can run this command to query the software packages that will be affected by the upgrade or deletion of the software source package A. This command displays the source packages (for example, B) that depend on the binary packages generated by source package A (if it is a source package or the input binary package for compilation). It also displays the binary packages (for example, C1) that depend on A for installation. Then, it queries the source package (for example, D) that depend on the binary package generated by B C1 for compilation and the binary package (for example E1) for installation. This process continues until it traverses the packages that depend on the binary packages.
    
    ```bash
-   pkgship updatepkg [-packagename packagename] [-maintainer Newmaintainer] [-maintainlevel Newmaintainlevel]
+    pkgship bedepend dbName [$pkgName1 $pkgName2 $pkgName3] [-w] [-b] [-install/build]
    ```
    
-   > Parameter description:   
-**-packagename**: Specifies the name of the package to be maintained.   
-**-maintainer**: Specifies the maintainer of the update package.   
-**-maintainlevel**: Specifies the maintenance level of the update package. The value ranges from 1 to 4, and the default value is **1**.
-   
-   Method 2: Specify the file path, and the maintainer, and maintenance level of the batch update package. The **--batch** parameter must be added to this command. The following is an example:
-   
-   ```bash
-   pkgship updatepkg [--batch] [-filefolder path]
-   ```
-   
-   > Parameter description:   
-**-filefolder**: Specifies the YAML file where the package information is stored. The specified directory can contain only the updated YAML files.   
-**--batch**: Specifies the update in batches. This parameter must be used together with the **\[-filefolder]** parameter.
-   
-   You can create a file named A.yaml, set the package name to A, and specify the YAML content to modify the package information.   
-The YAML format of the package information is as follows:
-   
-   ```
-   maintainer：Newmaintainlevel
-   maintainlevel： Newmaintainlevel
-   ```
+   > Parameter description:
+   > 
+   > **dbName**: (Mandatory) Specifies the name of the repository whose dependency needs to be queried. Only one repository can be queried each time.
+   > 
+   > **pkgName**: (Mandatory) Specifies the name of the software package to be queried. Multiple software packages can be queried.
+   > 
+   > **-w**: (Optional) If **-w** is not specified, the query result does not contain the subpackages of the corresponding source package by default. If **\[-w]** is specified after the command, not only the dependency of binary package C1 is queried, but also the dependency of other binary packages (such as C2 and C3) generated by source package C corresponding to C1 is queried.
+   > 
+   > **-b**: (Optional) Specifies `-b` and indicates that the package to be queried is a binary package. By default, the source package is queried.
+   > 
+   > **-install/build**: (Optional) `-install` indicates that installation dependencies are queried. `-build` indicates that build dependencies are queried. By default, all dependencies are queried. `-install` and `-build` are exclusive to each other.
 
-9. Delete databases.
+8. Query the database information.
    
-   > Application scenario: Delete a specified database (**dbName**).
+   > Application scenario: Check which databases are initialized in Elasticsearch. This function returns the list of initialized databases based on the priority.
    
-   ```bash
-   pkgship rm dbName
-   ```
+   `pkgship dbs`
 
-10. Query table information.
-    
-    > Application scenario: View all data tables in the current lifecycle database.
-    
-    ```bash
-     pkgship tables
-    ```
+9. Obtain the version number.
+   
+   > Application scenario: Obtain the version number of the pkgship software.
+   
+   `pkgship -v`
 
-11. Query issues.
-    
-    > Application scenario: View information about all issues in all source code packages. The optional parameters include **\[-packagename]**, **\[-issue\_type]**, **\[-issue\_status]**, **\[-maintainer]**, **\[-page N]**, and **\[-pagesize pageSize]**.
-    
-    ```bash
-     pkgship issue [-packagename pkgName],[-issue_type issueType],[-issue_status issueStatus],[-maintainer maintainer],[-page N],[-pagesize pageSize]
-    ```
-    
-    > Parameter description:   
-**-packagename**: Specifies the package name for fuzzy query.   
-**-issue\_type**: Specifies the issue type for query.   
-**-issue\_status**: Specifies the issue status for query.   
-**-maintainer**: Specifies a maintainer for query.   
-**-page**: Specifies the data on page N to be queried.   
-**-pagesize**: Specifies the number of data records displayed on each page.
-    
-    ```bash
-    Run the following command to specify a package name for fuzzy search:
-    pkgship issue -packagename pkgName
-    ```
-    
-    ```bash
-    Run the following command to specify an issue type for query:
-    pkgship issue -issue_type issueType
-    ```
-    
-    ```bash
-    Run the following command to specify an issue status for query:
-    pkgship issue -issue_status issueStatus
-    ```
-    
-    ```bash
-    Run the following command to specify a maintainer for query:
-    pkgship issue -maintainer maintainer
-    ```
-    
-    ```bash
-    Run the following command to specify the data of page N for query:
-    pkgship issue -page N
-    ```
-    
-    ```bash
-    Run the following command to specify the number of data items of each page for query:
-    pkgship issue -pagesize pageSize
-    ```
+## Viewing and Dumping Logs
 
-12. Update the lifecycle of the software package.
-    
-    > Application scenario: Update the information about the issue, maintainer, and maintenance level of all software packages in the lifecycle table. The optional parameters include **\[--issue]** and **\[--package]**.
-    
-    ```bash
-    pkgship update [--issue] [--package]
-    ```
-    
-    > Parameter description:   
-**--issue**: Updates the issue information of all software packages in the lifecycle table. Based on the software package names in the lifecycle table, the system crawls the issue information corresponding to the software package.   
-**--package**: Updates the information about the lifecycle, maintainer, and maintenance level of all software packages in the lifecycle table.
-    
-    ```bash
-    Run the following command to update the issue information of all software packages in the lifecycle table:
-    pkgship update --issue
-    ```
-    
-    ```bash
-    Run the following command to update the lifecycles, maintainers, and maintenance levels of all software packages in the lifecycle table:
-    pkgship update --package
-    ```
+**Viewing Logs**
+
+When the pkgship service is running, two types of logs are generated: service logs and operation logs.
+
+1\. Service logs:
+
+Path: **/var/log/pkgship/log\_info.log**. You can customize the path through the **log\_path** field in the **package.ini** file.
+
+Function: This log records the internal running of the code to facilitate fault locating.
+
+Permission: The permissions on the path and the log file are 755 and 644, respectively. Common users can view the log file.
+
+2\. Operation logs:
+
+Path: **/var/log/pkgship-operation/uwsgi.log**. You can customize the path through the **daemonize** field in the **package.ini** file.
+
+Function: This log records user operation information, including the IP address, access time, URL, and result, to facilitate subsequent queries and record attacker information.
+
+Permission: The permissions on the path and the log file are 700 and 644, respectively. Only the **root** and **pkgshipuser** users can view the log file.
+
+**Dumping Logs**
+
+1\. Service log dumping:
+
+- Dumping mechanism
+  
+  Use the dumping mechanism of the logging built-in function of Python to back up logs based on the log size.
+
+> The items are used to configure the capacity and number of backups of each log in the **package.ini** file.
+> 
+> ```ini
+> ; Maximum capacity of each file, the unit is byte, default is 30M
+> max_bytes=31457280
+> 
+> ; Number of old logs to keep;default is 30
+> backup_count=30
+> ```
+
+- Dumping process
+  
+  After a log is written, if the size of the log file exceeds the configured log capacity, the log file is automatically compressed and dumped. The compressed file name is **log\_info.log.***x***.gz**, where *x* is a number. A smaller number indicates a later backup.
+  
+  When the number of backup log files reaches the threshold, the earliest backup log file is deleted and the latest compressed log file is backed up.
+
+2\. Operation log dumping:
+
+- Dumping mechanism
+  
+  A script is used to dump data by time. Data is dumped once a day and is retained for 30 days. Customized configuration is not supported.
+  
+  > The script is stored in **/etc/pkgship/uwsgi\_logrotate.sh**.
+
+- Dumping process
+  
+  When the pkgship is started, the script for dumping data runs in the background. From the startup, dumping and compression are performed every other day. A total of 30 compressed files are retained. The compressed file name is **uwsgi.log-20201010***x***.zip**, where *x* indicates the hour when the file is compressed.
+  
+  After the pkgship is stopped, the script for dumping data is stopped and data is not dumped . When the pkgship is started again, the script for dumping data is executed again.
