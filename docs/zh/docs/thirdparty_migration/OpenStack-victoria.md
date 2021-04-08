@@ -1237,11 +1237,23 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
 	修改变量 
 
     ```plain
-    ALLOWED_HOSTS = ['*', ]OPENSTACK_HOST = "controller"OPENSTACK_KEYSTONE_URL = "http://%s:5000/v3" % OPENSTACK_HOST
+    ALLOWED_HOSTS = ['*', ]
+    OPENSTACK_HOST = "controller"
+    OPENSTACK_KEYSTONE_URL = "http://%s:5000/v3" % OPENSTACK_HOST
     ```
     新增变量
     ```plain
-    OPENSTACK_API_VERSIONS = {    "identity": 3,    "image": 2,    "volume": 3,}WEBROOT = "/dashboard/"COMPRESS_OFFLINE = TrueOPENSTACK_KEYSTONE_DEFAULT_DOMAIN = "default"OPENSTACK_KEYSTONE_DEFAULT_ROLE = "admin"LOGIN_URL = '/dashboard/auth/login/'LOGOUT_URL = '/dashboard/auth/logout/'
+    OPENSTACK_API_VERSIONS = {
+        "identity": 3,
+        "image": 2,
+        "volume": 3,
+    }
+    WEBROOT = "/dashboard/"
+    COMPRESS_OFFLINE = True
+    OPENSTACK_KEYSTONE_DEFAULT_DOMAIN = "default"
+    OPENSTACK_KEYSTONE_DEFAULT_ROLE = "admin"
+    LOGIN_URL = '/dashboard/auth/login/'
+    LOGOUT_URL = '/dashboard/auth/logout/'
     ```
 3. 在/usr/share/openstack-dashboard目录下执行
     ```plain
