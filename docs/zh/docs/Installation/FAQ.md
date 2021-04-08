@@ -1,6 +1,5 @@
 # FAQ
 
-[[toc]]
 
 ## 安装openEuler时选择第二盘位为安装目标，操作系统无法启动
 
@@ -325,3 +324,17 @@ anaconda不支持在chroot环境中安装selinux策略模块，当安装pcp-seli
 
 ### issue访问链接
 https://gitee.com/src-openeuler/anaconda/issues/I29P84?from=project-issue
+
+## 安装LSI MegaRAID卡的物理机kdump无法生成vmcore
+
+### 问题现象
+部署好kdump服务后，手动执行`echo c > /proc/sysrq-trigger`命令或由于kernel故障导致kernel宕机，触发kdump启动second kernel过程中，MegaRAID驱动报错“BRCM Debug mfi stat 0x2d，data len requested/completed 0x200/0x0”，报错信息如下图，最终导致无法生成vmcore。
+
+![](./figures/Megaraid_IO_Request_uncompleted.png)
+
+### 原因分析
+由于默认配置了reset_devices启动参数，second kernel启动过程中会触发设备复位(reset_devices)操作，设备复位操作导致MegaRAID控制器或磁盘状态故障，转储vmcore文件时访问MegaRAID卡的磁盘报错，进而无法生成vmcore。
+
+### 解决方法
+在物理机`etc/sysconfig/kdump`文件中将second kernel默认启动参数`reset_devices`删除，可以规避second kernel启动过程中由于MegaRAID卡驱动复位设备所致IO请求未完成问题，以成功生成vmcore。
+![](./figures/reset_devices.png)

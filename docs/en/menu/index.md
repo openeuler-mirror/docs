@@ -146,9 +146,6 @@ headless: true
 -   [Third-Party Software Deployment Guide]({{< relref "./docs/thirdparty_migration/thidrparty.md" >}})
     -   [OpenStack Victoria Deployment Guide]({{< relref "./docs/thirdparty_migration/OpenStack-victoria.md" >}})
     -   [Installing and Deploying an HA Cluster]({{< relref "./docs/thirdparty_migration/installha.md" >}})
--   [Toolset User Guide]({{< relref "./docs/userguide/overview.md" >}})
-    -   [patch-tracking]({{< relref "./docs/userguide/patch-tracking.md" >}})
-    -   [pkgship]({{< relref "./docs/userguide/pkgship.md" >}})
 -   [Desktop Environment User Guide]({{< relref "./docs/desktop/desktop.md" >}})
     -   [UKUI]({{< relref "./docs/desktop/ukui.md" >}})
         -   [Installation UKUI]({{< relref "./docs/desktop/install-UKUI.md" >}})
@@ -158,4 +155,7 @@ headless: true
         -   [DDE User Guide]({{< relref "./docs/desktop/DDE-User-Manual.md" >}})
     -   [XFCE]({{< relref "./docs/desktop/xfce.md" >}})
         -   [Xfce Installation Guide]({{< relref "./docs/desktop/Install_XFCE.md" >}})
-  
+        -   [Xfce User Guide]({{< relref "./docs/desktop/Xfce_userguide.md" >}})
+-   [Toolset User Guide]({{< relref "./docs/userguide/overview.md" >}})
+    -   [patch-tracking]({{< relref "./docs/userguide/patch-tracking.md" >}})
+    -   [pkgship]({{< relref "./docs/userguide/pkgship.md" >}})

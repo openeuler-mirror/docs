@@ -1,7 +1,5 @@
 # Installing StratoVirt
 
-[[toc]]
-
 ## Software and Hardware Requirements
 
 ### Minimum Hardware Requirements
