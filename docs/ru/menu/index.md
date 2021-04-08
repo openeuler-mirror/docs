@@ -28,7 +28,7 @@ headless: true
         -   [Руководство по установке]({{< relref "./docs/Installation/Installation-Guide1" >}})
         -   [Вопросы и ответы]({{< relref "./docs/Installation/FAQ1.md" >}})
         -   [Справочная информация]({{< relref "./docs/Installation/More-Resources.md" >}})
--   [Administrator Guide]({{< relref "./docs/Administration/administration.md" >}})
+-   [Руководство администратора]({{< relref "./docs/Administration/administration.md" >}})
     -   [Просмотр информации о системе]({{< relref "./docs/Administration/viewing-system-information.md" >}})
     -   [Базовая конфигурация]({{< relref "./docs/Administration/basic-configuration.md" >}})
     -   [Управление пользователями и группами пользователей]({{< relref "./docs/Administration/user-and-user-group-management.md" >}})
