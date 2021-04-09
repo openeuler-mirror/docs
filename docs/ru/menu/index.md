@@ -53,5 +53,5 @@ headless: true
     -   [Создание пакета в формате RPM]({{< relref "./docs/ApplicationDev/building-an-rpm-package.md" >}})
     -   [Вопросы и ответы]({{< relref "./docs/ApplicationDev/FAQ.md" >}})
 -   [Руководство пользователя набора инструментов]({{< relref "./docs/userguide/overview.md" >}})
-    -   [patch-tracking: инструмент отслеживания патчей]({{< relref "./docs/ApplicationDev/patch-tracking.md" >}})
-    -   [pkgship]({{< relref "./docs/ApplicationDev/pkgship.md" >}})
+    -   [patch-tracking: инструмент отслеживания патчей]({{< relref "./docs/userguide/patch-tracking.md" >}})
+    -   [pkgship]({{< relref "./docs/userguide/pkgship.md" >}})
