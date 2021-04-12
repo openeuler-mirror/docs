@@ -140,6 +140,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin-right: 20px;
+    flex-shrink: 0;
 }
 
 .doc-catalog .list>div span {  
@@ -148,11 +149,11 @@
     font-weight: bold;
     line-height: 36px;
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .doc-catalog .list>div .link-box {
     margin-left: 40px;
-    width: 315px;
 }
 
 .doc-catalog .list>div .link-box a{
@@ -218,7 +219,8 @@ html[lang="ru"] .doclist .doc-catalog .list[index="95"] .develop {
     height: 172px;
 }
 
-html[lang="en"] .doc-catalog .list[index="96"]>.migrate .link-box a {
+html[lang="en"] .doc-catalog .list[index="96"]>.migrate .link-box a,
+html[lang="ru"] .doc-catalog .list[index="97"]>.develop .link-box a {
     line-height: 20px;
     margin-bottom: 25px;
 }
@@ -230,13 +232,6 @@ html[lang="zh"] .list[index="95"] .use .link-box a:nth-of-type(3) {
     margin-right: 55px;
 }
 
-
-@media screen and (max-width: 1900px) {
-    .doclist .doc-catalog .list>div {
-        width: 460px;
-    }
-    
-}
 @media screen and (max-width: 1000px) {
 
     .body_content .doclist .h5-search {
