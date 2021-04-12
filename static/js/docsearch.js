@@ -16,7 +16,7 @@ $(function($) {
         articles = 'openeuler_articles_en';
     }else {
         versionText = 'Версия';
-        articles = 'openeuler_articles_en';
+        articles = 'openeuler_articles_ru';
     }
 
     var searchMethods = {
