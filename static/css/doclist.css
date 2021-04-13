@@ -219,8 +219,20 @@ html[lang="ru"] .doclist .doc-catalog .list[index="95"] .develop {
     height: 172px;
 }
 
+html[lang="ru"] .doclist .doc-catalog .list[index="96"] .migrate {
+    height: 300px;
+}
+
 html[lang="en"] .doc-catalog .list[index="96"]>.migrate .link-box a,
-html[lang="ru"] .doc-catalog .list[index="97"]>.develop .link-box a {
+html[lang="ru"] .doc-catalog .list[index="95"]>.develop .link-box a,
+html[lang="ru"] .doc-catalog .list[index="95"]>.use .link-box a,
+html[lang="ru"] .doc-catalog .list[index="96"]>.develop .link-box a,
+html[lang="ru"] .doc-catalog .list[index="96"]>.use .link-box a,
+html[lang="ru"] .doc-catalog .list[index="96"]>.migrate .link-box a,
+html[lang="ru"] .doc-catalog .list[index="97"]>.develop .link-box a,
+html[lang="ru"] .doc-catalog .list[index="97"]>.use .link-box a,
+html[lang="ru"] .doc-catalog .list[index="98"]>.use .link-box a,
+html[lang="ru"] .doc-catalog .list[index="98"]>.develop .link-box a {
     line-height: 20px;
     margin-bottom: 25px;
 }
