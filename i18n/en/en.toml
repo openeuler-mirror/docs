@@ -12,10 +12,6 @@ other = "search"
 [catalog_text]
 other = "Content"
 
-
-[official_text]
-other = "管网"
-
 [other_text]
 other = "Reference Links"
 
