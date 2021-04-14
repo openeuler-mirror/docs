@@ -44,5 +44,5 @@ headless: true
     -   [Применение компиляторов JDK]({{< relref "./docs/ApplicationDev/using-jdk-for-compilation.md" >}})
     -   [Создание пакета в формате RPM]({{< relref "./docs/ApplicationDev/building-an-rpm-package.md" >}})
 -   [Руководство пользователя набора инструментов]({{< relref "./docs/userguide/overview.md" >}})
-    -   [patch-tracking: инструмент отслеживания патчей]({{< relref "./docs/ApplicationDev/patch-tracking.md" >}})
-    -   [pkgship]({{< relref "./docs/ApplicationDev/pkgship.md" >}})
+    -   [patch-tracking: инструмент отслеживания патчей]({{< relref "./docs/userguide/patch-tracking.md" >}})
+    -   [pkgship]({{< relref "./docs/userguide/pkgship.md" >}})
