@@ -77,7 +77,7 @@ headless: true
     -   [Управление жизненным циклом виртуальной машины]({{< relref "./docs/StratoVirt/Manage_life_cycle.md" >}})
     -   [Управление ресурсами виртуальных машин]({{< relref "./docs/StratoVirt/Manage_resource.md" >}})    
     -   [Подключение с помощью безопасного контейнера iSula]({{< relref "./docs/StratoVirt/Interconnect_isula.md" >}})
--   [Container User Guide]({{< relref "./docs/Container/container.md" >}})
+-   [Руководство пользователя контейнера]({{< relref "./docs/Container/container.md" >}})
     -   [Контейнерный движок iSulad]({{< relref "./docs/Container/isulad-container-engine.md" >}})
         -   [Установка, обновление и удаление]({{< relref "./docs/Container/installation-upgrade-Uninstallation.md" >}})
             -   [Установка и настройка]({{< relref "./docs/Container/installation-configuration.md" >}})
