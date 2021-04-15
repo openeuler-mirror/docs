@@ -8,6 +8,12 @@ other = "中文"
 [search]
 other = "搜索"
 
+[document_link]
+other = "Documentation"
+
+[openeuler_document]
+other = "openEuler Documentation"
+
 
 [catalog_text]
 other = "目录"

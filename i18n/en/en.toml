@@ -8,6 +8,11 @@ other = "English"
 [search]
 other = "search"
 
+[document_link]
+other = "Documentation"
+
+[openeuler_document]
+other = "openEuler Documentation"
 
 [catalog_text]
 other = "Content"
