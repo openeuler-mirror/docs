@@ -39,7 +39,6 @@ paginate = 10
     author = "openEuler"
     defaultKeywords = ["devows", "hugo", "go", "openEuler"]
     defaultDescription = "Site template made by devcows Modified by openEuler team"
-    searchTitle = "openEuler Documentation"
     email = "contact@openeuler.org"
     
     ### DOC Configurations
@@ -62,7 +61,6 @@ paginate = 10
     version_97 = "20.09"
     version_98 = "20.03 LTS"
 
-    navLink = "Documentation"
 
     notFound = "404"
 

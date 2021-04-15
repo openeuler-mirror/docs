@@ -8,9 +8,14 @@ other = "Русский"
 [search]
 other = "Поиск"
 
+[document_link]
+other = "Документация"
+
+[openeuler_document]
+other = "документацию openEuler"
 
 [catalog_text]
-other = "Content"
+other = "Содержание"
 
 
 
@@ -36,13 +41,13 @@ other = "Подписка на WeChat"
 other = "Источники кода"
 
 [feedbook]
-other = "Feedback"
+other = "Обратная связь"
 
 [previous]
-other = "Previous"
+other = "Назад"
 
 [next]
-other = "Next"
+other = "Далее"
 
 [evaluate]
-other = "Rating"
+other = "Оценка"
