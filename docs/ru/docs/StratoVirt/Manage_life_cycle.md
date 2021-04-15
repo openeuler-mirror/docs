@@ -96,6 +96,6 @@ $ ncat -U /path/to/socket
 
 ```
 <- {"execute":"quit"}
--> {"event":"SHUTDOWN","data":{"guest":false,"reason":"host-qmp-quit"},"timestamp":{"ds":1590563776,"microseconds":519808}}
 -> {"return":{}}
+-> {"event":"SHUTDOWN","data":{"guest":false,"reason":"host-qmp-quit"},"timestamp":{"ds":1590563776,"microseconds":519808}}
 ```
