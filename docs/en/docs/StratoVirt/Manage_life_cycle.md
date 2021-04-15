@@ -118,7 +118,7 @@ QMP provides the quit command to exit a VM, that is, to exit the StratoVirt proc
 
 ```
 <- {"execute":"quit"}
--> {"event":"SHUTDOWN","data":{"guest":false,"reason":"host-qmp-quit"},"timestamp":{"ds":1590563776,"microseconds":519808}}
 -> {"return":{}}
+-> {"event":"SHUTDOWN","data":{"guest":false,"reason":"host-qmp-quit"},"timestamp":{"ds":1590563776,"microseconds":519808}}
 ```
 
