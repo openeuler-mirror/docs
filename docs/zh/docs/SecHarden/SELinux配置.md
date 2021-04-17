@@ -32,6 +32,14 @@ openEuler默认开启SELinux，且默认模式为enforcing，用户可以通过�
 ># reboot  
 >```  
 
+如用户需使能SELinux功能，建议通过dnf升级方式将selinux-policy更新为最新版本，否则应用程序有可能无法正常运行。
+
+-   升级命令示例：
+
+    ```
+    dnf update selinux-policy -y
+    ```
+
 ## SELinux相关命令
 
 -   查询SELinux模式。例如下述查询的SELinux模式为Permissive：
