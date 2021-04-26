@@ -28,7 +28,7 @@ In-depth optimization of scheduling, I/O, and memory management has been perform
 - **KVM virtualization in the RISC-V platform**
 - **1822 iNICs**
 
-## Kernel Hot Upgrade (NVWA)
+## Kernel Hot Upgrade 
 
 NVWA is an OS vulnerability repair and upgrade solution that implements quick hot replacement of the kernel without affecting services.
 
@@ -54,7 +54,7 @@ Elastic memory, huge page, and system call filtering are added to enhance the pe
 - **System call filtering**. The device model has been simplified and system call filtering is supported. In the simplest configuration, only 35 system calls are required, effectively reducing the system attack surface.
 - **Enhanced I/O subsystem**. Multi-channel concurrent I/O capability is supported and the performance is improved. The I/O-QoS capability improves the flexibility and stability of VM I/O traffic management.
 
-## Hierarchical Memory Management Framework (etmem)
+## Hierarchical Memory Management Framework
 
 Various memory and storage media are supported to expand the system memory capacity and reduce memory usage costs.
 
