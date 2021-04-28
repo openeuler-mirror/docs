@@ -63,4 +63,8 @@ openEuler默认开启SELinux，且默认模式为enforcing，用户可以通过�
     Max kernel policy version:      31
     ```
 
+## SELinux策略约束
 
+SELinux是一个策略集中式的强制访问控制安全机制，selinux-policy会为操作系统中常用软件指定规则，因此部分软件的使用会受到一些约束，对于这些受到约束的软件，用户可以在关闭SELinux的情况下使用，如果需要在开启SELinux的情况下使用，可能需要进行规则适配。例如：
+
+-   使用freeradius连接sqlite，SELinux策略限制了sqlite数据库文件需要位于/var/lib/radiusd目录下，且SELinux标签为radiusd_var_lib_t。如果用户想将数据库文件放在其他位置，需要自行适配规则。
