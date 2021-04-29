@@ -355,3 +355,47 @@ If the UEFI mode is used, the tool set EDK II needs to be installed. The install
     Architecture: noarch
     Install Date: Thu 19 Mar 2020 09:09:06 AM CST
     ```
+
+# Configuring a Non-root User
+
+### Overview
+
+openEuler virtualization uses virsh to manage VMs. If you want to use the virsh commands to manage VMs as a non-root user, you need to perform related configurations before using the commands. This section provides the configuration guide.
+
+### Operation Guide
+
+To allow a non-root user to run the virsh commands to manage VMs, perform the following operations (replace **userName** in the following commands with the actual non-root user name):
+
+1. Log in to the host as the **root** user.
+
+2. Add the non-root user to the libvirt user group.
+
+   ```
+   # usermod -a -G libvirt userName
+   ```
+
+3. Switch to the non-root user.
+
+   ```
+   # su userName
+   ```
+
+4. Configure environment variables for the non-root user. Run the **vim** command to open the ~/.bashrc file:
+
+   ```
+   $ vim ~/.bashrc
+   ```
+   Add the following content to the end of the file and save the file:
+
+   ```
+   export LIBVIRT_DEFAULT_URI="qemu:///system"
+   ```
+   Run the following command for the configuration to take effect:
+   ```
+   $ source ~/.bashrc
+   ```
+5. Add the following content to the domain root element in the XML configuration file of the VM so that the qemu-kvm process can access the disk image files.
+
+   ```
+   <seclabel type='dynamic' model='dac' relabel='yes'>
+   ```
