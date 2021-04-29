@@ -3,17 +3,19 @@
 
 ## Overview
 
-StratoVirt is an enterprise-class virtualization platform for cloud data centers in the computing industry, enabling a unified architecture that supports virtual machines, containers and Serverless scenarios. On top of that, StratoVirt has a key technology competitive advantage in terms of lightweight, low noise, hard and soft collaboration, Rust language-level security, and more. StratoVirt reserves the capabilities and interfaces for component assembly in architectural design and interfaces. More importantly, StratoVirt has the flexibility to assemble advanced features on demand until it evolves to support standard virtualization, finding the best balance between feature requirements, applications scenarios, and light flexibility.
+StratoVirt is an enterprise-level virtualization platform oriented to cloud data centers in the computing industry. It uses a unified architecture to support VMs, containers, and serverless scenarios. StratoVirt has competitive advantages in key technologies such as lightweight low noise, software and hardware collaboration, and Rust language-level security.
+StratoVirt reserves component-based assembling capabilities and APIs for architecture design and APIs. StratoVirt can flexibly assemble advanced features as required until it supports standard virtualization, and find the best balance among feature requirements, application scenarios, and lightness and dexterity.
 
 
 
 ## Architecture Description
 
-The StratoVirt core architecture is divided into three layers from top to bottom:
+StratoVirt core architecture consists of three layers from top to bottom:
 
-- OCI: compatible with the QEMU Machine Protocol (QMP), which has complete OCI compatibility capabilities.
-- BootLoader: discards the traditional BIOS+GRUB boot mode and implements a lighter and faster bootloader.
-- MicroVM: virtualization layer, which fully leverages the capability of software and hardware collaboration to simplify the device model and the capability of low-latency resource scaling.
+- OCI campability API: compatible with the QEMU Machine Protocol (QMP) and has complete OCI compatibility capabilities.
+- BootLoader: discards the traditional BIOS plus GRUB boot mode and implements a lighter and faster bootloader.
+- MicroVM: At the virtualization layer, the software and hardware collaboration capability is fully used to simplify the device model with low-latency resource scaling capability.
+
 
 The overall architecture is shown in **Figure 1**.
 
