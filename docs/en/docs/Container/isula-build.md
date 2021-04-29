@@ -28,6 +28,10 @@
     * [login: Logging In to the Remote Image Repository](#login-logging-in-to-the-remote-image-repository)
     * [logout: Logging Out of the Remote Image Repository](#logout-logging-out-of-the-remote-image-repository)
     * [version: Querying the isula-build Version](#version-querying-the-isula-build-version)
+    * [manifest: manifest list management (experiment feature)](#manifest-manifest list management)
+    * [create: manifest list creation](#create-manifest list creation)
+    * [annotate: manifest list update](#annotate-manifest list update)
+    * [inspect: manifest list query](#inspect-manifest list query)
 * [Directly Integrating a Container Engine](#directly-integrating-a-container-engine)
     * [Integration with iSulad](#integration-with-isulad)
     * [Integration with Docker](#integration-with-docker)
@@ -81,7 +85,7 @@ Before using isula-build to build a container image, you need to install the fol
 
 **Method 2: Using the RPM Package**
 
-1. Obtain the isula-build-*.rpm installation package from the openEuler yum source, for example, isula-build-0.9.3-1.oe1.x86_64.rpm.
+1. Obtain the isula-build-*.rpm installation package from the openEuler yum source, for example, isula-build-0.9.5-6.oe1.x86_64.rpm.
 
 2. Upload the obtained RPM software package to any directory on the target server, for example, /home/.
 
@@ -789,6 +793,104 @@ You can run the version command to view the current version information.
    OS/Arch:       linux/amd64
 ```
 
+### manifest: Manifest List Management
+
+The manifest list contains the image information corresponding to different system architectures. You can use the same manifest (for example, openeuler:latest) in different architectures to obtain the image of the corresponding architecture. The manifest contains the create, annotate, inspect, and push subcommands.
+> **Note:**
+>
+> - manifest is an experiment feature. When using this feature, you need to enable the experiment options on the client and server. For details, see Client Overview and Configuring Services.
+
+
+#### create: Manifest List Creation
+
+The create subcommand of the manifest command is used to create a manifest list. The command prototype is as follows:
+
+```
+isula-build manifest create MANIFEST_LIST MANIFEST [MANIFEST...]
+```
+
+You can specify the name of the manifest list and the remote images to be added to the list. If no remote image is specified, an empty manifest list is created.
+
+A command example is as follows:
+
+```sh
+$ sudo isula-build manifest create openeuler localhost:5000/openeuler_x86:latest localhost:5000/openeuler_aarch64:latest
+```
+
+#### annotate: Manifest List Update
+
+The annotate subcommand of the manifest command is used to update the manifest list. The command prototype is as follows:
+
+```
+isula-build manifest annotate MANIFEST_LIST MANIFEST [flags]
+```
+
+You can specify the manifest list to be updated and the images in the manifest list, and use flags to specify the options to be updated. This command can also be used to add new images to the manifest list.
+
+The annotate contains the following flags:
+
+- --arch： Applicable architecture of the rewritten image. The value is a string.
+- --os： Indicates the applicable system of the image. The value is a string.
+- --os-features： Specifies the OS features required by the image. This parameter is a string and rarely used.
+- --variant： Variable of the image recorded in the list. The value is a string.
+
+A command example is as follows:
+
+```sh
+$ sudo isula-build manifest annotate --os linux --arch arm64 openeuler:latest localhost:5000/openeuler_aarch64:latest
+```
+
+#### inspect: Manifest List Query
+
+The inspect subcommand of the manifest command is used to query the manifest list. The command prototype is as follows:
+
+```
+isula-build manifest inspect MANIFEST_LIST
+```
+
+A command example is as follows:
+
+```sh
+$ sudo isula-build manifest inspect openeuler:latest
+{
+    "schemaVersion": 2,
+    "mediaType": "application/vnd.docker.distribution.manifest.list.v2+json",
+    "manifests": [
+        {
+            "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+            "size": 527,
+            "digest": "sha256:bf510723d2cd2d4e3f5ce7e93bf1e52c8fd76831995ac3bd3f90ecc866643aff",
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        },
+        {
+            "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+            "size": 527,
+            "digest": "sha256:f814888b4bb6149bd39ba8375a1932fb15071b4dbffc7f76c7b602b06abbb820",
+            "platform": {
+                "architecture": "arm64",
+                "os": "linux"
+            }
+        }
+    ]
+}
+```
+
+#### push: Pushes the manifest list to the remote repository.
+
+The manifest subcommand push is used to push the manifest list to the remote repository. The command prototype is as follows:
+
+```
+isula-build manifest push MANIFEST_LIST DESTINATION
+```
+
+A command example is as follows:
+
+```sh
+$ sudo isula-build manifest push openeuler:latest localhost:5000/openeuler:latest
+```
 
 ## Directly Integrating a Container Engine
 
