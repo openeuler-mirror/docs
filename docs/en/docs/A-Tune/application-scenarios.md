@@ -32,6 +32,7 @@ You can use functions provided by A-Tune through the CLI client atune-adm. This 
 
 ## Overview
 
+-   The **root** permission is required to use A-Tune.
 -   You can run the  **atune-adm help/--help/-h**  command to query commands supported by atune-adm.
 -   All example commands are used in single-node mode. For distributed mode, specify an IP address and port number. For example:
 
