@@ -1,0 +1,1 @@
+# secGear Development GuideThis document describes how to use secGear, the unified confidential computing programming framework, to develop applications and how to use tools contained in the framework.
