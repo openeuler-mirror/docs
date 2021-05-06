@@ -54,6 +54,26 @@ Precautions for live migration of non-shared storage:
 
 -   Before VM live migration, perform a health check on the VM and ensure that the destination host has sufficient CPU, memory, and storage resources.
 
+### Prediction of the Dirty Page Rate During Live Migration (Optional)
+
+Before migrating a VM, you can use the dirtyrate function to obtain the dirty page change rate of the live migration and evaluate whether the VM is suitable for migration or configure proper migration parameters based on the VM memory usage.
+
+Procedure:
+
+For example, if the VM name is openEulerVM and the calculation time is 1s, run the following command:
+
+```
+virsh qemu-monitor-command openEulerVM '{"execute":"calc-dirty-rate", "arguments": {"calc-time": 1}}
+```
+
+After 1s, run the following command to query the dirty page change rate:
+
+```
+virsh qemu-monitor-command openEulerVM '{"execute":"query-dirty-rate"}'
+```
+
+
+
 ### \(Optional\) Setting Live Migration Parameters
 
 Before live migration, run the  **virsh migrate-setmaxdowntime**  command to specify the maximum tolerable downtime during VM live migration. This is an optional configuration item.
@@ -78,6 +98,54 @@ You can run the  **migrate-getspeed**  command to query the maximum bandwidth du
 # virsh migrate-getspeed openEulerVM
 500
 ```
+
+You can use migrate-set-parameters to set parameters related to live migration. The following table lists the parameters related to live migration compression:
+
+1. compress-level: Compression level. The default value is 1.
+2. compress-threads: Number of compression threads. The default value is 8.
+3. compress-wait-thread: Whether to wait for the compression thread. The default value is true.
+4. decompress-threads: Number of decompression threads. The default value is 2.
+5. compress-method: Compression algorithm (zlib or zstd). The default value is zlib.
+
+For example, set the live migration algorithm of the VM named _openEulerVM_ to zstd and retain the default values for other parameters.
+
+```
+# virsh qemu-monitor-command openeulerVM '{ "execute": "migrate-set-parameters", "arguments": {"compress-method": "zstd"}}'
+```
+
+You can run the query-migrate-parameters command to query parameters related to live migration.
+```
+# virsh qemu-monitor-command openeulerVM '{ "execute": "query-migrate-parameters"}' --pretty
+
+{
+  "return": {
+    "xbzrle-cache-size": 67108864,
+    "cpu-throttle-initial": 20,
+    "announce-max": 550,
+    "decompress-threads": 2,
+    "compress-threads": 8,
+    "compress-level": 1,
+    "compress-method": "zstd",
+    "multifd-channels": 2,
+    "announce-initial": 50,
+    "block-incremental": false,
+    "compress-wait-thread": true,
+    "downtime-limit": 300,
+    "tls-authz": "",
+    "announce-rounds": 5,
+    "announce-step": 100,
+    "tls-creds": "",
+    "max-cpu-throttle": 99,
+    "max-postcopy-bandwidth": 0,
+    "tls-hostname": "",
+    "max-bandwidth": 33554432,
+    "x-checkpoint-delay": 20000,
+    "cpu-throttle-increment": 10
+  },
+  "id": "libvirt-18"
+}
+```
+
 
 ### Live Migration Operations \(Shared Storage Scenario\)
 
@@ -144,4 +212,37 @@ You can run the  **migrate-getspeed**  command to query the maximum bandwidth du
     ```
 
 3.  After the live migration is complete, the command output indicates that the VM is running properly on the destination host and the storage device is migrated to the destination host.
+
+### Live Migration Operations (Encrypted Transmission)
+
+1. Overview
+
+To better encrypt data during VM live migration, openEuler provides the TLS encryption feature. Almost all network services in QEMU can use TLS to encrypt session data and use X509 certificates to perform simple identity authentication on clients.
+
+2. Application Scenarios
+
+A typical application scenario is to ensure data security when VM data is transmitted between the source end and the target end during live migration.
+
+3. Precautions
+
+Before using TLS to live migrate VMs, you need to apply for certificates and set certificates on the source and destination ends. Before using the TLS function, you need to enable the peer authentication configuration item and set migrate_tls_x509_verify to 1 in /etc/libvirt/qemu.conf.
+
+The service interruption duration and migration duration of single-channel TLS live migration increase significantly. The upper limit of the migration bandwidth is 100 MB/s to 200 MB/s. As a result, the migration may fail.
+
+The multiFd can be used to perform multi-channel TLS migration. However, the CPU overhead increases (two more migration threads are enabled), which may affect VM running. You are advised to set the CPU affinity of the live migration thread to isolate the CPU resources used by the live migration thread from the CPU resources bound to the VM process. You are advised to bind two CPUs to each VM to be migrated.
+
+4. How to Use
+
+Single-channel live migration encryption transmission command
+
+```
+virsh migrate --live --unsafe --tls --domain openEulerVM --desturi qemu+tcp://<destination-host-ip>/system --migrateuri tcp://<destionation-host-ip>
+```
+
+Encrypted transmission commands for multi-channel live migration
+
+```
+virsh migrate --live --unsafe --parallel --tls --domain openEulerVM --desturi qemu+tcp://<destination-host-ip>/system --migrateuri tcp://<destionation-host-ip>
+```
+
 
