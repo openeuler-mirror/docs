@@ -477,6 +477,17 @@
     display: none;
 }
 
+#markdown h2::before,
+#markdown h1::before,
+#markdown h3::before,
+#markdown h4::before {
+    content: '';
+    display: block;
+    height: 119px;
+    margin-top: -119px;
+    visibility: hidden;
+}
+
 @media screen and (max-width: 1900px) {
     #version-select {
         width: 260px;
