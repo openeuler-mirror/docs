@@ -151,7 +151,7 @@ headless: true
     -   [secGear Development Guide]( {{< relref "./docs/secGear/secGear-development-guide" >}})
     -   [Using the secGear Tool](For {{< relref "./docs/secGear/using-the-secGear-tool.md" >}})
     -   [API Description]({{< relref "./docs/secGear/api-description.md" >}})
--   [Kubernetes]({{< relref "./docs/Kubernetes/Kubernetes.md" >}})
+-   [Kubernetes Cluster Deployment Guide]({{< relref "./docs/Kubernetes/Kubernetes.md" >}})
     -   [Preparing VMs]( {{< relref "./docs/Kubernetes/preparing-VMs.md">}})
     -   [Deploying a Kubernetes Cluster]({{< relref "./docs/Kubernetes/deploying-a-Kubernetes-cluster.md" >}})
         -   [Installing the Kubernetes Software Package]( {{< relref "./docs/Kubernetes/installing-the-Kubernetes-software-package.md" >}})
