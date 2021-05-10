@@ -1,0 +1,4 @@
+# StratoVirt用户指南
+
+本文档介绍Stratovirt虚拟化，并给出基于openEuler安装StratoVirt的方法，以及StratoVirt虚拟化的使用指导。让用户了解Stratovirt，并指导用户和管理员安装和使用StratoVirt。
+
