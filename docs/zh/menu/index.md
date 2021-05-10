@@ -137,7 +137,6 @@ headless: true
     -   [安装与部署]({{< relref "./docs/KernelLiveUpgrade/安装与部署.md" >}})
     -   [使用方法]({{< relref "./docs/KernelLiveUpgrade/使用方法.md" >}})
     -   [常见问题与解决方法]({{< relref "./docs/KernelLiveUpgrade/常见问题与解决方法.md" >}})
-    -   [附录]({{< relref "./docs/A-Tune/附录.md" >}})
 -   [应用开发指南]({{< relref "./docs/ApplicationDev/application-development.md" >}})
     -   [开发环境准备]({{< relref "./docs/ApplicationDev/开发环境准备.md" >}})
     -   [使用GCC编译]({{< relref "./docs/ApplicationDev/使用GCC编译.md" >}})
