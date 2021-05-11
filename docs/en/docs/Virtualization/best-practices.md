@@ -564,8 +564,6 @@ Currently, openEuler 21.03 provides the libtpms and swtpm sources. You can run t
         ...
     </domain>
     ```
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    > Currently, openEuler20.09 AArch64 version does not support ACPI feature in VM trusted boot process. Therefore, do not configure the ACPI feature for VMs. Otherwise, the vTPM device cannot be identified after the VM is started.
 
 2.  Create the VM.
 

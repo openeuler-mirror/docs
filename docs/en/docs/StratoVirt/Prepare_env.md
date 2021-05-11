@@ -4,7 +4,7 @@
 ## Usage
 
 - StratoVirt supports only Linux VMs that use the x86_64 or AArch64 processor architecture and start the VM with same architecture.
-- It is advised to compile, commissione, and deploye the StratoVirt on openEuler 21.03.
+- It is advised to compile, commission, and deploy the StratoVirt on openEuler 21.03.
 - StratoVirt can run with non-root permissions.
 
 ## Environment Requirements
@@ -72,9 +72,11 @@ The StratoVirt of the current version supports only the PE kernel image of the x
    $ make -j vmlinux && objcopy -O binary vmlinux vmlinux.bin
    ```
    
-   After the compilation is complete, the kernel image vmlinux.bin is generated in the current directory.
-   
-   ​
+5. If you want to use the kernel in bzImzge format on the x86 platform, run the following command:
+
+   ```
+   $ make -j bzImage
+     ​
 
 ## Creating the Rootfs Image
 
