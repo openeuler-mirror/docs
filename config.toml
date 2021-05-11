@@ -36,9 +36,9 @@ paginate = 10
 
 
 [params]
-    author = "openEuler"
     defaultKeywords = ["devows", "hugo", "go", "openEuler"]
-    defaultDescription = "Site template made by devcows Modified by openEuler team"
+    author = "Site template made by devcows Modified by openEuler team"
+    defaultDescription = "Select the version and chapter of the openEuler documentation you want to view."
     email = "contact@openeuler.org"
     
     ### DOC Configurations
