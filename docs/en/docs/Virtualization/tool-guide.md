@@ -5,13 +5,33 @@
 ## vmtop
 
 ### Overview
+
 vmtop is a user-mode tool running on the host machine. You can use the vmtop tool to dynamically view the usage of VM resources in real time, such as CPU usage, memory usage, and the number of vCPU traps. Therefore, the vmtop tool can be used to locate virtualization problems and optimize performance.
 
-The vmtop monitoring items are as follows (sampling difference: difference between two data obtained at a specified interval):
+#### Multi-Architecture Support
+
+Currently, the vmtop supports the AArch64 and x86_64 processor architectures.
+
+#### Display Item Description
+
+The vmtop display items vary according to the processor architecture. This document describes the meaning of each display item and whether it is displayed in the corresponding architecture.
+Note: The following sampling difference refers to the difference between two times of data obtained in a specified interval.
+
+##### **Display Items of the AArch64 and x86_64 Architectures**
+
 - VM/task-name: VM/Process name
 - DID: VM ID
 - PID: PID of the qemu process of the VM
 - %CPU: CPU usage of a process
+- EXTsum: Total number of KVM exits (sampling difference)
+- S: Process status
+- P: ID of the physical CPU occupied by a process
+- %ST: Ratio of the preemption time to the CPU running time
+- %GUE: Ratio of the VM internal occupation time to the CPU running time
+- %HYP: Virtualization overhead ratio
+
+##### Display Items Only for the Aarch64 Architecture
+
 - EXThvc: Number of hvc-exits (sampling difference)
 - EXTwfe: Number of wfe-exits (sampling difference)
 - EXTwfi: Number of wfi-exits (sampling difference)
@@ -21,32 +41,57 @@ The vmtop monitoring items are as follows (sampling difference: difference betwe
 - EXTirq: Number of irq-exits (sampling difference)
 - EXTsys64: Number of sys64 exits (sampling difference)
 - EXTmabt: Number of mem abort exits (sampling difference)
-- EXTsum: Total number of KVM exits (sampling difference)
-- S: Process status
-- P: Physical CPU usage of a process
-- %ST: Ratio of the preemption time to the CPU running time (KVM data)
-- %GUE: Ratio of the VM internal occupation time to the CPU running time (KVM data)
-- %HYP: Virtualization overhead ratio (KVM data)
+
+##### Display Items Only for the x86_64 Architecture
+
+- PFfix: Number of page faults (sampling difference)
+- PFgu: Number of times that page faults are injected to the guest OS (sampling difference)
+- INvlpg: Number of times that a TLB item is flushed (one of the TLB items, which is not fixed)
+- EXTio: Number of io VM-exit times (sampling difference)
+- EXTmmio: Number of mmio VM-exit times (sampling difference)
+- EXThalt: Number of halt VM-exit times (sampling difference)
+- EXTsig: Number of VM-exits caused by signal processing (sampling difference)
+- EXTirq: Number of VM-exits caused by interrupts (sampling difference)
+- EXTnmiW: Number of VM-exit times caused by non-maskable interrupts (sampling difference)
+- EXTirqW: Interruptwindow mechanism. When the interrupt function is enabled, exit is used to inject interrupts (sampling difference)
+- IrqIn: Number of times that IRQ interrupts are injected (sampling difference)
+- NmiIn: Number of times that NMI interrupts are injected (sampling difference)
+- TLBfl: Number of times that the entire TLB is flushed (sampling difference)
+- HostReL: Number of times that the host status is overloaded (sampling difference)
+- Hyperv: Number of times that the guest OS is simulated to call hypercal in virtualization-assistant mode (sampling difference)
+- EXTcr: Number of times that the access to the CR register exits (sampling difference)
+- EXTrmsr: Number of times that the read MSR exits (sampling difference)
+- EXTwmsr: Number of times that the write MSR exits (sampling difference)
+- EXTapic: Number of APIC write times (sampling difference)
+- EXTeptv: Ept page fault exit times (sampling difference)
+- EXTeptm: Number of Ept error exits (sampling difference)
+- EXTpau: Number of times that the VCPU pauses and exits (sampling difference)
 
 ### Usage
+
 vmtop is a command line tool. You can directly run the vmtop in command line mode.
 In addition, the vmtop tool provides different options for querying different information.
 
 #### Syntax
+
 ```sh
 vmtop [option]
 ```
 
 #### Option Description
+
 - -d: sets the refresh interval, in seconds.
 - -H: displays the VM thread information.
 - -n: sets the number of refresh times and exits after the refresh is complete.
 - -b: displays Batch mode, which can be used to redirect to a file.
 - -h: displays help information.
 - -v: displays versions.
+- -p: monitors the VM with a specified ID.
 
 #### Keyboard Shortcut
+
 Shortcut key used when the vmtop is running.
+
 - H: displays or stops the VM thread information. The information is displayed by default.
 - up/down: moves the VM list upwards or downwards.
 - left/right: moves the cursor leftwards or rightwards to display the columns that are hidden due to the screen width.
@@ -54,11 +99,15 @@ Shortcut key used when the vmtop is running.
 - q: exits the vmtop process.
 
 ### Example
+
 Run the vmtop command on the host.
+
 ```sh
 vmtop
 ```
+
 The command output is as follows:
+
 ```sh
 vmtop - 2020-09-14 09:54:48 - 1.0
 Domains: 1 running
@@ -66,16 +115,18 @@ Domains: 1 running
   DID  VM/task-name     PID  %CPU    EXThvc    EXTwfe    EXTwfi  EXTmmioU  EXTmmioK     EXTfp    EXTirq  EXTsys64   EXTmabt    EXTsum    S    P   %ST  %GUE  %HYP
     2       example 4054916  13.0         0         0      1206        10         0       144        62       174         0      1452    S  106   0.0  99.7  16.0
 ```
+
 As shown in the output, there is only one VM named "example" on the host. The ID is 2. The CPU usage is 13.0%. The total number of traps within one second is 1452. The physical CPU occupied by the VM process is CPU 106. The ratio of the VM internal occupation time to the CPU running time is 99.7%.
 
 1. Display VM thread information.
 Press H to display the thread information.
+
 ```sh
 vmtop - 2020-09-14 10:11:27 - 1.0
 Domains: 1 running
 
   DID  VM/task-name     PID  %CPU    EXThvc    EXTwfe    EXTwfi  EXTmmioU  EXTmmioK     EXTfp    EXTirq  EXTsys64   EXTmabt    EXTsum    S    P   %ST  %GUE  %HYP
-    2       example 4054916  13.0         0         0	   1191        17         4       120        76       147         0      1435    S  119   0.0 123.7   4.0
+    2       example 4054916  13.0         0         0    1191        17         4       120        76       147         0      1435    S  119   0.0 123.7   4.0
    |_      qemu-kvm 4054916   0.0         0         0         0         0         0         0         0         0         0         0    S  119   0.0   0.0   0.0
    |_      qemu-kvm 4054928   0.0         0         0         0         0         0         0         0         0         0         0    S  119   0.0   0.0   0.0
    |_  signalfd_com 4054929   0.0         0         0         0         0         0         0         0         0         0         0    S  120   0.0   0.0   0.0
@@ -88,10 +139,12 @@ Domains: 1 running
    |_    vnc_worker 4054944   0.0         0         0         0         0         0         0         0         0         0         0    S  118   0.0   0.0   0.0
    |_        worker 4143738   0.0         0         0         0         0         0         0         0         0         0         0    S  120   0.0   0.0   0.0
 ```
+
 The example VM has 11 threads, including the vCPU thread, vnc_worker, and IO mon_iotreads. Each thread also displays detailed CPU usage and trap information.
 
 2. Select the monitoring item.
 Enter f to edit the monitoring item.
+
 ```sh
 field filter - select which field to be showed
 Use up/down to navigate, use space to set whether chosen filed to be showed
@@ -117,16 +170,18 @@ Use up/down to navigate, use space to set whether chosen filed to be showed
  * %GUE
  * %HYP
 ```
-By default, all monitoring items are displayed. You can press the up or down key to select a monitoring item. Press the space bar to set the monitoring item, and press q to exit.
+
+All monitoring items are displayed by default. You can press the up or down key to select a monitoring item, press the space key to set whether to display or hide the monitoring item, and press the q key to exit.
 After %ST, %GUE, and %HYP are hidden, the following information is displayed:
+
 ```sh
 vmtop - 2020-09-14 10:23:25 - 1.0
 Domains: 1 running
 
   DID  VM/task-name     PID  %CPU    EXThvc    EXTwfe    EXTwfi  EXTmmioU  EXTmmioK     EXTfp    EXTirq  EXTsys64   EXTmabt    EXTsum    S    P
     2       example 4054916  12.0         0         0      1213        14         1       144        68       168         0      1464    S  125
-   |_	   qemu-kvm 4054916   0.0         0         0         0         0         0         0         0         0         0         0    S  125
-   |_	   qemu-kvm 4054928   0.0         0         0         0         0         0         0         0         0         0         0    S  119
+   |_    qemu-kvm 4054916   0.0         0         0         0         0         0         0         0         0         0         0    S  125
+   |_    qemu-kvm 4054928   0.0         0         0         0         0         0         0         0         0         0         0    S  119
    |_  signalfd_com 4054929   0.0         0         0         0         0         0         0         0         0         0         0    S  120
    |_  IO mon_iothr 4054932   0.0         0         0         0         0         0         0         0         0         0         0    S  117
    |_     CPU 0/KVM 4054933   2.0         0         0       303         6         0        29        10        35         0       354    S   98
@@ -137,4 +192,5 @@ Domains: 1 running
    |_    vnc_worker 4054944   0.0         0         0         0         0         0         0         0         0         0         0    S  118
    |_        worker    1794   0.0         0         0         0         0         0         0         0         0         0         0    S  126
 ```
+
 %ST, %GUE, and %HYP will not be displayed on the screen.
