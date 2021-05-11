@@ -1140,7 +1140,7 @@ openEuler 21.03 版本的官方 yum 源已经支持 Openstack-Victoria 版本，
     安装软件包：
 
     ```
-    yum install lvm2 device-mapper-persistent-data targetcli python-keystone
+    yum install lvm2 device-mapper-persistent-data targetcli python3-keystone
     ```
     启动服务：
 
