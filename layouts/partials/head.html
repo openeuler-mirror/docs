@@ -4,6 +4,10 @@
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{ $versionArr := split $.File.Path "docs\\" }}
+    {{ $version := index $versionArr 1}}
+    {{ $version := split $version "\\" }}
+    {{ $version := index $version 0}}
     {{ $title := "" }}
     {{ if .Title }}
         {{ $title = .Title }}
@@ -13,7 +17,11 @@
     {{ else if and .IsPage .File }}
         {{ $title = .File.BaseFileName | humanize | title }}
     {{ end }}
-    <title>{{  $title }} | {{ .Site.Title -}}</title>
+    {{ if $version}}
+    <title>{{ $title }} | {{ .Site.Title }} | v{{ $version }}</title>
+    {{ else }}
+    <title>{{ $title -}} </title>
+    {{ end }}
     {{ if default .Summary .Description }}
     <meta name="description" content="{{ default .Summary .Description }}">
     {{ else if .Site.Params.DefaultDescription }}
