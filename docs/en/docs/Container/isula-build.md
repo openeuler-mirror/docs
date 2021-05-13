@@ -829,10 +829,10 @@ You can specify the manifest list to be updated and the images in the manifest l
 
 The annotate contains the following flags:
 
-- --arch£º Applicable architecture of the rewritten image. The value is a string.
-- --os£º Indicates the applicable system of the image. The value is a string.
-- --os-features£º Specifies the OS features required by the image. This parameter is a string and rarely used.
-- --variant£º Variable of the image recorded in the list. The value is a string.
+- --arch: Applicable architecture of the rewritten image. The value is a string.
+- --os: Indicates the applicable system of the image. The value is a string.
+- --os-features: Specifies the OS features required by the image. This parameter is a string and rarely used.
+- --variant: Variable of the image recorded in the list. The value is a string.
 
 A command example is as follows:
 
