@@ -29,7 +29,7 @@
 
 ## Precautions
 
--   The  **docker-engine**  RPM package cannot be installed together with the  **containerd**,  **runc**, or  **podman**  RPM package. This is because the  **docker-engine**  RPM package contains all components required for Docker running, including  **containerd**,  **runc**, and  **docker**  binary files. Yet the  **containerd**,  **runc**, and  **podman**  RPM packages also contain the corresponding binary files. Software package conflicts may occur due to repeated installation.
+-   The  **docker-engine**  RPM package cannot be installed together with the  **containerd**,  **runc**, **docker-proxy**, or  **podman**  RPM package. This is because the  **docker-engine**  RPM package contains all components required for Docker running, including  **containerd**,  **runc**, **docker-proxy**, and  **docker**  binary files. Yet the  **containerd**,  **runc**, **docker-proxy**, and  **podman**  RPM packages also contain the corresponding binary files. Software package conflicts may occur due to repeated installation.
 
 ## Basic Installation Configuration
 
