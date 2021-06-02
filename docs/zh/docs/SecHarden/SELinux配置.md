@@ -11,41 +11,81 @@ openEuler默认使用SELinux提升系统安全性。SELinux分为三种模式：
 -   disabled：不加载SELinux安全策略。
 
 ## 配置说明
-openEuler默认开启SELinux，且默认模式为enforcing，用户可以通过修改/etc/selinux/config中配置项SELINUX的值变更SELinux模式。
 
--   关闭SELinux策略的配置如下：
-
+-   获取当前SELinux运行状态：
     ```
+    # getenforce
+    Enforcing
+    ```
+
+-   SELinux开启的前提下，设置运行状态为enforcing模式：
+    ```
+    # setenforce 1
+    # getenforce
+    Enforcing
+    ```
+
+-   SELinux开启的前提下，设置运行状态为permissive模式：
+    ```
+    # setenforce 0
+    # getenforce
+    Permissive
+    ```
+
+-   SELinux开启的前提下，设置当前SELinux运行状态为disabled（关闭SELinux，需要重启系统）。
+    1. 修改SELinux配置文件/etc/selinux/config，设置“SELINUX=disabled”。
+    ```
+    # cat /etc/selinux/config | grep "SELINUX="
     SELINUX=disabled
     ```
-
--   使用permissive策略的配置如下：
-
+    2. 重启系统：
     ```
+    # reboot
+    ```
+    3. 状态切换成功：
+    ```
+    # getenforce
+    Disabled
+    ```
+
+-   SELinux关闭的前提下，设置SELinux运行状态为permissive：
+    1. 修改SELinux配置文件/etc/selinux/config，设置“SELINUX=permissive”：
+    ```
+    # cat /etc/selinux/config | grep "SELINUX="
     SELINUX=permissive
     ```
-
-
->![](./public_sys-resources/icon-note.gif) **说明：**   
->disabled与另两种模式切换时需重启系统生效。  
->```  
-># reboot  
->```  
-
-## SELinux相关命令
-
--   查询SELinux模式。例如下述查询的SELinux模式为Permissive：
-
+    2. 在根目录下创建.autorelabel文件：
+    ```
+    # touch /.autorelabel
+    ```
+    3. 重启系统，此时系统会重启两次：
+    ```
+    # reboot
+    ```
+    4. 状态切换成功：
     ```
     # getenforce
     Permissive
     ```
 
--   设置SELinux模式，0表示permissive模式，1表示enforcing模式，例如设置为enforcing模式的命令如下。该命令不能设置disabled模式，且系统重启后，恢复到/etc/selinux/config中设置的模式。
+-   SELinux关闭的前提下，设置SELinux运行状态为enforcing：
+    1. 按照上一步骤所述，设置SELinux运行状态为permissive。
+    2. 修改SELinux配置文件/etc/selinux/config，设置“SELINUX=enforcing”：
+    ```
+    # cat /etc/selinux/config | grep "SELINUX="
+    SELINUX=enforcing
+    ```
+    3. 重启系统：
+    ```
+    # reboot
+    ```
+    4. 状态切换成功：
+    ```
+    # getenforce
+    Enforcing
+    ```
 
-    ```
-    # setenforce 1
-    ```
+## SELinux相关命令
 
 -   查询运行SELinux的系统状态。SELinux status表示SELinux的状态，enabled表示启用SELinux，disabled表示关闭SELinux。Current mode表示SELinux当前的安全策略。
 
@@ -63,4 +103,12 @@ openEuler默认开启SELinux，且默认模式为enforcing，用户可以通过�
     Max kernel policy version:      31
     ```
 
+## 注意事项
 
+-   如用户需使能SELinux功能，建议通过dnf升级方式将selinux-policy更新为最新版本，否则应用程序有可能无法正常运行。升级命令示例：
+
+    ```
+    dnf update selinux-policy -y
+    ```
+    
+-   如果用户由于SELinux配置不当（如误删策略或未配置合理的规则或安全上下文）导致系统无法启动，可以在启动参数中添加selinux=0，关闭SELinux功能，系统即可正常启动。
