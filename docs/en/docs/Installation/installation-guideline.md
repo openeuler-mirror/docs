@@ -254,7 +254,7 @@ On the  **MANUAL PARTITIONING**  page, you can partition the disk in either of t
 If the expected capacity of the mount point exceeds the available space, the system allocates the remaining available space to the mount point.  
 
 **Figure  13**  MANUAL PARTITIONING page<a name="fig1277151815248"></a>  
-![](./figures/manual-partitioning-page.png "manual-partitioning-page")
+![](./figures/filesystem_setting.png "manual-partitioning-page")
 
 After the setting is complete, click  **Done**  in the upper left corner to go back to the  **SUMMARY OF CHANGES**  page.
 click  **Accept Changes**  to go back to the  **INSTALLATION SUMMARY**  page.
