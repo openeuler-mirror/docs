@@ -1,7 +1,7 @@
 # Configuring the Repo Server
 
 >![](./public_sys-resources/icon-note.gif) **NOTE:** 
-> openEuler provides multiple repo sources for users online. For details about the repo sources, see [System Installation](./../Releasenotes/installing-the-os.html). If you cannot obtain the openEuler repo source online, you can use the ISO release package provided by openEuler to create a local openEuler repo source. This section uses the  **openEuler-20.03-LTS-SP1-aarch64-dvd.iso**  file as an example. Modify the ISO file as required.
+> openEuler provides multiple repo sources for users online. For details about the repo sources, see [System Installation](./../Releasenotes/installing-the-os.html). If you cannot obtain the openEuler repo source online, you can use the ISO release package provided by openEuler to create a local openEuler repo source. This section uses the  **openEuler-20.03-LTS-SP2-aarch64-dvd.iso**  file as an example. Modify the ISO file as required.
  
 <!-- TOC -->
 
@@ -24,17 +24,17 @@
 <!-- /TOC -->
 ## Overview
 
-Create the  **openEuler-20.03-LTS-SP1-aarch64-dvd.iso**  file provided by openEuler as the repo source. The following uses Nginx as an example to describe how to deploy the repo source and provide the HTTP service.
+Create the  **openEuler-20.03-LTS-SP2-aarch64-dvd.iso**  file provided by openEuler as the repo source. The following uses Nginx as an example to describe how to deploy the repo source and provide the HTTP service.
 
 ## Creating or Updating a Local Repo Source
 
-Mount the openEuler ISO file  **openEuler-20.03-LTS-SP1-aarch64-dvd.iso**  to create and update a repo source.
+Mount the openEuler ISO file  **openEuler-20.03-LTS-SP2-aarch64-dvd.iso**  to create and update a repo source.
 
 ### Obtaining the ISO File
 
 Obtain the openEuler ISO file from the following website:
 
-[https://repo.openeuler.org/openEuler-20.03-LTS-SP1/ISO/](https://repo.openeuler.org/openEuler-20.03-LTS-SP1/ISO/)
+[https://repo.openeuler.org/openEuler-20.03-LTS-SP2/ISO/](https://repo.openeuler.org/openEuler-20.03-LTS-SP2/ISO/)
 
 ### Mounting an ISO File to Create a Repo Source
 
@@ -43,7 +43,7 @@ Run the mount command as the **root** user to mount the ISO file.
 The following is an example:
 
 ```
-# mount /home/openEuler/openEuler-20.03-LTS-SP1-aarch64-dvd.iso /mnt/
+# mount /home/openEuler/openEuler-20.03-LTS-SP2-aarch64-dvd.iso /mnt/
 ```
 
 The mounted mnt directory is as follows:
@@ -67,7 +67,7 @@ In the preceding command,  **Packages**  indicates the directory where the RPM p
 You can copy related files in the ISO file to a local directory to create a local repo source. The following is an example:
 
 ```
-# mount /home/openEuler/openEuler-20.03-LTS-SP1-aarch64-dvd.iso /mnt/
+# mount /home/openEuler/openEuler-20.03-LTS-SP2-aarch64-dvd.iso /mnt/
 $ mkdir -p ~/srv/repo/
 $ cp -r /mnt/Packages ~/srv/repo/
 $ cp -r /mnt/repodata ~/srv/repo/
@@ -236,14 +236,14 @@ The configuration content in this document is for reference only. You can config
    - Copy related files in the image to the /usr/share/nginx/repo directory as the **root** user.
      
      ```
-     # mount /home/openEuler/openEuler-20.03-LTS-SP1-aarch64-dvd.iso  /mnt/
+     # mount /home/openEuler/openEuler-20.03-LTS-SP2-aarch64-dvd.iso  /mnt/
      # cp -r /mnt/Packages /usr/share/nginx/repo/
      # cp -r /mnt/repodata /usr/share/nginx/repo/
      # cp -r /mnt/RPM-GPG-KEY-openEuler /usr/share/nginx/repo/
      # chmod -R 755 /usr/share/nginx/repo
      ```
      
-     The  **openEuler-20.03-LTS-SP1-aarch64-dvd.iso**  file is stored in the  **/home/openEuler**  directory.
+     The  **openEuler-20.03-LTS-SP2-aarch64-dvd.iso**  file is stored in the  **/home/openEuler**  directory.
    
    - Create a soft link for the repo source in the /usr/share/nginx/repo directory as the **root** user.
      
@@ -306,10 +306,10 @@ You can configure the built repo as the yum source and create the \*\*\*.repo co
     ```
     [base]
     name=base
-    baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/aarch64/
+    baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/aarch64/
     enabled=1
     gpgcheck=1
-    gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/aarch64/RPM-GPG-KEY-openEuler
+    gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/aarch64/RPM-GPG-KEY-openEuler
     ```
 
 ### repo Priority

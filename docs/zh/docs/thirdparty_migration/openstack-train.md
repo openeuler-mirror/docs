@@ -35,7 +35,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 
 |  软件名称   |版本号  |安装方法   | 备注  |
 |:---  |:----  |:----  |:----  |
-| openEuler | 20.03-LTS-SP1 |iso  | x86可以选择虚拟机或物理机部署，ARM只能在物理机部署 |
+| openEuler | 20.03-LTS-SP2 |iso  | x86可以选择虚拟机或物理机部署，ARM只能在物理机部署 |
 | gcc | 7.3.0 |见必要库和依赖安装  |  |
 | python3 | 3.7.9 |见必要库和依赖安装 |  |
 | bash | 5.0 |见必要库和依赖安装 |  |
@@ -276,7 +276,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
     # grep -nir "is_fedora" | grep -v functions-common | cut -d ":" -f1 | sort | uniq | for line in `xargs`;do sed -i "s/is_fedora/is_fedora || is_openeuler/g" $line;done
     ```
 
-5. 由于脚本文件中默认的 python-libvirt 版本不适配，需编辑 `/home/stack/devstack/lib/nova_plugins/functions-libvirt` 文件，注释掉安装 python-libvirt 相关代码。python-libvirt 已在openEuler-20.03-LTS-SP1 的 yum 源中手动安装。
+5. 由于脚本文件中默认的 python-libvirt 版本不适配，需编辑 `/home/stack/devstack/lib/nova_plugins/functions-libvirt` 文件，注释掉安装 python-libvirt 相关代码。python-libvirt 已在openEuler-20.03-LTS-SP2 的 yum 源中手动安装。
 
     ![](./figures/host_env7.png)
 	
@@ -482,5 +482,5 @@ pip 社区更新至20.3，版本不适配。
 
 ## 附录
 
-自动化脚本 prep_install.sh点击[prep_install.sh](https://gitee.com/openeuler/docs/blob/stable2-20.03_LTS_SP1/docs/zh/docs/thirdparty_migration/prep_install.sh)获取。
+自动化脚本 prep_install.sh点击[prep_install.sh](https://gitee.com/openeuler/docs/blob/stable2-20.03_LTS_SP2/docs/zh/docs/thirdparty_migration/prep_install.sh)获取。
 将脚本存放到`/home/stack`目录，执行命令 `bash -x prep_install.sh`即可完成必要库和依赖安装、修改主机相关环境和修改devstack脚本和相关配置的部分操作。

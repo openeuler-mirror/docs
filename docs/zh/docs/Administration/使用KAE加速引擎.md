@@ -85,7 +85,7 @@ KAE加速引擎主要有以下应用场景，如[表1](#table11915824163418)所�
 >-   物理机场景使用加速器需要关闭SMMU，具体操作请参考《[TaiShan 200服务器BIOS参数参考](https://support.huawei.com/enterprise/zh/doc/EDOC1100088653)》。  
 
 -   CPU：Kunpeng 920
--   操作系统：openEuler-20.03-LTS-SP1-aarch64-dvd.iso
+-   操作系统：openEuler-20.03-LTS-SP2-aarch64-dvd.iso
 
 ##### KAE加速引擎软件说明
 

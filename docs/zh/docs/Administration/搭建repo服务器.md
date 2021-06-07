@@ -1,7 +1,7 @@
 # 搭建repo服务器
 
 >![](./public_sys-resources/icon-note.gif) **说明：**   
->openEuler提供了多种repo源供用户在线使用，各repo源含义可参考[系统安装](./../Releasenotes/系统安装.md)。若用户无法在线获取openEuler repo源，则可使用openEuler提供的ISO发布包创建为本地openEuler repo源。本章节中以openEuler-20.03-LTS-SP1-aarch64-dvd.iso发布包为例，请根据实际需要的ISO发布包进行修改。
+>openEuler提供了多种repo源供用户在线使用，各repo源含义可参考[系统安装](./../Releasenotes/系统安装.md)。若用户无法在线获取openEuler repo源，则可使用openEuler提供的ISO发布包创建为本地openEuler repo源。本章节中以openEuler-20.03-LTS-SP2-aarch64-dvd.iso发布包为例，请根据实际需要的ISO发布包进行修改。
 
 <!-- TOC -->
 
@@ -25,16 +25,16 @@
 
 ## 概述
 
-将openEuler提供的ISO发布包openEuler-20.03-LTS-SP1-aarch64-dvd.iso创建为repo源，如下以使用nginx进行repo源部署，提供http服务为例进行说明。
+将openEuler提供的ISO发布包openEuler-20.03-LTS-SP2-aarch64-dvd.iso创建为repo源，如下以使用nginx进行repo源部署，提供http服务为例进行说明。
 
 ## 创建/更新本地repo源
 
-使用mount挂载，将openEuler的ISO发布包openEuler-20.03-LTS-SP1-aarch64-dvd.iso创建为repo源，并能够对repo源进行更新。
+使用mount挂载，将openEuler的ISO发布包openEuler-20.03-LTS-SP2-aarch64-dvd.iso创建为repo源，并能够对repo源进行更新。
 ### 获取ISO发布包
 
 请从如下网址获取openEuler的ISO发布包：
 
-[https://repo.openeuler.org/openEuler-20.03-LTS-SP1/ISO/](https://repo.openeuler.org/openEuler-20.03-LTS-SP1/ISO/)
+[https://repo.openeuler.org/openEuler-20.03-LTS-SP2/ISO/](https://repo.openeuler.org/openEuler-20.03-LTS-SP2/ISO/)
 
 ### 挂载ISO创建repo源
 
@@ -43,7 +43,7 @@
 示例如下：
 
 ```
-# mount /home/openEuler/openEuler-20.03-LTS-SP1-aarch64-dvd.iso /mnt/
+# mount /home/openEuler/openEuler-20.03-LTS-SP2-aarch64-dvd.iso /mnt/
 ```
 
 挂载好的mnt目录如下：
@@ -67,7 +67,7 @@
 可以拷贝ISO发布包中相关文件至本地目录以创建本地repo源，示例如下：
 
 ```
-# mount /home/openEuler/openEuler-20.03-LTS-SP1-aarch64-dvd.iso /mnt/
+# mount /home/openEuler/openEuler-20.03-LTS-SP2-aarch64-dvd.iso /mnt/
 $ mkdir -p ~/srv/repo/
 $ cp -r /mnt/Packages ~/srv/repo/
 $ cp -r /mnt/repodata ~/srv/repo/
@@ -236,14 +236,14 @@ Packages为rpm包所在的目录，repodata为repo源元数据所在的目录，
     - 在root权限下拷贝镜像中相关文件至/usr/share/nginx/repo下，并修改目录权限。
 
         ```
-        # mount /home/openEuler/openEuler-20.03-LTS-SP1-aarch64-dvd.iso  /mnt/
+        # mount /home/openEuler/openEuler-20.03-LTS-SP2-aarch64-dvd.iso  /mnt/
         # cp -r /mnt/Packages /usr/share/nginx/repo
         # cp -r /mnt/repodata /usr/share/nginx/repo
         # cp -r /mnt/RPM-GPG-KEY-openEuler /usr/share/nginx/repo
         # chmod -R 755 /usr/share/nginx/repo
         ```
     
-        openEuler-20.03-LTS-SP1-aarch64-dvd.iso存放在/home/openEuler目录下。
+        openEuler-20.03-LTS-SP2-aarch64-dvd.iso存放在/home/openEuler目录下。
     
     - 使用root在/usr/share/nginx/repo下创建repo源的软链接。
     
@@ -306,10 +306,10 @@ repo可配置为yum源，yum（全称为 Yellow dog Updater, Modified）是一�
         ```
         [base]
         name=base
-        baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/aarch64/
+        baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/aarch64/
         enabled=1
         gpgcheck=1
-        gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/aarch64/RPM-GPG-KEY-openEuler
+        gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/aarch64/RPM-GPG-KEY-openEuler
         ```
 
 

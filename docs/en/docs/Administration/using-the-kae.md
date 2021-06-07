@@ -85,7 +85,7 @@ The KAE applies to the following scenarios, as shown in  [Table 1](#table1191582
 >-   If the accelerator is used in the physical machine scenario, the SMMU must be disabled. For details, see the  [TaiShan 200 Server BIOS Parameter Reference](https://support.huawei.com/enterprise/en/doc/EDOC1100088647).  
 
 -   CPU: Kunpeng 920
--   OS: openEuler-20.03-LTS-SP1-aarch64-dvd.iso
+-   OS: openEuler-20.03-LTS-SP2-aarch64-dvd.iso
 
 ##### KAE Software Description
 **Table  2**  RPM software packages of the KAE

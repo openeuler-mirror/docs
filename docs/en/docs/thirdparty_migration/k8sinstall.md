@@ -16,7 +16,7 @@ This document describes how to use two nodes to set up a Kubernetes cluster. One
 
 |  Software   |Version Number  |Installation Method   |
 |:---  |:----  |:----  |
-| openEuler | 20.03-LTS-SP1 |iso  |
+| openEuler | 20.03-LTS-SP2 |iso  |
 | gnu | 7.3.0 |  |
 | python3 | 3.7.4 | |
 | bash | 5.0.11 |          |

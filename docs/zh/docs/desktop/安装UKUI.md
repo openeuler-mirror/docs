@@ -6,7 +6,7 @@ UKUI支持x86_64和aarch64两种架构。
 
 安装时，建议新建一个管理员用户。
 
-1.下载 openEuler 20.03 LTS SP1 镜像并安装系统。
+1.下载 openEuler 20.03 LTS SP2 镜像并安装系统。
 ```
 sudo dnf update
 ```

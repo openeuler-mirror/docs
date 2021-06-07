@@ -50,9 +50,9 @@ To format the SD card, perform the following procedure:
 ### Writing Images to the SD Card
 
 > ![](./public_sys-resources/icon-notice.gif) **NOTE:**   
-If the compressed image file **openEuler-20.03-LTS-SP1-raspi-aarch64.img.xz** is obtained, decompress the file to obtain the **openEuler-20.03-LTS-SP1-raspi-aarch64.img** image file.
+If the compressed image file **openEuler-20.03-LTS-SP2-raspi-aarch64.img.xz** is obtained, decompress the file to obtain the **openEuler-20.03-LTS-SP2-raspi-aarch64.img** image file.
 
-To write the **openEuler-20.03-LTS-SP1-raspi-aarch64.img** image file to the SD card, perform the following procedure:
+To write the **openEuler-20.03-LTS-SP2-raspi-aarch64.img** image file to the SD card, perform the following procedure:
 
 1. Download and install the tool for writing images. The following operations use the Win32 Disk Imager as an example.
 2. Start the Win32 Disk Imager and right-click **Run as administrator**.
@@ -81,11 +81,11 @@ Run the `fdisk -l` command as the root user to obtain the information of the SD 
 
 ### Writing Images to the SD Card
 
-1. If the image obtained is compressed, run the `xz -d openEuler-20.03-LTS-SP1-raspi-aarch64.img.xz` command to decompress the compressed file to obtain the **openEuler-20.03-LTS-SP1-raspi-aarch64.img** image file. Otherwise, skip this step.
+1. If the image obtained is compressed, run the `xz -d openEuler-20.03-LTS-SP2-raspi-aarch64.img.xz` command to decompress the compressed file to obtain the **openEuler-20.03-LTS-SP2-raspi-aarch64.img** image file. Otherwise, skip this step.
 
-2. Run the following command as the root user to write the `openEuler-20.03-LTS-SP1-raspi-aarch64.img` image to the SD card:
+2. Run the following command as the root user to write the `openEuler-20.03-LTS-SP2-raspi-aarch64.img` image to the SD card:
    
-   `dd bs=4M if=openEuler-20.03-LTS-SP1-raspi-aarch64.img of=/dev/sdb`
+   `dd bs=4M if=openEuler-20.03-LTS-SP2-raspi-aarch64.img of=/dev/sdb`
    
    > ![](./public_sys-resources/icon-note.gif) **NOTE:** Generally, the block size is set to 4 MB. If the write operation fails or the written image cannot be used, you can set the block size to 1 MB and try again. However, the write operation is time-consuming when the block size is set to 1 MB.
 
@@ -109,11 +109,11 @@ Run the `diskutil list` command as user root to obtain the information of SD car
 
 ### Writing Images to the SD Card
 
-1. If the image obtained is compressed, run the `xz -d openEuler-20.03-LTS-SP1-raspi-aarch64.img.xz` command to decompress the compressed file to obtain the **openEuler-20.03-LTS-SP1-raspi-aarch64.img** image file. Otherwise, skip this step.
+1. If the image obtained is compressed, run the `xz -d openEuler-20.03-LTS-SP2-raspi-aarch64.img.xz` command to decompress the compressed file to obtain the **openEuler-20.03-LTS-SP2-raspi-aarch64.img** image file. Otherwise, skip this step.
 
-2. Run the following command as the root user to write the image `openEuler-20.03-LTS-SP1-raspi-aarch64.img` to the SD card:
+2. Run the following command as the root user to write the image `openEuler-20.03-LTS-SP2-raspi-aarch64.img` to the SD card:
    
-   `dd bs=4m if=openEuler-20.03-LTS-SP1-raspi-aarch64.img of=/dev/sdb`
+   `dd bs=4m if=openEuler-20.03-LTS-SP2-raspi-aarch64.img of=/dev/sdb`
    
    > ![](./public_sys-resources/icon-note.gif) **NOTE:**
    >

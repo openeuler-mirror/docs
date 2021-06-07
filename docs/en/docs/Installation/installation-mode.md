@@ -98,10 +98,10 @@ Pay attention to the capacity of the USB flash drive. The USB flash drive must h
 
     Replace  **/path/to/image.iso**  with the complete path of the downloaded ISO image file, replace  **device**  with the device name provided by the  **dmesg**  command, and set a proper block size \(for example, 512 KB\) to replace  **blocksize**  to accelerate the write progress.
 
-    For example, if the ISO image file name is  **/home/testuser/Downloads/openEuler-20.03-LTS-SP1-aarch64-dvd.iso**  and the detected device name is  **sdb**, run the following command:
+    For example, if the ISO image file name is  **/home/testuser/Downloads/openEuler-20.03-LTS-SP2-aarch64-dvd.iso**  and the detected device name is  **sdb**, run the following command:
 
     ```
-    # dd if=/home/testuser/Downloads/openEuler-20.03-LTS-SP1-aarch64-dvd.iso of=/dev/sdb bs=512k
+    # dd if=/home/testuser/Downloads/openEuler-20.03-LTS-SP2-aarch64-dvd.iso of=/dev/sdb bs=512k
     ```
 
 5.  After the image is written, remove the USB flash drive.
@@ -178,7 +178,7 @@ Perform the following operations to start the installation:
 5.  Create a VM.
 6.  Start the VM.
 
-For details, see the  [*openEuler 20.03 LTS SP1 Virtualization User Guide*](./../Virtualization/virtualization.html).
+For details, see the  [*openEuler 20.03 LTS SP2 Virtualization User Guide*](./../Virtualization/virtualization.html).
 
 ## Installation Through a Private Image
 

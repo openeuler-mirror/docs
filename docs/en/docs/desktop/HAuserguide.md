@@ -34,7 +34,7 @@
 
 ## Installation and Configuration
 
-- Environment preparation: At least two physical machines or VMs with openEuler 20.03 LTS SP1 installed are required. (This section uses two physical machines or VMs as an example.) For details, see the *openEuler 20.03 LTS SP1 Installation Guide*.
+- Environment preparation: At least two physical machines or VMs with openEuler 20.03 LTS SP2 installed are required. (This section uses two physical machines or VMs as an example.) For details, see the *openEuler 20.03 LTS SP2 Installation Guide*.
 
 ### Modifying the Host Name and the /etc/hosts File
 
@@ -62,24 +62,24 @@ After the system is successfully installed, the Yum source is configured by defa
 ```
 [OS]
 name=OS
-baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/$basearch/
+baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/$basearch/
 enabled=1
 gpgcheck=1
-gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/$basearch/RPM-GPG-KEY-openEuler
+gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/$basearch/RPM-GPG-KEY-openEuler
 
 [everything]
 name=everything
-baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP1/everything/$basearch/
+baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/everything/$basearch/
 enabled=1
 gpgcheck=1
-gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP1/everything/$basearch/RPM-GPG-KEY-openEuler
+gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/everything/$basearch/RPM-GPG-KEY-openEuler
 
 [EPOL]
 name=EPOL
-baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP1/EPOL/$basearch/
+baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/EPOL/$basearch/
 enabled=1
 gpgcheck=1
-gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP1/OS/$basearch/RPM-GPG-KEY-openEuler
+gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/$basearch/RPM-GPG-KEY-openEuler
 ```
 
 ### Installing HA Software Package Components
