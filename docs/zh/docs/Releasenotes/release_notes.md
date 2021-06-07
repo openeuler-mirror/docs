@@ -1,1 +1,1 @@
-本文是 openEuler 20.03 LTS SP1版本的发行说明。
+本文是 openEuler 20.03 LTS SP2版本的发行说明。

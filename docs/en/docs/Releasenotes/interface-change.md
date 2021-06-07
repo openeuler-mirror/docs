@@ -4,7 +4,7 @@ The C/C++ interface changes are described as follows.
 
 ## alsa-lib
 
-For details, see [alsa-lib](./LTS_to_SP1_changed_abi_detail/alsa-lib_all_result.md)
+For details, see [alsa-lib](./LTS_to_SP2_changed_abi_detail/alsa-lib_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -37,7 +37,7 @@ For details, see [alsa-lib](./LTS_to_SP1_changed_abi_detail/alsa-lib_all_result.
 
 ## atk
 
-For details, see [atk](./LTS_to_SP1_changed_abi_detail/atk_all_result.md)
+For details, see [atk](./LTS_to_SP2_changed_abi_detail/atk_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -51,7 +51,7 @@ For details, see [atk](./LTS_to_SP1_changed_abi_detail/atk_all_result.md)
 
 ## brltty
 
-For details, see [brltty](./LTS_to_SP1_changed_abi_detail/brltty_all_result.md)
+For details, see [brltty](./LTS_to_SP2_changed_abi_detail/brltty_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -60,7 +60,7 @@ For details, see [brltty](./LTS_to_SP1_changed_abi_detail/brltty_all_result.md)
 
 ## c-ares
 
-For details, see [c-ares](./LTS_to_SP1_changed_abi_detail/c-ares_all_result.md)
+For details, see [c-ares](./LTS_to_SP2_changed_abi_detail/c-ares_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -69,7 +69,7 @@ For details, see [c-ares](./LTS_to_SP1_changed_abi_detail/c-ares_all_result.md)
 
 ## e2fsprogs
 
-For details, see [e2fsprogs](./LTS_to_SP1_changed_abi_detail/e2fsprogs_all_result.md)
+For details, see [e2fsprogs](./LTS_to_SP2_changed_abi_detail/e2fsprogs_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -100,7 +100,7 @@ For details, see [e2fsprogs](./LTS_to_SP1_changed_abi_detail/e2fsprogs_all_resul
 
 ## exiv2
 
-For details, see [exiv2](./LTS_to_SP1_changed_abi_detail/exiv2_all_result.md)
+For details, see [exiv2](./LTS_to_SP2_changed_abi_detail/exiv2_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -108,7 +108,7 @@ For details, see [exiv2](./LTS_to_SP1_changed_abi_detail/exiv2_all_result.md)
 
 ## fontconfig
 
-For details, see [fontconfig](./LTS_to_SP1_changed_abi_detail/fontconfig_all_result.md)
+For details, see [fontconfig](./LTS_to_SP2_changed_abi_detail/fontconfig_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -120,7 +120,7 @@ For details, see [fontconfig](./LTS_to_SP1_changed_abi_detail/fontconfig_all_res
 
 ## glib2
 
-For details, see [glib2](./LTS_to_SP1_changed_abi_detail/glib2_all_result.md)
+For details, see [glib2](./LTS_to_SP2_changed_abi_detail/glib2_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -128,7 +128,7 @@ For details, see [glib2](./LTS_to_SP1_changed_abi_detail/glib2_all_result.md)
 
 ### gnutls
 
-For details, see [gnutls](./LTS_to_SP1_changed_abi_detail/gnutls_all_result.md)
+For details, see [gnutls](./LTS_to_SP2_changed_abi_detail/gnutls_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -195,7 +195,7 @@ For details, see [gnutls](./LTS_to_SP1_changed_abi_detail/gnutls_all_result.md)
 
 ## grpc 
 
-For details, see [grpc](./LTS_to_SP1_changed_abi_detail/grpc_all_result.md)
+For details, see [grpc](./LTS_to_SP2_changed_abi_detail/grpc_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -203,7 +203,7 @@ For details, see [grpc](./LTS_to_SP1_changed_abi_detail/grpc_all_result.md)
 
 ## haveged 
 
-For details, see [haveged](./LTS_to_SP1_changed_abi_detail/haveged_all_result.md)
+For details, see [haveged](./LTS_to_SP2_changed_abi_detail/haveged_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -211,7 +211,7 @@ For details, see [haveged](./LTS_to_SP1_changed_abi_detail/haveged_all_result.md
 
 ## libcap-ng 
 
-For details, see [libcap-ng](./LTS_to_SP1_changed_abi_detail/libcap-ng_all_result.md)
+For details, see [libcap-ng](./LTS_to_SP2_changed_abi_detail/libcap-ng_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -219,7 +219,7 @@ For details, see [libcap-ng](./LTS_to_SP1_changed_abi_detail/libcap-ng_all_resul
 
 ## libcomps 
 
-For details, see [libcomps](./LTS_to_SP1_changed_abi_detail/libcomps_all_result.md)
+For details, see [libcomps](./LTS_to_SP2_changed_abi_detail/libcomps_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -227,7 +227,7 @@ For details, see [libcomps](./LTS_to_SP1_changed_abi_detail/libcomps_all_result.
 
 ## libdnf 
 
-For details, see [libdnf](./LTS_to_SP1_changed_abi_detail/libdnf_all_result.md)
+For details, see [libdnf](./LTS_to_SP2_changed_abi_detail/libdnf_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -265,7 +265,7 @@ For details, see [libdnf](./LTS_to_SP1_changed_abi_detail/libdnf_all_result.md)
 
 ## libdrm
 
-For details, see [libdrm](./LTS_to_SP1_changed_abi_detail/libdrm_all_result.md)
+For details, see [libdrm](./LTS_to_SP2_changed_abi_detail/libdrm_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -336,7 +336,7 @@ For details, see [libdrm](./LTS_to_SP1_changed_abi_detail/libdrm_all_result.md)
 
 ## libell 
 
-For details, see [libell](./LTS_to_SP1_changed_abi_detail/libell_all_result.md)
+For details, see [libell](./LTS_to_SP2_changed_abi_detail/libell_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -504,7 +504,7 @@ For details, see [libell](./LTS_to_SP1_changed_abi_detail/libell_all_result.md)
 
 ## libgusb
 
-For details, see [libgusb](./LTS_to_SP1_changed_abi_detail/libgusb_all_result.md)
+For details, see [libgusb](./LTS_to_SP2_changed_abi_detail/libgusb_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -527,7 +527,7 @@ For details, see [libgusb](./LTS_to_SP1_changed_abi_detail/libgusb_all_result.md
 
 ## libical
 
-For details, see [libical](./LTS_to_SP1_changed_abi_detail/libical_all_result.md)
+For details, see [libical](./LTS_to_SP2_changed_abi_detail/libical_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -1069,7 +1069,7 @@ For details, see [libical](./LTS_to_SP1_changed_abi_detail/libical_all_result.md
 
 ## libid3tag 
 
-For details, see [libid3tag](./LTS_to_SP1_changed_abi_detail/libid3tag_all_result.md)
+For details, see [libid3tag](./LTS_to_SP2_changed_abi_detail/libid3tag_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -1079,7 +1079,7 @@ For details, see [libid3tag](./LTS_to_SP1_changed_abi_detail/libid3tag_all_resul
 
 ## libiscsi
 
-For details, see [libiscsi](./LTS_to_SP1_changed_abi_detail/libiscsi_all_result.md)
+For details, see [libiscsi](./LTS_to_SP2_changed_abi_detail/libiscsi_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -1091,7 +1091,7 @@ For details, see [libiscsi](./LTS_to_SP1_changed_abi_detail/libiscsi_all_result.
 
 ## libksba 
 
-For details, see [libksba](./LTS_to_SP1_changed_abi_detail/libksba_all_result.md)
+For details, see [libksba](./LTS_to_SP2_changed_abi_detail/libksba_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -1111,7 +1111,7 @@ For details, see [libksba](./LTS_to_SP1_changed_abi_detail/libksba_all_result.md
 
 ## libmpc 
 
-For details, see [libmpc](./LTS_to_SP1_changed_abi_detail/libmpc_all_result.md)
+For details, see [libmpc](./LTS_to_SP2_changed_abi_detail/libmpc_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -1120,7 +1120,7 @@ For details, see [libmpc](./LTS_to_SP1_changed_abi_detail/libmpc_all_result.md)
 
 ## libnet 
 
-For details, see [libnet](./LTS_to_SP1_changed_abi_detail/libnet_all_result.md)
+For details, see [libnet](./LTS_to_SP2_changed_abi_detail/libnet_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -1130,7 +1130,7 @@ For details, see [libnet](./LTS_to_SP1_changed_abi_detail/libnet_all_result.md)
 
 ## libpsl 
 
-For details, see [libpsl](./LTS_to_SP1_changed_abi_detail/libpsl_all_result.md)
+For details, see [libpsl](./LTS_to_SP2_changed_abi_detail/libpsl_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -1148,7 +1148,7 @@ For details, see [libpsl](./LTS_to_SP1_changed_abi_detail/libpsl_all_result.md)
 
 ## librepo 
 
-For details, see [librepo](./LTS_to_SP1_changed_abi_detail/librepo_all_result.md)
+For details, see [librepo](./LTS_to_SP2_changed_abi_detail/librepo_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -1156,7 +1156,7 @@ For details, see [librepo](./LTS_to_SP1_changed_abi_detail/librepo_all_result.md
 
 ## libsecret 
 
-For details, see [libsecret](./LTS_to_SP1_changed_abi_detail/libsecret_all_result.md)
+For details, see [libsecret](./LTS_to_SP2_changed_abi_detail/libsecret_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -1198,7 +1198,7 @@ For details, see [libsecret](./LTS_to_SP1_changed_abi_detail/libsecret_all_resul
 
 ## libvma
 
-For details, see [libvma](./LTS_to_SP1_changed_abi_detail/libvma_all_result.md)
+For details, see [libvma](./LTS_to_SP2_changed_abi_detail/libvma_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -1210,7 +1210,7 @@ For details, see [libvma](./LTS_to_SP1_changed_abi_detail/libvma_all_result.md)
 
 ## libwebsockets 
 
-For details, see [libwebsockets](./LTS_to_SP1_changed_abi_detail/libwebsockets_all_result.md)
+For details, see [libwebsockets](./LTS_to_SP2_changed_abi_detail/libwebsockets_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -1549,7 +1549,7 @@ For details, see [libwebsockets](./LTS_to_SP1_changed_abi_detail/libwebsockets_a
 
 ## libxslt
 
-For details, see [libxslt](./LTS_to_SP1_changed_abi_detail/libxslt_all_result.md)
+For details, see [libxslt](./LTS_to_SP2_changed_abi_detail/libxslt_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -1579,7 +1579,7 @@ For details, see [libxslt](./LTS_to_SP1_changed_abi_detail/libxslt_all_result.md
 
 ## lm_sensors
 
-For details, see [lm_sensors](./LTS_to_SP1_changed_abi_detail/lm_sensors_all_result.md)
+For details, see [lm_sensors](./LTS_to_SP2_changed_abi_detail/lm_sensors_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -1587,7 +1587,7 @@ For details, see [lm_sensors](./LTS_to_SP1_changed_abi_detail/lm_sensors_all_res
 
 ## nftables 
 
-For details, see [nftables](./LTS_to_SP1_changed_abi_detail/nftables_all_result.md)
+For details, see [nftables](./LTS_to_SP2_changed_abi_detail/nftables_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -2007,7 +2007,7 @@ For details, see [nftables](./LTS_to_SP1_changed_abi_detail/nftables_all_result.
 
 ## openhpi 
 
-For details, see [openhpi](./LTS_to_SP1_changed_abi_detail/openhpi_all_result.md)
+For details, see [openhpi](./LTS_to_SP2_changed_abi_detail/openhpi_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -2015,7 +2015,7 @@ For details, see [openhpi](./LTS_to_SP1_changed_abi_detail/openhpi_all_result.md
 
 ## OpenIPMI
 
-For details, see [OpenIPMI](./LTS_to_SP1_changed_abi_detail/OpenIPMI_all_result.md)
+For details, see [OpenIPMI](./LTS_to_SP2_changed_abi_detail/OpenIPMI_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -2033,7 +2033,7 @@ For details, see [OpenIPMI](./LTS_to_SP1_changed_abi_detail/OpenIPMI_all_result.
 
 ## openldap
 
-For details, see [openldap](./LTS_to_SP1_changed_abi_detail/openldap_all_result.md)
+For details, see [openldap](./LTS_to_SP2_changed_abi_detail/openldap_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -2048,7 +2048,7 @@ For details, see [openldap](./LTS_to_SP1_changed_abi_detail/openldap_all_result.
 
 ## pam 
 
-For details, see [pam](./LTS_to_SP1_changed_abi_detail/pam_all_result.md)
+For details, see [pam](./LTS_to_SP2_changed_abi_detail/pam_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -2061,7 +2061,7 @@ For details, see [pam](./LTS_to_SP1_changed_abi_detail/pam_all_result.md)
 
 ## pkgconf 
 
-For details, see [pkgconf](./LTS_to_SP1_changed_abi_detail/pkgconf_all_result.md)
+For details, see [pkgconf](./LTS_to_SP2_changed_abi_detail/pkgconf_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -2069,7 +2069,7 @@ For details, see [pkgconf](./LTS_to_SP1_changed_abi_detail/pkgconf_all_result.md
 
 ## plymouth 
 
-For details, see [plymouth](./LTS_to_SP1_changed_abi_detail/plymouth_all_result.md)
+For details, see [plymouth](./LTS_to_SP2_changed_abi_detail/plymouth_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -2094,7 +2094,7 @@ For details, see [plymouth](./LTS_to_SP1_changed_abi_detail/plymouth_all_result.
 
 ## readline 
 
-For details, see [readline](./LTS_to_SP1_changed_abi_detail/readline_all_result.md)
+For details, see [readline](./LTS_to_SP2_changed_abi_detail/readline_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -2103,7 +2103,7 @@ For details, see [readline](./LTS_to_SP1_changed_abi_detail/readline_all_result.
 
 ## rhash
 
-For details, see [rhash](./LTS_to_SP1_changed_abi_detail/rhash_all_result.md)
+For details, see [rhash](./LTS_to_SP2_changed_abi_detail/rhash_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -2113,7 +2113,7 @@ For details, see [rhash](./LTS_to_SP1_changed_abi_detail/rhash_all_result.md)
 
 ## subversion 
 
-For details, see [subversion](./LTS_to_SP1_changed_abi_detail/subversion_all_result.md)
+For details, see [subversion](./LTS_to_SP2_changed_abi_detail/subversion_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -2206,7 +2206,7 @@ For details, see [subversion](./LTS_to_SP1_changed_abi_detail/subversion_all_res
 
 ## tcl 
 
-For details, see [tcl](./LTS_to_SP1_changed_abi_detail/tcl_all_result.md)
+For details, see [tcl](./LTS_to_SP2_changed_abi_detail/tcl_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -2225,7 +2225,7 @@ For details, see [tcl](./LTS_to_SP1_changed_abi_detail/tcl_all_result.md)
 
 ## xorg-x11-server
 
-For details, see [xorg-x11-server](./LTS_to_SP1_changed_abi_detail/xorg-x11-server_all_result.md)
+For details, see [xorg-x11-server](./LTS_to_SP2_changed_abi_detail/xorg-x11-server_all_result.md)
 
 | function | type |
 |:----  |:--  |
@@ -2234,7 +2234,7 @@ For details, see [xorg-x11-server](./LTS_to_SP1_changed_abi_detail/xorg-x11-serv
 
 ## zstd 
 
-For details, see [zstd](./LTS_to_SP1_changed_abi_detail/zstd_all_result.md)
+For details, see [zstd](./LTS_to_SP2_changed_abi_detail/zstd_all_result.md)
 
 | function | type |
 |:----  |:--  |

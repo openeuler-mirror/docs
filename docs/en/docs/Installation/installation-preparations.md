@@ -27,20 +27,20 @@ Perform the following operations to obtain the openEuler release package:
 
 1.  Log in to the  [openEuler Community](https://openeuler.org/zh/)  website.
 2.  Click  **Download**. 
-3.  Choose the card **openEuler-20.03-LTS-SP1**. Click the link provided after  **Download ISO**.The download list is displayed.
+3.  Choose the card **openEuler-20.03-LTS-SP2**. Click the link provided after  **Download ISO**.The download list is displayed.
     -   **aarch64**: ISO image file of the AArch64 architecture
     -   **x86\_64**: ISO image file of the x86\_64 architecture
     -   **source**: ISO image file of the openEuler source code
 4.  Select the openEuler release package and verification file to be downloaded that adapt to the architecture of the environment to be installed.
     -   AArch64 architecture:
         1.  Click **aarch64**.
-        2.  If you install the environment on the local host, download the release package **openEuler-20.03-LTS-SP1-aarch64-dvd.iso** and the verification file **openEuler-20.03-LTS-SP1-aarch64-dvd.iso.sha256sum** to the local host.
-        3.  If you install the environment on the network, download the release package **openEuler-20.03-LTS-SP1-netinst-aarch64-dvd.iso** and the verification file **openEuler-20.03-LTS-SP1-netinst-aarch64-dvd.iso.sha256sum** to the local host.
+        2.  If you install the environment on the local host, download the release package **openEuler-20.03-LTS-SP2-aarch64-dvd.iso** and the verification file **openEuler-20.03-LTS-SP2-aarch64-dvd.iso.sha256sum** to the local host.
+        3.  If you install the environment on the network, download the release package **openEuler-20.03-LTS-SP2-netinst-aarch64-dvd.iso** and the verification file **openEuler-20.03-LTS-SP2-netinst-aarch64-dvd.iso.sha256sum** to the local host.
 
     -   x86_64 architecture:
         1.  Click **x86_64**.
-		2.  If you install the environment on the local host, download the release package **openEuler-20.03-LTS-SP1-x86_64-dvd.iso** and the verification file **openEuler-20.03-LTS-SP1-x86_64-dvd.iso.sha256sum** to the local host.
-        3.  If you install the environment on the network, download the release package **openEuler-20.03-LTS-SP1-netinst-x86_64-dvd.iso** and the verification file **openEuler-20.03-LTS-SP1-netinst-x86_64-dvd.iso.sha256sum** to the local host.
+		2.  If you install the environment on the local host, download the release package **openEuler-20.03-LTS-SP2-x86_64-dvd.iso** and the verification file **openEuler-20.03-LTS-SP2-x86_64-dvd.iso.sha256sum** to the local host.
+        3.  If you install the environment on the network, download the release package **openEuler-20.03-LTS-SP2-netinst-x86_64-dvd.iso** and the verification file **openEuler-20.03-LTS-SP2-netinst-x86_64-dvd.iso.sha256sum** to the local host.
 
 >![](./public_sys-resources/icon-note.gif) **Note**   
 > When the network is available, install the environment on the network because the ISO release package is small.
@@ -60,9 +60,9 @@ Compare the verification value recorded in the verification file with the .iso f
 
 Before verifying the integrity of the release package, you need to prepare the following files:
 
-ISO file:  **openEuler-20.03-LTS-SP1-aarch64-dvd.iso**
+ISO file:  **openEuler-20.03-LTS-SP2-aarch64-dvd.iso**
 
-Verification file:  **openEuler-20.03-LTS-SP1-aarch64-dvd.iso.sha256sum**
+Verification file:  **openEuler-20.03-LTS-SP2-aarch64-dvd.iso.sha256sum**
 
 ### Procedure
 
@@ -71,13 +71,13 @@ To verify the file integrity, perform the following operations:
 1.  Obtain the verification value in the verification file. Run the following command:
 
     ```
-    $ cat openEuler-20.03-LTS-SP1-aarch64-dvd.iso.sha256sum 
+    $ cat openEuler-20.03-LTS-SP2-aarch64-dvd.iso.sha256sum 
     ```
 
 2.  Calculate the SHA256 verification value of the file. Run the following command:
 
     ```
-    $ sha256sum openEuler-20.03-LTS-SP1-aarch64-dvd.iso
+    $ sha256sum openEuler-20.03-LTS-SP2-aarch64-dvd.iso
     ```
 
     After the command is run, the verification value is displayed.

@@ -60,7 +60,7 @@ It is recommended that the memory of the deployment environment be greater than 
 
 |  Software   |Version Number |Installation Method   |
 |:---  |:----  |:----  |
-| openEuler | 20.03-LTS-SP1 |iso  |
+| openEuler | 20.03-LTS-SP2 |iso  |
 | tar | 1.32 |yum install  |
 | wget | 1.20.3 |yum install |
 | git | 2.27 |yum install |
@@ -92,7 +92,7 @@ If the Internet is available in the environment, you can use the configured sour
 2. Run the following command to mount the source image:
    
     ```
-    # mount /root/openEuler-20.03-LTS-SP1-everything-aarch64-dvd.iso /mnt
+    # mount /root/openEuler-20.03-LTS-SP2-everything-aarch64-dvd.iso /mnt
     ```
 
 ## Software Compilation

@@ -179,7 +179,7 @@ By default, the best mode of the DNF package manager (the corresponding paramete
 
 A **--nobest** option for DNF will be available to override or disable the default behavior, allowing the user to properly upgrade the security fix package when the package to be upgraded has dependency issues.
 
-Open source software developers of openEuler 20.03-LTS-SP1 have identified this scenario during the upgrade of the security fix version of the OpenSSH software package. It is recommended that users select a proper upgrade mode based on the preceding analysis. openEuler also provides users with specific instructions on the upgrade operation:
+Open source software developers of openEuler 20.03-LTS-SP2 have identified this scenario during the upgrade of the security fix version of the OpenSSH software package. It is recommended that users select a proper upgrade mode based on the preceding analysis. openEuler also provides users with specific instructions on the upgrade operation:
 
  ```
  dnf update –y –nobest openssh

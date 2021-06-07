@@ -17,7 +17,7 @@ Kubernetes 集群中存在两种节点，Master 节点和 Worker 节点。Master
 
 |  软件名称   |版本号  |安装方法   |
 |:---  |:----  |:----  |
-| openEuler | 20.03-LTS-SP1 |iso  |
+| openEuler | 20.03-LTS-SP2 |iso  |
 | gnu | 7.3.0 |  |
 | python3 | 3.7.4 | |
 | bash | 5.0.11 |          |

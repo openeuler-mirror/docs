@@ -32,7 +32,7 @@ It is recommended that the memory of the deployment environment be greater than 
 
 |  Software   |Version Number  |Installation Method   | Remarks |
 |:---  |:----  |:----  |:----  |
-| openEuler | 20.03-LTS-SP1 |iso  | In terms of architecture, openEuler can be deployed on x86-based VMs and physical machines, but only on ARM-based physical machines.|
+| openEuler | 20.03-LTS-SP2 |iso  | In terms of architecture, openEuler can be deployed on x86-based VMs and physical machines, but only on ARM-based physical machines.|
 | gcc | 7.3.0 |Refer to Installing Required Libraries and Dependencies  |  |
 | python3 | 3.7.9 |Refer to Installing Required Libraries and Dependencies |  |
 | bash | 5.0 |Refer to Installing Required Libraries and Dependencies |  |
@@ -288,7 +288,7 @@ Perform the following operations as the stack user.
     # grep -nir "is_fedora" | grep -v functions-common | cut -d ":" -f1 | sort | uniq | for line in `xargs`;do sed -i "s/is_fedora/is_fedora || is_openeuler/g" $line;done
     ```
 
-5. The default python-libvirt version in the script file does not adapt to openEuler. Therefore, you need to edit the `/home/stack/devstack/lib/nova_plugins/functions-libvirt` file and comment out the code related to python-libvirt installation. python-libvirt has been manually installed in the Yum source of openEuler-20.03-LTS-SP1.
+5. The default python-libvirt version in the script file does not adapt to openEuler. Therefore, you need to edit the `/home/stack/devstack/lib/nova_plugins/functions-libvirt` file and comment out the code related to python-libvirt installation. python-libvirt has been manually installed in the Yum source of openEuler-20.03-LTS-SP2.
    
     ![](./figures/host_env7.png)
 
@@ -491,6 +491,6 @@ Refer to the community solution. Use the patch to modify the devstack source cod
 
 ## Appendix
 
-Click [prep\_install.sh](https://gitee.com/openeuler/docs/blob/stable2-20.03_LTS_SP1/docs/en/docs/thirdparty_migration/prep_install.sh) to obtain the automation script **prep\_install.sh**. 
+Click [prep\_install.sh](https://gitee.com/openeuler/docs/blob/stable2-20.03_LTS_SP2/docs/en/docs/thirdparty_migration/prep_install.sh) to obtain the automation script **prep\_install.sh**. 
 
 Save the script to the `/home/stack` directory and run the `bash -x prep_install.sh` command to install required libraries and dependencies, modify the host environment, and modify the **devstack** script and related configurations.
