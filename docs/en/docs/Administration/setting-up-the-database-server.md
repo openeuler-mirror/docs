@@ -1050,10 +1050,9 @@ Each storage engine manages and stores data in different ways, and supports diff
 1.  Stop the database process as the **root** user.
 
     ```
-    $ ps -ef | grep mysql
-    # kill -9 PID
+    # systemctl stop mariadb
     ```
-
+    
 2.  Run the  **dnf remove mariadb-server**  command as the **root** user to uninstall MariaDB.
 
     ```
@@ -1630,7 +1629,7 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
    ```
    # rpm -e mysql-8.0.17-3.oe1         
    # rpm -ivh mysql-8.0.21-1.oe1.aarch64.rpm  
-   ``` 
+   ```
 
 1.  Configure the local yum source. For details, see  [Configuring the Repo Server](./configuring-the-repo-server.html).
 2.  Clear the cache.
@@ -1811,10 +1810,9 @@ The Structured Query Language \(SQL\) used by MySQL is the most common standard 
 1.  Stop the database process as the **root** user.
 
     ```
-    $ ps -ef | grep mysql
-    # kill -9 PID
+    # systemctl stop mysql
     ```
-
+    
 2.  Run the  **dnf remove mysql**  command as the **root** user to uninstall MySQL.
 
     ```

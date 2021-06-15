@@ -56,6 +56,7 @@ gpgcheck=1
 installonly_limit=3
 clean_requirements_on_remove=True
 best=True
+skip_if_unavailable=False
 ```
 
 Common options are as follows:
@@ -113,6 +114,11 @@ Common options are as follows:
 <td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921080_aab5e9fba116044e4807c04ae55297cd1"><a name="en-us_topic_0151921080_aab5e9fba116044e4807c04ae55297cd1"></a><a name="en-us_topic_0151921080_aab5e9fba116044e4807c04ae55297cd1"></a>Sets the number of packages that can be installed at the same time by running the <strong id="b16680340219"><a name="b16680340219"></a><a name="b16680340219"></a>installonlypkgs</strong> command. The default value is 3. You are advised not to decrease the value.</p>
 </td>
 </tr>
+<tr id="en-us_topic_0151921080_r1fea2c77ef6e4c63a6ca076666eb8651"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0151921080_a66ecbecaa5494510b6b1304af3e4da43"><a name="en-us_topic_0151921080_a66ecbecaa5494510b6b1304af3e4da43"></a><a name="en-us_topic_0151921080_a66ecbecaa5494510b6b1304af3e4da43"></a>skip_if_unavailable</p>
+</td>
+<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0151921080_aab5e9fba116044e4807c04ae55297cd1"><a name="en-us_topic_0151921080_aab5e9fba116044e4807c04ae55297cd1"></a><a name="en-us_topic_0151921080_aab5e9fba116044e4807c04ae55297cd1"></a>The default value is False.</p>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -158,27 +164,25 @@ The repository part allows you to customize openEuler software source repositori
 
 
 -   Configuring the .repo file in the /etc/yum.repos.d directory
-
-
     openEuler provides multiple repo sources for users online. For details about the repo sources, see [System Installation](./../Releasenotes/installing-the-os.md.html). 
-
+    
     For example, run the following command as the administrator authority to add the openeuler repo source to the openEuler.repo file. 
-
+    
     ```
     # vi /etc/yum.repos.d/openEuler.repo
     ```
-
+    
     ```
     [OS]
     name=openEuler-$releasever - OS
     baseurl=https://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/$basearch/
     enabled=1
     gpgcheck=1
-    gpgkey=https://repo.openeuler.org/openEuler-20.09/OS/$basearch/RPM-GPG-KEY-openEuler
+    gpgkey=https://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/$basearch/RPM-GPG-KEY-openEuler
     ```
-
+    
     >![](./public_sys-resources/icon-note.gif) **NOTE:**    
-	> - **enabled** indicates whether to enable the software source repository. The value can be **1** or **0**. The default value is **1**, indicating that the software source repository is enabled.
+    > - **enabled** indicates whether to enable the software source repository. The value can be **1** or **0**. The default value is **1**, indicating that the software source repository is enabled.
     > - **gpgkey** is the public key used to verify the signature.
 
 
