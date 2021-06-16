@@ -36,6 +36,7 @@ headless: true
     -   [使用DNF管理软件包]({{< relref "./docs/Administration/使用DNF管理软件包.md" >}})
     -   [管理服务]({{< relref "./docs/Administration/管理服务.md" >}})
     -   [管理进程]({{< relref "./docs/Administration/管理进程.md" >}})
+    -   [管理内存]({{< relref "./docs/Administration/memory-management.md" >}})
     -   [配置网络]({{< relref "./docs/Administration/配置网络.md" >}})
     -   [使用LVM管理硬盘]({{< relref "./docs/Administration/使用LVM管理硬盘.md" >}})
     -   [使用KAE加速引擎]({{< relref "./docs/Administration/使用KAE加速引擎.md" >}})
