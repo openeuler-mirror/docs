@@ -48,7 +48,6 @@ The following table lists the [openEuler release files](http://repo.openeuler.or
 | [docker_img](http://repo.openeuler.org/openEuler-20.03-LTS-SP1/docker_img/) | The openEuler container image, which provides only the basic bash environment, is used as the basic container image |
 | [virtual_machine_img](http://repo.openeuler.org/openEuler-20.03-LTS-SP1/virtual_machine_img/) | The openEuler VM image provides only the basic running environment to shorten the VM deployment time |
 | [everything](http://repo.openeuler.org/openEuler-20.03-LTS-SP1/everything/) | The repo source of the openEuler full software package provides the online download and version upgrade functions |
-| [extras](http://repo.openeuler.org/openEuler-20.03-LTS-SP1/extras/) | The repo source of the openEuler extended software package is used to release new software packages with added features |
 | [source](http://repo.openeuler.org/openEuler-20.03-LTS-SP1/source/) | The repo source of all source code software packages in the openEuler community, which is used online by developers |
 | [update](http://repo.openeuler.org/openEuler-20.03-LTS-SP1/update/) | The repo source of the openEuler upgrade software package, which is used to fix bugs and common vulnerabilities and exposures (CVE) in released versions and to update and release software with enhancements |
 | [EPOL](http://repo.openeuler.org/openEuler-20.03-LTS-SP1/EPOL/) | The repo sources of the openEuler third-party software package are mainly contributed by third parties and communities  |
