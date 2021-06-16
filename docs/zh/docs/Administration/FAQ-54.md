@@ -253,7 +253,7 @@ Python 3.7.2 及以下版本中的 Lib/zipfile.py 允许远程攻击者通过 zi
 
 ### 解决方案
 
-在 zipfile 文档中添加告警信息： https://github.com/python/cpython/blob/3.7/Doc/library/zipfile.rst。
+在 [zipfile 文档](https://github.com/python/cpython/blob/3.7/Doc/library/zipfile.rst)中添加告警信息。
 
 ## 不合理使用glibc正则表达式引起ReDoS攻击
 
