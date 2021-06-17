@@ -70,10 +70,6 @@ The following table lists the [openEuler release files](http://repo.openeuler.or
 	<td>The repo source of the openEuler full software package provides the online download and version upgrade functions. The content of the software package is the same as that of the full software package ISO in the ISO release package. The directory differentiates the repo sources for the AArch64 and x86 architectures, respectively.</td>
 </tr>
 <tr>
-	<td><a href="http://repo.openeuler.org/openEuler-21.03/extras/">extras</a></td>
-	<td>The repo source of the openEuler extended software package is used to release new software packages with added features. The directory differentiates the repo sources for the AArch64 and x86 architectures, respectively.</td>
-</tr>
-<tr>
 	<td><a href="http://repo.openeuler.org/openEuler-21.03/source/">source</a></td>
 	<td>The repo source of all source code software packages in the openEuler community, which is used online by developers.</td>
 </tr>
