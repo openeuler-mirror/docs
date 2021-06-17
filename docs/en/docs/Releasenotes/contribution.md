@@ -18,5 +18,5 @@ You can contribute to the community by submitting code. We also welcome your fee
 
 ## IRC<a name="section6563203211285"></a>
 
-openEuler has also opened a channel in IRC as an additional channel to provide community support and interaction. For details, see  [openEuler IRC](https://openeuler.org/zh/community/irc.html).
+openEuler has also opened a channel in IRC as an additional channel to provide community support and interaction. For details, see  [openEuler IRC](https://gitee.com/openeuler/community/blob/master/en/communication/IRCs.md).
 
