@@ -172,7 +172,6 @@ If the Open vSwitch is used to provide virtual network, you need to install the 
 1.  Install the Open vSwitch component.
 
     ```
-    # yum install -y openvswitch-kmod
     # yum install -y openvswitch
     ```
 
@@ -185,76 +184,49 @@ If the Open vSwitch is used to provide virtual network, you need to install the 
 
 **2. Check whether the installation is successful.**
 
-Check whether the Open vSwitch components, openvswitch-kmod and openvswitch, are successfully installed.
+Check whether the Open vSwitch components, openvswitch is successfully installed.
 
-1.  Check whether the openvswitch-kmod component is successfully installed. If the installation is successful, the software package information is displayed. The command and output are as follows:
-
-    ```
-    # rpm -qi openvswitch-kmod
-    Name        : openvswitch-kmod
-    Version     : 2.11.1
-    Release     : 1.oe3
-    Architecture: aarch64
-    Install Date: Thu 15 Aug 2019 05:07:49 PM CST
-    Group       : System Environment/Daemons
-    Size        : 15766774
-    License     : GPLv2
-    Signature   : (none)
-    Source RPM  : openvswitch-kmod-2.11.1-1.oe3.src.rpm
-    Build Date  : Thu 08 Aug 2019 04:33:08 PM CST
-    Build Host  : armbuild10b175b113b44
-    Relocations : (not relocatable)
-    Vendor      : OpenSource Security Ralf Spenneberg <ralf@os-s.net>
-    URL         : http://www.openvswitch.org/
-    Summary     : Open vSwitch Kernel Modules
-    Description :
-    Open vSwitch provides standard network bridging functions augmented with
-    support for the OpenFlow protocol for remote per-flow control of
-    traffic. This package contains the kernel modules.
-    ```
-
-2.  Check whether the openvswitch component is successfully installed. If the installation is successful, the software package information is displayed. The command and output are as follows:
+1.  Check whether the openvswitch component is successfully installed. If the installation is successful, the software package information is displayed. The command and output are as follows:
 
     ```
     # rpm -qi openvswitch
-    Name        : openvswitch
-    Version     : 2.11.1
-    Release     : 1
+    Name: openvswitch
+    Version     : 2.12.0
+    Release     : 11.oe1
     Architecture: aarch64
-    Install Date: Thu 15 Aug 2019 05:08:35 PM CST
-    Group       : System Environment/Daemons
-    Size        : 6051185
-    License     : ASL 2.0
-    Signature   : (none)
-    Source RPM  : openvswitch-2.11.1-1.src.rpm
-    Build Date  : Thu 08 Aug 2019 05:24:46 PM CST
-    Build Host  : armbuild10b247b121b105
-    Relocations : (not relocatable)
-    Vendor      : Nicira, Inc.
-    URL         : http://www.openvswitch.org/
-    Summary     : Open vSwitch daemon/database/utilities
+    Install Date: Tue 08 Jun 2021 04:54:31 PM CST
+    Group: Unspecified
+    Size: 7456390
+    License     : ASL 2.0 and ISC
+    Signature   : RSA/SHA1, Mon 07 Jun 2021 01:16:33 AM CST, Key ID d557065eb25e7f66
+    Source RPM  : openvswitch-2.12.0-11.oe1.src.rpm
+    Build Date  : Mon 07 Jun 2021 01:15:34 AM CST
+    Build Host  : obs-worker-0011
+    Packager    : http://openeuler.org
+    Vendor      : http://openeuler.org
+    URL: http://www.openvswitch.org/
+    Summary     : Production Quality, Multilayer Open Virtual Switch
     Description :
-    Open vSwitch provides standard network bridging functions and
-    support for the OpenFlow protocol for remote per-flow control of
-    traffic.
+    Open vSwitch is a production quality, multilayer virtual switch licensed under
+    the open source Apache 2.0 license.
     ```
 
-3.  Check whether the Open vSwitch service is started successfully. If the service is in the  **Active**  state, the service is started successfully. You can use the command line tool provided by the Open vSwitch. The command and output are as follows:
+2.  Check whether the Open vSwitch service is started successfully. If the service is in the  **Active**  state, the service is started successfully. You can use the command line tool provided by the Open vSwitch. The command and output are as follows:
 
     ```
     # service openvswitch status
-    ● openvswitch.service - LSB: Open vSwitch switch
-       Loaded: loaded (/etc/rc.d/init.d/openvswitch; generated)
-       Active: active (running) since Sat 2019-08-17 09:47:14 CST; 4min 39s ago
-         Docs: man:systemd-sysv-generator(8)
-      Process: 54554 ExecStart=/etc/rc.d/init.d/openvswitch start (code=exited, status=0/SUCCESS)
-        Tasks: 4 (limit: 9830)
-       Memory: 22.0M
+    Redirecting to /bin/systemctl status openvswitch.service
+    ● openvswitch.service - Open vSwitch
+       Loaded: loaded (/usr/lib/systemd/system/openvswitch.service; disabled; vendor preset: disabled)
+       Active: active (exited) since Wed 2021-06-16 16:45:41 CST; 17h ago
+      Process: 151652 ExecStart=/bin/true (code=exited, status=0/SUCCESS)
+     Main PID: 151652 (code=exited, status=0/SUCCESS)
+        Tasks: 0
+       Memory: 0B
        CGroup: /system.slice/openvswitch.service
-               ├─54580 ovsdb-server: monitoring pid 54581 (healthy)
-               ├─54581 ovsdb-server /etc/openvswitch/conf.db -vconsole:emer -vsyslog:err -vfile:info --remote=punix:/var/run/openvswitch/db.sock --private-key=db:Open_vSwitch,SSL,private_key --certificate>
-               ├─54602 ovs-vswitchd: monitoring pid 54603 (healthy)
-               └─54603 ovs-vswitchd unix:/var/run/openvswitch/db.sock -vconsole:emer -vsyslog:err -vfile:info --mlockall --no-chdir --log-file=/var/log/openvswitch/ovs-vswitchd.log --pidfile=/var/run/open>
+
+    Jun 16 16:45:41 openEuler systemd[1]: Starting Open vSwitch...
+    Jun 16 16:45:41 openEuler systemd[1]: Started Open vSwitch.
     ```
 
 
