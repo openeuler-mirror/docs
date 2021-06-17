@@ -179,7 +179,7 @@ If the Open vSwitch is used to provide virtual network, you need to install the 
 2.  Start the Open vSwitch service.
 
     ```
-    # systemctl start openvswitch
+    # service openvswitch start
     ```
 
 
@@ -242,7 +242,7 @@ Check whether the Open vSwitch components, openvswitch-kmod and openvswitch, are
 3.  Check whether the Open vSwitch service is started successfully. If the service is in the  **Active**  state, the service is started successfully. You can use the command line tool provided by the Open vSwitch. The command and output are as follows:
 
     ```
-    # systemctl status openvswitch
+    # service openvswitch status
     ● openvswitch.service - LSB: Open vSwitch switch
        Loaded: loaded (/etc/rc.d/init.d/openvswitch; generated)
        Active: active (running) since Sat 2019-08-17 09:47:14 CST; 4min 39s ago
