@@ -92,7 +92,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
 >安装之前，请确保http服务器的防火墙处于关闭状态。关闭防火墙可参照如下命令：  
 >```  
 >iptables -F  
->```  
+>```
 
 1.  httpd的安装与服务启动。
 
@@ -213,7 +213,7 @@ TFTP（Trivial File Transfer Protocol，简单文件传输协议），该协议�
 >安装之前，请确保http服务器的防火墙处于关闭状态。关闭防火墙可参照如下命令：  
 >```  
 >iptables -F  
->```  
+>```
 
 1.  httpd的安装与服务启动。
 
