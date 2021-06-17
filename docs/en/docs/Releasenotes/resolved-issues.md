@@ -64,7 +64,6 @@ Table 1 Resolved issues
 | [I283XQ](https://gitee.com/openEuler/kernel/issues/I283XQ?from=project-issue)| The name of the vmlinux installation package is incorrect.|
 | [I283CE](https://gitee.com/src-openEuler/ebtables/issues/I283CE?from=project-issue)| \[20.03-LTS-SP1] After **ebtables** is upgraded to 2.0.11, the permission on the configuration file **/etc/sysconfig/ebtables-config** is changed to **755**. |
 | [I283BK](https://gitee.com/src-openEuler/libreswan/issues/I283BK?from=project-issue)| \[20.03-LTS-SP1] Failed to create a VPN connection.|
-| [I283BC](https://gitee.com/使用的是默认权限)| \[20.03-LTS-SP1] No permission is specified for some files in the **gRPC** package.|
 | [I2827H](https://gitee.com/src-openEuler/ModemManager/issues/I2827H?from=project-issue)| \[LTS] The **ModemManager** service fails to be started.|
 | [I2822Q](https://gitee.com/src-openEuler/zenity/issues/I2822Q?from=project-issue)| \[SP1] The permission for some files in the **zenity** directory is changed. |
 | [I281FY](https://gitee.com/src-openEuler/libsass/issues/I281FY?from=project-issue)| \[fuzz] use-of-uninitialized-value|
