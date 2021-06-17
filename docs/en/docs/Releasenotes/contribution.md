@@ -10,7 +10,7 @@ You are welcome to join an existing SIG or create a SIG. For details about how t
 
 ## Mail List and Tasks<a name="section118551716123918"></a>
 
-You are welcome to actively help users solve problems raised in the  [mail list](https://openeuler.org/en/community/mails.html)  and issues \(including  [code repository issues](https://gitee.com/organizations/openeuler/issues)  and  [software package repository issues](https://gitee.com/organizations/src-openeuler/issues)\). In addition, you can submit an issue. All these will help the openEuler community to develop better.
+You are welcome to actively help users solve problems raised in the  [mail list](https://openeuler.org/en/community/mailing-list/)  and issues \(including  [code repository issues](https://gitee.com/organizations/openeuler/issues)  and  [software package repository issues](https://gitee.com/organizations/src-openeuler/issues)\). In addition, you can submit an issue. All these will help the openEuler community to develop better.
 
 ## Documents<a name="section108651229193"></a>
 
