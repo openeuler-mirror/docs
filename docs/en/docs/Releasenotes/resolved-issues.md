@@ -27,25 +27,16 @@ For details about the complete kernel submission records, see [Record Submission
 |  ISSUE   |Description  |
 |:---  |:----  |
 | [I1TB7N](https://gitee.com/openeuler/kernel/issues/I1TB7N?from=project-issue) | PMU nmi watchdog does not support CPU hot-plug. |
-| [I1TXAU](https://gitee.com/openeuler/kernel/issues/I1TXAU?from=project-issue) | The VM fails to be started when the VM CPU mode is configured with host-model. |
-| [I1U8BP](https://gitee.com/openeuler/kernel/issues/I1U8BP?from=project-issue) | When openEuler is used to set trusted boot as an image, the VM cannot identify the TPM device. |
 
 
 **Kernel** 
 
 |  ISSUE   |Description  |
 |:---  |:----  |
-| [I17YPQ](https://gitee.com/openeuler/kernel/issues/I17YPQ?from=project-issue) | The drive connected to the LSI SAS3408 RAID controller card cannot be identified during the installation. |
 | [I1JZHT](https://gitee.com/openeuler/kernel/issues/I1JZHT?from=project-issue) | The Netdevsim is repeatedly loaded and uninstalled, causing the system to reset. |
 | [I1RUC8](https://gitee.com/openeuler/kernel/issues/I1RUC8?from=project-issue) | The performance loss of vmalloc on x86-based servers is huge. |
 | [I1R86G](https://gitee.com/openeuler/kernel/issues/I1R86G?from=project-issue) | openEuler An error of pread is reported when openEuler performs a test on the open GaussDB, causing the return to -EIO. |
 | [I1SISM](https://gitee.com/openeuler/kernel/issues/I1SISM?from=project-issue) | The XFS drive with size=8192 cannot be mounted to the openEuler on the x86 platform. |
-
-**Security**
-
-|  ISSUE   |问题描述  |
-|:---  |:----  |
-| [I1TQ15](https://gitee.com/openeuler/kernel/issues/I1TQ15?from=project-issue) | An error is reported when the firewall-cmd --reload command is executed to add an IP address set that does not exist to the drop area as the source. |
 
 
 **Hardware and chips** 
