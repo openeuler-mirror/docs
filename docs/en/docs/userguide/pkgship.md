@@ -18,9 +18,9 @@ The system is developed using Flask-RESTful and adopts the SQLAlchemy ORM query 
 
 ## Downloading Software
 
-* The repo source is officially released at <https://repo.openeuler.org/>
-* You can obtain the source code at <https://gitee.com/openeuler/openEuler-Advisor/tree/master/packageship>
-* You can obtain the RPM package of the beta version at <https://117.78.1.88/project/show/openEuler:Mainline>
+* The repo source is officially released at https://repo.openeuler.org/
+* You can obtain the source code at https://gitee.com/openeuler/pkgship/tree/master/packageship
+* You can obtain the RPM package of the beta version at https://117.78.1.88/project/show/openEuler:Mainline
 
 ## Operating Environments
 
