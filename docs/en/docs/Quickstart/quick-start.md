@@ -195,13 +195,13 @@ To prevent incomplete download of the software package due to network or storage
    
    > ![](./public_sys-resources/icon-note.gif) **NOTE:**
    > 
-   > - If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media \& install openEuler 20.09**  and enters the installation page.
+   > - If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media \& install openEuler 20.03-LTS-SP1**  and enters the installation page.
    > - During PM installation, if you cannot use the arrow keys to select boot options and the system does not respond after you press  **Enter**, click  ![](./figures/en-us_image_0229420473.png)  on the BMC page and configure  **Key \& Mouse Reset**.
    
     **Figure  5**  Installation Wizard<a name="fig1648754873314"></a>  
     ![](./figures/Installation_wizard.png "Installation_wizard")
 
-9. On the installation wizard page, press  **Enter**  to select the default option  **Test this media \& install openEuler 20.09**  to enter the GUI installation page.
+9. On the installation wizard page, press  **Enter**  to select the default option  **Test this media \& install openEuler 20.03-LTS-SP1**  to enter the GUI installation page.
 
 ## Installation
 

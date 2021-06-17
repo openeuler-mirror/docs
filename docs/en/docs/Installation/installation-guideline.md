@@ -263,18 +263,21 @@ click  **Accept Changes**  to go back to the  **INSTALLATION SUMMARY**  page.
 
 On the  **INSTALLATION SUMMARY**  page, select  **NETWORK \& HOST NAME**  to configure the system network functions.
 
-The installation program automatically detects a local access interface. The detected interface is listed in the left box, and the interface details are displayed in the right-hand area, as shown in  [Figure 14](#en-us_topic_0186390264_en-us_topic_0122145831_fig123700157297). In the upper right corner, click the switchover button to enable or disable the network interface. You can also click  **Configure**  to configure the selected interface.
+The installation program automatically detects a local access interface. The detected interface is listed in the left box, and the interface details are displayed in the right-hand area, as shown in  [Figure 14](#en-us_topic_0186390264_en-us_topic_0122145831_fig123700157297). You can enable or disable a network interface by clicking the switch in the upper right corner of the page. The switch is turned off by default. If the installation source is set to be the network, turn on the switch. You can also click **Configure** to configure the selected interface. Select **Connect automatically with priority** to enable the NIC to start automatically upon system startup, as shown in Figure 15.
 
 In the lower left box, enter the host name. The host name can be the fully quantified domain name (FQDN) in the format of hostname.domainname or the brief host name in the format of hostname.
 
 **Figure  14**  Setting the network and host name<a name="en-us_topic_0186390264_en-us_topic_0122145831_fig123700157297"></a>  
 ![](./figures/setting-the-network-and-host-name.png "setting-the-network-and-host-name")
 
+**Figure  15**  Config the network<a name="en-us_topic_0186390264_en-us_topic_0122145831_fig6"></a>  
+![](./figures/confignetwork.png "config-the-network")
+
 After the setting is complete, click **Done** in the upper left corner to go back to the **INSTALLATION SUMMARY** page.
 
 ## Setting the Root Password
 
-Select **Root Password** on the **INSTALLATION SUMMARY** page. The **Root Password** page is displayed, as shown in [Figure 15](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018). Enter a password based on [Password Complexity](#密码复杂度) requirements and confirm the password.
+Select **Root Password** on the **INSTALLATION SUMMARY** page. The **Root Password** page is displayed, as shown in [Figure 16](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018). Enter a password based on [Password Complexity](#密码复杂度) requirements and confirm the password.
 
 > ![](./public_sys-resources/icon-note.gif) **NOTE:**
 > 
@@ -282,7 +285,7 @@ Select **Root Password** on the **INSTALLATION SUMMARY** page. The **Root Passwo
 > 
 > - If you select **Lock root account** on the **Root Password** page, the root account will be disabled.
 
-**Figure 15** Root password<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018"></a>  
+**Figure 16** Root password<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018"></a>  
 ![](./figures/password-of-the-root-account.png "Root password")
 
 ### Password Complexity
@@ -304,7 +307,7 @@ After the settings are completed, click **Done** in the upper left corner to ret
 
 ## Creating a User
 
-Click  **User Creation**.  [Figure 16](#en-us_topic_0186390266_en-us_topic_0122145909_fig1237715313319)  shows the page for creating a user. Enter a username and set a password. By clicking  **Advanced**, you can also configure a home directory and a user group, as shown in  [Figure 17](#en-us_topic_0186390266_en-us_topic_0122145909_fig128716531312).
+Click  **User Creation**.  [Figure 17](#en-us_topic_0186390266_en-us_topic_0122145909_fig1237715313319)  shows the page for creating a user. Enter a username and set a password. By clicking  **Advanced**, you can also configure a home directory and a user group, as shown in  [Figure 17](#en-us_topic_0186390266_en-us_topic_0122145909_fig128716531312).
 
 **Figure  16**  Creating a user<a name="en-us_topic_0186390266_en-us_topic_0122145909_fig1237715313319"></a>  
 ![](./figures/creating-a-user.png "creating-a-user")
