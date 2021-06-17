@@ -5,7 +5,7 @@
 
 使能 etcd 使用的端口：
 ```bash
-firewall-cmd --zone=public --add-port=2379-/tcp
+firewall-cmd --zone=public --add-port=2379-2381/tcp
 ```
 
 ## 安装 etcd 二进制
