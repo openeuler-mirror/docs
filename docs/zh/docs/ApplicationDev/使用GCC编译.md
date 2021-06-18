@@ -307,10 +307,10 @@ $ gcc main.c libtest.so -o app.out
 若使用下面搜索动态库的方式，则为了确保程序在运行时能够链接到动态库，需要通过如下三种方法中的任一种实现。
 
 -   将动态库保存在标准目录下，例如 /usr/lib。
--   把动态库所在路径libaryDIR增加到环境变量LD\_LIBRARY\_PATH中
-
-    $ export LD\_LIBRARY\_PATH=libraryDIR:$LD\_LIBRARY\_PATH
-
+-   把动态库所在路径libaryDIR增加到环境变量LD_LIBRARY_PATH中
+    ```
+    $ export LD_LIBRARY_PATH=libraryDIR:$LD_LIBRARY_PATH
+    ```
     >![](./public_sys-resources/icon-note.gif) **说明：**   
     >LD\_LIBRARY\_PATH为动态库的环境变量。当运行动态库时，若动态库不在缺省文件夹（/lib 和/usr/lib）下，则需要指定环境变量LD\_LIBRARY\_PATH。  
 
