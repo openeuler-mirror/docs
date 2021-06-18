@@ -400,35 +400,10 @@ The output of the  **is-active**  command is as follows:
 
 **Table  5**  Output of the is-active command
 
-<a name="table157842227315"></a>
-<table><thead align="left"><tr id="row878417221132"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p1978432212315"><a name="p1978432212315"></a><a name="p1978432212315"></a>Status</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p878410225314"><a name="p878410225314"></a><a name="p878410225314"></a>Description</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row87841522439"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p153819129412"><a name="p153819129412"></a><a name="p153819129412"></a>active(running)</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p938116129415"><a name="p938116129415"></a><a name="p938116129415"></a>One or more services are running in the system.</p>
-</td>
-</tr>
-<tr id="row7784112217315"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p153829121246"><a name="p153829121246"></a><a name="p153829121246"></a>active(exited)</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p103822012844"><a name="p103822012844"></a><a name="p103822012844"></a>A service that ends properly after being executed only once. Currently, no program is running in the system. For example, the <strong id="b9225113174212"><a name="b9225113174212"></a><a name="b9225113174212"></a>quotaon</strong> function is performed only when the program is started or mounted.</p>
-</td>
-</tr>
-<tr id="row978416227312"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1838251219416"><a name="p1838251219416"></a><a name="p1838251219416"></a>active(waiting)</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p23822129416"><a name="p23822129416"></a><a name="p23822129416"></a>The program needs to wait for other events to continue running. For example, the print queue service is being started, but it needs to be queued (print jobs) so that it can continue to wake up the printer service to perform the next print function.</p>
-</td>
-</tr>
-<tr id="row10784102216316"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p13382171211418"><a name="p13382171211418"></a><a name="p13382171211418"></a>inactive</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1338217126410"><a name="p1338217126410"></a><a name="p1338217126410"></a>The service is not running.</p>
-</td>
-</tr>
-</tbody>
-</table>
+|  Status  |  Description  |
+|:---|:---|
+|  active  |  The service is running.  |
+|  inactive  |  The service is not running.  |
 
 Similarly, to determine whether a particular service is enabled, run the following command:
 
@@ -693,14 +668,6 @@ To change the operating system to rescue mode, run the following command as the 
 
 ```
 systemctl rescue
-```
-
-This command is similar to the  **systemctl isolate rescue.target**  command. After the command is executed, the following information is displayed on the serial port:
-
-```
-You are in rescue mode. After logging in, type "journalctl -xb" to viewsystem logs, "systemctl reboot" to reboot, "systemctl default" or "exit"to boot into default mode.
-Give root password for maintenance
-(or press Control-D to continue):
 ```
 
 >![](./public_sys-resources/icon-note.gif) **NOTE:**   
