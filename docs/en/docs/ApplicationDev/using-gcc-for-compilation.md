@@ -308,10 +308,10 @@ In this mode, the  **libtest.so**  file in the current directory is used.
 If you choose to search for a DLL, to ensure that the DLL can be linked when the program is running, you must implement by using one of the following methods:
 
 -   Save the DLL to a standard directory, for example,  **/usr/lib**.
--   Add the DLL path  **libaryDIR**  to the environment variable  **LD\_LIBRARY\_PATH**.
-
-    $ export LD\_LIBRARY\_PATH=libraryDIR:$LD\_LIBRARY\_PATH
-
+-   Add the DLL path  **libaryDIR**  to the environment variable  **LD_LIBRARY_PATH**.
+    ```
+    $ export LD_LIBRARY_PATH=libraryDIR:$LD_LIBRARY_PATH
+    ```
     >![](./public_sys-resources/icon-note.gif) **NOTE:**   
     >**LD\_LIBRARY\_PATH**  is an environment variable of the DLL. If the DLL is not in the default directories \(**/lib**  and  **/usr/lib**\), you need to specify the environment variable  **LD\_LIBRARY\_PATH**.  
 
