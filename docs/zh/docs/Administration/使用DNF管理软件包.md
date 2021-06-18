@@ -118,7 +118,7 @@ skip_if_unavailable=False
 </tr>
 <tr id="zh-cn_topic_0151921080_r1fea2c77ef6e4c63a6ca076666eb8651"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_a66ecbecaa5494510b6b1304af3e4da43"><a name="zh-cn_topic_0151921080_a66ecbecaa5494510b6b1304af3e4da43"></a><a name="zh-cn_topic_0151921080_a66ecbecaa5494510b6b1304af3e4da43"></a>skip_if_unavailable</p>
 </td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_aab5e9fba116044e4807c04ae55297cd1"><a name="zh-cn_topic_0151921080_aab5e9fba116044e4807c04ae55297cd1"></a><a name="zh-cn_topic_0151921080_aab5e9fba116044e4807c04ae55297cd1"></a>默认值为False。</p>
+<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_aab5e9fba116044e4807c04ae55297cd1"><a name="zh-cn_topic_0151921080_aab5e9fba116044e4807c04ae55297cd1"></a><a name="zh-cn_topic_0151921080_aab5e9fba116044e4807c04ae55297cd1"></a>可选值True和False，用来控制元数据仓库不可用时的行为。默认值为False，当元数据仓库不可用时会停止存储并报错。</p>
 </td>
 </tr>
 </tbody>
