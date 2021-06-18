@@ -164,4 +164,7 @@ headless: true
     -   [DDE]({{< relref "./docs/desktop/dde.md" >}})
         -   [安装 DDE]({{< relref "./docs/desktop/安装DDE.md" >}})
         -   [DDE 用户指南]({{< relref "./docs/desktop/DDE-User-Manual.md" >}})
+    -   [XFCE]({{< relref "./docs/desktop/xfce.md" >}})
+        -   [安装 Xfce]({{< relref "./docs/desktop/Install_XFCE.md" >}})
+        -   [Xfce 用户指南]({{< relref "./docs/desktop/Xfce_userguide.md" >}})
 -   [HA用户指南]({{< relref "./docs/desktop/HAuserguide.md" >}})
