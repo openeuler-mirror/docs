@@ -3,6 +3,8 @@
   {{ partial "head.html" . }}
   <link href="{{ "css/docdetail.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
   <link href="{{ "css/markdown.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
+  <link href="{{ "css/docsearch.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
+  <link href="{{ "css/pcfooter.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
   <body>
     <div id="all">
       <header>
@@ -33,6 +35,7 @@
                 <span></span>
                 <i class="v-icon-down"></i>
                 <div class="option">
+                  <a href="{{ i18n "know_94_1"}}">{{ .Site.Params.version_94 }}</a>
                   <a href="{{ i18n "know_95_1"}}">{{ .Site.Params.version_95 }}</a>
                   <a href="{{ i18n "know_96_1"}}">{{ .Site.Params.version_96 }}</a>
                   <a href="{{ i18n "know_97_1"}}">{{ .Site.Params.version_97 }}</a>
@@ -51,6 +54,7 @@
                     <span></span>
                     <i class="icon-down"></i>
                     <div class="option">
+                      <a href="{{ i18n "know_94_1"}}">{{ .Site.Params.version_94 }}</a>
                       <a href="{{ i18n "know_95_1"}}">{{ .Site.Params.version_95 }}</a>
                       <a href="{{ i18n "know_96_1"}}">{{ .Site.Params.version_96 }}</a>
                       <a href="{{ i18n "know_97_1"}}">{{ .Site.Params.version_97 }}</a>
@@ -71,7 +75,19 @@
           </main>
       </div>
       <!-- /#content -->
-
+      {{ partial "h5_footer.html"}}
+      <div id="footer" style="margin-left: 320px;">
+        <div>
+            <img src="/img/common/footerLogo.png" alt="footerLogo.png" />
+            <p>{{ .Site.Params.email }}</p>
+            <p>{{ i18n "copy_right" }}</p>
+        </div>
+        <div>
+            <img src="/img/common/qrcode.png" alt="qrcode.png"/>
+            <p>{{ i18n "attention" }}</p>
+        </div>
+    </div>
+    </div>
     </div>
     <!-- /#all -->
 
@@ -85,5 +101,7 @@
 			  }
       });
     </script>
+    <script src="{{ "js/pagination.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+    <script src="{{ "js/docsearch.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
   </body>
 </html>

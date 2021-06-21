@@ -56,6 +56,7 @@ paginate = 10
     languageRu = "Русский"
 
     ltsText = "LTS"
+    version_94 = "20.03 LTS SP2"
     version_95 = "21.03"
     version_96 = "20.03 LTS SP1"
     version_97 = "20.09"

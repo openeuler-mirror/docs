@@ -2,6 +2,12 @@
 .h5-search {
     display: none;
 }
+
+li{
+    margin-top: 30px;
+    color:#FFFFFF;
+}
+
 .doclist .text{
     margin-top: 50px;
     font-size: 30px;
@@ -223,6 +229,7 @@ html[lang="ru"] .doclist .doc-catalog .list[index="96"] .migrate {
     height: 300px;
 }
 
+html[lang="en"] .doc-catalog .list[index="94"]>.migrate .link-box a,
 html[lang="en"] .doc-catalog .list[index="96"]>.migrate .link-box a,
 html[lang="ru"] .doc-catalog .list[index="95"]>.develop .link-box a,
 html[lang="ru"] .doc-catalog .list[index="95"]>.use .link-box a,

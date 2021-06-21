@@ -6,28 +6,15 @@ $(function($) {
         });
         e.stopPropagation();
     });
-    $("#nav-search").click(function (e) {
-        $(this).find("input").animate({
-            width: "300px"
-        },300);
-        $(this).addClass("search-active");
-        $(document).one("click", function(){
-            $("#nav-search").find("input").animate({
-                width: "0"
-            },300);
-            $("#nav-search").removeClass("search-active");
-        });
-        e.stopPropagation();
-    });
     $("#LTS-value").click(function (e) {
         $(this).toggleClass("active");
         if($(this).attr("class")) {
             $(".doc-box").addClass("active");
             $(".doc-box>.version").not("[key*='LTS']").hide();
             $(".doc-box>.version").removeClass("active");
-            $(".doc-box>.version[index='96']").addClass("active");
+            $(".doc-box>.version[index='94']").addClass("active");
             $(".doc-catalog>.list").hide();
-            $(".doc-catalog").find("[index='96']").show();
+            $(".doc-catalog").find("[index='94']").show();
         }else {
             $(".doc-box").removeClass("active");
             $(".doc-box>.version").not("[key*='LTS']").show();
