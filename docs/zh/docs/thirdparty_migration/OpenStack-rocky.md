@@ -233,20 +233,37 @@ $ yum clean all && yum makecache
     $ systemctl start httpd.service
     ```
 
-10. 执行如下命令，设置环境变量。
+10. 安装OpenStackClient
 
     ```shell
-    $ export OS_USERNAME=admin
-    $ export OS_PASSWORD=ADMIN_PASS
-    $ export OS_PROJECT_NAME=admin
-    $ export OS_USER_DOMAIN_NAME=Default
-    $ export OS_PROJECT_DOMAIN_NAME=Default
-    $ export OS_AUTH_URL=http://controller:5000/v3
-    $ export OS_IDENTITY_API_VERSION=3
+    $ yum install python2-openstaclient
     ```
-    替换 ADMIN_PASS 为 keystone-manage bootstrap 命令中设置的密码
 
-11. 分别执行如下命令，创建domain, projects, users, roles。
+11. 创建 OpenStack client 环境脚本
+
+     创建admin用户的环境变量脚本：
+
+     ```shell
+     # vim admin-openrc
+
+     export OS_PROJECT_DOMAIN_NAME=Default
+     export OS_USER_DOMAIN_NAME=Default
+     export OS_PROJECT_NAME=admin
+     export OS_USERNAME=admin
+     export OS_PASSWORD=ADMIN_PASS
+     export OS_AUTH_URL=http://controller:5000/v3
+     export OS_IDENTITY_API_VERSION=3
+     export OS_IMAGE_API_VERSION=2
+     ```
+
+     替换ADMIN_PASS为admin用户的密码, 与上述`keystone-manage bootstrap` 命令中设置的密码一致
+     运行脚本加载环境变量：
+
+     ```shell
+     $ source admin-openrc
+     ```
+
+12. 分别执行如下命令，创建domain, projects, users, roles。
 
      创建domain ‘example’：
 
@@ -271,7 +288,7 @@ $ yum clean all && yum makecache
      $ openstack role add --project myproject --user myuser myrole
      ```
 
-12. 验证
+13. 验证
 
      取消临时环境变量OS_AUTH_URL和OS_PASSWORD：
 
@@ -295,43 +312,6 @@ $ yum clean all && yum makecache
      --os-project-name myproject --os-username myuser token issue
      ```
 
-13. 创建 OpenStack client 环境脚本
-
-     分别为admin和demo用户创建环境变量脚本：
-
-     ```shell
-     # vim admin-openrc
-     
-     export OS_PROJECT_DOMAIN_NAME=Default
-     export OS_USER_DOMAIN_NAME=Default
-     export OS_PROJECT_NAME=admin
-     export OS_USERNAME=admin
-     export OS_PASSWORD=ADMIN_PASS
-     export OS_AUTH_URL=http://controller:5000/v3
-     export OS_IDENTITY_API_VERSION=3
-     export OS_IMAGE_API_VERSION=2
-     ```
-     ```shell
-     # vim demo-openrc
-     
-     export OS_PROJECT_DOMAIN_NAME=Default
-     export OS_USER_DOMAIN_NAME=Default
-     export OS_PROJECT_NAME=myproject
-     export OS_USERNAME=myuser
-     export OS_PASSWORD=DEMO_PASS
-     export OS_AUTH_URL=http://controller:5000/v3
-     export OS_IDENTITY_API_VERSION=3
-     export OS_IMAGE_API_VERSION=2
-     ```
-     替换ADMIN_PASS为admin用户的密码
-
-     替换DEMO_PASS为myuser用户的密码
-
-     运行脚本加载环境变量：
-
-     ```shell
-     $ source admin-openrc
-     ```
 
 ### Glance 安装
 
