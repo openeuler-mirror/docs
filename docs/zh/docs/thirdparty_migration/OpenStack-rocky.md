@@ -1093,12 +1093,12 @@ $ yum clean all && yum makecache
     创建块存储服务API端点：
 
     ```shell
-    $ openstack endpoint create --region RegionOne volumev2 public http://controller:8776/v2/%s
-    $ openstack endpoint create --region RegionOne volumev2 internal http://controller:8776/v2/%s
-    $ openstack endpoint create --region RegionOne volumev2 admin http://controller:8776/v2/%s
-    $ openstack endpoint create --region RegionOne volumev3 public http://controller:8776/v3/%s
-    $ openstack endpoint create --region RegionOne volumev3 internal http://controller:8776/v3/%s
-    $ openstack endpoint create --region RegionOne volumev3 admin http://controller:8776/v3/%s
+    $ openstack endpoint create --region RegionOne volumev2 public http://controller:8776/v2/%\(project_id\)s
+    $ openstack endpoint create --region RegionOne volumev2 internal http://controller:8776/v2/%\(project_id\)s
+    $ openstack endpoint create --region RegionOne volumev2 admin http://controller:8776/v2/%\(project_id\)s
+    $ openstack endpoint create --region RegionOne volumev3 public http://controller:8776/v3/%\(project_id\)s
+    $ openstack endpoint create --region RegionOne volumev3 internal http://controller:8776/v3/%\(project_id\)s
+    $ openstack endpoint create --region RegionOne volumev3 admin http://controller:8776/v3/%\(project_id\)s
     ```
     
 2. 安装和配置控制节点
