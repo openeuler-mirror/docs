@@ -215,7 +215,9 @@ uint32_t cc_enclave_get_add_text_size(const cc_enclave_sealed_data_t *sealed_dat
 
 ## cc_enclave_memory_in_enclave
 
-Performs security memory check.
+Performs security memory check. (Currently, this function is only supported in Intel SGX, and it is not supported in
+iTrustee, because iTrustee do not support an enclave(TA) to write the memory outside enclave(TEE). It means that there is no need
+for users to do this check in iTrustee.)
 
 **Function**:
 
@@ -237,7 +239,9 @@ bool cc_enclave_memory_in_enclave(const void *addr, size_t size)
 
 ## cc_enclave_memory_out_enclave
 
-Performs security memory check.
+Performs security memory check. (Currently, this function is only supported in Intel SGX, and it is not supported in
+iTrustee, because iTrustee do not support an enclave(TA) to write the memory outside enclave(TEE). It means that there is no need
+for users to do this check in iTrustee.)
 
 **Function**:
 
