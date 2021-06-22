@@ -584,6 +584,8 @@ $ yum clean all && yum makecache
     my_ip = 10.0.0.11
     use_neutron = true
     firewall_driver = nova.virt.firewall.NoopFirewallDriver
+    compute_driver = libvirt.LibvirtDriver
+    instances_path = /var/lib/nova/instances/
     [api_database]
     # ...
     connection = mysql+pymysql://nova:NOVA_DBPASS@controller/nova_api
