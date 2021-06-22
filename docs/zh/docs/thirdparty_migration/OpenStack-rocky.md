@@ -697,7 +697,28 @@ $ yum clean all && yum makecache
     virt_type = qemu
     ```
     如果返回值为1或更大的值，则支持硬件加速，不需要进行额外的配置
-    
+
+    ***注意***
+
+    **如果为arm64结构，还需要在`compute`节点执行以下命令**
+
+    ```shell
+    mkdir -p /usr/share/AAVMF
+    chown nova:nova /usr/share/AAVMF
+
+    ln -s /usr/share/edk2/aarch64/QEMU_EFI-pflash.raw \
+          /usr/share/AAVMF/AAVMF_CODE.fdk
+    ln -s /usr/share/edk2/aarch64/vars-template-pflash.raw \
+          /usr/share/AAVMF/AAVMF_VARS.fd
+
+    vim /etc/libvirt/qemu.conf
+
+    nvram = ["/usr/share/AAVMF/AAVMF_CODE.fd: \
+             /usr/share/AAVMF/AAVMF_VARS.fd", \
+             "/usr/share/edk2/aarch64/QEMU_EFI-pflash.raw: \
+             /usr/share/edk2/aarch64/vars-template-pflash.raw"]
+    ```
+
     启动计算服务及其依赖项，并配置其开机启动：
     
     ```shell
