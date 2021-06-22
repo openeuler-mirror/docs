@@ -554,7 +554,7 @@ $ yum clean all && yum makecache
 
     ```shell
     $ yum install openstack-nova-api openstack-nova-conductor \
-    $ openstack-nova-novncproxy openstack-nova-scheduler openstack-nova-compute \
+      openstack-nova-novncproxy openstack-nova-scheduler openstack-nova-compute \
       openstack-nova-placement-api openstack-nova-console
     ```
 
