@@ -689,12 +689,15 @@ $ yum clean all && yum makecache
     ```
     
     如果返回值为0则不支持硬件加速，需要配置libvirt使用QEMU而不是KVM：
+    **注意：** 如果是在ARM64的服务器上，还需要在配置`cpu_mode`为`custom`,`cpu_model`为`cortex-a72`
     
     ```ini
     # vim /etc/nova/nova.conf
     [libvirt]
     # ...
     virt_type = qemu
+    cpu_mode = custom
+    cpu_model = cortex-a72
     ```
     如果返回值为1或更大的值，则支持硬件加速，不需要进行额外的配置
 
@@ -704,19 +707,17 @@ $ yum clean all && yum makecache
 
     ```shell
     mkdir -p /usr/share/AAVMF
-    chown nova:nova /usr/share/AAVMF
-
     ln -s /usr/share/edk2/aarch64/QEMU_EFI-pflash.raw \
-          /usr/share/AAVMF/AAVMF_CODE.fdk
+          /usr/share/AAVMF/AAVMF_CODE.fd
     ln -s /usr/share/edk2/aarch64/vars-template-pflash.raw \
           /usr/share/AAVMF/AAVMF_VARS.fd
+    chown nova:nova /usr/share/AAVMF -R
 
     vim /etc/libvirt/qemu.conf
 
-    nvram = ["/usr/share/AAVMF/AAVMF_CODE.fd: \
-             /usr/share/AAVMF/AAVMF_VARS.fd", \
-             "/usr/share/edk2/aarch64/QEMU_EFI-pflash.raw: \
-             /usr/share/edk2/aarch64/vars-template-pflash.raw"]
+    nvram = ["/usr/share/AAVMF/AAVMF_CODE.fd:/usr/share/AAVMF/AAVMF_VARS.fd",
+         "/usr/share/edk2/aarch64/QEMU_EFI-pflash.raw:/usr/share/edk2/aarch64/vars-template-pflash.raw"
+    ]
     ```
 
     启动计算服务及其依赖项，并配置其开机启动：
