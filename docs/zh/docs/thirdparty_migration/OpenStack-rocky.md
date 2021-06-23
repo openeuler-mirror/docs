@@ -236,7 +236,7 @@ $ yum clean all && yum makecache
 10. 安装OpenStackClient
 
     ```shell
-    $ yum install python2-openstaclient
+    $ yum install python2-openstackclient
     ```
 
 11. 创建 OpenStack client 环境脚本
