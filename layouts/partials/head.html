@@ -33,6 +33,6 @@
     <link href="{{ "css/pagination.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
     <link href="/css/reset.css" rel="stylesheet" type="text/css">
     {{ if ne .Site.LanguageCode "ru"}}
-    <script src="{{ .Site.BaseURL }}js/ba.js"></script>
+    <script src="{{ .Site.BaseURL }}js/analytics.js"></script>
     {{ end }}
 </head>
