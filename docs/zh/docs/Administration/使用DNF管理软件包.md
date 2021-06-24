@@ -168,7 +168,7 @@ repository部分允许您定义定制化的openEuler软件源仓库，各个仓�
 
 -   配置/etc/yum.repos.d目录下的.repo文件
 
-    openEuler提供了多种repo源供用户在线使用，各repo源含义可参考[系统安装](./../Releasenotes/系统安装.md)，使用管理员权限添加openEuler repo源，示例如下：
+    openEuler提供了多种repo源供用户在线使用，各repo源含义可参考[系统安装](./../Releasenotes/系统安装.md\)，使用管理员权限添加openEuler repo源，示例如下：
 
     ```
     # vi /etc/yum.repos.d/openEuler.repo

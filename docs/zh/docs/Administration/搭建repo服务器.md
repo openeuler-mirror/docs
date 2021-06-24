@@ -1,7 +1,7 @@
 # 搭建repo服务器
 
 >![](./public_sys-resources/icon-note.gif) **说明：**   
->openEuler提供了多种repo源供用户在线使用，各repo源含义可参考[系统安装](./../Releasenotes/系统安装.md)。若用户无法在线获取openEuler repo源，则可使用openEuler提供的ISO发布包创建为本地openEuler repo源。本章节中以openEuler-20.03-LTS-SP2-aarch64-dvd.iso发布包为例，请根据实际需要的ISO发布包进行修改。
+>openEuler提供了多种repo源供用户在线使用，各repo源含义可参考[系统安装](./../Releasenotes/系统安装.md\)。若用户无法在线获取openEuler repo源，则可使用openEuler提供的ISO发布包创建为本地openEuler repo源。本章节中以openEuler-20.03-LTS-SP2-aarch64-dvd.iso发布包为例，请根据实际需要的ISO发布包进行修改。
 
 <!-- TOC -->
 

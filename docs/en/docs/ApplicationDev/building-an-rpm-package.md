@@ -1,6 +1,6 @@
 # Building an RPM Package
 
-This section describes how to build an RPM software package on a local PC or using OBS. For details, see  [https://gitee.com/openeuler/community/blob/master/zh/contributors/packaging.md](https://gitee.com/openeuler/community/blob/master/zh/contributors/packaging.md).
+This section describes how to build an RPM software package on a local PC or using OBS. For details, see  [https://gitee.com/openeuler/community/blob/master/zh/contributors/packaging.md](https://gitee.com/openeuler/community/blob/master/zh/contributors/packaging.md\).
 <!-- TOC -->
 
 - [Building an RPM Package](#building-an-rpm-package)
