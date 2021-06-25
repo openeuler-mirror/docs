@@ -712,9 +712,9 @@ $ yum clean all && yum makecache
     ln -s /usr/share/edk2/aarch64/vars-template-pflash.raw \
           /usr/share/AAVMF/AAVMF_VARS.fd
     chown nova:nova /usr/share/AAVMF -R
-
+    
     vim /etc/libvirt/qemu.conf
-
+    
     nvram = ["/usr/share/AAVMF/AAVMF_CODE.fd:/usr/share/AAVMF/AAVMF_VARS.fd",
          "/usr/share/edk2/aarch64/QEMU_EFI-pflash.raw:/usr/share/edk2/aarch64/vars-template-pflash.raw"
     ]
@@ -1543,6 +1543,7 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    # disabled. (string value) 
    
    auth_strategy=keystone 
+   force_config_drive = True
    
    [keystone_authtoken] 
    # Authentication type to load (string value) 
@@ -1562,23 +1563,30 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    # User's domain name (string value) 
    user_domain_name=Default
    ```
+   
+   4、需要在配置文件中指定ironic日志目录
+   
+   ```
+   [DEFAULT]
+   log_dir = /var/log/ironic/
+   ```
 
-   4、创建裸金属服务数据库表
-
+   5、创建裸金属服务数据库表
+   
    ```shell
    $ ironic-dbsync --config-file /etc/ironic/ironic.conf create_schema
    ```
 
-   5、重启ironic-api服务
+   6、重启ironic-api服务
 
    ```shell
    $ systemctl restart openstack-ironic-api
    ```
-
+   
    ##### 配置ironic-conductor服务
-
+   
    1、替换**HOST_IP**为conductor host的IP
-
+   
    ```ini
    [DEFAULT] 
    
@@ -1588,9 +1596,9 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    
    my_ip=HOST_IP
    ```
-
+   
    2、配置数据库的位置，ironic-conductor应该使用和ironic-api相同的配置。替换**IRONIC_DBPASSWORD**为**ironic**用户的密码，替换DB_IP为DB服务器所在的IP地址：
-
+   
    ```ini
    [database] 
    
@@ -1599,9 +1607,9 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    
    connection = mysql+pymysql://ironic:IRONIC_DBPASSWORD@DB_IP/ironic
    ```
-
+   
    3、通过以下选项配置ironic-api服务使用RabbitMQ消息代理，ironic-conductor应该使用和ironic-api相同的配置，替换**RPC_\***为RabbitMQ的详细地址和凭证
-
+   
    ```ini
    [DEFAULT] 
    
@@ -1610,13 +1618,13 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    
    transport_url = rabbit://RPC_USER:RPC_PASSWORD@RPC_HOST:RPC_PORT/
    ```
-
+   
    用户也可自行使用json-rpc方式替换rabbitmq
-
+   
    4、配置凭证访问其他OpenStack服务
-
+   
    为了与其他OpenStack服务进行通信，裸金属服务在请求其他服务时需要使用服务用户与OpenStack Identity服务进行认证。这些用户的凭据必须在与相应服务相关的每个配置文件中进行配置。
-
+   
    [neutron] - 访问Openstack网络服务 
    [glance] - 访问Openstack镜像服务 
    [swift] - 访问Openstack对象存储服务 
@@ -1625,11 +1633,11 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    [service_catalog] - 一个特殊项用于保存裸金属服务使用的凭证，该凭证用于发现注册在Openstack身份认证服务目录中的自己的API URL端点
    
    简单起见，可以对所有服务使用同一个服务用户。为了向后兼容，该用户应该和ironic-api服务的[keystone_authtoken]所配置的为同一个用户。但这不是必须的，也可以为每个服务创建并配置不同的服务用户。
-
+   
    在下面的示例中，用户访问openstack网络服务的身份验证信息配置为：
-
+   
    网络服务部署在名为RegionOne的身份认证服务域中，仅在服务目录中注册公共端点接口
-
+   
    请求时使用特定的CA SSL证书进行HTTPS连接
    
    与ironic-api服务配置相同的服务用户
@@ -1675,7 +1683,7 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    5、配置允许的驱动程序和硬件类型
    
    通过设置enabled_hardware_types设置ironic-conductor服务允许使用的硬件类型：
-
+   
    ```ini
    [DEFAULT] 
    enabled_hardware_types = ipmi 
@@ -1710,9 +1718,9 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    ##### 配置ironic-inspector服务
    
    配置文件路径`/etc/ironic-inspector/inspector.conf`
-
+   
    1、创建数据库
-
+   
    ```shell
    $ mysql -u root -p 
    ```
@@ -1732,14 +1740,20 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    connection = mysql+pymysql://ironic_inspector:IRONIC_INSPECTOR_DBPASSWORD@DB_IP/ironic_inspector
    ```
    
-   3、配置消息度列通信地址
+   3、调用 ironic-inspector-dbsync 生成表
+   
+   ```
+   ironic-inspector-dbsync --config-file /etc/ironic-inspector/inspector.conf upgrade
+   ```
+   
+   4、配置消息度列通信地址
    
    ```ini
    [DEFAULT]
    transport_url = rabbit://RPC_USER:RPC_PASSWORD@RPC_HOST:RPC_PORT/
    ```
    
-   4、设置keystone认证
+   5、设置keystone认证
    
    ```ini
    [DEFAULT] 
@@ -1761,7 +1775,7 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    password = IRONIC_SERVICE_USER_PASSWORD
    ```
    
-   5、配置ironic inspector dnsmasq服务
+   6、配置ironic inspector dnsmasq服务
    
    ```ini
    # 配置文件地址：/etc/ironic-inspector/dnsmasq.conf 
@@ -1782,12 +1796,21 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    log-facility=/var/log/dnsmasq.log
    ```
    
-   6、启动服务
+   7、启动服务
    
    ```shell
    $ systemctl enable --now openstack-ironic-inspector.service 
    $ systemctl enable --now openstack-ironic-inspector-dnsmasq.service
    ```
+   
+   8、如果节点单独部署ironic服务还需要部署启动iscsid.service服务
+   
+   ```
+   $ systemctl enable openstack-cinder-volume.service tgtd.service iscsid.service
+   $ systemctl start openstack-cinder-volume.service tgtd.service iscsid.service
+   ```
+   
+   **注意**：arm架构支持不完全，需要根据自己情况进行适配；
    
 3. deploy ramdisk镜像制作
 
