@@ -414,3 +414,71 @@ Press any key to continue...
 2. 重新安装grub2-2.04-8及以后的版本
 3. 重新生成cfg文件，grub2-mkconfig -o /boot/grub2/grub.cfg
 4. 再次重启，系统成功引导
+
+## 版本升级后，httpd服务启动失败
+
+### 问题现象
+
+从旧版本升级到最新版本时，http.service服务启动失败。
+
+### 原因分析
+
+当待升级环境开启了selinux，并且安装了httpd的子包mod_md时，升级到最新版本后，http.service服务启动失败。查看系统messages日志`/var/log/messags`，可以看到日志记录如下：
+
+```
+openEuler setroubleshoot[****]: SELinux is preventing /usr/sbin/httpd from add_name access on the directory md. 
+...
+openEuler setroubleshoot[****]: SELinux is preventing httpd from setattr access on the directory challenges.
+```
+
+可以看到，selinux阻止httpd进程对md/challenges目录执行操作。因此，当selinux使能，且安装有mod_md子包时，需要修改selinux配置，否则selinux权限问题会导致http.service服务启动失败。
+
+### 解决方案
+
+1. 执行以下命令，允许httpd访问网络。
+
+   ```
+   # setsebool -P httpd_can_network_connect on
+   ```
+
+2. 创建文件 `httpd-md.te`，用于描述对资源的访问许可。文件内容如下：
+
+   ```
+   # create new
+   module httpd-md 1.0;
+   
+   require {
+           type httpd_config_t;
+           type httpd_t;
+           class dir { add_name create remove_name rename reparent rmdir setattr };
+           class file { create rename setattr unlink write };
+   }
+   
+   #============= httpd_t ==============
+   allow httpd_t httpd_config_t:dir { add_name create remove_name rename reparent rmdir setattr };
+   allow httpd_t httpd_config_t:file { create rename setattr unlink write };
+   ```
+
+3. 检查并编译安全策略文件。
+
+   ```
+   # checkmodule -m -M -o httpd-md.mod httpd-md.te
+   ```
+
+4. 创建策略模块。
+
+   ```
+   # semodule_package --outfile httpd-md.pp --module httpd-md.mod
+   ```
+
+5. 安装策略模块。
+
+   ```
+   # semodule -i httpd-md.pp
+   ```
+
+6. 重启httpd.service服务。
+
+   ```
+   # systemctl status httpd.service
+   ```
