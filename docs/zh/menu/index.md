@@ -93,6 +93,7 @@ headless: true
             -   [安全特性]({{< relref "./docs/Container/安全特性.md" >}})
             -   [支持OCI hooks]({{< relref "./docs/Container/支持OCI-hooks.md" >}})
             -   [本地卷管理]({{< relref "./docs/Container/本地卷管理.md" >}})
+            -   [iSulad shim v2 对接 StratoVirt]({{< relref "./docs/Container/iSula shim v2对接stratovirt.md" >}})
         -   [附录]({{< relref "./docs/Container/附录.md" >}})
     -   [系统容器]({{< relref "./docs/Container/系统容器.md" >}})
         -   [安装指导]({{< relref "./docs/Container/安装指导.md" >}})
