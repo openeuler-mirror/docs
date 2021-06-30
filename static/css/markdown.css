@@ -160,6 +160,7 @@
 
     #markdown table td,#markdown table th {
         padding: 0;
+        word-break: break-all !important;
     }
     
     #markdown pre,#markdown code,

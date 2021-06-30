@@ -25,9 +25,9 @@ $(function($) {
             $(".doc-box").addClass("active");
             $(".doc-box>.version").not("[key*='LTS']").hide();
             $(".doc-box>.version").removeClass("active");
-            $(".doc-box>.version[index='96']").addClass("active");
+            $(".doc-box>.version[index='94']").addClass("active");
             $(".doc-catalog>.list").hide();
-            $(".doc-catalog").find("[index='96']").show();
+            $(".doc-catalog").find("[index='94']").show();
         }else {
             $(".doc-box").removeClass("active");
             $(".doc-box>.version").not("[key*='LTS']").show();
