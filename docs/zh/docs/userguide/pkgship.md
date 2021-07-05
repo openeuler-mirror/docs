@@ -110,7 +110,7 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 
 ## 配置参数
 
-1.在配置文件中对相应参数进行配置，系统的默认配置文件存放在 /etc/pkgship/packge.ini，请根据实际情况进行配置更改。
+1.在配置文件中对相应参数进行配置，系统的默认配置文件存放在 /etc/pkgship/package.ini，请根据实际情况进行配置更改。
 
 ```
 vim /etc/pkgship/package.ini

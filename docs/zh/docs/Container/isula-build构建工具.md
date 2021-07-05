@@ -48,7 +48,7 @@ isula-build是iSula容器团队推出的容器镜像构建工具，支持通过D
 
 isula-build采用服务端/客户端模式，其中，isula-build为客户端，提供了一组命令行工具，用于镜像构建及管理等；isula-builder为服务端，用于处理客户端管理请求，作为守护进程常驻后台。
 
-![isula-build architecure](./figures/isula-build_arch.png)
+![isula-build architecture](./figures/isula-build_arch.png)
 
 说明：
 

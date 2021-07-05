@@ -105,7 +105,7 @@ After the pkgship software is installed, the system automatically creates a user
 
 ## Configuring Parameters
 
-1\. Configure the parameters in the configuration file. The default configuration file of the system is stored in **/etc/pkgship/packge.ini**. Modify the configuration file as required.
+1\. Configure the parameters in the configuration file. The default configuration file of the system is stored in **/etc/pkgship/package.ini**. Modify the configuration file as required.
 
 ```
 vim /etc/pkgship/package.ini

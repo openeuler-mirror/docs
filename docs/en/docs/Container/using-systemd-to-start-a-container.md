@@ -5,7 +5,7 @@
 
 ## Function Description
 
-The init process started in system containers differs from that in common containers. Common containers cannot start system services through systemd. However, system containers have this capability. You can enable the systemd service by specifying the  **--system-contianer**  parameter when starting a system container.
+The init process started in system containers differs from that in common containers. Common containers cannot start system services through systemd. However, system containers have this capability. You can enable the systemd service by specifying the  **--system-container**  parameter when starting a system container.
 
 ## Parameter Description
 

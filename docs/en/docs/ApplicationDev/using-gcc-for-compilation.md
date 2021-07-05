@@ -179,7 +179,7 @@ GCC is a powerful compiler. It has many  _options_, but most of them are not com
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p11644444347"><a name="p11644444347"></a><a name="p11644444347"></a>-</p>
 </td>
 </tr>
-<tr id="row143691297164"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p4369112911615"><a name="p4369112911615"></a><a name="p4369112911615"></a>-L <em id="i599713033614"><a name="i599713033614"></a><a name="i599713033614"></a>libary_path</em></p>
+<tr id="row143691297164"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p4369112911615"><a name="p4369112911615"></a><a name="p4369112911615"></a>-L <em id="i599713033614"><a name="i599713033614"></a><a name="i599713033614"></a>library_path</em></p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p136932971616"><a name="p136932971616"></a><a name="p136932971616"></a>Adds the <em id="i1847052212361"><a name="i1847052212361"></a><a name="i1847052212361"></a>library_path</em> to the library file search path list.</p>
 </td>
@@ -308,14 +308,14 @@ In this mode, the  **libtest.so**  file in the current directory is used.
 If you choose to search for a DLL, to ensure that the DLL can be linked when the program is running, you must implement by using one of the following methods:
 
 -   Save the DLL to a standard directory, for example,  **/usr/lib**.
--   Add the DLL path  **libaryDIR**  to the environment variable  **LD\_LIBRARY\_PATH**.
+-   Add the DLL path  **libraryDIR**  to the environment variable  **LD\_LIBRARY\_PATH**.
 
     $ export LD\_LIBRARY\_PATH=libraryDIR:$LD\_LIBRARY\_PATH
 
     >![](./public_sys-resources/icon-note.gif) **NOTE:**   
     >**LD\_LIBRARY\_PATH**  is an environment variable of the DLL. If the DLL is not in the default directories \(**/lib**  and  **/usr/lib**\), you need to specify the environment variable  **LD\_LIBRARY\_PATH**.  
 
--   Add the DLL path  **libaryDIR**  to  **/etc/ld.so.conf**  and run  **ldconfig**, or use the DLL path  **libaryDIR**  as a parameter to run  **ldconfig**.
+-   Add the DLL path  **libraryDIR**  to  **/etc/ld.so.conf**  and run  **ldconfig**, or use the DLL path  **libraryDIR**  as a parameter to run  **ldconfig**.
 
 ```
 $ gcc main.c -L libraryDIR -ltest -o app.out

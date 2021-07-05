@@ -225,7 +225,7 @@ Right-click the Taskbar to open the menu.
 
 ![Fig. 31 Right-Clicking Menu](./figures/31.png)
 
-Users can set the lauserst of taskbar accroding to "Taskbar Settings".
+Users can set the lauserst of taskbar according to "Taskbar Settings".
 
 <br>
 

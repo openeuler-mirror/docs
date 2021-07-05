@@ -49,7 +49,7 @@ isula-build is a container image build tool developed by the iSula container tea
 
 The isula-build uses the server/client mode. The isula-build functions as a client and provides a group of command line tools for image build and management. The isula-builder functions as the server, processes client management requests, and functions as the daemon process in the background.
 
-![isula-build architecure](./figures/isula-build_arch.png)
+![isula-build architecture](./figures/isula-build_arch.png)
 
 Note:
 
