@@ -271,7 +271,7 @@ The following describes how to set up an Open vSwitch layer-1 bridge br0.
 
 ### Overview
 
-The boot mode varies depending on the architecture. x86 servers support the Unified Extensible Firmware Interface \(UFEI\) and BIOS boot modes, and AArch64 servers support only the UFEI boot mode. By default, boot files corresponding to the BIOS mode have been installed on openEuler. No additional operations are required. This section describes how to install boot files corresponding to the UEFI mode.
+The boot mode varies depending on the architecture. x86 servers support the Unified Extensible Firmware Interface \(UEFI\) and BIOS boot modes, and AArch64 servers support only the UEFI boot mode. By default, boot files corresponding to the BIOS mode have been installed on openEuler. No additional operations are required. This section describes how to install boot files corresponding to the UEFI mode.
 
 The Unified Extensible Firmware Interface \(UEFI\) is a new interface standard used for power-on auto check and OS boot. It is an alternative to the traditional BIOS. EDK II is a set of open source code that implements the UEFI standard. In virtualization scenarios, the EDK II tool set is used to start a VM in UEFI mode. Before using the EDK II tool, you need to install the corresponding software package before starting a VM. This section describes how to install the EDK II tool.
 
