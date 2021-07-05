@@ -1746,7 +1746,7 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    ironic-inspector-dbsync --config-file /etc/ironic-inspector/inspector.conf upgrade
    ```
    
-   4、配置消息度列通信地址
+   4、配置消息队列通信地址
    
    ```ini
    [DEFAULT]
