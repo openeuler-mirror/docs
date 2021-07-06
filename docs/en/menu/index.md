@@ -149,6 +149,8 @@ headless: true
     -   [Guide to Porting OpenStack-Train to openEuler]({{< relref "./docs/thirdparty_migration/openstack-train.md" >}})
     -   [Guide to Porting Kubernetes to openEuler]({{< relref "./docs/thirdparty_migration/k8sinstall.md" >}})
     -   [Guide to Porting Spring Framework to openEuler]({{< relref "./docs/thirdparty_migration/springframework.md" >}})
+    -   [Guide to Porting OpenStack-Rocky to openEuler]({{< relref "./docs/thirdparty_migration/OpenStack-Rocky.md" >}})
+    -   [Guide to Porting OpenStack-Queens to openEuler]({{< relref "./docs/thirdparty_migration/OpenStack-Queens.md" >}})
 -   [Desktop Environment User Guide]({{< relref "./docs/desktop/desktop.md" >}})
     -   [UKUI]({{< relref "./docs/desktop/ukui.md" >}})
         -   [Installation UKUI]({{< relref "./docs/desktop/install-UKUI.md" >}})
