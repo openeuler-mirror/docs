@@ -18,13 +18,16 @@ do
   b=${r##*origin/stable2-}
   git checkout -b $b $r
 
-  mkdir -p ../website/content/zh/docs/$b
-  cp -r ./docs/zh/* ../website/content/zh/docs/$b/ 
-
-  mkdir -p ../website/content/en/docs/$b
-  cp -r ./docs/en/* ../website/content/en/docs/$b/ 
+  
+  if [ -d "./docs/ru" ]; then
+    mkdir -p ../website/content/ru/docs/$b
+        cp -r ./docs/ru/* ../website/content/ru/docs/$b/ 
+  fi
   
   cd ..
   cd ./docs
 done
 cd ..
+
+cp -f ./website/Dockerfile-ru ./website/Dockerfile
+cp -f ./website/config.ru.toml ./website/config.toml
