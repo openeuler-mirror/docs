@@ -15,7 +15,7 @@
 
 #all > #left > ul {
     margin-left: 40px;
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 #all > #left > ul a {
@@ -24,6 +24,7 @@
 
 #all > #left >ul li:nth-child(1) {
     font-size: 18px;
+    margin-bottom: 34px;
 }
 
 #all > #left >ul li:nth-child(2) {
@@ -323,6 +324,7 @@ h1 {
 
     .h5_left a img {
         width: 154px;
+        height: auto;
     }
 
     .h5-right .icon-lang {
