@@ -6,8 +6,9 @@
     position: fixed;
     top: 60px;
     left: 0;
-    background: #F7F8FC;
+    background: #002FA7;
     z-index: 10;
+    width: 320px;
 }
 
 
@@ -16,7 +17,7 @@
     width: 320px;
     height: 50px;
     font-size: 18px;
-    color: #002FA7;
+    color: #FEB32A;
     line-height: 20px;
     box-sizing: border-box;
     padding: 40px;
@@ -72,6 +73,7 @@
     display: inline-block;
     width: 11px;
     height: 11px;
+    margin-right: -40px;
 }
 
 /* 左侧导航栏 */
@@ -126,7 +128,7 @@
 #menu-box .jstree-node>.jstree-anchor,
 #menu-box .jstree-node>.jstree-anchor p a{
     font-size: 16px;
-    color: rgba(0, 0, 0, 0.85);
+    color: #FFFFFFFF;
     line-height: 16px;
 }
 
@@ -143,7 +145,7 @@
 }
 
 #menu-box .jstree-open>.jstree-anchor,#menu-box .jstree-node>.jstree-anchor.jstree-clicked {
-    color: #002FA7 !important;
+    color: #FEB32A !important;
 }
 
 #menu-box .jstree-open>.jstree-icon {
@@ -156,8 +158,8 @@
 }
 
 #docstreeview::-webkit-scrollbar-track {
-	border-radius:4px;
-	background-color:#F5F5F5;
+	border-radius:10px;
+	background-color:#CAEAFF;
 }
 #docstreeview::-webkit-scrollbar {
 	width:6px;
@@ -189,6 +191,7 @@
 .top-link .docs-a {
     width: 400px;
     margin-right: 30px;
+    margin-left: 100px;
 }
 
 
@@ -306,7 +309,9 @@
     color: #36383D;
     line-height: 24px;
     margin-top: 40px;
-    padding: 150px 0 400px 0;
+    padding: 150px 0 0px 0;
+    margin-left: 460px;
+    margin-right: 140px;
 }
 
 #page h1,#page h2,#page h3,
@@ -532,6 +537,11 @@
         top: 70px;
     }
 
+    #page {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
     #h5-menu ul {
         width: 100%;
         height: 44px;
@@ -571,7 +581,7 @@
     }
 
     #menu-box {
-        background: #FBFBFB;
+        background: #002FA7;
         width: 100%;
     }
     
@@ -581,7 +591,7 @@
 
     #h5-menu-top p {
         font-size: 14px;
-        color: #002FA7;
+        color: #FFFFFF;
         line-height: 24px;
         text-align: center;
         position: relative;
@@ -600,7 +610,7 @@
 
     #h5-menu-top .container .select-box>span {
         font-size: 16px;
-        color: #002FA7;
+        color: #FEB32A;
         line-height: 24px;
     }
 

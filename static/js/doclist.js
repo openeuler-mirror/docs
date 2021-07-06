@@ -6,19 +6,6 @@ $(function($) {
         });
         e.stopPropagation();
     });
-    $("#nav-search").click(function (e) {
-        $(this).find("input").animate({
-            width: "300px"
-        },300);
-        $(this).addClass("search-active");
-        $(document).one("click", function(){
-            $("#nav-search").find("input").animate({
-                width: "0"
-            },300);
-            $("#nav-search").removeClass("search-active");
-        });
-        e.stopPropagation();
-    });
     $("#LTS-value").click(function (e) {
         $(this).toggleClass("active");
         if($(this).attr("class")) {

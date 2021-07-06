@@ -1,4 +1,49 @@
 #list page
+[hot_document]
+other = "Hot documents"
+
+[A-Tune_content]
+other = "This document introduces the installation, deployment and use of the performance self optimizing software a-tune of openeuler system, so as to guide users to quickly understand and use a-tune"
+
+[A-Tune_header]
+other = "A-Tune User Guide"
+
+[A-Tune_link]
+other = "https://docs.openeuler.org/en/docs/21.03/docs/A-Tune/A-Tune.html"
+
+[secGear_content]
+other = "This document describes how to use secgear unified confidential computing programming framework to develop applications, and how to use the included tools"
+
+[secGear_header]
+other = "Secgear Development Guide"
+
+[secGear_link]
+other = "https://docs.openeuler.org/en/docs/21.03/docs/secGear/secGear.html"
+
+[StratoVirt_content]
+other = "This document introduces the virtualization of stratovirt, and gives the method of installing stratovirt based on openeuler, and the guidance for the use of stratovirt virtualization. Let users understand stratovirt and guide users and administrators to install"
+
+[StratoVirt_header]
+other = "StratoVirt User Guide"
+
+[StratoVirt_link]
+other = "https://docs.openeuler.org/en/docs/21.03/docs/StratoVirt/StratoVrit_guidence.html"
+
+[container_content]
+other = "The lightweight container engine isulad and docker engine are provided in openeuler software package. At the same time, according to different use scenarios, a variety of container forms are provided"
+
+[container_header]
+other = "Container User Guide"
+
+[container_link]
+other = "https://docs.openeuler.org/en/docs/21.03/docs/Container/container.html"
+
+[quick_search]
+other = "Quick search"
+
+[version_selection]
+other = "Version selection"
+
 [version_text]
 other = "Version"
 
@@ -8,11 +53,20 @@ other = "English"
 [search]
 other = "search"
 
+[search_placeholder]
+other = "Input content"
+
+[quick_links]
+other = "Quick links"
+
+[kunpeng_community]
+other = "Kunpeng community"
+
 [document_link]
 other = "Documentation"
 
 [openeuler_document]
-other = "openEuler Documentation"
+other = "openEuler Documentation" 
 
 [catalog_text]
 other = "Content"
