@@ -27,7 +27,7 @@
 
 1. 创建程序工作目录 helloworld，并在 helloworld 目录下新建 enclave 和 host
 
-2. 编写 EDL（Encalve Definition Language）文件
+2. 编写 EDL（Enclave Definition Language）文件
 
    为了确保开发代码的一致性，secGear 提供了 secgear_urts.h 和 secgear_tstdc.edl 用于屏蔽底层 Intel SGX 和 ARM  iTrustee 之间的差异。因此，使用到 C 语言函数库时，EDL 文件默认需要导入 secgear_urts.h 和 secgear_tstdc.edl。helloworld.edl 文件参考如下：
 

@@ -115,7 +115,7 @@ Pod配置中和网络相关的还有port\_mappings项，用于设置Pod的端口
 ]
 ```
 
--   protocal：表示映射使用的协议，支持tcp（用0标识）、udp（用1标识）；
+-   protocol：表示映射使用的协议，支持tcp（用0标识）、udp（用1标识）；
 -   container\_port：表示容器映射出去的port；
 -   host\_port：表示映射到主机的port。
 

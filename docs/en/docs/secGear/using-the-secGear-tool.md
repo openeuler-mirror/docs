@@ -115,7 +115,7 @@ The sign_tool contains the sign command (for signing the enclave) and the digest
 | -p <file>      | Public key certificate (PEM file) of the signature server required for two-step signing.                      | Mandatory                                         |
 | -s <file>      | Signed digest value required for two-step signing.                                      | Mandatory                              |
 | -t <parameter> | TA_TYPA, which identifies TA binary format of the iTrustee. The default value is 1.               | Optional                                         |
-| -x <parameter> | encalve type (sgx or trustzone)                              | Mandatory                                         |
+| -x <parameter> | enclave type (sgx or trustzone)                              | Mandatory                                         |
 | -h             | Prints the help information.                                                   | Optional                                         |
 
 #### **Single-Step Signature**

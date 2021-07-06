@@ -93,7 +93,7 @@ The minimum hardware requirements for installing virtualization components on op
     emulation speed by using dynamic translation. QEMU has two operating modes:
     
      * Full system emulation. In this mode, QEMU emulates a full system (for
-       example a PC), including a processor and various peripherials. It can be
+       example a PC), including a processor and various peripherals. It can be
        used to launch different Operating Systems without rebooting the PC or
        to debug system code.
      * User mode emulation. In this mode, QEMU can launch Linux processes compiled

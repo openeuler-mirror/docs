@@ -179,9 +179,9 @@ GCC是一个功能强大的编译器，其 _options_ 参数取值很多，但有
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p11644444347"><a name="p11644444347"></a><a name="p11644444347"></a>-</p>
 </td>
 </tr>
-<tr id="row143691297164"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p4369112911615"><a name="p4369112911615"></a><a name="p4369112911615"></a>-L <em id="i599713033614"><a name="i599713033614"></a><a name="i599713033614"></a>libary_path</em></p>
+<tr id="row143691297164"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p4369112911615"><a name="p4369112911615"></a><a name="p4369112911615"></a>-L <em id="i599713033614"><a name="i599713033614"></a><a name="i599713033614"></a>library_path</em></p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p136932971616"><a name="p136932971616"></a><a name="p136932971616"></a>在库文件的搜索路径列表中添加<em id="i1847052212361"><a name="i1847052212361"></a><a name="i1847052212361"></a>libary_path</em>路径。</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p136932971616"><a name="p136932971616"></a><a name="p136932971616"></a>在库文件的搜索路径列表中添加<em id="i1847052212361"><a name="i1847052212361"></a><a name="i1847052212361"></a>library_path</em>路径。</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1037012921612"><a name="p1037012921612"></a><a name="p1037012921612"></a>-</p>
 </td>
@@ -307,14 +307,14 @@ $ gcc main.c libtest.so -o app.out
 若使用下面搜索动态库的方式，则为了确保程序在运行时能够链接到动态库，需要通过如下三种方法中的任一种实现。
 
 -   将动态库保存在标准目录下，例如 /usr/lib。
--   把动态库所在路径libaryDIR增加到环境变量LD\_LIBRARY\_PATH中
+-   把动态库所在路径libraryDIR增加到环境变量LD\_LIBRARY\_PATH中
 
     $ export LD\_LIBRARY\_PATH=libraryDIR:$LD\_LIBRARY\_PATH
 
     >![](./public_sys-resources/icon-note.gif) **说明：**   
     >LD\_LIBRARY\_PATH为动态库的环境变量。当运行动态库时，若动态库不在缺省文件夹（/lib 和/usr/lib）下，则需要指定环境变量LD\_LIBRARY\_PATH。  
 
--   把动态库所在路径libaryDIR增加 /etc/ld.so.conf中然后执行ldconfig或者以动态库所在路径libaryDIR为参数执行ldconfig。
+-   把动态库所在路径libraryDIR增加 /etc/ld.so.conf中然后执行ldconfig或者以动态库所在路径libraryDIR为参数执行ldconfig。
 
 ```
 $ gcc main.c -L libraryDIR -ltest -o app.out

@@ -267,7 +267,7 @@ The **example.conf** file can be written as follows (the following optimization 
  [sysctl]
  # to change the /proc/sys/* config
  [script]
- # the script extention of cpi
+ # the script extension of cpi
  [ulimit]
  # to change the resources limit of user
  [schedule_policy]
