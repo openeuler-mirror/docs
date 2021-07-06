@@ -26,7 +26,7 @@ $(function($) {
             if (value == '') {
                 searchMethods.search(decodeURI(value),1,"#baseof-pagination");  
                 $("#search-result>#baseof-pagination").css("display",'none')
-            };
+            }
         })
     });
 
@@ -110,8 +110,8 @@ $(function($) {
                     let dataArr = data.data.records;
                     totalAmount = data.data.totalNum;
                     if(page === 1) {
-                        new Pagination({
-                            element: 'el',
+                        let pag = new Pagination({
+                            element: el,
                             type: 1,
                             pageIndex: 1,
                             pageSize: 10,
