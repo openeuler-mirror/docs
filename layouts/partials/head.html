@@ -29,10 +29,15 @@
     {{ end }}
     <meta name="author" content="{{ .Site.Params.author }}" >
     <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/x-icon">
+    <link href="{{ "css/h5_footer.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
     <link href="{{ "css/common.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
     <link href="{{ "css/pagination.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
     <link href="/css/reset.css" rel="stylesheet" type="text/css">
     {{ if ne .Site.LanguageCode "ru"}}
     <script src="{{ .Site.BaseURL }}js/analytics.js"></script>
     {{ end }}
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+    <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/monokai.min.css" rel="stylesheet">
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>

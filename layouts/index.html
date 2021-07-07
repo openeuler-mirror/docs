@@ -3,21 +3,219 @@
 
 {{ partial "head.html" . }}
 <link href="{{ "css/doclist.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
+<link href="{{ "css/docsearch.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
+<link href="{{ "css/index.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
 <body>
-    <div id="all">
-
-        <header>
-            {{ partial "nav.html" . }}
-        </header>
-
-        <div class="body_content">
-            {{ partial "search.html" . }}
-            {{ partial "doclist.html" .}}
+    <div id="all" class="web">
+        <div id="left">
+            <div class="left">
+                <a href="javaScript:;"><img src="..\img\common\logo.png" alt=""/></a>
+            </div>
+            <ul>
+                <li><i class="icon-tick" ></i>{{i18n "version_selection"}}</li>
+                <a href="{{ i18n "know_94_1"}}">20.03 LTS SP2</a>
+                <li><a href="{{i18n "know_96_1"}}">20.03 LTS SP1</a></li>
+                <li><a href="{{i18n "know_98_1"}}">20.03 LTS</a> </li>
+                <li><a href="{{i18n "know_95_1"}}">21.03</a></li>
+                <li><a href="{{i18n "know_97_1"}}">20.09</a> </li>
+                <li > <i class="icon-earth" ></i>{{i18n "quick_links"}}</li>
+                <li><a href="https://openeuler.org/" target="_blank">openEuler</a></li>
+                <li><a href="https://www.hikunpeng.com/" target="_blank">{{i18n "kunpeng_community"}}</a></li>
+            </ul>
         </div>
 
-        {{ partial "footer.html" . }}
+        <div id="right">
+            <header>
+                <nav class="">
+                    <div class="nav-menu container">
+                
+                        <div class="right">
+                            
+                            <div name="lang" id="lang">
+                                <span style="margin-left: 30px;">{{ i18n "current_lang" }}</span>
+                                <i class="icon-down"></i>
+                                <div class="option" style="margin-left: 20px;">
+                                    <a href="/zh/">{{ .Site.Params.languageZh }}</a>
+                                    <a href="/en/">{{ .Site.Params.languageEn }}</a>
+                                    <div class="angle"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div id="search_header">
+                <div>
+                    <span>{{i18n "quick_search"}}</span>
+                    <div class="input" id="search-input">
+                        <input type="text" placeholder="Search" class="search-text"/>
+                        <i class="icon-search" style="right: 0px;"></i>
+                    </div>
+                </div>
+                <div class="search_right">
+                    <img src="..\img\common\new-banner1.png" alt="" >
+                </div> 
+            </div>
+            
+            <div  id="search_content">
+                <hr>
+                <div id="search-result" class="container" >
+                    <ul>
+                        
+                    </ul>
+                    <div id="web-pagination"></div>
+                </div>
+            </div>
+
+            <h1>{{ i18n "hot_document" }}</h1>
+            <div id="document_content">
+                <div>
+                    <div class="hot_version">
+                        <a href="{{i18n "A-Tune_link"}}">{{i18n "A-Tune_header"}}</a>
+                        <span>20.03LTS SP1</span>
+                    </div>
+                    <br>
+                    {{i18n "A-Tune_content"}}
+                </div>
+                <div> 
+                    <div class="hot_version">
+                        <a href="{{i18n "secGear_link"}}">{{i18n "secGear_header"}}</a>
+                        <span>20.03LTS SP1</span>
+                    </div>
+                    <br>
+                    {{i18n "secGear_content"}}
+                </div>
+                <div>
+                    <div class="hot_version">
+                        <a href="{{i18n "StratoVirt_link"}}" >{{i18n "StratoVirt_header"}}</a>
+                        <span>20.03LTS SP1</span>
+                    </div>
+                    <br>
+                    {{i18n "secGear_content"}}
+                </div>
+                <div>
+                    <div class="hot_version">
+                        <a href="{{i18n "container_link"}}">{{i18n "container_header"}}</a>
+                        <span>20.03LTS SP1</span>
+                    </div>
+                    <br>
+                    {{i18n "container_content"}}
+                </div>
+            </div>
+            {{ partial "pcfooter.html" . }}
+        </div>
     </div>
-    
+    <div class="h5_index">
+        <header>
+            <nav class="nav-box">
+                <div class="nav-menu container">
+                    <div class="h5_left">
+                        <a href="javaScript:;"><img src="/h5_logo.png" alt="h5_logo.png" /></a>
+                    </div>
+                    <div class="h5-right">
+                        <i class="icon-lang">
+                            <div class="option">
+                                <a href="/zh/">{{ .Site.Params.languageZh }}</a>
+                                <a href="/en/">{{ .Site.Params.languageEn }}</a>
+                                <div class="angle"></div>
+                            </div>
+                        </i>
+                        <i class="white_search" ></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="zhezhao"></div>
+        <div class="searcher">
+            <div class="h5-search container">
+                <input type="text" class="search-text" placeholder="{{ i18n "search_placeholder" }}" />
+                <div class="search-btn">{{ i18n "search" }}</div>
+            </div>
+            <div id="search-result">
+                <p class="title">{{ i18n "result_1" }}<span class="res-amount main-text"></span>{{ i18n "result_2" }}<span class="keyword main-text"></span>{{ i18n "result_3" }}</p>
+                <ul>
+                    
+                </ul>
+                <div id="pagination"></div>
+            </div>
+        </div>
+        <div class="h5_content">
+            <img src="/img/common/rectangle.png" alt="" />
+            <div class="h5_versions">
+                <span>{{ i18n "version_text" }}</span>
+                <div id="h5_versions">
+                    <div>
+                        <a href="{{i18n "know_98_1"}}">20.03 LTS</a>
+                    </div>
+                    <div>
+                        <a href="{{i18n "know_97_1"}}">20.09</a>
+                    </div>
+                    <div>
+                        <a href="{{i18n "know_96_1"}}">20.03 LTS SP1</a>
+                    </div>
+                    <div>
+                        <a href="{{i18n "know_95_1"}}">21.03</a>
+                    </div>
+                    <div>
+                        <a href="{{i18n "know_94_1"}}">20.03 LTS SP2</a>
+                    </div>
+                </div>
+            </div>
+            <h3>{{ i18n "hot_document" }}</h3>
+            <div class="hot_documentation">
+                <div>
+                    <a href="{{i18n "A-Tune_link"}}">{{i18n "A-Tune_header"}}</a>
+                    <br>
+                    <br>
+                    <span>{{i18n "A-Tune_content"}}</span>
+                </div>
+                <div>
+                    <a href="{{i18n "secGear_link"}}">{{i18n "secGear_header"}}</a>
+                    <br>
+                    <br>
+                    <span>{{i18n "secGear_content"}}</span>
+                </div>
+                <div>
+                    <a href="{{i18n "StratoVirt_link"}}" >{{i18n "StratoVirt_header"}}</a>
+                    <br>
+                    <br>
+                    <span>{{i18n "StratoVirt_content"}}</span>
+                </div>
+                <div>
+                    <a href="{{i18n "container_link"}}">{{i18n "container_header"}}</a>
+                    <br>
+                    <br>
+                    <span>{{i18n "container_content"}}</span>
+                </div>
+            </div>
+            <h3>{{ i18n "other_text" }}</h3>
+            <div class="h5_community">
+                <div>
+                    <a href="https://openeuler.org/" target="_blank">openEuler</a>
+                </div>
+                <div>
+                    <a href="https://www.hikunpeng.com/" target="_blank">{{i18n "kunpeng_community"}}</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="h5_footer">
+            <div>
+                <img src="/img/common/footerLogo.png" alt="" />
+                <p>{{ .Site.Params.email }}</p>
+            </div>
+            <div>
+                <img src="/img/common/qrcode.png" alt=""/>
+                <p>{{ i18n "attention" }}</p>
+                <p>{{ i18n "copy_right" }}</p>
+            </div>
+        </div>
+    </div>
     {{ partial "scripts.html" . }}
+<script src="{{ "js/pagination.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+<script src="{{ "js/docsearch.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
 </body>
+
 </html>

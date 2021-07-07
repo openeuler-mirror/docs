@@ -18,7 +18,13 @@ $(function($) {
     var sourceLast = urlArr[6].replace("html","md");
     var sourceHref = `https://gitee.com/openeuler/docs/tree/stable2-${urlArr[3]}/docs/${lang}/docs/${urlArr[5]}/${sourceLast}`;
     $("#source").attr("href",sourceHref);
-    $("#version-select>span").text(versionStr);
+    if (evaluateParams.lang === "en") {
+        $("#version-select>span").text("Version: " + versionStr);
+   }
+   else if (evaluateParams.lang === "zh") {
+        $("#version-select>span").text("版本: " + versionStr); 
+   }
+   else $("#version-select>span").text("version: " + versionStr);
     $("#h5-menu-top .select-box").find("span").text(versionStr);
     $("#version-select").click(function (e) {
         $(this).find(".option").show();

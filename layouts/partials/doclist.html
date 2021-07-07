@@ -14,7 +14,7 @@
     </div>
     <div class="doc-box">
         {{ range .Site.Data.docsversion }}
-        {{ if eq .version "21.03" }}
+        {{ if eq .version "20.03 LTS SP2" }}
         <div class="version active" key="{{ .version }}" index="{{ .index }}">{{ .version }}</div>
         {{ else }}
         <div class="version" key="{{ .version }}" index="{{ .index }}">{{ .version }}</div>

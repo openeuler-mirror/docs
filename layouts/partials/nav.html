@@ -1,20 +1,34 @@
 <nav class="nav-box">
     <div class="nav-menu container">
         <div class="left">
-            <a href="javaScript:;"><img src="/openeuler.png" alt="" /></a>
+            <a href="javaScript:;"><img src="/logo.png" alt="" /></a>
+        </div>
+        <div class="h5_nav_left">
+            <a href="javaScript:;"><img id="img" src="/openeuler.png" alt="" /></a>
             <span class="home">{{ i18n "document_link" }}</span>
         </div>
-        <div class="right">
+        <div class="right" id="right-style">
             <div id="nav-search">
-                <div>
-                    <input type="text" placeholder="{{ i18n "search" }}" class="search-text" />
-                </div>
                 <i class="icon-search"></i>
             </div>
+            <div id="result-container">
+                <div class="search-header">
+                    <input type="text" class="search-text" placeholder="{{ i18n "search_placeholder" }}" />
+                    <i class="icon-search"></i>
+                </div>
+                <hr>
+                <div id="search-result" class="container result-style">
+                    <ul style="border: none;">
+                        
+                    </ul>
+                    <div id="baseof-pagination"></div>
+                </div>
+            </div>
+            <div class="baseof_mask"></div>
             <div name="lang" id="lang">
-                <span>{{ i18n "current_lang" }}</span>
+                <span style="margin-left: 25px;">{{ i18n "current_lang" }}</span>
                 <i class="icon-down"></i>
-                <div class="option">
+                <div class="option web-lang">
                     <a href="/zh/">{{ .Site.Params.languageZh }}</a>
                     <a href="/en/">{{ .Site.Params.languageEn }}</a>
                     <a href="/ru/">{{ .Site.Params.languageRu }}</a>

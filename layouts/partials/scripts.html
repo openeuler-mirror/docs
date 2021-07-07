@@ -2,15 +2,7 @@
 <div class="mask"></div>
 <script src="{{ .Site.BaseURL }}js/jquery.min.js"></script>
 <script src="{{ .Site.BaseURL }}js/jstree.min.js"></script>
-
-<script src="{{ .Site.BaseURL }}js/jquery.cookie.min.js"></script>
-<script src="{{ .Site.BaseURL }}js/jquery.waypoints.min.js"></script>
-<script src="{{ .Site.BaseURL }}js/jquery.counterup.min.js"></script>
-<script src="{{ .Site.BaseURL }}js/jquery-parallax.js"></script>
 <div id="mask" onclick="hideNav()"></div>
-
-
-
 <script type="text/javascript">
     $(document).ready(function () {
         function getRelativePath() {
@@ -18,7 +10,6 @@
             var arrURL = url.split("//");
             return arrURL[1].substring(arrURL[1].indexOf("/"));
         }
-
         function getCurrentID(wholeData, relativeURL) {
             for (var j in wholeData) {
                 var href = wholeData[j].a_attr.href;
@@ -38,7 +29,6 @@
             }
             return "";
         }
-        
         if ($('#docstreeview').length) {
             $('#docstreeview').jstree();
             $('#docstreeview').jstree().hide_dots();
@@ -70,8 +60,6 @@
 
             $("#docstreeview").on("ready.jstree", function (e, data) {
                 $("#docsMenu").show();
-
-                
                 var relativeURL = getRelativePath();
                 var wholeData = $("#docstreeview").jstree().get_json();
                 var currentID = getCurrentID(wholeData, relativeURL);
@@ -209,31 +197,18 @@
             },1500)
         })
         window.lang = $('html').attr('lang');
-        $(".input>.search-text").bind('keypress',function(event){
-            if(event.keyCode == "13") {
-                keyword = $(".input .search-text").val();
-                window.location.href = '/' + lang + '/search.html?keyword=' + keyword;
-            }
-        });
         $("#nav-search>div>.search-text").bind('keypress',function(event){
             if(event.keyCode == "13") {
                 keyword = $("#nav-search .search-text").val();
-                window.location.href = '/' + lang + '/search.html?keyword=' + keyword;
             }
         });
-        $(".input .icon-search").click(function (e) {
-            keyword = $(".input .search-text").val();
-            window.location.href = '/' + lang + '/search.html?keyword=' + keyword;
-        });
+        
         $("#nav-search .icon-search").click(function (e) {
+            $("#result-container").css("display","block");
+            $(".baseof_mask").css('display','block');
             keyword = $("#nav-search .search-text").val();
             if($("#nav-search").attr("class")) {
-                window.location.href = '/' + lang + '/search.html?keyword=' + keyword;
             }
-        });
-        $(".h5-search").find(".search-btn").click(function (e) {
-            keyword = $(".h5-search").find("input").val();
-            window.location.href = '/' + lang + '/search.html?keyword=' + keyword;
         });
         let homeUrl = "https://openeuler.org/" + lang + "/";
         $(".nav-menu>.left").find("a").attr("href",homeUrl);
