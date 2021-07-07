@@ -170,6 +170,17 @@ Error:
 
 3.  重新进行升级操作。
 
+### 安装冲突实例
+* 文件冲突
+
+python3-edk2-devel.noarch 与 build.noarch 因文件名重复存在冲突。
+
+```shell
+# yum install python3-edk2-devel.noarch build.noarch
+...
+Error: Transaction test error:
+file /usr/bin/build conflicts between attempted installs of python3-edk2-devel-202002-3.oe1.noarch and build-20191114-324.4.oe1.noarch
+```
 
 ## 通过dnf update 默认方式升级openssh软件包时无法安装openssh相关包
 
