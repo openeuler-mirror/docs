@@ -201,6 +201,18 @@ DNF的--nobest选项可用于覆盖/关闭默认的“best”行为，以使用�
  
  ```
 
+### 安装冲突实例
+* 文件冲突
+
+python3-edk2-devel.noarch 与 build.noarch 因文件名重复存在冲突。
+
+```shell
+# yum install python3-edk2-devel.noarch build.noarch
+...
+Error: Transaction test error:
+file /usr/bin/build conflicts between attempted installs of python3-edk2-devel-202002-3.oe1.noarch and build-20191114-324.4.oe1.noarch
+```
+
 ## libiscsi降级失败
 
 ### 问题现象
