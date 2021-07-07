@@ -164,6 +164,18 @@ If a software package is missing, perform the following steps \(the missed softw
 
 3.  Perform the upgrade again.
 
+### Install conflicting instances.
+* File conflict occurs.
+
+The python3-edk2-devel.noarch file conflicts with the build.noarch file due to duplicate file names.
+
+```shell
+# yum install python3-edk2-devel.noarch build.noarch
+...
+Error: Transaction test error:
+file /usr/bin/build conflicts between attempted installs of python3-edk2-devel-202002-3.oe1.noarch and build-20191114-324.4.oe1.noarch
+```
+
 ## Why Do OpenSSH-related Packages Fail to Be Installed when the OpenSSH Software Package Is Upgraded in Default DNF Update Mode?
 
 ### Symptom
