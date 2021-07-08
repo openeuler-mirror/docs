@@ -39,7 +39,7 @@ paginate = 10
     defaultKeywords = ["devows", "hugo", "go", "openEuler"]
     author = "Site template made by devcows Modified by openEuler team"
     defaultDescription = "Select the version and chapter of the openEuler documentation you want to view."
-    email = "contact@openeuler.org"
+    email = "contact@openeuler.io"
     
     ### DOC Configurations
     BookRepo = 'https://gitee.com/opengauss/docs/blob'
