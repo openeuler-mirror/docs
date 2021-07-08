@@ -1,7 +1,11 @@
+.h5_footer {
+    display: none;
+}
 @media screen and (max-width: 1000px) {
     .h5_footer {
+        display: block;
         text-align: center;
-        margin-top: 220px;
+        margin-top: 143px;
         padding-top: 30px;
         padding-bottom: 30px;
         background: #FBFBFB;

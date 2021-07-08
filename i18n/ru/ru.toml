@@ -53,3 +53,14 @@ other = "Далее"
 
 [evaluate]
 other = "Оценка"
+
+#search page
+
+[result_1]
+other = " "
+
+[result_2]
+other = " search results about "
+
+[result_3]
+other = " are found"
