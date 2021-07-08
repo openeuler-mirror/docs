@@ -4,53 +4,60 @@
     display: none;
 }
 
-#search-result {
+.search-result {
     min-height: calc(100vh - 460px);
     padding-bottom: 200px;
 }
 
-#search-result .title {
-    margin: 50px 0 30px 0;
+.search-result::-webkit-scrollbar-track {
+	border-radius:10px;
+	background-color:#CAEAFF;
 }
 
-#search-result .main-text,
-#search-result .res-title em, 
-#search-result .res-desc em {
+.search-result::-webkit-scrollbar {
+	width:6px;
+	background-color:#F5F5F5;
+}
+
+.search-result::-webkit-scrollbar-thumb {
+	border-radius:4px;
+    background: rgba(0, 47, 167, 0.1);
+}
+
+.search-result .main-text,
+.search-result .res-title em, 
+.search-result .res-desc em {
     color: #002FA7;
 }
 
-#search-result>ul {
-    padding-top: 30px;
 
-}
-
-#search-result>ul>li {
+.search-result>ul>li {
     margin-bottom: 50px;
 }
 
-#search-result .title,#search-result ul li .res-title {
+.search-result .title,.search-result ul li .res-title {
     font-size: 20px;
     color: #000000;
     line-height: 20px;
 }
-#search-result ul li .res-title {
+.search-result ul li .res-title {
     cursor: pointer;
 }
 
-#search-result ul li .res-desc { 
+.search-result ul li .res-desc { 
     font-size: 14px;
     color: rgba(0, 0, 0, 0.5);
     line-height: 24px;
     margin: 16px 0;
 }
 
-#search-result ul li .res-vers {
+.search-result ul li .res-vers {
     font-size: 12px;
     color: rgba(0, 0, 0, 0.5);
     line-height: 12px;
 }
 
-#search-result ul li .res-vers span {
+.search-result ul li .res-vers span {
     color: #000000;
 }
 
@@ -115,30 +122,31 @@
         border: 1px solid #002FA7;
     }
 
-    #search-result .title,#search-result ul li .res-title {
+    .search-result .title,.search-result ul li .res-title {
         font-size: 16px;
         color: #000000;
         line-height: 26px;
     }
 
-    #search-result ul li .res-vers {
+    .search-result ul li .res-vers {
         font-size: 14px;
         line-height: 24px;
     }
 
-    #search-result .title {
-        margin: 40px 0 9px 0;
+    .search-result .title {
+        padding: 17px 0 9px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     }
 
-    #search-result>ul {
-        padding-top: 40px;
-    }
-
-    #search-result ul li .res-desc {
+    .search-result ul li .res-desc {
         margin: 20px 0;
     }
 
-    #search-result>ul>li {
+    .search-result>ul>li {
         margin-bottom: 40px;
+    }
+
+    .search-result {
+        display: none;
     }
 }

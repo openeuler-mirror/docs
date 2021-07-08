@@ -5,6 +5,7 @@
   <link href="{{ "css/markdown.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
   <link href="{{ "css/docsearch.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
   <link href="{{ "css/pcfooter.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
+  
   <body>
     <div id="all">
       <header>
@@ -45,11 +46,7 @@
               </div>
               <div id="h5-menu-top">
                 <p>{{ i18n "catalog_text" }}<i class="icon-close"></i></p>
-                <div class="h5-search container">
-                  <input type="text" placeholder="{{ i18n "search" }}" />
-                  <div class="search-btn">{{ i18n "search" }}</div>
-                </div>
-                <div class="container">
+                <div class="container menu-select-box">
                   <div class="select-box">
                     <span></span>
                     <i class="icon-down"></i>
@@ -74,6 +71,20 @@
             {{ partial "insideNav.html"}}
           </main>
       </div>
+      <div class="zhezhao"></div>
+        <div class="searcher h5-searcher">
+            <div class="h5-search">
+                <input type="text" class="search-text" placeholder="{{ i18n "search_placeholder" }}" />
+                <div class="search-btn">{{ i18n "search" }}</div>
+            </div>
+            <div class="search-result">
+                <p class="title">{{ i18n "result_1" }}<span class="res-amount main-text"></span>{{ i18n "result_2" }}<span class="keyword main-text"></span>{{ i18n "result_3" }}</p>
+                <ul>
+                    
+                </ul>
+                <div id="pagination"></div>
+            </div>
+        </div>
       <!-- /#content -->
       {{ partial "h5_footer.html"}}
       <div id="footer" style="margin-left: 320px;">

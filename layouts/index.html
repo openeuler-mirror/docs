@@ -9,7 +9,7 @@
     <div id="all" class="web">
         <div id="left">
             <div class="left">
-                <a href="javaScript:;"><img src="..\img\common\logo.png" alt=""/></a>
+                <a href="https://openeuler.org"><img src="..\img\common\logo.png" alt=""/></a>
             </div>
             <ul>
                 <li><i class="icon-tick" ></i>{{i18n "version_selection"}}</li>
@@ -27,7 +27,7 @@
         <div id="right">
             <header>
                 <nav class="">
-                    <div class="nav-menu container">
+                    <div class="nav-menu">
                 
                         <div class="right">
                             
@@ -37,6 +37,7 @@
                                 <div class="option" style="margin-left: 20px;">
                                     <a href="/zh/">{{ .Site.Params.languageZh }}</a>
                                     <a href="/en/">{{ .Site.Params.languageEn }}</a>
+                                    <a href="/ru/">{{ .Site.Params.languageRu }}</a>
                                     <div class="angle"></div>
                                 </div>
                             </div>
@@ -59,8 +60,7 @@
             </div>
             
             <div  id="search_content">
-                <hr>
-                <div id="search-result" class="container" >
+                <div class="search-result index-result" class="container" >
                     <ul>
                         
                     </ul>
@@ -76,7 +76,9 @@
                         <span>20.03LTS SP1</span>
                     </div>
                     <br>
-                    {{i18n "A-Tune_content"}}
+                    <div class="hot-docs-desc">
+                        {{i18n "A-Tune_content"}}
+                    </div>
                 </div>
                 <div> 
                     <div class="hot_version">
@@ -84,7 +86,9 @@
                         <span>20.03LTS SP1</span>
                     </div>
                     <br>
-                    {{i18n "secGear_content"}}
+                    <div class="hot-docs-desc">
+                        {{i18n "secGear_content"}}
+                    </div>
                 </div>
                 <div>
                     <div class="hot_version">
@@ -92,7 +96,9 @@
                         <span>20.03LTS SP1</span>
                     </div>
                     <br>
-                    {{i18n "secGear_content"}}
+                    <div class="hot-docs-desc">
+                        {{i18n "StratoVirt_content"}}
+                    </div>
                 </div>
                 <div>
                     <div class="hot_version">
@@ -100,7 +106,9 @@
                         <span>20.03LTS SP1</span>
                     </div>
                     <br>
-                    {{i18n "container_content"}}
+                    <div class="hot-docs-desc">
+                        {{i18n "container_content"}}
+                    </div>
                 </div>
             </div>
             {{ partial "pcfooter.html" . }}
@@ -118,6 +126,7 @@
                             <div class="option">
                                 <a href="/zh/">{{ .Site.Params.languageZh }}</a>
                                 <a href="/en/">{{ .Site.Params.languageEn }}</a>
+                                <a href="/ru/">{{ .Site.Params.languageRu }}</a>
                                 <div class="angle"></div>
                             </div>
                         </i>
@@ -129,11 +138,11 @@
 
         <div class="zhezhao"></div>
         <div class="searcher">
-            <div class="h5-search container">
+            <div class="h5-search">
                 <input type="text" class="search-text" placeholder="{{ i18n "search_placeholder" }}" />
                 <div class="search-btn">{{ i18n "search" }}</div>
             </div>
-            <div id="search-result">
+            <div class="search-result">
                 <p class="title">{{ i18n "result_1" }}<span class="res-amount main-text"></span>{{ i18n "result_2" }}<span class="keyword main-text"></span>{{ i18n "result_3" }}</p>
                 <ul>
                     

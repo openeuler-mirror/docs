@@ -25,7 +25,7 @@ $(function($) {
             value = $.trim(value); 
             if (value == '') {
                 searchMethods.search(decodeURI(value),1,"#baseof-pagination");  
-                $("#search-result>#baseof-pagination").css("display",'none')
+                $(".search-result>#baseof-pagination").css("display",'none')
             }
         })
     });
@@ -46,25 +46,28 @@ $(function($) {
 
     $(".white_search").click(function (e) {
         $(".searcher").css('display','block');
-        $(".h5_index .zhezhao").css('display','block');
+        $(".zhezhao").css('display','block');
         var height = $(".h5_index").outerHeight(true)-279;
-        $(".h5_index .zhezhao").css("height",height);
+        $(".zhezhao").css("height",height);
 
     });
 
-    $(".h5_index .zhezhao").click(function (e) {
+    $(".zhezhao").click(function (e) {
         $(".searcher").css('display','none');
-        $(".h5_index .zhezhao").css('display','none');
+        $(".zhezhao").css('display','none');
     });
 
     $(".h5-search").find(".search-btn").click(function (e) {
         keyword = $(".h5-search").find("input").val();
+        $(".search-result").css('display','block');
         searchMethods.search(decodeURI(keyword),1,"#pagination");
     });
 
     $(".h5-search>.search-text").bind('keypress',function(event){
         if(event.keyCode == "13") {
             keyword = $(".h5-search>.search-text").val();
+            
+            $(".search-result").css('display','block');
             searchMethods.search(decodeURI(keyword),1,"#pagination");
             
         }
@@ -126,24 +129,26 @@ $(function($) {
                                 searchMethods.search(decodeURI(keyword),index);
                             }
                         });
-                        $("#search-result>.title").find(".res-amount").text(totalAmount);
+                        $(".search-result>.title").find(".res-amount").text(totalAmount);
+                        $(".search-result>.title").find(".keyword").text(value);
                     }
                     searchMethods.solveData(dataArr,versionText);
                 },
                 error: function (data) {
                     totalAmount = 0;
-                    $("#search-result>.title").find(".res-amount").text(totalAmount);
+                    $(".search-result>.title").find(".res-amount").text(totalAmount);
+                    $(".search-result>.title").find(".keyword").text(value);
                 },
             });
         },
         solveData: function (result,text) {
-            $("#search-result>ul").empty();
+            $(".search-result>ul").empty();
             result.forEach((item) => {
                 let urlArr = item.path.split('/');
                 let name = item.title.replace("<em>","");
                 name = name.replace("</em>","");
                 let url = `/${urlArr[7]}/docs/${urlArr[6]}/docs/${urlArr[9]}/${name}.html` ;
-                $("#search-result>ul").append(`<li>
+                $(".search-result>ul").append(`<li>
                 <div class="res-title" href="${url}">
                 ${item.title}
                 </div>
@@ -154,7 +159,7 @@ $(function($) {
                     ${text}：<span class="which-version">${item.version}</span>
                 </div>
                 </li>`);
-                $("#search-result>ul li").find(".res-title").click(function (e) {
+                $(".search-result>ul li").find(".res-title").click(function (e) {
                     window.location.href = $(this).attr("href");
                 });
             });
@@ -162,9 +167,9 @@ $(function($) {
     };
 
     if(typeof(keyword) === 'undefined') {
-        $("#search-result").empty();
+        $(".search-result").empty();
     }else {
-        $("#search-result>.title").find(".keyword").text(decodeURI(keyword));
+        $(".search-result>.title").find(".keyword").text(decodeURI(keyword));
         $(".input>.search-text").val(decodeURI(keyword));
         $(".h5-search>div").find("input").val(decodeURI(keyword));
     }
