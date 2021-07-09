@@ -167,16 +167,22 @@
                     <div>
                         <a href="{{i18n "know_97_1"}}">20.09</a>
                     </div>
+                    {{ if ne .Site.LanguageCode "ru"}}
                     <div>
                         <a href="{{i18n "know_96_1"}}">20.03 LTS SP1</a>
                     </div>
+                    {{ end }}
+                    {{ if ne .Site.LanguageCode "ru"}}
                     <div>
                         <a href="{{i18n "know_95_1"}}">21.03</a>
                     </div>
+                    {{ end }}
+                    {{ if eq .Site.LanguageCode "hide"}}
                     <div>
                         <a href="{{i18n "know_94_1"}}">20.03 LTS SP2</a>
                     </div>
                     <div></div>
+                    {{ end }}
                 </div>
             </div>
             <h3>{{ i18n "hot_document" }}</h3>
