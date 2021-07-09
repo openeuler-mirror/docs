@@ -36,7 +36,10 @@ $(function($) {
         searchMethods.search(decodeURI(keyword),1,"#web-pagination");
     });
 
-    $("#search-input>.search-text").bind('keypress',function(event){
+    $("#search-input>.search-text").bind('keyup',function(event){
+        if(!$("#search-input>.search-text").val()) {
+            $("#search_content").css('display','none');
+        }
         if(event.keyCode == "13") {
             keyword = $("#search-input>.search-text").val();
             $("#search_content").css('display','block');
@@ -141,8 +144,13 @@ $(function($) {
                 },
             });
         },
-        solveData: function (result,text) {
+        solveData: function (result, text) {
             $(".search-result>ul").empty();
+            if (!result.length) {
+                $("#search_content").hide();
+                return;
+            }
+            $("#search_content").show();
             result.forEach((item) => {
                 let urlArr = item.path.split('/');
                 let name = item.title.replace("<em>","");

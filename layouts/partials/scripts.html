@@ -182,18 +182,25 @@
             btn.prependTo(pre);
         }
 
+        $('.btn_pre_copy').hover(function () {
+            $(this).css('background', 'url(/img/common/copyed.png) no-repeat');
+        }, function () {
+            $(this).css('background', 'url(/img/common/copy.png) no-repeat');
+        })
+
         $('.btn_pre_copy').click(function() {
             let copyNode = $("<textarea></textarea>");
             let parentNode = $(this).parent().clone();//克隆当前点击复制按钮的父节点
+            var $this = $(this);
             parentNode.find(".btn_pre_copy").remove();//移除所有class为btn_pre_copy的元素（即复制按钮）
             copyNode.text(parentNode.text());//转换为文本
             $('body').append(copyNode);
             copyNode.select();
             document.execCommand("Copy");
             copyNode.remove();
-            $(this)[0].innerHTML = "{{ i18n "copy_code_success" }}"
+            $this.css('background', 'url(/img/common/copy-success.png) no-repeat');
             setTimeout(function () {
-                $(this)[0].innerHTML = "{{ i18n "copy_code" }}"
+                $this.css('background', 'url(/img/common/copy.png) no-repeat');
             },1500)
         })
         window.lang = $('html').attr('lang');

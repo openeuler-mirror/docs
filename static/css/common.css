@@ -152,7 +152,6 @@ i {
     background-image: url('../img/common/search.svg');
     cursor: pointer;
     position: relative;
-    right: -60px;
 }
 
 .white_search{
@@ -544,6 +543,7 @@ i {
     .nav-menu .h5-right {
         display: flex;
         flex-direction: row;
+        margin-right: 10px;
     }
 
     .nav-menu .h5-right i{
@@ -649,4 +649,8 @@ i {
 .search-result {
     overflow-y: auto;
     max-height: 98vh;
+}
+
+i {
+    font-style: normal;
 }
