@@ -196,7 +196,7 @@ i {
 }
 
 .nav-menu>div #lang,#h5-menu-top .select-box {
-    width: 120px;
+    width: 113px;
     height: 60px;
     position: absolute;
     font-size: 14px;
@@ -429,8 +429,8 @@ i {
     height: 21px;
     position: relative;
     display: inline-block;
-    top: -28px;
-    margin-left: 79%;
+    top: -30px;
+    margin-left: 92%;
     
 }
 

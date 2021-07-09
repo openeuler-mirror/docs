@@ -1,9 +1,4 @@
 /* 文档内容样式重置 */
-@media screen and (min-width: 1000px) {
-    #markdown {
-        width: 87% !important;
-    }  
-}
 #markdown table tr:nth-child(odd) td,#markdown table tr:nth-child(odd) th{
     background-color: unset;
     word-break: break-word;

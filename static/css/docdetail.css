@@ -13,12 +13,13 @@
 }
 
 .nav-menu>div #lang, #h5-menu-top .select-box {
-    right: 151px;
+    cursor: pointer;
+    right: 130px;
     top: 0px;
 }
 
 #right-style {
-    margin-right: 267px !important;
+    margin-right: 234px !important;
 }
 
 #version-select {
@@ -196,6 +197,7 @@
     width: 100%;
     padding: 17px 0;
     top: 60px;
+    z-index: 2;
 }
 
 .docscontainer .top-link .link-container {
@@ -967,4 +969,13 @@ pre {
 
 .btn_pre_copy:hover {
     background: url(/img/common/copyed.png) no-repeat;
+}
+
+@media screen and (min-width: 1900px) {
+    .nav-menu>div #lang, #h5-menu-top .select-box {
+        right: 190px !important;
+    }
+    #right-style {
+        margin-right: 296px !important;
+    }
 }
