@@ -17,7 +17,17 @@ other = "документацию openEuler"
 [catalog_text]
 other = "Содержание"
 
+[version_selection]
+other = "Выбор версии"
 
+[quick_links]
+other = "Быстрые ссылки"
+
+[quick_search]
+other = "Быстрый поиск"
+
+[hot_document]
+other = "Популярные документы"
 
 [other_text]
 other = "Ссылки"
@@ -28,10 +38,12 @@ other = "/en/docs/20.03_LTS_SP2/docs/Releasenotes/terms-of-use.html"
 other = "/en/docs/21.03/docs/Releasenotes/terms-of-use.html"
 [know_96_1]
 other = "/en/docs/20.03_LTS_SP1/docs/Releasenotes/terms-of-use.html"
+
+[know_98_1]
+other = "/ru/docs/20.03_LTS/docs/Releasenotes/terms-of-use.html"
+
 [know_97_1]
 other = "/ru/docs/20.09/docs/Releasenotes/terms-of-use.html"
-[know_98_1]
-other = "/en/docs/20.03_LTS/docs/Releasenotes/terms-of-use.html"
 
 [copy_right]
 other = "Авторские права © openEuler 2021. Все права защищены."
@@ -64,3 +76,45 @@ other = " search results about "
 
 [result_3]
 other = " are found"
+
+[kunpeng_community]
+other = "Kunpeng community"
+
+[hot_docs_version]
+other = "20.03 LTS"
+
+[A-Tune_content]
+other = "В данном руководстве приводятся процедуры установки и использования программного обеспечения A-Tune, разработанного сообществом openEuler для автоматической оптимизации производительности."
+
+[A-Tune_header]
+other = "Руководство пользователя A-Tune"
+
+[A-Tune_link]
+other = "/ru/docs/20.03_LTS/docs/A-Tune/A-Tune.html"
+
+[secGear_content]
+other = "В данном документе представлены общие операции администратора системы openEuler, которые помогают администраторам лучше использовать систему. Данный документ адресован всем администраторам, использующим openEuler."
+
+[secGear_header]
+other = "Руководство администратора"
+
+[secGear_link]
+other = "/ru/docs/20.03_LTS/docs/Administration/administration.html"
+
+[StratoVirt_content]
+other = "Данный документ предназначен для пользователей openEuler, которым необходимо установить контейнеры."
+
+[StratoVirt_header]
+other = "Руководство пользователя контейнера"
+
+[StratoVirt_link]
+other = "/ru/docs/20.03_LTS/docs/Container/container.html"
+
+[container_content]
+other = "В этом руководство описывается, как установить openEuler Huawei."
+
+[container_header]
+other = "Руководство по установке"
+
+[container_link]
+other = "/ru/docs/20.03_LTS/docs/Installation/Installation.html"

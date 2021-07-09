@@ -47,34 +47,34 @@ other = "本文档介绍openEuler系统性能自优化软件A-Tune的安装部�
 other = "A-Tune用户指导"
 
 [A-Tune_link]
-other = "https://docs.openeuler.org/zh/docs/21.03/docs/A-Tune/A-Tune.html"
+other = "/zh/docs/20.03_LTS/docs/A-Tune/A-Tune.html"
 
 [secGear_content]
-other = "本文档介绍如何使用secGear统一机密计算编程框架开发应用程序，以及所包含工具的使用方法"
+other = "本文档提供了openEuler系统常用的管理员操作，方便管理员更好地使用openEuler。 本文档适用于所有使用openEuler系统的管理员。"
 
 [secGear_header]
-other = "secGear开发指导"
+other = "管理员指南"
 
 [secGear_link]
-other = "https://docs.openeuler.org/zh/docs/21.03/docs/secGear/secGear.html"
+other = "/zh/docs/20.03_LTS/docs/Administration/administration.html"
 
 [StratoVirt_content]
-other = "本文档介绍StratoVirt虚拟化，并给出基于openEuler安装StratoVirt的方法，以及StratoVirt虚拟化的使用指导。让用户了解StratoVirt，并指导用户和管理员安装......"
+other = "本文档主要适用于使用openEuler并需要安装容器的用户。"
 
 [StratoVirt_header]
-other = "StratoVirt用户指导"
+other = "容器用户指南"
 
 [StratoVirt_link]
-other = "https://docs.openeuler.org/zh/docs/21.03/docs/StratoVirt/StratoVirtGuide.html"
+other = "/zh/docs/20.03_LTS/docs/Container/container.html"
 
 [container_content]
-other = "openEuler软件包中同时提供了轻量化容器引擎iSulad与docker engine两种容器引擎。同时根据不同使用场景，提供多种容器形态"
+other = "本文档主要介绍openEuler操作系统安装方法，以指导用户顺利完成openEuler操作系统安装。"
 
 [container_header]
-other = "容器用户指导"
+other = "安装指南"
 
 [container_link]
-other = "https://docs.openeuler.org/zh/docs/21.03/docs/Container/container.html"
+other = "/zh/docs/20.03_LTS/docs/Installation/installation.html"
 
 [quick_search]
 other = "快速查找"
@@ -121,3 +121,6 @@ other = "个关于"
 
 [result_3]
 other = "的结果"
+
+[hot_docs_version]
+other = "20.03 LTS"

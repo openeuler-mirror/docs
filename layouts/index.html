@@ -13,10 +13,16 @@
             </div>
             <ul>
                 <li><i class="icon-tick" ></i>{{i18n "version_selection"}}</li>
+                {{ if eq .Site.LanguageCode "hide"}}
                 <a href="{{ i18n "know_94_1"}}">20.03 LTS SP2</a>
+                {{ end }}
+                {{ if ne .Site.LanguageCode "ru"}}
                 <li><a href="{{i18n "know_96_1"}}">20.03 LTS SP1</a></li>
+                {{ end }}
                 <li><a href="{{i18n "know_98_1"}}">20.03 LTS</a> </li>
+                {{ if ne .Site.LanguageCode "ru"}}
                 <li><a href="{{i18n "know_95_1"}}">21.03</a></li>
+                {{ end }}
                 <li><a href="{{i18n "know_97_1"}}">20.09</a> </li>
                 <li > <i class="icon-earth" ></i>{{i18n "quick_links"}}</li>
                 <li><a href="https://openeuler.org/" target="_blank">openEuler</a></li>
@@ -73,7 +79,7 @@
                 <div>
                     <div class="hot_version">
                         <a href="{{i18n "A-Tune_link"}}">{{i18n "A-Tune_header"}}</a>
-                        <span>20.03 LTS SP1</span>
+                        <span>{{i18n "hot_docs_version"}}</span>
                     </div>
                     <br>
                     <div class="hot-docs-desc">
@@ -83,7 +89,7 @@
                 <div> 
                     <div class="hot_version">
                         <a href="{{i18n "secGear_link"}}">{{i18n "secGear_header"}}</a>
-                        <span>20.03 LTS SP1</span>
+                        <span>{{i18n "hot_docs_version"}}</span>
                     </div>
                     <br>
                     <div class="hot-docs-desc">
@@ -93,7 +99,7 @@
                 <div>
                     <div class="hot_version">
                         <a href="{{i18n "StratoVirt_link"}}" >{{i18n "StratoVirt_header"}}</a>
-                        <span>20.03 LTS SP1</span>
+                        <span>{{i18n "hot_docs_version"}}</span>
                     </div>
                     <br>
                     <div class="hot-docs-desc">
@@ -103,7 +109,7 @@
                 <div>
                     <div class="hot_version">
                         <a href="{{i18n "container_link"}}">{{i18n "container_header"}}</a>
-                        <span>20.03 LTS SP1</span>
+                        <span>{{i18n "hot_docs_version"}}</span>
                     </div>
                     <br>
                     <div class="hot-docs-desc">

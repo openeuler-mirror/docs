@@ -3,40 +3,40 @@
 other = "Hot documents"
 
 [A-Tune_content]
-other = "This document introduces the installation, deployment and use of the performance self optimizing software a-tune of openeuler system, so as to guide users to quickly understand and use a-tune"
+other = "This document describes how to install and use A-Tune, which is a performance self-optimization software for openEuler."
 
 [A-Tune_header]
 other = "A-Tune User Guide"
 
 [A-Tune_link]
-other = "https://docs.openeuler.org/en/docs/21.03/docs/A-Tune/A-Tune.html"
+other = "/en/docs/20.03_LTS/docs/A-Tune/A-Tune.html"
 
 [secGear_content]
-other = "This document describes how to use secgear unified confidential computing programming framework to develop applications, and how to use the included tools"
+other = "This document provides common administrator operations of the openEuler system to help administrators better use the system. This document is intended for all administrators who use openEuler."
 
 [secGear_header]
-other = "Secgear Development Guide"
+other = "Administrator Guide"
 
 [secGear_link]
-other = "https://docs.openeuler.org/en/docs/21.03/docs/secGear/secGear.html"
+other = "/en/docs/20.03_LTS/docs/Administration/administration.html"
 
 [StratoVirt_content]
-other = "This document introduces the virtualization of stratovirt, and gives the method of installing stratovirt based on openeuler, and the guidance for the use of stratovirt virtualization. Let users understand stratovirt and guide users and administrators to install"
+other = "This document is intended for openEuler users who need to install containers. "
 
 [StratoVirt_header]
-other = "StratoVirt User Guide"
-
-[StratoVirt_link]
-other = "https://docs.openeuler.org/en/docs/21.03/docs/StratoVirt/StratoVrit_guidence.html"
-
-[container_content]
-other = "The lightweight container engine isulad and docker engine are provided in openeuler software package. At the same time, according to different use scenarios, a variety of container forms are provided"
-
-[container_header]
 other = "Container User Guide"
 
+[StratoVirt_link]
+other = "/en/docs/20.03_LTS/docs/Container/container.html"
+
+[container_content]
+other = "This guide describes how to install Huawei openEuler."
+
+[container_header]
+other = "Installation Guide"
+
 [container_link]
-other = "https://docs.openeuler.org/en/docs/21.03/docs/Container/container.html"
+other = "/en/docs/20.03_LTS/docs/Installation/Installation.html"
 
 [quick_search]
 other = "Quick search"
@@ -116,3 +116,6 @@ other = " search results about "
 
 [result_3]
 other = " are found"
+
+[hot_docs_version]
+other = "20.03 LTS"
