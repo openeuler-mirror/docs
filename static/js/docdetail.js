@@ -27,7 +27,12 @@ $(function($) {
    else $("#version-select>span").text("version: " + versionStr);
     $("#h5-menu-top .select-box").find("span").text(versionStr);
     $("#version-select").click(function (e) {
-        $(this).find(".option").show();
+        if($(this).find(".option").css('display') === 'none') {
+            $(this).find(".option").show();    
+        } else {
+            $(this).find(".option").hide();
+        }
+        
         $(document).one("click", function(){
             $("#version-select .option").hide();
         });
@@ -51,7 +56,11 @@ $(function($) {
     });
 
     $("#h5-menu-top .select-box").click(function (e) {
-        $(this).find(".option").show();
+        if($(this).find(".option").css('display') === 'none') {
+            $(this).find(".option").show();    
+        } else {
+            $(this).find(".option").hide();
+        }
         $(document).one("click", function(){
             $(this).find(".option").hide();
         });

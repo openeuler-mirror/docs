@@ -143,11 +143,11 @@ var Pagination = /** @class */ (function () {
         });
         let totalStr = '';
         if(lang === 'zh') {
-            totalStr = "共";
+            totalStr = "共 ";
         }else if(lang === 'en') {
-            totalStr = "Total";
+            totalStr = "Total ";
         }else {
-            totalStr = "Total";
+            totalStr = "Total ";
         }
         let tiaoStr = lang === 'zh'?' 条' : ''
         let t = document.createTextNode(totalStr + this.options.total + tiaoStr)

@@ -18,7 +18,7 @@
 }
 
 #right-style {
-    margin-right: 22% !important;
+    margin-right: 267px !important;
 }
 
 #version-select {
@@ -173,10 +173,11 @@
 }
 
 #docstreeview::-webkit-scrollbar-track {
-	border-radius:10px;
+	border-radius:8px;
 	background-color:#CAEAFF;
 }
 #docstreeview::-webkit-scrollbar {
+    border-radius:8px;
 	width:6px;
 	background-color:#F5F5F5;
 }
@@ -284,7 +285,7 @@
 }
 
 .top-link .other-link {
-    width: 250px;
+    width: 210px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -333,6 +334,16 @@
 @media screen and (max-width: 1000px) {
     #page {  
         padding: 98px 0 0px 0;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .docscontainer .top-link .link-container {
+        padding-right: 140px;
+    }
+
+    #page {
+        padding-right: 140px;
     }
 }
 
@@ -898,7 +909,7 @@
     }
 
     .h5_footer {
-        margin-top: 80px !important;
+        margin-top: 148px !important;
 
     }
 
@@ -938,4 +949,22 @@
 
 .h5-searcher {
     display: none;
+}
+
+pre {
+    position: relative;
+}
+
+.btn_pre_copy {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: url(/img/common/copy.png) no-repeat;
+}
+
+.btn_pre_copy:hover {
+    background: url(/img/common/copyed.png) no-repeat;
 }
