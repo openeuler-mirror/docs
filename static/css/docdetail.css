@@ -197,6 +197,7 @@
     width: 100%;
     padding: 17px 0;
     top: 60px;
+    z-index: 2;
 }
 
 .docscontainer .top-link .link-container {
