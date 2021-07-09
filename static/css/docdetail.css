@@ -13,6 +13,7 @@
 }
 
 .nav-menu>div #lang, #h5-menu-top .select-box {
+    cursor: pointer;
     right: 151px;
     top: 0px;
 }
