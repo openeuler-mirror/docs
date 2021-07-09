@@ -9,14 +9,20 @@
     <div id="all" class="web">
         <div id="left">
             <div class="left">
-                <a href="https://openeuler.org"><img src="\img\common\logo.png" alt=""/></a>
+                <a href="https://openeuler.org/{{ .Site.LanguageCode }}/"><img src="\img\common\logo.png" alt=""/></a>
             </div>
             <ul>
                 <li><i class="icon-tick" ></i>{{i18n "version_selection"}}</li>
+                {{ if eq .Site.LanguageCode "hide"}}
                 <a href="{{ i18n "know_94_1"}}">20.03 LTS SP2</a>
+                {{ end }}
+                {{ if ne .Site.LanguageCode "ru"}}
                 <li><a href="{{i18n "know_96_1"}}">20.03 LTS SP1</a></li>
+                {{ end }}
                 <li><a href="{{i18n "know_98_1"}}">20.03 LTS</a> </li>
+                {{ if ne .Site.LanguageCode "ru"}}
                 <li><a href="{{i18n "know_95_1"}}">21.03</a></li>
+                {{ end }}
                 <li><a href="{{i18n "know_97_1"}}">20.09</a> </li>
                 <li > <i class="icon-earth" ></i>{{i18n "quick_links"}}</li>
                 <li><a href="https://openeuler.org/" target="_blank">openEuler</a></li>
@@ -73,7 +79,7 @@
                 <div>
                     <div class="hot_version">
                         <a href="{{i18n "A-Tune_link"}}">{{i18n "A-Tune_header"}}</a>
-                        <span>20.03 LTS SP1</span>
+                        <span>{{i18n "hot_docs_version"}}</span>
                     </div>
                     <br>
                     <div class="hot-docs-desc">
@@ -83,7 +89,7 @@
                 <div> 
                     <div class="hot_version">
                         <a href="{{i18n "secGear_link"}}">{{i18n "secGear_header"}}</a>
-                        <span>20.03 LTS SP1</span>
+                        <span>{{i18n "hot_docs_version"}}</span>
                     </div>
                     <br>
                     <div class="hot-docs-desc">
@@ -93,7 +99,7 @@
                 <div>
                     <div class="hot_version">
                         <a href="{{i18n "StratoVirt_link"}}" >{{i18n "StratoVirt_header"}}</a>
-                        <span>20.03 LTS SP1</span>
+                        <span>{{i18n "hot_docs_version"}}</span>
                     </div>
                     <br>
                     <div class="hot-docs-desc">
@@ -103,7 +109,7 @@
                 <div>
                     <div class="hot_version">
                         <a href="{{i18n "container_link"}}">{{i18n "container_header"}}</a>
-                        <span>20.03 LTS SP1</span>
+                        <span>{{i18n "hot_docs_version"}}</span>
                     </div>
                     <br>
                     <div class="hot-docs-desc">
@@ -119,7 +125,7 @@
             <nav class="nav-box">
                 <div class="nav-menu container">
                     <div class="h5_left">
-                        <a href="javaScript:;"><img src="\img\common\logo-h5.png" /></a>
+                        <a href="https://openeuler.org/{{ .Site.LanguageCode }}/"><img src="\img\common\logo-h5.png" /></a>
                     </div>
                     <div class="h5-right">
                         <i class="icon-lang">
@@ -161,16 +167,22 @@
                     <div>
                         <a href="{{i18n "know_97_1"}}">20.09</a>
                     </div>
+                    {{ if ne .Site.LanguageCode "ru"}}
                     <div>
                         <a href="{{i18n "know_96_1"}}">20.03 LTS SP1</a>
                     </div>
+                    {{ end }}
+                    {{ if ne .Site.LanguageCode "ru"}}
                     <div>
                         <a href="{{i18n "know_95_1"}}">21.03</a>
                     </div>
+                    {{ end }}
+                    {{ if eq .Site.LanguageCode "hide"}}
                     <div>
                         <a href="{{i18n "know_94_1"}}">20.03 LTS SP2</a>
                     </div>
                     <div></div>
+                    {{ end }}
                 </div>
             </div>
             <h3>{{ i18n "hot_document" }}</h3>
