@@ -1,55 +1,45 @@
 # Key Features
 
-- iSula: A lightweight container solution that unifies IoT, edge, and cloud computing.
-  
-  - Anonymous volumes can be configured in the image, and local volumes can be easily managed by users.
-  - The isula-build allows you to pull and push images and save multiple images to a tarball.
+## Hierarchical Memory Expansion
 
-- A-Tune: An intelligent system performance optimization engine that infers service features and configures the optimal system parameter set for the best service operations. The following functions are added:
-  
-  - Incremental tuning
-  - Sensitive parameter identification, filtering, and tuning
-  - Tuning capabilities for VM scenarios
-  - One-click model training
+Supports unified management of multiple types of memory and storage media as well as smooth expansion of the system capacity. For services that are sensitive to memory and have obvious internal hot access, the memory cost is significantly reduced with the same performance.
 
-- Multiple JDK versions are supported to meet different requirements on compatibility, performance, and functions.
-  
-  - The operating system supports multiple JDK versions, allowing users to deploy Java applications of multiple versions. The versions and functions supported are as follows:
-  - Java 11. For details, see [JDK 11](http://openjdk.java.net/projects/jdk/11/).
-  - TLS 1.3 for a more secure protocol
-  - Java Flight Recorder, an efficient Java application diagnosis tool with low performance loss
-  - Experimental ZGC algorithm with low latency
-  - The latest Short Term Support (STS) version is supported, which is JDK 15 currently. For details, see [JDK 15](http://openjdk.java.net/projects/jdk/15/).
-  - `Pattern Matching for instanceof (Second Preview)`
-  - `Production-ready ZGC`
-  - `Production-ready Shenandoah GC`
-  - `Foreign-Memory Access API (Second Incubator)`
-  - `Records (Second Preview)`
+- **Hot and cold page identification**. The busy/idle status statistics mechanism of the kernel-mode memory page can accurately identify the cold and hot distribution of process memory page accesses.
+- **Configurable elimination policies**. A configuration interface is provided to customize the cold and hot tiering policies for memory pages.
+- **Smooth expansion**. Cold pages are automatically swapped out to the extended memory. The software deployed on the cold pages can run properly without changing or adapting the programming mode.
+- **Multi-media expansion**. Multiple media such as SCM, XL flash, and NVMe SSD can be used as the extended memory. The cold and hot memory tiering solution is specified based on the access speed of the media to expand the memory and reduce performance loss.
 
-- Kernel feature enhancement
-  
-  - Huawei 1822 HBA card driver
-  - NVDIMMs for higher performance in service scenarios such as big data
-  - FT-2000+/64 of Phytium processors for general-purpose computing
-  - The iSCSI work thread can be bound to cores based on NUMA-aware affinity to improve I/O performance.
-  - The percpu lock-free function of the file cache is optimized to reduce the atomic overhead and improve the performance of concurrent file access and Nginx scenarios.
+## Enhanced Virtualization Function and Maintainability
 
-- Virtualization feature enhancement
-  
-  - ARM virtualization supports CPU/memory hot plug, making resource configuration more flexible.
-  - The KVM CPU can be set to the custom mode (ARM) to customize configurations of the CPU feature on the VM.
-  - The O\&M tool VMTOP is used to quickly collect VM performance indicators, such as exit/entry.
-  - Secure boot is supported to improve VM security.
+The live migration Pro capability is extended to improve the maintainability and testability.
 
-- Desktop support
-  
-  - Default UKUI desktop environment on Kylin OS
-  - DDE (Uniontech-developed desktop system)
+- **Live migration Pro feature**. multifd is enhanced to support TLS, ensuring data security during migration. Concurrent compression of live migration data is supported, improving migration performance. Statistics on data page access frequency are added for live migration data prediction in advance.
+- **Performance debugging tool (vmtop).** You can dynamically view the resource usage of VMs in real time, including the CPU usage and memory usage. The x86\_64 architecture is supported.
+- **I/O suspension**. I/O suspension is supported so that automatic retry is performed by default in case an I/O error occurs. If the retry times out, an alarm is reported.
+- **Virtualization live migration on RISC-V architecture**
 
-- High reliability
-  
-  - HA cluster software comprising Pacemaker and Corosync
+## Lightweight Virtual Runtime (StratoVirt)
 
-- Hardware enablement
-  
-  - Raspberry Pi serial boards
+Elastic memory, huge page, and system call filtering are added to enhance the performance and stability of the I/O subsystem.
+
+- **Elastic memory**. The memory can be allocated and reclaimed based on the memory requirements of the workload. The memory reclamation speed of virtio-balloon can reach 3 GB/s.
+- **Huge page**. Huge page in the lightweight framework provides continuous physical memory pages for lightweight VMs, improving VM memory access efficiency.
+- **System call filtering**. The device model has been simplified and system call filtering is supported. In the simplest configuration, only 35 system calls are required, effectively reducing the system attack surface.
+- **Enhanced I/O subsystem**. Multi-channel concurrent I/O capability is supported and the performance is improved. The I/O-QoS capability improves the flexibility and stability of VM I/O traffic management.
+
+## secGear Confidential Computing Programming Framework
+
+The secGear unified confidential computing programming framework provides easy-to-use development kits, including lifecycle management, secure development library, auxiliary code generation tool, code building and signature tool, security capability, and security service component implementation solution in the security zone. Programming with secGear differentiates the system into secure and non-secure zones. It can be used in various scenarios, such as trust cycle, cryptographic databases, multi-party computing, and AI security protection.
+
+- The **service layer** provides complete security services running on the security side.
+- The **middleware layer** provides a set of protocol interfaces to meet basic security requirements.
+- The **basic layer** provides various enclave development interfaces or tools and supports C POSIX APIs and standard OpenSSL APIs on the security side. Users can freely develop secure applications based using those APIs.
+
+## Supporting OpenStack Queens/Rocky
+
+OpenStack is a simple, scalable, rich, and standard cloud management operating system. For details about more features, see OpenStack Queens/Rocky release notes. You can download software packages from [oepkg](https://repo.oepkgs.net/openEuler/rpm/openEuler-20.03-LTS-SP2/budding-openeuler/openstack/).
+
+- **Integrated OpenStack Queens/Rocky**, which enables the IaaS solution.
+- **Enhanced block storage.** Advanced functions such as capacity expansion, snapshots, and VM image cloning are supported.
+- **Container-based deployment and network capabilities**. Better integration with containers is achieved.
+- **Extended services**. Extended services such as control panel management, bare metal server deployment, and cloud resource tracing are supported.

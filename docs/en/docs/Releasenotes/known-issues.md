@@ -1,11 +1,8 @@
 # Known Issues
 
-|  Issue  |Description  |
-|:---  |:----  |
-| [I26ZLO](https://gitee.com/openeuler/community/issues/I26ZLO?from=project-issue) | After the installation is successful, click **Reboot**, and the system occasionally stops responding during the reboot. The information is insufficient for locating faults. This issue occurs only once in the test period of nearly a month. You are advised to configure the dongle to ensure reliability. |
-| [I29P84](https://gitee.com/src-openeuler/anaconda/issues/I29P84?from=project-issue) | This issue occurs only during the installation. After the installation is complete, the issue does not affect the system. During the GUI-based installation, a user selects a drive for installation, and then click **Cancel** to select a new drive for customized partitioning. As a result, the Anaconda cannot identify the drive information and the installation fails. To solve this issue, select the drive to be installed. |
-| [I29TET](https://gitee.com/src-openeuler/LibRaw/issues/I29TET?from=project-issue) | LibRaw is a library for reading RAW files. When abnormal data is injected into **dcraw\_process**, integer overflow occurs. The openEuler community already has corresponding issues but does not fix injection issues. The subjective judgment will affect the execution efficiency. Keep tracking the issue resolution in the community. |
-| [I28N07](https://gitee.com/src-openeuler/util-linux/issues/I28N07?from=project-issue) | Running the **blockdev** command to set the read-only mode does not take effect. This issue exists in all versions of the community. The community is discussing the solution. This issue has no adverse impact on other functions. |
-| [I27TNT](https://gitee.com/src-openeuler/augeas/issues/I27TNT?from=project-issue) | The fuzz fault injection testing is not performed. A memory leak error is reported on the **fa\_minus()** interface. According to preliminary analysis, this interface is an internal interface. Augeas is used to edit configuration files. It is mostly used at a time, and rarely runs in the background. |
-| [I28XL7](https://gitee.com/openeuler/community/issues/I28XL7?from=project-issue) | After the x86/ARM-based physical machine is successfully installed, an i40iw error is reported on the dmesg. The error does not affect the basic functions of the NIC. |
+| Issue | Symptom|
+|:----------|:----------|
+| [I3RA9K](https://gitee.com/openeuler/kernel/issues/I3RA9K)| \[20.03-LTS-SP2] The message log of the ARM physical machine contains "usbhid: probe of 1-1.1:1.1 failed with error -32". |
+| [I3QYSQ](https://gitee.com/src-openeuler/nfs-utils/issues/I3QYSQ)| \[20.03-LTS-SP2]\[x86/ARM] After the nfs-blkmap is started, the error message "Can't open PID file" is displayed. After it is closed, the status changes to "failed". |
+| [I3UNYX](https://gitee.com/src-openeuler/booth/issues/I3UNYX)| \[20.03-LTS-SP2] \[ARM/x86] The booth-arbitrator.service and booth@.service fail to be started.|
 
