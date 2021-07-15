@@ -183,9 +183,9 @@
         }
 
         $('.btn_pre_copy').hover(function () {
-            $(this).css('background', 'url(/img/common/copyed.png) no-repeat');
+            $(this).css('background-image', 'url(/img/common/copyed.png)');
         }, function () {
-            $(this).css('background', 'url(/img/common/copy.png) no-repeat');
+            $(this).css('background-image', 'url(/img/common/copy.png)');
         })
 
         $('.btn_pre_copy').click(function() {
@@ -198,9 +198,9 @@
             copyNode.select();
             document.execCommand("Copy");
             copyNode.remove();
-            $this.css('background', 'url(/img/common/copy-success.png) no-repeat');
+            $this.css('background-image', 'url(/img/common/copy-success.png)');
             setTimeout(function () {
-                $this.css('background', 'url(/img/common/copy.png) no-repeat');
+                $this.css('background-image', 'url(/img/common/copy.png)');
             },1500)
         })
         window.lang = $('html').attr('lang');

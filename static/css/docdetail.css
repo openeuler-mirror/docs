@@ -964,11 +964,14 @@ pre {
     position: absolute;
     top: 0;
     right: 0;
-    background: url(/img/common/copy.png) no-repeat;
+    background-image: url(/img/common/copy.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .btn_pre_copy:hover {
-    background: url(/img/common/copyed.png) no-repeat;
+    background-image: url(/img/common/copyed.png);
+    background-repeat: no-repeat;
 }
 
 @media screen and (min-width: 1900px) {
