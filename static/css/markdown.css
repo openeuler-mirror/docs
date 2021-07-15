@@ -38,6 +38,10 @@
 #markdown pre,#markdown code{
     z-index: -1;
 }
+#markdown pre{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 #markdown pre p a,#markdown code p a,
 #markdown p a,#markdown ul li p a,
 #markdown ol li p a,
