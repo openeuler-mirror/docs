@@ -962,7 +962,7 @@ pre {
     width: 24px;
     height: 24px;
     position: absolute;
-    bottom: 0;
+    top: 0;
     right: 0;
     background: url(/img/common/copy.png) no-repeat;
 }
