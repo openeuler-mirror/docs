@@ -962,8 +962,8 @@ pre {
     width: 24px;
     height: 24px;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 10px;
+    right: 10px;
     background-image: url(/img/common/copy.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -972,6 +972,10 @@ pre {
 .btn_pre_copy:hover {
     background-image: url(/img/common/copyed.png);
     background-repeat: no-repeat;
+}
+
+code {
+    padding: 30px !important;
 }
 
 @media screen and (min-width: 1900px) {
