@@ -35,7 +35,9 @@
 #markdown p {
     line-height: 24px;
 }
-
+#markdown pre,#markdown code{
+    z-index: -1;
+}
 #markdown pre p a,#markdown code p a,
 #markdown p a,#markdown ul li p a,
 #markdown ol li p a,
@@ -155,7 +157,6 @@
         word-break: break-all !important;
     }
     
-    #markdown pre,#markdown code,
     #markdown p,#markdown ul li,
     #markdown ol li,
     #markdown table tr {
