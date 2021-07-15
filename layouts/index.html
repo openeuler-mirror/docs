@@ -13,10 +13,8 @@
             </div>
             <ul>
                 <li><i class="icon-tick" ></i>{{i18n "version_selection"}}</li>
-                {{ if eq .Site.LanguageCode "hide"}}
-                <a href="{{ i18n "know_94_1"}}">20.03 LTS SP2</a>
-                {{ end }}
                 {{ if ne .Site.LanguageCode "ru"}}
+                <li><a href="{{ i18n "know_94_1"}}">20.03 LTS SP2</a></li>
                 <li><a href="{{i18n "know_96_1"}}">20.03 LTS SP1</a></li>
                 {{ end }}
                 <li><a href="{{i18n "know_98_1"}}">20.03 LTS</a> </li>
@@ -176,13 +174,11 @@
                     <div>
                         <a href="{{i18n "know_95_1"}}">21.03</a>
                     </div>
-                    {{ end }}
-                    {{ if eq .Site.LanguageCode "hide"}}
                     <div>
                         <a href="{{i18n "know_94_1"}}">20.03 LTS SP2</a>
                     </div>
-                    <div></div>
                     {{ end }}
+                    <div></div>
                 </div>
             </div>
             <h3>{{ i18n "hot_document" }}</h3>
