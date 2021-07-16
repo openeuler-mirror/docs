@@ -888,7 +888,7 @@ The services involved in the above conventions are as follows:
    Create the **neutron** service credential.
    
    ```shell
-   openstack user create --domain default --password-prompt neutrou                               (CTL)
+   openstack user create --domain default --password-prompt neutron                               (CTL)
    openstack role add --project service --user neutron admin                                      (CTL)
    openstack service create --name neutron --description "OpenStack Networking" network           (CTL)
    ```
@@ -1362,8 +1362,8 @@ The services involved in the above conventions are as follows:
 
 1. Install the software package.
    
-   ```plain
-   yum install openstack-dashborad
+   ```shell
+   yum install openstack-dashboard
    ```
 
 2. Modify the file.
@@ -1371,7 +1371,7 @@ The services involved in the above conventions are as follows:
    Modify the variables.
    
    ```text
-   vim /etc/openstack-dashboard/local_settings/local_settings.py
+   vim /etc/openstack-dashboard/local_settings
    
    ALLOWED_HOSTS = ['*', ]
    OPENSTACK_HOST = "controller"
@@ -1380,7 +1380,7 @@ The services involved in the above conventions are as follows:
 
 3. Restart the httpd service.
    
-   ```plain
+   ```shell
    systemctl restart httpd
    ```
 
