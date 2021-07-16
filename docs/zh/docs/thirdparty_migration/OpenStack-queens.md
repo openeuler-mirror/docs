@@ -761,7 +761,7 @@ Openstack 支持多种形态部署，此文档支持`ALL in One`以及`Distribut
     chown nova:nova /usr/share/AAVMF
 
     ln -s /usr/share/edk2/aarch64/QEMU_EFI-pflash.raw \
-          /usr/share/AAVMF/AAVMF_CODE.fd                                                         (CPT)
+          /usr/share/AAVMF/AAVMF_CODE.fd                                                           (CPT)
     ln -s /usr/share/edk2/aarch64/vars-template-pflash.raw \
           /usr/share/AAVMF/AAVMF_VARS.fd                                                           (CPT)
 
@@ -892,7 +892,7 @@ Openstack 支持多种形态部署，此文档支持`ALL in One`以及`Distribut
     创建neutron服务凭证
 
     ```shell
-    openstack user create --domain default --password-prompt neutrou                               (CTL)
+    openstack user create --domain default --password-prompt neutron                               (CTL)
     openstack role add --project service --user neutron admin                                      (CTL)
     openstack service create --name neutron --description "OpenStack Networking" network           (CTL)
     ```
@@ -1366,8 +1366,8 @@ Openstack 支持多种形态部署，此文档支持`ALL in One`以及`Distribut
 
 1. 安装软件包
 
-    ```plain
-    yum install openstack-dashborad
+    ```shell
+    yum install openstack-dashboard
     ```
 
 2. 修改文件
@@ -1375,7 +1375,7 @@ Openstack 支持多种形态部署，此文档支持`ALL in One`以及`Distribut
     修改变量
 
     ```text
-    vim /etc/openstack-dashboard/local_settings/local_settings.py
+    vim /etc/openstack-dashboard/local_settings
 
     ALLOWED_HOSTS = ['*', ]
     OPENSTACK_HOST = "controller"
@@ -1384,7 +1384,7 @@ Openstack 支持多种形态部署，此文档支持`ALL in One`以及`Distribut
 
 3. 重启 httpd 服务
 
-    ```plain
+    ```shell
     systemctl restart httpd
     ```
 
