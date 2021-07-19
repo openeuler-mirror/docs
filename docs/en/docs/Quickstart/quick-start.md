@@ -201,7 +201,7 @@ To prevent incomplete download of the software package due to network or storage
     **Figure  5**  Installation Wizard<a name="fig1648754873314"></a>  
     ![](./figures/Installation_wizard.png "Installation_wizard")
 
-9. On the installation wizard page, press  **Enter**  to select the default option  **Test this media \& install openEuler 20.09**  to enter the GUI installation page.
+9. On the installation wizard page, press  **Enter**  to select the default option  **Test this media \& install openEuler 20.03-LTS-SP1**  to enter the GUI installation page.
 
 ## Installation
 
