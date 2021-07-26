@@ -332,3 +332,23 @@ emacs未进行配置，或者未生成有效的配置文件，会导致存在缓
       ```
       (setq backup-directory-alist (quote (("." . "/.emacs-backups"))))
       ```
+
+## fuse包2.9.9-4前后、fuse3包3.9.2-4前后升降级说明
+
+### 问题现象
+
+1. dnf upgrade fuse fuse-common fuse3 升级失败
+2. dnf downgrade fuse, fuse3会降级或安装
+3. dnf downgrade fuse3, fuse会降级
+
+### 原因分析
+
+1. dnf upgrade fuse fuse-common fuse3失败原因：在2.9.9-3及之前，fuse，fuse3均obsoletes fuse-common，按顺序解析包依赖关系，解析fuse-common依赖关系时，fuse-common仍被fuse3 obsoletes，导致fuse-common无法升级。
+2. dnf downgrade fuse, fuse3会降级或安装：降级fuse的时候，也会降级fuse-common，在fuse 2.9.9-3 以及fuse3 3.9.2-3版本之前，fuse-common包包含在fuse和fuse3中，在降级fuse-common时发现其旧版本包含在fuse3中，所以将fuse3降级或者安装。
+3. dnf downgrade fuse3, fuse会降级：降级fuse3的时候，也会降级fuse-common，在fuse 2.9.9-3 以及fuse3 3.9.2-3版本之前，fuse-common包包含在fuse和fuse3中，在降级fuse-common解析时其旧版本包含在fuse中，所以将fuse降级。
+
+### 解决方案
+
+1. 升级fuse使用dnf upgrade fuse，升级fuse3使用dnf fuse fuse3 fuse-common。
+2. 无需解决。
+3. 无需解决。
