@@ -197,7 +197,7 @@ Open source software developers of openEuler 20.03-LTS-SP1 have identified this 
  dnf update –y –nobest openssh
  ```
 
-## The libiscsi Fails to Downgrade
+## Failed to Downgrade the libiscsi
 
 ### Symptom
 
@@ -227,7 +227,7 @@ Run the following command to uninstall the **libiscsi-utils** and then perform t
 yum remove libiscsi-utils
 ```
 
-## The xfsprogs Fails to Downgrade
+## Failed to Downgrade the xfsprogs
 
 ### Symptom
 
@@ -288,7 +288,7 @@ A core dump occurs on the process that uses the regular expression. This occurs 
    ```
 3. After detecting a process exception in the program, restart the process to restore services, which helps improve program reliability.
 
-## A Cache File Exists when Files Are Edited Using Emacs.
+## A Cache File Exists when Files Are Edited Using Emacs
 
 ### Symptom
 
@@ -380,3 +380,58 @@ ExecStartPre=/usr/bin/bash -c "mkdir -p /sys/fs/cgroup/cpu,cpuacct/system.slice/
 ExecStartPre=/usr/bin/bash -c "echo 950000 > /sys/fs/cgroup/cpu,cpuacct/system.slice/cpu.rt_runtime_us"
 ExecStartPre=/usr/bin/bash -c "echo 950000 > /sys/fs/cgroup/cpu,cpuacct/system.slice/rtkit-daemon.service/cpu.rt_runtime_us"
 ```
+## Failed to Reboot the System After It Is Fully Upgraded from 20.03-LTS to 20.03-LTS-SP1 Using the `dnf update` Command
+
+### Symptom
+
+The **/boot** directory does not have a dedicated partition in the Legacy boot mode of the x86_64 architecture. When being fully upgraded from 20.03-LTS to 20.03-LTS-SP1 using `dnf` and the software package, the system is successfully upgraded but the reboot fails. The following information is displayed:
+
+```
+error: ../../grub-core/fs/fshelp.c:258:file
+'/vmlinuz-4.19.90-2012.5.0.0054.oe1.x86_64'
+not found.
+error: ../../grub-core/loader/i386/pc/linux.c:417:you need to load the kernel first.
+
+Press any key to continue...
+```
+
+### Possible Cause
+
+In 20.03-LTS or earlier, the .cfg files are used by default. In 20.03-LTS-SP1, after GRUB2 is upgraded to 2.04, the .cfg files are converted to blscfg files by default. However, openEuler does not support blscfg files. In this case, the kernel cannot be found based on the **grub.cfg** file during the restart, and the boot fails. Developers of the openEuler community are seeking to change the default settings to prevent boot failure caused by the .cfg format problem after the upgrade using the software package.
+
+### Solution
+
+1. On the boot screen, press **E** and change the paths of **linux** and **initrd** in the GRUB2 configurations.
+
+   ```
+   linux ($root)/vmlinuz-4.19-xxx root=xxx --->>> linux ($root)/boot/vmlinuz-4.19-xxx root=xxx
+   initrd ($root)/initramfs-4.19-xxx       --->>> initrd ($root)/boot/initramfs-4.19-xxx 
+   ```
+
+   Press **Ctrl+X** to boot the system.
+
+2. Reinstall grub2-2.04-8 or later.
+
+3. Execute `grub2-mkconfig -o /boot/grub2/grub.cfg` to regenerate the .cfg file.
+
+4. Restart the system again. The system is successfully booted.
+
+## Upgrade and Downgrade Issues of fuse 2.9.9-4 and fuse3 3.9.2-4
+
+### Symptom
+
+1. When `dnf upgrade fuse fuse-common fuse3` is executed, the upgrade fails.
+2. When `dnf downgrade fuse` is executed, the fuse3 is downgraded or installed.
+3. When `dnf downgrade fuse3` is executed, the fuse is downgraded.
+
+### Possible Cause
+
+1. In versions earlier than fuse 2.9.9-3, both the fuse and fuse3 obsolete the fuse-common. When the package dependencies are parsed in sequence, the fuse-common fails to be upgraded because the fuse-common is obsoleted by the fuse3.
+2. When the fuse is downgraded, the fuse-common is also downgraded. In versions earlier than fuse 2.9.9-3 and fuse3 3.9.2-3, the fuse-common package is contained. When the fuse-common is downgraded, the fuse3 is degraded or installed because the old version of the fuse-common is contained in the fuse3.
+3. When the fuse3 is downgraded, the fuse-common is also downgraded. In versions earlier than fuse 2.9.9-3 and fuse3 3.9.2-3, the fuse-common package is contained. When the fuse-common is downgraded, the fuse is also downgraded because the old version of the fuse-common is contained in the fuse.
+
+### Solution
+
+1. Execute `dnf upgrade fuse` to upgrade the fuse, and `dnf fuse fuse3 fuse-common` to upgrade the fuse3.
+2. No measure needs to be taken.
+3. No measure needs to be taken.
