@@ -161,7 +161,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 
 ```
 # su - stack
-# git clone https://opendev.org/OpenStack/devstack  
+# git clone -b stable/train https://opendev.org/OpenStack/devstack  
 ```
 以下操作均使用 stack 用户执行。
 
@@ -193,7 +193,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
         # sudo mkdir AAVMF && chmod -R 755 AAVMF
         # cd AAVMF
         # sudo ln -s ../edk2/aarch64/QEMU_EFI-pflash.raw AAVMF_CODE.fd
-        # sudo ln -s ../edk2/aarch64/vars-tmplate-pflash.raw AAVMF_VARS.fd
+        # sudo ln -s ../edk2/aarch64/vars-template-pflash.raw AAVMF_VARS.fd
 	    ```
 
 3. 在 `/etc/libvirt/qemu.conf` 文件中增加如下配置，增加 qemu 对 uefi 的支持。
