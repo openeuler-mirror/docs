@@ -25,7 +25,7 @@ $(function($) {
         $(this).addClass("active");
         var index = $(this).attr("index");
         $(".doc-catalog>.list").hide();
-        $(".doc-catalog").find(`[index=${index}]`).show();
+        $(".doc-catalog").find("[index="+index+"]").show();
     });
     $(".nav-menu .left,.nav-menu .h5-right").find(".home").click(function (e) {
         let currentUrl = window.location.pathname;

@@ -16,7 +16,7 @@ $(function($) {
     var versionStr = urlArr[3].split("_");
     versionStr = versionStr.join(" ");
     var sourceLast = urlArr[6].replace("html","md");
-    var sourceHref = `https://gitee.com/openeuler/docs/tree/stable2-${urlArr[3]}/docs/${lang}/docs/${urlArr[5]}/${sourceLast}`;
+    var sourceHref = "https://gitee.com/openeuler/docs/tree/stable2-" + urlArr[3] + "/docs/" + lang + "/docs/" + urlArr[5] + "/" + sourceLast;
     $("#source").attr("href",sourceHref);
     if (evaluateParams.lang === "en") {
         $("#version-select>span").text("Version: " + versionStr);
@@ -115,7 +115,7 @@ $(function($) {
 });
 
 function getTreeLink() {
-    setTimeout(()=>{
+    setTimeout(function (){
         let openEle = $("#docstreeview .jstree-container-ul").find(".jstree-open");
         for(let i = 0;i < openEle.length;i++) {
             if(i < openEle.length - 1) {
