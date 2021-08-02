@@ -106,8 +106,11 @@ Pay attention to the capacity of the USB flash drive. The USB flash drive must h
 
 5.  After the image is written, remove the USB flash drive.
 
-    No progress is displayed during the image write process. When the number sign \(\#\) appears again, the write is complete. Exit the  **root**  account and remove the USB flash drive. In this case, you can use the USB flash drive as the installation source of the system.
+    No progress is displayed during the image write process. When the number sign (#) appears again, run the following command to write the data to the drive. Then exit the **root** account and remove the USB flash drive. In this case, you can use the USB drive as the installation source of the system.
 
+    ```
+    # sync
+    ```
 
 ### Starting the Installation
 
