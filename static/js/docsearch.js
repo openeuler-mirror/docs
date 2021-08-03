@@ -151,26 +151,41 @@ $(function($) {
                 return;
             }
             $("#search_content").show();
-            result.forEach((item) => {
+            result.forEach(function(item)  {
                 let urlArr = item.path.split('/');
                 let name = item.title.replace("<em>","");
                 name = name.replace("</em>","");
-                let url = `/${urlArr[7]}/docs/${urlArr[6]}/docs/${urlArr[9]}/${name}.html` ;
-                $(".search-result>ul").append(`<li>
-                <div class="res-title" href="${url}">
-                ${item.title}
-                </div>
-                <div class="res-desc">
-                ${item.textContent}
-                </div>
-                <div class="res-vers">
-                    ${text}：<span class="which-version">${item.version}</span>
-                </div>
-                </li>`);
+                let url = "/" + urlArr[7] + "/docs/" + urlArr[6] + "/docs/" + urlArr[9] + "/" + name + ".html" ;
+                $(".search-result>ul").append('<li>'+
+                '<div class="res-title" href="' + searchMethods.escapeHTML(url) +'">' +
+                searchMethods.escapeHTML(item.title) +
+                '</div>' + 
+                '<div class="res-desc">' + 
+                searchMethods.escapeHTML(item.textContent) + 
+                '</div>' + 
+                '<div class="res-vers">' +
+                searchMethods.escapeHTML(text)+ '：<span class="which-version">' + searchMethods.escapeHTML(item.version) + '</span>' + 
+                '</div>' +
+                '</li>');
+
                 $(".search-result>ul li").find(".res-title").click(function (e) {
                     window.location.href = $(this).attr("href");
                 });
             });
+        },
+        escapeHTML: function (str) {
+            return str.replace(
+                /[&<>'"]/g,
+                function (tag) {
+                    return ({
+                        '&': '&amp;',
+                        '<': '&lt;',
+                        '>': '&gt;',
+                        "'": '&#39;',
+                        '"': '&quot;'
+                    }[tag] || tag)
+                } 
+            );
         }
     };
 
