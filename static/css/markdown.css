@@ -35,9 +35,6 @@
 #markdown p {
     line-height: 24px;
 }
-#markdown pre,#markdown code{
-    z-index: -1;
-}
 #markdown pre{
     margin-top: 5px;
     margin-bottom: 5px;
