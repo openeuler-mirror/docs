@@ -310,7 +310,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 
 4. devstack 维护的平台暂不包含 openEuler，执行以下命令，适配 openEuler 版本安装方法。
 
-	```
+  ```
     # cd /home/stack/devstack
     # sed -i "/\# Git Functions/i\\function is_openeuler {\n\tif [[ -z \"\$os_VENDOR\" ]]; then\n\tGetOSVersion\n\tfi\n\n\t[[ \"\$os_VENDOR\" =~ (openEuler) ]]\n}\n" functions-common
     # sed -i "s/elif is_fedora/elif is_fedora || is_openeuler/g" functions-common
