@@ -105,6 +105,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 
 ```
 # yum -y install tar git bash
+# yum -y install rust
 # yum -y install python3-systemd
 # yum -y install libffi-devel
 # yum -y install open-iscsi-devel
@@ -161,9 +162,50 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 
 ```
 # su - stack
-# git clone https://opendev.org/OpenStack/devstack  
+# git clone -b stable/train https://opendev.org/OpenStack/devstack  
 ```
 以下操作均使用 stack 用户执行。
+
+1. 修改/home/stack/devstack/files/rpms/nova，将其中的mysql-devel 修改成mariadb-devel
+
+2. 修改/home/stack/devstack/files/rpms/neutron-common，将其中的mysql-devel 修改成mariadb-devel
+
+3. 修改/home/stack/devstack/files/rpms/general，将其中的redhat-rpm-config 修改成openEuler-rpm-config
+
+4. 修改/home/stack/devstack/files/rpms/dstat,删除其中的dstat行
+
+5. 修改/home/stack/devstack/lib/nova_plugins/functions-libvirt,将其中80行的install_package qemu-kvm修改为install_package qemu
+
+6. 修改/home/stack/devstack/stackrc,第130行，修改后如下
+
+   ```
+   130 export USE_PYTHON3=$(trueorfalse True USE_PYTHON3)
+   ```
+
+7. 修改/home/stack/devstack/lib/apache,修改126行，128行
+
+   ```
+   126 uwsgi=$(ls uWSGI*)
+   127 tar xvf $uwsgi
+   128 cd ./apache2
+   ```
+
+8. 修改/home/stack/devstack/lib/lvm，注释130行,增加131行，修改后如下
+
+   ```
+   130 #start service lvm2_lvmetad
+   131 sleep 1
+   ```
+
+9. 查看默认python版本，如果不是3.7.9，则修改为3.7.9
+
+   ```
+   cd /usr/bin
+   sudo rm -rf python
+   sudo ln -s /usr/bin/python3.7 /usr/bin/python
+   ```
+
+
 
 ### 修改主机相关环境
 
@@ -190,10 +232,10 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
     * ARM 架构
         ```
 		# cd /usr/share
-        # sudo mkdir AAVMF && chmod -R 755 AAVMF
+        # sudo mkdir AAVMF && sudo chmod -R 755 AAVMF
         # cd AAVMF
         # sudo ln -s ../edk2/aarch64/QEMU_EFI-pflash.raw AAVMF_CODE.fd
-        # sudo ln -s ../edk2/aarch64/vars-tmplate-pflash.raw AAVMF_VARS.fd
+        # sudo ln -s ../edk2/aarch64/vars-template-pflash.raw AAVMF_VARS.fd
 	    ```
 
 3. 在 `/etc/libvirt/qemu.conf` 文件中增加如下配置，增加 qemu 对 uefi 的支持。
@@ -268,13 +310,13 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 
 4. devstack 维护的平台暂不包含 openEuler，执行以下命令，适配 openEuler 版本安装方法。
 
-	```
+  ```
     # cd /home/stack/devstack
     # sed -i "/\# Git Functions/i\\function is_openeuler {\n\tif [[ -z \"\$os_VENDOR\" ]]; then\n\tGetOSVersion\n\tfi\n\n\t[[ \"\$os_VENDOR\" =~ (openEuler) ]]\n}\n" functions-common
     # sed -i "s/elif is_fedora/elif is_fedora || is_openeuler/g" functions-common
     # sed -i "/DISTRO=\"f\$os_RELEASE\"/a\ \ \ \ elif [[ \"\$os_VENDOR\" =~ (openEuler) ]]; then\n\tDISTRO=\"openEuler-\$os_RELEASE\"" functions-common
     # grep -nir "is_fedora" | grep -v functions-common | cut -d ":" -f1 | sort | uniq | for line in `xargs`;do sed -i "s/is_fedora/is_fedora || is_openeuler/g" $line;done
-    ```
+  ```
 
 5. 由于脚本文件中默认的 python-libvirt 版本不适配，需编辑 `/home/stack/devstack/lib/nova_plugins/functions-libvirt` 文件，注释掉安装 python-libvirt 相关代码。python-libvirt 已在openEuler-20.03-LTS-SP2 的 yum 源中手动安装。
 
@@ -365,7 +407,7 @@ devstack.sh 若执行成功，会在当前主机内，根据 local.conf 文件�
         
 		![](./figures/vmlist.png)
 			
-			
+		​	
 ## 软件卸载
 
 1. 分别执行以下命令，卸载并清理 devstack 生成的文件及环境配置。
