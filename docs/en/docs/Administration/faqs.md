@@ -8,6 +8,11 @@
     - [Failed to Start the SNTP Service Using the Default Configuration](#failed-to-start-the-sntp-service-using-the-default-configuration)
     - [Installation Failure Caused by Software Package Conflict, File Conflict, or Missing Software Package](#installation-failure-caused-by-software-package-conflict-file-conflict-or-missing-software-package)
     - [Why Do OpenSSH-related Packages Fail to Be Installed when the OpenSSH Software Package Is Upgraded in Default DNF Update Mode?](#Why-Do-OpenSSH-related-Packages-Fail-to-Be-Installed-when-the-OpenSSH-Software-Package-Is-Upgraded-in-Default-DNF-Update-Mode)
+    - [Failed to Downgrade the libiscsi](#Failed-to-Downgrade-the-libiscsi)
+    - [Failed to Downgrade the xfsprogs](#Failed-to-Downgrade-the-xfsprogs)
+    - [ReDoS Attack Occurs Due to Improper Use of glibc Regular Expressions](#ReDoS-Attack-Occurs-Due-to-Improper-Use-of-glibc-Regular-Expressions)
+    - [Cache Files Exist When Using the Emacs to Edit Files](#Cache-Files-Exist-When-Using-the-Emacs-to-Edit-Files)
+    - [Upgrade and Downgrade Issues of fuse 2.9.9-4 and fuse3 3.9.2-4](#Upgrade-and-Downgrade-Issues-of-fuse-2.9.9-4-and-fuse3-3.9.2-4)
 
 <!-- /TOC -->
 ## Why Is the Memory Usage of the libvirtd Service Queried by Running the systemctl and top Commands Different?
@@ -192,3 +197,149 @@ Open source software developers of openEuler 20.03-LTS-SP1 have identified this 
  ```
  dnf update –y –nobest openssh
  ```
+
+## Failed to Downgrade the libiscsi
+
+### Symptom
+
+libiscsi-1.19.2 or later fails to be downgraded to libiscsi-1.19.1 or earlier.
+
+```
+Error: Transaction test error:
+file /usr/bin/iscsi-inq from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-ls from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-perf from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-readcapacity16 from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-swp from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+file /usr/bin/iscsi-test-cu from install of libiscsi-1.19.0-1.eulerosv2r9.x86_64 conflicts with file from package libiscsi-utils-1.19.0-2.eulerosv2r9.x86_64
+```
+
+### Possible Cause
+
+In libiscsi-1.19.1 or earlier, binary files named **iscsi-xxx** are packed into the main package **libiscsi**. However, these binary files introduce the improper dependency of CUnit. To solve this problem, in libiscsi-1.19.2, these binary files are separated into the **libiscsi-utils** subpackage. The main package is weakly dependent on the subpackage. You can integrate or uninstall the subpackage during image creation based on product requirements. If the subpackage is not integrated or is uninstalled, the functions of the **libiscsi** main package are not affected.
+
+When libiscsi-1.19.2 or later is downgraded to libiscsi-1.19.1 or earlier and the **libiscsi-utils** subpackage is installed in the system, because libiscsi-1.19.1 or earlier does not contain **libiscsi-utils**, **libiscsi-utils** will fail to be downgraded. Due to the fact that **libiscsi-utils** depends on the **libiscsi** main package before the downgrade, a dependency problem occurs and the libiscsi downgrade fails.
+
+### Solution
+
+Run the following command to uninstall the **libiscsi-utils** subpackage before performing the downgrade:
+
+```
+yum remove libiscsi-utils
+```
+
+## Failed to Downgrade the xfsprogs
+
+### Symptom
+
+xfsprogs-5.6.0-2 or later fails to be downgraded to xfsprogs-5.6.0-1 or earlier.
+
+```
+Error:
+Problem: problem with installed package xfsprogs-xfs_scrub-5.6.0-2.oe1.x86_64
+- package xfsprogs-xfs_scrub-5.6.0-2.oe1.x86_64 requires xfsprogs = 5.6.0-2.oe1, but none of the providers can be installed
+- cannot install both xfsprogs-5.6.0-1.oe1.x86_64 and xfsprogs-5.6.0-2.oe1.x86_64
+- cannot install both xfsprogs-5.6.0-2.oe1.x86_64 and xfsprogs-5.6.0-1.oe1.x86_64
+- conflicting requests
+```
+
+### Possible Cause
+
+In xfsprogs-5.6.0-2, to reduce improper dependencies of the **xfsprogs** main package and separate experimental commands from the main package, the `xfs_scrub*` commands are separated into the **xfsprogs-xfs_scrub** subpackage. The **xfsprogs** main package is weakly dependent on the **xfsprogs-xfs_scrub** sub-package. You can integrate or uninstall the subpackage during image creation based on product requirements. If the subpackage is not integrated or is uninstalled, the functions of the **xfsprogs** main package are not affected.
+
+When xfsprogs-5.6.0-2 or later is downgraded to xfsprogs-5.6.0-1 or earlier and the **xfsprogs-xfs_scrub** subpackage is installed in the system, because xfsprogs-5.6.0-1 or earlier does not contain **xfsprogs-xfs_scrub**, **xfsprogs-xfs_scrub** will fail to be downgraded. Due to the fact that **xfsprogs-xfs_scrub** depends on the **xfsprogs** main package before the downgrade, a dependency problem occurs and the xfsprogs downgrade fails.
+
+### Solution
+
+Run the following command to uninstall the **xfsprogs-xfs_scrub** subpackage before performing the downgrade:
+
+```
+yum remove xfsprogs-xfs_scrub
+```
+
+## ReDoS Attack Occurs Due to Improper Use of glibc Regular Expressions
+
+### Symptom
+
+When the regcomp/regexec interface of glibc is used for programming or the glibc regular expressions, such as grep/sed, are used in shell commands, a ReDoS attack occurs due to improper regular expressions or inputs (CVE-2019-9192/CVE-2018-28796). The typical regular expression pattern is the combination of the"reverse reference (\1)" with the "asterisk (*)" (zero match or multiple matches), "plus sign (+)" (one match or multiple matches), or "{m,n}" (minimum match: m; maximum match: n); or the combination of ultra-long character strings with regular expressions. The following is an example:
+
+```
+# echo D | grep -E "$(printf '(\0|)(\\1\\1)*')"Segmentation fault (core dumped)
+# grep -E "$(printf '(|)(\\1\\1)*')"
+Segmentation fault (core dumped)
+# echo A | sed '/\(\)\(\1\1\)*/p'
+Segmentation fault (core dumped)
+# time python -c 'print "a"*40000' | grep -E "a{1,32767}"
+Segmentation fault (core dumped)
+# time python -c 'print "a"*40900' | grep -E "(a)\\1"
+Segmentation fault (core dumped)
+```
+
+### Possible Cause
+
+A core dump occurs on the process that uses the regular expression. The glibc regular expression is implemented using the NFA/DFA hybrid algorithm. The internal principle is to use a greedy algorithm for recursive query to match as many character strings as possible. The greedy algorithm causes the ReDoS attack when processing the recursive regular expression.
+
+### Solution
+
+1. Strict permission control is required to reduce the attack surface.
+
+2. Ensure that the regular expression is correct. Do not enter an invalid regular expression or a combination of ultra-long character strings with regular expressions (references or asterisks) that may trigger infinite recursion.
+
+   ```
+   # ()(\1\1)*
+   # "a"*400000
+   ```
+
+3. After a user program detects a process exception, the user program can restart the process to restore services, improving program reliability.
+
+## Cache Files Exist When Using the Emacs to Edit Files
+
+### Symptom
+
+If the Emacs is not configured, a cache file ending with the wavy line (~) exists after the edited file is saved.
+
+### Possible Cause
+
+If the Emacs is not configured or no valid configuration file is generated, cache files exist. The cache file function is used to prevent data loss caused by unexpected system shutdown. You can determine whether to enable this function.
+
+### Solution
+
+1. After the Emacs is installed, the Emacs screen is displayed.
+
+2. On the Emacs screen, press **Alt+x**.
+
+3. Input **customize** to perform various settings. If any function is configured, a .emacs configuration file is generated, and the path of the configuration file is displayed, for example, **/root/.emacs**. (The .emacs file created by yourself does not function.)
+
+4. If you want to modify the cache file configuration, use either of the following methods:
+
+   - Copy the following code to **/root/.emacs** to disable the cache file function:
+
+     ```
+     (setq make-backup-files nil)
+     ```
+
+   - Copy the following code to **/root/.emacs** to specify the directory for storing backup files:
+
+     ```
+     (setq backup-directory-alist (quote (("." . "/.emacs-backups"))))
+     ```
+
+## Upgrade and Downgrade Issues of fuse 2.9.9-4 and fuse3 3.9.2-4
+
+### Symptom
+
+1. When `dnf upgrade fuse fuse-common fuse3` is executed, the upgrade fails.
+2. When `dnf downgrade fuse` is executed, the fuse3 is downgraded or installed.
+3. When `dnf downgrade fuse3` is executed, the fuse is downgraded.
+
+### Possible Cause
+
+1. In versions earlier than fuse 2.9.9-3, both the fuse and fuse3 obsolete the fuse-common. When the package dependencies are parsed in sequence, the fuse-common fails to be upgraded because the fuse-common is obsoleted by the fuse3.
+2. When the fuse is downgraded, the fuse-common is also downgraded. In versions earlier than fuse 2.9.9-3 and fuse3 3.9.2-3, the fuse-common package is contained. When the fuse-common is downgraded, the fuse3 is degraded or installed because the old version of the fuse-common is contained in the fuse3.
+3. When the fuse3 is downgraded, the fuse-common is also downgraded. In versions earlier than fuse 2.9.9-3 and fuse3 3.9.2-3, the fuse-common package is contained. When the fuse-common is downgraded, the fuse is also downgraded because the old version of the fuse-common is contained in the fuse.
+
+### Solution
+
+1. Execute `dnf upgrade fuse` to upgrade the fuse, and `dnf fuse fuse3 fuse-common` to upgrade the fuse3.
+2. No measure needs to be taken.
+3. No measure needs to be taken.
