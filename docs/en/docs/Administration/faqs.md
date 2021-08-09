@@ -197,7 +197,7 @@ Error: Transaction test error:
 file /usr/bin/build conflicts between attempted installs of python3-edk2-devel-202002-3.oe1.noarch and build-20191114-324.4.oe1.noarch
 ```
 
-## The libiscsi Fails to Downgrade
+## Failed to Downgrade the libiscsi
 
 ### Symptom
 
@@ -227,7 +227,7 @@ Run the following command to uninstall the **libiscsi-utils** and then perform t
 yum remove libiscsi-utils
 ```
 
-## The xfsprogs Fails to Downgrade
+## Failed to Downgrade the xfsprogs
 
 ### Symptom
 
@@ -380,3 +380,127 @@ ExecStartPre=/usr/bin/bash -c "mkdir -p /sys/fs/cgroup/cpu,cpuacct/system.slice/
 ExecStartPre=/usr/bin/bash -c "echo 950000 > /sys/fs/cgroup/cpu,cpuacct/system.slice/cpu.rt_runtime_us"
 ExecStartPre=/usr/bin/bash -c "echo 950000 > /sys/fs/cgroup/cpu,cpuacct/system.slice/rtkit-daemon.service/cpu.rt_runtime_us"
 ```
+
+## Failed to Reboot the System After It Is Fully Upgraded from 20.03-LTS to 20.03-LTS-SP2 Using the `dnf update` Command
+
+### Symptom
+
+The **/boot** directory does not have a dedicated partition in the Legacy boot mode of the x86_64 architecture. When being fully upgraded from 20.03-LTS to 20.03-LTS-SP2 using `dnf` and the software package, the system is successfully upgraded but the reboot fails. The following information is displayed:
+
+```
+error: ../../grub-core/fs/fshelp.c:258:file
+'/vmlinuz-4.19.90-2012.5.0.0054.oe1.x86_64'
+not found.
+error: ../../grub-core/loader/i386/pc/linux.c:417:you need to load the kernel first.
+
+Press any key to continue...
+```
+
+### Cause Analysis
+
+In 20.03-LTS or earlier, the .cfg files are used by default. In 20.03-LTS-SP2, after GRUB2 is upgraded to 2.04, the .cfg files are converted to blscfg files by default. However, openEuler does not support blscfg files. In this case, the kernel cannot be found based on the **grub.cfg** file during the restart, and the boot fails. Developers of the openEuler community are seeking to change the default settings to prevent boot failure caused by the .cfg format problem after the upgrade using the software package.
+
+### Solution
+
+1. On the boot screen, press **E** and change the paths of **linux** and **initrd** in the GRUB2 configurations.
+
+   ```
+   linux ($root)/vmlinuz-4.19-xxx root=xxx --->>> linux ($root)/boot/vmlinuz-4.19-xxx root=xxx
+   initrd ($root)/initramfs-4.19-xxx       --->>> initrd ($root)/boot/initramfs-4.19-xxx 
+   ```
+
+   Press **Ctrl+X** to boot the system.
+
+2. Reinstall grub2-2.04-8 or later.
+
+3. Execute `grub2-mkconfig -o /boot/grub2/grub.cfg` to regenerate the .cfg file.
+
+4. Restart the system again. The system is successfully booted.
+
+## The httpd Service Fails to Be Started After the Version Is Upgraded
+
+### Symptom
+
+When an earlier version is upgraded to the latest version, http.service fails to be started.
+
+### Cause Analysis
+
+When SELinux is enabled and the **mod_md** subpackage of httpd is installed in the environment to be upgraded, http.service fails to be started after the system is upgraded to the latest version. View **/var/log/messags**. The log is as follows:
+
+```
+openEuler setroubleshoot[****]: SELinux is preventing /usr/sbin/httpd from add_name access on the directory md. 
+...
+openEuler setroubleshoot[****]: SELinux is preventing httpd from setattr access on the directory challenges.
+```
+
+The preceding log indicates that the SELinux prevents the httpd process from performing operations on the **md/challenges** directory. In this case, when SELinux is enabled and the **mod_md** subpackage is installed, you need to modify the SELinux configuration. Otherwise, http.service fails to be started due to the SELinux permission control.
+
+### Solution
+
+1. Run the following command to allow httpd to access the network:
+
+   ```
+   # setsebool -P httpd_can_network_connect on
+   ```
+
+2. Create the **httpd-md.te** file to describe the permission to access resources. The file content is as follows:
+
+   ```
+   # create new
+   module httpd-md 1.0;
+   
+   require {
+           type httpd_config_t;
+           type httpd_t;
+           class dir { add_name create remove_name rename reparent rmdir setattr };
+           class file { create rename setattr unlink write };
+   }
+   
+   #============= httpd_t ==============
+   allow httpd_t httpd_config_t:dir { add_name create remove_name rename reparent rmdir setattr };
+   allow httpd_t httpd_config_t:file { create rename setattr unlink write };
+   ```
+
+3. Check and compile the security policy file.
+
+   ```
+   # checkmodule -m -M -o httpd-md.mod httpd-md.te
+   ```
+
+4. Create a security policy module.
+
+   ```
+   # semodule_package --outfile httpd-md.pp --module httpd-md.mod
+   ```
+
+5. Install the security policy module.
+
+   ```
+   # semodule -i httpd-md.pp
+   ```
+
+6. Restart httpd.service.
+
+   ```
+   # systemctl status httpd.service
+   ```
+
+## Upgrade and Downgrade Issues of fuse 2.9.9-4 and fuse3 3.9.2-4
+
+### Symptom
+
+1. When `dnf upgrade fuse fuse-common fuse3` is executed, the upgrade fails.
+2. When `dnf downgrade fuse` is executed, the fuse3 is downgraded or installed.
+3. When `dnf downgrade fuse3` is executed, the fuse is downgraded.
+
+### Cause Analysis
+
+1. In versions earlier than fuse 2.9.9-3, both the fuse and fuse3 obsolete the fuse-common. When the package dependencies are parsed in sequence, the fuse-common fails to be upgraded because the fuse-common is obsoleted by the fuse3.
+2. When the fuse is downgraded, the fuse-common is also downgraded. In versions earlier than fuse 2.9.9-3 and fuse3 3.9.2-3, the fuse-common package is contained. When the fuse-common is downgraded, the fuse3 is degraded or installed because the old version of the fuse-common is contained in the fuse3.
+3. When the fuse3 is downgraded, the fuse-common is also downgraded. In versions earlier than fuse 2.9.9-3 and fuse3 3.9.2-3, the fuse-common package is contained. When the fuse-common is downgraded, the fuse is also downgraded because the old version of the fuse-common is contained in the fuse.
+
+### Solution
+
+1. Execute `dnf upgrade fuse` to upgrade the fuse, and `dnf fuse fuse3 fuse-common` to upgrade the fuse3.
+2. No measure needs to be taken.
+3. No measure needs to be taken.
