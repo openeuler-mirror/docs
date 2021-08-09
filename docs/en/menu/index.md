@@ -94,6 +94,7 @@ headless: true
             -   [Security Features]({{< relref "./docs/Container/security-features.md" >}})
             -   [Supporting OCI hooks]({{< relref "./docs/Container/supporting-oci-hooks.md" >}})
             -   [Local Volume Management]({{< relref "./docs/Container/local-volume-management.md" >}})
+            -   [Interconnecting iSulad shim v2 with StratoVirt]({{< relref "./docs/Container/interconnecting-isula-shim-v2-with-stratovirt.md" >}})
         -   [Appendix]({{< relref "./docs/Container/appendix.md" >}})
     -   [System Container]({{< relref "./docs/Container/system-container.md" >}})
         -   [Installation Guideline]({{< relref "./docs/Container/installation-guideline.md" >}})
