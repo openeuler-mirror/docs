@@ -101,6 +101,7 @@ Run the following commands to install the libraries and dependencies required fo
 
 ```
 # yum -y install tar git bash
+# yum -y install rust
 # yum -y install python3-systemd
 # yum -y install libffi-devel
 # yum -y install open-iscsi-devel
@@ -162,10 +163,51 @@ Switch to the stack user and run the following command to download the **devstac
 
 ```
 # su - stack
-# git clone https://opendev.org/OpenStack/devstack  
+# git clone -b stable/train https://opendev.org/OpenStack/devstack  
 ```
 
 Perform the following operations as the stack user.
+
+1. In the **/home/stack/devstack/files/rpms/nova** file, change **mysql-devel** to **mariadb-devel**.
+
+2. In the **/home/stack/devstack/files/rpms/neutron-common** file, change **mysql-devel** to **mariadb-devel**.
+
+3. In the **/home/stack/devstack/files/rpms/general** file, change **redhat-rpm-config** to **openEuler-rpm-config**.
+
+4. Delete the **dstat** line from the **/home/stack/devstack/files/\rpms/dstat** file.
+
+5. In the **/home/stack/devstack/lib/nova_plugins/functions-libvirt** file, change **install_package qemu-kvm** in line 80 to **install_package qemu**.
+
+6. Modify line 130 in the **/home/stack/devstack/stackrc** file as follows:
+
+   ```
+   130 export USE_PYTHON3=$(trueorfalse True USE_PYTHON3)
+   ```
+
+7. Modify lines 126 and 128 in the **/home/stack/devstack/lib/apache** file as follows:
+
+   ```
+   126 uwsgi=$(ls uWSGI*)
+   127 tar xvf $uwsgi
+   128 cd ./apache2
+   ```
+
+8. In the **/home/stack/devstack/lib/lvm** file, comment out line 130 and add line 131 as follows:
+
+   ```
+   130 #start service lvm2_lvmetad
+   131 sleep 1
+   ```
+
+9. Query the default Python version. If the version is not 3.7.9, change it to 3.7.9.
+
+   ```
+   cd /usr/bin
+   sudo rm -rf python
+   sudo ln -s /usr/bin/python3.7 /usr/bin/python
+   ```
+
+
 
 ### Modifying the Host Environment
 
@@ -196,10 +238,10 @@ Perform the following operations as the stack user.
      
         ```
 	    # cd /usr/share
-        # sudo mkdir AAVMF && chmod -R 755 AAVMF
+        # sudo mkdir AAVMF && sudo chmod -R 755 AAVMF
         # cd AAVMF
         # sudo ln -s ../edk2/aarch64/QEMU_EFI-pflash.raw AAVMF_CODE.fd
-        # sudo ln -s ../edk2/aarch64/vars-tmplate-pflash.raw AAVMF_VARS.fd
+        # sudo ln -s ../edk2/aarch64/vars-template-pflash.raw AAVMF_VARS.fd
         ```
 
 3. Add the following configuration to the `/etc/libvirt/qemu.conf` file to enable QEMU to support UEFI:
@@ -374,10 +416,11 @@ Run the following command as the stack user to log in to the OpenStack client as
     - Run the following command to check the VM status:
     
         ```
-        # openstack server list   //查看虚拟机状态
+        # openstack server list   //Check the VM status.
         ```
     
         ![](./figures/vmlist.png)
+
 
 ## Software Uninstallation
 
