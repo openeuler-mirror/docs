@@ -27,7 +27,7 @@ RPM打包的时候需要编译源码，需要把编译好的配置文件、二�
 $ rpmdev-setuptree
 ```
 
-rpmdev-setuptree这个命令就是安装 rpmdevtools 带来的。可以看到运行了这个命令之后，在“/root“目录（非root用户为“/home/用户名“目录）下多了一个 rpmbuild 的文件夹，目录结构如下：
+rpmdev-setuptree这个命令就是安装 rpmdevtools 带来的。可以看到运行了这个命令之后，在“/root“目录（非root用户为“/home/用户名"目录）下多了一个 rpmbuild 的文件夹，目录结构如下：
 
 ```
 $ tree rpmbuild

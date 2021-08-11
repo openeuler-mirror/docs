@@ -1,6 +1,11 @@
 # LibcarePlus
 
-[[toc]]
+- [概述](#概述)
+- [软硬件要求](#软硬件要求)
+- [注意事项和约束](#注意事项和约束)
+- [安装 LibcarePlus](#安装LibcarePlus)
+- [制作 LibcarePlus 热补丁](#制作_LibcarePlus_热补丁)
+- [应用 LibcarePlus 热补丁](#应用_LibcarePlus_热补丁)
 
 ## 概述
 
@@ -188,7 +193,7 @@ LibcarePlus 支持如下方式制作热补丁：
 
 6. 制作热补丁文件。
 
-   通过以上操作，已经得到了热补丁制作所需的主要内容。接下来需要使用 **kpatch_make** 将原可执行文件的 **Build ID** 以及 **kpatch_strip ** 的输出文件 **foobar.stripped** 作为参数传递给 **kpatch_make**，最终生成热补丁文件，参考命令如下：
+   通过以上操作，已经得到了热补丁制作所需的主要内容。接下来需要使用 **kpatch_make** 将原可执行文件的 **Build ID** 以及 **kpatch_strip** 的输出文件 **foobar.stripped** 作为参数传递给 **kpatch_make**，最终生成热补丁文件，参考命令如下：
    
     ``` shell
     $ str=$(readelf -n foo | grep 'Build ID')
