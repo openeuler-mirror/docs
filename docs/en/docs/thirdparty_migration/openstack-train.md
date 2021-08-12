@@ -60,7 +60,7 @@ It is recommended that the memory of the deployment environment be greater than 
 | python3-copr | 1.105 |Refer to Installing Required Libraries and Dependencies |
 | python3-uWSGI | 2.0.19 |Refer to Installing Required Libraries and Dependencies |
 | python3-mod_wsgi | 4.6.4 |Refer to Installing Required Libraries and Dependencies |
-| python3-sqlalchemy python3-sqlalchemy-utils | 1.2.19 |Refer to Installing Required Libraries and Dependencies |
+| python3-sqlalchemy python3-SQLAlchemy-Utils | 1.2.19 |Refer to Installing Required Libraries and Dependencies |
 | python3-scss | 1.3.5 |Refer to Installing Required Libraries and Dependencies |
 | openeuler-lsb | 5.0 |Refer to Installing Required Libraries and Dependencies |
 | mariadb-server | 10.3.9 |Refer to Installing Required Libraries and Dependencies |
@@ -121,7 +121,7 @@ Run the following commands to install the libraries and dependencies required fo
 # yum -y install python3-scss
 # yum -y install gcc-c++
 # yum -y install python3-devel
-# yum -y install python3-sqlalchemy python3-sqlalchemy-utils
+# yum -y install python3-sqlalchemy python3-SQLAlchemy-Utils
 # yum -y install openeuler-lsb
 ```
 
@@ -411,7 +411,7 @@ Run the following command as the stack user to log in to the OpenStack client as
         * ARM architecture   
 
             ```
-            # openstack server create --image cirros-0.5.1-aarch64-disk.img --flavor 1 vm
+            # openstack server create --image cirros-0.5.1-aarch64-disk --flavor 1 vm
             ``` 
     - Run the following command to check the VM status:
     
