@@ -63,7 +63,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 | python3-copr | 1.105 |见必要库和依赖安装 |
 | python3-uWSGI | 2.0.19 |见必要库和依赖安装 |
 | python3-mod_wsgi | 4.6.4 |见必要库和依赖安装 |
-| python3-sqlalchemy python3-sqlalchemy-utils | 1.2.19 |见必要库和依赖安装 |
+| python3-sqlalchemy python3-SQLAlchemy-Utils | 1.2.19 |见必要库和依赖安装 |
 | python3-scss | 1.3.5 |见必要库和依赖安装 |
 | openeuler-lsb | 5.0 |见必要库和依赖安装 |
 | mariadb-server | 10.3.9 |见必要库和依赖安装 |
@@ -125,7 +125,7 @@ DevStack 默认会安装 OpenStack 的核心服务，用户也可以修改配置
 # yum -y install python3-scss
 # yum -y install gcc-c++
 # yum -y install python3-devel
-# yum -y install python3-sqlalchemy python3-sqlalchemy-utils
+# yum -y install python3-sqlalchemy python3-SQLAlchemy-Utils
 # yum -y install openeuler-lsb
 ```
 利用 yum 源，安装 uefi 相关库，按照 CPU 架构不同，命令分别如下。
@@ -397,7 +397,7 @@ devstack.sh 若执行成功，会在当前主机内，根据 local.conf 文件�
             ![](./figures/startvm.png)
 		- ARM 架构
             ```
-            # openstack server create --image cirros-0.5.1-aarch64-disk.img --flavor 1 vm
+            # openstack server create --image cirros-0.5.1-aarch64-disk --flavor 1 vm
             ```
     - 执行如下命令，查看虚拟机状态。
 
