@@ -154,7 +154,8 @@ Any user can modify globally writable files, which affects system integrity.
 1.  Search for all globally writable files.
 
     ```
-    find / -type d \( -perm -o+w \) | grep -v procfind / -type f \( -perm -o+w \) | grep -v proc
+    find / -type d ( -perm -o+w ) | grep -v proc
+    find / -type f ( -perm -o+w ) | grep -v proc
     ```
 
 2.  View the settings of files \(excluding files and directories with sticky bits\) listed in step 1, and delete the files or disable the globally writable permission on them. Run the following command to remove the permission. In the command,  _filename_  indicates the file name.
