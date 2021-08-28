@@ -82,7 +82,7 @@ best=True
 </tr>
 <tr id="zh-cn_topic_0151921080_rc9c76f44bb7840b8b61a46b0854538b3"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_af751af3ed4cb4a189f209994d274dfe0"><a name="zh-cn_topic_0151921080_af751af3ed4cb4a189f209994d274dfe0"></a><a name="zh-cn_topic_0151921080_af751af3ed4cb4a189f209994d274dfe0"></a>debuglevel</p>
 </td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a118e43ebde57468eb40f0af51b86d751"><a name="zh-cn_topic_0151921080_a118e43ebde57468eb40f0af51b86d751"></a><a name="zh-cn_topic_0151921080_a118e43ebde57468eb40f0af51b86d751"></a>设置dnf生成的debug信息。取值范围：[0-10]，数值越大会输出越详细的debug信息。默认值为2，设置为0表示不输出debug信息。</p>
+<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a118e43ebde57468eb40f0af51b86d751"><a name="zh-cn_topic_0151921080_a118e43ebde57468eb40f0af51b86d751"></a><a name="zh-cn_topic_0151921080_a118e43ebde57468eb40f0af51b86d751"></a>设置DNF生成的debug信息。取值范围：[0-10]，数值越大会输出越详细的debug信息。默认值为2，设置为0表示不输出debug信息。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0151921080_rc12e82ae45524ba8aea5248e154a832a"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_adc7f634b391d4726808fe0b3354f969d"><a name="zh-cn_topic_0151921080_adc7f634b391d4726808fe0b3354f969d"></a><a name="zh-cn_topic_0151921080_adc7f634b391d4726808fe0b3354f969d"></a>clean_requirements_on_remove</p>
@@ -107,7 +107,7 @@ best=True
 </tr>
 <tr id="zh-cn_topic_0151921080_ra0a9a346638c4a1bb007bbbe59eaeea7"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_af01afb28195145988ff4ba218bfad29b"><a name="zh-cn_topic_0151921080_af01afb28195145988ff4ba218bfad29b"></a><a name="zh-cn_topic_0151921080_af01afb28195145988ff4ba218bfad29b"></a>plugins</p>
 </td>
-<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a093f5fa9735a4e27a6bdbd2e1d59faee"><a name="zh-cn_topic_0151921080_a093f5fa9735a4e27a6bdbd2e1d59faee"></a><a name="zh-cn_topic_0151921080_a093f5fa9735a4e27a6bdbd2e1d59faee"></a>可选值1和0，表示启用或禁用dnf插件。默认值为1，表示启用dnf插件。</p>
+<td class="cellrowborder" valign="top" width="68.42%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0151921080_a093f5fa9735a4e27a6bdbd2e1d59faee"><a name="zh-cn_topic_0151921080_a093f5fa9735a4e27a6bdbd2e1d59faee"></a><a name="zh-cn_topic_0151921080_a093f5fa9735a4e27a6bdbd2e1d59faee"></a>可选值1和0，表示启用或禁用DNF插件。默认值为1，表示启用DNF插件。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0151921080_r1fea2c77ef6e4c63a6ca076666eb8651"><td class="cellrowborder" valign="top" width="31.580000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0151921080_a66ecbecaa5494510b6b1304af3e4da43"><a name="zh-cn_topic_0151921080_a66ecbecaa5494510b6b1304af3e4da43"></a><a name="zh-cn_topic_0151921080_a66ecbecaa5494510b6b1304af3e4da43"></a>installonly_limit</p>
