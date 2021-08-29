@@ -1722,7 +1722,7 @@ rpc RunPodSandbox(RunPodSandboxRequest) returns (RunPodSandboxResponse) {}
 #### 注意事项
 
 1.  启动sandbox的默认镜像为rnd-dockerhub.huawei.com/library/pause-$\{machine\}:3.0， 其中$\{machine\}为架构，在x86\_64上，machine的值为amd64，在arm64上，machine的值为aarch64，当前rnd-dockerhub仓库上只有amd64和aarch64镜像可供下载，若机器上无此镜像，请确保机器能从rnd-dockerhub下载，若要使用其它镜像，请参考“iSulad部署配置”中的pod-sandbox-image指定镜像。
-2.  由于容器命名以PodSandboxMetadata中的字段为来源，且以下划线"\_"为分割字符，因此限制metadata中的数据不能包含下划线，否则会出现sandbox运行成功，但无法使用ListPodSandbox接口查询的现象。
+2.  由于容器命名以PodSandboxMetadata中的字段为来源，且以下划线“\_”为分割字符，因此限制metadata中的数据不能包含下划线，否则会出现sandbox运行成功，但无法使用ListPodSandbox接口查询的现象。
 
 #### 参数
 
@@ -1977,7 +1977,7 @@ grpc::Status CreateContainer(grpc::ServerContext *context, const runtime::Create
 </tr>
 <tr id="zh-cn_topic_0183088045_row10898461533"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088045_p114454389351"><a name="zh-cn_topic_0183088045_p114454389351"></a><a name="zh-cn_topic_0183088045_p114454389351"></a>string  pod_sandbox_id</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.46%"><p id="zh-cn_topic_0183088045_p16591797361"><a name="zh-cn_topic_0183088045_p16591797361"></a><a name="zh-cn_topic_0183088045_p16591797361"></a>待在其中创建容器的PodSandbox的ID。</p>
+<td class="cellrowborder" valign="top" width="60.46%"><p id="zh-cn_topic_0183088045_p16591797361"><a name="zh-cn_topic_0183088045_p16591797361"></a><a name="zh-cn_topic_0183088045_p16591797361"></a>待在其中创建容器的PodSandbox的ID</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0183088045_row17894468314"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088045_p1489111122411"><a name="zh-cn_topic_0183088045_p1489111122411"></a><a name="zh-cn_topic_0183088045_p1489111122411"></a>ContainerConfig</a> config</p>
