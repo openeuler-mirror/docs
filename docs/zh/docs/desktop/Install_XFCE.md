@@ -59,7 +59,8 @@ sudo reboot
 
 9. FAQ
 
-Q:为什么lightdm登录界面背景是黑色的？
-A:登录界面是黑色的是因为lghtdm-gtk默认配置文件/etc/lightdm/lightdm-gtk-greeter.conf中没有设置background。
-可以在该配置文件最后的[greeter]段中设置 background=/usr/share/backgrounds/xfce/xfce-blue.jpg
-然后systemctl restart lightdm 就可以看到背景了。
+    **Q:为什么lightdm登录界面背景是黑色的？**
+
+    A:登录界面是黑色的是因为lghtdm-gtk默认配置文件/etc/lightdm/lightdm-gtk-greeter.conf中没有设置background。
+    可以在该配置文件最后的[greeter]段中设置 background=/usr/share/backgrounds/xfce/xfce-blue.jpg
+    然后systemctl restart lightdm 就可以看到背景了。

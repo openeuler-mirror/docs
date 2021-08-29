@@ -27,7 +27,7 @@ RPM打包的时候需要编译源码，需要把编译好的配置文件、二�
 $ rpmdev-setuptree
 ```
 
-rpmdev-setuptree这个命令就是安装 rpmdevtools 带来的。可以看到运行了这个命令之后，在“/root“目录（非root用户为“/home/用户名“目录）下多了一个 rpmbuild 的文件夹，目录结构如下：
+rpmdev-setuptree这个命令就是安装 rpmdevtools 带来的。可以看到运行了这个命令之后，在"/root"目录（非root用户为"/home/用户名"目录）下多了一个 rpmbuild 的文件夹，目录结构如下：
 
 ```
 $ tree rpmbuild
@@ -723,13 +723,13 @@ RPM软件包构建完成后，通过网页端获取对应RPM软件包的方法�
     $ osc ci -m "commit log"
     ```
 
-4. 获取当前工程的仓库名称和架构，参考命令如下：
+4.  获取当前工程的仓库名称和架构，参考命令如下：
 
     ```
     $ osc repos home:testUser:branches:openEuler:Mainline
     ```
 
-5. 修改提交成功后，OBS会自动开始编译软件包。可以通过如下命令，查看对应仓库的编译日志，其中 _standard_aarch64_ 、 _aarch64_ 分别为查询所得仓库名称和架构。
+5.  修改提交成功后，OBS会自动开始编译软件包。可以通过如下命令，查看对应仓库的编译日志，其中 _standard_aarch64_ 、 _aarch64_ 分别为查询所得仓库名称和架构。
 
     ```
     $ osc buildlog standard_aarch64  aarch64

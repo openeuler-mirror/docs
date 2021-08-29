@@ -1977,7 +1977,7 @@ grpc::Status CreateContainer(grpc::ServerContext *context, const runtime::Create
 </tr>
 <tr id="zh-cn_topic_0183088045_row10898461533"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088045_p114454389351"><a name="zh-cn_topic_0183088045_p114454389351"></a><a name="zh-cn_topic_0183088045_p114454389351"></a>string  pod_sandbox_id</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.46%"><p id="zh-cn_topic_0183088045_p16591797361"><a name="zh-cn_topic_0183088045_p16591797361"></a><a name="zh-cn_topic_0183088045_p16591797361"></a>待在其中创建容器的PodSandbox的ID。</p>
+<td class="cellrowborder" valign="top" width="60.46%"><p id="zh-cn_topic_0183088045_p16591797361"><a name="zh-cn_topic_0183088045_p16591797361"></a><a name="zh-cn_topic_0183088045_p16591797361"></a>待在其中创建容器的PodSandbox的ID</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0183088045_row17894468314"><td class="cellrowborder" valign="top" width="39.54%"><p id="zh-cn_topic_0183088045_p1489111122411"><a name="zh-cn_topic_0183088045_p1489111122411"></a><a name="zh-cn_topic_0183088045_p1489111122411"></a>ContainerConfig</a> config</p>
