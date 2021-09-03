@@ -147,3 +147,23 @@ The rootfs image is a file system image. When the StratoVirt is started, the ext
    ```
 
    Then, the rootfs is created successfully. You can use the ext4 rootfs image file rootfs.ext4, which is stored in the /home directory.
+
+## Getting firmware for standard boot
+
+Firmware refers to the device driver stored inside the device. The operating system can only be started according to the standard boot mode through firmware. Stratovirt only supports booting from UEFI (Unified Extensible Firmware Interface) on x86_64 and AArch64 platform.
+
+EDK II is an open-source project that implements UEFI specification. StratoVirt use EDK II as the firmware to boot VM, and therefore we have to get the corresponding EDK II binary. We can install EDK II directly by yum. Notes that EDK II binary contains two files, one for executable code storage and the other for boot data storage.
+
+On x86_64 platform, run
+
+```shell
+$ sudo yum install -y edk2-ovmf
+```
+
+On aarch64 platform, run
+
+```shell
+$ sudo yum install -y edk2-aarch64
+```
+
+After installing edk2, on x86_64 platform, `OVMF_CODE.fd` and `OVMF_VARS.fd` are located in `/usr/share/edk2/ovmf` directory. On aarch64 platform, `QEMU_EFI-pflash.raw` and `vars-template-pflash.raw` are located in `/usr/share/edk2/aarch64` directory.
