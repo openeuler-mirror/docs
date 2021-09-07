@@ -165,6 +165,7 @@ headless: true
     -   [HA 用户指南]({{< relref "./docs/desktop/ha.md" >}})
         -   [部署 HA]({{< relref "./docs/desktop/installha.md" >}})
         -   [HA 使用实例]({{< relref "./docs/desktop/usecase.md" >}})
+    -   [KubeSphere 部署指南]({{< relref "./docs/desktop/kubesphere.md" >}})  
 -   [桌面环境用户指南]({{< relref "./docs/desktop/desktop.md" >}})
     -   [UKUI]({{< relref "./docs/desktop/ukui.md" >}})
         -   [安装 UKUI]({{< relref "./docs/desktop/安装UKUI.md" >}})
