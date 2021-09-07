@@ -178,3 +178,4 @@ headless: true
 -   [工具集用户指南]({{< relref "./docs/userguide/overview.md" >}})
     -   [patch-tracking]({{< relref "./docs/userguide/patch-tracking.md" >}})
     -   [pkgship]({{< relref "./docs/userguide/pkgship.md" >}})
+-   [Aops用户指南]({{< relref "./docs/Aopsuserguide/Aops.md" >}})
