@@ -16,7 +16,6 @@ The live migration Pro capability is extended to improve the maintainability and
 - **Live migration Pro feature**. multifd is enhanced to support TLS, ensuring data security during migration. Concurrent compression of live migration data is supported, improving migration performance. Statistics on data page access frequency are added for live migration data prediction in advance.
 - **Performance debugging tool (vmtop).** You can dynamically view the resource usage of VMs in real time, including the CPU usage and memory usage. The x86\_64 architecture is supported.
 - **I/O suspension**. I/O suspension is supported so that automatic retry is performed by default in case an I/O error occurs. If the retry times out, an alarm is reported.
-- **Virtualization live migration on RISC-V architecture**
 
 ## Lightweight Virtual Runtime (StratoVirt)
 
