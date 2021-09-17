@@ -9,7 +9,7 @@
 
 ### **前提条件**
 
-已安装 iSulad 和 kata-containers，并确保 iSulad 支持 kata-runtime 容器运行时和 devicemapper 存储驱动。
+已安装 iSulad 和 kata-containers，并确保 iSulad 支持 containerd-kata-shim-v2 容器运行时和 devicemapper 存储驱动。
 
 此处给出安装 iSulad 和 kata-containers 并进行相应配置的参考方法。
 
@@ -71,52 +71,20 @@
     Storage Driver: devicemapper
     ```
 
-5. 打开/etc/isulad/daemon.json文件。如果没有配置kata-runtime，则配置runtime为kata-runtime。
-
-   ```json
-   "runtimes": {                                                                               
-       "kata-runtime": {                                                                   
-           "path": "/usr/bin/kata-runtime",                                                 
-           "runtimeArgs": [                                                                
-               "--kata-config",                                                               
-               "/usr/share/defaults/kata-containers/configuration.toml"                       
-           ]                                                                                 
-       }
-   },
-   ```
-
    
 
 ### **对接指导**
 
-StratoVirt 对接 iSula 安全容器即 StratoVirt 对接 iSula 安全容器中的 kata-runtime，此处给出对接操作指导。
+StratoVirt 通过对接 kata-containers来接入 isula 容器生态，此处给出对接 kata-containers 的操作指导。
 
+1. 修改 kata 配置文件（默认路径为 /usr/share/defaults/kata-containers/configuration.toml，也可以参考同一目录下的configration-stratovirt.toml进行配置） 。将安全容器的 hypervisor 类型配置为 stratovirt，kernel 配置 kata-containers 的 kernel 镜像绝对路径，initrd 配置为 kata-containers 的 initrd 镜像文件（使用 yum 安装 kata-containers 时，默认会下载这两个镜像文件并存放在 /var/lib/kata/ 目录，配置时也可以使用其他镜像 ）。
 
-1. 在任一目录（例如 /home 目录）新建脚本文件 stratovirt.sh 并使用 root 权限给文件添加执行权限：
-
-   ```shell
-   # touch /home/stratovirt.sh
-   # chmod +x /home/stratovirt.sh
-   ```
-
-   stratovirt.sh 内容如下，用于指定 StratoVirt 路径：
-
-   ```
-   #!/bin/bash
-   export STRATOVIRT_LOG_LEVEL=info  # set log level which includes trace, debug, info, warn and error.
-   /usr/bin/stratovirt $@
-   ```
-
-   ​
-
-2. 修改 kata 配置文件（默认路径为 /usr/share/defaults/kata-containers/configuration.toml ） 。将安全容器的 hypervisor 类型配置为 stratovirt，kernel 配置 StratoVirt 的 kernel 镜像绝对路径，initrd 配置为 kata-containers 的 initrd 镜像文件（使用 yum 安装 kata-containers 时，默认会下载这两个镜像文件并存放在 /var/lib/kata/ 目录，配置时也可以使用其他镜像 ）。
-
-   配置参考如下：配置参考如下：
+   配置参考如下：
 
    ```shell
    [hypervisor.stratovirt]
-   path = "/home/stratovirt.sh"
-   kernel = "/var/lib/kata/vmlinux.bin"
+   path = "/usr/bin/stratovirt"
+   kernel = "/var/lib/kata/kernel"
    initrd = "/var/lib/kata/kata-containers-initrd.img"
    block_device_driver = "virtio-mmio"
    use_vsock = true
@@ -131,7 +99,7 @@ StratoVirt 对接 iSula 安全容器即 StratoVirt 对接 iSula 安全容器中�
 3. 使用 root 权限 和 **isula** 命令运行 busybox 安全容器，完成 StratoVirt 和 安全容器的对接。
 
    ```shell
-   # isula run -tid --runtime=kata-runtime --net=none --name test busybox:latest sh
+   # isula run -tid --runtime "io.containerd.kata.v2" --net=none --name test busybox:latest sh
    ```
 
 4. 使用 **isula ps** 确认安全容器 test 正常运行，然后通过以下命令进入 test 容器。
@@ -140,7 +108,37 @@ StratoVirt 对接 iSula 安全容器即 StratoVirt 对接 iSula 安全容器中�
    # isula exec –ti test sh
    ```
 
-   ​
+5. 通过虚拟机快照加速安全容器的启动速度，降低虚拟机内存开销。
 
+   修改 kata 配置文件 configuration.toml，将配置项 enable_template 设置为 true，即允许虚拟机通过制作快照方式进行启动：
+
+   ```shell
+   [factory]
+   # VM templating support. Once enabled, new VMs are created from template
+   # using vm cloning. They will share the same initial kernel, initramfs and
+   # agent memory by mapping it readonly. It helps speeding up new container
+   # creation and saves a lot of memory if there are many kata containers running
+   # on the same host.
+   #
+   # When disabled, new VMs are created from scratch.
+   #
+   # Note: Requires "initrd=" to be set ("image=" is not supported).
+   #
+   # Default false
+   enable_template = true
+   ```
+
+   配置项 enable_template 设置为 true 后，kata-containers 创建安全容器时，将会检查默认路径（/run/vc/vm/template）下是否存在快照文件，如果存在，直接以该快照文件启动虚拟机，如果不存在，则会创建虚拟机快照，穿件完成后，以该快照文件启动虚拟机。
+
+6. 通过安全组件ozone进一步增强安全容器的隔离性。
+
+   修改 kata 配置文件 configuration.toml，将配置项 ozone_path 设置为ozone 可执行文件的路径（如果使用 yum 安装 stratovirt，ozone 可执行文件默认在 /usr/bin 目录下）。配置该项后，将打开 ozone 安全沙箱功能，作为虚拟化层隔离被攻击者突破后的保险，进一步增强 StratoVirt 安全容器的隔离性:
+
+   ```shell
+   # Path for the ozone specific to stratovirt
+   # If the ozone path is set, stratovirt will be launched in
+   # ozone secure environment. It is disabled by default.
+   ozone_path = "/usr/bin/ozone"
+   ```
 
  至此，可以在 test 容器内运行容器命令。
