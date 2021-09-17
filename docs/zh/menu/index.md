@@ -76,6 +76,7 @@ headless: true
     -   [虚拟机配置]({{< relref "./docs/StratoVirt/虚拟机配置.md" >}})
     -   [虚拟机管理]({{< relref "./docs/StratoVirt/虚拟机管理.md" >}})
     -   [对接iSula安全容器]({{< relref "./docs/StratoVirt/对接iSula安全容器.md" >}})
+    -   [StratoVirt VFIO 使用说明]({{< relref "./docs/StratoVirt/StratoVirt VFIO 使用说明.md" >}})
 -   [容器用户指南]({{< relref "./docs/Container/container.md" >}})
     -   [iSula容器引擎]({{< relref "./docs/Container/iSula容器引擎.md" >}})
         -   [安装、升级与卸载]({{< relref "./docs/Container/安装-升级与卸载.md" >}})
