@@ -10,15 +10,15 @@
 
    IOMMU 全称是 Input/Output Memory Management Unit，该技术可以让 PCI/PCIe 设备的资源直接分配给虚拟机。
 
-   在主机上执行如下命令，查看IOMMU是否已经开启。
+   在主机上执行如下命令，查看 IOMMU 是否已经开启。
 
-   ```
+   ```shell
    # dmesg | grep iommu
    ```
 
    若已开启，回显如下：
 
-   ```
+   ```shell
    iommu: Default domain type: Translated
    hibmc-drm 0000:0a:00.0: Adding to iommu group 0
    ehci-pci 0000:7a:01.0: Adding to iommu group 1
@@ -29,11 +29,13 @@
    ......
    ```
 
-​		若未开启，则没有回显或只显示如下信息：
+   若未开启，则没有回显或只显示如下信息：
 
-```
-iommu: Default domain type: Translated
-```
+   ```shell
+   iommu: Default domain type: Translated
+   ```
+
+
 
 2. 加载 vfio-pci 内核模块
 
@@ -44,13 +46,15 @@ iommu: Default domain type: Translated
 
    成功加载 vfio-pci 模块，则回显如下：
 
-```shell
-vfio_pci              327680  0
-vfio_virqfd           327680  1 vfio_pci
-vfio                  327680  2 vfio_iommu_type1,vfio_pci
-```
+   ```shell
+   vfio_pci              327680  0
+   vfio_virqfd           327680  1 vfio_pci
+   vfio                  327680  2 vfio_iommu_type1,vfio_pci
+   ```
 
-3. 将PCI设备从主机解绑，重新绑定到vfio-pci驱动
+
+
+3. 将 PCI 设备从主机解绑，重新绑定到 vfio-pci 驱动
 
    假设使用 VFIO 直通 Hi1822 网卡设备，首先查看网卡设备对应的 PCI 设备信息：
 
@@ -64,17 +68,17 @@ vfio                  327680  2 vfio_iommu_type1,vfio_pci
 
    选择其中 bus 号 03，slot 号 00，function 号 0 的设备，即上述的 03:00.0。然后将该 PCI 设备从主机上解绑
 
-```shell
-# echo 0000:03:00.0 > /sys/bus/pci/devices/0000:03:00.0/driver/unbind
-```
+   ```shell
+   # echo 0000:03:00.0 > /sys/bus/pci/devices/0000:03:00.0/driver/unbind
+   ```
 
-​		最后将该 PCI 设备重新绑定到 vfio-pci 驱动。
+   最后将该 PCI 设备重新绑定到 vfio-pci 驱动。
 
-```shell
-lspci -ns 0000:03:00.0 |awk -F':| ' '{print 5" "6}' > /sys/bus/pci/drivers/vfio-pci/new_id
-```
+   ```shell
+   lspci -ns 0000:03:00.0 |awk -F':| ' '{print 5" "6}' > /sys/bus/pci/drivers/vfio-pci/new_id
+   ```
 
-​		将网卡绑定到 vfio-pci 驱动后，在主机上无法查询到对应网卡信息，只能查询到对应的PCI设备信息。
+   将网卡绑定到 vfio-pci 驱动后，在主机上无法查询到对应网卡信息，只能查询到对应的 PCI 设备信息。
 
 ### VFIO 设备直通
 
@@ -82,21 +86,21 @@ lspci -ns 0000:03:00.0 |awk -F':| ' '{print 5" "6}' > /sys/bus/pci/drivers/vfio-
 
 VFIO(Virtual Function I/O) 是内核提供的一种用户态设备驱动方案。VFIO 驱动可以安全地把设备 I/O，中断，DMA 等能力呈现给用户空间。StratoVirt 虚拟化平台使用 VFIO 设备直通方案后，在虚拟机可以极大限度地提升 I/O 性能。
 
-#### 使用VFIO直通
+#### 使用 VFIO 直通
 
-StratoVirt对接libvirt后，可以使用XML文件配置虚拟机。以下内容介绍通过修改虚拟机XML文件的方式，使用VFIO设备直通功能。
+StratoVirt 支持 libvirt 管理，可以使用 XML 文件配置虚拟机。以下内容介绍通过修改虚拟机 XML 文件的方式，使用 VFIO 设备直通功能。
 
-一、修改XML文件
+一、修改 XML 文件
 
-1. 在主机上执行如下命令，查询CPU架构信息
+1. 在主机上执行如下命令，查询 CPU 架构信息
 
+   ```shell
+   # uname -m
    ```
-   $ uname -m
-   ```
 
-2. aarch64和x86_64架构分别下载StratoVirt自带的XML文件stratovirt_aarch64.xml或stratovirtvirt_x86.xml，并存放到任一目录，例如 /home：
+2. aarch64 和 x86_64 架构分别[下载](https://gitee.com/openeuler/stratovirt/tree/master/docs) StratoVirt 自带的 XML 文件 stratovirt_aarch64.xml 或 stratovirtvirt_x86.xml，并存放到任一目录，例如 /home：
 
-   ```
+   ```shell
    # cp stratovirt/docs/stratovirt_$arch.xml /home
    ```
 
@@ -113,7 +117,7 @@ StratoVirt对接libvirt后，可以使用XML文件配置虚拟机。以下内容
    </hostdev>
    ```
 
-​	上例中，设备类型为 PCI 设备，managed='yes' 表示 libvirt 将把PCI设备从主机解绑，并重新绑定到vfio-pci驱动。source 项配置了需要作为 VFIO 直通设备的 domain，bus，slot，function信息。
+   上例中，设备类型为 PCI 设备，managed='yes' 表示 libvirt 将把 PCI 设备从主机解绑，并重新绑定到 vfio-pci 驱动。source 项配置了需要作为 VFIO 直通设备的 domain，bus，slot，function 信息。
 
 二、使用 libvirt 命令行创建并登陆虚拟机
 
@@ -141,14 +145,14 @@ Id 	Name 		State
    ```
 
 
-2. 动态配置网卡的IP地址
+2. 动态配置网卡的 IP 地址
 
    ```shell
    # dhclient
    ```
 
 
-3. 查询IP是否配置成功
+3. 查询 IP 是否配置成功
 
    ```shell
    # ip a
@@ -162,9 +166,9 @@ Id 	Name 		State
    		valid_lft 86453sec preferred_lft 86453sec
    ```
 
-​	如上回显可知，成功分配了IP地址192.168.1.3，虚拟机可以直接使用配置的网卡
+   如上回显可知，成功分配了 IP 地址 192.168.1.3，虚拟机可以直接使用配置的网卡
 
-​	说明：使用的直通网卡如果没有连接物理网络，将获取不到网络信息。
+   说明：使用的直通网卡如果没有连接物理网络，将获取不到网络信息。
 
 #### 解绑 VFIO 驱动
 
@@ -175,32 +179,32 @@ Id 	Name 		State
 # echo 0000:03:00.0 > /sys/bus/pci/drivers/hinic/bind
 ```
 
-说明：绑定VFIO驱动前，可以再主机上执行 ethtool -i enp0 命令，获取网卡设备驱动类型。enp0为对应网卡名称。
+说明：绑定 VFIO 驱动前，可以再主机上执行 ethtool -i enp0 命令，获取网卡设备驱动类型。enp0 为对应网卡名称。
 
 ### SR-IOV 直通
 
 #### 简介
 
-使用VFIO设备直通时，虚拟机能直接访问硬件，但每个设备只能被一个虚拟机独占。SR-IOV 直通技术支持将一个 PF(Physical Function) 虚拟出多个 VF (Virtual Function)，并直通给不同虚拟机，解决了设备直通的独占问题，增加可用的设备。
+使用 VFIO 设备直通时，虚拟机能直接访问硬件，但每个设备只能被一个虚拟机独占。SR-IOV 直通技术支持将一个 PF(Physical Function) 虚拟出多个 VF (Virtual Function)，并直通给不同虚拟机，解决了设备直通的独占问题，增加可用的设备。
 
 #### 操作步骤
 
 1. 创建多个 VF：
 
-   sriov_numvfs文件用于描述SR-IOV提供的VF个数，存放在/sys/bus/pci/devices/domain\:bus\:slot.function/路径下，例如上述例子中的bus号03，slot号00，function号0的设备，可以使用如下命令创建4个VF：
+   sriov_numvfs 文件用于描述 SR-IOV 提供的 VF 个数，存放在 /sys/bus/pci/devices/domain\:bus\:slot.function/ 路径下，例如上述例子中的 bus 号 03，slot 号 00，function 号 0 的设备，可以使用如下命令创建4个 VF：
 
    ```shell
    # echo 4 > /sys/bus/pci/devices/0000\:03\:00.0/sriov_numvfs
    ```
 
 
-2. 确认VF设备创建成功
+2. 确认 VF 设备创建成功
 
    ```shell
    # lspci -v | grep "Eth" | grep 1822
    ```
 
-   回显如下，说明成功创建了4个VF 03:00.1、03:00.2、03:00.3、03:00.4：
+   回显如下，说明成功创建了4个 VF 03:00.1、03:00.2、03:00.3、03:00.4：
 
    ```shell
    03:00.0 Ethernet controller: Huawei Technologies Co., Ltd. Hi1822 Family (4*25GE) (rev 45)
@@ -211,4 +215,4 @@ Id 	Name 		State
    ```
 
 
-3. 上述创建的VF设备均可以直通给虚拟机，使用 SR-IOV 设备的方法与普通 PCI 设备的直通方法相同。
+3. 上述创建的 VF 设备均可以直通给虚拟机，使用 SR-IOV 设备的方法与普通 PCI 设备的直通方法相同。
