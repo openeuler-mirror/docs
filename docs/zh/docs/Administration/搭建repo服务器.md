@@ -236,7 +236,7 @@ Packages为rpm包所在的目录，repodata为repo源元数据所在的目录，
     - 在root权限下拷贝镜像中相关文件至/usr/share/nginx/repo下，并修改目录权限。
 
         ```
-        # mount /home/openEuler/openEuler-21.03-aarch64-dvd.iso  /mnt/
+        # mount /home/openEuler/openEuler-21.09-aarch64-dvd.iso  /mnt/
         # cp -r /mnt/Packages /usr/share/nginx/repo
         # cp -r /mnt/repodata /usr/share/nginx/repo
         # cp -r /mnt/RPM-GPG-KEY-openEuler /usr/share/nginx/repo
