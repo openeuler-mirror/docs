@@ -162,6 +162,7 @@ headless: true
         -   [部署控制面组件]({{< relref "./docs/Kubernetes/部署控制面组件.md" >}})
         -   [部署Node节点组件]({{< relref "./docs/Kubernetes/部署Node节点组件.md" >}})
     -   [运行测试pod]({{< relref "./docs/Kubernetes/运行测试pod.md" >}})
+-   [Kubeedge部署指南]({{< relref "./docs/Kubernetes/Kubernetes.md" >}})
 -   [第三方软件安装指南]({{< relref "./docs/thirdparty_migration/thidrparty.md" >}})
     -   [OpenStack-Victoria部署指南]({{< relref "./docs/thirdparty_migration/OpenStack-victoria.md" >}})
     -   [HA 用户指南]({{< relref "./docs/desktop/ha.md" >}})
