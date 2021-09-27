@@ -55,6 +55,8 @@ pkgship是一款管理OS软件包依赖关系，提供依赖和被依赖关系�
 
 ## 安装工具
 
+> 说明：该软件支持在docker下运行。目前在openEuler21.09版本下，由于环境条件限制，创建docker时请使用--privileged参数，不使用--privileged参数将会导致软件启动失败，后续适配后将更新该文档。
+
 **1、pkgship工具安装**
 
   工具安装可通过以下两种方式中的任意一种实现。
@@ -224,6 +226,8 @@ pkgshipd stop 停止服务
 > 每次起停周期内仅支持一种方式，不允许两种操作同时使用。
 >
 > pkgshipd启动方式只允许在pkgshipuser用户下操作。
+>
+> docker环境下如果不支持systemctl命令，请使用pkgshipd启停方式。
 
 ## 工具使用
 
