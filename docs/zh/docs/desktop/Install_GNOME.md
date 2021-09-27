@@ -56,7 +56,7 @@ sudo dnf install adwaita-icon-theme atk atkmm at-spi2-atk at-spi2-core baobab \
 	libmediaart libnma libnotify libpeas librsvg2 libsecret libsigc++20 libsoup \
 	mm-common mutter nautilus orca pango pangomm libphodav python3-pyatspi \
 	python3-gobject rest rygel simple-scan sushi sysprof tepl totem totem-pl-parser \
-	tracker tracker3 tracker3-miners tracker-miners vala vte291 yelp yelp-tools \
+	tracker3 tracker3-miners vala vte291 yelp yelp-tools \
 	yelp-xsl zenity
 ```
 
