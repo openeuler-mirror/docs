@@ -1,6 +1,6 @@
-version : "20.03 LTS SP2"
-index: "94"
-display: 'none'
+version : "21.09"
+index: "93"
+display: 'flex'
 zhmodule:
   - {name: "了解",class: "know",link: [{title: "法律声明",href: "/zh/docs/20.03_LTS_SP2/docs/Releasenotes/法律声明.html"},{title: "发行说明",href: "/zh/docs/20.03_LTS_SP2/docs/Releasenotes/release_notes.html"}]}
   - {name: "安装",class: "install",link: [{title: "快速入门",href: "/zh/docs/20.03_LTS_SP2/docs/Quickstart/quick-start.html"},{title: "安装指南",href: "/zh/docs/20.03_LTS_SP2/docs/Installation/installation.html"}]}

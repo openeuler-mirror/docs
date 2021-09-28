@@ -136,7 +136,7 @@ h1 {
     text-align: center;
     margin-top: 50px;
     padding-left: 140px;
-    padding-right: 140px; 
+    padding-right: 140px;
 }
 
 #document_content {
@@ -303,7 +303,7 @@ h1 {
         line-height: 14px;
         border: 1px solid rgba(0, 0, 0, 0.3);
     }
-    
+
     .h5_search_container input:focus {
         outline: 0;
     }
@@ -328,7 +328,7 @@ h1 {
         position: relative;
         left: -30px;
         font-size: 16px;
-        
+
     }
 
     .h5_left a img {
@@ -342,7 +342,7 @@ h1 {
 
     .h5_index > img {
        margin-top: 90px;
-       
+
 
     }
 
@@ -403,7 +403,8 @@ h1 {
     }
 
     #h5_versions div:nth-child(6) {
-        visibility: hidden;
+        margin-right: -20px;
+        margin-top: 20px;
     }
 
     h3 {
@@ -502,7 +503,7 @@ h1 {
         width: 100%;
         z-index: 1000;
     }
-    
+
     .hot_documentation {
         margin-top: 0;
     }

@@ -13,6 +13,7 @@
             </div>
             <ul>
                 <li><i class="icon-tick" ></i>{{i18n "version_selection"}}</li>
+                <li><a href="{{ i18n "know_93_1"}}">21.09</a></li>
                 {{ if ne .Site.LanguageCode "ru"}}
                 <li><a href="{{ i18n "know_94_1"}}">20.03 LTS SP2</a></li>
                 <li><a href="{{i18n "know_96_1"}}">20.03 LTS SP1</a></li>
@@ -32,9 +33,9 @@
             <header>
                 <nav class="">
                     <div class="nav-menu">
-                
+
                         <div class="right">
-                            
+
                             <div name="lang" id="lang">
                                 <span style="margin-left: 30px;">{{ i18n "current_lang" }}</span>
                                 <i class="icon-down"></i>
@@ -45,7 +46,7 @@
                                     <div class="angle"></div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </nav>
@@ -60,13 +61,13 @@
                 </div>
                 <div class="search_right">
                     <img src="..\img\common\new-banner1.png" alt="" >
-                </div> 
+                </div>
             </div>
-            
+
             <div  id="search_content">
                 <div class="search-result index-result" class="container" >
                     <ul>
-                        
+
                     </ul>
                     <div id="web-pagination"></div>
                 </div>
@@ -84,7 +85,7 @@
                         {{i18n "A-Tune_content"}}
                     </div>
                 </div>
-                <div> 
+                <div>
                     <div class="hot_version">
                         <a href="{{i18n "secGear_link"}}">{{i18n "secGear_header"}}</a>
                         <span>{{i18n "hot_docs_version"}}</span>
@@ -149,7 +150,7 @@
             <div class="search-result">
                 <p class="title">{{ i18n "result_1" }}<span class="res-amount main-text"></span>{{ i18n "result_2" }}<span class="keyword main-text"></span>{{ i18n "result_3" }}</p>
                 <ul>
-                    
+
                 </ul>
                 <div id="pagination"></div>
             </div>
@@ -178,7 +179,9 @@
                         <a href="{{i18n "know_94_1"}}">20.03 LTS SP2</a>
                     </div>
                     {{ end }}
-                    <div></div>
+                    <div>
+                        <a href="{{ i18n "know_93_1"}}">21.09</a>
+                    </div>
                 </div>
             </div>
             <h3>{{ i18n "hot_document" }}</h3>
@@ -218,7 +221,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="h5_footer">
             <div>
                 <img src="/img/common/footerLogo.png" alt="" />

@@ -5,7 +5,7 @@
   <link href="{{ "css/markdown.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
   <link href="{{ "css/docsearch.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
   <link href="{{ "css/pcfooter.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
-  
+
   <body>
     <div id="all">
       <header>
@@ -36,6 +36,7 @@
                 <span></span>
                 <i class="v-icon-down"></i>
                 <div class="option">
+                  <a href="{{ i18n "know_93_1"}}">{{ .Site.Params.version_93 }}</a>
                   {{ if ne .Site.LanguageCode "ru"}}
                   <a href="{{ i18n "know_94_1"}}">{{ .Site.Params.version_94 }}</a>
                   <a href="{{ i18n "know_95_1"}}">{{ .Site.Params.version_95 }}</a>
@@ -53,6 +54,7 @@
                     <span></span>
                     <i class="icon-down"></i>
                     <div class="option">
+                      <a href="{{ i18n "know_93_1"}}">{{ .Site.Params.version_93 }}</a>
                       {{ if ne .Site.LanguageCode "ru"}}
                       <a href="{{ i18n "know_94_1"}}">{{ .Site.Params.version_94 }}</a>
                       <a href="{{ i18n "know_95_1"}}">{{ .Site.Params.version_95 }}</a>
@@ -70,7 +72,7 @@
             {{ partial "link.html" }}
             <div class="book-page container" id="page">
 
-              {{ template "main" . }} 
+              {{ template "main" . }}
             </div>
             {{ partial "insideNav.html"}}
           </main>
@@ -84,7 +86,7 @@
             <div class="search-result">
                 <p class="title">{{ i18n "result_1" }}<span class="res-amount main-text"></span>{{ i18n "result_2" }}<span class="keyword main-text"></span>{{ i18n "result_3" }}</p>
                 <ul>
-                    
+
                 </ul>
                 <div id="pagination"></div>
             </div>
