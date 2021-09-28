@@ -66,7 +66,7 @@ other = "Kunpeng community"
 other = "Documentation"
 
 [openeuler_document]
-other = "openEuler Documentation" 
+other = "openEuler Documentation"
 
 [catalog_text]
 other = "Content"
@@ -74,6 +74,8 @@ other = "Content"
 [other_text]
 other = "Reference Links"
 
+[know_93_1]
+other = "/en/docs/21.09/docs/Releasenotes/terms-of-use.html"
 [know_94_1]
 other = "/en/docs/20.03_LTS_SP2/docs/Releasenotes/terms-of-use.html"
 [know_95_1]

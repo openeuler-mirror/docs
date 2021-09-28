@@ -42,7 +42,7 @@ paginate = 10
     author = "Site template made by devcows Modified by openEuler team"
     defaultDescription = "Select the version and chapter of the openEuler documentation you want to view."
     email = "contact@openeuler.io"
-    
+
     ### DOC Configurations
     BookRepo = 'https://gitee.com/opengauss/docs/blob'
     BookEditPath= 'blob/master/content'
@@ -58,6 +58,7 @@ paginate = 10
     languageRu = "Русский"
 
     ltsText = "LTS"
+    version_94 = "21.09"
     version_95 = "21.03"
     version_96 = "20.03 LTS SP1"
     version_97 = "20.09"
