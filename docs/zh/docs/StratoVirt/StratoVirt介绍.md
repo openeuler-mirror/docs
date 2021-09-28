@@ -12,14 +12,15 @@ StratoVirt在架构设计和接口上预留了组件化拼装的能力和接口�
 
 StratoVirt核心架构自顶向下分为三层：
 
-- OCI兼容接口：兼容QMP（QEMU Machine Protocol）协议，具有完备的OCI兼容能力。
-- BootLoader：抛弃传统BIOS+GRUB的启动模式，实现了更轻更快的Bootloader。
-- MicroVM：虚拟化层，充分利用软硬协同能力，精简化设备模型；低时延资源伸缩能力。
+- 外部接口：兼容QMP（QEMU Monitor Protocol）协议，具有完备的OCI兼容能力，同时支持对接libvirt。
+- BootLoader：轻量化场景下抛弃传统BIOS+GRUB的启动模式实现快速启动，同时标准虚拟化场景下支持UEFI启动。
+- 模拟主板：
+  - microvm:  充分利用软硬协同能力，精简化设备模型，低时延资源伸缩能力。
+  - 标准机型：提供ACPI表实现UEFI启动，支持添加virtio-pci以及VFIO直通设备等，极大提高虚拟机的I/O性能。
 
 整体架构视图如**图1**所示。
 
 **图1** StratoVirt整体架构图
 
 ![](./figures/StratoVirt_architecture.png)
-
 

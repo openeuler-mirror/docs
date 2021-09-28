@@ -12,15 +12,16 @@ StratoVirt reserves component-based assembling capabilities and APIs for archite
 
 StratoVirt core architecture consists of three layers from top to bottom:
 
-- OCI campability API: compatible with the QEMU Machine Protocol (QMP) and has complete OCI compatibility capabilities.
-- BootLoader: discards the traditional BIOS plus GRUB boot mode and implements a lighter and faster bootloader.
-- MicroVM: At the virtualization layer, the software and hardware collaboration capability is fully used to simplify the device model with low-latency resource scaling capability.
+- External API: compatible with the QMP(QEMU Monitor Protocol) and has complete OCI compatibility capabilities. Meanwhile, StratoVirt can be managed by libvirt too.
+- BootLoader: abandon the traditional BIOS+GRUB boot mode to achieve fast boot in lightweight scenarios, and provide UEFI boot support for standard VM.
+- Emulated mainboard:
+  - microvm: At the virtualization layer, the software and hardware collaboration capability is fully used to simplify the device model with low-latency resource scaling capability.
+  - standard VM: realize UEFI boot with constructed ACPI tables. Virtio-pci and VFIO devices can be attached to greatly improve the I/O performance.
 
 
 The overall architecture is shown in **Figure 1**.
 
 **Figure 1** Overall architecture of StratoVirt
 
-![](./figures/arc.png)
-
+![](./figures/StratoVirt_architecture.png)
 
