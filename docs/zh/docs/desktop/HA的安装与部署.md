@@ -42,24 +42,24 @@
 ```
 [OS]
 name=OS
-baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/$basearch/
+baseurl=http://repo.openeuler.org/openEuler-21.09-LTS-SP2/OS/$basearch/
 enabled=1
 gpgcheck=1
-gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/$basearch/RPM-GPG-KEY-openEuler
+gpgkey=http://repo.openeuler.org/openEuler-21.09-LTS-SP2/OS/$basearch/RPM-GPG-KEY-openEuler
 
 [everything]
 name=everything
-baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/everything/$basearch/
+baseurl=http://repo.openeuler.org/openEuler-21.09-LTS-SP2/everything/$basearch/
 enabled=1
 gpgcheck=1
-gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/everything/$basearch/RPM-GPG-KEY-openEuler
+gpgkey=http://repo.openeuler.org/openEuler-21.09-LTS-SP2/everything/$basearch/RPM-GPG-KEY-openEuler
 
 [EPOL]
 name=EPOL
-baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/EPOL/$basearch/
+baseurl=http://repo.openeuler.org/openEuler-21.09-LTS-SP2/EPOL/$basearch/
 enabled=1
 gpgcheck=1
-gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/$basearch/RPM-GPG-KEY-openEuler
+gpgkey=http://repo.openeuler.org/openEuler-21.09-LTS-SP2/OS/$basearch/RPM-GPG-KEY-openEuler
 ```
 
 ### 安装HA软件包组件
