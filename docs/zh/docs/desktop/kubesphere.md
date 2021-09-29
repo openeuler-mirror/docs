@@ -12,14 +12,14 @@
 
 ### 软件安装
 
-1. 下载 KubeKey 与 Docker。
+1. 安装 KubeKey 。
 
    ```bash
-   yum install docker kubekey
+   yum install kubekey
    ```
 
    > ![](../Virtualization/public_sys-resources/icon-note.gif)**说明：**   
-   >对于多节点安装，需要在每个节点上安装 Docker。
+   >开始部署前可预先在集群中每个节点部署 Docker，也可交由 KubeKey 自动部署 (KubeKey 自动部署的 Docker 版本为 20.10.8) 。
 
 2. 部署 KubeSphere 集群。
 
