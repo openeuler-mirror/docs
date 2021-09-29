@@ -167,6 +167,7 @@ headless: true
     -   [KubeEdge部署指南]({{< relref "./docs/KubeEdge/KubeEdge部署指南.md" >}})
 -   [第三方软件安装指南]({{< relref "./docs/thirdparty_migration/thidrparty.md" >}})
     -   [OpenStack-Victoria部署指南]({{< relref "./docs/thirdparty_migration/OpenStack-victoria.md" >}})
+    -   [OpenStack-Wallaby部署指南]({{< relref "./docs/thirdparty_migration/OpenStack-Wallaby.md" >}})
     -   [HA 用户指南]({{< relref "./docs/desktop/ha.md" >}})
         -   [部署 HA]({{< relref "./docs/desktop/installha.md" >}})
         -   [HA 使用实例]({{< relref "./docs/desktop/usecase.md" >}})
