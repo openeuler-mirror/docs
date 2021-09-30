@@ -182,6 +182,7 @@ headless: true
     -   [XFCE]({{< relref "./docs/desktop/xfce.md" >}})
         -   [安装 Xfce]({{< relref "./docs/desktop/Install_XFCE.md" >}})
         -   [Xfce 用户指南]({{< relref "./docs/desktop/Xfce_userguide.md" >}})
+    -   [KubeSphere 安装指南]({{< relref "./docs/desktop/kubesphere.md " >}})
 -   [工具集用户指南]({{< relref "./docs/userguide/overview.md" >}})
     -   [pkgship]({{< relref "./docs/userguide/pkgship.md" >}})
 -   [Aops用户指南]({{< relref "./docs/A-Ops/自动化部署服务手册.md" >}})
