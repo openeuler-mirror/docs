@@ -154,7 +154,7 @@ headless: true
     -   [接口参考]({{< relref "./docs/secGear/接口参考.md" >}})
 -   [Kubernetes集群部署指南]({{< relref "./docs/Kubernetes/Kubernetes.md" >}})
     -   [准备虚拟机]({{< relref "./docs/Kubernetes/准备虚拟机.md" >}})
-    -   [手动部署集群]({{< relref "./docs/Kubernetes/部署Kubernetes集群.md" >}})
+    -   [手动部署集群]({{< relref "./docs/Kubernetes/手动部署集群.md" >}})
         -   [安装Kubernetes软件包]({{< relref "./docs/Kubernetes/安装Kubernetes软件包.md" >}})
         -   [准备证书]({{< relref "./docs/Kubernetes/准备证书.md" >}})
         -   [安装etcd]({{< relref "./docs/Kubernetes/安装etcd.md" >}})
