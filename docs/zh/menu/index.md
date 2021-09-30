@@ -185,7 +185,7 @@ headless: true
     -   [KubeSphere 安装指南]({{< relref "./docs/desktop/kubesphere.md " >}})
 -   [工具集用户指南]({{< relref "./docs/userguide/overview.md" >}})
     -   [pkgship]({{< relref "./docs/userguide/pkgship.md" >}})
--   [Aops用户指南]({{< relref "./docs/A-Ops/自动化部署服务手册.md" >}})
+-   [Aops用户指南]({{< relref "./docs/A-Ops/docs/overview.md" >}})
     -   [异常检测服务手册]({{< relref "./docs/A-Ops/异常检测服务手册.md" >}})
     -   [故障诊断说明手册]({{< relref "./docs/A-Ops/故障诊断说明书.md" >}})
     -   [服务部署手册]({{< relref "./docs/A-Ops/服务部署手册.md" >}})
