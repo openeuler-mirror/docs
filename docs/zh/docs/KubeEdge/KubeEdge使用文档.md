@@ -192,7 +192,7 @@ kubeedge-pi-counter-c69698d6-rb4xz      1/1     Running   0          2m      192
 
 ## 6. 其它
 
-**1）更过多的KubeEdge官方示例请参考 https://github.com/kubeedge/examples**
+**1）更多的KubeEdge官方示例请参考 https://github.com/kubeedge/examples**
 
 |Name | Description |
 |---|---|
@@ -214,4 +214,3 @@ https://github.com/kubeedge/edgemesh
 **3）自定义云边消息路由**
 
 https://kubeedge.io/en/docs/developer/custom_message_deliver/
-
