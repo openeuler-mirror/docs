@@ -37,7 +37,6 @@ headless: true
     -   [管理内存]({{< relref "./docs/Administration/memory-management.md" >}})
     -   [配置网络]({{< relref "./docs/Administration/配置网络.md" >}})
     -   [使用LVM管理硬盘]({{< relref "./docs/Administration/使用LVM管理硬盘.md" >}})
-    -   [使用KAE加速引擎]({{< relref "./docs/Administration/使用KAE加速引擎.md" >}})
     -   [搭建服务]({{< relref "./docs/Administration/搭建服务.md" >}})
         -   [搭建repo服务器]({{< relref "./docs/Administration/搭建repo服务器.md" >}})
         -   [搭建FTP服务器]({{< relref "./docs/Administration/搭建FTP服务器.md" >}})
