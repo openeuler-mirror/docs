@@ -8,7 +8,7 @@
 
 
 
-![](.\figures\arch.png)
+![](./figures/arch.png)
 
 自动化集群部署整体架构如图所示，各模块含义如下：
 
@@ -18,3 +18,5 @@
 - master：k8s 的 master 节点，承载集群的控制面。
 - worker：k8s 的负载节点，承载用户业务。
 - ClusterA、ClusterB、ClusterC：业务集群，承载用户业务。
+
+如果您对openEuler提供的k8s集群部署工具感兴趣，欢迎访问源码仓：https://gitee.com/openeuler/eggo
