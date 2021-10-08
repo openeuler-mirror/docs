@@ -166,7 +166,7 @@ headless: true
         -   [部署集群]({{< relref "./docs/Kubernetes/eggo部署集群.md" >}})
         -   [拆除集群]({{< relref "./docs/Kubernetes/eggo拆除集群.md" >}})
     -   [运行测试pod]({{< relref "./docs/Kubernetes/运行测试pod.md" >}})
--   [KubeEdge部署指南]({{< relref "./docs/KubeEdge/KubeEdge.md" >}})
+-   [KubeEdge部署指南]({{< relref "./docs/KubeEdge/overview.md" >}})
     -   [KubeEdge使用文档]({{< relref "./docs/KubeEdge/KubeEdge使用文档.md" >}})
     -   [KubeEdge部署指南]({{< relref "./docs/KubeEdge/KubeEdge部署指南.md" >}})
 -   [第三方软件安装指南]({{< relref "./docs/thirdparty_migration/thidrparty.md" >}})
