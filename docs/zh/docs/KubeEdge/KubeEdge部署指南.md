@@ -20,17 +20,17 @@ iSulad 是一个轻量级容器 runtime 守护程序，专为 IOT 和 Cloud 基�
 
 | 组件       | 版本                              |
 | ---------- | --------------------------------- |
-| OS         | openEuler 21.09（x86_64）         |
+| OS         | openEuler 21.09                   |
 | Kubernetes | 1.20.2-4                          |
 | iSulad     | 2.0.9-20210625.165022.git5a088d9c |
 | KubeEdge   | v1.8.0                            |
 
-### 节点规划
+### 节点规划（示例）
 
 | 节点         | 位置          | 组件                             |
 | ------------ | ------------- | -------------------------------- |
 | 9.63.252.224 | 云侧（cloud） | k8s（master）、isulad、cloudcore |
-| 9.63.252.227 | 端侧（edge）  | isulad、edgecore                 |
+| 9.63.252.227 | 边缘侧（edge）  | isulad、edgecore                 |
 
 ### 环境准备
 
@@ -68,10 +68,10 @@ $ swapoff -a
 # 设置hostname
 # 云侧
 $ hostnamectl set-hostname cloud.kubeedge
-# 端侧
+# 边缘侧
 $ hostnamectl set-hostname edge.kubeedge
 
-# 配置hosts文件
+# 配置hosts文件（示例），按照用户实际情况设置
 $ cat >> /etc/hosts << EOF
 9.63.252.224 cloud.kubeedge
 9.63.252.227 edge.kubeedge
@@ -79,6 +79,15 @@ EOF
 
 # 同步时钟，选择可以访问的NTP服务器即可
 $ ntpdate cn.pool.ntp.org
+
+# 安装 cri-tools 网络工具
+$ wget --no-check-certificate https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.20.0/crictl-v1.20.0-linux-amd64.tar.gz
+$ tar zxvf crictl-v1.20.0-linux-amd64.tar.gz -C /usr/local/bin
+
+# 安装 cni 网络插件
+$ wget --no-check-certificate https://github.com/containernetworking/plugins/releases/download/v0.9.0/cni-plugins-linux-amd64-v0.9.0.tgz
+$ mkdir -p /opt/cni/bin
+$ tar -zxvf cni-plugins-linux-amd64-v0.9.0.tgz -C /opt/cni/bin
 ```
 
 ### 配置iSulad
@@ -86,21 +95,19 @@ $ ntpdate cn.pool.ntp.org
 以下设置需要在cloud和edge端均配置
 
 ```bash
-# 安装iSulad
-$ yum install -y iSulad
 # 配置iSulad（只列出修改项）
-$ cat  /etc/isulad/daemon.json
+$ cat /etc/isulad/daemon.json
 {
         "registry-mirrors": [
                 "docker.io"
         ],
         "insecure-registries": [
                 "k8s.gcr.io",
-                "quay.io"，
+                "quay.io",
                 "hub.oepkgs.net"
         ],
-        "pod-sandbox-image": "k8s.gcr.io/pause:3.2",	# pause镜像设置
-        "network-plugin": "cni", # 置空表示禁用cni网络插件则下面两个路径失效，安装插件后重启isulad即可
+        "pod-sandbox-image": "k8s.gcr.io/pause:3.2",
+        "network-plugin": "cni",
         "cni-bin-dir": "/opt/cni/bin",
         "cni-conf-dir": "/etc/cni/net.d",
 }
@@ -116,31 +123,16 @@ Environment="HTTPS_PROXY=http://..."
 $ systemctl daemon-reload && systemctl restart isulad
 ```
 
-### 安装k8s组件
+### 部署k8s组件
 
 k8s组件只需要在云侧安装部署
 
 ```bash
-# cri-tools 网络工具
-$ wget --no-check-certificate https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.20.0/crictl-v1.20.0-linux-amd64.tar.gz
-$ tar zxvf crictl-v1.20.0-linux-amd64.tar.gz -C /usr/local/bin
-
-# cni 网络插件
-$ wget --no-check-certificate https://github.com/containernetworking/plugins/releases/download/v0.9.0/cni-plugins-linux-amd64-v0.9.0.tgz
-$ mkdir -p /opt/cni/bin
-$ tar -zxvf cni-plugins-linux-amd64-v0.9.0.tgz -C /opt/cni/bin
-
-# master节点执行
+# 安装k8s工具
 $ yum install kubernetes-master kubernetes-kubeadm kubernetes-client kubernetes-kubelet
 # 开机启动kubelet
 $ systemctl enable kubelet --now
-```
 
-### 部署master节点
-
-k8s组件只需要在云侧安装部署
-
-```bash
 # 注意，init之前需要取消系统环境中的proxy
 $ unset `env | grep -iE "tps?_proxy" | cut -d= -f1`
 $ env | grep proxy
@@ -173,17 +165,18 @@ chown $(id -u):$(id -g) $HOME/.kube/config
 # 这个命令复制了admin.conf（kubeadm帮我们自动初始化好的kubectl配置文件）
 # 这里包含了认证信息等相关信息的非常重要的一些配置。
 
-# 重置（如果init出现问题可以重置）
-$ kubeadm reset  重置
+# 如果init出现问题可以重置
+$ kubeadm reset
+
 # 如果出现 Unable to read config path "/etc/kubernetes/manifests"
 $ mkdir -p /etc/kubernetes/manifests
 ```
 
 ### 配置网络
 
-**Calico网络插件在edge节点无法运行**， 所以这里使用`flannel`代替，已有用户在KubeEdge社区提交[issue](https://github.com/kubeedge/kubeedge/issues/2788#issuecomment-907627687)
+**calico网络插件在edge节点无法运行**，所以这里使用`flannel`代替，已有用户在KubeEdge社区提交[issue](https://github.com/kubeedge/kubeedge/issues/2788#issuecomment-907627687)
 
-因为云侧和端侧为不同的网络环境，需要配置不同的**亲和性**，所以这里需要两份flannel配置文件。
+因为云侧和边缘侧为不同的网络环境，需要配置不同的**亲和性**，所以这里需要两份flannel配置文件。
 
 ```bash
 # 下载flannel网络插件
@@ -191,8 +184,9 @@ $ wget https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kub
 
 # 准备云侧网络配置
 $ cp kube-flannel.yml kube-flannel-cloud.yml
+
 # 修改云侧网络配置
-diff --git a/kube-flannel.yml b/kube-flannel.yml
+$ patch kube-flannel-cloud.yml - <<EOF
 index c7edaef..f3846b9 100644
 --- a/kube-flannel.yml
 +++ b/kube-flannel.yml
@@ -214,11 +208,13 @@ index c7edaef..f3846b9 100644
        hostNetwork: true
        priorityClassName: system-node-critical
        tolerations:
+EOF
 
-# 准备端侧网络配置
+# 准备边缘侧网络配置
 $ cp kube-flannel.yml kube-flannel-edge.yml
-# 修改端侧网络配置
-diff --git a/kube-flannel.yml b/kube-flannel.yml
+
+# 修改边缘侧网络配置
+$ patch kube-flannel-edge.yml - <<EOF
 index c7edaef..66a5b5b 100644
 --- a/kube-flannel.yml
 +++ b/kube-flannel.yml
@@ -248,9 +244,11 @@ index c7edaef..66a5b5b 100644
          resources:
            requests:
              cpu: "100m"
-# 这里的--kube-api-url为端侧edgecore监听地址
+EOF
 
-# 配置calico网络插件
+# 这里的--kube-api-url为边缘侧edgecore监听地址
+
+# 配置flannel网络插件
 $ kubectl apply -f kube-flannel-cloud.yml
 $ kubectl apply -f kube-flannel-edge.yml
 
@@ -260,47 +258,10 @@ NAME             STATUS   ROLES                  AGE     VERSION
 cloud.kubeedge   Ready    control-plane,master   4h11m   v1.20.2
 ```
 
-如果使用`kubeadm`部署的k8s集群，那么kube-proxy会下发到端侧节点，但是edgecore无法与kube-proxy并存，所以要修改kube-proxy 的daemonset节点亲和性，禁止在端侧部署kube-proxy
-
-```bash
-$ kubectl edit ds kube-proxy -n kube-system
-# 添加以下配置
-   spec:
-     affinity:
-       nodeAffinity:
-         requiredDuringSchedulingIgnoredDuringExecution:
-           nodeSelectorTerms:
-           - matchExpressions:
-             - key: node-role.kubernetes.io/agent
-               operator: DoesNotExist
-```
-
-### iSulad配置
-
-KubeEdge 端侧edgecore监听端口`10350`与iSulad websocket端口冲突，端侧无法启动edgecore
-
-解决办法：修改iSulad配置(`/etc/isulad/daemon.json`)中的`websocket-server-listening-port`的字段为`10351`
-
-   ```bash
-diff --git a/daemon.json b/daemon.json
-index 3333590..336154e 100644
---- a/daemon.json
-+++ b/daemon.json
-@@ -31,6 +31,7 @@
-         "hub.oepkgs.net"
-     ],
-     "pod-sandbox-image": "k8s.gcr.io/pause:3.2",
-+    "websocket-server-listening-port": 10351,
-     "native.umask": "secure",
-     "network-plugin": "cni",
-     "cni-bin-dir": "/opt/cni/bin",
-   ```
-
-修改完配置文件之后，重启iSulad。
 
 ## 使用keadm部署
 
-如果使用keadm进行集群部署，则**只需要**在云侧和端侧均安装`kubeedge-keadm`rpm包即可。
+如果使用keadm进行集群部署，则**只需要**在云侧和边缘侧均安装`kubeedge-keadm`rpm包即可。
 
 ```bash
 $ yum install kubeedge-keadm
@@ -311,7 +272,7 @@ $ yum install kubeedge-keadm
 #### 初始化集群
 
 ```bash
-# --advertise-address为云侧IP
+# --advertise-address填写云侧IP
 $ keadm init --advertise-address="9.63.252.224" --kubeedge-version=1.8.0
 Kubernetes version verification passed, KubeEdge installation will start...
 W0829 10:41:56.541877  420383 warnings.go:67] apiextensions.k8s.io/v1beta1 CustomResourceDefinition is deprecated in v1.16+, unavailable in v1.22+; use apiextensions.k8s.io/v1 CustomResourceDefinition
@@ -345,7 +306,8 @@ CloudCore started
 ```bash
 # 修改/etc/kubeedge/config/cloudcore.yaml
 # 开启dynamic controller
-diff --git a/cloudcore.yaml b/cloudcore.yaml
+$ cd /etc/kubeedge/config
+$ patch cloudcore.yaml - <<EOF
 index 28235a9..313375c 100644
 --- a/cloudcore.yaml
 +++ b/cloudcore.yaml
@@ -366,13 +328,16 @@ index 28235a9..313375c 100644
      restTimeout: 60
    syncController:
      enable: true
+EOF
 
 # 云侧cloudcore可以通过systemd管理
 # 拷贝cloudcore.service到/usr/lib/systemd/system
 $ cp /etc/kubeedge/cloudcore.service /usr/lib/systemd/system
-# 杀掉当前cloudcore进程
+
+# 杀掉当前cloudcore进程后重启
 $ pkill cloudcore
 $ systemctl restart cloudcore
+
 # 查看cloudcore是否运行
 $ systemctl status cloudcore
 ● cloudcore.service
@@ -397,21 +362,27 @@ Aug 29 10:50:15 cloud.kubeedge cloudcore[424578]: I0829 10:50:15.966693  424578 
 Aug 29 10:50:17 cloud.kubeedge cloudcore[424578]: I0829 10:50:17.847150  424578 upstream.go:63] Start upstream devicecontroller
 ```
 
-至此，云侧的cloudcore已部署完成，接下来部署端侧edgecore
+至此，云侧的cloudcore已部署完成，接下来部署边缘侧edgecore
 
-### 部署端侧
+### 纳管边缘节点
 
-同样，在端侧机器上使用`keadm`加入云侧
+在边缘侧使用 `keadm join` 命令纳管边缘节点
 
 #### 修改iSulad配置
 
+文件位置：/etc/isulad/daemon.json
+
 ```bash
-# 文件位置：/etc/isulad/daemon.json
-# 设置"pod-sandbox-image"
-"pod-sandbox-image": "kubeedge/pause:3.1",
-# 设置websocket监听端口
-"websocket-server-listening-port": 10351,
+{
+    # 设置"pod-sandbox-image"
+    "pod-sandbox-image": "kubeedge/pause:3.1",
+    # KubeEdge边缘侧edgecore监听端口`10350`与iSulad websocket端口冲突，边缘侧无法启动edgecore。解决办法：修改iSulad配置(`/etc/isulad/daemon.json`)中的`websocket-server-listening-port`的字段为`10351`：
+    "websocket-server-listening-port": 10351,
+}
 ```
+
+修改完配置文件之后，使用 `systemctl restart isulad` 重启iSulad。
+
 
 #### 加入云侧
 
@@ -420,7 +391,7 @@ Aug 29 10:50:17 cloud.kubeedge cloudcore[424578]: I0829 10:50:17.847150  424578 
 $ keadm gettoken
 28c25d3b137593f5bbfb776cf5b19866ab9727cab9e97964dd503f87cd52cbde.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzAyOTE4MTV9.aGUyCi9gdysVtMu0DQzrD5TcV_DcXob647YeqcOxKDA
 
-# 在端侧使用keadm join 加入云侧
+# 在边缘侧使用 keadm join 加入云侧
 # --cloudcore-ipport是必须要加入的参数，10000是cloudcore默认端口
 $ keadm join --cloudcore-ipport=9.63.252.224:10000 --kubeedge-version=1.8.0 --token=28c25d3b137593f5bbfb776cf5b19866ab9727cab9e97964dd503f87cd52cbde.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzAyOTE4MTV9.aGUyCi9gdysVtMu0DQzrD5TcV_DcXob647YeqcOxKDA
 Host has mosquit+ already installed and running. Hence skipping the installation steps !!!
@@ -443,30 +414,24 @@ kubeedge-v1.8.0-linux-amd64/version
 KubeEdge edgecore is running, For logs visit: journalctl -u edgecore.service -b
 ```
 
-此时，edgecore并未部署成功，因为默认配置中使用的是docker，我们需要修改其配置文件用于对接iSulad
+此时，edgecore并未部署成功，因为默认配置中使用的是docker，我们需要修改其配置文件用于对接iSulad。
 
 #### 修改配置
 
 ```bash
-# 端侧edgecore可以通过systemd管理
+# 边缘侧edgecore可以通过systemd管理
 # 拷贝edgecore.service到/usr/lib/systemd/system
 $ cp /etc/kubeedge/edgecore.service /usr/lib/systemd/system
 
 # 修改edgecore配置
-$ vim /etc/kubeedge/config/edgecore.yaml
-diff --git a/edgecore.yaml b/edgecore.yaml
+$ cd /etc/kubeedge/config
+$ patch edgecore.yaml - <<EOF
 index 165e24b..efbfd49 100644
 --- a/edgecore.yaml
 +++ b/edgecore.yaml
 @@ -32,7 +32,7 @@ modules:
        server: 9.63.252.224:10000
        writeDeadline: 15
-   edgeMesh:
--    enable: true
-+    enable: false	# 关闭edgeMesh
-     lbStrategy: RoundRobin
-     listenInterface: docker0
-     listenPort: 40001
 @@ -73,10 +73,10 @@ modules:
      podSandboxImage: kubeedge/pause:3.1
      registerNode: true
@@ -490,6 +455,7 @@ index 165e24b..efbfd49 100644
      podStatusSyncInterval: 60
      remoteQueryTimeout: 60
    serviceBus:
+EOF
 
 # 杀掉当前edgecore进程
 $ pkill edgecore
@@ -498,17 +464,17 @@ $ pkill edgecore
 $ systemctl restart edgecore
 ```
 
-#### 检查端侧是否已经加入云侧
+#### 检查边缘节点是否纳管成功
 
 ```bash
-# 回到云侧，发现已经有了端侧节点
+# 回到云侧，发现已经有了边缘节点
 $ kubectl get node -A
 NAME             STATUS   ROLES                  AGE     VERSION
 cloud.kubeedge   Ready    control-plane,master   19h     v1.20.2
 edge.kubeedge    Ready    agent,edge             5m16s   v1.19.3-kubeedge-v1.8.0
 ```
 
-至此，使用keadm部署KubeEdge集群已经完成，接下来我们测试一下从云侧下发任务到端侧
+至此，使用keadm部署KubeEdge集群已经完成，接下来我们测试一下从云侧下发任务到边缘侧
 
 ### 部署应用
 
@@ -516,22 +482,21 @@ edge.kubeedge    Ready    agent,edge             5m16s   v1.19.3-kubeedge-v1.8.0
 
 ```bash
 # KubeEdge提供了一个nginx模板，我们可以直接使用
-$ kubectl apply -f $GOPATH/src/github.com/kubeedge/kubeedge/build/deployment.yaml
+$ kubectl apply -f https://github.com/kubeedge/kubeedge/raw/master/build/deployment.yaml
 deployment.apps/nginx-deployment created
 
-# 查看是否部署到了端侧
+# 查看是否部署到了边缘侧
 $ kubectl get pod -A -owide | grep nginx
 default       nginx-deployment-77f96fbb65-fnp7n        1/1     Running   0          37s   10.244.2.4     edge.kubeedge    <none>           <none>
 
 # 可以看到，已经成功部署到了edge节点
-
 ```
 
 #### 测试功能
 
 ```bash
 # 测试功能是否正常
-# 进入端侧节点，curl nginx的IP：10.244.2.4
+# 进入边缘侧节点，curl nginx的IP：10.244.2.4
 $ curl 10.244.2.4:80
 <!DOCTYPE html>
 <html>
@@ -564,27 +529,26 @@ Commercial support is available at
 
 ## 使用二进制部署
 
-用户也可以使用二进制部署kubeedge集群。 只需要使用两个rpm包: `cloudcore`(云侧) 和`edgecore`(端侧)
-
+用户也可以使用二进制部署kubeedge集群。只需要使用两个RPM包: `cloudcore`(云侧) 和`edgecore`(边缘侧)
+RPM
 > 使用二进制部署KubeEdge进行测试，切勿在生产环境中使用这种方式。
 
 ### 部署云侧
 
 >  进入云侧主机
 
-#### 安装`cloudcore`rpm包
+#### 安装 `cloudcore` RPM包
 
 ```bash
 $ yum install kubeedge-cloudcore
 ```
 
-#### 创建CRD
+#### 创建CRDs
 
 ```bash
-$ kubectl apply -f /etc/kubeedge/crds/devices/devices_v1alpha2_device.yaml
-$ kubectl apply -f /etc/kubeedge/crds/devices/devices_v1alpha2_devicemodel.yaml
-$ kubectl apply -f /etc/kubeedge/crds/reliablesyncs/cluster_objectsync_v1alpha1.yaml
-$ kubectl apply -f /etc/kubeedge/crds/reliablesyncs/objectsync_v1alpha1.yaml
+$ kubectl apply -f /etc/kubeedge/crds/devices/
+$ kubectl apply -f /etc/kubeedge/crds/reliablesyncs/
+$ kubectl apply -f /etc/kubeedge/crds/router/
 ```
 
 #### 准备配置文件
@@ -602,11 +566,11 @@ $ pkill cloudcore
 $ systemctl start cloudcore
 ```
 
-### 部署端侧
+### 部署边缘侧
 
-> 进入端侧主机
+> 进入边缘侧主机
 
-#### 安装`edgecore`rpm包
+#### 安装 `edgecore` RPM包
 
 ```bash
 $ yum install kubeedge-edgecore
@@ -625,8 +589,10 @@ $ edgecore --defaultconfig > /etc/kubeedge/config/edgecore.yaml
 ```bash
 $ kubectl get secret -nkubeedge tokensecret -o=jsonpath='{.data.tokendata}' | base64 -d
 1c4ff11289a14c59f2cbdbab726d1857262d5bda778ddf0de34dd59d125d3f69.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzE0ODM3MzN9.JY77nMVDHIKD9ipo03Y0mSbxief9qOvJ4yMNx1yZpp0
+
 # 将获取到的token添加到配置文件中
 sed -i -e "s|token: .*|token: ${token}|g" /etc/kubeedge/config/edgecore.yaml
+
 # token变量的值来自于之前步骤
 ```
 
@@ -874,7 +840,7 @@ spec:
 ### kube-flannel-edge.yml
 
 ```bash
-# 使用场景：云侧
+# 使用场景：边缘侧
 ---
 apiVersion: policy/v1beta1
 kind: PodSecurityPolicy
@@ -1250,7 +1216,7 @@ modules:
 ### edgecore.service
 
 ```bash
-# 使用场景：端侧
+# 使用场景：边缘侧
 # 文件位置：/etc/systemd/system/edgecore.service
 [Unit]
 Description=edgecore.service
@@ -1268,7 +1234,7 @@ WantedBy=multi-user.target
 ### edgecore.yaml
 
 ```bash
-# 使用场景：端侧
+# 使用场景：边缘侧
 # 文件位置：/etc/kubeedge/config/edgecore.yaml
 apiVersion: edgecore.config.kubeedge.io/v1alpha1
 database:
@@ -1296,7 +1262,7 @@ modules:
     tlsCaFile: /etc/kubeedge/ca/rootCA.crt
     tlsCertFile: /etc/kubeedge/certs/server.crt
     tlsPrivateKeyFile: /etc/kubeedge/certs/server.key
-    token: # 这里填写从云侧获取的token
+    token: "" # 这里填写从云侧获取的token
     websocket:
       enable: true
       handshakeTimeout: 30
@@ -1380,7 +1346,7 @@ modules:
 ### daemon.json
 
 ```bash
-# 使用场景：云侧、端侧
+# 使用场景：云侧、边缘侧
 # 文件位置：/etc/isulad/daemon.json
 {
     "group": "isula",
@@ -1414,7 +1380,7 @@ modules:
         "quay.io",
         "hub.oepkgs.net"
     ],
-    "pod-sandbox-image": "k8s.gcr.io/pause:3.2",	# 端侧时配置为 kubeedge/pause:3.1
+    "pod-sandbox-image": "k8s.gcr.io/pause:3.2",	# 边缘侧时配置为 kubeedge/pause:3.1
     "websocket-server-listening-port": 10351,
     "native.umask": "secure",
     "network-plugin": "cni",
