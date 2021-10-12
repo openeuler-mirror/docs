@@ -1,8 +1,6 @@
-FROM nginx:1.20.0
+FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:1.16.1-20.03-lts-sp2
 
-RUN apt-get update && \
-    apt install curl -y && \
-    apt-get install git -y
+RUN yum -y update && yum install -y git curl tar
 
 
 ENV HUGO_VERSION=0.86.0
