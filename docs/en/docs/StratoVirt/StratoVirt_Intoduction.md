@@ -3,7 +3,7 @@
 
 ## Overview
 
-StratoVirt is an enterprise-level virtualization platform oriented to cloud data centers in the computing industry. It uses a unified architecture to support VMs, containers, and serverless scenarios. StratoVirt has competitive advantages in key technologies such as lightweight low noise, software and hardware collaboration, and Rust language-level security.
+StratoVirt is an enterprise-level VMM(Virtual Machine Monitor) oriented to cloud data centers in the computing industry. It uses a unified architecture to support VMs, containers, and serverless scenarios. StratoVirt has competitive advantages in key technologies such as lightweight low noise, software and hardware collaboration, and Rust language-level security.
 StratoVirt reserves component-based assembling capabilities and APIs for architecture design and APIs. StratoVirt can flexibly assemble advanced features as required until it supports standard virtualization, and find the best balance among feature requirements, application scenarios, and lightness and dexterity.
 
 
