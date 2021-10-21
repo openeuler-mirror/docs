@@ -195,3 +195,7 @@ headless: true
     -   [机器管理手册]({{< relref "./docs/A-Ops/机器管理手册.md" >}})
     -   [自动化部署服务手册]({{< relref "./docs/A-Ops/自动化部署服务手册.md" >}})
     -   [配置溯源使用指导]({{< relref "./docs/A-Ops/配置溯源使用指导.md" >}})
+-   [容器OS升级用户指南]({{< relref "./docs/KubeOS/overview.md" >}})
+    -   [认识容器OS升级]({{< relref "./docs/KubeOS/认识容器OS升级.md" >}})
+    -   [安装与部署]({{< relref "./docs/KubeOS/安装与部署.md" >}})
+    -   [使用方法]({{< relref "./docs/KubeOS/使用方法.md" >}})
