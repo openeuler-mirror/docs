@@ -4,7 +4,7 @@ English | [简体中文](./README.md)
 
 ### Introduction
 
-DOCS contains all documents of the openEuler community, including the release notes, OS installation guide, administrator uide, virtualization, container, and A-Tune user guides, and application development guide.
+DOCS contains all documents of the openEuler community, including the release notes, OS installation guide, administrator guide, virtualization, container, and A-Tune user guides, and application development guide.
 
 ### Searching for a Document in DOCS
 
