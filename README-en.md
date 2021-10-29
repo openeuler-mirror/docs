@@ -8,10 +8,10 @@ DOCS contains all documents of the openEuler community, including the release no
 
 ### Searching for a Document in DOCS
 
-Open the **docs** folder. The folder contains documents in Chinese (**zh** folder) and English (**en** folder). For example, in the **en** folder, the **docs** folder contains different documents, and the **menu** folder displays the list of documents.   
-Open the **docs** folder. You can see sub-folders, each with relevant documents inside. The following table shows an example of what the sub-folders may contain:  
+1. Open the **docs** folder. The folder contains documents in Chinese (**zh** folder) and English (**en** folder). For example, in the **en** folder, the **docs** folder contains different documents, and the **menu** folder displays the list of documents.   
+2. Open the **docs** folder. You can see sub-folders, each with relevant documents inside. The following table shows an example of what the sub-folders may contain:  
 
-| folder | Content |
+| Folder | Content |
 |-----|-----|
 | **A-Tune** | *A-Tune User Guide* |
 | **Administrator** | *Administrator Guide* |
