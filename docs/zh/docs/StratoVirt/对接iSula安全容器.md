@@ -132,7 +132,7 @@ StratoVirt 通过对接 kata-containers来接入 isula 容器生态，此处给�
 
 5. 通过安全组件ozone进一步增强安全容器的隔离性。
 
-   修改 kata 配置文件 configuration.toml，将配置项 ozone_path 设置为ozone 可执行文件的路径（如果使用 yum 安装 stratovirt，ozone 可执行文件默认在 /usr/bin 目录下）。配置该项后，将打开 ozone 安全沙箱功能，作为虚拟化层隔离被攻击者突破后的保险，进一步增强 StratoVirt 安全容器的隔离性:
+   修改 kata 配置文件 configuration.toml，将配置项 ozone_path 设置为ozone 可执行文件的路径（如果使用 yum 安装 stratovirt，ozone 可执行文件默认在 /usr/bin 目录下）。配置该项后，将打开 ozone 安全沙箱功能，作为虚拟化层隔离被攻击者突破后的保险，进一步增强 StratoVirt 安全容器的隔离性：
 
    ```shell
    # Path for the ozone specific to stratovirt
