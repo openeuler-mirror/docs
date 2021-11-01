@@ -31,7 +31,7 @@ Different from a common container that needs to be started by specifying a conta
 ## Constraints
 
 -   The rootfs directory specified by the  **--external-rootfs**  parameter must be an absolute path.
--   The rootfs directory specified by the  **--external-rootfs**  parameter must be a complete OS environment. Otherwise, the container fails to be started.
+-   The rootfs directory specified by the  **--external-rootfs**  parameter must be a complete OS environment including **systemd** package. Otherwise, the container fails to be started.
 -   When a container is deleted, the rootfs directory specified by  **--external-rootfs**  is not deleted.
 -   Containers based on ARM rootfs cannot run on x86 servers. Containers based on x86 rootfs cannot run on ARM servers.
 -   You are not advised to start multiple container instances by using the same rootfs. That is, one rootfs is used only by container instances in the same lifecycle.
