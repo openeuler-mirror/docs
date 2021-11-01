@@ -28,7 +28,7 @@
 ## 约束限制
 
 -   参数--external-rootfs指定的rootfs目录必须为绝对路径，不能为相对路径。
--   参数--external-rootfs指定的rootfs目录必须为一个完整运行的操作系统环境，否则容器会启动失败。
+-   参数--external-rootfs指定的rootfs目录必须为一个完整运行的操作系统环境（包含systemd软件包），否则容器会启动失败。
 -   容器删除时，不会删除--external-rootfs指定的rootfs目录。
 -   不支持在x86环境上运行基于arm rootfs的容器，也不支持在arm环境上运行基于x86 rootfs的容器。
 -   同一份rootfs，不建议启动多个容器实例，即同一份rootfs只供一个生命周期内的容器实例使用。
