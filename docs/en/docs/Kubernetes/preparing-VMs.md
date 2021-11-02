@@ -95,7 +95,7 @@ A VM configuration file is required for creating a VM. For example, if the confi
  </disk>
  <disk type='file' device='cdrom'>
      <driver name='qemu' type='raw'/>
-     <source file='/mnt/openEuler-21.03-everything-aarch64-dvd.iso'/>
+     <source file='/mnt/openEuler-21.09-everything-aarch64-dvd.iso'/>
      <readonly/>
      <target dev='sdb' bus='scsi'/>
      <boot order='2'/>
