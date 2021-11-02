@@ -7,7 +7,7 @@ This section describes how to deploy a Kubernetes cluster.
 
 ## Environment
 
-Deploy based on the preceding [VM installation](./preparing-VMs.md) and obtain:
+Deploy based on the preceding [VM installation](./preparing-VMs.md) and obtain the following VM list:
 
 | HostName   | MAC               | IPv4               |
 | ---------- | ----------------- | -------------------|
