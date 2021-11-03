@@ -3,7 +3,7 @@
 **Note: Manual deployment applies only to experimental and learning environments and is not intended for commercial environments.**
 
 
-This section describes how to deploy a Kubernetes cluster.
+This chapter describes how to deploy a Kubernetes cluster.
 
 ## Environment
 
