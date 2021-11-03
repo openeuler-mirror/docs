@@ -170,7 +170,7 @@ $ yum clean all && yum makecache
 2. 执行如下命令，安装软件包。
 
     ```shell
-    $ yum install openstack-keystone httpd mod_wsgi
+    $ yum install openstack-keystone httpd python2-mod_wsgi
     ```
 
 3. 配置keystone，编辑 `/etc/keystone/keystone.conf` 文件。在[database]部分，配置数据库入口。在[token]部分，配置token provider
