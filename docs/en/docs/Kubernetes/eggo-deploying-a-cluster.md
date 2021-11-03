@@ -237,7 +237,7 @@ If the nodes in the cluster cannot meet service requirements, you can add nodes 
   Configure the nodes to be added in join.yaml. The following is an example:
 
   ```yaml
-  masters:                          # Configure the master node list. It is recommended to set each master node as a worker node. Otherwise, the master nodes may fail to directly access the pods.
+  masters:                          # Configure the master node list. It is recommended that each master node is also set as a worker node. Otherwise, the master nodes may fail to directly access the pods.
   - name: test0                     # Name of the node, which is the node name displayed when the Kubernetes cluster is queried.
     ip: 192.168.0.2                 #IP address of the node.
     port: 22                        # Port number for SSH login.
