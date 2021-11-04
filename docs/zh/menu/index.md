@@ -187,3 +187,7 @@ headless: true
     -   [patch-tracking]({{< relref "./docs/userguide/patch-tracking.md" >}})
     -   [pkgship]({{< relref "./docs/userguide/pkgship.md" >}})
 -   [Aops用户指南]({{< relref "./docs/Aopsuserguide/Aops.md" >}})
+-   [容器OS升级用户指南]({{< relref "./docs/KubeOS/overview.md" >}})
+    - [认识容器OS升级]({{< relref "./docs/KubeOS/认识容器OS升级.md" >}})
+    - [安装与部署]({{< relref "./docs/KubeOS/安装与部署.md" >}})
+    - [使用方法]({{< relref "./docs/KubeOS/使用方法.md" >}})
