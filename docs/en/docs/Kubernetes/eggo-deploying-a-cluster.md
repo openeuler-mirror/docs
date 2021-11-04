@@ -238,7 +238,7 @@ If the nodes in the cluster cannot meet service requirements, you can add nodes 
 
   ```yaml
   masters:                          # Configure the master node list. It is recommended that each master node is also set as a worker node. Otherwise, the master nodes may fail to directly access the pods.
-  - name: test0                     # Name of the node, which is the node name displayed when the Kubernetes cluster is queried.
+  - name: test0                     # Name of the node, which is the node name displayed to the Kubernetes cluster.
     ip: 192.168.0.2                 #IP address of the node.
     port: 22                        # Port number for SSH login.
     arch: arm64                     # Architecture. Set this parameter to amd64 for x86_64.
@@ -247,7 +247,7 @@ If the nodes in the cluster cannot meet service requirements, you can add nodes 
     port: 22
     arch: arm64
   workers:                          # Configure the worker node list.
-  - name: test0                     # Name of the node, which is the node name displayed when the Kubernetes cluster is queried.
+  - name: test0                     # Name of the node, which is the node name displayed to the Kubernetes cluster.
     ip: 192.168.0.4                 #IP address of the node.
     port: 22                        # Port number for SSH login.
     arch: arm64                     # Architecture. Set this parameter to amd64 for x86_64.
