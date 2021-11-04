@@ -1203,12 +1203,12 @@ Openstack 支持多种形态部署，此文档支持`ALL in One`以及`Distribut
     创建块存储服务API端点：
 
     ```shell
-    openstack endpoint create --region RegionOne volumev2 public http://controller:8776/v2/%s
-    openstack endpoint create --region RegionOne volumev2 internal http://controller:8776/v2/%s
-    openstack endpoint create --region RegionOne volumev2 admin http://controller:8776/v2/%s
-    openstack endpoint create --region RegionOne volumev3 public http://controller:8776/v3/%s
-    openstack endpoint create --region RegionOne volumev3 internal http://controller:8776/v3/%s
-    openstack endpoint create --region RegionOne volumev3 admin http://controller:8776/v3/%s
+    openstack endpoint create --region RegionOne volumev2 public http://controller:8776/v2/%\(project_id\)s
+    openstack endpoint create --region RegionOne volumev2 internal http://controller:8776/v2/%\(project_id\)s
+    openstack endpoint create --region RegionOne volumev2 admin http://controller:8776/v2/%\(project_id\)s
+    openstack endpoint create --region RegionOne volumev3 public http://controller:8776/v3/%\(project_id\)s
+    openstack endpoint create --region RegionOne volumev3 internal http://controller:8776/v3/%\(project_id\)s
+    openstack endpoint create --region RegionOne volumev3 admin http://controller:8776/v3/%\(project_id\)s
     ```
 
 2. 安装软件包：
