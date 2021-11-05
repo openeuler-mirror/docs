@@ -96,19 +96,19 @@ StratoVirt 通过对接 kata-containers来接入 isula 容器生态，此处给�
    disable_vhost_net = true
    ```
 
-2. 使用 root 权限 和 **isula** 命令运行 busybox 安全容器，完成 StratoVirt 和 安全容器的对接。
+3. 使用 root 权限 和 **isula** 命令运行 busybox 安全容器，完成 StratoVirt 和 安全容器的对接。
 
    ```shell
    # isula run -tid --runtime "io.containerd.kata.v2" --net=none --name test busybox:latest sh
    ```
 
-3. 使用 **isula ps** 确认安全容器 test 正常运行，然后通过以下命令进入 test 容器。
+4. 使用 **isula ps** 确认安全容器 test 正常运行，然后通过以下命令进入 test 容器。
 
    ```
    # isula exec –ti test sh
    ```
 
-4. 通过虚拟机快照加速安全容器的启动速度，降低虚拟机内存开销。
+5. 通过虚拟机快照加速安全容器的启动速度，降低虚拟机内存开销。
 
    修改 kata 配置文件 configuration.toml，将配置项 enable_template 设置为 true，即允许虚拟机通过制作快照方式进行启动：
 
@@ -130,9 +130,9 @@ StratoVirt 通过对接 kata-containers来接入 isula 容器生态，此处给�
 
    配置项 enable_template 设置为 true 后，kata-containers 创建安全容器时，将会检查默认路径（/run/vc/vm/template）下是否存在快照文件，如果存在，直接以该快照文件启动虚拟机，如果不存在，则会创建虚拟机快照，穿件完成后，以该快照文件启动虚拟机。
 
-5. 通过安全组件ozone进一步增强安全容器的隔离性。
+6. 通过安全组件ozone进一步增强安全容器的隔离性。
 
-   修改 kata 配置文件 configuration.toml，将配置项 ozone_path 设置为ozone 可执行文件的路径（如果使用 yum 安装 stratovirt，ozone 可执行文件默认在 /usr/bin 目录下）。配置该项后，将打开 ozone 安全沙箱功能，作为虚拟化层隔离被攻击者突破后的保险，进一步增强 StratoVirt 安全容器的隔离性：
+   修改 kata 配置文件 configuration.toml，将配置项 ozone_path 设置为ozone 可执行文件的路径（如果使用 yum 安装 stratovirt，ozone 可执行文件默认在 /usr/bin 目录下）。配置该项后，将打开 ozone 安全沙箱功能，作为虚拟化层隔离被攻击者突破后的保险，进一步增强 StratoVirt 安全容器的隔离性:
 
    ```shell
    # Path for the ozone specific to stratovirt
