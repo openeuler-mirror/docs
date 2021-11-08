@@ -1352,7 +1352,7 @@ Add controller in the `/etc/hosts` file, for example, for node IP `10.0.0.11`, a
 5. Perform the verification
    Open a browser and enter **http://***\<host\_ip>* in the address box to log in to Horizon.
 
-### Tempest Installation
+### Installing Tempest
 
 Tempest is the integrated test service of OpenStack. If you need to run a fully automatic test of the functions of the installed OpenStack environment, you are advised to use Tempest. Otherwise, you can choose not to install it.
 
@@ -1379,7 +1379,7 @@ Tempest is the integrated test service of OpenStack. If you need to run a fully 
     tempest run
     ```
 
-### Ironic Installation
+### Installing Ironic
 
 Ironic is the bare metal service of OpenStack. If you need to deploy bare metal machines, you are advised to use Ironic. Otherwise, you can choose not to install it.
 
