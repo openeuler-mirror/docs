@@ -9,7 +9,7 @@ This section describes the compatibility of the hardware and software and the re
     - [Release Package Integrity Check](#release-package-integrity-check)
         - [Introduction](#introduction)
         - [Prerequisites](#prerequisites)
-        - [Procedure](#procedure)
+        - [Procedures](#procedures)
     - [Installation Requirements for PMs](#installation-requirements-for-pms)
         - [Hardware Compatibility](#hardware-compatibility)
         - [Minimum Hardware Specifications](#minimum-hardware-specifications)
@@ -27,68 +27,69 @@ Perform the following operations to obtain the openEuler release package:
 
 1.  Log in to the  [openEuler Community](https://openeuler.org/zh/)  website.
 2.  Click  **Download**. 
-3.  Choose the card **openEuler-21.03**. Click the link provided after  **Download ISO**.The download list is displayed.
+3.  Choose the card **openEuler-21.09** and click  **Download ISO**. The download list is displayed.
     -   **aarch64**: ISO image file of the AArch64 architecture
-    -   **x86\_64**: ISO image file of the x86\_64 architecture
+    -   **x86_64**: ISO image file of the x86_64 architecture
     -   **source**: ISO image file of the openEuler source code
-4.  Select the openEuler release package and verification file to be downloaded that adapt to the architecture of the environment to be installed.
+4.  Select the target openEuler release package and verification file based on the actual environment to be installed.
     -   AArch64 architecture:
         1.  Click **aarch64**.
-        2.  If you install the environment on the local host, download the release package **openEuler-21.03-aarch64-dvd.iso** and the verification file **openEuler-21.03-aarch64-dvd.iso.sha256sum** to the local host.
-        3.  If you install the environment on the network, download the release package **openEuler-21.03-netinst-aarch64-dvd.iso** and the verification file **openEuler-21.03-netinst-aarch64-dvd.iso.sha256sum** to the local host.
+        2.  If you install the environment on the local host, download the release package **openEuler-21.09-aarch64-dvd.iso** and the verification file **openEuler-21.09-aarch64-dvd.iso.sha256sum** to the local host.
+        3.  If you install the environment on the network, download the release package **openEuler-21.09-netinst-aarch64-dvd.iso** and the verification file **openEuler-21.09-netinst-aarch64-dvd.iso.sha256sum** to the local host.
 
     -   x86_64 architecture:
         1.  Click **x86_64**.
-		2.  If you install the environment on the local host, download the release package **openEuler-21.03-x86_64-dvd.iso** and the verification file **openEuler-21.03-x86_64-dvd.iso.sha256sum** to the local host.
-        3.  If you install the environment on the network, download the release package **openEuler-21.03-netinst-x86_64-dvd.iso** and the verification file **openEuler-21.03-netinst-x86_64-dvd.iso.sha256sum** to the local host.
+	2.  If you install the environment on the local host, download the release package **openEuler-21.09-x86_64-dvd.iso** and the verification file **openEuler-21.09-x86_64-dvd.iso.sha256sum** to the local host.
+        3.  If you install the environment on the network, download the release package **openEuler-21.09-netinst-x86_64-dvd.iso** and the verification file **openEuler-21.09-netinst-x86_64-dvd.iso.sha256sum** to the local host.
 
 >![](./public_sys-resources/icon-note.gif) **Note**   
 > When the network is available, install the environment on the network because the ISO release package is small.
+> The release package of AArch64 architecture supports UEFI mode, while the release package of x86_64 architecture supports UEFI mode and Legacy mode.
 
 ## Release Package Integrity Check
 
->![](./public_sys-resources/icon-note.gif) **NOTE:**   
->This section describes how to verify the integrity of the release package in the AArch64 architecture. The procedure for verifying the integrity of the release package in the x86\_64 architecture is the same.  
+>![](./public_sys-resources/icon-note.gif) **NOTE**   
+>This section describes how to verify the integrity of the release package in the AArch64 architecture. The procedure for verifying the integrity of the release package in the x86_64 architecture is the same.  
 
 ### Introduction
 
-To prevent the software package from being incompletely downloaded due to network or storage device faults during transmission, you need to verify the integrity of the software package after obtaining it. Only the software packages that pass the verification can be installed.
+To prevent the software package from being incompletely downloaded due to network or storage device faults during transmission, you need to verify the integrity of the software package after obtaining it. Only the software package that passes the verification can be installed.
 
-Compare the verification value recorded in the verification file with the .iso file verification value calculated manually to check whether the software package passes the verification. If the verification values are consistent, the .iso file is not damaged. If they are inconsistent, you can confirm that the file is damaged and you need to obtain the file again.
+Compare the verification value recorded in the verification file with the .iso file verification value calculated manually to check whether the software package passes the verification. If the values are consistent, the .iso file is not damaged. Otherwise, the file is damaged and you need to obtain it again.
 
 ### Prerequisites
 
 Before verifying the integrity of the release package, you need to prepare the following files:
 
-ISO file:  **openEuler-21.03-aarch64-dvd.iso**
+ISO file:  **openEuler-21.09-aarch64-dvd.iso**
 
-Verification file:  **openEuler-21.03-aarch64-dvd.iso.sha256sum**
+Verification file:  **openEuler-21.09-aarch64-dvd.iso.sha256sum**
 
-### Procedure
+### Procedures
 
 To verify the file integrity, perform the following operations:
 
 1.  Obtain the verification value in the verification file. Run the following command:
 
     ```
-    $ cat openEuler-21.03-aarch64-dvd.iso.sha256sum 
+    $ cat openEuler-21.09-aarch64-dvd.iso.sha256sum 
     ```
 
 2.  Calculate the SHA256 verification value of the file. Run the following command:
 
     ```
-    $ sha256sum openEuler-21.03-aarch64-dvd.iso
+    $ sha256sum openEuler-21.09-aarch64-dvd.iso
     ```
 
     After the command is run, the verification value is displayed.
 
-3.  Check whether the values calculated in step 1 and step 2 are consistent.
+3.  Check whether the values obtained from the step 1 and step 2 are consistent.
 
-    If the verification values are consistent, the .iso file is not damaged. If they are inconsistent, you can confirm that the file is damaged and you need to obtain the file again.
+    If the values are consistent, the .iso file is not damaged. Otherwise, the file is damaged and you need to obtain it again.
 
 ## Installation Requirements for PMs
 
-To install the openEuler OS on a PM, the PM must meet the following hardware compatibility and minimum hardware requirements.
+To install the openEuler OS on a PM, the PM must meet the following requirements.
 
 ### Hardware Compatibility
 
@@ -117,11 +118,11 @@ You need to take hardware compatibility into account during openEuler installati
 | Architecture  | AArch64 or x86_64 |
 | CPU  | Two CPUs |
 | Memory  | ≥ 4 GB (8 GB or higher recommended for better user experience) |
-| Hard disk  | ≥ 120 GB (for better user experience) |
+| Hard disk  | ≥ 32 GB (120 GB or higher recommended for better user experience) |
 
 ## Installation Requirements for VMs
 
-To install the openEuler OS on a VM, the VM must meet the following hardware compatibility and minimum hardware requirements.
+To install the openEuler OS on a VM, the PM must meet the following requirements.
 
 ### Virtualization Platform Compatibility
 
