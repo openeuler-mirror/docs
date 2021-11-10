@@ -1,14 +1,14 @@
-# Preparation
+# Preparations for Development Environment
 
 <!-- TOC -->
 
-- [Preparation](#preparation)
-    - [Configuring the Development Environment](#configuring-the-development-environment)
+- [Preparations for Development Environment](#preparation)
+    - [Environment Requirements](#environment-requirements)
         - [OS Requirements](#os-requirements)
-    - [Configuring a Repo Source](#configuring-a-repo-source)
-        - [Configuring a Repo Source by Directly Obtaining the Repo Source File](#configuring-a-repo-source-by-directly-obtaining-the-repo-source-file)
-        - [Configuring a Repo Source by Mounting an ISO File](#configuring-a-repo-source-by-mounting-an-iso-file)
-    - [Installing the Software Package](#installing-the-software-package)
+    - [Configuring the openEuler Yum Source](#configuring-the-openEuler-Yum-Source)
+        - [Configuring an Online Yum Source by Directly Obtaining the Online openEuler Repo Source](#configuring-an-online-yum-source-by-directly-obtaining-the-online-openeuler-repo-source)
+        - [Configuring a Local Yum Source by Mounting an ISO File](#configuring-a-local-yum-source-by-mounting-an-iso-file)
+    - [Installing the Software Packages](#installing-the-software-packages)
         - [Installing the JDK Software Package](#installing-the-jdk-software-package)
         - [Installing the rpm-build Software Package](#installing-the-rpm-build-software-package)
     - [Using the IDE for Java Development](#using-the-ide-for-java-development)
@@ -20,7 +20,7 @@
         - [Downloading and Running IntelliJ IDEA](#downloading-and-running-intellij-idea)
 
 <!-- /TOC -->
-## Configuring the Development Environment
+## Environment Requirements
 
 - If physical machines (PMs) are used, the minimum hardware requirements of the development environment are described in  [Table 1](#table154419352610).
   
@@ -117,18 +117,19 @@
 
 The openEuler OS is required.
 
-For details about how to install the openEuler OS, see the \[*openEuler 21.03 Installation Guide*\](./../Installation/Installation.html ). On the  **SOFTWARE SELECTION**  page, select  **Development Tools**  in the  **Add-Ons for Selected Environment**  area.
+For details about how to install the openEuler OS, see the  _Installation Guide_. On the  **SOFTWARE SELECTION**  page, select  **Development Tools**  in the  **Add-Ons for Selected Environment**  area.
 
-## Configuring a Repo Source
+## Configuring the openEuler Yum Source (Software Source)
 
-Configure an online yum source by directly obtaining the online openEuler repo source. Alternatively, configure a local yum source by mounting an ISO file and creating a local openEuler repo source.
+For configuring an online yum source, you can directly obtain the online openEuler repo source.
+For configuring a local yum source, you can mount an ISO file and create a local openEuler repo source.
 
-### Configuring a Repo Source by Directly Obtaining the Repo Source File
+### Configuring an Online Yum Source by Directly Obtaining the Online openEuler Repo Source 
 
 > ![](./public_sys-resources/icon-note.gif) **NOTE:**   
-> openEuler provides multiple repo sources for users online. For details about the repo sources, see [System Installation](./../Releasenotes/installing-the-os.html). This section uses the **openEuler\_aarch64.repo** file as an example to describe how to configure the OS repo source as the yum source.
+> openEuler provides multiple repo sources for users online. For details about the repo sources, see [System Installation](./../Releasenotes/installing-the-os.html). This section uses the OS repo source file of the AArch64 architecture as an example.
 
-1. Go to the yum source directory and check the .repo configuration file in the directory.
+1. Go to the yum source directory and check the .repo configuration file.
    
    ```
    $ cd /etc/yum.repos.d
@@ -136,21 +137,21 @@ Configure an online yum source by directly obtaining the online openEuler repo s
    openEuler.repo
    ```
 
-2. Edit the **openEuler\_aarch64.repo** file as the **root** user. Configure the online openEuler repo source as the yum source.
+2. Edit the **openEuler.repo** file as the **root** user. Configure the online openEuler repo source as the yum source.
    
    ```
    # vi openEuler.repo
    ```
    
-   Edit the  **openEuler\_aarch64.repo**  file as follows:
+   Edit the  **openEuler.repo**  file as follows:
    
    ```
    [osrepo]
    name=osrepo
-   baseurl=http://repo.openeuler.org/openEuler-21.03/OS/aarch64/
+   baseurl=http://repo.openeuler.org/openEuler-21.09/OS/aarch64/
    enabled=1
    gpgcheck=1
-   gpgkey=http://repo.openeuler.org/openEuler-21.03/OS/aarch64/RPM-GPG-KEY-openEuler
+   gpgkey=http://repo.openeuler.org/openEuler-21.09/OS/aarch64/RPM-GPG-KEY-openEuler
    ```
    
    ****
@@ -158,42 +159,42 @@ Configure an online yum source by directly obtaining the online openEuler repo s
    
    > ![](./public_sys-resources/icon-note.gif) **NOTE:**
    > 
-   > - The repoid in \[*repoid* \] indicates the ID of the software repository. Repoids in all .repo configuration files must be unique. In the example, repoid is set to **base**.
+   > -  **repoid** indicates the ID of the software repository. Repoids in all .repo configuration files must be unique. In the example,  **repoid**  is set to **base**.
    > - **name** indicates the string that the software repository describes.
    > - **baseurl** indicates the address of the software repository.
    > - **enabled** indicates whether to enable the software source repository. The value can be **1** or **0**. The default value is **1**, indicating that the software source repository is enabled.
    > - **gpgcheck** indicates whether to enable the GNU privacy guard (GPG) to check the validity and security of sources of RPM packages.  **1**  indicates GPG check is enabled.  **0**  indicates the GPG check is disabled. If this option is not specified, the GPG check is enabled by default.
-   > - **gpgkey** is the public key used to verify the signature.
+   > - **gpgkey** indicates the public key used to verify the signature.
   
 
-### Configuring a Repo Source by Mounting an ISO File
+### Configuring a Local Yum Source by Mounting an ISO File
 
 > ![](./public_sys-resources/icon-note.gif) ********NOTE:********   
-> openEuler provides multiple ISO release packages. For details about each ISO release package, see [System Installation](./../Releasenotes/installing-the-os.html). This section uses the  **openEuler-21.03-aarch64-dvd.iso**  file and  **openEuler-21.03-aarch64-dvd.iso.sha256sum**  verification file as examples. Modify them based on the actual requirements.
+> openEuler provides multiple ISO release packages. For details about each ISO release package, see [System Installation](./../Releasenotes/installing-the-os.html). This section uses the  **openEuler-21.09-aarch64-dvd.iso**  file and  **openEuler-21.09-aarch64-dvd.iso.sha256sum**  verification file as examples. Modify them based on the actual requirements.
 
 1. Download the ISO release package.
    
    - Download an ISO image using a cross-platform file transfer tool.
      
-     1. Log in to the openEuler community at  [https://openeuler.org](https://openeuler.org).
+     1. Log in to the openEuler community at [https://openeuler.org](http://openeuler.org).
      
      2. Click  **Download**.
      
      3. Click the link provided after **Download ISO**. The download list is displayed.
      
-     4. Select the version to be downloaded, for example, openEuler 21.03. Then, click  **openEuler-21.03**. The download list is displayed.
+     4. Select the target version, for example, openEuler 21.09. Then, click  **openEuler-21.09**. The download list is displayed.
      
      5. Click  **ISO**. The ISO download list is displayed.
         
         - **aarch64**: ISO image file of the AArch64 architecture
-        - **x86\_64**: ISO image file of the x86\_64 architecture
+        - **x86_64**: ISO image file of the x86_64 architecture
         - **source**: ISO image file of the openEuler source code
      
      6. Click  **aarch64**.
      
-     7. Click  **openEuler-21.03-aarch64-dvd.iso**  to download the openEuler release package to the local host.
+     7. Click  **openEuler-21.09-aarch64-dvd.iso**  to download the openEuler release package to the local host.
      
-     8. Click  **openEuler-21.03-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
+     8. Click  **openEuler-21.09-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
      
      9. Log in to the openEuler OS and create a directory for storing the release package and verification file, for example,  ~/iso\*\*.
         
@@ -211,19 +212,19 @@ Configure an online yum source by directly obtaining the online openEuler repo s
      
      3. Click the link provided after **Download ISO**. The download list is displayed.
      
-     4. Select the version to be downloaded, for example, openEuler 21.03. Then, click  **openEuler-21.03**. The download list is displayed.
+     4. Select the target version, for example, openEuler 21.09. Then, click  **openEuler-21.09**. The download list is displayed.
      
      5. Click  **ISO**. The ISO download list is displayed.
         
         - **aarch64**: ISO image file of the AArch64 architecture
-        - **x86\_64**: ISO image file of the x86\_64 architecture
+        - **x86_64**: ISO image file of the x86_64 architecture
         - **source**: ISO image file of the openEuler source code
      
      6. Click  **aarch64**.
      
-     7. <a name="li62369349505"></a>Right-click  **openEuler-21.03-aarch64-dvd.iso**  and choose  **Copy URL**  from the shortcut menu to copy the address of the openEuler release package.
+     7. <a name="li62369349505"></a>Right-click  **openEuler-21.09-aarch64-dvd.iso**  and choose  **Copy URL**  from the shortcut menu to copy the address of the openEuler release package.
      
-     8. <a name="li9236203405015"></a>Right-click  **openEuler-21.03-aarch64-dvd.iso.sha256sum**  and choose  **Copy URL**  from the shortcut menu to copy the address of the openEuler verification file.
+     8. <a name="li9236203405015"></a>Right-click  **openEuler-21.09-aarch64-dvd.iso.sha256sum**  and choose  **Copy URL**  from the shortcut menu to copy the address of the openEuler verification file.
      
      9. Log in to the openEuler OS, create a directory (for example,  **~/iso**) for storing the release package and verification file, and switch to the directory.
         
@@ -232,30 +233,30 @@ Configure an online yum source by directly obtaining the online openEuler repo s
         $ cd ~/iso
         ```
      
-     10. Run the  **wget**  command to remotely download the release package and verification file. In the command,  **ipaddriso**  and  **ipaddrisosum**  are the addresses copied in  [1.g](#li62369349505)  and  [1.h](#li9236203405015).
+     10. Run the  **wget**  command to remotely download the release package and verification file. In the command,  **ipaddriso**  and  **ipaddrisosum**  are the addresses copied in  [1.7](#li62369349505)  and  [1.8](#li9236203405015).
          
          ```
          $ wget ipaddriso
          $ wget ipaddrisosum
          ```
 
-2. Release Package Integrity Check
+2. Perform the Integrity Check on Release Package.
    
    1. Obtain the verification value in the verification file.
       
       ```
-      $ cat openEuler-21.03-aarch64-dvd.iso.sha256sum
+      $ cat openEuler-21.09-aarch64-dvd.iso.sha256sum
       ```
    
    2. Calculate the SHA256 verification value of the openEuler release package.
       
       ```
-      $ sha256sum openEuler-21.03-aarch64-dvd.iso 
+      $ sha256sum openEuler-21.09-aarch64-dvd.iso 
       ```
       
       After the command is run, the verification value is displayed.
    
-   3. Check whether the values calculated in step 1 and step 2 are consistent.
+   3. Check whether the values obtained from step 1 and step 2 are consistent.
       
       If the verification values are consistent, the .iso file is not damaged. If they are inconsistent, the file is damaged and you need to obtain the file again.
 
@@ -266,7 +267,7 @@ Configure an online yum source by directly obtaining the online openEuler repo s
    The following is an example:
    
    ```
-   # mount /home/iso/openEuler-21.03-aarch64-dvd.iso /mnt/
+   # mount /home/iso/openEuler-21.09-aarch64-dvd.iso /mnt/
    ```
    
    The mounted  **mnt**  directory is as follows:
@@ -283,7 +284,7 @@ Configure an online yum source by directly obtaining the online openEuler repo s
    └── RPM-GPG-KEY-openEuler
    ```
    
-   In the preceding command,  **Packages**  indicates the directory where the RPM package is stored,  **repodata**  indicates the directory where the repo source metadata is stored, and  **RPM-GPG-KEY-openEuler**  indicates the public key for signing openEuler.
+   In the preceding directory,  **Packages**  indicates the directory where the RPM package is stored,  **repodata**  indicates the directory where the repo source metadata is stored, and  **RPM-GPG-KEY-openEuler**  indicates the public key for signing openEuler.
 
 4. Go to the yum source directory and check the .repo configuration file in the directory.
    
@@ -293,13 +294,13 @@ Configure an online yum source by directly obtaining the online openEuler repo s
    openEuler.repo
    ```
 
-6. Edit the **openEuler\_aarch64.repo** file as the **root** user. Configure the local openEuler repo source created in step [3](#li6236932222) as the yum source.
+6. Edit the **openEuler.repo** file as the **root** user. Configure the local openEuler repo source created in step [3](#li6236932222) as the yum source.
    
    ```
    # vi openEuler.repo
    ```
    
-   Edit the  **openEuler\_aarch64.repo**  file as follows:
+   Edit the  **openEuler.repo**  file as follows:
    
     ```
     [localosrepo]
@@ -310,9 +311,9 @@ Configure an online yum source by directly obtaining the online openEuler repo s
     gpgkey=file:///mnt/RPM-GPG-KEY-openEuler
 	```
 
-## Installing the Software Package
+## Installing the Software Packages
 
-Install the software required for development. The software required varies in different development environments. However, the installation methods are the same. This section describes how to install common software packages (such as JDK and rpm-build). Some development software, such as GCC and GNU make, is provided by the openEuler OS by default.
+The software required varies in different development environments. However, the installation methods are the same. This section describes how to install common software packages (such as JDK and rpm-build). Some development software, such as GCC and GNU make, is provided by the openEuler OS by default.
 
 ### Installing the JDK Software Package
 
@@ -342,7 +343,7 @@ Install the software required for development. The software required varies in d
    $ dnf search jdk | grep jdk
    ```
    
-   View the command output and install the  **java-x.x.x-openjdk-devel.aarch64**  software package.  **x.x.x**  indicates the version number.
+   View the command output and install the  **java-x.x.x-openjdk-devel.aarch64**  software package.  **_x.x.x_**  indicates the version number.
 
 5. Install the JDK software package as the **root** user. The following uses the  **java-1.8.0-openjdk-devel**  software package as an example.
    
@@ -356,7 +357,7 @@ Install the software required for development. The software required varies in d
    $ java -version
    ```
    
-   Check the command output. If the command output contains "openjdk version "1.8.0\_232"", the JDK has been correctly installed. In the command output,  **1.8.0\_232**  indicates the JDK version.
+   Check the command output. If the command output contains "openjdk version "1.8.0_232"", the JDK has been correctly installed. In the command output,  **1.8.0_232**  indicates the JDK version.
 
 ### Installing the rpm-build Software Package
 
@@ -394,30 +395,30 @@ Install the software required for development. The software required varies in d
 
 ## Using the IDE for Java Development
 
-For small-sized Java applications, you can directly use JDK to compile them to run Java applications. However, for medium- and large-sized Java applications, this method cannot meet the development requirements. You can perform the following steps to install and use the IDE to facilitate Java development on the openEuler OS.
+For small-sized Java applications, you can directly use JDK to compile them to run Java applications. However, for medium- and large-sized Java applications, this method does not meet the development requirements. You can perform the following steps to install and use the IDE to facilitate Java development on the openEuler OS.
 
 ### Overview
 
-IntelliJ IDEA is a popular Java IDE. You can download the community edition of IntelliJ IDEA for free. Currently, openEuler supports Java development in the IntelliJ IDEA integrated development environment (IDE), improving the work efficiency of developers.
+IntelliJ IDEA is a popular Java IDE. You can download the community edition of IntelliJ IDEA for free. Currently, openEuler supports Java development using IntelliJ IDEA, improving the work efficiency of developers.
 
 ### Logging In to the Server Using MobaXterm
 
 MobaXterm is an excellent SSH client. It has an X Server and can easily solve remote GUI display problems.
 
-You need to download, install, and start MobaXterm in advance, and then log in to your server in SSH mode to perform the following operations:
+You need to download, install, and start MobaXterm in advance, and then log in to your server in SSH mode to perform the following operations.
 
 ### Setting the JDK Environment
 
-Before setting JAVA\_HOME, you need to find the installation path of the JDK. You are supported to have installed the JDK. If you have not installed the JDK, install it by referring to Preparation > Installing the Software Package > Installing the JDK Software Package.
+Before setting JAVA\_HOME, you need to find the installation path of the JDK. You are supported to have installed the JDK. If you have not installed the JDK, install it by referring to the preceding section "Installing the JDK Software Package".
 
-Run the following command to view the Java path:
+Run the following commands to view the Java path:
 
 ```
 $ which java
 /usr/bin/java
 ```
 
-Run the following command to check the directory to which the soft link points:
+Run the following commands to check the directory to which the soft link points:
 
 ```
 $ ls -la /usr/bin/java
@@ -426,7 +427,7 @@ $ ls -la /etc/alternatives/java
 lrwxrwxrwx. 1 root root  83 Mar 6 20:28 /etc/alternatives/java -> /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.232.b09-1.h2.aarch64/jre/bin/java
 ```
 
-The actual path is  **/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.232.b09-1.h2.aarch64**. Run the following command to set  **JAVA\_HOME**  and  **PATH**:
+**/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.232.b09-1.h2.aarch64** indicates the actual JDK path. Run the following commands to set  **JAVA\_HOME**  and  **PATH**:
 
 ```
 $ export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.232.b09-1.h2.aarch64
@@ -455,7 +456,7 @@ Switch to the SSHD configuration directory.
 $ cd ~/.ssh
 ```
 
-If the directory does not exist, run the following command to create the directory and then switch to the directory:
+If the directory does not exist, run the following command to create it and then switch to it:
 
 ```
 $ mkdir ~/.ssh
@@ -479,13 +480,13 @@ Edit the configuration file in the  **.ssh**  directory and save the file.
 
 ### Downloading and Running IntelliJ IDEA
 
-After the preceding environment configuration is complete, you can download and run the IntelliJ IDEA. The latest version of IntelliJ IDEA is incompatible with openEuler in some functions. You are advised to click  [here](https://www.jetbrains.com/idea/download/other.html)  and download the Linux package of the 2018 version. Move the downloaded package to the directory where you want to install the software and decompress the package.
+After the preceding environment configuration is complete, you can download and run IntelliJ IDEA. The latest version of IntelliJ IDEA is incompatible with openEuler in some functions. You are advised to click  [here](https://www.jetbrains.com/idea/download/other.html) to download the Linux package of the 2018 version. Move the downloaded package to the directory where you want to install the software and decompress the package.
 
 ```
 $ tar xf ideaIC-2018.3.tar.gz
 ```
 
-Decompress the package, switch to the IntelliJ IDEA directory, and run the IntelliJ IDEA.
+After the decompression is complete, switch to the IntelliJ IDEA directory and run IntelliJ IDEA.
 
 ```
 $ cd ./idea-IC-183.4284.148
