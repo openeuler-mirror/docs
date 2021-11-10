@@ -1,7 +1,7 @@
-# Using the KAE
+# Using the Kunpeng Accelerator Engine (KAE)
 <!-- TOC -->
 
-- [Using the KAE](#using-the-kae)
+- [Using the Kunpeng Accelerator Engine (KAE)](#using-the-kae)
     - [Overview](#overview)
     - [Application Scenarios](#application-scenarios)
     - [Installing, Running, and Uninstalling the KAE](#installing-running-and-uninstalling-the-kae)
@@ -11,25 +11,24 @@
     - [Querying Logs](#querying-logs)
     - [Acceleration Engine Application](#acceleration-engine-application)
         - [Example Code for the KAE](#example-code-for-the-kae)
-        - [Using the KAE in the OpenSSL Configuration File openssl.cnf](#using-the-kae-in-the-openssl-configuration-file-opensslcnf)
+        - [Usage of the KAE in the OpenSSL Configuration File openssl.cnf](#usage-of-the-kae-in-the-openssl-configuration-file-opensslcnf)
     - [Troubleshooting](#troubleshooting)
-        - [Initialization Failure](#initialization-failure)
+        - [Failed to Initialize the Accelerator Engine](#failed-to-initialize-the-accelerator-engine)
         - [Failed to Identify Accelerator Devices After the Acceleration Engine Is Installed](#failed-to-identify-accelerator-devices-after-the-acceleration-engine-is-installed)
         - [Failed to Upgrade the Accelerator Drivers](#failed-to-upgrade-the-accelerator-drivers)
 
 <!-- /TOC -->
 ## Overview
 
-Kunpeng Accelerator Engine \(KAE\) is a software acceleration library of openEuler, which provides hardware acceleration engine function on the Kunpeng 920 processor. The engine supports symmetric encryption, asymmetric encryption, and digital signature. It is ideal for accelerating SSL/TLS applications, and can significantly reduce processor consumption and improve processor efficiency. In addition, users can quickly migrate existing services through the standard OpenSSL interface.
+Kunpeng Accelerator Engine \(KAE\) is a software acceleration library of openEuler, which provides hardware acceleration engine function on the Kunpeng 920 processor. It supports symmetric encryption, asymmetric encryption, and digital signature. It is ideal for accelerating SSL/TLS applications, reducing processor consumption and improving processor efficiency. In addition, users can quickly migrate existing services through the standard OpenSSL interface.
 
 The KAE supports the following algorithms:
 
--   Digest algorithm SM3, which supports the asynchronous mode.
+-   Digest algorithm SM3, which supports asynchronous mode.
 -   Symmetric encryption algorithm SM4, which supports asynchronous, CTR, XTS, and CBC modes.
-
 -   Symmetric encryption algorithm AES, which supports asynchronous, ECB, CTR, XTS, and CBC modes.
--   Asymmetric algorithm RSA, which supports asynchronous mode, and key sizes 1024, 2048, 3072, and 4096.
--   Key negotiation algorithm DH, which supports asynchronous mode, and key sizes 768, 1024, 1536, 2048, 3072, and 4096.
+-   Asymmetric algorithm RSA, which supports asynchronous mode and key sizes 1024, 2048, 3072, and 4096.
+-   Key negotiation algorithm DH, which supports asynchronous mode and key sizes 768, 1024, 1536, 2048, 3072, and 4096.
 
 ## Application Scenarios
 
@@ -85,7 +84,7 @@ The KAE applies to the following scenarios, as shown in  [Table 1](#table1191582
 >-   If the accelerator is used in the physical machine scenario, the SMMU must be disabled. For details, see the  [TaiShan 200 Server BIOS Parameter Reference](https://support.huawei.com/enterprise/en/doc/EDOC1100088647).  
 
 -   CPU: Kunpeng 920
--   OS: openEuler-21.03-aarch64-dvd.iso
+-   OS: openEuler-21.09-aarch64-dvd.iso
 
 ##### KAE Software Description
 **Table  2**  RPM software packages of the KAE
@@ -100,7 +99,7 @@ The KAE applies to the following scenarios, as shown in  [Table 1](#table1191582
 <tbody><tr id="row48788899"><td class="cellrowborder" valign="top" width="48.57%" headers="mcps1.2.3.1.1 "><p id="p59586712"><a name="p59586712"></a><a name="p59586712"></a>kae_driver-<em id="i93394206582"><a name="i93394206582"></a><a name="i93394206582"></a>version number</em>-<em id="i184257245581"><a name="i184257245581"></a><a name="i184257245581"></a>1.OS type</em>.aarch64.rpm</p>
 </td>
 <td class="cellrowborder" valign="top" width="51.43%" headers="mcps1.2.3.1.2 "><p id="p61794345"><a name="p61794345"></a><a name="p61794345"></a>Accelerator driver, including the uacce.ko, hisi_qm.ko, hisi_sec2.ko, and hisi_hpre.ko kernel modules.</p>
-<p id="p186913584617"><a name="p186913584617"></a><a name="p186913584617"></a>Support: SM3, SM4, AES, RSA, and DH algorithms.</p>
+<p id="p186913584617"><a name="p186913584617"></a><a name="p186913584617"></a>Algorithms supported: SM3, SM4, AES, RSA, and DH.</p>
 </td>
 </tr>
 <tr id="row49528506"><td class="cellrowborder" valign="top" width="48.57%" headers="mcps1.2.3.1.1 "><p id="p52386074"><a name="p52386074"></a><a name="p52386074"></a>libwd-<em id="i071418435561"><a name="i071418435561"></a><a name="i071418435561"></a>version number</em>-<em id="i096243095817"><a name="i096243095817"></a><a name="i096243095817"></a>1.OS type</em>.aarch64.rpm</p>
@@ -113,7 +112,7 @@ The KAE applies to the following scenarios, as shown in  [Table 1](#table1191582
 </td>
 <td class="cellrowborder" valign="top" width="51.43%" headers="mcps1.2.3.1.2 "><p id="p54105439"><a name="p54105439"></a><a name="p54105439"></a>Dependency: libwd RPM package.</p>
 <p id="p17186905"><a name="p17186905"></a><a name="p17186905"></a>Coverage: <strong id="b121301253165118"><a name="b121301253165118"></a><a name="b121301253165118"></a>libkae.so</strong> dynamic library.</p>
-<p id="p20464425"><a name="p20464425"></a><a name="p20464425"></a>Support: SM3, SM4, AES, RSA, and DH algorithms.</p>
+<p id="p20464425"><a name="p20464425"></a><a name="p20464425"></a>Algorithms supported: SM3, SM4, AES, RSA, and DH.</p>
 </td>
 </tr>
 </tbody>
@@ -135,7 +134,7 @@ The KAE applies to the following scenarios, as shown in  [Table 1](#table1191582
 ##### Procedure
 1.  Log in to the openEuler OS CLI as user  **root**.
 2.  Create a directory for storing accelerator engine software packages.
-3.  Use SSH to copy all accelerator engine software package to the created directory.
+3.  Use SSH to copy all accelerator engine software packages to the created directory.
 4.  In the directory, run the  **rpm -ivh**  command to install the accelerator engine software packages.
 
     >![](./public_sys-resources/icon-note.gif) **NOTE:**   
@@ -173,7 +172,7 @@ The KAE applies to the following scenarios, as shown in  [Table 1](#table1191582
     hisi_zip modules installed
     ```
 
-5.  Run the  **rpm -qa**  command to check whether the accelerator software packages have been installed properly. Run the  **rpm -ql**  command to check whether files in the software packages are correct. The following is an example:
+5.  Run the  **rpm -qa**  command to check whether the accelerator software packages have been installed succcessfully. Run the  **rpm -ql**  command to check whether files in the software packages are correct. The following is an example:
 
     ```
     rpm -qa|grep -E "hisi|uacce|libwd|libkae"
@@ -231,17 +230,17 @@ The KAE applies to the following scenarios, as shown in  [Table 1](#table1191582
     ```
 
 
-##### Setting Environment Variables
-Run the following command to export the environment variable \(If you have specified the installation directory, use the actual installation directory instead of  **/usr/local**\):
+##### Environment Variables Setup
+Run the following command to export the environment variables \(If you have specified the installation directory, set **/usr/local** to the actual one\):
 
 ```
 export OPENSSL_ENGINES=/usr/local/lib/engines-1.1
 ```
 
-##### Performing the Post-Installation Check
+##### Post-Installation Check
 Run the  **rpm -qa**  command to check whether the accelerator engine software packages are successfully installed.
 
-If the command output contains  _software package name_**-**_version number_**-**, the software package is successfully installed. The following is an example:
+If the command output contains  _software package name_**-**_version number_**-**, the software packages are successfully installed. The following is an example:
 
 ```
 rpm -qa|grep -E "hisi|uacce|libwd|libkae"
@@ -257,7 +256,7 @@ libwd-1.2.10-3.oe1.aarch64
 hisi_zip-1.2.10-4.oe1.aarch64
 ```
 
-#### Performing Required Operations After Installation
+#### Required Operations After Installation
 
 ##### Testing the OpenSSL Accelerator Engine
 
@@ -283,7 +282,7 @@ You can run the following commands to test some accelerator functions.
 
 
 >![](./public_sys-resources/icon-note.gif) **NOTE:**   
->\#After KAE acceleration, the signature performance is improved from 724.1 sign/s to 2819 sign/s.  
+>\#After the KAE is used, the signature performance is improved from 724.1 sign/s to 2819 sign/s.  
 
 -   Use the OpenSSL software algorithm to test the asynchronous RSA performance.
 
@@ -305,7 +304,7 @@ You can run the following commands to test some accelerator functions.
 
 
 >![](./public_sys-resources/icon-note.gif) **NOTE:**   
->\#After KAE acceleration, the asynchronous RSA signature performance is improved from 735.7 sign/s to 54384.1 sign/s.  
+>\#After the KAE is used, the asynchronous RSA signature performance is improved from 735.7 sign/s to 54384.1 sign/s.  
 
 -   Use the OpenSSL software algorithm to test the performance of the SM4 CBC mode.
 
@@ -333,7 +332,7 @@ You can run the following commands to test some accelerator functions.
 
 
 >![](./public_sys-resources/icon-note.gif) **NOTE:**   
->After KAE acceleration, the SM4 CBC mode performance is improved from 82312.53 kbit/s to 383317.33 kbit/s when the input data block size is 8 MB.  
+>After the KAE is used, the SM4 CBC mode performance is improved from 82312.53 kbit/s to 383317.33 kbit/s when the input data block size is 8 MB.  
 
 -   Use the OpenSSL software algorithm to test the SM3 mode performance.
 
@@ -360,7 +359,7 @@ You can run the following commands to test some accelerator functions.
 
 
 >![](./public_sys-resources/icon-note.gif) **NOTE:**   
->After KAE acceleration, the SM3 algorithm performance is improved from 52428.80 kbit/s to 668292.44 kbit/s when the input data block size is 8 MB.  
+>After the KAE is used, the SM3 algorithm performance is improved from 52428.80 kbit/s to 668292.44 kbit/s when the input data block size is 8 MB.  
 
 -   Use the OpenSSL software algorithm to test the asynchronous performance of the AES algorithm in CBC mode.
 
@@ -389,8 +388,8 @@ You can run the following commands to test some accelerator functions.
 
 
 >![](./public_sys-resources/icon-note.gif) **NOTE:**   
->-   The AES algorithm supports only asynchronous usage when the data length is 256 KB or less.  
->-   After KAE acceleration, the AES algorithm performance is improved from 1123328.00 kbit/s to 3996774.40 kbit/s when the input data block size is 100 KB.  
+>-   The AES algorithm supports only asynchronous mode when the data length is 256 KB or less.  
+>-   After the KAE is used, the AES algorithm performance is improved from 1123328.00 kbit/s to 3996774.40 kbit/s when the input data block size is 100 KB.  
 
 ### Upgrading the Accelerator Software Packages
 
@@ -439,7 +438,7 @@ You can run the  **rpm -Uvh**  command to upgrade the accelerator software.
 ### Uninstalling the Accelerator Software Packages
 
 #### Scenario
-You do not need the accelerator engine software or you want to install new accelerator engine software.
+You do not need the accelerator engine software or you want to install a new one.
 
 #### Procedure
 1.  Use SSH to log in to the Linux CLI as user  **root**.
@@ -512,7 +511,7 @@ You do not need the accelerator engine software or you want to install new accel
 ## Acceleration Engine Application
 
 >![](./public_sys-resources/icon-note.gif) **NOTE:**   
->If you have not purchased the engine license, you are advised not to use the KAE engine to invoke the corresponding algorithms. Otherwise, the performance of the OpenSSL encryption algorithm may be affected.  
+>If you have not purchased the engine license, you are advised not to use the KAE to invoke the corresponding algorithms. Otherwise, the performance of the OpenSSL encryption algorithm may be affected.  
 
 
 
@@ -570,7 +569,7 @@ int main(int argc, char **argv)
 }
 ```
 
-### Using the KAE in the OpenSSL Configuration File openssl.cnf
+### Usage of the KAE in the OpenSSL Configuration File openssl.cnf
 
 Create the  **openssl.cnf**  file and add the following configuration information to the file:
 
@@ -645,10 +644,10 @@ OPENSSL_init_crypto(OPENSSL_INIT_LOAD_CONFIG, NULL);    OpenSSL_add_all_algorith
 
 
 
-### Initialization Failure
+### Failed to Initialize the Accelerator Engine
 
 #### Symptom
-The accelerator engine is not completely loaded due to an initialization failure.
+The accelerator engine is not completely loaded.
 
 #### Solution
 1.  Check whether the accelerator drivers are loaded successfully. Specifically, run the  **lsmod**  command to check whether uacce.ko, qm.ko, sgl.ko, hisi\_sec2.ko, hisi\_hpre.ko, hisi\_zip.ko, and hisi\_rde.ko exist.
