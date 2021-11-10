@@ -1,6 +1,6 @@
 # Viewing System Information
 
--   Run the following command to view the system information:
+-   View the system information.
 
     ```
     $ cat /etc/os-release
@@ -11,10 +11,10 @@
     ```
     $ cat /etc/os-release
     NAME="openEuler"
-    VERSION="21.03"
+    VERSION="21.09"
     ID="openEuler"
-    VERSION_ID="21.03"
-    PRETTY_NAME="openEuler 21.03"
+    VERSION_ID="21.09"
+    PRETTY_NAME="openEuler 21.09"
     ANSI_COLOR="0;31"
     ```
 
@@ -40,3 +40,8 @@
     ```
 
 
+-   View the real-time system resource information.
+
+    ```
+    $ top
+    ```
