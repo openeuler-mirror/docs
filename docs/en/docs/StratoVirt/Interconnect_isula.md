@@ -8,7 +8,7 @@ To provide a better isolation environment for containers and improve system secu
 
 ### **Prerequisites**
 
-The iSulad and kata-containers have been installed, and the iSulad supports the kata-runtime container runtime and the devicemapper storage driver.
+The iSulad and kata-containers have been installed, and the iSulad supports the containerd-kata-shim-v2 container runtime and the devicemapper storage driver.
 
 The following describes how to install and configure iSulad and kata-containers.
 
