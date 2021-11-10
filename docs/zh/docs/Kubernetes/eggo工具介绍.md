@@ -39,7 +39,7 @@ openEuler 提供的 Kubernetes 集群自动化部署工具使用命令行方式�
   - port：ssh 登录的端口
   - arch：etcd 节点的 CPU 架构，例如 x86_64 取值为 amd64
   
-- loadbalance：loadbalance 节点列表。每个 loadbalance 节点包含如下配置子项，多个 etcd 节点配置多组子项内容：
+- loadbalance：loadbalance 节点列表。每个 loadbalance 节点包含如下配置子项，多个 loadbalance 节点配置多组子项内容：
   - name：loadbalance 节点的名称，为 k8s 集群看到的该节点的名称
   - ip：loadbalance 节点的 IP 地址
   - port：ssh 登录的端口
@@ -131,7 +131,7 @@ openEuler 提供的 Kubernetes 集群自动化部署工具使用命令行方式�
           - type：配置项类型，可选值为 pkg、repo、bin、file、dir、image、yaml、shell 。如果配置为 repo ，请在对应节点上配置 repo 源
           - schedule：仅在 type 为 shell 时有效，代表用户想要执行脚本的时机，支持 prejoin（节点加入前）、postjoin（节点加入后）、precleanup（节点退出前）、postcleanup（节点退出后）。
           - TimeOut：脚本执行超时时间，超时时该进程被强制终止运行。未配置默认为 30s
-        - worker：配置会安装在所有 worker 节点，具体配置格式和 additon 下的 master 相同
+        - worker：配置会安装在所有 worker 节点，具体配置格式和 addition 下的 master 相同
 
 ### 白名单介绍
 
@@ -148,7 +148,7 @@ install 配置中 dst 项的值必须符合白名单规则，配置为白名单�
 
 ### 配置示例
 
-此处给出一个 YAML 文件配置示例。从示例可知，同一台机器，可以部署多个类型的节点，但是不同节点的配置必须一致，例如 test0 机器部署了 master 和 woker 类型。 
+此处给出一个 YAML 文件配置示例。从示例可知，同一台机器，可以部署多个类型的节点，但是不同节点的配置必须一致，例如 test0 机器部署了 master 和 worker 类型。 
 
 ```yaml
 cluster-id: k8s-cluster
@@ -413,7 +413,7 @@ openEuler 提供的集群部署工具，使用命令行 eggo 进行集群部署�
 | --password \| -p    | 否       | 指定 ssh 登录所配置节点的密码   |
 | --etcd              | 否       | 指定 etcd 节点的 IP 列表        |
 | --masters           | 否       | 指定 master 节点的 IP 列表      |
-| --workers           | 否       | 指定 master 节点的 IP 列表      |
+| --workers           | 否       | 指定 worker 节点的 IP 列表      |
 | --loadbalance \| -l | 否       | 指定 loadbalance 节点的 IP      |
 
 #### 查询帮助信息
