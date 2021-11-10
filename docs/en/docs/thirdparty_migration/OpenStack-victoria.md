@@ -400,7 +400,7 @@ Add controller in the `/etc/hosts` file, for example, for node IP `10.0.0.11`, a
    
    ```
    $ source admin-openrc
-   # Note: If the Kunpeng architecture is used in your environment, download the arm64 image.
+   # Note: If the Kunpeng architecture is used in your environment, download the ARM64 image.
    $ wget http://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img
    ```
    
@@ -1371,7 +1371,7 @@ Tempest is the integrated test service of OpenStack. If you need to run a fully 
     cd mytest
     vi etc/tempest.conf
     ```
-    Configure the current OpenStack environment information in tempest.conf. For details, see the [official example] (https://docs.openstack.org/tempest/latest/sampleconf.html).
+    Configure the current OpenStack environment information in **tempest.conf**. For details, see the [official example](https://docs.openstack.org/tempest/latest/sampleconf.html).
 
 4. Perform the test:
 
@@ -1401,7 +1401,7 @@ Ironic is the bare metal service of OpenStack. If you need to deploy bare metal 
 
    ##### Creating Service User Authentication
 
-   1. Create the bare metal service users:
+   1. Create the bare metal service user:
 
    ```
    $ openstack user create --password IRONIC_PASSWORD \ 
@@ -1428,7 +1428,7 @@ Ironic is the bare metal service of OpenStack. If you need to deploy bare metal 
 
    ##### Configuring the ironic-api Service
 
-   Configuration file path: /etc/ironic/ironic.conf
+   Configuration file path: **/etc/ironic/ironic.conf**.
 
    1. Use **connection** to configure the location of the database as follows. Replace **IRONIC_DBPASSWORD** with the password of user **ironic** and replace **DB_IP** with the IP address of the database server.
 
@@ -1540,15 +1540,15 @@ Ironic is the bare metal service of OpenStack. If you need to deploy bare metal 
    To communicate with other OpenStack services, the bare metal service needs to use the service users to get authenticated by the OpenStack Identity service when requesting other services. The credentials of these users must be configured in each configuration file associated to the corresponding service.
 
    ```
-   [Neutron] - Accessing the OpenStack network services.
+   [neutron] - Accessing the OpenStack network services.
    [glance] - Accessing the OpenStack image service.
    [swift] - Accessing the OpenStack object storage service.
    [cinder] - Accessing the OpenStack block storage service.
-   [Inspector] Accessing the OpenStack bare-metal introspection service.
+   [inspector] Accessing the OpenStack bare metal introspection service.
    [service_catalog] - A special item to store the credential used by the bare metal service. The credential is used to discover the API URL endpoint registered in the OpenStack identity authentication service catalog by the bare metal service.
    ```
 
-   For simplicity, you can use one service user for all services. For backward compatibility, the user name must be the same as that configured in [keystone_authtoken] of the ironic-api service. However, this is not mandatory. You can also create and configure a different service user for each service.
+   For simplicity, you can use one service user for all services. For backward compatibility, the user name must be the same as that configured in **[keystone_authtoken]** of the ironic-api service. However, this is not mandatory. You can also create and configure a different service user for each service.
 
    In the following example, the authentication information for the user to access the OpenStack network service is configured as follows:
 
@@ -1626,7 +1626,7 @@ Ironic is the bare metal service of OpenStack. If you need to deploy bare metal 
 
    ##### Configuring the ironic-inspector Service
 
-   Configuration file path: /etc/ironic-inspector/inspector.conf
+   Configuration file path: **/etc/ironic-inspector/inspector.conf**
 
    1. Create the database:
 
