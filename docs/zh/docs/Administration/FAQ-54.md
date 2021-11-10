@@ -445,3 +445,22 @@ Press any key to continue...
 1. 升级fuse使用dnf upgrade fuse，升级fuse3使用dnf fuse fuse3 fuse-common。
 2. 无需解决。
 3. 无需解决。
+
+## 安装卸载httpd-devel和apr-util-devel软件包，其中的依赖包gdbm-devel安装、卸载有报错
+
+### 问题现象
+
+1.  gdbm-devel-1.18.1-1包安装、卸载有报错；
+2.  问题1修复后，gdbm和gdbm-devel包更新到1.18.1-2版本，但在安装httpd-devel、apr-util-devel等包（依赖关系中有gdbm-devel软件包）时，默认安装的gdbm-devel还是1.18.1-1旧版本，导致问题报错依然存在。
+
+### 原因分析
+
+1.  gdbm-devel-1.18.1-1包中缺少提供info信息的help软件包，导致单独安装gdbm-devel并不能将help包引入进来，所以出现了如下告警信息。
+install-info: 没有那个文件或目录 for /usr/share/info/gdbm.info.gz
+2.  由于系统默认安装的gdbm主包是1.18.1-1版本，而没有安装gdbm-devel包。依赖gdbm-devel包的相关软件包在安装gdbm-devel包的过程中，仍会匹配gdbm的主包版本，故而依然安装了gdbm-devel的旧版本1.18.1-1,导致警告信息依然存在。
+
+### 解决方案
+
+1.  单包升级gdbm，安装使用gdbm-1.18.1-2版本相关软件包后，告警信息消失；
+2.  在单包升级gdbm后，再进行安装依赖的gdbm-devel软件包安装，让其依赖高版本gdbm软件包，告警信息消失。
+
