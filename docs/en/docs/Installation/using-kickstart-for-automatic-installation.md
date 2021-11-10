@@ -76,11 +76,11 @@ TFTP is used to transfer simple and trivial files between clients and the server
 
 ### Environment Requirements
 
-The environment requirements for semi-automatic installation of openEuler using kickstart are as follows:
+The environment requirements for semi-automatic installation of openEuler OS using kickstart are as follows:
 
--   PM/VM \(for details about how to create VMs, see the documents from corresponding vendors\): includes the computer where kickstart is used for automatic installation and the computer where the kickstart tool is installed.
+-   PM/VM \(For details about how to create VMs, see the documents from corresponding vendors\): includes the computer where kickstart is used for automatic installation and the computer where the kickstart tool is installed.
 -   Httpd: stores the kickstart file.
--   ISO: openEuler-21.03-aarch64-dvd.iso
+-   ISO: openEuler-21.09-aarch64-dvd.iso
 
 ### Procedure
 
@@ -106,7 +106,7 @@ To use kickstart to perform semi-automatic installation of openEuler, perform th
 
     ```
     # mkdir /var/www/html/ks
-    #vim /var/www/html/ks/openEuler-ks.cfg ===>The file can be obtained by modifying the anaconda-ks.cfg file automatically generated from openEuler, or can be created using the system-config-kickstart tool.
+    #vim /var/www/html/ks/openEuler-ks.cfg ===>The file can be obtained by modifying the  **anaconda-ks.cfg**  file automatically generated from openEuler OS.
     ====================================
     ***Modify the following information as required.***
     #version=DEVEL
@@ -177,16 +177,16 @@ To use kickstart to perform semi-automatic installation of openEuler, perform th
 **Installing the System**
 
 1.  The installation selection dialog box is displayed. 
-    1.  On the installation wizard page in [Starting the Installation](./installation-guideline.html#starting-the-installation), select  **Install openEuler 21.03**  and press  **e**.
+    1.  On the installation wizard page in [Starting the Installation](./installation-guideline.html#starting-the-installation), select  **Install openEuler 21.09**  and press  **e**.
     2.  Add  **inst.ks=http://server ip/ks/openEuler-ks.cfg**  to the startup parameters.
 
-        ![](./figures/startparam.png)
+        ![startparam.png](https://gitee.com/openeuler/docs/raw/master/docs/zh/docs/Installation/figures/startparam.png "startparam.png")
 
     3.  Press  **Ctrl**+**x**  to start the automatic installation.
 
 2.  Verify that the installation is complete.
 
-    After the installation is complete, the system automatically boots. If the first boot option of the system is set to the CD_ROM, the installation page is displayed again. Shut down the computer and change startup option to start from the hard disk preferentially.
+    After the installation is complete, the system automatically reboots. If the first boot option of the system is set to the CD_ROM, the installation page is displayed again. Shut down the computer and change startup option to start from the hard disk preferentially.
 
     ![](./figures/completing-the-automatic-installation.png)
 
@@ -197,11 +197,11 @@ To use kickstart to perform semi-automatic installation of openEuler, perform th
 
 The environment requirements for full-automatic installation of openEuler using kickstart are as follows:
 
--   PM/VM \(for details about how to create VMs, see the documents from corresponding vendors\): includes the computer where kickstart is used for automatic installation and the computer where the kickstart tool is installed.
+-   PM/VM \(For details about how to create VMs, see the documents from corresponding vendors\): includes the computer where kickstart is used for automatic installation and the computer where the kickstart tool is installed.
 -   Httpd: stores the kickstart file.
 -   TFTP: provides vmlinuz and initrd files.
 -   DHCPD/PXE: provides the DHCP service.
--   ISO: openEuler-21.03-aarch64-dvd.iso
+-   ISO: openEuler-21.09-aarch64-dvd.iso
 
 ### Procedure
 
@@ -248,10 +248,10 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
     # systemctl enable xinetd
     ```
 
-3.  <a name="en-us_topic_0229291289_l1692f6b9284e493683ffa2ef804bc7ca"></a>Run the following commands to prepare the installation source:
+3.  <a name="en-us_topic_0229291289_l1692f6b9284e493683ffa2ef804bc7ca"></a>Prepare the installation source.
 
     ```
-    # mount openEuler-21.03-aarch64-dvd.iso /mnt
+    # mount openEuler-21.09-aarch64-dvd.iso /mnt
     # cp -r /mnt/* /var/www/html/openEuler/
     ```
 
@@ -281,7 +281,7 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
     ...
     ```
 
-5.  Modify the PXE configuration file  **grub.cfg**  as follows:
+5.  Modify the PXE configuration file  **grub.cfg**  as follows. (Note: Currently, openEuler does not support the cfg file in bls format.)
 
     ```
     # cp -r /mnt/images/pxeboot/* /var/lib/tftpboot/
@@ -323,7 +323,7 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
     }
     ```
 
-6.  Run the following commands to configure DHCP \(which can be replaced by DNSmasq\):
+6. Configure DHCP \(which can be replaced by DNSmasq\).
 
     ```
     # dnf install dhcp -y
@@ -335,8 +335,8 @@ To use kickstart to perform full-automatic installation of openEuler, perform th
     # vim /etc/dhcp/dhcpd.conf
     ddns-update-style interim;
     ignore client-updates;
-    filename "grubaa64.efi";  # pxelinux location of the startup file;
-    next-server 192.168.122.1;     # (IMPORTANT) TFTP server IP address;
+    filename "grubaa64.efi";  # location of the pxelinux startup file;
+    next-server 192.168.122.1;     # (IMPORTANT) IP address of the TFTP server;
     subnet 192.168.122.0 netmask 255.255.255.0 {
     option routers 192.168.111.1; # Gateway address
     option subnet-mask 255.255.255.0; # Subnet mask
