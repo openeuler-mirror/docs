@@ -8,7 +8,7 @@ This section describes the compatibility of the hardware and software and the re
   - [Verifying the Image Integrity](#镜像完整性校验)
     - [Overview](#简介)
     - [Prerequisites](#前提条件)
-    - [Procedure](#操作指导)
+    - [Procedures](#操作指导)
   - [Installation Requirements](#安装要求)
     - [Hardware Compatibility](#硬件兼容支持)
     - [Minimum Hardware Specifications](#最小硬件要求)
@@ -20,21 +20,17 @@ Before installation, obtain the openEuler Raspberry Pi image and its verificatio
 
 1. Log in to the [openEuler Community](https://openeuler.org) website.
 
-2. Click **Download**.
+2. Click **Download** on the openEuler 21.09 window.
 
-3. Click the **Link** provided after **Download ISO**. The download list is displayed.
+3. Click **raspi_img**. The download list of Raspberry Pi images is displayed.
 
-4. Click **openEuler-21.03**. The openEuler 21.03 version download list is displayed.
-
-5. Click **Raspberry Pi**. The Raspberry Pi image download list is displayed.
-   
    - **aarch64**: image of the AArch64 architecture
 
-6. Click **aarch64** to download the Raspberry Pi AArch64 image download list.
+6. Click **aarch64**. The Raspberry Pi AArch64 image download list is displayed.
 
-7. Click **openEuler-21.03-raspi-aarch64.img.xz** to download the openEuler Raspberry Pi image to the local PC.
+7. Click **openEuler-21.09-raspi-aarch64.img.xz** to download the openEuler Raspberry Pi image to the local PC.
 
-8. Click **openEuler-21.03-raspi-aarch64.img.xz.sha256sum** to download the verification file of the openEuler Raspberry Pi image to the local PC.
+8. Click **openEuler-21.09-raspi-aarch64.img.xz.sha256sum** to download the verification file of the openEuler Raspberry Pi image to the local PC.
 
 ## Verifying the Image Integrity
 
@@ -48,35 +44,35 @@ Compare the verification value recorded in the verification file with the verifi
 
 Before verifying the integrity of the image file, ensure that the following files are available:
 
-Image file: **openEuler-21.03-raspi-aarch64.img.xz**
+Image file: **openEuler-21.09-raspi-aarch64.img.xz**
 
-Verification file: **openEuler-21.03-raspi-aarch64.img.xz.sha256sum**
+Verification file: **openEuler-21.09-raspi-aarch64.img.xz.sha256sum**
 
-### Procedure
+### Procedures
 
-To verify the file integrity, perform the following procedure:
+To verify the file integrity, perform the following procedures:
 
 1. Obtain the verification value from the verification file. Run the following command:
    
    ```
-   $ cat openEuler-21.03-raspi-aarch64.img.xz.sha256sum
+   $ cat openEuler-21.09-raspi-aarch64.img.xz.sha256sum
    ```
 
 2. Calculate the SHA256 verification value of the file. Run the following command:
    
    ```
-   $ sha256sum openEuler-21.03-raspi-aarch64.img.xz
+   $ sha256sum openEuler-21.09-raspi-aarch64.img.xz
    ```
    
    After the command is executed, the verification value is displayed.
 
-3. Check whether the verification value calculated in step 1 is consistent with that calculated in step 2.
+3. Check whether the verification values obtained from the step 1 and step 2 are consistent.
    
-   If the verification values are consistent, the downloaded file is not damaged. Otherwise, the downloaded file is incomplete and you need to obtain the file again.
+   If they are consistent, the downloaded file is not damaged. Otherwise, the downloaded file is incomplete and you need to obtain the file again.
 
 ## Installation Requirements
 
-If the openEuler operating system is installed in the Raspberry Pi environment, the Raspberry Pi environment must meet the hardware compatibility and minimum hardware specifications as follows.
+If the openEuler OS is installed in the Raspberry Pi environment, the Raspberry Pi environment must meet the following requirements.
 
 ### Hardware Compatibility
 
@@ -101,7 +97,7 @@ Currently, the openEuler Raspberry Pi image supports the 3B, 3B+, and 4B version
 <tbody>
 <tr id="ra68eff5c33a84bb2be6672a48a643d26"><td class="cellrowborder" valign="top" width="11.19111911191119%" headers="mcps1.2.4.1.1 "><p id="ac0a50d2069ab444cafff180647772df4"><a name="ac0a50d2069ab444cafff180647772df4"></a><a name="ac0a50d2069ab444cafff180647772df4"></a>Raspberry Pi version</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.06400640064006%" headers="mcps1.2.4.1.2 "><a name="ul97131912175915"></a><a name="ul97131912175915"></a><ul id="ul97131912175915"><li>Raspberry Pi 3B</li><li>Raspberry Pi 3B+</li><li>Raspberry Pi 4B</li></ul>
+<td class="cellrowborder" valign="top" width="40.06400640064006%" headers="mcps1.2.4.1.2 "><a name="ul97131912175915"></a><a name="ul97131912175915"></a><ul id="ul97131912175915"><li>Raspberry Pi 3B</li><li>Raspberry Pi 3B+</li><li>Raspberry Pi 4B</li><li>Raspberry Pi 400</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="48.74487448744874%" headers="mcps1.2.4.1.3 "><p id="a2601e9eece5f4c7bb02881c9ac647a61"><a name="a2601e9eece5f4c7bb02881c9ac647a61"></a><a name="a2601e9eece5f4c7bb02881c9ac647a61"></a>-</p>
 </td>
