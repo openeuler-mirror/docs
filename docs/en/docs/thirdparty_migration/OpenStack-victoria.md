@@ -6,9 +6,16 @@ OpenStack is an open source cloud computing infrastructure software project deve
 
 As an open source cloud computing management platform, OpenStack consists of several major components, such as Nova, Cinder, Neutron, Glance, Keystone, and Horizon. OpenStack supports almost all cloud environments. The project aims to provide a cloud computing management platform that is easy-to-use, scalable, unified, and standardized. OpenStack provides an infrastructure as a service (IaaS) solution that combines complementary services, each of which provides an API for integration.
 
-The official Yum source of openEuler 21.03 supports the Openstack Victoria version. You can configure the official Yum source and then deploy OpenStack by following the instructions of this document.
+The official Yum source of openEuler 21.09 supports the Openstack Victoria version. You can configure the official Yum source and then deploy OpenStack by following the instructions of this document.
 
 ## Preparing the Environment
+### Environment Configuration
+
+Add controller in the `/etc/hosts` file, for example, for node IP `10.0.0.11`, add the following information:
+
+```shell
+10.0.0.11   controller
+```
 
 ### Installing the SQL Database
 
@@ -178,14 +185,6 @@ The official Yum source of openEuler 21.03 supports the Openstack Victoria versi
    
    #vim /etc/httpd/conf.d/wsgi-keystone.conf
    ```
-   
-   ...
-   
-   TraceEnable off
-   
-   LoadModule wsgi\_module /usr/lib64/httpd/modules/mod\_wsgi\_python3.so
-   
-   ...
 
 9. After the installation is complete, run the following command to start the Apache HTTP service:
    
@@ -293,7 +292,7 @@ The official Yum source of openEuler 21.03 supports the Openstack Victoria versi
     Run the following script to load environment variables:
     
     ```
-    $ . admin-openrc
+    $ source admin-openrc
     ```
 
 ### Installing Glance
@@ -317,7 +316,7 @@ The official Yum source of openEuler 21.03 supports the Openstack Victoria versi
    Replace **GLANCE\_DBPASS** with the password of the **glance** database.
    
    ```
-   $ . admin-openrc
+   $ source admin-openrc
    ```
    
    Run the following commands to create the **glance** service credential, create the **glance** user, and add the **admin** role to the **glance** user:
@@ -400,7 +399,8 @@ The official Yum source of openEuler 21.03 supports the Openstack Victoria versi
    Download the image.
    
    ```
-    $ . admin-openrc
+   $ source admin-openrc
+   # Note: If the Kunpeng architecture is used in your environment, download the ARM64 image.
    $ wget http://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img
    ```
    
@@ -437,7 +437,7 @@ The official Yum source of openEuler 21.03 supports the Openstack Victoria versi
    Replace **PLACEMENT\_DBPASS** with the password of the **placement** database.
    
    ```
-   $ . admin-openrc
+   $ source admin-openrc
    ```
    
    Run the following commands to create the placement service credentials, create the **placement** user, and add the **admin** role to the **placement** user:
@@ -495,21 +495,6 @@ The official Yum source of openEuler 21.03 supports the Openstack Victoria versi
    ```
    
    Replace **PLACEMENT\_DBPASS** with the password of the **placement** database, and replace **PLACEMENT\_PASS** with the password of the **placement** user.
-   
-   Note: Configure the permission.
-   
-   ```
-   # vim /etc/httpd/conf.d/00-placement-api.conf
-   <Directory /usr/bin>
-   <IfVersion >= 2.4>
-   Require all granted
-   </IfVersion>
-   <IfVersion < 2.4>
-   Order allow,deny
-   Allow from all
-   </IfVersion>
-   </Directory>
-   ```
    
    Synchronize the database:
    
@@ -1103,7 +1088,9 @@ The official Yum source of openEuler 21.03 supports the Openstack Victoria versi
    
    Replace **CINDER\_DBPASS** with the password for the **cinder** database.
    
-   $ . admin-openrc
+    ```
+    $ source admin-openrc
+    ```
    
    Create Cinder service credentials:
    
@@ -1221,7 +1208,7 @@ The official Yum source of openEuler 21.03 supports the Openstack Victoria versi
    Install the software package:
    
    ```
-   yum install lvm2 device-mapper-persistent-data targetcli python-keystone
+   yum install lvm2 device-mapper-persistent-data targetcli python3-keystone
    ```
    
    Start the service:
@@ -1287,6 +1274,7 @@ The official Yum source of openEuler 21.03 supports the Openstack Victoria versi
    ```
    [DEFAULT]
    # ...
+   # Note: openEuler 21.09 does not provide the OpenStack Swift software package. You need to install it manually. Alternatively, you can use another backup backend, for example, NFS. The NFS has been tested and verified and can be used properly.
    backup_driver = cinder.backup.drivers.swift.SwiftBackupDriver
    backup_swift_url = SWIFT_URL
    ```
@@ -1309,7 +1297,7 @@ The official Yum source of openEuler 21.03 supports the Openstack Victoria versi
    List service components and verify that each step is successful.
    
    ```
-   $ . admin-openrc
+   $ source admin-openrc
    $ openstack volume service list
    ```
    
@@ -1328,13 +1316,25 @@ The official Yum source of openEuler 21.03 supports the Openstack Victoria versi
    Modify the variables.
    
    ```plain
-   ALLOWED_HOSTS = ['*', ]OPENSTACK_HOST = "controller"OPENSTACK_KEYSTONE_URL = "http://%s:5000/v3" % OPENSTACK_HOST
+   ALLOWED_HOSTS = ['*', ]
+   OPENSTACK_HOST = "controller"
+   OPENSTACK_KEYSTONE_URL = "http://%s:5000/v3" % OPENSTACK_HOST
    ```
    
    Add variables.
    
    ```plain
-   OPENSTACK_API_VERSIONS = {    "identity": 3,    "image": 2,    "volume": 3,}WEBROOT = "/dashboard/"COMPRESS_OFFLINE = TrueOPENSTACK_KEYSTONE_DEFAULT_DOMAIN = "default"OPENSTACK_KEYSTONE_DEFAULT_ROLE = "admin"LOGIN_URL = '/dashboard/auth/login/'LOGOUT_URL = '/dashboard/auth/logout/'
+   OPENSTACK_API_VERSIONS = {
+       "identity": 3,
+       "image": 2,
+       "volume": 3,
+   }
+   WEBROOT = "/dashboard/"
+   COMPRESS_OFFLINE = True
+   OPENSTACK_KEYSTONE_DEFAULT_DOMAIN = "default"
+   OPENSTACK_KEYSTONE_DEFAULT_ROLE = "admin"
+   LOGIN_URL = '/dashboard/auth/login/'
+   LOGOUT_URL = '/dashboard/auth/logout/'
    ```
 
 3. Run the following command in the **/usr/share/openstack-dashboard** directory:
@@ -1349,4 +1349,484 @@ The official Yum source of openEuler 21.03 supports the Openstack Victoria versi
    systemctl restart httpd
    ```
 
-5. Open a browser and enter **http://***\<host\_ip>* in the address box to log in to Horizon.
+5. Perform the verification
+   Open a browser and enter **http://***\<host\_ip>* in the address box to log in to Horizon.
+
+### Installing Tempest
+
+Tempest is the integrated test service of OpenStack. If you need to run a fully automatic test of the functions of the installed OpenStack environment, you are advised to use Tempest. Otherwise, you can choose not to install it.
+
+1. Install Tempest:
+    ```
+    yum install openstack-tempest
+    ```
+2. Initialize the directory:
+
+    ```
+    tempest init mytest
+    ```
+3. Modify the configuration file:
+
+    ```
+    cd mytest
+    vi etc/tempest.conf
+    ```
+    Configure the current OpenStack environment information in **tempest.conf**. For details, see the [official example](https://docs.openstack.org/tempest/latest/sampleconf.html).
+
+4. Perform the test:
+
+    ```
+    tempest run
+    ```
+
+### Installing Ironic
+
+Ironic is the bare metal service of OpenStack. If you need to deploy bare metal machines, you are advised to use Ironic. Otherwise, you can choose not to install it.
+
+1. Set the database.
+
+   The bare metal service stores information in the database. Create a **ironic** database that can be accessed by the **ironic** user and replace **IRONIC_DBPASSWORD** with a proper password.
+
+   ```
+   # mysql -u root -p MariaDB [(none)]> CREATE DATABASE ironic CHARACTER SET utf8; 
+   
+   MariaDB [(none)]> GRANT ALL PRIVILEGES ON ironic.* TO 'ironic'@'localhost' \     
+   IDENTIFIED BY 'IRONIC_DBPASSWORD'; 
+   
+   MariaDB [(none)]> GRANT ALL PRIVILEGES ON ironic.* TO 'ironic'@'%' \     
+   IDENTIFIED BY 'IRONIC_DBPASSWORD';
+   ```
+
+2. Install and configure the components.
+
+   ##### Creating Service User Authentication
+
+   1. Create the bare metal service user:
+
+   ```
+   $ openstack user create --password IRONIC_PASSWORD \ 
+   --email ironic@example.com ironic 
+   $ openstack role add --project service --user ironic admin 
+   $ openstack service create --name ironic --description \ 
+   "Ironic baremetal provisioning service" baremetal 
+   
+   $ openstack service create --name ironic-inspector --description     "Ironic inspector baremetal provisioning service" baremetal-introspection 
+   $ openstack user create --password IRONIC_INSPECTOR_PASSWORD --email ironic_inspector@example.com ironic_inspector 
+   $ openstack role add --project service --user ironic-inspector admin
+   ```
+
+   2. Create the bare metal service access entries:
+
+   ```
+   $ openstack endpoint create --region RegionOne baremetal admin http://$IRONIC_NODE:6385 
+   $ openstack endpoint create --region RegionOne baremetal public http://$IRONIC_NODE:6385 
+   $ openstack endpoint create --region RegionOne baremetal internal http://$IRONIC_NODE:6385 
+   $ openstack endpoint create --region RegionOne baremetal-introspection internal http://172.20.19.13:5050/v1 
+   $ openstack endpoint create --region RegionOne baremetal-introspection public http://172.20.19.13:5050/v1 
+   $ openstack endpoint create --region RegionOne baremetal-introspection admin http://172.20.19.13:5050/v1
+   ```
+
+   ##### Configuring the ironic-api Service
+
+   Configuration file path: **/etc/ironic/ironic.conf**.
+
+   1. Use **connection** to configure the location of the database as follows. Replace **IRONIC_DBPASSWORD** with the password of user **ironic** and replace **DB_IP** with the IP address of the database server.
+
+   ```
+   [database] 
+   
+   # The SQLAlchemy connection string used to connect to the 
+   # database (string value) 
+   
+   connection = mysql+pymysql://ironic:IRONIC_DBPASSWORD@DB_IP/ironic
+   ```
+
+   2. Configure the ironic-api service to use the RabbitMQ message broker. Replace **RPC_\*** with the detailed address and the credential of RabbitMQ.
+
+   ```
+   [DEFAULT] 
+   
+   # A URL representing the messaging driver to use and its full 
+   # configuration. (string value) 
+   
+   transport_url = rabbit://RPC_USER:RPC_PASSWORD@RPC_HOST:RPC_PORT/
+   ```
+
+   You can also use json-rpc instead of RabbitMQ.
+
+   3. Configure the ironic-api service to use the credential of the identity authentication service. Replace **PUBLIC_IDENTITY_IP** with the public IP address of the identity authentication server and **PRIVATE_IDENTITY_IP** with the private IP address of the identity authentication server, replace **IRONIC_PASSWORD** with the password of the **ironic** user in the identity authentication service.
+
+   ```
+   [DEFAULT] 
+   
+   # Authentication strategy used by ironic-api: one of 
+   # "keystone" or "noauth". "noauth" should not be used in a 
+   # production environment because all authentication will be 
+   # disabled. (string value) 
+   
+   auth_strategy=keystone 
+   
+   [keystone_authtoken] 
+   # Authentication type to load (string value) 
+   auth_type=password 
+   # Complete public Identity API endpoint (string value) 
+   www_authenticate_uri=http://PUBLIC_IDENTITY_IP:5000 
+   # Complete admin Identity API endpoint. (string value) 
+   auth_url=http://PRIVATE_IDENTITY_IP:5000 
+   # Service username. (string value) 
+   username=ironic 
+   # Service account password. (string value) 
+   password=IRONIC_PASSWORD 
+   # Service tenant name. (string value) 
+   project_name=service 
+   # Domain name containing project (string value) 
+   project_domain_name=Default 
+   # User's domain name (string value) 
+   user_domain_name=Default
+   ```
+
+   4. Create the bare metal service database table:
+
+   ```
+   $ ironic-dbsync --config-file /etc/ironic/ironic.conf create_schema
+   ```
+
+   5. Restart the ironic-api service:
+
+   ```
+   sudo systemctl restart openstack-ironic-api
+   ```
+
+   ##### Configuring the ironic-conductor Service.
+
+   1. Replace **HOST_IP** with the IP address of the conductor host.
+
+   ```
+   [DEFAULT] 
+   
+   # IP address of this host. If unset, will determine the IP 
+   # programmatically. If unable to do so, will use "127.0.0.1". 
+   # (string value) 
+   
+   my_ip=HOST_IP
+   ```
+
+   2. Specifies the location of the database. ironic-conductor must use the same configuration as ironic-api. Replace **IRONIC_DBPASSWORD** with the password of user **ironic** and replace DB_IP with the IP address of the database server.
+
+   ```
+   [database] 
+   
+   # The SQLAlchemy connection string to use to connect to the 
+   # database. (string value) 
+   
+   connection = mysql+pymysql://ironic:IRONIC_DBPASSWORD@DB_IP/ironic
+   ```
+
+   3. Configure the ironic-api service to use the RabbitMQ message broker. ironic-conductor must use the same configuration as ironic-api. Replace **RPC_\*** with the detailed address and the credential of RabbitMQ.
+
+   ```
+   [DEFAULT] 
+   
+   # A URL representing the messaging driver to use and its full 
+   # configuration. (string value) 
+   
+   transport_url = rabbit://RPC_USER:RPC_PASSWORD@RPC_HOST:RPC_PORT/
+   ```
+
+   You can also use json-rpc instead of RabbitMQ.
+
+   4. Configure the credentials to access other OpenStack services.
+
+   To communicate with other OpenStack services, the bare metal service needs to use the service users to get authenticated by the OpenStack Identity service when requesting other services. The credentials of these users must be configured in each configuration file associated to the corresponding service.
+
+   ```
+   [neutron] - Accessing the OpenStack network services.
+   [glance] - Accessing the OpenStack image service.
+   [swift] - Accessing the OpenStack object storage service.
+   [cinder] - Accessing the OpenStack block storage service.
+   [inspector] Accessing the OpenStack bare metal introspection service.
+   [service_catalog] - A special item to store the credential used by the bare metal service. The credential is used to discover the API URL endpoint registered in the OpenStack identity authentication service catalog by the bare metal service.
+   ```
+
+   For simplicity, you can use one service user for all services. For backward compatibility, the user name must be the same as that configured in **[keystone_authtoken]** of the ironic-api service. However, this is not mandatory. You can also create and configure a different service user for each service.
+
+   In the following example, the authentication information for the user to access the OpenStack network service is configured as follows:
+
+   ```
+   The network service is deployed in the identity authentication service domain named RegionOne. Only the public endpoint interface is registered in the service catalog.
+   
+   A specific CA SSL certificate is used for HTTPS connection when sending a request.
+   
+   The same service user as that configured for ironic-api.
+   
+   The dynamic password authentication plugin discovers a proper identity authentication service API version based on other options.
+   ```
+
+   ```
+   [neutron] 
+   
+   # Authentication type to load (string value) 
+   auth_type = password 
+   # Authentication URL (string value) 
+   auth_url=https://IDENTITY_IP:5000/ 
+   # Username (string value) 
+   username=ironic 
+   # User's password (string value) 
+   password=IRONIC_PASSWORD 
+   # Project name to scope to (string value) 
+   project_name=service 
+   # Domain ID containing project (string value) 
+   project_domain_id=default 
+   # User's domain id (string value) 
+   user_domain_id=default 
+   # PEM encoded Certificate Authority to use when verifying 
+   # HTTPs connections. (string value) 
+   cafile=/opt/stack/data/ca-bundle.pem 
+   # The default region_name for endpoint URL discovery. (string 
+   # value) 
+   region_name = RegionOne 
+   # List of interfaces, in order of preference, for endpoint 
+   # URL. (list value) 
+   valid_interfaces=public
+   ```
+
+   By default, to communicate with other services, the bare metal service attempts to discover a proper endpoint of the service through the service catalog of the identity authentication service. If you want to use a different endpoint for a specific service, specify the endpoint_override option in the bare metal service configuration file.
+
+   ```
+   [neutron] ... endpoint_override = <NEUTRON_API_ADDRESS>
+   ```
+
+   5. Configure the allowed drivers and hardware types.
+
+   Set enabled_hardware_types to specify the hardware types that can be used by ironic-conductor:
+
+   ```
+   [DEFAULT] enabled_hardware_types = ipmi 
+   ```
+
+   Configure hardware interfaces:
+
+   ```
+   enabled_boot_interfaces = pxe enabled_deploy_interfaces = direct,iscsi enabled_inspect_interfaces = inspector enabled_management_interfaces = ipmitool enabled_power_interfaces = ipmitool
+   ```
+
+   Configure the default value of the interface:
+
+   ```
+   [DEFAULT] default_deploy_interface = direct default_network_interface = neutron
+   ```
+
+   If any driver that uses Direct Deploy is enabled, you must install and configure the Swift backend of the image service. The Ceph object gateway (RADOS gateway) can also be used as the backend of the image service.
+
+   6. Restart the ironic-conductor service.
+
+   ```
+   sudo systemctl restart openstack-ironic-conductor
+   ```
+
+   ##### Configuring the ironic-inspector Service
+
+   Configuration file path: **/etc/ironic-inspector/inspector.conf**
+
+   1. Create the database:
+
+   ```
+   # mysql -u root -p 
+   
+   MariaDB [(none)]> CREATE DATABASE ironic_inspector CHARACTER SET utf8; 
+   
+   MariaDB [(none)]> GRANT ALL PRIVILEGES ON ironic_inspector.* TO 'ironic_inspector'@'localhost' \     IDENTIFIED BY 'IRONIC_INSPECTOR_DBPASSWORD'; 
+   MariaDB [(none)]> GRANT ALL PRIVILEGES ON ironic_inspector.* TO 'ironic_inspector'@'%' \     
+   IDENTIFIED BY 'IRONIC_INSPECTOR_DBPASSWORD';
+   ```
+
+   2. Use **connection** to configure the location of the database as follows. Replace **IRONIC_INSPECTOR_DBPASSWORD** with the password of user **ironic_inspector** and replace **DB_IP** with the IP address of the database server.
+
+   ```
+   [database] 
+   backend = sqlalchemy 
+   connection = mysql+pymysql://ironic_inspector:IRONIC_INSPECTOR_DBPASSWORD@DB_IP/ironic_inspector
+   ```
+
+   3. Configure the communication address of the message queue:
+
+   ```
+   [DEFAULT] transport_url = rabbit://RPC_USER:RPC_PASSWORD@RPC_HOST:RPC_PORT/
+   ```
+
+   4. Configure the Keystone authentication:
+
+   ```
+   [DEFAULT] 
+   
+   auth_strategy = keystone 
+   
+   [ironic] 
+   
+   api_endpoint = http://IRONIC_API_HOST_ADDRRESS:6385 
+   auth_type = password 
+   auth_url = http://PUBLIC_IDENTITY_IP:5000 
+   auth_strategy = keystone 
+   ironic_url = http://IRONIC_API_HOST_ADDRRESS:6385 
+   os_region = RegionOne 
+   project_name = service 
+   project_domain_name = default 
+   user_domain_name = default 
+   username = IRONIC_SERVICE_USER_NAME 
+   password = IRONIC_SERVICE_USER_PASSWORD
+   ```
+
+   5. Configure the ironic inspector dnsmasq service:
+
+   ```
+   # Configuration file path: /etc/ironic-inspector/dnsmasq.conf
+   port=0 
+   interface=enp3s0 #Replace with the actual listening network interface.
+   dhcp-range=172.20.19.100,172.20.19.110 #Replace with the actual DHCP IP address range.
+   bind-interfaces 
+   enable-tftp 
+   
+   dhcp-match=set:efi,option:client-arch,7 
+   dhcp-match=set:efi,option:client-arch,9 
+   dhcp-match=aarch64, option:client-arch,11 
+   dhcp-boot=tag:aarch64,grubaa64.efi 
+   dhcp-boot=tag:!aarch64,tag:efi,grubx64.efi 
+   dhcp-boot=tag:!aarch64,tag:!efi,pxelinux.0 
+   
+   tftp-root=/tftpboot #Replace with the actual tftpboot directory.
+   log-facility=/var/log/dnsmasq.log
+   ```
+
+   6. Start the services:
+
+   ```
+   $ systemctl enable --now openstack-ironic-inspector.service 
+   $ systemctl enable --now openstack-ironic-inspector-dnsmasq.service
+   ```
+
+3. Creatie the deploy ramdisk Image.
+
+   Currently, you can use the ironic python agent builder to build the ramdisk image. The following describes how to use this tool to build the deploy image used by ironic.
+
+   ##### Installing ironic-python-agent-builder
+
+   1. Install Python 3 on the local host, switch the local Python to Python 3, and resolve the problems after the switching (for example, the Yum source cannot be used).
+
+      ```
+      yum install python36
+      ```
+
+   2. Install the tool:
+
+      ```
+      pip install ironic-python-agent-builder
+      ```
+
+   3. Modify the python interpreter in the following file:
+
+      ```
+      /usr/bin/yum /usr/libexec/urlgrabber-ext-down
+      ```
+
+   4. Install the other necessary tools:
+
+      ```
+      yum install git
+      ```
+
+      `DIB` depends on the `semanage` command. Therefore, check whether the `semanage --help` command is available before creating an image. If the system displays a message indicating that the command is unavailable, install the command:
+
+      ```
+      # Check which package needs to be installed.
+      [root@localhost ~]# yum provides /usr/sbin/semanage
+      Loaded plug-in: fastestmirror
+      Loading mirror speeds from cached hostfile
+       * base: mirror.vcu.edu
+       * extras: mirror.vcu.edu
+       * updates: mirror.math.princeton.edu
+      policycoreutils-python-2.5-34.el7.aarch64 : SELinux policy core python utilities
+      Source: base
+      Matching source: 
+      File name: /usr/sbin/semanage
+      # Install.
+      [root@localhost ~]# yum install policycoreutils-python
+      ```
+
+   ##### Creating the Image
+
+   According to the test result, only version 8 is supported for CentOS. In addition, centos8-minimal lacks some NIC drivers. As a result, all NICs are in the down state after the Dell physical machine is started. Therefore, CentOS 8 is used in the example. Add the following environment variables:
+
+   ```
+   export DIB_PYTHON_VERSION=3 \ 
+   export DIB_RELEASE=8 \ 
+   export DIB_YUM_MINIMAL_CREATE_INTERFACES
+   ```
+
+   For `arm` architecture, add the following information in addition:
+
+   ```
+   export ARCH=aarch64
+   ```
+
+   ###### Common Image
+
+   Basic usage:
+
+   ```
+   usage: ironic-python-agent-builder [-h] [-r RELEASE] [-o OUTPUT] [-e ELEMENT]
+                                      [-b BRANCH] [-v] [--extra-args EXTRA_ARGS]
+                                      distribution
+    
+   positional arguments:
+     distribution          Distribution to use
+    
+   optional arguments:
+     -h, --help            show this help message and exit
+     -r RELEASE, --release RELEASE
+                           Distribution release to use
+     -o OUTPUT, --output OUTPUT
+                           Output base file name
+     -e ELEMENT, --element ELEMENT
+                           Additional DIB element to use
+     -b BRANCH, --branch BRANCH
+                           If set, override the branch that is used for ironic-
+                           python-agent and requirements
+     -v, --verbose         Enable verbose logging in diskimage-builder
+     --extra-args EXTRA_ARGS
+                           Extra arguments to pass to diskimage-builder
+   ```
+
+   Example:
+
+   ```
+   ironic-python-agent-builder centos -o /mnt/ironic-agent-ssh -b origin/stable/rocky
+   ```
+
+   ###### Allowing SSH login
+
+   Initialize the environment variables and create the image:
+
+   ```
+   export DIB_DEV_USER_USERNAME=ipa \
+   export DIB_DEV_USER_PWDLESS_SUDO=yes \
+   export DIB_DEV_USER_PASSWORD='123'
+   ironic-python-agent-builder centos -o /mnt/ironic-agent-ssh -b origin/stable/rocky -e selinux-permissive -e devuser
+   ```
+
+   ###### Specifying the Code Repository
+
+   Initialize the corresponding environment variables and create the image:
+
+   ```
+   # Specify the address and version of the repository.
+   DIB_REPOLOCATION_ironic_python_agent=git@172.20.2.149:liuzz/ironic-python-agent.git
+   DIB_REPOREF_ironic_python_agent=origin/develop
+    
+   # Clone code from Gerrit.
+   DIB_REPOLOCATION_ironic_python_agent=https://review.opendev.org/openstack/ironic-python-agent
+   DIB_REPOREF_ironic_python_agent=refs/changes/43/701043/1
+   ```
+
+   Reference: [source-repositories](https://docs.openstack.org/diskimage-builder/latest/elements/source-repositories/README.html).
+
+   The specified repository address and version are verified successfully.
