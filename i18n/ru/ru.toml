@@ -47,6 +47,9 @@ other = "/ru/docs/20.03_LTS/docs/Releasenotes/terms-of-use.html"
 [know_97_1]
 other = "/ru/docs/20.09/docs/Releasenotes/terms-of-use.html"
 
+[atom]
+other = "openEuler - это проект с открытым исходным кодом, созданный и управляемый фондом OpenAtom."
+
 [copy_right]
 other = "Авторские права © openEuler 2021. Все права защищены."
 

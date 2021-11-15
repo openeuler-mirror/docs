@@ -90,6 +90,9 @@ other = "快速链接"
 [kunpeng_community]
 other = "鲲鹏社区"
 
+[atom]
+other = "openEuler 是由开放原子开源基金会（OpenAtom Foundation）孵化及运营的开源项目"
+
 [copy_right]
 other = "版权所有 © 2021 openEuler 保留一切权利"
 
