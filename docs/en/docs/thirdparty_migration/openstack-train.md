@@ -1,6 +1,14 @@
 # Guide to Porting OpenStack-Train to openEuler
 
-[[toc]]
+- [Software Overview](#software-overview)
+- [Environment Configuration](#environment-configuration)
+- [System Configuration](#system-configuration)
+- [Software Compilation](#software-compilation)
+- [Running the devstack Script to Install OpenStack](#running-the-devstack-script-to-install-openstack)
+- [Software Running](#software-running)
+- [Software Uninstallation](#software-uninstallation)
+- [FAQs](#faqs)
+- [Appendix](#appendix)
 
 ## Software Overview
 

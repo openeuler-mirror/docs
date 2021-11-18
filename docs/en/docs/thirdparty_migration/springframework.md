@@ -1,6 +1,11 @@
 # Guide to Porting Spring Framework to openEuler
 
-[[toc]]
+  - [Software Overview](#software-overview)
+  - [Environment Configuration](#environment-configuration)
+  - [System Configuration](#system-configuration)
+  - [Software Compilation](#software-compilation)
+  - [Software Running](#software-running)
+  - [FAQs](#faqs)
 
 ## Software Overview
 
@@ -60,10 +65,10 @@ It is recommended that the memory of the deployment environment be greater than 
 
 |  Software   |Version Number |Installation Method   |
 |:---  |:----  |:----  |
-| openEuler | 20.03-LTS-SP2 |iso  |
-| tar | 1.32 |yum install  |
-| wget | 1.20.3 |yum install |
-| git | 2.27 |yum install |
+| openEuler | 20.03-LTS-SP2 |ISO  |
+| tar | 1.32 |Yum install  |
+| wget | 1.20.3 |Yum install |
+| git | 2.27 |Yum install |
 
 ### Required dependency packages
 
@@ -146,7 +151,7 @@ If the Internet is available in the environment, you can use the configured sour
     # ./gradlew publishToMavenLocal -x javadoc -x dokka -x asciidoctor
     ```
    
-    After the installation is completed, the **springframework** folder is generated in `/root/.m2/repository/org/`. 
+    After the installation is completed, the `springframework` folder is generated in `/root/.m2/repository/org/`. 
    
     ![](./figures/zh-cn_image_0296838184.png)
 
@@ -209,13 +214,13 @@ If the Internet is available in the environment, you can use the configured sour
 
 ### Examples of Running Spring Boot on a Single-Node System
 
-1. If the spring-boot-sample-tomcat is compiled successfully, the **spring-boot-sample-tomcat-1.5.4.RELEASE.jar** file is generated in the `/home/spring-boot-1.5.4.RELEASE/spring-boot-samples/spring-boot-samples-tomcat/target` folder in the project directory. Run the following command to execute the JAR file:
+1. If the spring-boot-sample-tomcat is compiled successfully, the `spring-boot-sample-tomcat-1.5.4.RELEASE.jar` file is generated in the `/home/spring-boot-1.5.4.RELEASE/spring-boot-samples/spring-boot-samples-tomcat/target` folder in the project directory. Run the following command to execute the JAR file:
    
     ```
     # java -jar spring-boot-sample-tomcat-1.5.4.RELEASE.jar
     ```
 
-2. After `tomcat start` is displayed on the console, open a new window and run the following command to check the running status of the Tomcat service:
+2. After **tomcat start** is displayed on the console, open a new window and run the following command to check the running status of the Tomcat service:
    
     ```
     # curl http://localhost:8080
@@ -229,7 +234,7 @@ If the Internet is available in the environment, you can use the configured sour
 
 #### Example of running the spring-cloud-gateway-sample project
 
-1. If the spring-cloud-gateway-sample project is compiled successfully, the **spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar** file is generated in the **/home/Spring-cloud-gateway-sample/target** folder in the project directory. Run the following commands:
+1. If the spring-cloud-gateway-sample project is compiled successfully, the `spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar` file is generated in the `/home/Spring-cloud-gateway-sample/target` folder in the project directory. Run the following commands:
   
     ```
     # java -jar spring-cloud-gateway-sample-0.0.1-SNAPSHOT.jar
@@ -245,13 +250,13 @@ If the Internet is available in the environment, you can use the configured sour
 
 #### Example of running the zuul-server project
 
-1. Run the zuul-server service after running the eureka project. In the **/home/eureka/target** directory, run the following command to start the eureka service:
+1. Run the zuul-server service after running the eureka project. In the `/home/eureka/target` directory, run the following command to start the eureka service:
 
     ```
     # java -jar eureka-0.0.1-SNAPSHOT.jar
     ```
 
-2. After the message **Started EurekaApplicattion** is displayed on the console, start a new window and run the following command in the project directory **/home/zuul-server/target** to start the zuul-server service:
+2. After the message **Started EurekaApplicattion** is displayed on the console, start a new window and run the following command in the project directory `/home/zuul-server/target` to start the zuul-server service:
 
     ```
     # java -jar zuul-server-1.0.0.BUILD-SNAPSHOT.jar
@@ -277,19 +282,19 @@ If the Internet is available in the environment, you can use the configured sour
 
 #### Example of running the feign-eureka project 
 
-1. Run the zuul-server service after running the eureka project. In the **/home/eureka/target** directory, run the following command to start the eureka service:
+1. Run the zuul-server service after running the eureka project. In the `/home/eureka/target` directory, run the following command to start the eureka service:
 
     ```
     # java -jar eureka-0.0.1-SNAPSHOT.jar
     ```
 
-2. After the message **Started EurekaApplicattion** is displayed on the console, start a new window and run the following command in the project directory **/home/feign-eureka/server/target** to start the zuul-server service:
+2. After the message **Started EurekaApplicattion** is displayed on the console, start a new window and run the following command in the project directory `/home/feign-eureka/server/target` to start the zuul-server service:
 
     ```
     # java -jar feign-eureka-hello-server-0.0.1-SNAPSHOT.jar
     ```
 
-3. After the message **Started HelloServerApplication** is displayed on the console, start a new window and run the following command in the project directory **/home/feign-eureka/client/target** to start the zuul-server service:
+3. After the message **Started HelloServerApplication** is displayed on the console, start a new window and run the following command in the project directory `/home/feign-eureka/client/target` to start the zuul-server service:
 
     ```
     # java -jar feign-eureka-hello-client-0.0.1-SNAPSHOT.jar
@@ -347,7 +352,7 @@ The Gradle release used by some Spring Framework versions may have problems when
 
 **Solution**
 
-Run the `./gradlew clean test` command to build the environment.
+Run the **./gradlew clean test** command to build the environment.
 
 ### Fails to Execute the Spring-test:compileJava Task
 
