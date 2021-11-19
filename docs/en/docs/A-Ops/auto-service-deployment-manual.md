@@ -1,6 +1,6 @@
 # 1 Framework Overview
 
-The deployment management is basically to install components using Ansible.
+The deployment management is mainly about installing components using Ansible.
 
 ```yaml
 │  
@@ -11,17 +11,17 @@ The deployment management is basically to install components using Ansible.
 │  │  │  example_playbooks.yml # Playbook example.
 │  │  │  example_vars.yml # Variable file example.
 │  │  │  
-│  │  └─example # Role task example
+│  │  └─example # Role task example.
 │  │      ├─files # The directory of files required by the component. The files can be software packages or other files required for running the component.
 │  │      │      readme.md
 │  │      │      
-│  │      ├─tasks # Task examples
+│  │      ├─tasks # Task examples.
 │  │      │      config_example.yml # Configuration example.
 │  │      │      install_example.yml # Installation example.
 │  │      │      main.yml # Task entry example.
 │  │      │      start_example.yml # Startup example.
 │  │      │      
-│  │      └─templates # Template file
+│  │      └─templates # Template file.
 │  │              example.j2 # Template configuration example.
 │  │              
 │  ├─inventory # The list of the hosts of the component.
@@ -37,10 +37,10 @@ The deployment management is basically to install components using Ansible.
 │  ├─roles # Role tasks of the component.
 │  │  ├─elasticsearch
 │  │  │  ├─tasks # Task steps in the playbook of the component.
-│  │  │  │      config_elasticsearch.yml # Defining the steps of configuration.
-│  │  │  │      install_elasticsearch.yml # Defining the steps of installation.
+│  │  │  │      config_elasticsearch.yml # Defines the steps of configuration.
+│  │  │  │      install_elasticsearch.yml # Defines the steps of installation.
 │  │  │  │      main.yml # Main script file executed by the task. The file includes the yml files for installing, configuring, and starting the role, and custom yml files.
-│  │  │  │      start_elasticsearch.yml # Defining the steps of startup.
+│  │  │  │      start_elasticsearch.yml # Defines the steps of startup.
 │  │  │  │      
 │  │  │  └─templates # Template file required during the component installation. The actual file is generated based on the configured value.
 │  │  │          elasticsearch.j2
@@ -67,9 +67,9 @@ The deployment management is basically to install components using Ansible.
 
 ## 2.1 Custom Component Template
 
-### 2.1.1 Modify the Example Files to create custom templates
+### 2.1.1 Modify the Example Files to Create Custom Templates
 
-- #### Playbook files of the components
+- #### Playbook file of the component
 
   ```yaml
   ---
@@ -89,7 +89,7 @@ The deployment management is basically to install components using Ansible.
   
   ```
 
-- #### vars variable files of the components
+- #### vars variable file of the component
 
   ```yaml
   ---
@@ -113,7 +113,7 @@ The deployment management is basically to install components using Ansible.
   
   ```
 
-- #### Task definition of the component roles
+- #### Task definition of the component role
 
   - ##### `files` directory
 
@@ -143,7 +143,7 @@ The deployment management is basically to install components using Ansible.
     cluster.name: {{example_cluster_name}}
     
     # Variable item. It uses the configuration variables in the host list.
-    # For example, the configuration items in the host list are as follows:
+    # For example, the configuration in the host list is as follows:
     # example_hosts:
     # hosts:
     #  192.168.1.1:
@@ -189,17 +189,17 @@ The deployment management is basically to install components using Ansible.
     ---
     
     ## The standard steps. You can add custom steps for special requirements.
-    # step1 Installing the component
+    # step1: Install the component
     - name: Install example
     include: install_example.yml
     when: install_example
     
-    # step2 Modifing the configuration
+    # step2: Modify the configuration
     - name: Config example
     include: config_example.yml
     when: config_example
     
-    # step3 Starting the service
+    # step3: Start the service
     - name: Start example
     include: start_example.yml
     when: start_example
@@ -214,14 +214,14 @@ The deployment management is basically to install components using Ansible.
     ##  You are advised to use DNF instead of Yum to install the RPM packages in the new version of Ansible.
     
     ############################### Manually upload the RPM software package ###########################
-    # 1. Copy `example_rpm` to the `/tmp` directory. `example_rpm` indicates the actual file name defined in the `example_vars` file.
+    # 1. Copy example_rpm to the /tmp directory. example_rpm represents the actual file name defined in the example_vars file.
     - name: Copy rpm file to server
       copy:
         src: "{{ example_rpm }}"
         dest: /tmp/{{example_rpm}}
         mode: 755
     
-    # 2. Install the `/tmp/{{example_rpm}}` software package.
+    # 2. Install the /tmp/{{example_rpm}} software package.
     - name: install packages
       become: true
       become_user: root
@@ -279,7 +279,7 @@ The deployment management is basically to install components using Ansible.
     
     ## 1. Start the service.
     ############################## Use the systemctl command to start the service ###############################
-    # Service components can be directly controlled by systemctl. You can set the items, such as `state` and `enable`, to start the service.
+    # Service components can be directly controlled by systemctl. You can set the items, such as state and enable, to start the service.
     - name: Start example
       become_user: "{{user}}"
       service:
@@ -321,10 +321,10 @@ The deployment management is basically to install components using Ansible.
 You can modify the example files in `example` then
 
 ```yaml
-│  example_playbooks.yml # Replace `example` in the file name with the component name and move the file to `install_ansible/playbooks`.
-│  example_vars.yml # Replace `example` in the file name with the component name and move the file to `install_ansible/vars`.
+│  example_playbooks.yml # Replace example in the file name with the component name and move the file to install_ansible/playbooks.
+│  example_vars.yml # Replace example in the file name with the component name and move the file to install_ansible/vars.
 │
-└─example # Rename the directory to the component name and move the directory to `install_ansible/roles`.
+└─example # Rename the directory to the component name and move the directory to install_ansible/roles.
     ├─files
     │      readme.md
     │
@@ -344,10 +344,10 @@ You can modify the example files in `example` then
 ```yaml
 ---
 step_list: #Step list
- kafka: # Step 1 Install Kafka. You can use the default template.
-  enable: false # false indicates to skip the installation. true indicates to perform the installation.
-  continue: false # false indicates to abort the task if the installation fails. true indicates to install the next component if the installation fails.
- example: # Step 2 Install the example custom component. Add the component to a proper position, and set the configuration items.
+ kafka: # Step 1: Install Kafka. You can use the default template.
+  enable: false # false indicates that the installation is skipped. true indicates that the installation is performed.
+  continue: false # false indicates that the task is aborted if the installation fails. true indicates that the next component is installed if the installation fails.
+ example: # Step 2: Install the example custom component. Add the component to a proper position, and set the configuration items.
   enable: false
   continue: false
 ```
@@ -376,19 +376,19 @@ Currently, the following default components are provided:
 | gala-gopher | DNF | 1.0.1 | all |
 | gala-spider | DNF | 1.0.1 | master |
 
-### 2.2.2 Dependencies among Default Components
+### 2.2.2 Dependencies Among Default Components
 
 ![Component Dependencies](figures/0BFA7C40-D404-4772-9C47-76EAD7D24E69.png)
 
 - The figure shows the dependencies among the components provided by default. To ensure that the services run properly, you need to install the dependencies in advance.
-- **elasticsearch** has been installed on the master node during the installation of aops framework. If there is no need to create a cluster, you can simply use the component after modifying the configuration. No additional deployment is required.
-- Other components provided in the aops framework are not shown in the figure.
+- Elasticsearch has been installed on the master node during the installation of A-Ops framework. If there is no need to create a cluster, you can simply use the component after modifying the configuration. No additional deployment is required.
+- Other components provided in the A-Ops framework are not shown in the figure.
 
 ### 2.2.3 Default Task Configuration
 
-#### (1) zookeeper
+#### (1) Zookeeper
 
-**zookeeper** is responsible for cluster management and is the basis for **kafka**. **zookeeper** must be configured on each node in the cluster.
+Zookeeper is used for cluster management and is the basis for Kafka. Zookeeper must be configured on each node in the cluster.
 
 - Host configuration
 
@@ -400,7 +400,7 @@ zookeeper_hosts:
     192.168.1.1: # Host name
       ansible_host: 192.168.1.1 # Host IP address
       ansible_python_interpreter: /usr/bin/python3
-      myid: 2 # zookeeper node ID
+      myid: 2 # ZooKeeper node ID
     192.168.1.2:
       ansible_host: 192.168.1.2
       ansible_python_interpreter: /usr/bin/python3
@@ -414,32 +414,32 @@ zookeeper_hosts:
 
 - Variable configuration
 
-The variables of **zookeeper** are as follows:
+The variables of Zookeeper are as follows:
 
 ```yaml
 ---
-# zookeeper user name and user group
+# Zookeeper user name and user group
 user: "zookeeper"
 group: "zookeeper"
 
-# zookeeper data path
+# Zookeeper data path
 data_dir: "data"
-# zookeeper log path
+# Zookeeper log path
 zookeeper_log_path: "log"
-# zookeeper installation path
+# Zookeeper installation path
 install_dir: "/opt/zookeeper"
 
-# zookeeper port configuration
+# Zookeeper port configuration
 leader_port: 2888
 vote_port: 3888
 client_port: 2181
 ```
 
-#### (2) kafka
+#### (2) Kafka
 
 - Host configuration
 
-  **kafka** must be installed after **zookeeper**. The port and ID of **kafka** need to be configured in the host list. You also need to configure the IP address and ID of **zookeeper** in the host list.
+  Kafka must be installed after ZooKeeper. The port and ID of Kafka need to be configured in the host list. You also need to configure the IP address and ID of ZooKeeper in the host list.
 
 ```yaml
 kafka_hosts:
@@ -447,8 +447,8 @@ kafka_hosts:
     192.168.1.1: # Host name
       ansible_host: 192.168.1.1 # Host IP address
       ansible_python_interpreter: /usr/bin/python3
-      kafka_id: 2 # kafka id 
-      kafka_port: 9092 # kafka listening port
+      kafka_id: 2 # Kafka id 
+      kafka_port: 9092 # Kafka listening port
     192.168.1.2:
       ansible_host: 192.168.1.2
       ansible_python_interpreter: /usr/bin/python3
@@ -459,12 +459,12 @@ kafka_hosts:
       ansible_python_interpreter: /usr/bin/python3
       kafka_id: 3
       kafka_port: 9092
-zookeeper_hosts: # IP address of the zookeeper cluster
+zookeeper_hosts: # IP address of the ZooKeeper cluster
   hosts:
     192.168.1.1: # Host name
       ansible_host: 192.168.1.1 # Host IP address
       ansible_python_interpreter: /usr/bin/python3
-      myid: 2 # zookeeper id
+      myid: 2 # ZooKeeper id
     192.168.1.2:
       ansible_host: 192.168.1.2
       ansible_python_interpreter: /usr/bin/python3
@@ -479,7 +479,7 @@ zookeeper_hosts: # IP address of the zookeeper cluster
 
 ```yaml
 ---
-# zookeeper user name and user group
+# Zookeeper user name and user group
 user: "kafka"
 group: "kafka"
 
@@ -489,18 +489,18 @@ kafka_log_path: "log"
 # Installation path
 install_dir: "/opt/kafka"
 
-# zookeeper client port
+# Zookeeper client port
 zk_client_port: 2181
 
 ```
 
 
 
-#### (3) prometheus
+#### (3) Prometheus
 
 - Host configuration
 
-  **prometheus** collects KPI data items. It needs to be installed only on the server node. In addition, **prometheus** captures data from **node_exporter**. You need to configure a node IP address that can reach the **node_exporter**.
+  Prometheus collects KPI data items. It needs to be installed only on the server node. In addition, Prometheus captures data from node_exporter. You need to configure a node IP address that can reach the node_exporter.
 
 ```yaml
 node_exporter_hosts:
@@ -525,17 +525,17 @@ prometheus_hosts:
 
 ```yaml
 ---
-# prometheus user name and user group
+# Prometheus user name and user group
 user: "prometheus"
 group: "prometheus"
 
-# prometheus listening port
+# Prometheus listening port
 prometheus_listen_port: 9090
 
 # node_exporter listening port
 node_exporter_listen_port: 9100
 
-# prometheus configuration file path
+# Prometheus configuration file path
 prometheus_conf_dir: "/etc/prometheus"
 ```
 
@@ -573,11 +573,11 @@ node_exporter_listen_port: 9100
 
 ```
 
-#### (5) mysql
+#### (5) MySQL
 
 - Host configuration
 
-The **mysql** database needs to be installed only on the server node.
+The MySQL database needs to be installed only on the server node.
 
 ```
 mysql_hosts:
@@ -592,17 +592,17 @@ mysql_hosts:
 
 ```yaml
 ---
-# mysql user name and user group
+# MySQL user name and user group
 user: "mysql"
 group: "mysql"
 
 ```
 
-#### (6) elasticsearch
+#### (6) Elasticsearch
 
 - Host configuration
 
-The **elasticsearch** database needs to be installed only on the server node. You need to configure the server node and specify the node ID. If a distributed cluster configuration is required, you need to modify the host list and configuration file `elasticsearch.j2`.
+The Elasticsearch database needs to be installed only on the server node. You need to configure the server node and specify the node ID. If a distributed cluster configuration is required, you need to modify the host list and configuration file `elasticsearch.j2`.
 
 ```yaml
 elasticsearch_hosts:
@@ -617,7 +617,7 @@ elasticsearch_hosts:
 
 ```yaml
 ---
-# elasticsearch user and user group
+# Elasticsearch user and user group
 user: elasticsearch
 group: elasticsearch
 
@@ -637,13 +637,13 @@ elasticsearch_cluster_name: myApp
 # IP address of the Elasticsearch initial master node
 elasticsearch_cluster_init_master: 192.168.1.2
 
-# elasticsearch listening port
+# Elasticsearch listening port
 elasticsearch_listen_port: 9200
 
-# elasticsearch data directory
+# Elasticsearch data directory
 elasticsearch_data_path: "/var/lib/elasticsearch"
 
-# elasticsearch log directory
+# Elasticsearch log directory
 elasticsearch_log_path: "/var/log/elasticsearch"
 
 # IP address of the Elasticsearch network host
@@ -651,31 +651,31 @@ elasticsearch_network_host: "{{elasticsearch_cluster_init_master}}"
 
 ```
 
-#### (7) fluentd
+#### (7) Fluentd
 
 - Host configuration
 
-**fluentd** collects logs. It is deployed on all nodes whose logs need to be collected and sends the logs to **elasticsearch**.
+Fluentd collects logs. It is deployed on all nodes whose logs need to be collected and sends the logs to Elasticsearch.
 
 ```yaml
 fluentd_hosts:
   hosts:
     192.168.1.1: # Host name
       ansible_python_interpreter: /usr/bin/python3
-      elasticsearch_host: 192.168.1.1 # elasticsearch listening IP
+      elasticsearch_host: 192.168.1.1 # Elasticsearch listening IP
     192.168.1.2:
       ansible_python_interpreter: /usr/bin/python3
-      elasticsearch_host: 192.168.1.1 # elasticsearch listening IP
+      elasticsearch_host: 192.168.1.1 # Elasticsearch listening IP
     192.168.1.3:
       ansible_python_interpreter: /usr/bin/python3
-      elasticsearch_host: 192.168.1.1 # elasticsearch listening IP
+      elasticsearch_host: 192.168.1.1 # Elasticsearch listening IP
 ```
 
 - Variable configuration
 
 ```yaml
 ---
-# fluentd configuration file path
+# Fluentd configuration file path
 fluentd_config_dir: /etc/fluentd/
 # Script for modifying history records
 change_history_format: true
@@ -696,7 +696,7 @@ fluentd_demsg_port: 61122
 
 - Host configuration
 
-**adoctor-check-executor** and **adoctor-check-scheduler** depend on the aops framework and are deployed on the master node by default. The **executor** and **scheduler** communicate with each other through **kafka**.
+**adoctor-check-executor** and **adoctor-check-scheduler** depend on the A-Ops framework and are deployed on the master node by default. The **executor** and **scheduler** communicate with each other through Kafka.
 
 Configure the host list of adoctor-check-executor:
 
@@ -725,7 +725,7 @@ Configure the variables of adoctor-check-executor:
 ```yaml
 # Configuration file directory of check executor
 check_executor_conf_dir: "/etc/aops"
-# HOST:PORT of the list of kafka hosts connected to the check executor. The default IP address is the IP address of the current host. The default port number is 9092.
+# HOST:PORT of the list of Kafka hosts connected to the check executor. The default IP address is the IP address of the current host. The default port number is 9092.
 kafka_server_list: 192.168.1.1:9092
 ```
 
@@ -734,7 +734,7 @@ Configure the variables of adoctor-check-scheduler:
 ```yaml
 # Configuration file directory of check scheduler
 check_scheduler_conf_dir: "/etc/aops"
-# HOST:PORT of the list of kafka hosts connected to the check scheduler. The default IP address is the IP address of the current host. The default port number is 9092.
+# HOST:PORT of the list of Kafka hosts connected to the check scheduler. The default IP address is the IP address of the current host. The default port number is 9092.
 kafka_server_list: 90.90.64.64:9092
 # Listening port of the check scheduler service. The default value is 11112.
 check_scheduler_port: 11112
@@ -744,7 +744,7 @@ check_scheduler_port: 11112
 
 - Host configuration
 
-**adoctor-diag-executor** and **adoctor-diag-scheduler** depend on the aops framework and are deployed on the master node by default. The **executor** and **scheduler** communicate with each other through **kafka**.
+**adoctor-diag-executor** and **adoctor-diag-scheduler** depend on the A-Ops framework and are deployed on the master node by default. The **executor** and **scheduler** communicate with each other through Kafka.
 
 Configure the host list of adoctor-diag-executor:
 
@@ -773,7 +773,7 @@ Configure the variables of adoctor-diag-executor:
 ```yaml
 # Configuration file directory of diag executor
 diag_executor_conf_dir: "/etc/aops"
-# HOST:PORT of the list of kafka hosts connected to the diag executor. The default IP address is the IP address of the current host. The default port number is 9092.
+# HOST:PORT of the list of Kafka hosts connected to the diag executor. The default IP address is the IP address of the current host. The default port number is 9092.
 kafka_server_list: 192.168.1.1:9092
 ```
 
@@ -782,7 +782,7 @@ Configure the variables of adoctor-diag-scheduler:
 ```yaml
 # Configuration file directory of diag scheduler
 diag_scheduler_conf_dir: "/etc/aops"
-# HOST:PORT of the list of kafka hosts connected to the diag scheduler. The default IP address is the IP address of the current host. The default port number is 9092.
+# HOST:PORT of the list of Kafka hosts connected to the diag scheduler. The default IP address is the IP address of the current host. The default port number is 9092.
 kafka_server_list: 192.168.1.1:9092
 # Listening port of the diag scheduler service. The default value is 11112.
 diag_scheduler_port: 11113
@@ -814,7 +814,7 @@ gala_ragdoll_port: 11114
 
 - Host Configuration
 
-**gala-gopher** and **gala-spider** are the main components of the architecture awareness module. **gala-gopher** is deployed on each remote host to collect information and pushes messages to **gala-spider** on the master node through **kafka**.**gala-spider** is deployed on the master node and analyzes the collected data.
+**gala-gopher** and **gala-spider** are the main components of the architecture awareness module. **gala-gopher** is deployed on each remote host to collect information and pushes messages to **gala-spider** on the master node through Kafka.**gala-spider** is deployed on the master node and analyzes the collected data.
 
 Configure the host list of gala-gopher:
 
@@ -851,9 +851,9 @@ Configure the variables of **gala-gopher**:
 ---
 # gala gopher installation directory
 install_dir: "/opt/gala-gopher/"
-# The kafka host connected to gala-gopher. Set this parameter to the host IP address of the management node.
+# The Kafka host connected to gala-gopher. Set this parameter to the host IP address of the management node.
 gala_gopher_kafka_host: 192.168.1.1
-# The listening kafka port of gala-gopher
+# The listening Kafka port of gala-gopher
 gala_gopher_listening_kafka_port: 9092
 # Configuration of the gala-gopher probe
 probes_example_switch: "off"
@@ -873,7 +873,7 @@ Configure the variables of **gala-spider**:
 log_path: "/var/log/spider"
 # Installation directory
 install_dir: "/opt/spider/"
-# The kafka host. The default value is the host IP address.
+# The Kafka host. The default value is the host IP address.
 gala_spider_kafka_host: 192.168.1.1
 # Listening port
 gala_spider_listening_kafka_port: 9092
@@ -889,25 +889,25 @@ gala_spider_port: 11115
 
 
 
-# 3. Task Execution Configuraton
+# 3. Task Execution Configuration
 
 ## 3.1 Task Component Step Configuration
 
 A task consists of multiple steps. Basically, one component is installed in each step. A task is completed by finishing a sequence of steps.
 
-To modify a task, you need to modify the `tasks/TASK_NAME.yml`.
+To modify a task, you need to modify `tasks/TASK_NAME.yml`.
 
 ```yaml
 ---
 step_list: # Step list
  step_component: # The first step is to install Kafka. You can use the default template.
-  enable: false # false indicates to skip the installation. true indicates to perform the installation.
-  continue: false # false indicates to abort the task if the installation fails. true indicates to install the next component if the installation fails.
+  enable: false # false indicates that the installation is skipped. true indicates that the installation is performed.
+  continue: false # false indicates that the task is aborted if the installation fails. true indicates that the next component is installed if the installation fails.
 ```
 
 ## 3.2 Component Deployment Option Configuration
 
-The configurations of some key options are defiened in the playbook of the component.
+The configurations of some key options are defined in the playbook of the component.
 
 ```yaml
 ---

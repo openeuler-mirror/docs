@@ -1,6 +1,6 @@
 [TOC]
 
-## A-Ops Service Deployment Guide
+## A-Ops Service Deployment Manual
 
 #### 1.1 Description
 
@@ -18,9 +18,9 @@ A-Ops is an intelligent O&M tool. It implements the basic intelligent O&M framew
   | Configuration Item | Recommended Specification |
   | -------------------- | --------------------------- |
   | CPU                | 8 cores                   |
-  | Memory             | 3G                        |
-  | Network bandwidth  | 300M                      |
-  | I/O                | 375MB/sec                 |
+  | Memory             | 3 GB                        |
+  | Network bandwidth  | 300 Mbps                      |
+  | I/O                | 375 MB/s                 |
 - Software configuration:
 
 
@@ -126,7 +126,7 @@ A-Ops is an intelligent O&M tool. It implements the basic intelligent O&M framew
 
 1. Source code download address: https://gitee.com/openeuler/A-Ops
 
-#### 1.5 Database Configuraion After the Installation
+#### 1.5 Database Configuration After the Installation
 
 If Elasticsearch or MySQL is not installed in the environment, you can run the automatic installation script after installing aops-utils.
 
@@ -233,7 +233,7 @@ aops-basedatabase elasticsearch # Install and start the Elasticsearch database f
    ```
 4. Anomaly detection configuration:
 
-   1. The anomaly detection scheduler configuration file is stored as `/etc/aops/check_scheduler.ini` by default. Modify the configuration file as required. For details, see the Anomaly Detection Service Guide.
+   1. The anomaly detection scheduler configuration file is stored as `/etc/aops/check_scheduler.ini` by default. Modify the configuration file as required. For details, see the Anomaly Detection Service Manual.
 
       ```ini
       [producer]
@@ -271,10 +271,10 @@ aops-basedatabase elasticsearch # Install and start the Elasticsearch database f
       wsgi-file=manage.py # Flask startup script.
       daemonize=/var/log/aops/uwsgi/check_scheduler.log # The path of the anomaly detection scheduler log file.
       http-timeout=600 # Response timeout interval.
-      harakiri=600 #Backend running timeout interval.
+      harakiri=600 # Backend running timeout interval.
 
       ```
-   2. The anomaly detection check_executor configuration file is stored as `/etc/aops/check_executor.ini` by default. Modify the configuration file as required. For details, see the Anomaly Detection Service Guide.
+   2. The anomaly detection check_executor configuration file is stored as `/etc/aops/check_executor.ini` by default. Modify the configuration file as required. For details, see the Anomaly Detection Service Manual.
 
       ```ini
       [consumer]
@@ -313,13 +313,13 @@ aops-basedatabase elasticsearch # Install and start the Elasticsearch database f
 
       [diag_scheduler]
       ip=172.16.0.0 # IP address of diag_schedule of the fault diagnosis.
-      Port=11113 # Port number of the diag_schedule process for fault diagnosis.
+      Port=11113 # Port number of diag_schedule of the fault diagnosis.
 
       [uwsgi]
       wsgi-file=manage.py # Flask startup script.
       daemonize=/var/log/aops/uwsgi/diag_scheduler.log # The path of the fault diagnosis scheduler log file.
       http-timeout=600 # Response timeout interval.
-      harakiri=600 #Backend running timeout interval.
+      harakiri=600 # Backend running timeout interval.
       ```
    2. The fault diagnosis diag_executor configuration file is stored as `/etc/aops/diag_executor.ini` by default. Modify the configuration file as required.
 
@@ -335,9 +335,9 @@ aops-basedatabase elasticsearch # Install and start the Elasticsearch database f
       [topic]
       name=DIAGNOSE_EXECUTE_REQ
       ```
-6. Source tracing configuration:
+6. Configuration source tracing configuration:
 
-   The source tracing configuration file is stored as `/etc/ragdoll/gala-ragdoll.conf` by default. Modify the configuration file as required.
+   The configuration file of the configuration source tracing is stored as `/etc/ragdoll/gala-ragdoll.conf` by default. Modify the configuration file as required.
 
    ```conf
    [git]
@@ -347,7 +347,7 @@ aops-basedatabase elasticsearch # Install and start the Elasticsearch database f
 
    [collect]
    collect_address = "http://172.16.0.0:11111" # IP address and port of aops-manager.
-   collect_api = "/manage/config/collect" # Route of the A-Ops configuration collecting interface.
+   collect_api = "/manage/config/collect" # Route of the A-Ops configuration collection API.
 
    [ragdoll]
    port = 11114 # Port of gala-ragdoll.
@@ -423,7 +423,7 @@ aops-basedatabase elasticsearch # Install and start the Elasticsearch database f
           switch = "on";
       };
 
-      #Probes and extended probes:
+      # Probes and extended probes:
       probes =   
       (
           {
@@ -501,9 +501,9 @@ aops-basedatabase elasticsearch # Install and start the Elasticsearch database f
           }
       );
       ```
-8. Other Configurations.
+8. Other Configurations:
 
-   1. Default task configuration: `/etc/aops/default.json` is used to change the IP addresses of the list of the hosts that execute the tasks by default. You need to change the IP address before starting the database. If the database service is started before changing the IP addresses, you need to run the **task delete** command to delete the tasks, then restart the database to import the default tasks properly.
+   1. Default task configuration: `/etc/aops/default.json` is used to change the IP address list of the hosts that execute the tasks by default. You need to change the IP addresses before starting the database. If the database service is started before changing the IP addresses, you need to run the **task delete** command to delete the tasks, then restart the database to import the default tasks properly.
 
       ```shell
       vim /etc/aops/default.json
@@ -534,7 +534,7 @@ aops-basedatabase elasticsearch # Install and start the Elasticsearch database f
           ]
       }
       ```
-   2. Modify the `/etc/ansible/ansible.cfg` file to uncomment `host_key_checking`.
+   2. Modify the `/etc/ansible/ansible.cfg` file, and uncomment `host_key_checking`.
 
       ```shell
       vim /etc/ansible/ansible.cfg
@@ -556,8 +556,8 @@ systemctl restart aops-database # Restart the service.
 
 # Other options are as follows:
 aops-manager 
-adoctor-check-scheduler 
-adoctor-check-executor 
+adoctor-check-scheduler
+adoctor-check-executor
 adoctor-diag-scheduler
 adoctor-diag-executor
 aops-web
@@ -568,7 +568,7 @@ gala-ragdoll
 
 #### 1.8. Starting the Web Service
 
-- The web configuration file is `/etc/nginx/aops-nginx.conf`.
+- The web service configuration file is `/etc/nginx/aops-nginx.conf`.
 - The following contents need to be modified:
   - The port number of the web service. The default value is **80**.
   - Backend service route addresses, which must correspond to each backend service. `/api/` indicates the host management and user management services. `/api/domain`, `/api/host`, `/api/confs`, and `/api/management` indicate the configuration source tracing service. `/api/check` indicates the anomaly detection service. `/api/diag` indicates the diagnosis service, `/api/gala-spider` indicates the architecture awareness service. Set the IP addresses based on the actual service deployment.
@@ -696,7 +696,7 @@ gala-ragdoll
     ![img](./figures/host.PNG)
 
     - Adding hosts.
-    - Viewing hosts (filtering by host group or manage node, and sorting by host name).
+    - Viewing hosts (filtering by host group or management node, and sorting by host name).
     - Viewing details about the hosts (not supported currently).
     - Deleting hosts.
 
@@ -749,7 +749,7 @@ gala-ragdoll
     - Viewing the current service domain.
     - Adding service domains.
     - Adding hosts to a domain.
-    - Viewing the list of the hosts in the service domain.
+    - Viewing the list of hosts in the service domain.
     - Entering the host list to view the current configuration (collecting configurations).
     - Deleting service domains.
 
@@ -759,7 +759,7 @@ gala-ragdoll
 
     - Viewing configuration items.
     - Adding configuration items. (Currently, you can only do this by adding items in `/etc/yum.repos.d/openEuler.repo` and `/etc/coremail/coremail.conf`. The format must be correct.)
-    - Viewing the configuration file (expected configurations).
+    - Viewing the configuration file (the expected configuration).
     - Viewing configuration change logs.
 
     (6) Architecture Awareness
@@ -781,7 +781,7 @@ gala-ragdoll
 
 **Path**: `/var/log/aops/`
 
-Records information about A-Ops operations and internal running status for easy maintenance and fault checks. You can use the logging module of Python to set the log size and the number of backups.
+A-Ops logs record information about A-Ops operations and internal running status for easy maintenance and fault checks. You can use the logging module of Python to set the log size and the number of backups.
 
 > ; Maximum capacity of each file, the unit is byte, default is 30 M
 >
@@ -811,7 +811,7 @@ Records information about A-Ops operations and internal running status for easy 
 
 #### 1.10 Installation and Deployment in the Cluster
 
-###### 1.10.1 A-Ops Service Deployment
+##### 1.10.1 A-Ops Service Deployment
 
 A-Ops supports the installation and deployment of these 14 components in the cluster:
 
@@ -819,7 +819,7 @@ A-Ops supports the installation and deployment of these 14 components in the clu
 zookeeper, kafka, prometheus, node_exporter, mysql, elasticsearch, fluentd, adoctor_check_executor, adoctor_check_scheduler, adoctor_diag_executor, adoctor_diag_scheduler, gala_gopher, gala_spider, and gala_ragdoll.
 ```
 
-###### 1.10.2 A-Ops Service Deployment Procedure
+##### 1.10.2 A-Ops Service Deployment Procedure
 
 - Run the **task query** command to query the default task ID. Ensure that the host where the default task is executed is correctly added.
 - Modify the `/usr/lib/python3.8/site-packages/aops_manager/deploy_manager/ansible_handler` file:
@@ -840,7 +840,7 @@ zookeeper, kafka, prometheus, node_exporter, mysql, elasticsearch, fluentd, adoc
   ```shell
   vim /etc/aops/default.json
   ```
-  - Modify the `/etc/ansible/ansible.cfg` file to uncomment `host_key_checking`.
+  - Modify the `/etc/ansible/ansible.cfg` file, and uncomment `host_key_checking`.
 
   ```shell
   vim /etc/ansible/ansible.cfg
