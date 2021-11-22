@@ -1,10 +1,14 @@
 # Guide to Porting Kubernetes to openEuler
 
-[[toc]]
+- [Software Overview](#software-overview)
+- [Environment Configuration](#environment-configuration)
+- [System Configuration](#system-configuration)
+- [Software Installation](#software-installation)
+- [Software Uninstallation](#software-uninstallation)
 
 ## Software Overview
 
-The Kubernetes cluster (K8s for short) is an open source container cluster management platform that implements the automatic deployment, automatic scaling, and maintenance of container clusters. The goal of Kubernetes is to promote a mature ecosystem of components and tools to run applications more easily on the cloud.
+The Kubernetes (K8s for short) is an open source container cluster management platform that implements the automatic deployment, automatic scaling, and maintenance of container clusters. The goal of Kubernetes is to promote a mature ecosystem of components and tools to run applications more easily on the cloud.
 
 The Kubernetes cluster has two types of nodes: master and worker. The master node manages and controls the entire cluster. Control commands executed for the cluster are sent to the master node. The worker node is a workload node in the Kubernetes cluster. The workload on a worker node is allocated by the master node. When a worker node breaks down, the master node transfers the workload on the faulty worker node to other nodes.
 
@@ -16,7 +20,7 @@ This document describes how to use two nodes to set up a Kubernetes cluster. One
 
 |  Software   |Version Number  |Installation Method   |
 |:---  |:----  |:----  |
-| openEuler | 20.03-LTS-SP2 |iso  |
+| openEuler | 20.03-LTS-SP2 |ISO  |
 | gnu | 7.3.0 |  |
 | python3 | 3.7.4 | |
 | bash | 5.0.11 |          |
@@ -204,7 +208,7 @@ $ yum install -y kubelet-1.15.10 kubeadm-1.15.10 kubectl-1.15.10 kubernetes-cni-
 
 The master and worker nodes download other components using Docker. When downloading images, you need to select the version that corresponds to the architecture. Perform the following operations on the two nodes:
 
-1. Run the following command to view the image required for initialization:
+1. Run the following command to view the images required for initialization:
    
     ```
     $ kubeadm config images list
@@ -213,9 +217,9 @@ The master and worker nodes download other components using Docker. When downloa
    ![](./figures/downloaddocker.png)
    
    > ![](./public_sys-resources/icon-note.gif) **Note**   
-The image version required by K8s may change. Therefore, you need to check the list to select the proper Docker images to be downloaded. The following image versions are for reference only.
+The image versions required by K8s may change. Therefore, you need to check the list to select the proper Docker images to be downloaded. The following image versions are for reference only.
 
-2. Run the following commands to download the image from Docker Hub:
+2. Run the following commands to download the images from Docker Hub:
    
     * AArch64 architecture
    
@@ -244,7 +248,7 @@ The image version required by K8s may change. Therefore, you need to check the l
     > ![](./public_sys-resources/icon-note.gif) **Note**   
     > If the Docker image library proxy is configured, you can directly change the tag to **k8s.gcr.io** and skip the following steps.
 
-3. Run the following commands to tag the downloaded image:
+3. Run the following commands to tag the downloaded images:
    
     * AArch64 architecture
    
@@ -270,7 +274,7 @@ The image version required by K8s may change. Therefore, you need to check the l
         $ docker tag coredns/coredns:1.3.1 k8s.gcr.io/coredns:1.3.1
         ```
 
-4. Run the following command to check whether the K8s tag is successfully added to the image:
+4. Run the following command to check whether the K8s tag is successfully added to the images:
    
     ```
     $ docker images | grep k8s
@@ -278,7 +282,7 @@ The image version required by K8s may change. Therefore, you need to check the l
    
    ![](./figures/zh-cn_image_0296836374.png)
 
-5. After the tag is added, run the following commands to delete the old image in the current environment:
+5. After the tag is added, run the following commands to delete the old images in the current environment:
    
     * AArch64 architecture
    
