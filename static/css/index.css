@@ -57,6 +57,7 @@
 
 #all > #right {
     width: 84%;
+    overflow: hidden;
 }
 
 #all > #right > header{
@@ -174,38 +175,50 @@ h1 {
     flex-direction: row;
     margin-top: 200px;
     background-color: #FBFBFB;
+    flex-wrap: wrap;
+    overflow: hidden;
     justify-content: space-between;
     padding-left: 140px;
     padding-right: 140px;
 }
 
+ #footer div {
+     margin: 60px 0;
+ }
 #footer div:nth-child(1) {
-    margin-top: 50px;
-    width: 48%;
-    height: 210px;
+    text-align: left;
 }
 
-#footer div:nth-child(2) {
-    margin-top: 50px;
-    margin-bottom: 85px;
+#footer div:nth-child(1) p {
+    margin-top: 10px;
+    font-size: 16px;
+    max-width: 470px;
+}
+
+#footer div:nth-child(1) img {
+    width: 274px;
+    height: 58px;
+}
+
+#footer div:nth-child(3) {
     text-align: center;
 }
 
-#footer div:nth-child(2) img {
+#footer div:nth-child(3) img {
     width: 50%;
 }
 
-#footer div:nth-child(2) p {
+#footer div:nth-child(3) p {
     color: #000000;
     margin-top: 10px
 }
 
-#footer div:nth-child(1) p:nth-child(2) {
+#footer div:nth-child(2) p:nth-child(2) {
     color: #000000;
     margin-top: 16px;
 }
 
-#footer div:nth-child(1) p:nth-child(3) {
+#footer div:nth-child(2) p:nth-child(3) {
     color: #000000;
     margin-top: 23px;
 }
