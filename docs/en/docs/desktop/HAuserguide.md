@@ -1,36 +1,35 @@
 # Installing, Deploying, and Using HA
 
 <!-- TOC -->
-- [Installing, Deploying, and Using HA](#ha的安装部署与使用)
-  - [Installation and Configuration](#安装与配置)
-    - [Modifying the Host Name and the /etc/hosts File](#修改主机名称及etchosts文件)
-    - [Configuring the Yum Source](#配置yum源)
-    - [Installing HA Software Package Components](#安装ha软件包组件)
-    - [Setting the hacluster User Password](#设置hacluster用户密码)
-    - [Modifying the `/etc/corosync/corosync.conf` File](#修改etccorosynccorosyncconf文件)
-    - [Managing Services](#管理服务)
-      - [Disabling the Firewall](#关闭防火墙)
-      - [Managing the pcs Service](#管理pcs服务)
-      - [Managing the pacemaker Service](#管理pacemaker服务)
-      - [Managing the corosync Service](#管理corosync服务)
-    - [Performing Node Authentication](#节点鉴权)
-    - [Accessing the Front-End Management Platform](#访问前端管理平台)
-  - [Quick User Guide](#快速使用指南)
-    - [Login Page](#登陆页面)
-    - [Home Page](#主页面)
-    - [Managing Nodes](#节点鉴权)
-      - [Node](#节点)
-    - [Preference Setting](#首选项配置)
-      - [Adding Resources](#添加资源)
-        - [Adding Common Resources](#添加普通资源)
-        - [Adding Group Resources](#添加组资源)
-        - [Adding Clone Resources](#添加克隆资源)
-      - [Editing Resources](#编辑资源)
-      - [Setting Resource Relationships](#设置资源关系)
+- [Installing, Deploying, and Using HA](#installing-deploying-and-using-ha)
+  - [Installation and Configuration](#installation-and-configuration)
+    - [Modifying the Host Name and the /etc/hosts File](#modifying-the-host-name-and-the-etchosts-file)
+    - [Configuring the Yum Source](#configuring-the-yum-source)
+    - [Installing HA Software Package Components](#installing-ha-software-package-components)
+    - [Setting the hacluster User Password](#setting-the-hacluster-user-password)
+    - [Modifying the `/etc/corosync/corosync.conf` File](#modifying-the-etccorosynccorosyncconf-file)
+    - [Managing Services](#managing-services)
+      - [Disabling the Firewall](#disabling-the-firewall)
+      - [Managing the pcs Service](#managing-the-pcs-service)
+      - [Managing the pacemaker Service](#managing-the-pacemaker-service)
+      - [Managing the corosync Service](#managing-the-corosync-service)
+    - [Performing Node Authentication](#performing-node-authentication)
+    - [Accessing the Front-End Management Platform](#accessing-the-front-end-management-platform)
+  - [Quick User Guide](#quick-user-guide)
+    - [Login Page](#login-page)
+    - [Home Page](#home-page)
+    - [Managing Nodes](#managing-nodes)
+      - [Node](#node)
+    - [Preference Setting](#preference-setting)
+      - [Adding Resources](#adding-resources)
+        - [Adding Common Resources](#adding-common-resources)
+        - [Adding Group Resources](#adding-group-resources)
+        - [Adding Clone Resources](#adding-clone-resources)
+      - [Editing Resources](#editing-resources)
+      - [Setting Resource Relationships](#setting-resource-relationships)
       - [ACLS](#acls)
-    
-    <!-- /TOC -->
 
+    <!-- /TOC -->
 
 ## Installation and Configuration
 
@@ -40,7 +39,7 @@
 
 - **Note: You need to perform the following operations on both hosts. The following takes the operation on one host as an example.**
 
-Before using the HA software, ensure that the host name has been changed and all host names have been written into the **/etc/hosts** file.
+Before using the HA software, ensure that the host name has been changed and all host names have been written into the `/etc/hosts` file.
 
 - Run the following command to change the host name:
 
@@ -48,7 +47,7 @@ Before using the HA software, ensure that the host name has been changed and all
 # hostnamectl set-hostname ha1
 ```
 
-- Edit the **/etc/hosts** file and write the following fields:
+- Edit the `/etc/hosts` file and write the following fields:
 
 ```
 172.30.30.65 ha1
@@ -103,7 +102,7 @@ totem {
          crypto_cipher: none
         crypto_hash: none
 }
-logging {         
+logging {     
         fileline: off
         to_stderr: yes
         to_logfile: yes
@@ -142,7 +141,7 @@ nodelist {
 # systemctl stop firewalld
 ```
 
-Change the status of SELINUX in the **/etc/selinux/config** file to **disabled**.
+Change the status of SELINUX in the `/etc/selinux/config` file to **disabled**.
 
 ```
 # SELINUX=disabled
@@ -218,7 +217,7 @@ After the preceding services are started, open the browser (Chrome or Firefox is
 
 ### Login Page
 
-The username is `hacluster` and the password is the one set on the host.
+The username is **hacluster** and the password is the one set on the host.
 
 ![](./figures/HA-login.png)
 
@@ -242,14 +241,14 @@ Node management includes the following functions: start, stop, restart, standby,
 
 ### Preference Setting
 
-You can perform the following operations using command lines. The following is a simple example. Run the `pcs --help` command to query more commands available.
+You can perform the following operations using command lines. The following is a simple example. Run the **pcs --help** command to query more commands available.
 
 ```
 # pcs property set stonith-enabled=false
 # pcs property set no-quorum-policy=ignore
 ```
 
-Run the `pcs property` command to view all settings.
+Run the **pcs property** command to view all settings.
 
 ![](./figures/HA-firstchoice-cmd.png)
 
