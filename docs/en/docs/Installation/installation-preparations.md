@@ -6,7 +6,7 @@ This section describes the compatibility of the hardware and software and the re
 
 - [Installation Preparations](#installation-preparations)
     - [Obtaining the Installation Source](#obtaining-the-installation-source)
-    - [Release Package Integrity Check](#release-package-integrity-check)
+    - [Performing Release Package Integrity Check](#performing-release-package-integrity-check)
         - [Introduction](#introduction)
         - [Prerequisites](#prerequisites)
         - [Procedure](#procedure)
@@ -27,11 +27,11 @@ Perform the following operations to obtain the openEuler release package:
 
 1.  Log in to the  [openEuler Community](https://openeuler.org/zh/)  website.
 2.  Click  **Download**. 
-3.  Choose the card **openEuler-20.03-LTS-SP1**. Click the link provided after  **Download ISO**.The download list is displayed.
+3.  Choose the card **openEuler 20.03 LTS SP1**, and click **Download ISO**.The download list is displayed.
     -   **aarch64**: ISO image file of the AArch64 architecture
-    -   **x86\_64**: ISO image file of the x86\_64 architecture
+    -   **x86_64**: ISO image file of the x86_64 architecture
     -   **source**: ISO image file of the openEuler source code
-4.  Select the openEuler release package and verification file to be downloaded that adapt to the architecture of the environment to be installed.
+4.  Select the openEuler release package and verification file to be downloaded based on the actual architecture environment to be installed.
     -   AArch64 architecture:
         1.  Click **aarch64**.
         2.  If you install the environment on the local host, download the release package **openEuler-20.03-LTS-SP1-aarch64-dvd.iso** and the verification file **openEuler-20.03-LTS-SP1-aarch64-dvd.iso.sha256sum** to the local host.
@@ -39,26 +39,27 @@ Perform the following operations to obtain the openEuler release package:
 
     -   x86_64 architecture:
         1.  Click **x86_64**.
-		2.  If you install the environment on the local host, download the release package **openEuler-20.03-LTS-SP1-x86_64-dvd.iso** and the verification file **openEuler-20.03-LTS-SP1-x86_64-dvd.iso.sha256sum** to the local host.
+	2.  If you install the environment on the local host, download the release package **openEuler-20.03-LTS-SP1-x86_64-dvd.iso** and the verification file **openEuler-20.03-LTS-SP1-x86_64-dvd.iso.sha256sum** to the local host.
         3.  If you install the environment on the network, download the release package **openEuler-20.03-LTS-SP1-netinst-x86_64-dvd.iso** and the verification file **openEuler-20.03-LTS-SP1-netinst-x86_64-dvd.iso.sha256sum** to the local host.
 
->![](./public_sys-resources/icon-note.gif) **Note**   
+>![](./public_sys-resources/icon-note.gif) **Note:**   
 > When the network is available, install the environment on the network because the ISO release package is small.
+> The release package with AArch64 architecture supports UEFI mode, and the one with x86_64 architecture supports UEFI and Legacy modes.
 
-## Release Package Integrity Check
+## Performing Release Package Integrity Check
 
 >![](./public_sys-resources/icon-note.gif) **NOTE:**   
->This section describes how to verify the integrity of the release package in the AArch64 architecture. The procedure for verifying the integrity of the release package in the x86\_64 architecture is the same.  
+>This section describes how to verify the integrity of the release package in the AArch64 architecture. The procedure for verifying the integrity of the release package in the x86_64 architecture is the same.  
 
 ### Introduction
 
-To prevent the software package from being incompletely downloaded due to network or storage device faults during transmission, you need to verify the integrity of the software package after obtaining it. Only the software packages that pass the verification can be installed.
+To prevent the software package from being incompletely downloaded due to network or storage device faults during transmission, you need to verify its integrity after obtaining it. Only the software packages that pass the verification can be installed.
 
-Compare the verification value recorded in the verification file with the .iso file verification value calculated manually to check whether the software package passes the verification. If the verification values are consistent, the .iso file is not damaged. If they are inconsistent, you can confirm that the file is damaged and you need to obtain the file again.
+Compare the verification value recorded in the verification file with the .iso file verification value calculated manually to check whether the software package passes the verification. If the verification values are consistent, the .iso file is not damaged. If not, the file is damaged and you need to obtain the release package again.
 
 ### Prerequisites
 
-Before verifying the integrity of the release package, you need to prepare the following files:
+Before verifying the integrity of the release package, prepare the following files:
 
 ISO file:  **openEuler-20.03-LTS-SP1-aarch64-dvd.iso**
 
@@ -72,6 +73,7 @@ To verify the file integrity, perform the following operations:
 
     ```
     $ cat openEuler-20.03-LTS-SP1-aarch64-dvd.iso.sha256sum 
+ 
     ```
 
 2.  Calculate the SHA256 verification value of the file. Run the following command:
@@ -82,9 +84,9 @@ To verify the file integrity, perform the following operations:
 
     After the command is run, the verification value is displayed.
 
-3.  Check whether the values calculated in step 1 and step 2 are consistent.
+3.  Check whether the values obtained from step 1 and step 2 are consistent.
 
-    If the verification values are consistent, the .iso file is not damaged. If they are inconsistent, you can confirm that the file is damaged and you need to obtain the file again.
+    If the verification values are consistent, the .iso file is not damaged. If not, the file is damaged and you need to obtain the release package again.
 
 ## Installation Requirements for PMs
 
@@ -104,7 +106,7 @@ You need to take hardware compatibility into account during openEuler installati
 |  Server Type   | Server Name  | Server Model  |
 | :----  | :----  | :----  |
 | Rack server | TaiShan 200 | 2280 balanced model |
-| Rack server  | FusionServer Pro | FusionServer Pro 2288H V5<br>NOTE：<br>The server must be configured with the Avago SAS3508 RAID controller card and the LOM-X722 NIC.|
+| Rack server  | FusionServer Pro | FusionServer Pro 2288H V5<br>NOTE:<br>The server must be configured with the Avago 3508 RAID controller card and the LOM-X722 NIC.|
 
 ### Minimum Hardware Specifications
 
@@ -117,7 +119,7 @@ You need to take hardware compatibility into account during openEuler installati
 | Architecture  | AArch64 or x86_64 |
 | CPU  | Two CPUs |
 | Memory  | ≥ 4 GB (8 GB or higher recommended for better user experience) |
-| Hard disk  | ≥ 120 GB (for better user experience) |
+| Hard disk  | ≥ 32 GB (120 GB or higher recommended for better user experience) |
 
 ## Installation Requirements for VMs
 
@@ -127,7 +129,7 @@ To install the openEuler OS on a VM, the VM must meet the following hardware com
 
 When installing openEuler, pay attention to the compatibility of the virtualization platform. Currently, the following virtualization platforms are supported:
 
--   A virtualization platform created by the virtualization components \(openEuler as the host OS and QEMU and KVM provided in the release package\) of openEuler
+-   A virtualization platform created by the openEuler virtualization components (openEuler is used as the host OS, and the virtualization components are QEMU and KVM provided in the release package)
 -   x86 virtualization platform of Huawei public cloud
 
 ### Minimum Virtualization Space
