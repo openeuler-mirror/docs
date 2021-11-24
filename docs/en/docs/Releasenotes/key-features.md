@@ -1,100 +1,110 @@
 # Key Features
 
-## Brand New 5.10 Kernel
+## Innovations Based on Linux Kernel 5.10
 
-In-depth optimization of scheduling, I/O, and memory management has been performed, providing more computing capabilities such as ARM64, x86, and RISC-V.
+In-depth optimizations of scheduling, I/O, and memory management have been performed, and various computing power, such as ARM64, x86, and RISC-V is supported.
 
-- **Optimized scheduler**. The fairness of CFS tasks has been optimized. The NUMA aware asynchronous calling mechanism has been added so that the NVDIMM initialization is significantly improved. The SCHED\_IDLE scheduling policy is optimized to significantly reduce the scheduling delay of high-priority tasks and reduce interference to other tasks.
-- **Optimized the NUMA balancing mechanism**. Better affinity, higher utilization, and fewer invalid migrations are achieved.
-- **Enhanced the CPU isolation mechanism**. Interrupt isolation and unbound kthreads isolation are supported to enhance the isolation of CPU cores and avoid mutual interference between services.
-- **Optimized Cgroup single-thread migration**. The dependency on the read and write semaphores of the thread group is eliminated. Time namespaces are introduced to facilitate container migration.
-- **Limitable number of file handles that can be used in a container**. File handles include common file handles and network sockets. When a container is started, you can specify the `--files-limit` parameter to limit the maximum number of handles that can be opened in the container.
-- **PSI support**. Pressure Stall Information (PSI) provides a method for evaluating system resources, such as the CPU, memory, and I/O pressure. An accurate detection method can help a resource user determine an appropriate workload, and can also help a system formulate an efficient resource scheduling policy, so as to maximize system resource utilization and improve user experience.
-- **Optimized inter-process communication**. The **pipe/epoll\_wait** wakeup mechanism is optimized to improve the performance of waking up multiple waiting threads.
-- **Enhanced memory management**. Memory control and statistics are refined, and heterogeneous memory, hot swap, and memory initialization functions are improved. More effective user control interfaces are provided. Hotspot locks and semaphores are optimized. Radical memory normalization and defragmentation are supported. The vmap/vmalloc mechanism is optimized, significantly improving the memory application efficiency. Memory maintenance and test features, such as **KASAN**, **kmemleak**, **slub\_debug**, and **oom**, are enhanced to improve the efficiency of locating and resolving memory problems.
-- **Early Departure Time model switching**. It eliminates the limitation of the TCP framework during packet sending. The EDT timestamp is set for data packets based on the scheduling policy, which avoids the delay caused by large queue buffer and greatly improves the TCP performance.
-- **MultiPath TCP**. MultiPath TCP improves performance and reliability in mobile and data scenarios and supports parallel transmission of multiple subflows in load balancing scenarios.
-- **Log fast commit method**. EXT4 introduces a new and lightweight log method  `-fast commit`, which can greatly accelerate time-consuming operations such as `fsync` and bring better performance.
-- **dm writecache feature**. The dm writecache feature is supported to improve the sequential write performance of large SSD blocks and the performance of the DDR persistent memory.
-- **io\_uring**. io\_uring is a new asynchronous I/O framework and implementation. It supports the polling mode. In polling mode, the performance is greatly improved, which is close to that of the SPDK. When the queue depth is high, the performance is better.
-- **ILP32**. 32-bit applications are supported in the Kunpeng 920 ARM64 environment.
-- **Enhanced IMA commercial use**. Based on the open-source IMA solution, the security, performance, and ease-of-use of IMA are enhanced to facilitate commercial use.
-- **Per task stack check**. Per task stack check is supported to enhance the capability of defending against ROP attacks.
-- **MPAM resource management and control**. The cache QoS and memory bandwidth control technologies of the ARM64 architecture is supported.
-- **SEDI-based NMI mechanism and PMU-based NMI mechanism**. Hard lockup detection is enabled. perf nmi is enabled so that the performance analysis becomes more accurate.
-- **VM CPU hot swap in the ARM64 platform**. CPU hot swap is supported in ARM64 for more flexible resource allocation.
-- **Enhanced ARM64 kdump**. Memory reservation for addresses greater than 4 GB is supported so that the kdump can reserve more memory space to support machines with larger memory.
-- **Raspberry PI series board**s. The support for the Raspberry PI has been integrated into the native openEuler 21.03 kernel. You can directly use the openEuler 21.03 kernel source code for debugging the boards.
-- **KVM virtualization in the RISC-V platform**
-- **1822 iNICs**
+- **Dynamic kernel preemption**: The new boot option **preempt=none/voluntary/full** is added to allow the kernel to dynamically switch the preemption mode.
 
-## Kernel Hot Upgrade 
+- **mremap performance optimization**: Entries at the PMD and PUD levels can be moved to accelerate the speed of mapping large memory blocks.
 
-NVWA is an OS vulnerability repair and upgrade solution that implements quick hot replacement of the kernel without affecting services.
+- **per memcg lru lock**: It alleviates lock contention between cloud native container instances and improve system performance.
 
-- **The CPU park and quick kexec features** accelerate system startup and shutdown, reduce system downtime, and improve system availability.
-- **The pin memory and PMem features**  ensure quick and accurate recovery of service processes and improve service resilience.
--  **The NVWA controllere** provides the gRPC communication interface, which is easy to use.
+- **Huge page memory management optimization**: The tail pages among HugeTLB huge pages are released in shared mapping mode to reduce the overhead and memory usage incurred in managing the huge page memory.
 
-## Enhanced Virtualization Function and Maintainability
+- **Concurrent translation lookaside buffer (TLB) updates**: The local TLB and remote TLB can be updated at the same time to optimize the TLB shootdown process. The benefits are quicker TLB updates and improved service performance.
 
-The  live migration Pro capability is extended to improve the maintainability and testability.
+- **Huge page vmalloc performance optimization**: When calling vmalloc() to allocate spaces that exceed the minimum size of huge pages, the huge page instead of the base page is used to map the memory, improving the TLB usage and reducing TLB misses.
 
-- **Live migration Pro feature**. multifd is enhanced to support TLS, ensuring data security during migration. Concurrent compression of live migration data is supported, improving migration performance. Statistics on data page access frequency are added for live migration data prediction in advance.
-- **Performance debugging tool (vmtop).** You can dynamically view the resource usage of VMs in real time, including the CPU usage and memory usage. The x86\_64 architecture is supported.
-- **I/O suspension**. I/O suspension is supported so that automatic retry is performed by default in case an I/O error occurs. If the retry times out, an alarm is reported.
 
-## Lightweight Virtual Runtime (StratoVirt)
 
-Elastic memory, huge page, and system call filtering are added to enhance the performance and stability of the I/O subsystem.
+## File System for New Media
 
-- **Elastic memory**. The memory can be allocated and reclaimed based on the memory requirements of the workload. The memory reclamation speed of virtio-balloon can reach 3 GB/s.
-- **Huge page**. Huge page in the lightweight framework provides continuous physical memory pages for lightweight VMs, improving VM memory access efficiency.
-- **System call filtering**. The device model has been simplified and system call filtering is supported. In the simplest configuration, only 35 system calls are required, effectively reducing the system attack surface.
-- **Enhanced I/O subsystem**. Multi-channel concurrent I/O capability is supported and the performance is improved. The I/O-QoS capability improves the flexibility and stability of VM I/O traffic management.
+- Eulerfs has the innovative metadata soft update technology. Its pointer-based directory dual-view counting mechanism reduces metadata synchronization overheads and effectively improves the call performance of create, unlink, mkdir, and rmdir functions in the file system. 
 
-## Vertical Memory Expansion
 
-Various memory and storage media are supported to expand the system memory capacity and reduce memory usage costs.
+## Tiered Memory Expansion
 
-- **Hot and cold page identification**. The busy/idle status statistics mechanism of the kernel-mode memory page can accurately identify the cold and hot distribution of process memory page accesses.
-- **Configurable elimination policies**. A configuration interface is provided to customize the cold and hot tiering policies for memory pages.
-- **Smooth expansion**. Cold pages are automatically swapped out to the extended memory. The software deployed on the cold pages can run properly without changing or adapting the programming mode.
-- **Multi-media expansion**. Multiple media such as SCM, XL flash, and NVMe SSD can be used as the extended memory. The cold and hot memory tiering solution is specified based on the access speed of the media to expand the memory and reduce performance loss.
+Various memory and storage media can be used to expand the system memory capacity and reduce the memory usage. User-mode swap is supported.
 
-## OpenStack Victoria Integration
+- **User-mode swap**: The evicted cold memory can be swapped to the user-mode storage based on a preset etMem policy. The user-mode swap delivers a higher performance than the kernel-mode swap and the whole swap process is transparent to users.
 
-OpenStack Victoria is a simple, scalable, rich, and standard cloud management operating system. For details about more features, see OpenStack Victoria release notes.
 
-- **Integrated OpenStack Victoria**. OpenStack Victoria enables the IaaS solution.
-- **Enhanced block storage.** Advanced functions such as capacity expansion, snapshots, and VM image cloning are supported.
-- **Container-based deployment and network capabilities**. Better integration with containers is achieved.
-- **Extended services**. Extended services such as control panel management, bare metal server deployment, and cloud resource tracing are supported.
+## Enhanced Cloud Native Scheduling
 
-## Kubernetes 1.20 Integration
+In cloud service scenarios, online interactive services are sensitive to latencies and have a tidal effect. Their CPU usage is generally less than 15%. A hybrid deployment of online and offline services is an effective way to improve resource utilization.
 
-Kubernetes 1.20 is a cloud-native OS used to automatically deploy, scale, and manage containerized applications. For more information, see Kubernetes 1.20 release notes.
+- **Quality Aware Scheduler (QAS)**: It ensures that online tasks quickly preempt CPU resources, schedules tasks in a deterministic manner, and suppresses interference from offline tasks.
+- **Memory reclamation for OOM**: When OOM occurs, memory reclamation is preferentially performed for process groups with low priorities to ensure the normal running of online services.
 
-- **Automatic rollout and rollback**. Kubernetes automatically rolls out applications or instances whose configurations have been modified and monitors the running status of the applications. If any application fails to be rolled out, Kubernetes will roll back the previous modification.
-- **Service discovery and load balancing**. Service discovery and load balancing based on the container IP addresses and DNS names are supported.
-- **Storage orchestration**. Automatic mounting of multiple storage backends, such as local storage, NFS, iSCSI, Gluster, and Ceph.
-- **Scaleou**t. Manual scaleout on the CLI and UI, and automatic scaleout based on the CPU usage are supported.
+## KubeOS
 
-## HA Cluster Solution
+KubeOS is a container operating system, which centrally manages cloud native cluster OSs in containers. It has the following features:
 
-The high-availability (HA) cluster solution provided by Kylinsoft implements second-level failover and provides users with an HA environment that ensures service continuity, continuous data protection, and disaster recovery.
+- Supports OS containerization and Kubernetes interconnection for unified OS management and atomized lifecycle management
+- Supports lightweight OS tailoring, which reduces unnecessary packages for quicker upgrades and replacements.
 
-- **Multiple protection modes**. Protection modes such as dual-system hot backup, dual-system mutual backup, and multi-system backup (*N* + *M*) are supported to meet various protection requirements of service applications.
-- **Physical machine and cloud scenarios**. HA can be configured in the VM pool, and for physical server nodes as well.
-- **Network heartbeat modes (the single-heartbeat and dual-heartbeat modes)**. Shared data resources can be comprehensively monitored to ensure data consistency in extreme conditions.
-- **Low resource consumption**. Online deployment is supported with secure use of protected application resources.
-- **Mainstream system services and application software supported.** Nginx, httpd, MariaDB are supported. Secondary development is made possible.
-- **HA-WEB man-machine interaction interfaces.** Interfaces for user login, cluster status display, and resource control are supported.
-- **HA-API machine-machine interaction interfaces**. Interfaces for backend cluster control, resource management, cluster status monitoring, and resource status monitoring are supported.
 
-## More Desktop Environments
+## Enhanced Lightweight Secure Container
 
-More development desktop options and better development experience are provided.
+Based on Stratovirt, a lightweight virtualization technology, containers have low load and VMs are more secure.
 
-- **Xfce.** Xfce is a lightweight Linux desktop that occupies fewer resources than mainstream UIs.
-- **DDE**. DDE is a Linux desktop environment provided by Uniontech Software. It is aesthetic, easy-to-use, and efficient.
+-  Supports UEFI boot, ACPI table construction, and addition of PCIe/PCI devices (including vrtio-pci) to VMs.
+-  Supports VFIO, allowing physical devices on the host to be accessed from VMs and enabling VMs to obtain high performance close to raw devices.
+
+## Enhanced iSulad
+
+- The shimv2 process incorporates the kata-runtime,kata-shim, kata-proxy processes, and the RPC is invoked to process various containers during the runtime. Lifecycle management commands are used to simplify the system architecture. 
+
+## Dual-Plane Deployment
+
+eggo is a Kubernetes cluster deployment and management project of the openEuler cloud native special interest group (SIG). It provides efficient and stable cluster deployment capabilities.
+
+-  **Version-based cluster configuration management**: Git repositories are used to store and track cluster configuration changes.
+-  **x86/ARM dual planes**: implements unified cluster deployment, monitoring, and audit of OSs.
+
+## Edge Computing
+
+Unified edge-cloud synergy framework KubeEdge+ is provided, implementing basic capabilities such as edge-cloud application management and deployment and edge-cloud communication.
+
+- **Management collaboration**: Devices in a single cluster can be managed in a unified manner and applications can be sent in seconds.
+- **Network collaboration**: The edge-cloud bidirectional communication and communication between edge nodes in private subnets are supported.
+- **Edge autonomy**: Edge autonomy is supported to ensure that edge nodes work properly when the network is unstable. Metadata persistence and quick recovery of edge nodes are supported.
+- **Lightweight edge**: It occupies less memory and can work properly if resources are limited.
+
+## Embedded Image
+
+Basic capabilities, such as lightweight, security hardening, and lightweight containers, are provided, and the ARM32 and ARM64 chip architectures are supported.
+
+- **Lightweight capability**: The OS image size can be less than 5 MB, the background noise can be less than 15 MB, and the startup time can be less than 5s.
+- **Security hardening**: Security hardening is performed on resources such as account passwords and file permissions. OS security is enabled by default.
+- **Lightweight containers**: Standard container images can be deployed and run in lightweight containers in embedded scenarios.
+- **Multi-architecture support**: The ARM32 and ARM64 chip architectures are supported.
+
+## Intelligent O&M A-Ops
+
+The basic intelligent O&M framework provides basic capabilities such as configuration tracing, architecture awareness, and fault locating to support quick troubleshooting and reduce O&M costs.
+
+- **Application topology awareness**: The eBPF-based low-load probe framework provides automatic network topology awareness and detection capabilities at the application level.
+- **Configuration tracing**: implements the configuration baseline and comparison functions and quickly rectify configuration problems.
+- **Intelligent fault locating**: A-Ops supports exception detection and user-defined fault tree, and provides an expert-mode engine to detect system faults in real time and rectify system faults in a timely manner, reducing system downtime and O&M costs.
+
+
+## secPaver
+
+secPaver is an SELinux policy development tool used to assist developers in developing security policies for applications.
+
+- **Policy management**: provides a high-level configuration language and generates SELinux policy files based on the policy configuration file to reduce the threshold for using SELinux.
+
+## Third-party Application Support
+
+- **KubeSphere**: It is an application-centric and open-source container platform built based on Kubernetes. It is initiated by Beijing Qingyun Technology Co., Ltd. and supported and maintained by SIG-KubeSphere of the openEuler community.
+- **OpenStack Wallaby**: OpenStack is updated to the latest Wallaby version. Wallaby is released in April 2021, including important updates of core projects such as Nova, Kolla, Cyborg, and Tacker.
+- **OpenResty**: It is a high-performance web platform built based on Nginx and Lua.
+
+## Desktop Environments
+
+More desktop environments are provided to ensure better development experience.
+
+- DDE is upgraded and supports drawing board, music, and cinema applications.
+- UKUI is upgraded and supports the Chinese input method and multimedia.
