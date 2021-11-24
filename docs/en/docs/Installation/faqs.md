@@ -1,24 +1,27 @@
 # FAQs
+
 <!-- TOC -->
 
 - [FAQs](#faqs)
-    - [Why Does openEuler Fail to Start After I Install It to the Second Disk?](#why-does-openeuler-fail-to-start-after-i-install-it-to-the-second-disk)
-    - [Why Does openEuler Enter Emergency Mode After It Is Powered On?](#why-does-openeuler-enter-emergency-mode-after-it-is-powered-on)
-    - [Failed to Reinstall openEuler When a Logical Volume Group That Cannot Be Activated Has Existed in openEuler](#failed-to-reinstall-openeuler-when-a-logical-volume-group-that-cannot-be-activated-has-existed-in-openeuler)
+    - [openEuler Fails to Start After It Is Installed to the Second Disk](#openeuler-fails-to-start-after-it-is-installed-to-the-second-disk)
+    - [openEuler Enters Emergency Mode After It Is started](#openEuler-enters-emergency-mode-after-it-is-started)
+    - [openEuler Fails to Be Reinstalled When an Unactivated Logical Volume Group Exists](#openEuler-fails-to-be-reinstalled-when-an-unactivated-logical-volume-group-exists)
     - [An Exception Occurs During the Selection of the Installation Source](#an-exception-occurs-during-the-selection-of-the-installation-source)
-    - [How Do I Manually Enable the kdump Service?](#how-do-i-manually-enable-the-kdump-service)
-    - [Failed to Selected Only One Disk for Reinstallation When openEuler Was Installed on a Logical Volume Consisting of Multiple Disks](#failed-to-selected-only-one-disk-for-reinstallation-when-openeuler-was-installed-on-a-logical-volume-consisting-of-multiple-disks)
-    - [Failed to Install openEuler on an x86 PM in UEFI Mode due to Secure Boot Option Setting](#failed-to-install-openeuler-on-an-x86-pm-in-uefi-mode-due-to-secure-boot-option-setting)
-
+    - [How Do I Manually Enable the Kdump Service?](#how-do-i-manually-enable-the-kdump-service?)
+    - Fails to Select Only One Disk for Reinstallation When openEuler Is Installed on a Logical Volume Consisting of Multiple Disks 
+    - openEuler Fails to Be Installed on an x86 PM in UEFI Mode due to Secure Boot Option Setting
+    - [pmie_check Is Reported in the messages Log During openEuler Installation](#pmie_check-is-reported-in-the-messages-log-during-openEuler-installation)
+    - [Installation Fails when a User Selects Two Disks with OS Installed and Customizes Partitioning](#installation-fails-when-a-user-delects-two-disks-with-OS-installed-and-customizes-partitioning)
+    
 <!-- /TOC -->
 
-## Why Does openEuler Fail to Start After I Install It to the Second Disk?
+## openEuler Fails to Start After It Is Installed to the Second Disk
 
 ### Symptom
 
-The OS is installed on the second disk  **sdb**  during the installation. The openEuler fails to be started.
+The OS is installed on the second disk  **sdb**  during the installation, causing startup failure.
 
-### Possible Cause
+### Possible Causes
 
 When openEuler is installed to the second disk, MBR and GRUB are installed to the second disk  **sdb**  by default. The following two situations may occur:
 
@@ -27,15 +30,15 @@ When openEuler is installed to the second disk, MBR and GRUB are installed to th
 
 The preceding two situations occur because the first disk  **sda**  is booted by default to start openEuler on the BIOS window. If openEuler is not installed on the  **sda**  disk, system restart fails.
 
-### Solution
+### Solutions
 
 This problem can be solved using either of the following two methods:
 
--   During the installation of openEuler, select the first disk or both disks, and install the boot loader on the first disk  **sda**.
+-   During the openEuler installation, select the first disk or both disks, and install the boot loader on the first disk  **sda**.
 -   After installing openEuler, restart it by modifying the boot option on the BIOS window.
 
 
-## Why Does openEuler Enter Emergency Mode After It Is Powered On?
+## openEuler Enters Emergency Mode After It Is started
 
 ### Symptom
 
@@ -47,11 +50,11 @@ openEuler enters emergency mode after it is powered on.
 
 Damaged OS files result in disk mounting failure, or overpressured I/O results in disk mounting timeout \(threshold: 90s\).
 
-An unexpected system power-off, and low I/O performance of disks may also cause the problem.
+An unexpected system power-off and low I/O performance of disks may also cause the problem.
 
-### Solution
+### Solutions
 
-1.  Enter the password of the  **root**  account to log in to openEuler.
+1.  Log in to openEuler as the  **root**  user.
 2.  Check and restore files by using the file system check \(fsck\) tool, and restart openEuler.
 
     >![](./public_sys-resources/icon-note.gif) **NOTE:**   
@@ -74,19 +77,19 @@ UUID=afcc811f-4b20-42fc-9d31-7307a8cfe0df /boot ext4 defaults,x-systemd.device-t
 /dev/mapper/openEuler-swap swap swap defaults 0 0
 ```
 
-## Failed to Reinstall openEuler When a Logical Volume Group That Cannot Be Activated Has Existed in openEuler
+## openEuler Fails to Be Reinstalled When an Unactivated Logical Volume Group Exists
 
 ### Symptom
 
-After a disk fails, openEuler fails to be reinstalled because a logical volume group that cannot be activated has existed in openEuler.
+After a disk fails, openEuler fails to be reinstalled because a logical volume group that cannot be activated exists in openEuler.
 
-### Possible Cause
+### Possible Causes
 
 During the installation of openEuler, a logical volume group cannot be activated.
 
-### Solution
+### Solutions
 
-Before reinstalling openEuler, restore the abnormal logical volume group to the normal status or clear it. The following uses an example:
+Before reinstalling openEuler, restore the abnormal logical volume group to the normal status or clear it. For example:
 
 -   Restore the logical volume group.
     1.  Run the following command to clear the active status of the abnormal logical volume group to ensure that the error message "Can't open /dev/sdc exclusively mounted filesystem" is not displayed:
@@ -126,17 +129,17 @@ Before reinstalling openEuler, restore the abnormal logical volume group to the 
 
 ### Symptom
 
-After the selection of the installation source, the message "Error checking software selection" is displayed.
+After the installation source is selected, the message "Error checking software selection" is displayed.
 
-### Possible Cause
+### Possible Causes
 
 This is because the software package dependency in the installation source is abnormal.
 
-### Solution
+### Solutions
 
 Check whether the installation source is abnormal. Use the new installation source.
 
-## How Do I Manually Enable the kdump Service?
+## How Do I Manually Enable the Kdump Service?
 
 ### Symptom
 
@@ -144,11 +147,11 @@ Run the  **systemctl status kdump**  command. The following information is displ
 
 ![](./figures/en-us_image_0229291280.png)
 
-### Possible Cause
+### Possible Causes
 
 The kdump service requires the system to reserve memory for running the kdump kernel. However, the system does not reserve memory for the kdump service. As a result, the kdump service cannot be started.
 
-### Solution
+### Solutions
 
 For the scenario where the OS has been installed
 
@@ -222,20 +225,20 @@ The following table describes the parameters of the memory reserved for the kdum
 </tbody>
 </table>
 
-## Failed to Selected Only One Disk for Reinstallation When openEuler Was Installed on a Logical Volume Consisting of Multiple Disks
+## Fails to Select Only One Disk for Reinstallation When openEuler Is Installed on a Logical Volume Consisting of Multiple Disks
 
 ### Symptom
 
-If openEuler was installed on a logical volume consisting of multiple disks, an error message will be displayed as shown in  [Figure 1](#fig115949762617)  when you attempt to select one of the disks for reinstallation. 
+If openEuler is installed on a logical volume consisting of multiple disks, an error message will be displayed as shown in  [Figure 1](#fig115949762617)  when you attempt to select one of the disks for reinstallation. 
 
 **Figure  1**  Error message<a name="fig115949762617"></a>  
 ![](./figures/error-message.png "error-message")
 
-### Possible Cause
+### Possible Causes
 
 The previous logical volume contains multiple disks. If you select one of the disks for reinstallation, the logical volume will be damaged.
 
-### Solution
+### Solutions
 
 The logical volume formed by multiple disks is equivalent to a volume group. Therefore, you only need to delete the corresponding volume group.
 
@@ -263,7 +266,7 @@ The logical volume formed by multiple disks is equivalent to a volume group. The
     >You can also press  **Ctrl**+**Alt**+**F6**  to return to the GUI and click  **Refresh**  in the lower right corner to refresh the storage configuration.  
 
 
-## Failed to Install openEuler on an x86 PM in UEFI Mode due to Secure Boot Option Setting
+## openEuler Fails to Be Installed on an x86 PM in UEFI Mode due to Secure Boot Option Setting
 
 ### Symptom
 
@@ -272,11 +275,11 @@ During the installation of openEuler on an x86 PM in UEFI mode, the system stays
 **Figure  2**  Dialog box showing "No bootable device" <a name="fig115949762617"></a>  
 ![](./figures/dialog-box-showing-no-bootable-device.png "dialog-box-showing-no-bootable-device")
 
-### Possible Cause
+### Possible Causes
 
-After  **secure boot**  is set to  **enabled**, the mainboard verifies the boot program and OS. If the boot program and OS are not signed using the corresponding private key, the boot program and OS cannot pass the authentication of the built-in public key on the mainboard.
+After  **secure boot**  is set to  **enabled**, the mainboard verifies the boot program and OS. If the boot program and OS are not signed using the corresponding private key, they cannot pass the authentication of the built-in public key on the mainboard.
 
-### Solution
+### Solutions
 
 Access the BIOS, set  **secure boot**  to  **disabled**, and reinstall the openEuler.
 
@@ -293,5 +296,54 @@ Access the BIOS, set  **secure boot**  to  **disabled**, and reinstall the openE
     ![](./figures/enforce-secure-boot.png)
 
     >![](./public_sys-resources/icon-note.gif) **NOTE:**   
-    >After  **Enforce Secure Boot**  is set to  **Disabled**, save the settings, and exit. Then, reinstall the system.  
+    >After  **Enforce Secure Boot**  is set to  **Disabled**, save the settings and exit. Then, reinstall the system.  
 
+## pmie_check Is Reported in the messages Log During openEuler Installation
+
+### Symptom
+
+During the OS installation, if you click  **Server > Performance tool**, PCP is installed. After the OS is installed and restared, an error "pmie_check failed in /usr/share/pcp/lib/pmie" is displayed in the  **/var/log/messages**  log.
+
+### Possible Causes
+
+anaconda does not support the installation of SELinux policy module in the chroot environment. During the pcp-selinux installation, the postin script fails to execute the PCP-related SELinux policy module. As a result, an error is reported after the OS is restarted.
+
+### Solutions
+
+After the OS is installed and restarted, perform either of the following two operations:
+
+1. Install SElinux policy module pcpupstream.
+
+    ```
+    /usr/libexec/pcp/bin/selinux-setup /var/lib/pcp/selinux install "pcpupstream"
+
+    ```
+
+2. Reinstall pcp-selinux
+ 
+    ```
+    sudo dnf reinstall pcp-selinux
+
+    ```
+## Installation Fails when a User Selects Two Disks with OS Installed and Customizes Partitioning
+
+### Symptom
+
+During the OS installation, the OS has been installed on two disks. In this case, if you select one drive for custom partitioning, and click **Cancel** to perform custom partitioning on the other drive, the installation fails.
+
+
+![输入图片说明](https://gitee.com/openeuler/docs/raw/stable2-20.03_LTS_SP2/docs/en/docs/Installation/figures/cancle_disk.png)
+
+![输入图片说明](https://gitee.com/openeuler/docs/raw/stable2-20.03_LTS_SP2/docs/en/docs/Installation/figures/custom_paratition.png)
+
+### Possible Causes
+
+A user selects a disk for partitioning twice. After the user clicks **Cancel** and then selects the other drive, the drive information is incorrect. As a result, the installation fails.
+
+### Solutions
+
+Select the target drive for custom partitioning. Do not frequently cancel the operation. If you have to cancel and select another drive, you are advised to reinstall the OS.
+
+### Learn More About the Issue at:
+
+https://gitee.com/src-openeuler/anaconda/issues/I29P84?from=project-issue
