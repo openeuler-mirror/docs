@@ -1,11 +1,8 @@
 # Known Issues
 
-| ISSUE| Description|
-|:----------|:----------|
-| [I39AN0](https://gitee.com/openeuler/community/issues/I26ZLO?from=project-issue)| \[21.03] ARM Physical Machine Reports the Kernel Error: "ACPI CPPC: Failed to find PCC channel for subspace 0"|
-| [I39I7C](https://gitee.com/open_euler/dashboard?issue_id=I29P84)| \[21.03] ARM Physical Machine Reports the Kernel Error: "The BMC does not support, but the BMC needs to be fixed"|
-| [I39MQQ](https://gitee.com/open_euler/dashboard?issue_id=I39MQQ)| \[21.03] Input Is Abnormal and the User Login Fails in the RC1 Version After the Up and Down Arrow Keys Are Used in the Login Area on the Character Interface|
-| [I3A52C](https://gitee.com/open_euler/dashboard?issue_id=I3A52C)| \[21.03] Samba Service Fails to Start|
-| [I3AB65](https://gitee.com/open_euler/dashboard?issue_id=I3AB65)| \[21.03] SCAP Security Guide Does Not Support the Check of OPSS (General Operating System Protection Configuration File)|
-| [I3A8YY](https://gitee.com/open_euler/dashboard?issue_id=I3A8YY)| \[21.03] Stopping of nfs-blkmap Is in the "failed" State|
-
+| Issue                                                        | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [I473E6](https://e.gitee.com/open_euler/issues/list?is%5Bsearch%5D=madvis&is%5Bissue_type_id%5D=-1&issue=I473E6) | [OpenEuler 21.09] [x86] LTP may fail to execute the madvise06 case. |
+| [I4ARFN](https://e.gitee.com/open_euler/issues/list?is%5Bsearch%5D=21.09%28glibc-2.34%29%E7%9B%B8%E5%AF%B921.03&is%5Bissue_type_id%5D=-1&issue=I4ARFN) | Compared with 21.03 (glibc-2.31), the sub-item performance of Unixbench Dhrystone_2_using_register_variables deteriorates in 21.09(glibc-2.34) version. It is preliminarily determined that the problem is caused by different glibc versions. |
+| [I4BY62](https://e.gitee.com/open_euler/issues/list?is%5Bsearch%5D=%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B%E8%A7%84%E5%88%99%E8%BE%83%E5%A4%9A%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%E6%97%B6%E5%B8%B8%E4%BC%9A%E9%80%A0%E6%88%90es%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B4%A9%E6%BA%83%E7%9A%84%E7%8E%B0%E8%B1%A1&is%5Bissue_type_id%5D=-1&issue=c) | [21.09-RC5] When there are many exception detection rules and insufficient memory on AIOps, the OOM exits from the ES database. |
+| [I479XH](https://e.gitee.com/open_euler/issues/list?is%5Bsearch%5D=%E9%85%8D%E7%BD%AE%E6%BA%AF%E6%BA%90%EF%BC%9AdeleteDomain%E6%8E%A5%E5%8F%A3%E5%B9%B6%E5%8F%91%EF%BC%8C%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5&is%5Bissue_type_id%5D=-1&issue=I479XH) | Configuration tracing: The deleteDomain interface is invoked concurrently, but the execution fails. |
