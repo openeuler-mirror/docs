@@ -154,7 +154,7 @@ headless: true
     -   [API Description]({{< relref "./docs/secGear/api-description.md" >}})
 -   [Kubernetes Cluster Deployment Guide]({{< relref "./docs/Kubernetes/Kubernetes.md" >}})
     -   [Preparing VMs]( {{< relref "./docs/Kubernetes/preparing-VMs.md">}})
-    -   [Deploying a Kubernetes Cluster]({{< relref "./docs/Kubernetes/deploying-a-Kubernetes-cluster.md" >}})
+    -   [Deploying a Kubernetes Cluster]({{< relref "./docs/Kubernetes/deploying-a-Kubernetes-cluster-manually.md" >}})
         -   [Installing the Kubernetes Software Package]( {{< relref "./docs/Kubernetes/installing-the-Kubernetes-software-package.md" >}})
         -   [Preparing Certificates] ({{< relref "./docs/Kubernetes/preparing-certificates.md" >}})
         -   [Installing ETCD] ({{< relref "./docs/Kubernetes/installing-etcd.md" >}})
