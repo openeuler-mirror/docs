@@ -1,8 +1,8 @@
-# Instructions
+# Application Scenarios
 
 You can use functions provided by A-Tune through the CLI client atune-adm. This chapter describes the functions and usage of the A-Tune client.
 
-- [Instructions](#instructions)
+- [Application Scenarios](#application-scenarios)
     - [Overview](#overview-0)
     - [Querying Workload Types](#querying-workload-types)
         - [list](#list)
