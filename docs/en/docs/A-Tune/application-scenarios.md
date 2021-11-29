@@ -577,7 +577,7 @@ Use the specified project file to search the dynamic space for parameters and fi
 
 >![](./public_sys-resources/icon-note.gif) **NOTE:**   
 >Before running the command, ensure that the following conditions are met:  
->1.  The YAML configuration file of the server has been edited and placed in the  **/etc/atuned/tuning/**  directory on the server by the server administrator.  
+>1.  The YAML configuration file of the server has been edited and placed in the /etc/atuned/tuning/ directory on the server by the server administrator.  
 >2.  The YAML configuration file of the client has been edited and placed in an arbitrary directory on the client.  
 
 **atune-adm tuning**  \[OPTIONS\] <PROJECT\_YAML\>
