@@ -1,4 +1,4 @@
-# Automatic deployment
+# Automatic Deployment
 
 Manual deployment of Kubernetes clusters requires manually deploying various components. This is both time- and labor-consuming, especially during large scale Kubernetes cluster deployment, as low efficiency and errors are likely to surface. To solve the problem, openEuler launched the Kubernetes cluster deployment tool in version 21.09. This highly flexible tool provides functions such as automatic deployment and deployment process tracking of large scale Kubernetes clusters.
 
