@@ -16,10 +16,10 @@ Different from Libvirt that uses XML files to configure VMs, StratoVirt can use 
 
 ## Specifications
 
-- Number of VM CPUs: [1,254]
-- VM memory size: [256MiB,512GiB]
-- Number of VM disks (including hot swap disks): [0,6]
-- Number of VM NICs (including hot swap NICs): [0,2]
+- Number of VM CPUs: [1, 254]
+- VM memory size: [256MiB, 512GiB]
+- Number of VM disks (including hot swap disks): [0, 6]
+- Number of VM NICs (including hot swap NICs): [0, 2]
 - The VM console device supports only single way connection.
 - On the x86_64 platform, a maximum of 11 mmio devices can be configured. But a maximum of two other devices except disks and NICs is recommended. On the AArch64 platform, the maximum of mmio devices is 160, but the maximum of other devices is recommend to be 12, also excluding disks and NICs.
 
@@ -420,7 +420,7 @@ $ mount -t hugetlbfs hugetlbfs /path/to/hugepages
 
 </br>
 
-![img](./figures/zh-cn_image_to_know.png) 
+![img](https://gitee.com/openeuler/docs/raw/master/docs/en/docs/A-Tune/figures/en-us_image_0213178479.png) 
 
 1. Configure the StratoVirt memory specifications and huge pages based on the huge page usage. If the huge page resources are insufficient, the VM fails to be started.
 
@@ -456,9 +456,9 @@ $ mount -t hugetlbfs hugetlbfs /path/to/hugepages
 
 </br>
 
-![img](./figures/zh-cn_image_note.png) 
+![img](https://gitee.com/openeuler/docs/raw/stable2-21.03/docs/en/docs/StratoVirt/figures/en-05.png) 
 
-1. **Typical configuration:**The mem-path item in the StratoVirt command line is **Hugepage file system mount directory**. The StrattoVirt huge page feature is recommended for the typical configuration.
+1. **Typical configuration:** The mem-path item in the StratoVirt command line is **Hugepage file system mount directory**. The StrattoVirt huge page feature is recommended for the typical configuration.
 
 
 
@@ -605,14 +605,14 @@ During the running of a VM, the balloon driver in the VM dynamically occupies or
 
 
 
-![img](./figures/zh-cn_image_0218587436.png) 
+>![img](https://gitee.com/openeuler/docs/raw/stable2-21.03/docs/en/docs/StratoVirt/figures/en-05.png) 
 
-1. The value of deflate-on-oom is of the Boolean type, indicating whether to enable the auto deflate feature. When this function is enabled, if the balloon has reclaimed part of the memory, the balloon device automatically releases the memory to the guest when the guest requires the memory. If this function is disabled, the system does not automatically return the resources.
-2. When running the qmp command to reclaim the VM memory, ensure that the VM has sufficient memory to keep the basic running. Otherwise, some operations may time out, and the VM may fail to apply for idle memory.
-3. If the huge page function is enabled in the VM, the balloon function cannot reclaim the memory occupied by the huge page.
+>1. The value of deflate-on-oom is of the Boolean type, indicating whether to enable the auto deflate feature. When this function is enabled, if the balloon has reclaimed part of the memory, the balloon device automatically releases the memory to the guest when the guest requires the memory. If this function is disabled, the system does not automatically return the resources.
+>2. When running the qmp command to reclaim the VM memory, ensure that the VM has sufficient memory to keep the basic running. Otherwise, some operations may time out, and the VM may fail to apply for idle memory.
+>3. If the huge page function is enabled in the VM, the balloon function cannot reclaim the memory occupied by the huge page.
 
 
 
-![img](./figures/zh-cn_image_to_know.png) 
+>![](https://gitee.com/openeuler/docs/raw/stable2-21.03/docs/zh/docs/StratoVirt/public_sys-resources/icon-notice.gif) **Notice**
 
-- When deflate-on-oom is set to false and the memory in the guest OS is insufficient, the balloon does not automatically release air and return the memory. As a result, the internal OOM of the guest OS may be caused, processes may be killed, and even the VM cannot run properly.
+>- When deflate-on-oom is set to false and the memory in the guest OS is insufficient, the balloon does not automatically release air and return the memory. As a result, the internal OOM of the guest OS may be caused, processes may be killed, and even the VM cannot run properly.

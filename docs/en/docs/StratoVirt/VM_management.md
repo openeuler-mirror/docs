@@ -27,7 +27,7 @@ Run the query-cpus command to query the topology of all CPUs.
 
 - Usage:
 
-**{ "execute": "query-cpus" }**
+  **{ "execute": "query-cpus" }**
 
 - Example:
 
@@ -42,7 +42,7 @@ Run the query-hotpluggable-cpus command to query the online or offline status of
 
 - Usage:
 
-**{ "execute": "query-hotpluggable-cpus" }**
+  **{ "execute": "query-hotpluggable-cpus" }**
 
 - Example:
 
