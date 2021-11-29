@@ -1,40 +1,40 @@
 # Table of Contents
 
-* [Xfce User Guide](#Xfce User Guide)
-  * [1. Overview](#1. Overview)
-  * [2. Desktop](#2. Desktop)
-    * [2.1 Desktop Icons](#2.1 Desktop Icons)
-    * [2.2 Shortcut Menu](#2.2 Shortcut Menu)
-  * [3. Taskbar](#3. Taskbar)
-    * [3.1 Basic Functions](#3.1 Basic Functions)
-      * [3.1.1 Applications](#3.1.1 Applications)
-      * [3.1.2 Window Display Area](#3.1.2 Window Display Area)
-      * [3.1.3 Multi-View Switching](#3.1.3 Multi-View Switching)
-      * [3.1.4 Tray](#3.1.4 Tray)
-        * [3.1.4.1 Network](#3.1.4.1 Network)
-        * [3.1.4.2 Volume](#3.1.4.2 Volume)
-        * [3.1.4.3 Power Supply](#3.1.4.3 Power Supply)
-        * [3.1.4.4 Notification Center](#3.1.4.4 Notification Center)
-        * [3.1.4.5 Calendar](#3.1.4.5 Calendar)
-        * [3.1.4.6 Advanced Settings](#3.1.4.6 Advanced Settings)
-        * [3.1.4.7 Login User Actions](#3.1.4.7 Login User Actions)
-          * [3.1.4.7.1 Lock Screen](#3.1.4.7.1 Lock Screen)
-          * [3.1.4.7.2 Switch User](#3.1.4.7.2 Switch User)
-          * [3.1.4.7.3 Suspend](#3.1.4.7.3 Suspend)
-          * [3.1.4.7.3 Shut Down](#3.1.4.7.3 Shut Down)
-          * [3.1.4.7.3 Log Out](#3.1.4.7.3 Log Out)
-  * [4. Shortcut Operation Bar](#4. Shortcut Operation Bar)
-    * [4.1 Basic Functions](#4.1 [Basic Functions])
-      * [4.1.1 Show Desktop](#4.1.1 Show Desktop)
-      * [4.1.2 Terminal](#4.1.2 Terminal)
-      * [4.1.3 File Manager](#4.1.3 File Manager)
-      * [4.1.4 Web Browser](#4.1.4 Web Browser)
-      * [4.1.5 Application Finder](#4.1.5 Application Finder)
-      * [4.1.6 User Home Directory](#4.1. 6 User Home Directory)
+* [Xfce User Guide](#Xfce-User-Guide)
+  * [1. Overview](#1.-Overview)
+  * [2. Desktop](#2.-Desktop)
+    * [2.1 Desktop Icons](#2.1-Desktop-Icons)
+    * [2.2 Shortcut Menu](#2.2-Shortcut-Menu)
+  * [3. Taskbar](#3.-Taskbar)
+    * [3.1 Basic Functions](#3.1-Basic-Functions)
+      * [3.1.1 Applications](#3.1.1-Applications)
+      * [3.1.2 Window Display Area](#3.1.2-Window-Display-Area)
+      * [3.1.3 Multi-View Switching](#3.1.3-Multi-View-Switching)
+      * [3.1.4 Tray](#3.1.4-Tray)
+        * [3.1.4.1 Network](#3.1.4.1-Network)
+        * [3.1.4.2 Volume](#3.1.4.2-Volume)
+        * [3.1.4.3 Power Supply](#3.1.4.3-Power-Supply)
+        * [3.1.4.4 Notification Center](#3.1.4.4-Notification-Center)
+        * [3.1.4.5 Calendar](#3.1.4.5-Calendar)
+        * [3.1.4.6 Advanced Settings](#3.1.4.6-Advanced-Settings)
+        * [3.1.4.7 Login User Actions](#3.1.4.7-Login-User-Actions)
+          * [3.1.4.7.1 Lock Screen](#3.1.4.7.1-Lock-Screen)
+          * [3.1.4.7.2 Switch User](#3.1.4.7.2-Switch-User)
+          * [3.1.4.7.3 Suspend](#3.1.4.7.3-Suspend)
+          * [3.1.4.7.3 Shut Down](#3.1.4.7.3-Shut-Down)
+          * [3.1.4.7.3 Log Out](#3.1.4.7.3-Log-Out)
+  * [4. Shortcut Operation Bar](#4.-Shortcut-Operation-Bar)
+    * [4.1 Basic Functions](#4.1-[Basic-Functions])
+      * [4.1.1 Show Desktop](#4.1.1-Show-Desktop)
+      * [4.1.2 Terminal](#4.1.2-Terminal)
+      * [4.1.3 File Manager](#4.1.3-File-Manager)
+      * [4.1.4 Web Browser](#4.1.4-Web-Browser)
+      * [4.1.5 Application Finder](#4.1.5-Application-Finder)
+      * [4.1.6 User Home Directory](#4.1.6-User-Home-Directory)
 
 # Xfce User Guide
 
-## 1\. Overview
+## 1. Overview
 
 Xfce is a lightweight desktop environment running on Unix-like operating systems. Xfce provides multiple functional components, including all applications. This document describes how to use Xfce.
 
@@ -264,7 +264,7 @@ You can click the ![](./figures/xfce-95.png) icon on the shortcut operation bar 
 
 ![Figure 28 Searching for an application - big](./figures/xfce-951.png)
 
-#### 4.1. 6 User Home Directory
+#### 4.1.6 User Home Directory
 
 Click ![](./figures/xfce-96.png) on the shortcut operation bar and click **Open File**. The user home directory page is displayed.
 

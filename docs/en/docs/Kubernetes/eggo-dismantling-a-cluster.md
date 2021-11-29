@@ -1,4 +1,4 @@
-# Dismantling a cluster.
+# Dismantling a Cluster
 
 When service requirements decrease and the existing number of nodes is not required, you can delete nodes from the cluster to save system resources and reduce costs. Or, when the service does not require a cluster, you can delete the entire cluster.
 
