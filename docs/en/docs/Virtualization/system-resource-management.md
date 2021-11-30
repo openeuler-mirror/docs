@@ -1,6 +1,11 @@
 # System Resource Management
 
-[[toc]]
+- [System Resource Management](#system-resource-management)
+    - [General Description](#general-description)
+    - [Managing vCPU](#managing-vcpu)
+    - [Managing Virtual Memory](#managing-virtual-memory)
+    - [Live Migration Operations](#live-migration-operations)
+
 
 ## General Description
 openEuler virtualization uses the **libvirt** command to manage VM system resources, such as vCPUs and virtual memory resources.
