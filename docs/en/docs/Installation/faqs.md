@@ -4,12 +4,12 @@
 
 - [FAQs](#faqs)
     - [openEuler Fails to Start After It Is Installed to the Second Disk](#openeuler-fails-to-start-after-it-is-installed-to-the-second-disk)
-    - [openEuler Enters Emergency Mode After It Is started](#openEuler-enters-emergency-mode-after-it-is-started)
+    - [openEuler Enters Emergency Mode After It Is Started](#openEuler-enters-emergency-mode-after-it-is-started)
     - [openEuler Fails to Be Reinstalled When an Unactivated Logical Volume Group Exists](#openEuler-fails-to-be-reinstalled-when-an-unactivated-logical-volume-group-exists)
     - [An Exception Occurs During the Selection of the Installation Source](#an-exception-occurs-during-the-selection-of-the-installation-source)
-    - [How Do I Manually Enable the Kdump Service?](#how-do-i-manually-enable-the-kdump-service?)
-    - Fails to Select Only One Disk for Reinstallation When openEuler Is Installed on a Logical Volume Consisting of Multiple Disks (#fails-to-select only-one-disk-for-reinstallation-when-openEuler-is-installed-on-a-logical-volume-vonsisting-of-multiple-disks)
-    - openEuler Fails to Be Installed on an x86 PM in UEFI Mode due to Secure Boot Option Setting(#openEuler-fails-to-be-installed-on-an-x86-PM-in UEFI-mode-due-to-secure-boot-option-setting)
+    - [Kdump Service Fails to Be Enabled](#kdump-service-fails-to-be-enabled)
+    - [Fails to Select Only One Disk for Reinstallation When openEuler Is Installed on a Logical Volume Consisting of Multiple Disks](#fails-to-select-only-one-disk-for-reinstallation-when-openeuler-is-installed-on-a-logical-volume-consisting-of-multiple-disk)
+    - [openEuler Fails to Be Installed on an x86 PM in UEFI Mode due to Secure Boot Option Settings](#openeuler-fails-to-be-installed-on-an-x86-pm-in-uefi-mode-due-to-secure-boot-option-settings)
     - [pmie_check Is Reported in the messages Log During openEuler Installation](#pmie_check-is-reported-in-the-messages-log-during-openEuler-installation)
     - [Installation Fails when a User Selects Two Disks with OS Installed and Customizes Partitioning](#installation-fails-when-a-user-delects-two-disks-with-OS-installed-and-customizes-partitioning)
   
@@ -35,10 +35,10 @@ The preceding two situations occur because the first disk  **sda**  is booted by
 This problem can be solved using either of the following two methods:
 
 -   During the openEuler installation, select the first disk or both disks, and install the boot loader on the first disk  **sda**.
--   After installing openEuler, restart it by modifying the boot option on the BIOS window.
+-   After installing openEuler, restart it by modifying the boot option in the BIOS window.
 
 
-## openEuler Enters Emergency Mode After It Is started
+## openEuler Enters Emergency Mode After It Is Started
 
 ### Symptom
 
@@ -139,7 +139,7 @@ This is because the software package dependency in the installation source is ab
 
 Check whether the installation source is abnormal. Use the new installation source.
 
-## How Do I Manually Enable the Kdump Service?
+## Kdump Service Fails to Be Enabled
 
 ### Symptom
 
@@ -266,7 +266,7 @@ The logical volume formed by multiple disks is equivalent to a volume group. The
     >You can also press  **Ctrl**+**Alt**+**F6**  to return to the GUI and click  **Refresh**  in the lower right corner to refresh the storage configuration.  
 
 
-## openEuler Fails to Be Installed on an x86 PM in UEFI Mode due to Secure Boot Option Setting
+## openEuler Fails to Be Installed on an x86 PM in UEFI Mode due to Secure Boot Option Settings
 
 ### Symptom
 
@@ -302,7 +302,7 @@ Access the BIOS, set  **secure boot**  to  **disabled**, and reinstall the openE
 
 ### Symptom
 
-During the OS installation, if you click  **Server > Performance tool**, PCP is installed. After the OS is installed and restared, an error "pmie_check failed in /usr/share/pcp/lib/pmie" is displayed in the  **/var/log/messages**  log.
+During the OS installation, if you click  **Server > Performance tool**, PCP-related software package is installed. After the OS is installed and restarted, an error "pmie_check failed in /usr/share/pcp/lib/pmie" is displayed in the  **/var/log/messages**  log.
 
 ### Possible Causes
 
@@ -329,7 +329,7 @@ After the OS is installed and restarted, perform either of the following two ope
 
 ### Symptom
 
-During the OS installation, the OS has been installed on two disks. In this case, if you select one drive for custom partitioning, and click **Cancel** to perform custom partitioning on the other drive, the installation fails.
+During the OS installation, the OS has been installed on two disks. In this case, if you select one disk for custom partitioning, and click **Cancel** to perform custom partitioning on the other disk, the installation fails.
 
 ![](./figures/cancle_disk.png)
 
@@ -337,11 +337,11 @@ During the OS installation, the OS has been installed on two disks. In this case
 
 ### Possible Causes
 
-A user selects a disk for partitioning twice. After the user clicks **Cancel** and then selects the other drive, the drive information is incorrect. As a result, the installation fails.
+A user selects a disk for partitioning twice. After the user clicks **Cancel** and then selects the other disk, the disk information is incorrect. As a result, the installation fails.
 
 ### Solutions
 
-Select the target drive for custom partitioning. Do not frequently cancel the operation. If you have to cancel and select another drive, you are advised to reinstall the OS.
+Select the target disk for custom partitioning. Do not frequently cancel the operation. If you have to cancel and select another disk, you are advised to reinstall the OS.
 
 ### Learn More About the Issue at:
 
