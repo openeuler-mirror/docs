@@ -1,23 +1,17 @@
 # system Resource Management
 
+- [System Resource Management](#system-resource-management)
+        - [General Description](#general-description)
+        - [Managing vCPU](#managing-vcpu)
+        - [Managing Virtual Memory](#managing-virtual-memory)
+        - [Live Migration Operations](#live-migration-options)
+        
 The  **libvirt**  command manages VM system resources, such as vCPU and virtual memory resources.
 
 Before you start:
 
 -   Ensure that the libvirtd daemon is running on the host.
 -   Run the  **virsh list --all**  command to check that the VM has been defined.
-
-- [System Resource Management](#system-resource-management)
-    - [Managing vCPU](#managing-vcpu)
-        - [CPU Shares](#cpu-shares)
-        - [Binding the QEMU Process to a Physical CPU](#binding-the-qemu-process-to-a-physical-cpu)
-        - [Adjusting the vCPU Binding Relationship](#adjusting-the-vcpu-binding-relationship)
-    - [Managing Virtual Memory](#managing-virtual-memory)
-        - [Introduction to NUMA](#introduction-to-numa)
-        - [Configuring Host NUMA](#configuring-host-numa)
-        - [Configuring Guest NUMA](#configuring-guest-numa)
-
-
 
 ## Managing vCPU
 
@@ -118,7 +112,7 @@ Run the  **virsh emulatorpin**  command to bind the QEMU main process to a physi
            *: 0-63
     ```
 
-    This indicates that the QEMU main process corresponding to VM  **openEulerVM**  can be scheduled on all physical CPUs of the host.
+    This indicates that the QEMU main process corresponding to VM openEulerVM can be scheduled on all physical CPUs of the host.
 
 -   Online binding: Run the  **vcpu emulatorpin**  command with the  **--live**  parameter to modify the binding relationship between the QEMU process and the running VM.
 
@@ -131,7 +125,7 @@ Run the  **virsh emulatorpin**  command to bind the QEMU main process to a physi
            *: 2-3
     ```
 
-    The preceding commands bind the QEMU process corresponding to VM  **openEulerVM**  to physical CPUs  **2**  and  **3**. That is, the QEMU process is scheduled only on the two physical CPUs. The binding relationship takes effect immediately but becomes invalid after the VM is shut down and restarted.
+    The preceding commands bind the QEMU process corresponding to VM openEulerVM to physical CPUs  **2**  and  **3**. That is, the QEMU process is scheduled only on the two physical CPUs. The binding relationship takes effect immediately but becomes invalid after the VM is shut down and restarted.
 
 -   Permanent binding: Run the  **virsh emulatorpin**  command with the  **--config**  parameter to modify the binding relationship between the VM and the QEMU process in the libvirt internal configuration.
 
@@ -144,7 +138,7 @@ Run the  **virsh emulatorpin**  command to bind the QEMU main process to a physi
            *: 0,2-3
     ```
 
-    The preceding commands bind the QEMU process corresponding to VM  **openEulerVM**  to physical CPUs  **0**,  **2**  and  **3**. That is, the QEMU process is scheduled only on the three physical CPUs. The modification of the binding relationship does not take effect immediately. Instead, the modification takes effect after the next startup of the VM and takes effect permanently. 
+    The preceding commands bind the QEMU process corresponding to VM openEulerVM to physical CPUs  **0**,  **2**  and  **3**. That is, the QEMU process is scheduled only on the three physical CPUs. The modification of the binding relationship does not take effect immediately. Instead, the modification takes effect after the next startup of the VM and takes effect permanently. 
 
 
 ### Adjusting the vCPU Binding Relationship
