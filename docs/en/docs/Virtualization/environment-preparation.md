@@ -49,7 +49,7 @@ If a VM requires larger disk space, you can use the qemu-img tool to change the 
 1.  Run the following command to query the disk space of the VM image:
 
     ```
-    # qemu-img info <imgFiLeName>
+    # qemu-img info <imgFileName>
     ```
 
     For example, if the command and output for querying the disk space of the openEuler-image.qcow2 image are as follows, the disk space of the image is 4 GiB.
@@ -68,10 +68,10 @@ If a VM requires larger disk space, you can use the qemu-img tool to change the 
         corrupt: false
     ```
 
-2.  Run the following command to change the image disk space. In the command,  _imgFiLeName_  indicates the image name, and  **+**  and  **-**  indicate the image disk space to be increased and decreased, respectively. The unit is KB, MB, GB, and T, indicating KiB, MiB, GiB, and TiB, respectively.
+2.  Run the following command to change the image disk space. In the command,  _imgFileName_  indicates the image name, and  **+**  and  **-**  indicate the image disk space to be increased and decreased, respectively. The unit is KB, MB, GB, and T, indicating KiB, MiB, GiB, and TiB, respectively.
 
     ```
-    # qemu-img resize <imgFiLeName> [+|-]<size>
+    # qemu-img resize <imgFileName> [+|-]<size>
     ```
 
     For example, to expand the disk space of the openEuler-image.qcow2 image to 24 GiB, that is, to add 20 GiB to the original 4 GiB, the command and output are as follows:
@@ -84,7 +84,7 @@ If a VM requires larger disk space, you can use the qemu-img tool to change the 
 3.  Run the following command to check whether the image disk space is changed successfully:
 
     ```
-    # qemu-img info <imgFiLeName>
+    # qemu-img info <imgFileName>
     ```
 
     For example, if the openEuler-image.qcow2 image disk space has been expanded to 24 GiB, the command and output are as follows:
