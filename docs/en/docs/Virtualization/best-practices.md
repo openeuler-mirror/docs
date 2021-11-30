@@ -59,7 +59,7 @@ To use I/O threads to process VM disk read and write requests, you need to modif
          <iothreads>4</iothreads>
     ```
 
--   Configure the I/O thread attribute for the virtio-blk disk.  **<iothread\>**  indicates I/O thread IDs. The IDs start from 1 and each ID must be unique. The maximum ID is the value of  **<iothreads\>**. For example, to allocate I/O thread 2 to the virtio-blk disk, set parameters as follows:
+-   Configure the I/O thread attribute for the virtio-blk disk. <**iothread**\> indicates I/O thread IDs. The IDs start from 1 and each ID must be unique. The maximum ID is the value of <iothreads\>. For example, to allocate I/O thread 2 to the virtio-blk disk, set parameters as follows:
 
     ```
     <disk type='file' device='disk'>
