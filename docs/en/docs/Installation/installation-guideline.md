@@ -1,6 +1,6 @@
 # Installation Guideline
 
-This section describes how to install openEuler using a CD-ROM. The installation process is the same for other installation modes except the boot option.
+This section describes how to install openEuler using a CD/DVD-ROM. The installation process is the same for other installation modes except the boot option.
 
 <!-- TOC -->
 
@@ -19,12 +19,12 @@ This section describes how to install openEuler using a CD-ROM. The installation
   - [Setting the Installation Destination](#setting-the-installation-destination)
     - [Storage Configuration](#storage-configuration)
   - [Setting the Network and Host Name](#setting-the-network-and-host-name)
-  - [Setting the Root Password](#设置根密码)
-    - [Password Complexity](#密码复杂度)
-  - [Creating a User](#创建用户)
-  - [Starting the Installation](#开始安装)
-  - [Installation Procedure](#安装过程)
-  - [Completing the Installation](#安装完成)
+  - [Setting the Root Password](#setting-the-root-password)
+    - [Password Complexity](#password-complexity)
+  - [Creating a User](#creating-a-user)
+  - [Starting the Installation](#starting-the-installation)
+  - [Installation Procedure](#installation-procedure)
+  - [Completing the Installation](#completing-the-installation)
 
 <!-- /TOC -->
 ## Starting the Installation
@@ -34,7 +34,7 @@ This section describes how to install openEuler using a CD-ROM. The installation
 Load the ISO image of openEuler from the CD/DVD-ROM drive of the server and restart the server. The procedure is as follows:
 
 > ![](./public_sys-resources/icon-note.gif) **NOTE:**   
-> Before the installation, ensure that the server boots from the CD/DVD-ROM drive preferentially. The following steps describe how to install the openEuler using the virtual CD/DVD-ROM drive on the baseboard management controller (BMC). Installing the openEuler from a physical drive is simple. After the installation starts, the procedure for the physical drive is the same as that of the virtual drive.  
+> Before the installation, ensure that the server boots from the CD/DVD-ROM drive preferentially. The following steps describe how to install openEuler using the virtual CD/DVD-ROM drive on the baseboard management controller (BMC). The procedure for installing openEuler from a physical drive is simple and is the same as that of the virtual drive. Therefore, no description is provided in this section.  
 
 1.  On the toolbar, click the icon shown in the following figure.
 
@@ -91,7 +91,7 @@ Perform graphical installation operations using a keyboard.
 -   Press the up or down arrow key to move a target in the list.
 -   Press the left or right arrow key to move between the horizontal toolbar and watch bar.
 -   Press the spacebar or  **Enter**  to select or delete highlighted options, expand or collapse a drop-down list.
--   Press  **Alt**+a shortcut key (the shortcut key varies for different pages) to select the control where the shortcut key is located. The shortcut key can be highlighted (underlined) by holding down Alt.
+-   Press   **Alt+a shortcut key**  (the shortcut key varies for different pages) to select the control where the shortcut key is located. The shortcut key can be highlighted (underlined) by holding down  **Alt** .
 
 
 ## Configuring an Installation Program Language
@@ -120,7 +120,7 @@ If you want to exit the installation, click  **Exit**. The message "Are you sure
 
 On the  **INSTALLATION SUMMARY**  page, click  **KEYBOARD**. You can add or delete multiple keyboard layouts in the system.
 
-- On the left white box, click to select the keyboard layout and click the keyboard under the box.
+- To view the keyboard layout: On the left white box, click to select the keyboard layout and click the keyboard under the box.
 - To test the keyboard layout: On the left white box, click to select the keyboard layout, click the inside of the right text box, and enter the text to ensure that the keyboard layout can work properly.
 
 **Figure  7**  Setting the keyboard layout<a name="en-us_topic_0186390097_en-us_topic_0122145868_fig17366454247"></a>  
@@ -163,7 +163,7 @@ After the setting is complete, click  **Done**  in the upper left corner to go b
 
 On the **INSTALLATION SUMMARY** page, click **INSTALLATION SOURCE** to locate the installation source.
 
-* When you use the complete CD-ROM for installation, the installation program automatically detects and displays the installation source information. You can use the default settings, as shown in [Figure 10](#zh-cn_topic_0186390100_zh-cn_topic_0144427079_fig93633295132):
+* When you use the complete CD/DVD-ROM for installation, the installation program automatically detects and displays the installation source information. You can use the default settings, as shown in [Figure 10](#zh-cn_topic_0186390100_zh-cn_topic_0144427079_fig93633295132):
   
   **Figure 10** Installation source<a name="zh-cn_topic_0186390100_zh-cn_topic_0144427079_fig93633295132"></a>  
 ![](./figures/Installation_source.png)
@@ -178,7 +178,7 @@ On the **INSTALLATION SUMMARY** page, click **INSTALLATION SOURCE** to locate th
     
     If the HTTPS server uses a private certificate, press **e** on the installation wizard page to go to the parameter editing page of the selected option, and add the **inst.noverifyssl** parameter.
     
-    Enter the actual installation source address, for example, **https://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/x86_64**, in the text box. **openEuler-20.03-LTS-SP2** indicates the version number, and **x86\_64** indicates the CPU architecture.
+    Enter the actual installation source address, for example, **https://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/x86_64**, where **openEuler-20.03-LTS-SP2** indicates the version number, and **x86_64** indicates the CPU architecture. Use the actual version number and CPU architecture.
   
   - FTP mode
     
@@ -186,7 +186,7 @@ On the **INSTALLATION SUMMARY** page, click **INSTALLATION SOURCE** to locate th
     
     ![](./figures/sourceftp.png)
     
-    You need to set up an FTP server, mount the **openEuler-20.03-LTS-SP2-x86\_64-dvd.iso** image, and copy the mounted files to the shared directory on the FTP server. **x86\_64** indicates the CPU architecture. You can use images as required.
+    You need to set up an FTP server, mount the **openEuler-20.03-LTS-SP2-x86_64-dvd.iso** image, and copy the mounted files to the shared directory on the FTP server. **x86_64** indicates the CPU architecture. Use the actual image.
   
   - NFS mode
     
@@ -194,7 +194,7 @@ On the **INSTALLATION SUMMARY** page, click **INSTALLATION SOURCE** to locate th
     
     ![](./figures/sourcenfs.png)
     
-    You need to set up an NFS server, mount the **openEuler-20.03-LTS-SP2-x86\_64-dvd.iso** image, and copy the mounted file to the shared directory on the NFS server. **x86\_64** indicates the CPU architecture. You can use images as required.
+    You need to set up an NFS server, mount the **openEuler-20.03-LTS-SP2-x86_64-dvd.iso** image, and copy the mounted file to the shared directory on the NFS server. **x86_64** indicates the CPU architecture. Use the actual image.
 
 During the installation, if you have any questions about configuring the installation source, see [An Exception Occurs During the Selection of the Installation Source](./faqs.html#an-exception-occurs-during-the-selection-of-the-installation-source).
 
@@ -234,16 +234,16 @@ On the  **INSTALLATION DESTINATION**  page, configure storage for system partiti
 > ![](./public_sys-resources/icon-note.gif) **NOTE:**   
 >
 > - During partitioning, to ensure system security and performance, you are advised to divide the device into the following partitions:  **/boot**,  **/var**,  **/var/log**,  **/var/log/audit**,  **/home**, and  **/tmp**.  
-> - If the system is configured with the swap partition, the swap partition is used when the physical memory of the system is insufficient. Although the swap partition can be used to expand the physical memory, if the swap partition is used due to insufficient memory, the system response slows and the system performance deteriorates. Therefore, you are not advised to configure the swap partition in the system with sufficient physical memory or the performance sensitive system.  
+> - If the system is configured with the swap partition, the swap partition is used when the physical memory of the system is insufficient. Although the swap partition can be used to expand the physical memory, if it is used due to insufficient memory, the system response slows and the system performance deteriorates. Therefore, you are not advised to configure the swap partition in the system with sufficient physical memory or in the performance sensitive system.  
 > - If you need to split a logical volume group, select  **Custom**  to manually partition the logical volume group. On the  **MANUAL PARTITIONING**  page, click  **Modify**  in the  **Volume Group**  area to reconfigure the logical volume group.  
 
 **Automatic**
 
 Select  **Automatic**  if the software is installed in a new storage device or the data in the storage device is not required. After the setting is complete, click  **Done**  in the upper left corner to go back to the  **INSTALLATION SUMMARY**  page.
 
-**Customize**
+**Custom**
 
-If you need to manually partition the disk, click  **Customize**  and click  **Done**  in the upper left corner. The following page is displayed.
+If you need to manually partition the disk, click  **Custom**  and click  **Done**  in the upper left corner. The following page is displayed.
 
 On the  **MANUAL PARTITIONING**  page, you can partition the disk in either of the following ways. After the partitioning is completed, the window shown in [Figure 14](#fig1277151815248) is displayed.
 
@@ -255,6 +255,9 @@ If the expected capacity of the mount point exceeds the available space, the sys
 
 **Figure  13**  MANUAL PARTITIONING page<a name="fig1277151815248"></a>  
 ![](./figures/filesystem_setting.png "manual-partitioning-page")
+
+  >![](./public_sys-resources/icon-note.gif) **NOTE:**   
+If non-UEFI boot is selected, /boot/efi is not required. Otherwise, it is required. 
 
 After the setting is complete, click  **Done**  in the upper left corner to go back to the  **SUMMARY OF CHANGES**  page.
 click  **Accept Changes**  to go back to the  **INSTALLATION SUMMARY**  page.
@@ -270,14 +273,14 @@ In the lower left box, enter the host name. The host name can be the fully quant
 **Figure  14**  Setting the network and host name<a name="en-us_topic_0186390264_en-us_topic_0122145831_fig123700157297"></a>  
 ![](./figures/setting-the-network-and-host-name.png "setting-the-network-and-host-name")
 
-**Figure  15**  Config the network<a name="en-us_topic_0186390264_en-us_topic_0122145831_fig6"></a>  
+**Figure  15**  Configuring the network<a name="en-us_topic_0186390264_en-us_topic_0122145831_fig6"></a>  
 ![](./figures/confignetwork.png "config-the-network")
 
 After the setting is complete, click **Done** in the upper left corner to go back to the **INSTALLATION SUMMARY** page.
 
 ## Setting the Root Password
 
-Select **Root Password** on the **INSTALLATION SUMMARY** page. The **Root Password** page is displayed, as shown in [Figure 16](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018). Enter a password based on [Password Complexity](#密码复杂度) requirements and confirm the password.
+Select **Root Password** on the **INSTALLATION SUMMARY** page. The **Root Password** page is displayed, as shown in [Figure 16](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018). Enter a password based on [Password Complexity](#password-complexity) requirements and confirm the password.
 
 > ![](./public_sys-resources/icon-note.gif) **NOTE:**
 > 
@@ -336,7 +339,7 @@ If you click **Exit** or reset or power off the server during the installation, 
 openEuler has been installed, Click  **Reboot**  to restart the system.
 
 >![](./public_sys-resources/icon-note.gif) **NOTE:**    
-> - If the physical DVD-ROM is used to install the OS and the DVD-ROM drive is not automatically ejected during the restart, manually remove the DVD-ROM. Then, the openEuler CLI login page is displayed.
+> - If the physical DVD-ROM is used to install the OS and the CD/DVD-ROM drive is not automatically ejected during the restart, manually remove the DVD-ROM. Then, the openEuler CLI login page is displayed.
 > - If the virtual DVD-ROM drive is used to install the OS, change the server boot option to  **Hard Disk**  and restart the server. Then, the openEuler CLI login page is displayed.
 
 
