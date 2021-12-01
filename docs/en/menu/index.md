@@ -184,3 +184,7 @@ headless: true
 -   [Toolset User Guide]({{< relref "./docs/userguide/overview.md" >}})
     -   [pkgship]({{< relref "./docs/userguide/pkgship.md" >}})
 -   [A-Ops User Guide]({{< relref "./docs/A-Ops/overview.md" >}})
+-   [KubeOS User Guide]({{< relref "./docs/KubeOS/kubeos-user-guide.md" >}})
+    -   [About KubeOS]({{< relref "./docs/KubeOS/about-kubeos.md" >}})
+    -   [Installation and Deployment]({{< relref "./docs/KubeOS/installation-and-deployment.md" >}})
+    -   [Usage Instructions]({{< relref "./docs/KubeOS/usage-instructions.md" >}})
