@@ -1,7 +1,22 @@
 
 
-# DDE Desktop Environment User Manual
-[[toc]]
+# DDE Desktop Environment
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [DDE Desktop Environment](#dde-desktop-environment)
+  - [Overview](#overview)
+  - [Desktop](#desktop)
+  - [Dock](#dock)
+  - [Launcher](#launcher)
+  - [Control Center](#control-center)
+  - [Keyboard Interaction](#keyboard-interaction)
+
+<!-- /code_chunk_output -->
+
+
 ## Overview
 DDE desktop environment is an elegant, secure, reliable and easy to use GUI comprised of the desktop, dock, launcher and control center. Acting as the key basis for our operating system, its main interface is shown as below.
 
@@ -349,7 +364,7 @@ The account full name is shown in account list and system login interface and yo
 
 The first account has administrator privilege when you install the system. All other accounts you add after that are common users. One account can be grouped in many user groups.
 
-##### Group setting
+##### Group Setting
 
 When you add or modify accounts, you can:
 
