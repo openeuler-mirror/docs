@@ -1,10 +1,14 @@
 # Introduction to StratoVirt
 
-[[toc]]
+
+- [Introduction to StratoVirt](#introduction-to-stratovirt)
+  - [Overview](#overview)
+  - [Architecture Description](#architecture-description)
 
 ## Overview
 
-StratoVirt is an enterprise-class VMM(Virtual Machine Monitor) for cloud data centers in the computing industry, enabling a unified architecture that supports virtual machines, containers and Serverless scenarios. On top of that, StratoVirt has a key technology competitive advantage in terms of lightweight, low noise, hard and soft collaboration, Rust language-level security, and more. StratoVirt reserves the capabilities and interfaces for component assembly in architectural design and interfaces. More importantly, StratoVirt has the flexibility to assemble advanced features on demand until it evolves to support standard virtualization, finding the best balance between feature requirements, applications scenarios, and light flexibility.
+StratoVirt is an enterprise-level Virtual Machine Monitor (VMM) oriented to cloud data centers in the computing industry. It uses a unified architecture to support VMs, containers, and serverless scenarios. StratoVirt has competitive advantages in key technologies such as lightweight low noise, software and hardware synergy, and Rust language-level security.
+StratoVirt reserves component-based assembling capabilities and APIs in the architecture design. Advanced features can be flexibly assembled as required until they evolve to support standard virtualization. In this way, StratoVirt can strike a balance between feature requirements, application scenarios, and flexibility.
 
 
 
