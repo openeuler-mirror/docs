@@ -1,14 +1,19 @@
-# VM Management
+# Managing VMs
+
 
 ## Overview
 
-StratoVirt can query VM information and manage VM resources and life cycles. StratoVirt uses QMP to manage VMs. Therefore, you need to connect to the VM before querying the VM information.
+StratoVirt allows you to query VM information and manage VM resources and lifecycle with QMP. To query the information about a VM, connect to the VM first.
 
-# Querying VM Information
+## Querying VM Information
 
-## Querying VM status
+### Introduction
 
-Run the query-status command to query the VM running status.
+StratoVirt can be used to query the VM status, vCPU topology, and vCPU online status.
+
+### Querying VM Status
+
+Run the **query-status** command to query the running status of a VM.
 
 - Usage:
 
@@ -18,12 +23,14 @@ Run the query-status command to query the VM running status.
 
 ```
 <- { "execute": "query-status" }
--> { "return": { "running": true,"singlestep": false,"status": "running" }
+-> { "return": { "running": true,"singlestep": false,"status": "running" } 
 ```
 
-## Querying Topology Information
 
-Run the query-cpus command to query the topology of all CPUs.
+
+### Querying Topology Information
+
+Run the **query-cpus** command to query the topologies of all CPUs.
 
 - Usage:
 
@@ -36,9 +43,9 @@ Run the query-cpus command to query the topology of all CPUs.
 -> {"return":[{"CPU":0,"arch":"x86","current":true,"halted":false,"props":{"core-id":0,"socket-id":0,"thread-id":0},"qom_path":"/machine/unattached/device[0]","thread_id":8439},{"CPU":1,"arch":"x86","current":true,"halted":false,"props":{"core-id":0,"socket-id":1,"thread-id":0},"qom_path":"/machine/unattached/device[1]","thread_id":8440}]}
 ```
 
-## Querying vCPU Online Status
+### Querying vCPU Online Status
 
-Run the query-hotpluggable-cpus command to query the online or offline status of all vCPUs.
+Run the **query-hotpluggable-cpus** command to query the online/offline statuses of all vCPUs.
 
 - Usage:
 
@@ -51,25 +58,29 @@ Run the query-hotpluggable-cpus command to query the online or offline status of
 -> {"return":[{"props":{"core-id":0,"socket-id":0,"thread-id":0},"qom-path":"/machine/unattached/device[0]","type":"host-x86-cpu","vcpus-count":1},{"props":{"core-id":0,"socket-id":1,"thread-id":0},"qom-path":"/machine/unattached/device[1]","type":"host-x86-cpu","vcpus-count":1}]}
 ```
 
-Where, online vCPUs have the `qom-path` item, while offline vCPUs do not.
+Online vCPUs have the `qom-path` item, while offline vCPUs do not.
 
-# Managing the VM Lifecycle
 
-## Overview
 
-StratoVirt can manage the life cycle of VMs, including starting, pausing, resuming, and exiting VMs.
+## Managing VM Lifecycle
 
-## Creating and Starting a VM
+### Description
 
-As described in the section "Configuring a VM", users can specify the VM configuration by using command line parameters or the JSON file, and run the stratovirt command on the host to create and start a VM.
+StratoVirt can manage the lifecycle of a VM, including starting, suspending, resuming, and exiting the VM.
 
-- Run the following command to create and start a VM:
+### Creating and Starting a VM
+
+As described in the "Configuring VMs" chapter, you can specify the VM configuration by using command line parameters or a JSON file, and run the stratovirt command on the host to create and start a VM.
+
+- When using the command line parameters to specify the VM configuration, run the following command to create and start the VM:
 
 ```
-$/path/to/stratovirt - [Parameter 1] [Parameter Option] - [Parameter 2] [Parameter Option]...
+$/path/to/stratovirt - *[Parameter 1] [Parameter option] - [Parameter 2] [Parameter option]*...
 ```
 
-- Use the JSON file to provide the VM configuration. The command for creating and starting a VM is as follows:
+
+
+- When using the JSON file to specify the VM configuration, run the following command to create and start the VM:
 
 ```
 $ /path/to/stratovirt \
@@ -77,45 +88,55 @@ $ /path/to/stratovirt \
     -api-channel unix:/path/to/socket
 ```
 
-Where, /path/to/json indicates the path of the JSON configuration file. /path/to/socket is the socket file specified by the user (for example, /tmp/stratovirt.socket). After the command is executed, the socket file is automatically created. Ensure that the socket file does not exist before executing the command, so that the VM can be started properly.
+In the preceding commands, **/path/to/json** indicates the path of the JSON configuration file.**/path/to/socket** indicates the specified socket file, for example, **/tmp/stratovirt.socket**. After the preceding commands are executed, the socket file is automatically created. To properly start the VM, ensure that the socket file does not exist before creating it.
 
-> ![](./figures/en-05.png)
+
+
+> ![](./figures/en-05.png) 
 >
-> After the VM is started, there are two NICs: eth0 and eth1. The two NICs are reserved for hot plugging: eth0 first, and then eth1. Currently, only two virtio-net NICs can be hot-plugged.
+> After the VM is started, there are two NICs: eth0 and eth1. The two NICs are reserved for hot plugging: eth0 first and then eth1. Currently, only two virtio-net NICs can be hot plugged.
 
-## Connecting a VM
 
-StratoVirt uses QMP to manage VMs. To pause, resume, and exit a VM, connect it to StratoVirt through QMP first.
 
-Open a new CLI (CLI B) on the host and run the following command to perform the api-channel connection:
+### Connecting to a VM
+
+StratoVirt uses QMP to manage VMs. To suspend, resume, or exit a VM, connect it the StratoVirt through QMP first.
+
+Open a new CLI (CLI B) on the host and run the following command to connect to the api-channel as the **root** user:
 
 ```
-ncat -U /path/to/socket
+# ncat -U /path/to/socket
 ```
 
-After the connection is set up, a greeting message will be received from StratoVirt, as shown in the following figure.
+After the connection is set up, you will receive a greeting message from StratoVirt, as shown in the following:
 
 ```
 {"QMP":{"version":{"qemu":{"micro":1,"minor":0,"major":4},"package":""},"capabilities":[]}}
 ```
 
-Now, manage the VM by entering QMP commands in CLI B.
+You can now manage the VM by entering the QMP commands in CLI B.
 
-> ![](./figures/en-05.png)
+
+
+> ![](./figures/en-05.png) 
 >
-> QMP provides stop, cont, quit, and query-status to manage and query the VM status.
+> QMP provides stop, cont, quit, and query-status commands to manage and query VM statuses.
 >
 > All QMP commands for managing VMs are entered in CLI B. `<-` indicates the command input, and `->` indicates the QMP returned result.
 
-## Pausing a VM
 
-QMP provides the stop command for pausing a VM, that is, pausing all vCPUs of the VM. Command format:
+
+
+
+### Suspending a VM
+
+QMP provides the stop command to suspend a VM, that is, to suspend all vCPUs of the VM. The command syntax is as follows:
 
 **{"execute":"stop"}**
 
 **Example:**
 
-Run the stop command to pause the VM. The command output is as follows:
+The stop command and the command output are as follows:
 
 ```
 <- {"execute":"stop"}
@@ -123,15 +144,19 @@ Run the stop command to pause the VM. The command output is as follows:
 -> {"return":{}}
 ```
 
-## Resuming a VM
 
-QMP provides the cont command to resume a VM, that is, to resume all vCPUs of the VM. Command format:
+
+
+
+### Restoring a VM
+
+QMP provides the cont command to resume a suspended VM, that is, to resume all vCPUs of the VM. The command syntax is as follows:
 
 **{"execute":"cont"}**
 
 **Example:**
 
-Run the cont command to resume the VM. The command output is as follows:
+The cont command and the command output are as follows:
 
 ```
 <- {"execute":"cont"}
@@ -139,9 +164,13 @@ Run the cont command to resume the VM. The command output is as follows:
 -> {"return":{}}
 ```
 
-## Exiting a VM
 
-QMP provides the quit command to exit a VM, that is, to exit the StratoVirt process. Command format:
+
+
+
+### Exiting a VM
+
+QMP provides the quit command to exit a VM, that is, to exit the StratoVirt process. The command syntax is as follows:
 
 **{"execute":"quit"}**
 
@@ -149,34 +178,37 @@ QMP provides the quit command to exit a VM, that is, to exit the StratoVirt proc
 
 ```
 <- {"execute":"quit"}
--> {"event":"SHUTDOWN","data":{"guest":false,"reason":"host-qmp-quit"},"timestamp":{"ds":1590563776,"microseconds":519808}}
 -> {"return":{}}
+-> {"event":"SHUTDOWN","data":{"guest":false,"reason":"host-qmp-quit"},"timestamp":{"ds":1590563776,"microseconds":519808}}
 ```
 
-# Managing VM resources
 
-## Hot-Pluggable Hard Disks
 
-StratoVirt supports adjusting the number of disks during VM running. That is, you can add or delete VM disks without interrupting services.
+## Managing VM Resources
 
-### Hot Plugged-in Disk
+### Hot-Pluggable Disks
 
-**Usage**
+StratoVirt allows you to adjust the number of disks when a VM is running. That is, you can add or delete VM disks without interrupting services.
+
+#### Hot Plugged-in Disks
+
+**Usage:**
 
 ```
 {"execute": "blockdev-add", "arguments": {"node-name": "drive-0", "file": {"driver": "file", "filename": "/path/to/block"}, "cache": {"direct": true}, "read-only": false}}
 {"execute": "device_add", "arguments": {"id": "drive-0", "driver": "virtio-blk-mmio", "addr": "0x1"}}
 ```
 
-**Parameter**
+**Parameters:**
 
-- The value of node-name in blockdev-add must be the same as the value of id in device_add. They are both drive-0.
+- The value of **node-name** in **blockdev-add** must be the same as the value of **id** in **device_add**. For example, both values are **drive-0** in the preceding example.
 
-- /path/to/block is the mirror path of the hot plugged-in disk. It cannot be the path of the disk image that boots the rootfs.
-- For addr, 0x0 is mapped to vda of the VM, 0x1 is mapped to vdb, and so on. To be compatible with the QMP protocol, "addr" can be replaced by "lun", but lun=0 is mapped to the vdb of the client.
-- StratoVirt supports a maximum of six virtio-blk disks. Note this when hot adding disks.
+- **/path/to/block** is the image path of the hot plugged-in disks. It cannot be the path of the disk image that boots the rootfs.
+- For **addr**, **0x0** is mapped to **vda** of the VM, **0x1** is mapped to **vdb**, and so on. To be compatible with the QMP protocol, **addr** can be replaced by **lun**, but **lun=0** is mapped to the **vdb** of the client.
+- StratoVirt supports a maximum of six virtio-blk disks. Note this when hot plugging in disks.
 
-**Example**
+
+**Example:**
 
 ```
 <- {"execute": "blockdev-add", "arguments": {"node-name": "drive-0", "file": {"driver": "file", "filename": "/path/to/block"}, "cache": {"direct": true}, "read-only": false}}
@@ -185,17 +217,19 @@ StratoVirt supports adjusting the number of disks during VM running. That is, yo
 -> {"return": {}}
 ```
 
-### Hot Plugged-out Disk
 
-**Usage**
+
+#### Hot Plugged-out Disks
+
+**Usage:**
 
 **{"execute": "device_del", "arguments": {"id":"drive-0"}}**
 
-**Parameter**
+**Parameters:**
 
-id indicates the ID of the hot plugged-out disk.
+**id** indicates the ID of the hot plugged-out disk.
 
-**Example**
+**Example:**
 
 ```
 <- {"execute": "device_del", "arguments": {"id": "drive-0"}}
@@ -203,70 +237,75 @@ id indicates the ID of the hot plugged-out disk.
 -> {"return": {}}
 ```
 
-## Hot-Pluggable NIC
 
-StratoVirt allows users to adjust the number of NICs during VM running. That is, users can add or delete NICs for VMs without interrupting services.
 
-### Hot Plugged-in NIC
+### Hot-Pluggable NICs
 
-**Preparations (Requiring the Root Permission)**
+StratoVirt allows you to adjust the number of NICs when a VM is running. That is, you can add or delete VM NICs without interrupting services.
 
-1. Create and enable a Linux bridge. For example, if the bridge name is qbr0, run the following command:
+#### Hot Plugged-in NICs
 
-   ```shell
-   # brctl addbr qbr0
-   # ifconfig qbr0 up
-   ```
+**Preparations (Requiring the root Permission)**
+
+1. Create and enable a Linux bridge. For example, if the bridge name is **qbr0**, run the following command:
+
+```shell
+# brctl addbr qbr0
+# ifconfig qbr0 up
+```
 
 2. Create and enable a tap device. For example, if the tap device name is **tap0**, run the following command:
 
-   ```shell
-   # ip tuntap add tap0 mode tap
-   # ifconfig tap0 up
-   ```
+```shell
+# ip tuntap add tap0 mode tap
+# ifconfig tap0 up
+```
 
 3. Add the tap device to the bridge.
 
-   ```shell
-   # brctl addif qbr0 tap0
-   ```
+```shell
+# brctl addif qbr0 tap0
+```
 
-**Usage**
+
+**Usage:**
 
 ```
 {"execute":"netdev_add", "arguments":{"id":"net-0", "ifname":"tap0"}}
 {"execute":"device_add", "arguments":{"id":"net-0", "driver":"virtio-net-mmio", "addr":"0x0"}}
 ```
 
-**Parameter**
+**Parameters:**
 
-- The ID in netdev_add must be the same as that in device_add. Ifname indicates the name of the TAP device.
+- **id** in **netdev_add** must be the same as that in **device_add**. **ifname** is the name of the backend tap device.
 
-- For addr, 0x0 is mapped to eth0 of the VM, and 0x1 to eth1.
-- StratoVirt supports a maximum of two virtio-net disks. Note this when hot adding NICs.
+- For **addr**, **0x0** is mapped to **eth0** of the VM, **0x1** is mapped to **eth1**, and so on.
 
-**Example**
+- StratoVirt supports a maximum of two virtio-net NICs. Therefore, pay attention to the specification restrictions when hot plugging in NICs.
+
+
+**Example:**
 
 ```
 <- {"execute":"netdev_add", "arguments":{"id":"net-0", "ifname":"tap0"}}
 -> {"return": {}}
-<- {"execute":"device_add", "arguments":{"id":"net-0", "driver":"virtio-net-mmio", "addr":"0x0"}}
+<- {"execute":"device_add", "arguments":{"id":"net-0", "driver":"virtio-net-mmio", "addr":"0x0"}} 
 -> {"return": {}}
 ```
 
-Where, addr:0x0 corresponds to eth0 in the VM.
+**addr:0x0** corresponds to **eth0** in the VM.
 
-### Hot Plugged-out NIC
+#### Hot Plugged-out NICs
 
-**Usage**
+**Usage:**
 
 **{"execute": "device_del", "arguments": {"id": "net-0"}}**
 
-**Parameter**
+**Parameters:**
 
-id: specifies the NIC ID, for example, net-0.
+**id**: NIC ID, for example, **net-0**.
 
-**Example**
+**Example:**
 
 ```
 <- {"execute": "device_del", "arguments": {"id": "net-0"}}
@@ -274,30 +313,32 @@ id: specifies the NIC ID, for example, net-0.
 -> {"return": {}}
 ```
 
-## Ballon Device Usage
 
-The balloon device can be used to reclaim free memory from the VM. The Balloon is called using the qmp command. The usage of the qmp command is as follows:
+
+## Using Ballon Devices
+
+The balloon device is used to reclaim idle memory from a VM. It called by running the QMP command.  
 
 **Usage:**
 
 ```
-{"execute": "balloon", "arguments": {"value": 2147483648}}
+{"execute": "balloon", "arguments": {"value": 2147483648‬}}
 ```
 
-**Parameter:**
+**Parameters:**
 
-- value: Specifies the size of the guest memory to be set, in bytes. If the value is greater than the memory value configured during VM startup, the memory value configured during VM startup is used.
+- **value**: size of the guest memory to be set. The unit is byte. If the value is greater than the memory value configured during VM startup, the latter is used.
 
 **Example:**
 
-The memory size configured during VM startup is 4 GiB. If the free memory of the VM queried by running the free command is greater than 2 GiB, you can run the qmp command to set the guest memory size to 2147483648 bytes.
+The memory size configured during VM startup is 4 GiB. If the idle memory of the VM queried by running the free command is greater than 2 GiB, you can run the QMP command to set the guest memory size to 2147483648 bytes.
 
 ```
-<- {"execute": "balloon", "arguments": {"value": 2147483648}}
+<- {"execute": "balloon", "arguments": {"value": 2147483648‬}}
 -> {"return": {}}
 ```
 
-Run the following command to query the actual memory of the VM:
+Query the actual memory of the VM:
 
 ```
 <- {"execute": "query-balloon"}

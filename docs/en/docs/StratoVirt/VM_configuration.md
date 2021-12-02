@@ -1,40 +1,41 @@
-# Configuring a VM
+# Configuring VMs
+## Basic Configuration
 
-## Overview
+### Overview
 
-Different from Libvirt that uses XML files to configure VMs, StratoVirt can use command line parameters or the JSON file to configure the VM CPU, memory, and disk information. This section describes the two configuration methods.
+Different from libvirt that uses XML files to configure VMs, StratoVirt can use command line parameters or the JSON file to configure the VM CPU, memory, and disk information. This section describes the two configuration methods.
 
-> ![](./figures/en-05.png)
+> ![](./figures/en-05.png) 
 >
-> If both methods can be used, incline to the command line configuration.
+> If both methods are used, the command line configuration mode is used.
 >
-> In this document, /path/to/socket is the socket file in the user-defined path.
+> In this document, **/path/to/socket** indicates the socket file in the user-defined path.
 
 
 
 
 
-## Specifications
+### Specifications
 
 - Number of VM CPUs: [1, 254]
-- VM memory size: [256MiB, 512GiB]
-- Number of VM disks (including hot swap disks): [0, 6]
-- Number of VM NICs (including hot swap NICs): [0, 2]
-- The VM console device supports only single way connection.
-- On the x86_64 platform, a maximum of 11 mmio devices can be configured. But a maximum of two other devices except disks and NICs is recommended. On the AArch64 platform, the maximum of mmio devices is 160, but the maximum of other devices is recommend to be 12, also excluding disks and NICs.
+- VM memory size: [256 MB, 512 GB]
+- Number of VM disks (including hot plugged-in disks): [0, 6]
+- Number of VM NICs (including hot plugged-in NICs): [0, 2]
+- The VM console device supports only one connection.
+- On the x86_64 platform, a maximum of 11 MMIO devices can be configured. You are advised to configure a maximum of two other devices except disks and NICs. On the AArch64 platform, a maximum of 160 MMIO devices can be configured. You are advised to configure a maximum of 12 other devices except disks and NICs.
 
-## Minimum Configuration
+### Minimal Configuration
 
-The minimum configuration of the StratoVirt is as follows:
+The minimum configuration for running StratoVirt is as follows:
 
-- Linux kernel image in PE or bzImage (x86_64 only) format.
+- Use the Linux kernel image in PE or bzImage format (x86_64 only).
 - Set the rootfs image as the virtio-blk device and add it to kernel parameters.
 - Use api-channel to control StratoVirt.
-- If you want to use ttyS0 for login, add a serial port to the startup command line and add ttyS0 to kernel parameters.
+- To use ttyS0 for login, add a serial port to the startup command line and add ttyS0 to kernel parameters.
 
 
 
-## Command Line Configuration
+### Command Line Configuration
 
 **Overview**
 
@@ -42,59 +43,58 @@ Command line configuration directly specifies the VM configuration content using
 
 **Command Format**
 
-The format of the command configured by running the cmdline command is as follows:
+The format of the command configured by running cmdline is as follows:
 
-**$ /path/to/stratovirt** *-[Parameter 1] [Parameter Option] -[Parameter 2] [Parameter Option] ...*
+**$ /path/to/stratovirt** *- [Parameter 1] [Option]-[Parameter 2] [Option]...*
 
-**Usage**
+**Usage Instructions**
 
-1. To ensure that the socket required by api-channel can be created, run the following command to clear the environment:
+1. To ensure that the socket required by the api-channel can be created, run the following command to clear the environment:
 
    ```
-   $rm [parameter] [user-defined socket file path]
+   $rm [parameter] *[user-defined socket file path]*
    ```
 
 
 2. Run the cmdline command.
 
    ```
-   $ /path/to/stratovirt -[Parameter 1] [Parameter Option] -[Parameter 2] [Parameter Option] ...
+   $/path/to/stratovirt - *[Parameter 1] [Parameter option] - [Parameter 2] [Parameter option]*...
    ```
 
 
-**Parameter Description**
+**Parameters**
 
-The following table lists the parameters of the cmdline command.
+The following table describes the parameters of the cmdline command.
 
-**Table 1** Description of command line configuration parameters
+Table 1 Parameters in the command line
 
-| Parameter | Value | Description |
+| Parameter| Option| Description|
 | ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| -name | *VMName* | Configures the VM name (a string of 1 to 255 characters).|
-| -machine | `[type=vm_type]` `[,dump-guest-core=on]` `[,mem-share=off]` | Configures the VM type. |
-| -kernel | /path/to/vmlinux.bin | Configures the kernel image.|
-| -append | console=ttyS0 root=/dev/vda reboot=k panic=1 rw | Configures kernel command line parameters.|
-| -initrd | /path/to/initrd.img | Configures the initrd file.|
-| -smp | [cpus=] Number of CPUs | Configures the number of CPUs. The value range is [1,254].|
-| -m | Byte/MiB/GiB | Configures the memory size. The value range is [256MiB,512GiB]. |
-| -drive | id=rootfs,file=/path/to/rootfs[,readonly=false,direct=true,serial=serial_num,iothread=iothread1,iops=200] | Configures the virtio-blk device.|
-| -netdev | id=iface_id,netdev=tap0[,mac=mac_address,iothread=iothread2] | Configures the virtio-net device.|
-| -chardev | id=console_id,path=/path/to/socket | Configures virtio-console. Ensure that the socket file does not exist before running the command.|
-| -device | vsock,id=vsock_id,guest-cid=3 | Configures vhost-vsock.|
-| -api-channel | unix:/path/to/socket | Configures api-channel. Before running this command, ensure that the socket file does not exist.|
-| -serial | stdio | Configures a serial port device.|
-| -D | /path/to/logfile | Configures log files.|
-| -pidfile | /path/to/pidfile | Configures the PID file. This parameter must be used together with -daemonize.|
-| -disable-seccomp | N/A | Disables the Seccomp, which is enabled by default.|
-| -omit_vm_memory | N/A | Do not dump the VM memory when the process enters the panic state.|
-| -daemonize | N/A | Enables the daemon process.|
-| -iothread | id="iothread1" | Configures the iothread thread.|
-| -balloon | deflate-on-oom=true | Configures the balloon device.|
-| -mem-path | /dev/hugepages | Configures huge pages.|
+| -name            | *VMname*                                                     | Configures the VM name (a string of 1 to 255 characters).|
+| -machine         | `[type=vm_type]` `[,dump-guest-core=on]` </br>`[,mem-share=off]`         | Configures the VM type. For details, see [VM Types](#vm-types).|
+| -kernel          | /path/to/vmlinux.bin                                         | Configures the kernel image.|
+| -append          | console=ttyS0 root=/dev/vda </br>reboot=k panic=1 rw              | Configures kernel command line parameters.|
+| -initrd          | /path/to/initrd.img                                          | Configures the initrd file.|
+| -smp             | [cpus=] CPU count| Configures the number of CPUs. The value range is [1, 254].|
+| -m               | Memory size (in bytes), memory size (in MB), and memory size (in GB)| Configures the memory size. The value ranges from 256 MB to 512 GB.|
+| -drive           | id=rootfs,file=/path/to/rootfs</br>[,readonly=false,direct=true,</br>serial=serial_num,iothread=iothread1,</br>iops=200] | Configures the virtio-blk device. For details, see [Disk Configuration](#disk-configuration).|
+| -netdev          | id=iface_id,netdev=tap0</br>[,mac=mac_address,iothread=iothread2] | Configures the virtio-net device. For details, see [NIC Configuration](#nic-configuration).|
+| -chardev         | id=console_id,path=/path/to/socket                           | Configures virtio-console. For details, see [Console Device Configuration](#console-device-configuration).|
+| -device          | vsock,id=vsock_id,guest-cid=3                                | Configures vhost-vsock. For details, see [vsock Device Configuration](#vsock-device-configuration).|
+| -api-channel     | unix:/path/to/socket                                         | Configures api-channel. Before running api-channel, ensure that the socket file does not exist.|
+| -serial          | stdio                                                        | Configures the serial port device.|
+| -D               | /path/to/logfile                                             | Configures the log file.|
+| -pidfile         | /path/to/pidfile                                             | Configures the pid file. This parameter must be used together with **-daemonize**. Ensure that the pid file does not exist before running the script.|
+| -disable-seccomp | NA                                                           | Disables Seccomp. Seccomp is enabled by default.|
+| -daemonize       | NA                                                           | Enables daemon processes.|
+| -iothread        | id="iothread1"                                               | Configures the iothread thread. For details, see [iothread Configuration](#iothread-configuration).|
+| -balloon         | deflate-on-oom=true                                          | Configures the balloon device. For details, see [Balloon Device Configuration](#balloon-device-configuration).|
+| -mem-path        | /dev/hugepages                                               | Configures the huge page memory. For details, see [Huge Page Configuration](#huge-page-configuration).|
 
 
 
-**Example**
+**Configuration Example**
 
 1. Delete the socket file to ensure that the api-channel can be created.
 
@@ -118,79 +118,79 @@ The following table lists the parameters of the cmdline command.
 
 
 
-## JSON Configuration
+### JSON Configuration
 
 
 
 **Overview**
 
-Configuration using the JSON file indicates that when running StratoVirt to create a VM, the system reads the specified JSON file that contains the VM configuration.
+Using the JSON file for configuration means reading the specified JSON file when running StratoVirt to create a VM. The JSON file contains the VM configuration.
 
 **Command Format**
 
-The format of the command for configuring a VM using the JSON file is as follows. In this command, /path/to/json indicates the path of the corresponding file.
+The format of the command for configuring a VM using the JSON file is as follows. In this command, **/path/to/json** indicates the path of the corresponding file.
 
-**$ /path/to/stratovirt -config** */path/to/json -[Parameter] [Parameter Option]*
+**$ /path/to/stratovirt -config** */path/to/json -[Parameter] [Option]*
 
-**Usage**
+**Usage Instructions**
 
-1. Create a JSON file and write the VM configuration to the file.
+1. Write the VM configuration to the JSON file.
 
 2. Run the StratoVirt command to create a VM.
 
    ```
-   $ /path/to/stratovirt -config /path/to/json - [Parameter] [Parameter Option]
+   $ /path/to/stratovirt -config /path/to/json -*[Parameter] [Option]*
    ```
 
-**Parameter Description**
+**Parameters**
 
 The following table describes the configurable parameters in the JSON file.
 
 **Table 2** Parameters in the configuration file
 
-| Parameter | Value | Description |
-| -------------- | ------------------------------------------------------------ | ---------------------------------------------------- |
-| boot-source | "kernel_image_path": "/path/to/vmlinux.bin","boot_args": "console=ttyS0 reboot=k panic=1 pci=off tsc=reliable ipv6.disable=1 root=/dev/vda quiet","initrd_fs_path": "/path/to/initrd.img" | Configures the kernel image and kernel parameters. The `initrd_fs_path` parameter is optional.                               |
-| machine-config | "type": "MicroVm","vcpu_count": 4,"mem_size": 805306368,"dump_guest_core": false,"mem-share": false,"mem_path":"/path/to/backend" | Configures the virtual CPU and memory size. The `dump_guest_core`,`mem-path`, and `mem-share` parameters are optional. |
-| drive | "drive_id": "rootfs","path_on_host": "/path/to/rootfs.ext4","read_only": false,"direct": true,"serial_num": "xxxxx","iothread": "iothread1","iops": 200 | Configures the virtio-blk disk. The `serial_num`, `iothread`, and`iops` parameters are optional.        |
-| net | "iface_id": "net0","host_dev_name": "tap0","mac": "xx:xx:xx:xx:xx:xx","iothread": "iothread1" | Configures the virtio-net NIC. The `mac` and `iothread `parameter is optional. |
-| console | "console_id": "charconsole0","socket_path": "/path/to/socket" | Configures the virtio-console serial port. Before running the serial port, ensure that the socket file does not exist. |
-| vsock | "vsock_id": "vsock0","guest_cid": 3 | Configures the virtio-vsock device. |
-| serial | "stdio": true | Configures a serial port device.|
-| iothread | "id": "iothread1" | ID of iothread1, which is used to create the iothread1 thread. |
-The | balloon | "deflate_on_oom": true | Configures the auto deflate feature of the balloon. |
+| Parameter| Option| Description|
+| -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| boot-source    | "kernel_image_path": "/path/to/vmlinux.bin","boot_args": "console=ttyS0 reboot=k panic=1 pci=off tsc=reliable ipv6.disable=1 root=/dev/vda quiet","initrd_fs_path": "/path/to/initrd.img" | Configures the kernel image and kernel parameters. The `initrd_fs_path` parameter is optional.|
+| machine-config | "type": "MicroVm","vcpu_count": 4,"mem_size": 805306368,"dump_guest_core": false,"mem-share": false,"mem_path":"/path/to/backend" | Configures the virtual CPU and memory size. The `dump_guest_core`, `mem-path` and `mem-share` parameters are optional.|
+| drive          | "drive_id": "rootfs","path_on_host": "/path/to/rootfs.ext4","read_only": false,"direct": true,"serial_num": "xxxxx","iothread": "iothread1","iops": 200 | Configures the virtio-blk disk. The `serial_num`, `iothread`, and `iops` parameters are optional.|
+| net            | "iface_id": "net0","host_dev_name": "tap0","mac":  "xx:xx:xx:xx:xx:xx","iothread": "iothread1" | Configures the virtio-net NIC. The `mac` and `iothread` parameters are optional.|
+| console        | "console_id": "charconsole0","socket_path": "/path/to/socket" | Configures the virtio-console serial port. Before running the serial port, ensure that the socket file does not exist.|
+| vsock          | "vsock_id": "vsock0","guest_cid": 3                          | Configures the virtio-vsock device.|
+| serial         | "stdio": true                                                | Configures the serial port device.|
+| iothread       | "id": "iothread1"                                            | Configures the ID of the iothread for creating a thread named `iothread1`.|
+| balloon        | "deflate_on_oom": true                                       | Configures the auto deflate feature of balloon.|
+
 
 
 The following table lists the parameters running in JSON.
 
 **Table 3** Parameters running in JSON
 
-| Parameter | Value | Description |
+| Parameter| Option| Description|
 | ---------------- | -------------------- | ------------------------------------------------------------ |
-| -config | /path/to/json | Configures the file path.|
-| -api-channel | unix:/path/to/socket | Configures api-channel. Before running this command, ensure that the socket file does not exist. |
-| -D | /path/to/logfile | Configures log files.|
-| -pidfile | /path/to/pidfile | Configures the PID file, which must be used together with daemonize. Before running the command, make sure that the PID file does not exist. |
-| -disable-seccomp | N/A | Disables the Seccomp, which is enabled by default. |
-| -daemonize | N/A | Enables the daemon process.|
+| -config          | /path/to/json        | Configures the file path.|
+| -api-channel     | unix:/path/to/socket | Configures api-channel. Before running api-channel, ensure that the socket file does not exist.|
+| -D               | /path/to/logfile     | Configures the log file.|
+| -pidfile         | /path/to/pidfile     | Configures the PID file, which must be used together with daemonize. Ensure that the pid file does not exist before running the script.|
+| -disable-seccomp | N/A                   | Disables Seccomp. Seccomp is enabled by default.|
+| -daemonize       | N/A                   | Enables daemon processes.|
 
 
 
-**Example**
+**Configuration Example**
 
-1. Create a JSON file, for example, /home/config.json. The file content is as follows:
+1. Create a JSON file, for example, **/home/config.json**. The file content is as follows:
 
 ```
 {
   "boot-source": {
     "kernel_image_path": "/path/to/vmlinux.bin",
-    "boot_args": "console=ttyS0 reboot=k panic=1 pci=off tsc=reliable ipv6.disable=1 root=/dev/vda quiet"
+    "boot_args": "console=ttyS0 reboot=k panic=1 pci=off tsc=reliable ipv6.disable=1 root=/dev/vda quiet rw"
   },
-  "machine-config": {
+ "machine-config": {
     "type": "MicroVm",
     "vcpu_count": 2,
-    "mem_size": 268435456,
-    "omit_vm_memory": false
+    "mem_size": 268435456
   },
   "drive": [
     {
@@ -212,10 +212,10 @@ The following table lists the parameters running in JSON.
     }
   ],
   "console": [
-   {
+    {
     "console_id": "charconsole0",
     "socket_path": "/path/to/console.socket"
-   }
+    }
   ],
   "serial": {
     "stdio": true
@@ -234,7 +234,7 @@ The following table lists the parameters running in JSON.
 
 
 
-2. Run StratoVirt to read the JSON file and create and start the VM.
+2. Run StratoVirt and read the JSON file to create and start the VM.
 
 ```
 $ /path/to/stratovirt \
@@ -242,68 +242,70 @@ $ /path/to/stratovirt \
     -api-channel unix:/tmp/stratovirt.socket
 ```
 
-Successful execution of the command indicates that the VM is successfully created and started.
+After the command is executed successfully, the VM is created and started successfully.
+
+
 
 ## Configuration Description
 
 ### VM Types
 
-The -machine parameter is used to specify the type of the VM to be started.
+You can run the **-machine** parameter to specify the type of the VM to be started.
 
-Parameter Description
+Parameters
 
-- type: specifies the type of the VM to be started. Currently, only MicroVm is supported. This parameter is optional, and the default value is MicroVM.
-- dump-guest-core: determines whether to dump the VM memory when the process panics. This parameter is optional.
-- mem-share: determines whether to share the memory with other processes. This parameter is optional.
+- **type** (optional): type of the VM to be started. Currently, only **MicroVm** is supported. The default value is **MicroVM**.
+- **dump-guest-core** (optional): whether to dump the VM memory when a process panics.
+- **mem-share** (optional): whether to share memory with other processes.
 
 
 
 ### Disk Configuration
 
-The VM disk configuration includes the following configuration items.
+VM disk configuration includes the following configuration items:
 
-- drive_id: Disk ID.
-- path_on_host: Disk path.
-- serial_num: (Optional) Specifies the serial number of the disk.
-- read_only: (Optional) Determines whether the file is read-only.
-- direct: (Optional) Determines whether to enable the O_DIRECT mode.
-- iothread: (Optional) Configures the iothread attribute.
-- iops: (Optional) Configures disk QoS to restrict disk I/O operations.
-
-
-
-The iops and iothread configuration items are described as follows:
-
-#### iops: Disk QoS.
-
-##### Overview
-
-QoS is quality of service. In cloud scenarios, multiple VMs are started on a single host. When a VM has heavy disk access pressure, the total disk access bandwidth of the host is limited, which occupies the access bandwidth of other VMs. As a result, the I/O of other VMs is affected. To reduce the impact on each other, you can configure QoS attributes for VMs to limit the disk access rate.
+- **drive_id**: disk ID.
+- **path_on_host**: disk path.
+- **serial_num** (optional): serial number of the disk.
+- **read_only** (optional): whether the disk is read-only.
+- **direct** (optional): whether to open the disk in O_DIRECT mode.
+- **iothread** (optional): iothread attribute.
+- **iops** (optional): disk QoS for limiting disk I/O operations.
 
 
 
-##### Important Notes
+The following describes the **iops** and **iothread** configuration items:
+
+#### **iops**: disk QoS.
+
+##### Description
+
+QoS is short for quality of service. In cloud scenarios, multiple VMs are started on a single host. Because the total disk access bandwidth of the host is limited, when a VM has heavy disk access pressure, it will occupy the access bandwidth of other VMs. As a result, the I/O performance of other VMs will be affected. To reduce the impact between VMs, you can configure QoS to limit the disk access rate of the VMs.
+
+
+
+##### Precautions
 
 - Currently, QoS supports the configuration of disk IOPS.
-- The value range of iops is [0, 1000000]. The value 0 indicates that the rate is not limited. The actual IOPS does not exceed the preset value and does not exceed the upper limit of the actual back-end disk performance.
-- Only the average IOPS can be limited, and the instantaneous burst traffic cannot be limited.
+- The value range of IOPS is [0, 1000000]. The value **0** indicates that the IOPS is not limited. The actual IOPS does not exceed the preset value or the upper limit of the actual backend disk performance.
+- Only the average IOPS can be limited. Instantaneous burst traffic cannot be limited.
 
 
 
 ##### Configuration Methods
 
-Usage
+Usage:
 
-**CLI**
+CLI:
 
 ```
 -drive xxx,iops=200
 ```
 
-Parameter:
+Parameters:
 
-- iops: The I/O delivery speed of the disk on the VM does not exceed the value of this parameter.
-- xxx: indicates other settings of the disk.
+- **iops**: I/O delivery speed of the disk on a VM after IOPS is configured. It does not exceed the value of this parameter.
+- *xxx*: other settings of the disk.
 
 JSON Configuration
 
@@ -324,9 +326,9 @@ JSON Configuration
 
 
 
-#### iothread:
+#### **iothread**
 
-For details about the iothread configuration, see [iothread Configuration](#iothread-configuration)
+For details about the iothread configuration, see [iothread Configuration](#iothread-configuration).
 
 
 
@@ -334,67 +336,67 @@ For details about the iothread configuration, see [iothread Configuration](#ioth
 
 ### NIC Configuration
 
-The VM NIC configuration includes the following configuration items:
+VM NIC configuration includes the following configuration items:
 
-- iface_id: unique device ID.
-- host_dev_name: tap device name on the host.
-- mac: (Optional) MAC address of the VM.
-- iothread: (Optional) Configures the iothread attribute of the disk.
+- **iface_id**: unique device ID.
+- **host_dev_name**: name of the tap device on the host.
+- **mac** (optional): MAC address of the VM.
+- **iothread** (optional): iothread attribute of the disk.
 
-For details about the NIC iothread configuration, see [iothread Configuration](#iothread-configuration)
+For details about the iothread configuration of the NIC, see [iothread Configuration](#iothread-configuration).
 
 
 
 ### Console Device Configuration
 
-virtio-console is a universal serial port device, which is used to transmit data between the guest and host. The configuration items of the console device are as follows:
+virtio-console is a universal serial port device used to transmit data between the guest and host. The configuration items of the console device are as follows:
 
-- console_id: Unique device ID.
-- socket_path: path of the virtio console file.
+- **console_id**: unique device ID.
+- **socket_path**: path of the virtio console file.
 
-Before starting the stratovirt, ensure that the console file does not exist.
+Ensure that the console file does not exist before starting StratoVirt.
 
 
 
 ### vsock Device Configuration
 
-The vsock is also a device for communication between the host and guest. It is similar to the console but has better performance. Configuration items:
+The vsock is also a device for communication between the host and guest. It is similar to the console but has better performance. The configuration items are as follows:
 
-- vsock_id: Unique device ID.
-- guest_cid: Unique context ID.
-
-
+- **vsock_id**: unique device ID.
+- **guest_cid**: unique context ID.
 
 
 
-### Hugepage Configuration
+
+
+### Huge Page Configuration
 
 #### Overview
 
-StratoVirt supports the configuration of huge pages for VMs. Compared with the traditional 4 KB memory page mode, huge page memory can effectively reduce the number of TLB misses and page fault interrupts, significantly improving the performance of memory-intensive services.
+StratoVirt supports the configuration of huge pages for VMs. Compared with the traditional 4K memory page mode, huge page memory can effectively reduce the number of TLB misses and page fault interrupts, significantly improving the performance of memory-intensive services.
 
 
 
 #### Precautions
 
-  - The specified directory to which the huge page is mounted. The value must be an absolute path.
-  - This parameter can be set only during startup.
+  - The directory to which the huge pages are mounted must be an absolute path.
+  - Memory huge pages can be configured only during startup.
   - Only static huge pages are supported.
-  - Before using a huge page, you need to configure the huge page on the host.
-  - To use the huge page feature, ensure that the VM memory size is an integer multiple of **huge page size**.
+  - Configure huge pages on the host before use.
+  - To use the huge page feature, ensure that the VM memory size is an integer multiple of *huge page size*.
 
 #### Mutually Exclusive Features
 
-- If the huge page feature is configured, the balloon feature does not take effect.
+- If huge pages are configured, the balloon feature becomes invalid.
 
 
 #### Configuration Methods
 
-##### Configuring the Huge Page on the Host
+##### Configuring Huge Pages on the Host
 
 ###### Mounting
 
-Mount the huge page file system to the specified directory. `/path/to/hugepages` is the user-defined empty directory.
+Mount the huge page file system to a specified directory. `/path/to/hugepages` is the user-defined empty directory.
 
 ```
 $ mount -t hugetlbfs hugetlbfs /path/to/hugepages
@@ -403,24 +405,24 @@ $ mount -t hugetlbfs hugetlbfs /path/to/hugepages
 
 ###### Setting the Number of Huge Pages
 
-* Set the number of static huge pages. `num` indicates the specified number of huge pages.
+* Set the number of static huge pages. `num` indicates the specified number.
 
   ```
   $ sysctl vm.nr_hugepages=num
   ```
 
-* Query huge page statistics
+* Query huge page statistics.
 
   ```
   $ cat /proc/meminfo | grep Hugepages
   ```
 
-  To view the huge page statistics of other page sizes, view the related information in the `/sys/kernel/mm/hugepages/hugepages-*/` directory.
+  To view statistics about huge pages of other sizes, view the related information in the `/sys/kernel/mm/hugepages/hugepages-*/` directory.
 
 
 </br>
 
-![img](https://gitee.com/openeuler/docs/raw/master/docs/en/docs/A-Tune/figures/en-us_image_0213178479.png) 
+![img](./figures/notice.png) 
 
 1. Configure the StratoVirt memory specifications and huge pages based on the huge page usage. If the huge page resources are insufficient, the VM fails to be started.
 
@@ -456,37 +458,37 @@ $ mount -t hugetlbfs hugetlbfs /path/to/hugepages
 
 </br>
 
-![img](https://gitee.com/openeuler/docs/raw/stable2-21.03/docs/en/docs/StratoVirt/figures/en-05.png) 
+![img](./figures/en-05.png) 
 
-1. **Typical configuration:** The mem-path item in the StratoVirt command line is **Hugepage file system mount directory**. The StrattoVirt huge page feature is recommended for the typical configuration.
+1. **Typical configuration**: Set **mem-path** in the StratoVirt command line to the *huge page file system mount directory*. The StratoVirt huge page feature is recommended for the typical configuration.
 
 
 
-### Configuring iothread
+### iothread Configuration
 
-#### Overview
+#### Description
 
-After StratoVirt starts a VM with iothread configuration, an independent thread independent of the main thread is started on the host. These independent threads can be used to process I/O requests of the device, improving the I/O performance of the device and reducing the impact on message processing on the management plane.
+After a VM with the iothread configuration is started on StratoVirt, threads independent of the main thread are started on the host. These independent threads can be used to process I/O requests of devices, improving the device I/O performance and reducing the impact on message processing on the management plane.
 
 #### Precautions
 
-- A maximum of eight iothread threads can be configured.
+- A maximum of eight iothreads can be configured.
 - The iothread attribute can be configured for disks and NICs.
-- The iothread thread occupies CPU resources of the host. When the I/O pressure of the VM is high, the CPU resources occupied by a single iothread depend on the disk access speed. For example, a common SATA disk occupies less than 20% CPU resources.
+- iothreads occupy CPU resources of the host. When the I/O pressure is high in a VM, the CPU resources occupied by a single iothread depend on the disk access speed. For example, a common SATA disk occupies less than 20% CPU resources.
 
 
 
-#### Creating an iothread Thread
+#### Creating an iothread
 
 Usage:
 
-**CLI:**
+CLI:
 
 ```shell
 -iothread id=iothread1 -iothread id=iothread2
 ```
 
-**json:**
+JSON:
 
 ```json
 "iothread": [
@@ -495,36 +497,36 @@ Usage:
   ]
 ```
 
-Parameter:
+Parameters:
 
-- id: identifies the iothread thread. This ID can be set in the iothread attribute of the disk or NIC. If the iothread thread information is configured in the startup parameters, the VM starts the thread with the specified ID on the host after the VM is started.
+- **id**: identifies an iothread. This ID can be set to the iothread attribute of the disk or NIC. If iothread is configured in the startup parameter, the thread with the specified ID is started on the host after the VM is started.
 
 
 
-#### Configuring the iothread Attribute of a Disk or NIC
+#### Configuring the iothread Attribute for a Disk or NIC
 
 Usage:
 
-**Configurations on the CLI**
+**CLI-based Configuration**
 
 ```
-# Disk
+# Disks
 -drive xxx,iothread=iothread1
 # NICs
 -netdev xxx,iothread=iothread2
 ```
 
-	Parameter:
+​	Parameters:
 
-1. iothread: Set this parameter to the ID of the iothread thread that processes the I/O of the local device.
-2. xxx: Indicates other configurations of the disk or NIC.
+1. **iothread**: Set this parameter to the ID of the iothread, indicating the thread that processes the I/O of the local device.
+2. *xxx*: other configurations of the disk or NIC.
 
 
 
-**json Configuration**
+**JSON Configuration**
 
 ```json
-# Disk
+# Disks
 {
     ...
     "drive": [
@@ -555,32 +557,32 @@ Usage:
 
 
 
-### Configuring the Balloon Device
+### Balloon Device Configuration
 
-#### Overview
+#### Description
 
-During the running of a VM, the balloon driver in the VM dynamically occupies or releases the memory to dynamically change the available memory of the VM, achieving memory elasticity.
+During running of a VM, the balloon driver in it occupies or releases memory to dynamically adjust the VM's available memory, achieving memory elasticity.
 
 
 
 #### Precautions
 
-- Before enabling the balloon function, ensure that the page size of the guest is the same as that of the host.
-- The Balloon feature must be enabled for the guest kernel.
+- Before enabling balloon, ensure that the page size of the guest is the same as that of the host.
+- The balloon feature must be enabled for the guest kernel.
 - When memory elastic scaling is enabled, slight frame freezing may occur in the VM and the memory performance may deteriorate.
 
 
 
 #### Mutually Exclusive Features
 
-- The huge page memory is mutually exclusive.
-- In the x86 architecture, the number of interrupts is limited. Therefore, the total number of balloon devices and other Virtio devices cannot exceed 11. By default, six block devices, two net devices, and one serial port device are used.
+- This feature is mutually exclusive with huge page memory.
+- In the x86 architecture, the number of interrupts is limited. Therefore, the total number of balloon devices and other virtio devices cannot exceed 11. By default, six block devices, two net devices, and one serial port device are used.
 
 
 
 #### Specifications
 
-- Only one balloon device can be configured for each VM.
+- Each VM can be configured with only one balloon device.
 
 
 
@@ -605,14 +607,11 @@ During the running of a VM, the balloon driver in the VM dynamically occupies or
 
 
 
->![img](https://gitee.com/openeuler/docs/raw/stable2-21.03/docs/en/docs/StratoVirt/figures/en-05.png) 
-
->1. The value of deflate-on-oom is of the Boolean type, indicating whether to enable the auto deflate feature. When this function is enabled, if the balloon has reclaimed part of the memory, the balloon device automatically releases the memory to the guest when the guest requires the memory. If this function is disabled, the system does not automatically return the resources.
->2. When running the qmp command to reclaim the VM memory, ensure that the VM has sufficient memory to keep the basic running. Otherwise, some operations may time out, and the VM may fail to apply for idle memory.
->3. If the huge page function is enabled in the VM, the balloon function cannot reclaim the memory occupied by the huge page.
-
+>![img](./figures/en-05.png) 
+>1. The value of **deflate-on-oom** is of the Boolean type, indicating whether to enable the auto deflate feature. When this feature is enabled, if the balloon device has reclaimed some memory, it automatically releases the memory to the guest when the guest requires the memory. If this feature is disabled, the memory is not automatically returned.
+>2. When running the QMP command to reclaim the VM memory, ensure that the VM has sufficient memory to keep basic running. Otherwise, some operations may time out and the VM cannot apply for idle memory.
+>3. If the huge page feature is enabled in the VM, the balloon device cannot reclaim the memory occupied by the huge pages.
 
 
->![](https://gitee.com/openeuler/docs/raw/stable2-21.03/docs/zh/docs/StratoVirt/public_sys-resources/icon-notice.gif) **Notice**
-
->- When deflate-on-oom is set to false and the memory in the guest OS is insufficient, the balloon does not automatically release air and return the memory. As a result, the internal OOM of the guest OS may be caused, processes may be killed, and even the VM cannot run properly.
+>![](./public_sys-resources/icon-notice.gif) **Notice** 
+>If **deflate-on-oom** is set to **false**, when the guest memory is insufficient, the balloon device does not automatically release the memory. As a result, the guest OOM may occur, the processes may be killed, and even the VM cannot run properly.
