@@ -12,7 +12,7 @@ headless: true
     -   [Common Vulnerabilities and Exposures (CVE)]({{< relref "./docs/Releasenotes/common-vulnerabilities-and-exposures-(cve).md" >}})
     -   [Source Code]({{< relref "./docs/Releasenotes/source-code.md" >}})
     -   [Contribution]({{< relref "./docs/Releasenotes/contribution.md" >}})
-    -   [Acknowledgement]({{< relref "./docs/Releasenotes/acknowledgement.md" >}})
+    -   [Acknowledgment]({{< relref "./docs/Releasenotes/acknowledgment.md" >}})
 -   [Quick Start]({{< relref "./docs/Quickstart/quick-start.md" >}})
 -   [Installation Guide]({{< relref "./docs/Installation/Installation.md" >}})
     -   [Installation on Servers]({{< relref "./docs/Installation/install-server.md" >}})
