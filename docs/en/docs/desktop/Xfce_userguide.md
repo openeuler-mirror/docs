@@ -1,40 +1,49 @@
 # Table of Contents
 
-* [Xfce User Guide](#Xfce User Guide)
-  * [1. Overview](#1. Overview)
-  * [2. Desktop](#2. Desktop)
-    * [2.1 Desktop Icons](#2.1 Desktop Icons)
-    * [2.2 Shortcut Menu](#2.2 Shortcut Menu)
-  * [3. Taskbar](#3. Taskbar)
-    * [3.1 Basic Functions](#3.1 Basic Functions)
-      * [3.1.1 Applications](#3.1.1 Applications)
-      * [3.1.2 Window Display Area](#3.1.2 Window Display Area)
-      * [3.1.3 Multi-View Switching](#3.1.3 Multi-View Switching)
-      * [3.1.4 Tray](#3.1.4 Tray)
-        * [3.1.4.1 Network](#3.1.4.1 Network)
-        * [3.1.4.2 Volume](#3.1.4.2 Volume)
-        * [3.1.4.3 Power Supply](#3.1.4.3 Power Supply)
-        * [3.1.4.4 Notification Center](#3.1.4.4 Notification Center)
-        * [3.1.4.5 Calendar](#3.1.4.5 Calendar)
-        * [3.1.4.6 Advanced Settings](#3.1.4.6 Advanced Settings)
-        * [3.1.4.7 Login User Actions](#3.1.4.7 Login User Actions)
-          * [3.1.4.7.1 Lock Screen](#3.1.4.7.1 Lock Screen)
-          * [3.1.4.7.2 Switch User](#3.1.4.7.2 Switch User)
-          * [3.1.4.7.3 Suspend](#3.1.4.7.3 Suspend)
-          * [3.1.4.7.3 Shut Down](#3.1.4.7.3 Shut Down)
-          * [3.1.4.7.3 Log Out](#3.1.4.7.3 Log Out)
-  * [4. Shortcut Operation Bar](#4. Shortcut Operation Bar)
-    * [4.1 Basic Functions](#4.1 [Basic Functions])
-      * [4.1.1 Show Desktop](#4.1.1 Show Desktop)
-      * [4.1.2 Terminal](#4.1.2 Terminal)
-      * [4.1.3 File Manager](#4.1.3 File Manager)
-      * [4.1.4 Web Browser](#4.1.4 Web Browser)
-      * [4.1.5 Application Finder](#4.1.5 Application Finder)
-      * [4.1.6 User Home Directory](#4.1. 6 User Home Directory)
 
-# Xfce User Guide
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
-## 1\. Overview
+<!-- code_chunk_output -->
+
+- [Table of Contents](#table-of-contents)
+- [Xfce Desktop Environment](#xfce-desktop-environment)
+  - [1. Overview](#1-overview)
+  - [2. Desktop](#2-desktop)
+    - [2.1 Desktop Icons](#21-desktop-icons)
+    - [2.2 Shortcut Menu](#22-shortcut-menu)
+  - [3. Taskbar](#3-taskbar)
+    - [3.1 Basic Functions](#31-basic-functions)
+      - [3.1.1 Applications](#311-applications)
+      - [3.1.2 Window Display Area](#312-window-display-area)
+      - [3.1.3 Multi-View Switching](#313-multi-view-switching)
+      - [3.1.4 Tray](#314-tray)
+        - [3.1.4.1 Network](#3141-network)
+        - [3.1.4.2 Volume](#3142-volume)
+        - [3.1.4.3 Power supply](#3143-power-supply)
+        - [3.1.4.4 Notification Center](#3144-notification-center)
+        - [3.1.4.5 Calendar](#3145-calendar)
+      - [3.1.4.6 Advanced Settings](#3146-advanced-settings)
+        - [3.1.4.7 Login User Actions](#3147-login-user-actions)
+          - [3.1.4.7.1 Lock Screen](#31471-lock-screen)
+          - [3.1.4.7.2 Switch User](#31472-switch-user)
+          - [3.1.4.7.3 Suspend](#31473-suspend)
+          - [3.1.4.7.3 Shut Down](#31473-shut-down)
+          - [3.1.4.7.3 Log Out](#31473-log-out)
+  - [4. Shortcut Operation Bar](#4-shortcut-operation-bar)
+    - [4.1 Basic Functions](#41-basic-functions)
+      - [4.1.1 Show Desktop](#411-show-desktop)
+      - [4.1.2 Terminal](#412-terminal)
+      - [4.1.3 File Manager](#413-file-manager)
+      - [4.1.4 Web Browser](#414-web-browser)
+      - [4.1.5 Application Finder](#415-application-finder)
+      - [4.1.6 User Home Directory](#416-user-home-directory)
+
+<!-- /code_chunk_output -->
+
+
+# Xfce Desktop Environment
+
+## 1. Overview
 
 Xfce is a lightweight desktop environment running on Unix-like operating systems. Xfce provides multiple functional components, including all applications. This document describes how to use Xfce.
 
@@ -43,7 +52,8 @@ The following figure shows the WebUI.
 ![Figure 1 Main screen of the desktop - big](./figures/xfce-1.png)
 
 <br>
-## 2\. Desktop
+
+## 2. Desktop
 
 ### 2.1 Desktop Icons
 
@@ -73,7 +83,8 @@ The following table describes some options.
 | Applications| Applications|
 
 <br>
-## 3\. Taskbar
+
+## 3. Taskbar
 
 ### 3.1 Basic Functions
 
@@ -217,7 +228,8 @@ To log out of the GUI, click **Log Out**.
 Then, the system closes all running applications. Therefore, before performing this operation, save the current work.
 
 <br>
-## 4\. Shortcut Operation Bar
+
+## 4. Shortcut Operation Bar
 
 ### 4.1 Basic Functions
 
@@ -264,7 +276,7 @@ You can click the ![](./figures/xfce-95.png) icon on the shortcut operation bar 
 
 ![Figure 28 Searching for an application - big](./figures/xfce-951.png)
 
-#### 4.1. 6 User Home Directory
+#### 4.1.6 User Home Directory
 
 Click ![](./figures/xfce-96.png) on the shortcut operation bar and click **Open File**. The user home directory page is displayed.
 
