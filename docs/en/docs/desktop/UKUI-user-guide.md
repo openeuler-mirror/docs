@@ -1,6 +1,21 @@
 # UKUI Desktop Environment
 
-[[toc]]
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [UKUI Desktop Environment](#ukui-desktop-environment)
+  - [Overview](#overview)
+  - [Desktop](#desktop)
+  - [Taskbar](#taskbar)
+  - [Window](#window)
+  - [Start Menu](#start-menu)
+  - [FAQs](#faqs)
+  - [Appendix](#appendix)
+
+<!-- /code_chunk_output -->
+
 
 ## Overview
 Desktop Environment is the basis for the user's operation on the graphical interface, and provides multiple functions including taskbar, start menu, etc. The main interface is shown in figure below.
@@ -340,7 +355,7 @@ The options are described in table below.
 
 <br>
 
-## FAQ
+## FAQs
 
 ### Can’t login to the system after locking the screen?
 
