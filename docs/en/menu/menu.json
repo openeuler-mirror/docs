@@ -74,8 +74,8 @@
           ]
         },
         {
-          "label": "Acknowledgement",
-          "path": "docs/Releasenotes/acknowledgement",
+          "label": "Acknowledgment",
+          "path": "docs/Releasenotes/acknowledgment",
           "children": [
             
           ]
