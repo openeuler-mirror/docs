@@ -6,7 +6,7 @@ Xfce supports the x86\_64 and AArch64 architectures.
 
 You are advised to create an administrator during the installation.
 
-1. [Download ](https://openeuler.org/en/download/)the openEuler ISO image and install the system. Run the following command to update the software source. You are advised to configure the Everything source and the EPOL source. This document describes how to install Xfce in the minimum installation scenario.
+1. [Download](https://openeuler.org/en/download/) the openEuler ISO image and install the system. Run the following command to update the software source. You are advised to configure the Everything source and the EPOL source. This document describes how to install Xfce in the minimum installation scenario.
    
    ```
    sudo dnf update
@@ -62,3 +62,8 @@ You are advised to create an administrator during the installation.
    ```
    sudo reboot
    ```
+
+9. FAQs
+**Why Is the Background Color of the LightDM Login Page Black?**
+The login page is black because `background` is not set in the default configuration file **/etc/lightdm/lightdm-gtk-greeter.conf** of lghtdm-gtk.
+Set `background=/usr/share/backgrounds/xfce/xfce-blue.jpg` in the `greeter` section at the end of the configuration file, and then run the `systemctl restart lightdm` command.
