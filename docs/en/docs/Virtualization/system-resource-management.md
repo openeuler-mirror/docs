@@ -124,7 +124,7 @@ Run the  **virsh emulatorpin**  command to bind the QEMU main process to a physi
            *: 2-3
     ```
 
-    The preceding commands bind the QEMU process corresponding to VM  **openEulerVM**  to physical CPUs  **2**  and  **3**. That is, the QEMU process is scheduled only on the two physical CPUs. The binding relationship takes effect immediately but becomes invalid after the VM is shut down and restarted.
+    The preceding commands bind the QEMU process corresponding to VM _openEulerVM_ to physical CPUs  **2**  and  **3**. That is, the QEMU process is scheduled only on the two physical CPUs. The binding relationship takes effect immediately but becomes invalid after the VM is shut down and restarted.
 
 -   Permanent binding: Run the  **virsh emulatorpin**  command with the  **--config**  parameter to modify the binding relationship between the VM and the QEMU process in the libvirt internal configuration.
 
@@ -134,10 +134,8 @@ Run the  **virsh emulatorpin**  command to bind the QEMU main process to a physi
     # virsh emulatorpin euler
     emulator: CPU Affinity
     ----------------------------------
-           *: 0,2-3
-    ```
 
-    The preceding commands bind the QEMU process corresponding to VM  **openEulerVM**  to physical CPUs  **0**,  **2**  and  **3**. That is, the QEMU process is scheduled only on the three physical CPUs. The modification of the binding relationship does not take effect immediately. Instead, the modification takes effect after the next startup of the VM and takes effect permanently. 
+    The preceding commands bind the QEMU process corresponding to VM _openEulerVM_ to physical CPUs  **0**,  **2**  and  **3**. That is, the QEMU process is scheduled only on the three physical CPUs. The modification of the binding relationship does not take effect immediately. Instead, the modification takes effect after the next startup of the VM and takes effect permanently. 
 
 
 ### Adjusting the vCPU Binding Relationship
@@ -178,7 +176,7 @@ Run the  **virsh vcpupin**  command to adjust the binding relationship between v
      3      0-63
     ```
 
-    The preceding commands bind vCPU  **0**  of VM  **openEulerVM**  to pCPU  **2**  and pCPU  **3**. That is, vCPU  **0**  is scheduled only on the two physical CPUs. The binding relationship takes effect immediately but becomes invalid after the VM is shut down and restarted.
+    The preceding commands bind vCPU  **0**  of VM _openEulerVM_ to pCPU  **2**  and pCPU  **3**. That is, vCPU  **0**  is scheduled only on the two physical CPUs. The binding relationship takes effect immediately but becomes invalid after the VM is shut down and restarted.
 
 -   Permanent adjustment: Run the  **virsh vcpupin**  command with the  **--config**  parameter to modify the vCPU binding relationship of the VM in the libvirt internal configuration.
 
@@ -194,7 +192,7 @@ Run the  **virsh vcpupin**  command to adjust the binding relationship between v
      3      0-63
     ```
 
-    The preceding commands bind vCPU  **0**  of VM  **openEulerVM**  to physical CPUs  **0**,  **2**, and  **3**. That is, vCPU  **0**  is scheduled only on the three physical CPUs. The modification of the binding relationship does not take effect immediately. Instead, the modification takes effect after the next startup of the VM and takes effect permanently. 
+    The preceding commands bind vCPU  **0**  of VM _openEulerVM_ to physical CPUs  **0**,  **2**, and  **3**. That is, vCPU  **0**  is scheduled only on the three physical CPUs. The modification of the binding relationship does not take effect immediately. Instead, the modification takes effect after the next startup of the VM and takes effect permanently. 
 
 ### CPU Hot Add
 
