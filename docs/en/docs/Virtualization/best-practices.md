@@ -1,5 +1,16 @@
 # Best Practices
-
+- [Best Practices](#best-practices)
+    - [Performance Best Practices](#performance-best-practices)
+        - [Halt-Polling](#halt-polling)
+        - [I/O Thread Configuration](#i/o-thread-configuration)
+        - [Raw Device Mapping](#raw-device-mapping)
+        - [Kworker Isolation and Binding](#kworker-isolation-and-binding) 
+        - [HugePage Memory](#hugepage-memory)
+        - [Guest-Idle-Haltpoll](#guest-idle-haltpoll)
+    - [Security Best Practices](#security-best-practices)
+        - [Libvirt Authentication](#libvirt-authentication)
+        - [qemu-ga](#qume-ga)
+        - [sVirt Protection](#sVirt-protection)
 
 ## Performance Best Practices
 
@@ -45,13 +56,9 @@ To use I/O threads to process VM disk read and write requests, you need to modif
          <memory>4194304</memory>
          <currentMemory>4194304</currentMemory>
          <vcpu>4</vcpu>
-         <iothreads>4</iothreads>
-    ```
 
--   Configure the I/O thread attribute for the virtio-blk disk.  **<iothread\>**  indicates I/O thread IDs. The IDs start from 1 and each ID must be unique. The maximum ID is the value of  **<iothreads\>**. For example, to allocate I/O thread 2 to the virtio-blk disk, set parameters as follows:
+-   Configure the I/O thread attribute for the virtio-blk disk. <**iothread**\> indicates I/O thread IDs. The IDs start from 1 and each ID must be unique. The maximum ID is the value of <iothreads\>. For example, to allocate I/O thread 2 to the virtio-blk disk, set parameters as follows:
 
-    ```
-    <disk type='file' device='disk'>
           <driver name='qemu' type='raw' cache='none' io='native' iothread='2'/>
           <source file='/path/test.raw'/>
           <target dev='vdb' bus='virtio'/>
