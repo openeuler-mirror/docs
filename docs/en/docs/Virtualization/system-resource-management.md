@@ -1,6 +1,13 @@
-# system Resource Management
+# System Resource Management
 
+<!-- TOC -->
+-   [System Resource Management](#system-resource-management)
+    -   [Gneral Description](#gneral-description)
+    -   [Managing vCPU](#managing-vcpu)
+    -   [Managing Virtual Memory](#managing-virtual-memory)
+    -   [Live Migration Operations](#live-migration-operations)
 
+<!-- /TOC -->
 
 The  **libvirt**  command manages VM system resources, such as vCPU and virtual memory resources.
 
@@ -132,10 +139,8 @@ Run the  **virsh emulatorpin**  command to bind the QEMU main process to a physi
     # virsh emulatorpin euler
     emulator: CPU Affinity
     ----------------------------------
-           *: 0,2-3
-    ```
 
-    The preceding commands bind the QEMU process corresponding to VM  **openEulerVM**  to physical CPUs  **0**,  **2**  and  **3**. That is, the QEMU process is scheduled only on the three physical CPUs. The modification of the binding relationship does not take effect immediately. Instead, the modification takes effect after the next startup of the VM and takes effect permanently. 
+    The preceding commands bind the QEMU process corresponding to VM _openEulerVM_ to physical CPUs  **0**,  **2**  and  **3**. That is, the QEMU process is scheduled only on the three physical CPUs. The modification of the binding relationship does not take effect immediately. Instead, the modification takes effect after the next startup of the VM and takes effect permanently. 
 
 
 ### Adjusting the vCPU Binding Relationship
