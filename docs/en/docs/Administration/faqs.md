@@ -1,6 +1,28 @@
 # FAQs
 
-[[toc]]
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [FAQs](#faqs)
+  - [Why Is the Memory Usage of the libvirtd Service Queried by Running the systemctl and top Commands Different?](#why-is-the-memory-usage-of-the-libvirtd-service-queried-by-running-the-systemctl-and-top-commands-different)
+  - [An Error Occurs When stripsize Is Set to 4 During RAID 0 Volume Configuration](#an-error-occurs-when-stripsize-is-set-to-4-during-raid-0-volume-configuration)
+  - [Failed to Compile MariaDB Using rpmbuild](#failed-to-compile-mariadb-using-rpmbuild)
+  - [Failed to Start the SNTP Service Using the Default Configuration](#failed-to-start-the-sntp-service-using-the-default-configuration)
+  - [Installation Failure Caused by Software Package Conflict, File Conflict, or Missing Software Package](#installation-failure-caused-by-software-package-conflict-file-conflict-or-missing-software-package)
+  - [Why Do OpenSSH-related Packages Fail to Be Installed when the OpenSSH Software Package Is Upgraded in Default DNF Update Mode?](#why-do-openssh-related-packages-fail-to-be-installed-when-the-openssh-software-package-is-upgraded-in-default-dnf-update-mode)
+  - [Failed to Downgrade the libiscsi](#failed-to-downgrade-the-libiscsi)
+  - [Failed to Downgrade the xfsprogs](#failed-to-downgrade-the-xfsprogs)
+  - [ReDoS Caused by Improper Use of glibc Regular Expressions](#redos-caused-by-improper-use-of-glibc-regular-expressions)
+  - [A Cache File Exists when Files Are Edited Using Emacs](#a-cache-file-exists-when-files-are-edited-using-emacs)
+  - [The Error Message "Failed to make ourselves RT: Operation not permitted" Is Displayed when the rtkit-daemon Service Is Started](#the-error-message-failed-to-make-ourselves-rt-operation-not-permitted-is-displayed-when-the-rtkit-daemon-service-is-started)
+  - [Failed to Reboot the System After It Is Fully Upgraded from 20.03-LTS to 20.03-LTS-SP1 Using the `dnf update` Command](#failed-to-reboot-the-system-after-it-is-fully-upgraded-from-2003-lts-to-2003-lts-sp1-using-the-dnf-update-command)
+  - [Upgrade and Downgrade Issues of fuse 2.9.9-4 and fuse3 3.9.2-4](#upgrade-and-downgrade-issues-of-fuse-299-4-and-fuse3-392-4)
+  - [An Error Is Reported When gdbm-devel Is Installed or Uninstalled During the Installation and Uninstallation of httpd-devel and apr-util-devel](#an-error-is-reported-when-gdbm-devel-is-installed-or-uninstalled-during-the-installation-and-uninstallation-of-httpd-devel-and-apr-util-devel)
+
+<!-- /code_chunk_output -->
+
 
 ## Why Is the Memory Usage of the libvirtd Service Queried by Running the systemctl and top Commands Different?
 
@@ -156,8 +178,8 @@ If a software package is missing, perform the following steps \(the missed softw
 
 3.  Perform the upgrade again.
 
-### Install conflicting instances.
-* File conflict occurs.
+### Installing Conflicting Instances
+* A file conflict occurs.
 
 The python3-edk2-devel.noarch file conflicts with the build.noarch file due to duplicate file names.
 
@@ -435,3 +457,25 @@ In 20.03-LTS or earlier, the .cfg files are used by default. In 20.03-LTS-SP1, a
 1. Execute `dnf upgrade fuse` to upgrade the fuse, and `dnf fuse fuse3 fuse-common` to upgrade the fuse3.
 2. No measure needs to be taken.
 3. No measure needs to be taken.
+
+## An Error Is Reported When gdbm-devel Is Installed or Uninstalled During the Installation and Uninstallation of httpd-devel and apr-util-devel
+
+### Symptom
+
+1.  An error is reported when gdbm-devel-1.18.1-1 is installed or uninstalled.
+2.  After the error is rectified, gdbm and gdbm-devel are upgraded to the 1.18.1-2 version. However, the default version of gdbm-devel is still 1.18.1-1 when httpd-devel and apr-util-devel (dependent on gdbm-devel) are installed. As a result, the error persists.
+
+### Possible Cause
+
+1. The gdbm-devel-1.18.1-1 package does not contain the help package that provides `info`. As a result, the help package cannot be introduced when gdbm-devel is installed independently, and the following alarm information is displayed:
+
+   ```
+   install-info: No such file or directory for /usr/share/info/gdbm.info.gz
+   ```
+
+2. By default, the gdbm-1.18.1-1 main package is installed in the system, but the gdbm-devel package is not installed. The software packages depending on gdbm-devel still match the version of the gdbm main package and install gdbm-devel-1.18.1-1. As a result, the error persists.
+
+### Solution
+
+1.  Install gdbm-1.18.1-2 to upgrade gdbm. The error is rectified.
+2.  Upgrade gdbm, and then install gdbm-devel to make it depend on the gdbm of the later version. The error is rectified.

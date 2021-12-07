@@ -1,7 +1,22 @@
 
 
-# DDE Desktop Environment User Manual
-[[toc]]
+# DDE Desktop Environment
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [DDE Desktop Environment User Manual](#dde-desktop-environment-user-manual)
+  - [Overview](#overview)
+  - [Desktop](#desktop)
+  - [Dock](#dock)
+  - [Launcher](#launcher)
+  - [Control Center](#control-center)
+  - [Keyboard Interaction](#keyboard-interaction)
+
+<!-- /code_chunk_output -->
+
+
 ## Overview
 DDE desktop environment is an elegant, secure, reliable and easy to use GUI comprised of the desktop, dock, launcher and control center. Acting as the key basis for our operating system, its main interface is shown as below.
 
