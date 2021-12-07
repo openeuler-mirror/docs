@@ -1,27 +1,28 @@
-# Connecting to the iSula Security Container
+# Interconnecting with iSula Security Containers
 
-## Overview
 
-To provide a better isolation environment for containers and improve system security, you can use the iSula secure container, that is, connect StratoVirt to the iSula secure container.
+## Purpose
 
-## Connecting to the iSula Security Container
+To provide a better isolation environment for containers and improve system security, you can interconnect StratoVirt with iSula security containers.
+
+## Interconnecting with an iSula Security Container
 
 ### **Prerequisites**
 
-The iSulad and kata-containers have been installed, and the iSulad supports the kata-runtime container runtime and the devicemapper storage driver.
+iSulad and kata-containers have been installed, and iSulad supports the kata-runtime container runtime and devicemapper storage driver.
 
 The following describes how to install and configure iSulad and kata-containers.
 
-1. Configure the yum repository and install iSulad and kata-containers as user root:
+1. Configure the yum source and install iSulad and kata-containers as the **root** user.
 
    ```shell
    # yum install iSulad
    # yum install kata-containers
    ```
 
-2. Create and configure the storage:
+2. Create and configure a storage device.
 
-   You need to plan the drive, for example, /dev/sdx, which will be formatted.
+   You need to plan the disks, for example, **/dev/sdxx**, which will be formatted.
 
     ```shell
     # pvcreate /dev/sdxx
@@ -31,7 +32,7 @@ The following describes how to install and configure iSulad and kata-containers.
     # lvconvert -y --zero n -c 512K --thinpool isulaVG0/thinpool --poolmetadata isulaVG0/thinpoolmeta
     ```
 
-   Add the following information to the /etc/lvm/profile/isulaVG0-thinpool.profile configuration file:
+   Add the following information to the **/etc/lvm/profile/isulaVG0-thinpool.profile** configuration file:
 
     ```
     activation {
@@ -40,7 +41,7 @@ The following describes how to install and configure iSulad and kata-containers.
     }
     ```
 
-   Modify storage-driver and storage-opts in the /etc/isulad/daemon.json configuration file as follows. Set the default storage driver type overlay to devicemapper.
+   Modify **storage-driver** and **storage-opts** in the **/etc/isulad/daemon.json** configuration file as follows. Set the default storage driver type **overlay** to **devicemapper**.
 
     ```
     "storage-driver": "devicemapper",
@@ -49,52 +50,56 @@ The following describes how to install and configure iSulad and kata-containers.
      "dm.fs=ext4",
      "dm.min_free_space=10%"
     ],
+    ```
 
-3. Run the following command to restart isulad:
+3. Restart isulad.
 
     ```shell
     # systemctl daemon-reload
     # systemctl restart isulad
     ```
 
-4. Check whether the iSula storage driver is successfully configured:
+4. Check whether the iSula storage driver is successfully configured.
 
     ```shell
     # isula info
     ```
 
-     If the following information is displayed, the configuration is successful.
+     If the following information is displayed, the configuration is successful:
 
     ```
     Storage Driver: devicemapper
     ```
 
-5. Open the /etc/isulad/daemon.json file. If kata-runtime is not configured, set runtime to kata-runtime.
+5. Open the **/etc/isulad/daemon.json** file. If kata-runtime is not configured, set **runtime** to kata-runtime.
 
    ```json
-   "runtimes": {
-       "kata-runtime": {
-           "path": "/usr/bin/kata-runtime",
-           "runtimeArgs": [
-               "--kata-config",
-               "/usr/share/defaults/kata-containers/configuration.toml"
-           ]
+   "runtimes": {                                                                               
+       "kata-runtime": {                                                                   
+           "path": "/usr/bin/kata-runtime",                                                 
+           "runtimeArgs": [                                                                
+               "--kata-config",                                                               
+               "/usr/share/defaults/kata-containers/configuration.toml"                       
+           ]                                                                                 
        }
    },
    ```
 
-### **Connection Guide**
+   
 
-StratoVirt connects to the iSula secure container, that is, StratoVirt connects to kata-runtime in the iSula secure container. The procedure is as follows:
+### **Interconnection Guide**
 
-1. Create the script file stratovirt.sh in any directory (for example, /home) and add the execution permission to the file as the root user:
+This section describes how to interconnect StratoVirt with kata-runtime in the iSula security container.
+
+
+1. Create the **stratovirt.sh** script in any directory (for example, **/home**) and add the execute permission to the file as the **root** user.
 
    ```shell
    # touch /home/stratovirt.sh
    # chmod +x /home/stratovirt.sh
    ```
 
-   The content of stratovirt.sh is as follows, which is used to specify the StratoVirt path:
+   The content of **stratovirt.sh** is as follows, which is used to specify the path of StratoVirt:
 
    ```
    #!/bin/bash
@@ -104,7 +109,7 @@ StratoVirt connects to the iSula secure container, that is, StratoVirt connects 
 
    ​
 
-2. Modify the kata configuration file (The default path is /usr/share/defaults/kata-containers/configuration.toml). Set the hypervisor type of the secure container to stratovirt, the kernel to the absolute path of the StratoVirt kernel image, and initrd to the initrd image file of kata-containers. When you use yum to install kata-containers, the two image files are downloaded by default and stored in the /var/lib/kata/ directory. You can also use other images during configuration.
+2. Modify the kata configuration file (default path: **/usr/share/defaults/kata-containers/configuration.toml**). Set the Hypervisor type of the security container to **stratovirt**, kernel to the absolute path of the kernel image of StratoVirt, and initrd to the **initrd** image file of kata-containers. (If you use yum to install kata-containers, the two image files are downloaded and stored in the **/var/lib/kata/** directory by default. You can also use other images during the configuration.)
 
    The configuration reference is as follows:
 
@@ -123,16 +128,17 @@ StratoVirt connects to the iSula secure container, that is, StratoVirt connects 
    disable_vhost_net = true
    ```
 
-3. Use the root permission and **isula** command to run the BusyBox secure container to interconnect with the StratoVirt to the secure container.
+3. Use the **root** permission and **isula** command to run the BusyBox security container and interconnect StratoVirt with it.
 
    ```shell
    # isula run -tid --runtime=kata-runtime --net=none --name test busybox:latest sh
    ```
 
-4. Run the **isula ps** command to check whether the secure container test is running properly. If yes, run the following command to access the test container.
+4. Run the **isula ps** command to check whether the security container **test** is running properly. Then run the following command to access the container:
 
    ```
    # isula exec –ti test sh
    ```
 
- Now, you can run container commands in the test container.
+
+ You can now run container commands in the **test** container.
