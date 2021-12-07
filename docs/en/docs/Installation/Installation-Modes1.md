@@ -3,26 +3,26 @@
 > ![](./public_sys-resources/icon-notice.gif) **NOTE**
 > 
 > - The hardware supports only Raspberry Pi 3B/3B+/4B.
-> - The installation is performed by writing images to the SD card. This section describes how to write images using Windows, Linux, and Mac.
+> - The installation is performed by writing images to the SD card. This section describes how to write images on Windows, Linux, and Mac.
 > - The image used in this section is the Raspberry Pi image of openEuler. For details about how to obtain the image, see [Installation Preparations](./安装准备-1.html).
 
 <!-- TOC -->
 
-- [Installation Modes](./Installation Modes)
-  - [Writing Images Using Windows](./Writing Images Using Windows)
-    - [Formatting the SD Card](./Formatting the SD Card)
-    - [Writing Images to the SD Card](./Writing Images to the SD Card)
-  - [Writing Images Using Linux](./Writing Images Using Linux)
-    - [Checking Drive Partition Information](./Checking Drive Partition Information)
-    - [Unmouting the SD Card](./Unmouting the SD Card)
-    - [Writing Images to the SD Card](./Writing Images to the SD Card)
-  - [Writing Images Using Mac](./Writing Images Using the Mac OS)
-    - [Checking Drive Partition Information](./Checking Drive Partition Information)
-    - [Unmouting the SD Card](./Unmouting the SD Card)
-    - [Writing Images to the SD Card](./Writing Images to the SD Card)
+- [Installation Modes](#installation-modes)
+    - [Writing Images on Windows](#writing-images-on-windows)
+        - [Formatting the SD Card](#formatting-the-sd-card)
+        - [Writing Images to the SD Card](#writing-images-to-the-sd-card)
+    - [Writing Images on Linux](#writing-images-on-linux)
+        - [Checking Drive Partition Information](#checking-drive-partition-information)
+        - [Unmounting the SD Card](#unmounting-the-sd-card)
+        - [Writing Images to the SD Card](#writing-images-to-the-sd-card)
+    - [Writing Images on Mac](#writing-images-on-mac)
+        - [Checking Drive Partition Information](#checking-drive-partition-information)
+        - [Unmounting the SD Card](#unmounting-the-sd-card)
+        - [Writing Images to the SD Card](#writing-images-to-the-sd-card)
 
 <!-- /TOC -->
-## Writing Images Using Windows
+## Writing Images on Windows
 
 This section uses Windows 10 as an example to describe how to write images to the SD card in the Windows environment.
 
@@ -58,7 +58,7 @@ To write the **openEuler-21.09-raspi-aarch64.img** image file to the SD card, pe
 5. Click **Write**. A progress bar is displayed to show the progress of writing the image to the SD card.
 6. After the write operation is completed, a dialog box is displayed, indicating that the write operation is successfully completed. Click **OK**.
 
-## Writing Images Using Linux
+## Writing Images on Linux
 
 This section describes how to write images to the SD card in the Linux environment.
 
@@ -66,7 +66,7 @@ This section describes how to write images to the SD card in the Linux environme
 
 Run the ` **fdisk -l** ` command as the  **root**  user to obtain the drive information of the SD card. For example, the drive partition corresponding to the SD card can be  **/dev/sdb**.
 
-### Unmouting the SD Card
+### Unmounting the SD Card
 
 1. Run the ` **df -lh** ` command to check the mounted volumes.
 
@@ -82,11 +82,11 @@ Run the ` **fdisk -l** ` command as the  **root**  user to obtain the drive info
 
 2. Run the following command as the  **root**  user to write the `openEuler-21.09-raspi-aarch64.img` image to the SD card:
    
-   `dd bs=4M if=openEuler-21.03-raspi-aarch64.img of=/dev/sdb`
+   `dd bs=4M if=openEuler-21.09-raspi-aarch64.img of=/dev/sdb`
    
    > ![](./public_sys-resources/icon-note.gif) **NOTE** Generally, the block size is set to 4 MB. If the write operation fails or the written image cannot be used, you can set the block size to 1 MB and try again. However, the write operation is time-consuming when the block size is set to 1 MB.
 
-## Writing Images Using Mac
+## Writing Images on Mac
 
 This section describes how to flash images to the SD card in the Mac environment.
 
@@ -94,7 +94,7 @@ This section describes how to flash images to the SD card in the Mac environment
 
 Run the ` **diskutil list** ` command as the  **root**  user to obtain the drive information of the SD card. For example, the drive partition corresponding to the SD card can be  **/dev/disk3**.
 
-### Unmouting the SD Card
+### Unmounting the SD Card
 
 1. Run the ` **df -lh** ` command to check the mounted volumes.
 
