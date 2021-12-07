@@ -175,7 +175,7 @@ Add controller information in `/etc/hosts`. For example, if the node IP address 
 2. Run the following command to install the software package:
    
    ```shell
-   $ yum install openstack-keystone httpd mod_wsgi
+   $ yum install openstack-keystone httpd python2-mod_wsgi
    ```
 
 3. Edit the `/etc/keystone/keystone.conf` file to configure Keystone. In the **\[database]** section, configure the database entry. In the **\[token]** section, configure the token provider.

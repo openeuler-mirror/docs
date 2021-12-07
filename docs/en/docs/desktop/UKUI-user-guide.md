@@ -1,6 +1,55 @@
 # UKUI Desktop Environment
 
-[[toc]]
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [UKUI Desktop Environment](#ukui-desktop-environment)
+  - [Overview](#overview)
+  - [Desktop](#desktop)
+    - [Desktop’s Icons](#desktops-icons)
+    - [Right-click Menu](#right-click-menu)
+  - [Taskbar](#taskbar)
+    - [Basic Function](#basic-function)
+      - [Multi View Switch](#multi-view-switch)
+      - [Preview Window](#preview-window)
+      - [Sidebar](#sidebar)
+        - [Notification Center](#notification-center)
+        - [Clipboard](#clipboard)
+      - [Tray Menu](#tray-menu)
+        - [Storage Menu](#storage-menu)
+        - [Input Method](#input-method)
+        - [USB](#usb)
+        - [Power Supply](#power-supply)
+        - [Network](#network)
+        - [Volume](#volume)
+        - [Calendar](#calendar)
+        - [Night Mode](#night-mode)
+      - [Advanced Setting](#advanced-setting)
+  - [Window](#window)
+    - [Window Manager](#window-manager)
+    - [Window Switch](#window-switch)
+  - [Start Menu](#start-menu)
+    - [Basic Function](#basic-function-1)
+      - [Category Menu at right side](#category-menu-at-right-side)
+      - [Function Button at right side](#function-button-at-right-side)
+        - [User Avatar](#user-avatar)
+        - [Computer](#computer)
+        - [Control Center](#control-center)
+        - [Shutdown](#shutdown)
+          - [Lock Screen](#lock-screen)
+          - [Switch Users & Log Out](#switch-users-log-out)
+          - [Shutdown & Reboot](#shutdown-reboot)
+    - [Advanced Setting](#advanced-setting-1)
+    - [Applications](#applications)
+  - [FAQ](#faq)
+    - [Can’t login to the system after locking the screen?](#cant-login-to-the-system-after-locking-the-screen)
+  - [Appendix](#appendix)
+    - [Shortcut Key](#shortcut-key)
+
+<!-- /code_chunk_output -->
+
 
 ## Overview
 Desktop Environment is the basis for the user's operation on the graphical interface, and provides multiple functions including taskbar, start menu, etc. The main interface is shown in figure below.

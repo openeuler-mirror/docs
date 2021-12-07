@@ -60,13 +60,13 @@ The services involved in the above conventions are as follows:
 
 ### Configuring the Environment
 
-1. Configure third-party oepkg source that is certified by 20.03 LTS SP2. The following uses aarch64 as an example.
+1. Configure the third-party oepkg source that is certified by 20.03 LTS SP2.
    
    ```shell
    cat << EOF >> /etc/yum.repos.d/OpenStack_Queens.repo
    [openstack_queens]
    name=OpenStack_Queens
-   baseurl=https://repo.oepkgs.net/openEuler/rpm/openEuler-20.03-LTS-SP2/budding-openeuler/openstack/queens/aarch64/
+   baseurl=https://repo.oepkgs.net/openEuler/rpm/openEuler-20.03-LTS-SP2/budding-openeuler/openstack/queens/$basearch/
    gpgcheck=0
    enabled=1
    EOF
@@ -213,7 +213,7 @@ The services involved in the above conventions are as follows:
 2. Install the software package.
    
    ```shell
-   yum install openstack-keystone httpd mod_wsgi
+   yum install openstack-keystone httpd python2-mod_wsgi
    ```
 
 3. Configure the Keystone.
@@ -1199,12 +1199,12 @@ The services involved in the above conventions are as follows:
    Create API endpoints for the block storage service.
    
    ```shell
-   openstack endpoint create --region RegionOne volumev2 public http://controller:8776/v2/%s
-   openstack endpoint create --region RegionOne volumev2 internal http://controller:8776/v2/%s
-   openstack endpoint create --region RegionOne volumev2 admin http://controller:8776/v2/%s
-   openstack endpoint create --region RegionOne volumev3 public http://controller:8776/v3/%s
-   openstack endpoint create --region RegionOne volumev3 internal http://controller:8776/v3/%s
-   openstack endpoint create --region RegionOne volumev3 admin http://controller:8776/v3/%s
+    openstack endpoint create --region RegionOne volumev2 public http://controller:8776/v2/%\(project_id\)s
+    openstack endpoint create --region RegionOne volumev2 internal http://controller:8776/v2/%\(project_id\)s
+    openstack endpoint create --region RegionOne volumev2 admin http://controller:8776/v2/%\(project_id\)s
+    openstack endpoint create --region RegionOne volumev3 public http://controller:8776/v3/%\(project_id\)s
+    openstack endpoint create --region RegionOne volumev3 internal http://controller:8776/v3/%\(project_id\)s
+    openstack endpoint create --region RegionOne volumev3 admin http://controller:8776/v3/%\(project_id\)s
    ```
 
 2. Install the software package:
