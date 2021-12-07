@@ -190,50 +190,26 @@ For configuring a local yum source, you can mount an ISO file and create a local
         - **x86_64**: ISO image file of the x86_64 architecture
         - **source**: ISO image file of the openEuler source code
      
-     6. Click  **aarch64**.
+     6. Click  **openEuler-21.09-aarch64-dvd.iso**  to download the openEuler release package to the local host.
      
-     7. Click  **openEuler-21.09-aarch64-dvd.iso**  to download the openEuler release package to the local host.
+     7. Click  **openEuler-21.09-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
      
-     8. Click  **openEuler-21.09-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
-     
-     9. Log in to the openEuler OS and create a directory for storing the release package and verification file, for example,  ~/iso\*\*.
-        
-        ```
         $ mkdir ~/iso
         ```
      
-     10. Use a cross-platform file transfer tool (such as WinSCP) to upload the local openEuler release package and verification file to the target openEuler OS.
-   
-   - Run the  **wget**  command to download the ISO image.
+     8. Use a cross-platform file transfer tool (such as WinSCP) to upload the local openEuler release package and verification file to the target openEuler OS.
+      
+     9. Select the target version, for example, openEuler 21.09. Then, click  **openEuler-21.09**. The download list is displayed.
+  
+     10. <a name="li62369349505"></a>Right-click  **openEuler-21.09-aarch64-dvd.iso**  and choose  **Copy URL**  from the shortcut menu to copy the address of the openEuler release package.
      
-     1. Log in to the openEuler community at  [https://openeuler.org](https://openeuler.org).
+     11. <a name="li9236203405015"></a>Right-click  **openEuler-21.09-aarch64-dvd.iso.sha256sum**  and choose  **Copy URL**  from the shortcut menu to copy the address of the openEuler verification file.
      
-     2. Click  **Download**.
-     
-     3. Click the link provided after **Download ISO**. The download list is displayed.
-     
-     4. Select the target version, for example, openEuler 21.09. Then, click  **openEuler-21.09**. The download list is displayed.
-     
-     5. Click  **ISO**. The ISO download list is displayed.
-        
-        - **aarch64**: ISO image file of the AArch64 architecture
-        - **x86_64**: ISO image file of the x86_64 architecture
-        - **source**: ISO image file of the openEuler source code
-     
-     6. Click  **aarch64**.
-     
-     7. <a name="li62369349505"></a>Right-click  **openEuler-21.09-aarch64-dvd.iso**  and choose  **Copy URL**  from the shortcut menu to copy the address of the openEuler release package.
-     
-     8. <a name="li9236203405015"></a>Right-click  **openEuler-21.09-aarch64-dvd.iso.sha256sum**  and choose  **Copy URL**  from the shortcut menu to copy the address of the openEuler verification file.
-     
-     9. Log in to the openEuler OS, create a directory (for example,  **~/iso**) for storing the release package and verification file, and switch to the directory.
-        
-        ```
         $ mkdir ~/iso
         $ cd ~/iso
         ```
      
-     10. Run the  **wget**  command to remotely download the release package and verification file. In the command,  **ipaddriso**  and  **ipaddrisosum**  are the addresses copied in  [1.7](#li62369349505)  and  [1.8](#li9236203405015).
+     11. Run the  **wget**  command to remotely download the release package and verification file. In the command,  **ipaddriso**  and  **ipaddrisosum**  are the addresses copied in  [1.7](#li62369349505)  and  [1.8](#li9236203405015).
          
          ```
          $ wget ipaddriso
@@ -241,36 +217,21 @@ For configuring a local yum source, you can mount an ISO file and create a local
          ```
 
 2. Perform the Integrity Check on Release Package.
-   
-   1. Obtain the verification value in the verification file.
-      
-      ```
+
       $ cat openEuler-21.09-aarch64-dvd.iso.sha256sum
-      ```
    
-   2. Calculate the SHA256 verification value of the openEuler release package.
       
-      ```
       $ sha256sum openEuler-21.09-aarch64-dvd.iso 
-      ```
       
-      After the command is run, the verification value is displayed.
-   
    3. Check whether the values obtained from step 1 and step 2 are consistent.
-      
-      If the verification values are consistent, the .iso file is not damaged. If they are inconsistent, the file is damaged and you need to obtain the file again.
+    
 
 3. <a name="li6236932222"></a>Mount the ISO file and configure it as a repo source.
    
-   Run the  **mount**  command as the  **root** user to mount the image file.
-   
-   The following is an example:
-   
-   ```
+ 
+
    # mount /home/iso/openEuler-21.09-aarch64-dvd.iso /mnt/
-   ```
    
-   The mounted  **mnt**  directory is as follows:
    
    ```
    .
