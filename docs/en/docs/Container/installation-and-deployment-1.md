@@ -1,19 +1,18 @@
 # Installation and Deployment
 
-- [Installation and Deployment](#installation-and-deployment-1)
-    - [Installation Methods](#installation-methods-26)
-    - [Deployment Configuration](#deployment-configuration-27)
-        - [Configuring the Docker Engine](#configuring-the-docker-engine)
-        - [iSulad Configuration](#isulad-configuration)
-        - [Configuration.toml](#configuration-toml)
+- [Installation and Deployment](#installation-and-deployment)
+    - [Installation Methods](#installation-methods)
+    - [Deployment Configuration](#deployment-configuration)
 
 
 ## Installation Methods
 
 ### Prerequisites
 
--   For better performance experience, a secure container needs to run on the bare metal server and must not run on VMs.
--   A secure container depends on the following components \(openEuler 1.0 version\). Ensure that the required components have been installed in the environment. To install iSulad, refer to  [Installation Methods](#installation-methods.md).
+
+-   **root** permissions are required for installing a secure container.
+-   For better performance, a secure container needs to run on the bare metal server and **must not run on VMs**.
+-   A secure container depends on the following components from the corresponding openEuler version. Ensure that the required components have been installed in the environment. To install iSulad, refer to  [Installation Methods](#installation-methods.md).
     -   docker-engine
     -   qemu
 
