@@ -193,7 +193,7 @@ DNF 默认情况下会启用DNF包管理器的“best”模式（对应的参数
 ### 解决方案
 
 DNF的--nobest选项可用于覆盖/关闭默认的“best”行为，以使用户需要升级的包存在依赖问题的场景下可以正常进行安全修改程序包的升级。  
-本次openEuler 20.03 LTS SP2 版本中开发人员已识别到在openssh包安全修复版本升级过程中会存在该场景，建议用户了解上面的分析的情况下，选择合理的升级方式，openEuler同步给出具体升级示例操作：  
+本次openEuler 20.03 LTS SP3 版本中开发人员已识别到在openssh包安全修复版本升级过程中会存在该场景，建议用户了解上面的分析的情况下，选择合理的升级方式，openEuler同步给出具体升级示例操作：  
 
 
  ```
@@ -396,11 +396,11 @@ ExecStartPre=/usr/bin/bash -c "echo 950000 > /sys/fs/cgroup/cpu,cpuacct/system.s
 ExecStartPre=/usr/bin/bash -c "echo 950000 > /sys/fs/cgroup/cpu,cpuacct/system.slice/rtkit-daemon.service/cpu.rt_runtime_us"
 ```
 
-## 通过dnf update进行软件包全量升级，由20.03-LTS 升级到 20.03-LTS-SP2时，系统重启失败
+## 通过dnf update进行软件包全量升级，由20.03-LTS 升级到 20.03-LTS-SP3时，系统重启失败
 
 ### 问题现象
 
-x86_64架构 Legacy引导模式下，/boot目录未单独分区，通过dnf进行软件包全量升级，由20.03-LTS升级到20.03-LTS-SP2，出现系统升级成功但重启时引导失败，提示如下：
+x86_64架构 Legacy引导模式下，/boot目录未单独分区，通过dnf进行软件包全量升级，由20.03-LTS升级到20.03-LTS-SP3，出现系统升级成功但重启时引导失败，提示如下：
 ```
 error: ../../grub-core/fs/fshelp.c:258:file
 '/vmlinuz-4.19.90-2012.5.0.0054.oe1.x86_64'
@@ -412,7 +412,7 @@ Press any key to continue...
 
 ### 原因分析
 
-20.03-LTS以前默认采用传统cfg，而20.03-LTS-SP2的grub2升级2.04版本后默认变为bls格式，openEuler目前对bls格式的cfg文件不做支持，导致重启后无法根据该格式的grub.cfg找到内核，启动失败。openEuler社区开发人员正在寻求进行此默认更改，以防由于cfg格式问题导致软件包升级后重启失败。
+20.03-LTS以前默认采用传统cfg，而20.03-LTS-SP3的grub2升级2.04版本后默认变为bls格式，openEuler目前对bls格式的cfg文件不做支持，导致重启后无法根据该格式的grub.cfg找到内核，启动失败。openEuler社区开发人员正在寻求进行此默认更改，以防由于cfg格式问题导致软件包升级后重启失败。
 
 ### 解决方案
 
