@@ -1,4 +1,4 @@
-# Xfce Installation Guide
+# Xfce Installation
 
 Xfce is a lightweight Linux desktop. In the current version, all components have been updated from GTK2 to GTK3 and from D-Dbus Glib to GDBus. Most components support GObject Introspection (GI), which is used to generate and parse the API meta information of the C program library, so that the dynamic language (or managed language) can be bound to the program library based on C + GObject. In the current version, user experience is optimized, new features are added, and a large number of bugs are fixed. Xfce occupies fewer memory and CPU resources than other UIs (GNOME and KDE), providing smoother and more efficient user experience.
 
