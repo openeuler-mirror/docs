@@ -3,20 +3,20 @@
 This chapter describes how to install and deploy an HA cluster.
 
 <!-- TOC -->
-- [Installing and Deploying HA](#Installing and Deploying HA)
-  - [Installation and Deployment](#Installation and Deployment)
-    - [Modifying the Host Name and the /etc/hosts File](#Modifying the Host Name and the etchosts File)
-    - [Configuring the Yum Source](# Configure the Yum Source)
-    - [Installing the HA Software Package Components](#Installing the HA Software Package Components)
-    - [Setting the hacluster User Password](#Setting the hacluster User Password)
-    - [Modifying the `/etc/corosync/corosync.conf` File](#Modify the etccorosynccorosyncconf File)
-    - [Managing the Services](#Managing the Services)
-      - [Disabling the Firewall](#Disabling the Firewall)
-      - [Managing the pcs Service](#Managing the pcs Service)
-      - [Managing the Pacemaker Service](#Managing the Pacemaker Service)
-      - [Managing the Corosync Service](#Managing the Corosync Service)
-    - [Performing Node Authentication](#Performing Node Authentication)
-    - [Accessing the Front-End Management Platform](#Accessing the Front-End Management Platform)
+- [Installing and Deploying HA](#installing-and-deploying-ha)
+  - [Installation and Deployment](#installation-and-deployment)
+    - [Modifying the Host Name and the /etc/hosts File](#modifying-the-host-name-and-the-etchosts-file)
+    - [Configuring the Yum Source](#-configure-the-yum-source)
+    - [Installing the HA Software Package Components](#installing-the-ha-software-package-components)
+    - [Setting the hacluster User Password](#setting-the-hacluster-user-password)
+    - [Modifying the `/etc/corosync/corosync.conf` File](#modify-the-etccorosynccorosyncconf-file)
+    - [Managing the Services](#managing-the-services)
+      - [Disabling the Firewall](#disabling-the-firewall)
+      - [Managing the pcs Service](#managing-the-pcs-service)
+      - [Managing the Pacemaker Service](#managing-the-pacemaker-service)
+      - [Managing the Corosync Service](#managing-the-corosync-service)
+    - [Performing Node Authentication](#performing-node-authentication)
+    - [Accessing the Front-End Management Platform](#accessing-the-front-end-management-platform)
     <!-- /TOC -->
 
 ## Installation and Deployment
