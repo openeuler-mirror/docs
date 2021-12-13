@@ -1,6 +1,6 @@
 # Image Management
 
-- [Image Management](#image-management-2)
+- [Image Management](#image-management)
     - [build](#build)
     - [history](#history)
     - [images](#images)
@@ -22,13 +22,13 @@
 
 ## build
 
-Syntax:  **docker build \[**_options_**\]** _path_ **|** _URL_ **| -**
+Syntax: **docker build** \[OPTIONS\] PATH | URL | -
 
 Function: Builds an image using the Dockerfile in the specified path.
 
-Parameter description: Common parameters are as follows. For details about more parameters, see the  **docker help build**  command section.
+Parameters: Common parameters are as follows. For details about more parameters, run the **docker help build** command.
 
-**Table  1**  Parameter description
+**Table 4** Parameter description
 
 <a name="en-us_topic_0183243738_table14251918184"></a>
 <table><thead align="left"><tr id="en-us_topic_0183243738_row172615113189"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="en-us_topic_0183243738_p3263119181"><a name="en-us_topic_0183243738_p3263119181"></a><a name="en-us_topic_0183243738_p3263119181"></a>Parameter</p>
@@ -44,12 +44,12 @@ Parameter description: Common parameters are as follows. For details about more 
 </tr>
 <tr id="en-us_topic_0183243738_row660114322184"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0183243738_p460219324184"><a name="en-us_topic_0183243738_p460219324184"></a><a name="en-us_topic_0183243738_p460219324184"></a>--no-cache=false</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0183243738_p5602163216189"><a name="en-us_topic_0183243738_p5602163216189"></a><a name="en-us_topic_0183243738_p5602163216189"></a>Builds cache without using cache.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0183243738_p5602163216189"><a name="en-us_topic_0183243738_p5602163216189"></a><a name="en-us_topic_0183243738_p5602163216189"></a>Builds the image without using cache.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183243738_row9354121121913"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0183243738_p9354714196"><a name="en-us_topic_0183243738_p9354714196"></a><a name="en-us_topic_0183243738_p9354714196"></a>-q, --quiet=false</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0183243738_p33544151914"><a name="en-us_topic_0183243738_p33544151914"></a><a name="en-us_topic_0183243738_p33544151914"></a>Prevents the redundant information generation during the build.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0183243738_p33544151914"><a name="en-us_topic_0183243738_p33544151914"></a><a name="en-us_topic_0183243738_p33544151914"></a>Suppresses the redundant information generated during the the build process.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183243738_row37811581916"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0183243738_p177819158192"><a name="en-us_topic_0183243738_p177819158192"></a><a name="en-us_topic_0183243738_p177819158192"></a>--rm=true</p>
@@ -59,7 +59,7 @@ Parameter description: Common parameters are as follows. For details about more 
 </tr>
 <tr id="en-us_topic_0183243738_row136272022111912"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0183243738_p862882217196"><a name="en-us_topic_0183243738_p862882217196"></a><a name="en-us_topic_0183243738_p862882217196"></a>-t, --tag=""</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0183243738_p13391038161911"><a name="en-us_topic_0183243738_p13391038161911"></a><a name="en-us_topic_0183243738_p13391038161911"></a>Tag name of the image generated during the build.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0183243738_p13391038161911"><a name="en-us_topic_0183243738_p13391038161911"></a><a name="en-us_topic_0183243738_p13391038161911"></a>Specifies the tag name of the image generated during the build.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183243738_row7484172061913"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0183243738_p4485320161916"><a name="en-us_topic_0183243738_p4485320161916"></a><a name="en-us_topic_0183243738_p4485320161916"></a>--build-arg=[]</p>
@@ -74,42 +74,42 @@ Parameter description: Common parameters are as follows. For details about more 
 </tr>
 <tr id="en-us_topic_0183243738_row1993117602010"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0183243738_p18931106112015"><a name="en-us_topic_0183243738_p18931106112015"></a><a name="en-us_topic_0183243738_p18931106112015"></a>--isolation</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0183243738_p29312652012"><a name="en-us_topic_0183243738_p29312652012"></a><a name="en-us_topic_0183243738_p29312652012"></a>Container isolation method.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0183243738_p29312652012"><a name="en-us_topic_0183243738_p29312652012"></a><a name="en-us_topic_0183243738_p29312652012"></a>Specifies the container isolation method.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183243738_row1325154192018"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0183243738_p825184112011"><a name="en-us_topic_0183243738_p825184112011"></a><a name="en-us_topic_0183243738_p825184112011"></a>--pull</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0183243738_p22517417207"><a name="en-us_topic_0183243738_p22517417207"></a><a name="en-us_topic_0183243738_p22517417207"></a>Obtains the latest image during the build.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0183243738_p22517417207"><a name="en-us_topic_0183243738_p22517417207"></a><a name="en-us_topic_0183243738_p22517417207"></a>Always attempts to obtain the latest version of the image during the build process.</p>
 </td>
 </tr>
 </tbody>
 </table>
 
-**Dockerfile Command**
+**Dockerfile Description**
 
-Dockerfile is used to describe how to build an image and automatically build a container. The format of all  **Dockerfile**  commands is  _instruction_ _arguments_.
-
-  
-
-**FROM Command**
-
-Syntax:  **FROM** _image_  or  **FROM** _image_:_tag_
-
-Function: Specifies a basic image, which is the first command for all Dockerfile files. If the tag of a basic image is not specified, the default tag name  **latest**  is used.
+Dockerfile is used to automatically build a container by describing how to build an image. All Dockerfile instructions are in the **INSTRUCTION arguments** format.
 
   
 
-**RUN Command**
+**FROM Instruction**
 
-Syntax:  **RUN** _command_  \(for example,  **run in a shell - \`/bin/sh -c\`**\) or
+Syntax: **FROM** <image\> or **FROM** <image\>:<tag\>
 
-**RUN \[**_executable_,  _param1_,  _param2_  ...  **\]**  \(in the  **exec**  command format\)
+Function: Specifies a base image, which is the first instruction in all Dockerfiles. If the tag of the base image is not specified, the default tag name **latest** is used.
 
-Function: Runs any command in the image specified by the  **FROM**  command and then commits the result. The committed image can be used in later commands. The  **RUN**  command is equivalent to:
+  
 
-**docker run** _image_ _command_
+**RUN Instruction**
 
-**docker commit** _container\_id_
+Syntax: **RUN** <command\> \(The **shell** form. The command is run in a shell which by default is `/bin/sh -c`) or
+
+**RUN** \["<executable\>", "<param1\>", "<param2\>" ... \] \(The **exec** form\)
+
+Function: Executes any commands in the image specified by the **FROM** instruction and then commits the result. The committed image will be used in the next step in the Dockerfile. The **RUN** instruction is equivalent to:
+
+**docker run** <image\> <command\>
+
+**docker commit** <container_id\>
 
   
 
@@ -119,89 +119,89 @@ The number sign \(\#\) is used to comment out.
 
   
 
-**MAINTAINER Command**
+**MAINTAINER Instruction**
 
-Syntax:  **MAINTAINER **_name_
+Syntax: **MAINTAINER** <name\>
 
-Function: Specifies the name and contact information of the maintenance personnel.
-
-  
-
-**ENTRYPOINT Command**
-
-Syntax:  **ENTRYPOINT cmd **_param1 param2..._  or  **ENTRYPOINT \[**_"cmd", "param1", "param2"..._**\]**
-
-Function: Configures the command to be executed during container startup.
+Function: Specifies the name and contact information of the maintainer.
 
   
 
-**USER Command**
+**ENTRYPOINT Instruction**
 
-Syntax:  **USER **_name_
+Syntax: **ENTRYPOINT** <cmd\> <param1\> <param2\>... or **ENTRYPOINT** \["<cmd\>", "<param1\>", "<param2\>"...\]
 
-Function: Specifies the running user of memcached.
-
-  
-
-**EXPOSE Command**
-
-Syntax:  **EXPOSE **_port_** \[**_port_**...\]**
-
-Function: Enables one or more ports for images.
+Function: Configures the commands to be executed during container startup.
 
   
 
-**ENV Command**
+**USER Instruction**
 
-Syntax:  **ENV**_ key value_
+Syntax: **USER** <name\>
 
-Function: Configures environment variables. After the environment variables are configured, the  **RUN**  commands can be subsequently used.
-
-  
-
-**ADD Command**
-
-Syntax:  **ADD**_ src dst_
-
-Function: Copies a file from the  _src_  directory to the  _dest_  directory of a container.  _src_  indicates the relative path of the source directory to be built. It can be the path of a file or directory, or a remote file URL.  _dest_  indicates the absolute path of the container.
+Function: Specifies the user to run **memcached**.
 
   
 
-**VOLUME Command**
+**EXPOSE Instruction**
 
-Syntax:  **VOLUME \["**_mountpoint_**"\]**
+Syntax: **EXPOSE** <port\> \[<port\>...\]
 
-Function: Creates a mount point for sharing a directory.
-
-  
-
-**WORKDIR Command**
-
-Syntax:  **workdir **_path_
-
-Function: Runs the  **RUN**,  **CMD**, and  **ENTRYPOINT**  commands to set the current working path. The current working path can be set multiple times. If the current working path is a relative path, it is relative to the previous  **WORKDIR**  command.
+Function: Exposes one or more ports of the image.
 
   
 
-**CMD command**
+**ENV Instruction**
 
-Syntax:  **CMD \[**_"executable","param1","param2"_**\]**  \(This command is similar to the  **exec**  command and is preferred.\)
+Syntax: **ENV** <key\> <value\>
 
-**CMD \["**_param1_**","**_param2_**"\]**  \(The parameters are the default parameters for ENTRYPOINT.\)
-
-**CMD** _command_ _param1_ _param2_  \(This command is similar to the  **shell**  command.\)
-
-Function: A Dockerfile can contain only one CMD command. If there are multiple CMD commands, only the last one takes effect.
+Function: Configures environment variables. The configured environment variables can be used by the subsequent **RUN** instructions.
 
   
 
-**ONBUILD Commands**
+**ADD Instruction**
 
-Syntax:  **ONBUILD \[**_other commands_**\]**
+Syntax: **ADD** <src\> <dst\>
 
-Function: This command is followed by other commands, such as the  **RUN**  and  **COPY**  commands. This command is not executed during image build and is executed only when the current image is used as the basic image to build the next-level image.
+Function: Copies a file from <src\> directory to <dest\> directory of the container. <src\> is a relative path of the source directory to be built. It can be the path of a file or directory, or a remote file URL. <dest\> is an absolute path of the container.
 
-The following is a complete example of the Dockerfile command that builds an image with the sshd service installed.
+  
+
+**VOLUME Instruction**
+
+Syntax: **VOLUME** \["<mountpoint\>"\]
+
+Function: Creates a mount point for the shared directory.
+
+  
+
+**WORKDIR Instruction**
+
+Syntax: **WORKDIR** <path\>
+
+Function: Sets the working path for the **RUN**, **CMD**, and **ENTRYPOINT** instructions. The working path can be set multiple times. If the working path is a relative path, it is relative to the previous **WORKDIR** instruction.
+
+  
+
+**CMD Instruction**
+
+Syntax: **CMD** \["<executable\>","<param1\>","<param2\>"\]  \(The **exec** form. This is the preferred form.\)
+
+**CMD** \["<param1\>","<param2\>"\]  \(The arguments are the default arguments for **ENTRYPOINT**.\)
+
+**CMD** "<command\>" "<param1\>" "<param2\>"  \(The **shell** form.\)
+
+Function: A Dockerfile can contain only one CMD instruction. If there are multiple CMD instructions, only the last one takes effect.
+
+  
+
+**ONBUILD Instruction**
+
+Syntax: **ONBUILD** \[other instructions\]
+
+Function: This instruction is followed by other instructions, such as the **RUN** and **COPY** instructions. This instruction is not executed during image build and is executed only when the current image is used as the base image for another build.
+
+The following is a complete example of a Dockerfile that builds an image with the sshd service installed.
 
 <a name="en-us_topic_0183243738_en-us_topic_0155237683_en-us_topic_0076221025_en-us_topic_0043209539_table50916422"></a>
 <table><tbody><tr id="en-us_topic_0183243738_en-us_topic_0155237683_en-us_topic_0076221025_en-us_topic_0043209539_row58396974"><td class="cellrowborder" valign="top" width="100%"><pre class="screen" id="en-us_topic_0183243738_en-us_topic_0155237683_en-us_topic_0076221025_en-us_topic_0043209539_screen13353554311"><a name="en-us_topic_0183243738_en-us_topic_0155237683_en-us_topic_0076221025_en-us_topic_0043209539_screen13353554311"></a><a name="en-us_topic_0183243738_en-us_topic_0155237683_en-us_topic_0076221025_en-us_topic_0043209539_screen13353554311"></a>FROM busybox
@@ -216,7 +216,7 @@ ENTRYPOINT /usr/sbin/sshd -D</pre>
 </tbody>
 </table>
 
-Example:
+Example commands:
 
 1.  Run the following command to build an image using the preceding Dockerfile:
 
@@ -233,17 +233,17 @@ Example:
 
 ## history
 
-Syntax:  **docker history \[**_options_**\]** _image_
+Syntax: **docker history** \[OPTIONS\] <IMAGE\>
 
 Function: Displays the change history of an image.
 
-Parameter description:
+Parameters:
 
--H, --human=true
+**-H**, **--human=true**
 
-**--no-trunc=false**: Does not delete any output.
+**--no-trunc=false**: Indicates that the output is not truncated.
 
-**-q**  and  **--quiet=false**: Display only IDs.
+**-q** and **--quiet=false**: Displays IDs only.
 
 Example:
 
@@ -258,19 +258,19 @@ be4672959e8b        15 minutes ago      bash                23B
 
 ## images
 
-Syntax:  **docker images \[**_options_**\] \[**_name_**\]**
+Syntax: **docker images** \[OPTIONS\] \[NAME\]
 
-Function: Lists existing images. The intermediate image is not displayed if no parameter is configured.
+Function: Lists existing images. The intermediate images are not displayed if no parameter is added.
 
-Parameter description:
+Parameters:
 
-**-a**  and  **--all=false**: Display all images.
+**-a** and **--all=false**: Displays all images.
 
-**-f**  and  **--filter=\[\]**: Specify a filtering value, for example,  **dangling=true**.
+**-f** and **--filter=\[\]**: Specifies a filter, for example, **dangling=true**.
 
-**--no-trunc=false**: Does not delete any output.
+**--no-trunc=false**: Indicates that the output is not truncated.
 
-**-q**  and  **--quiet=false**: Display only IDs.
+**-q** and **--quiet=false**: Displays IDs only.
 
 Example:
 
@@ -284,15 +284,15 @@ busybox             latest              e02e811dd08f        2 years ago         
 
 ## import
 
-Syntax:  **docker import URL|- \[**_repository_**\[**_:tag_**\]\]**
+Syntax: **docker import URL|- \[REPOSITORY\[:TAG\]\]**
 
-Function: Imports a .tar package that contains rootfs as an image. This parameter corresponds to the  **docker export**  command.
+Function: Imports a `.tar` package that contains a rootfs as an image. This parameter corresponds to the **docker export** command.
 
-Parameter description: none.
+Parameters: none.
 
 Example:
 
-Run the following command to generate a new image for  **busybox.tar**  exported using the  **docker export**  command:
+Run the following command to generate a new image from the **busybox.tar** file exported using the **docker export** command:
 
 ```
 $ sudo docker import busybox.tar busybox:test
@@ -306,13 +306,13 @@ busybox             test                a79d8ae12403        2 seconds ago       
 
 ## load
 
-Syntax:  **docker load \[**_options_**\]**
+Syntax: **docker load** \[OPTIONS\]
 
-Function: Reloads an image from .tar package obtained by running the  **docker save**  command. This parameter corresponds to the  **docker save**  command.
+Function: Loads an image from `.tar` package obtained using the **docker save** command. This command corresponds to the **docker save** command.
 
-Parameter description:
+Parameters:
 
-**-i**  and  **--input=""**  can be used.
+**-i** and **--input=""**.
 
 Example:
 
@@ -326,17 +326,17 @@ busybox             latest              e02e811dd08f        2 years ago         
 
 ## login
 
-Syntax:  **docker login \[**_options_**\] \[**_server_**\]**
+Syntax: **docker login** \[OPTIONS\] \[SERVER\]
 
-Function: Logs in to an image server. If no server is specified, the system logs in to  **https://index.docker.io/v1/**  by default.
+Function: Logs in to an image registry. If no server is specified, the system logs in to https://index.docker.io/v1/ by default.
 
-Parameter description:
+Parameters:
 
-**-e**  and  **--email=""**: Email address.
+**-e** and **--email=""**: Email address.
 
-**-p**  and  **--password=""**: Password.
+**-p** and **--password=""**: Password.
 
-**-u**  and  **--username=""**: User name.
+**-u** and **--username=""**: User name.
 
 Example:
 
@@ -346,11 +346,11 @@ $ sudo docker login
 
 ## logout
 
-Syntax:  **docker logout \[**_server_**\]**
+Syntax: **docker logout** \[SERVER\]
 
-Function: Logs out of an image server. If no server is specified, the system logs out of  **https://index.docker.io/v1/**  by default.
+Function: Logs out from an image registry. If no server is specified, the system logs out from https://index.docker.io/v1/ by default.
 
-Parameter description: none.
+Parameters: none.
 
 Example:
 
@@ -360,17 +360,17 @@ $ sudo docker logout
 
 ## pull
 
-Syntax:  **docker pull \[**_options_**\]** _name_**\[**_:tag_**\]**
+Syntax: **docker pull** \[OPTIONS\] NAME\[:TAG\]
 
-Function: Pulls an image from an official or private registry.
+Function: Pulls an image from the official or private registry.
 
-Parameter description:
+Parameters:
 
-**-a**  and  **--all-tags=false**: Download all images in a registry. \(A registry can be tagged with multiple tags. For example, a busybox registry may have multiple tags, such as  **busybox:14.04**,  **busybox:13.10**,  **busybox:latest**. If  **-a**  is used, all busybox images with tags are pulled.\)
+**-a** and **--all-tags=false**: Downloads all images in the registry. \(A registry can be tagged with multiple tags. For example, a BusyBox registry may have multiple tags, such as **busybox:14.04**, **busybox:13.10**, **busybox:latest**. If **-a** is used, all BusyBox images with tags are pulled.\)
 
 Example:
 
-1.  Run the following command to obtain the Nginx image from the official registry:
+1.  Run the following command to pull an Nginx image from the official registry:
 
     ```
     $ sudo docker pull nginx
@@ -383,11 +383,11 @@ Example:
     Status: Downloaded newer image for nginx:latest
     ```
 
-    When an image is pulled, the system checks whether the dependent layer exists. If yes, the local layer is used.
+    When pulling the image, the system checks whether the dependent layer exists. If yes, the local layer is used.
 
 2.  Pull an image from a private registry.
 
-    Run the following command to pull the Fedora image from the private registry, for example, the address of the private registry is  **192.168.1.110:5000**:
+    Run the following command to pull a Fedora image from the private registry, assuming the address of the private registry is **192.168.1.110:5000**:
 
     ```
     $ sudo docker pull 192.168.1.110:5000/fedora
@@ -396,16 +396,16 @@ Example:
 
 ## push
 
-Syntax:  **docker push** _name_**\[**_:tag_**\]**
+Syntax: **docker push** NAME\[:TAG\]
 
 Function: Pushes an image to the image registry.
 
-Parameter description: none.
+Parameters: none.
 
 Example:
 
-1.  Run the following command to push an image to the private image registry at 192.168.1.110:5000.
-2.  Label the image to be pushed. \(The  **docker tag**  command is described in the following section.\) In this example, the image to be pushed is busybox:sshd.
+1.  Assume an image is to be push to the private image registry at 192.168.1.110:5000.
+2.  Label the image to be pushed. \(The **docker tag** command is described in the following section.\) In this example, the image to be pushed is **busybox:sshd**.
 
     ```
     $ sudo docker tag ubuntu:sshd 192.168.1.110:5000/busybox:sshd
@@ -422,13 +422,13 @@ Example:
 
 ## rmi
 
-Syntax:  **docker rmi \[**_options_**\] **_image _**\[**_image..._**\]**
+Syntax: **docker rmi** \[OPTIONS\] IMAGE \[IMAGE...\]
 
-Function: Deletes one or more images. If an image has multiple tags in the image library, only the untag operation is performed when the image is deleted. If the image has only one tag, the dependent layers are deleted in sequence.
+Function: Deletes one or more images. If an image has multiple tags in the image library, the image is not deleted but only untagged. When an image with one tag is deleted, the dependent layers are deleted in sequence.
 
-Parameter description:
+Parameters:
 
-**-f**  and  **--force=false**: Forcibly delete an image.
+**-f** and **--force=false**: Forcibly deletes the images.
 
 **--no-prune=false**: Does not delete parent images without tags.
 
@@ -440,13 +440,13 @@ $ sudo docker rmi 192.168.1.110:5000/busybox:sshd
 
 ## save
 
-Syntax:  **docker save \[**_options_**\] **_image _**\[**_image..._**\]**
+Syntax: **docker save** \[OPTIONS\] IMAGE \[IMAGE...\]
 
-Function: Saves an image to a TAR package. The output is  **STDOUT**  by default.
+Function: Saves an image to a `.tar` package. The results are output to **STDOUT** by default.
 
-Parameter description:
+Parameters:
 
-**-o**  and  **--output=""**: Save an image to a file rather than STDOUT.
+**-o** and **--output=""**: Outputs the results to a file rather than **STDOUT**.
 
 Example:
 
@@ -458,21 +458,21 @@ nginx.tar
 
 ## search
 
-Syntax:  **docker search **_options_ _TERM_
+Syntax: **docker search** \[OPTIONS\] TERM
 
-Function: Searches for a specific image in the image registry.
+Function: Searches for specific images in the image registry.
 
-Parameter description:
+Parameters:
 
 **--automated=false**: Displays the automatically built image.
 
-**--no-trunc=false**: Does not delete any output.
+**--no-trunc=false**: Indicates that output is not truncated.
 
-**-s**  and  **--stars=0**: Display only images of a specified star level or higher.
+**-s** and **--stars=0**: Displays only images that have a specific number of stars or more.
 
 Example:
 
-1.  Run the following command to search for Nginx in the official image library:
+1.  Run the following command to search for Nginx images in the official image library:
 
     ```
     $ sudo docker search nginx
@@ -487,7 +487,7 @@ Example:
 
       
 
-2.  Run the following command to search for busybox in the private image library. The address of the private image library must be added during the search.
+2.  Run the following command to search for BusyBox images in the private image library. Add the address to search the private image library.
 
     ```
     $ sudo docker search 192.168.1.110:5000/busybox
@@ -496,13 +496,13 @@ Example:
 
 ## tag
 
-Syntax:  **docker tag \[**_options_**\] **_image_**\[**_:tag_**\] \[**_registry host/_**\]\[**_username/_**\]**_name_**\[**_:tag_**\]**
+Syntax: **docker tag** \[OPTIONS\] IMAGE\[:TAG\] \[REGISTRY HOST/\]\[USERNAME/\]NAME\[:TAG\]
 
-Function: Tags an image to a registry.
+Function: Tags an image into a registry.
 
-Parameter description:
+Parameters:
 
-**-f**  or  **--force=false**: Forcibly replaces the original image when the same tag name exists.
+**-f** or **--force=false**: Forcibly replaces the original image when the tag names are the same.
 
 Example:
 

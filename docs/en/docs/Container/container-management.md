@@ -1,26 +1,26 @@
 # Container Management
 
 - [Container Management](#container-management)
-    - [Creating a Container](#creating-a-container)
-    - [Starting a Container](#starting-a-container)
-    - [Running a Container](#running-a-container)
-    - [Stopping a Container](#stopping-a-container)
-    - [Forcibly Stopping a Container](#forcibly-stopping-a-container)
-    - [Removing a Container](#removing-a-container)
-    - [Attaching to a Container](#attaching-to-a-container)
-    - [Renaming a Container](#renaming-a-container)
-    - [Executing a Command in a Running Container](#executing-a-command-in-a-running-container)
-    - [Querying Information About a Single Container](#querying-information-about-a-single-container)
-    - [Querying Information About All Containers](#querying-information-about-all-containers)
-    - [Restarting a Container](#restarting-a-container)
-    - [Waiting for a Container to Exit](#waiting-for-a-container-to-exit)
-    - [Viewing Process Information in a Container](#viewing-process-information-in-a-container)
-    - [Displaying Resource Usage Statistics of a Container](#displaying-resource-usage-statistics-of-a-container)
-    - [Obtaining Container Logs](#obtaining-container-logs)
-    - [Copying Data Between a Container and a Host](#copying-data-between-a-container-and-a-host)
-    - [Pausing a Container](#pausing-a-container)
-    - [Resuming a Container](#resuming-a-container)
-    - [Obtaining Event Messages from the Server in Real Time](#obtaining-event-messages-from-the-server-in-real-time)
+  - [Creating a Container](#creating-a-container)
+  - [Starting a Container](#starting-a-container)
+  - [Running a Container](#running-a-container)
+  - [Stopping a Container](#stopping-a-container)
+  - [Forcibly Stopping a Container](#forcibly-stopping-a-container)
+  - [Deleting a Container](#deleting-a-container)
+  - [Attaching to a Container](#attaching-to-a-container)
+  - [Renaming a Container](#renaming-a-container)
+  - [Executing a Command in a Running Container](#executing-a-command-in-a-running-container)
+  - [Querying Information About a Single Container](#querying-information-about-a-single-container)
+  - [Querying Information About All Containers](#querying-information-about-all-containers)
+  - [Restarting a Container](#restarting-a-container)
+  - [Waiting for a Container to Exit](#waiting-for-a-container-to-exit)
+  - [Viewing Process Information in a Container](#viewing-process-information-in-a-container)
+  - [Displaying Resource Usage Statistics of a Container](#displaying-resource-usage-statistics-of-a-container)
+  - [Obtaining Container Logs](#obtaining-container-logs)
+  - [Copying Data Between a Container and a Host](#copying-data-between-a-container-and-a-host)
+  - [Pausing a Container](#pausing-a-container)
+  - [Resuming a Container](#resuming-a-container)
+  - [Obtaining Event Messages from the Server in Real Time](#obtaining-event-messages-from-the-server-in-real-time)
 
 
 
@@ -29,7 +29,7 @@
 
 ### Description
 
-To create a container, run the  **isula create**  command. The container engine will use the specified container image to create a read/write layer, or use the specified local rootfs as the running environment of the container. After the creation is complete, the container ID is output as standard output. You can run the  **isula start**  command to start the container. The new container is in the  **inited**  state.
+To create a container, run the  **isula create**  command. The container engine will use the specified container image to create a read/write layer, or use the specified local rootfs as the running environment of the container. After the creation is complete, the container ID is output to the standard output. You can run the  **isula start**  command to start the container. The new container is in the  **inited**  status.
 
 ### Usage
 
@@ -39,7 +39,7 @@ isula create [OPTIONS] IMAGE [COMMAND] [ARG...]
 
 ### Parameters
 
-The following table lists the parameters supported by the  **create**  command.
+The following table lists the parameters of the  **create**  command.
 
 **Table  1**  Parameter description
 
@@ -56,7 +56,7 @@ The following table lists the parameters supported by the  **create**  command.
 </td>
 <td class="cellrowborder" valign="top" width="39.57575757575758%"><p id="en-us_topic_0182207105_p8129151463514"><a name="en-us_topic_0182207105_p8129151463514"></a><a name="en-us_topic_0182207105_p8129151463514"></a>--annotation</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0182207105_p5129191418354"><a name="en-us_topic_0182207105_p5129191418354"></a><a name="en-us_topic_0182207105_p5129191418354"></a>Sets annotations for the container. For example, set the <strong id="en-us_topic_0182207105_b11364491554"><a name="en-us_topic_0182207105_b11364491554"></a><a name="en-us_topic_0182207105_b11364491554"></a>native.umask</strong> parameter.</p>
+<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0182207105_p5129191418354"><a name="en-us_topic_0182207105_p5129191418354"></a><a name="en-us_topic_0182207105_p5129191418354"></a>Sets annotations for the container. For example, set the <strong id="en-us_topic_0182207105_b11364491554"><a name="en-us_topic_0182207105_b11364491554"></a><a name="en-us_topic_0182207105_b11364491554"></a>native.umask</strong> annotation.</p>
 <pre class="screen" id="en-us_topic_0182207105_screen1112917145352"><a name="en-us_topic_0182207105_screen1112917145352"></a><a name="en-us_topic_0182207105_screen1112917145352"></a>--annotation native.umask=normal #The <strong id="en-us_topic_0182207105_b11272521450"><a name="en-us_topic_0182207105_b11272521450"></a><a name="en-us_topic_0182207105_b11272521450"></a>umask</strong> value of the started container is 0022.
 --annotation native.umask=secure #The <strong id="en-us_topic_0182207105_b2012312575510"><a name="en-us_topic_0182207105_b2012312575510"></a><a name="en-us_topic_0182207105_b2012312575510"></a>umask</strong> value of the started container is 0027.</pre>
 <p id="en-us_topic_0182207105_p10129314183518"><a name="en-us_topic_0182207105_p10129314183518"></a><a name="en-us_topic_0182207105_p10129314183518"></a>If this parameter is not set, the <strong id="en-us_topic_0182207105_b122048014616"><a name="en-us_topic_0182207105_b122048014616"></a><a name="en-us_topic_0182207105_b122048014616"></a>umask</strong> configuration in iSulad is used.</p>
@@ -84,7 +84,7 @@ The following table lists the parameters supported by the  **create**  command.
 </tr>
 <tr id="en-us_topic_0182207105_row511418111746"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p124434019510"><a name="en-us_topic_0182207105_p124434019510"></a><a name="en-us_topic_0182207105_p124434019510"></a>--cpu-quota</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p324519401555"><a name="en-us_topic_0182207105_p324519401555"></a><a name="en-us_topic_0182207105_p324519401555"></a>Limits the CPU CFS quota.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p324519401555"><a name="en-us_topic_0182207105_p324519401555"></a><a name="en-us_topic_0182207105_p324519401555"></a>Sets the CPU quota in Completely Fair Scheduler (CFS).</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row1898442169"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p8194739375"><a name="en-us_topic_0182207105_p8194739375"></a><a name="en-us_topic_0182207105_p8194739375"></a>--device=[]</p>
@@ -144,17 +144,17 @@ The following table lists the parameters supported by the  **create**  command.
 </tr>
 <tr id="en-us_topic_0182207105_row614972012483"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p61501220104817"><a name="en-us_topic_0182207105_p61501220104817"></a><a name="en-us_topic_0182207105_p61501220104817"></a>--health-cmd</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p191500208483"><a name="en-us_topic_0182207105_p191500208483"></a><a name="en-us_topic_0182207105_p191500208483"></a>Command executed in a container.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p191500208483"><a name="en-us_topic_0182207105_p191500208483"></a><a name="en-us_topic_0182207105_p191500208483"></a>Command to be executed in the container.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row1280173244812"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p2028013325485"><a name="en-us_topic_0182207105_p2028013325485"></a><a name="en-us_topic_0182207105_p2028013325485"></a>--health-exit-on-unhealthy</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p1928033213487"><a name="en-us_topic_0182207105_p1928033213487"></a><a name="en-us_topic_0182207105_p1928033213487"></a>Determines whether to kill a container when the container is detected unhealthy.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p1928033213487"><a name="en-us_topic_0182207105_p1928033213487"></a><a name="en-us_topic_0182207105_p1928033213487"></a>Determines whether to kill the container when the container is detected unhealthy.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row1039723584810"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p1039711350489"><a name="en-us_topic_0182207105_p1039711350489"></a><a name="en-us_topic_0182207105_p1039711350489"></a>--health-interval</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p113971935134817"><a name="en-us_topic_0182207105_p113971935134817"></a><a name="en-us_topic_0182207105_p113971935134817"></a>Interval between two consecutive command executions.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p113971935134817"><a name="en-us_topic_0182207105_p113971935134817"></a><a name="en-us_topic_0182207105_p113971935134817"></a>Interval between health check commands.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row104982394488"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p1849953934818"><a name="en-us_topic_0182207105_p1849953934818"></a><a name="en-us_topic_0182207105_p1849953934818"></a>--health-retries</p>
@@ -164,7 +164,7 @@ The following table lists the parameters supported by the  **create**  command.
 </tr>
 <tr id="en-us_topic_0182207105_row11177446154813"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p11177114634819"><a name="en-us_topic_0182207105_p11177114634819"></a><a name="en-us_topic_0182207105_p11177114634819"></a>--health-start-period</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p9177146184818"><a name="en-us_topic_0182207105_p9177146184818"></a><a name="en-us_topic_0182207105_p9177146184818"></a>Container initialization interval.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p9177146184818"><a name="en-us_topic_0182207105_p9177146184818"></a><a name="en-us_topic_0182207105_p9177146184818"></a>Time required to initialize the container.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row1318252595020"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p1118313259506"><a name="en-us_topic_0182207105_p1118313259506"></a><a name="en-us_topic_0182207105_p1118313259506"></a>--health-timeout</p>
@@ -179,7 +179,7 @@ The following table lists the parameters supported by the  **create**  command.
 </tr>
 <tr id="en-us_topic_0182207105_row841117457260"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p17569154712612"><a name="en-us_topic_0182207105_p17569154712612"></a><a name="en-us_topic_0182207105_p17569154712612"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p20572194752612"><a name="en-us_topic_0182207105_p20572194752612"></a><a name="en-us_topic_0182207105_p20572194752612"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p20572194752612"><a name="en-us_topic_0182207105_p20572194752612"></a><a name="en-us_topic_0182207105_p20572194752612"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row09098231714"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p1125217390718"><a name="en-us_topic_0182207105_p1125217390718"></a><a name="en-us_topic_0182207105_p1125217390718"></a>-h, --hostname</p>
@@ -189,7 +189,7 @@ The following table lists the parameters supported by the  **create**  command.
 </tr>
 <tr id="en-us_topic_0182207105_row1857164385519"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p324317539553"><a name="en-us_topic_0182207105_p324317539553"></a><a name="en-us_topic_0182207105_p324317539553"></a>-i, --interactive</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p9243195320559"><a name="en-us_topic_0182207105_p9243195320559"></a><a name="en-us_topic_0182207105_p9243195320559"></a>Enables the standard input of the container even if it is not connected to the standard input of the container.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p9243195320559"><a name="en-us_topic_0182207105_p9243195320559"></a><a name="en-us_topic_0182207105_p9243195320559"></a>Keep the standard input open even if it is not attached to the container.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row64315281478"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p326313393713"><a name="en-us_topic_0182207105_p326313393713"></a><a name="en-us_topic_0182207105_p326313393713"></a>--hugetlb-limit=[]</p>
@@ -199,12 +199,12 @@ The following table lists the parameters supported by the  **create**  command.
 </tr>
 <tr id="en-us_topic_0182207105_row1292919294714"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p132831239572"><a name="en-us_topic_0182207105_p132831239572"></a><a name="en-us_topic_0182207105_p132831239572"></a>--log-opt=[]</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p2028510390711"><a name="en-us_topic_0182207105_p2028510390711"></a><a name="en-us_topic_0182207105_p2028510390711"></a>Log driver option. By default, the container serial port log function is disabled. You can run the<strong id="en-us_topic_0182207105_b6295933172117"><a name="en-us_topic_0182207105_b6295933172117"></a><a name="en-us_topic_0182207105_b6295933172117"></a> --log-opt disable-log=false</strong> command to enable it.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p2028510390711"><a name="en-us_topic_0182207105_p2028510390711"></a><a name="en-us_topic_0182207105_p2028510390711"></a>Log driver option. By default, the container serial port log function is disabled. You can use the<strong id="en-us_topic_0182207105_b6295933172117"><a name="en-us_topic_0182207105_b6295933172117"></a><a name="en-us_topic_0182207105_b6295933172117"></a> --log-opt disable-log=false</strong> option to enable it.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row10298153113371"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p11298113113710"><a name="en-us_topic_0182207105_p11298113113710"></a><a name="en-us_topic_0182207105_p11298113113710"></a>-l,--label</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p15298143143711"><a name="en-us_topic_0182207105_p15298143143711"></a><a name="en-us_topic_0182207105_p15298143143711"></a>Sets a label for a container.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p15298143143711"><a name="en-us_topic_0182207105_p15298143143711"></a><a name="en-us_topic_0182207105_p15298143143711"></a>Sets labels for the container.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row1753552953820"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p75351029113820"><a name="en-us_topic_0182207105_p75351029113820"></a><a name="en-us_topic_0182207105_p75351029113820"></a>--lablel-file</p>
@@ -219,37 +219,37 @@ The following table lists the parameters supported by the  **create**  command.
 </tr>
 <tr id="en-us_topic_0182207105_row601514193211"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_en-us_topic_0138971318_p11811595428"><a name="en-us_topic_0182207105_en-us_topic_0138971318_p11811595428"></a><a name="en-us_topic_0182207105_en-us_topic_0138971318_p11811595428"></a>--memory-reservation</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_en-us_topic_0138971318_p21815598424"><a name="en-us_topic_0182207105_en-us_topic_0138971318_p21815598424"></a><a name="en-us_topic_0182207105_en-us_topic_0138971318_p21815598424"></a>Sets the container memory limit. The default value is the same as that of <strong id="en-us_topic_0182207105_b1793920553216"><a name="en-us_topic_0182207105_b1793920553216"></a><a name="en-us_topic_0182207105_b1793920553216"></a>--memory</strong>. <strong id="en-us_topic_0182207105_b1227184113245"><a name="en-us_topic_0182207105_b1227184113245"></a><a name="en-us_topic_0182207105_b1227184113245"></a>--memory</strong> is a hard limit, and <strong id="en-us_topic_0182207105_b51315461245"><a name="en-us_topic_0182207105_b51315461245"></a><a name="en-us_topic_0182207105_b51315461245"></a>--memory-reservation</strong> is a soft limit. When the memory usage exceeds the preset value, the memory usage is dynamically adjusted (the system attempts to reduce the memory usage to a value less than the preset value when reclaiming the memory). However, the memory usage may exceed the preset value. Generally, this parameter can be used together with <strong id="en-us_topic_0182207105_b13987731162510"><a name="en-us_topic_0182207105_b13987731162510"></a><a name="en-us_topic_0182207105_b13987731162510"></a>--memory</strong>. The value must be less than the preset value of <strong id="en-us_topic_0182207105_b20288104014258"><a name="en-us_topic_0182207105_b20288104014258"></a><a name="en-us_topic_0182207105_b20288104014258"></a>--memory</strong>. The minimum value is 4 MB.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_en-us_topic_0138971318_p21815598424"><a name="en-us_topic_0182207105_en-us_topic_0138971318_p21815598424"></a><a name="en-us_topic_0182207105_en-us_topic_0138971318_p21815598424"></a>Sets the container memory limit. The default value is the same as the value of <strong id="en-us_topic_0182207105_b1793920553216"><a name="en-us_topic_0182207105_b1793920553216"></a><a name="en-us_topic_0182207105_b1793920553216"></a>--memory</strong>. <strong id="en-us_topic_0182207105_b1227184113245"><a name="en-us_topic_0182207105_b1227184113245"></a><a name="en-us_topic_0182207105_b1227184113245"></a>--memory</strong> is a hard limit, and <strong id="en-us_topic_0182207105_b51315461245"><a name="en-us_topic_0182207105_b51315461245"></a><a name="en-us_topic_0182207105_b51315461245"></a>--memory-reservation</strong> is a soft limit. When the memory usage exceeds the value of <strong>--memory</strong>, the memory usage is dynamically adjusted (the system attempts to reduce the memory usage to a value less than the value of <strong>--memory</strong> when reclaiming the memory). However, the memory usage may still exceed the value of <strong>--memory</strong>. Generally, this parameter can be used together with <strong id="en-us_topic_0182207105_b13987731162510"><a name="en-us_topic_0182207105_b13987731162510"></a><a name="en-us_topic_0182207105_b13987731162510"></a>--memory</strong>. The value must be less than the value of <strong id="en-us_topic_0182207105_b20288104014258"><a name="en-us_topic_0182207105_b20288104014258"></a><a name="en-us_topic_0182207105_b20288104014258"></a>--memory</strong>. The minimum value is 4 MB.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row1052344477"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p1930383914714"><a name="en-us_topic_0182207105_p1930383914714"></a><a name="en-us_topic_0182207105_p1930383914714"></a>--memory-swap</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p203051539579"><a name="en-us_topic_0182207105_p203051539579"></a><a name="en-us_topic_0182207105_p203051539579"></a>Memory swap space, which should be a positive integer. The value <strong id="en-us_topic_0182207105_b182541753132720"><a name="en-us_topic_0182207105_b182541753132720"></a><a name="en-us_topic_0182207105_b182541753132720"></a>-1</strong> indicates no limit.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p203051539579"><a name="en-us_topic_0182207105_p203051539579"></a><a name="en-us_topic_0182207105_p203051539579"></a>Memory swap space, which must be a positive integer. The value <strong id="en-us_topic_0182207105_b182541753132720"><a name="en-us_topic_0182207105_b182541753132720"></a><a name="en-us_topic_0182207105_b182541753132720"></a>-1</strong> indicates no limit.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row1728751718149"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p18287417161414"><a name="en-us_topic_0182207105_p18287417161414"></a><a name="en-us_topic_0182207105_p18287417161414"></a>--memory-swappiness</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p15287111731410"><a name="en-us_topic_0182207105_p15287111731410"></a><a name="en-us_topic_0182207105_p15287111731410"></a>The value of swappiness is a positive integer ranging from 0 to 100. The smaller the value is, the less the swap partition is used and the more the memory is used in the Linux system. The larger the value is, the more the swap space is used by the kernel. The default value is <strong id="en-us_topic_0182207105_b179452259155"><a name="en-us_topic_0182207105_b179452259155"></a><a name="en-us_topic_0182207105_b179452259155"></a>–1</strong>, indicating that the default system value is used.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p15287111731410"><a name="en-us_topic_0182207105_p15287111731410"></a><a name="en-us_topic_0182207105_p15287111731410"></a>The value of swappiness is a positive integer ranging from 0 to 100. The smaller the value is, the less the swap partition is used and the more the memory is used by Linux. The larger the value is, the more the swap space is used by the kernel. The default value is <strong id="en-us_topic_0182207105_b179452259155"><a name="en-us_topic_0182207105_b179452259155"></a><a name="en-us_topic_0182207105_b179452259155"></a>–1</strong>, indicating that the default system value is used.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row154751863710"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p7312539679"><a name="en-us_topic_0182207105_p7312539679"></a><a name="en-us_topic_0182207105_p7312539679"></a>--mount</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p183152391174"><a name="en-us_topic_0182207105_p183152391174"></a><a name="en-us_topic_0182207105_p183152391174"></a>Mounts the host directory, volume, or file system to the container.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p183152391174"><a name="en-us_topic_0182207105_p183152391174"></a><a name="en-us_topic_0182207105_p183152391174"></a>Mounts a host directory, volume, or file system to the container.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row565519595210"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p12655457526"><a name="en-us_topic_0182207105_p12655457526"></a><a name="en-us_topic_0182207105_p12655457526"></a>--no-healthcheck</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p765517511527"><a name="en-us_topic_0182207105_p765517511527"></a><a name="en-us_topic_0182207105_p765517511527"></a>Disables the health check configuration.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p765517511527"><a name="en-us_topic_0182207105_p765517511527"></a><a name="en-us_topic_0182207105_p765517511527"></a>Disables health check configurations.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row8679175615614"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p16321113910720"><a name="en-us_topic_0182207105_p16321113910720"></a><a name="en-us_topic_0182207105_p16321113910720"></a>--name=NAME</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p163231391675"><a name="en-us_topic_0182207105_p163231391675"></a><a name="en-us_topic_0182207105_p163231391675"></a>Container name.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p163231391675"><a name="en-us_topic_0182207105_p163231391675"></a><a name="en-us_topic_0182207105_p163231391675"></a>Sets a name for the container.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row19100528719"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p1033216391775"><a name="en-us_topic_0182207105_p1033216391775"></a><a name="en-us_topic_0182207105_p1033216391775"></a>--net=none</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p1633611391076"><a name="en-us_topic_0182207105_p1633611391076"></a><a name="en-us_topic_0182207105_p1633611391076"></a>Connects a container to a network.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p1633611391076"><a name="en-us_topic_0182207105_p1633611391076"></a><a name="en-us_topic_0182207105_p1633611391076"></a>Connects the container to a network.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row10108143810"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p17982489384"><a name="en-us_topic_0182207105_p17982489384"></a><a name="en-us_topic_0182207105_p17982489384"></a>--pids-limit</p>
@@ -259,7 +259,7 @@ The following table lists the parameters supported by the  **create**  command.
 </tr>
 <tr id="en-us_topic_0182207105_row204644595611"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p8346153919718"><a name="en-us_topic_0182207105_p8346153919718"></a><a name="en-us_topic_0182207105_p8346153919718"></a>--privileged</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p10349123910710"><a name="en-us_topic_0182207105_p10349123910710"></a><a name="en-us_topic_0182207105_p10349123910710"></a>Grants container extension privileges.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p10349123910710"><a name="en-us_topic_0182207105_p10349123910710"></a><a name="en-us_topic_0182207105_p10349123910710"></a>Grants container extended privileges.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row4715417611"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p93596391276"><a name="en-us_topic_0182207105_p93596391276"></a><a name="en-us_topic_0182207105_p93596391276"></a>-R, --runtime</p>
@@ -274,13 +274,13 @@ The following table lists the parameters supported by the  **create**  command.
 </tr>
 <tr id="en-us_topic_0182207105_row111022509616"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p1538418391715"><a name="en-us_topic_0182207105_p1538418391715"></a><a name="en-us_topic_0182207105_p1538418391715"></a>--restart</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p193871391976"><a name="en-us_topic_0182207105_p193871391976"></a><a name="en-us_topic_0182207105_p193871391976"></a>Restart policy upon container exit.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p193871391976"><a name="en-us_topic_0182207105_p193871391976"></a><a name="en-us_topic_0182207105_p193871391976"></a>Restart policy to apply upon container exit.</p>
 <p id="en-us_topic_0182207105_p1371141235411"><a name="en-us_topic_0182207105_p1371141235411"></a><a name="en-us_topic_0182207105_p1371141235411"></a>For a system container, <strong id="en-us_topic_0182207105_b4434842183115"><a name="en-us_topic_0182207105_b4434842183115"></a><a name="en-us_topic_0182207105_b4434842183115"></a>--restart on-reboot</strong> is supported.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row16393140174"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p26411214161716"><a name="en-us_topic_0182207105_p26411214161716"></a><a name="en-us_topic_0182207105_p26411214161716"></a>--storage-opt</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p156411614201714"><a name="en-us_topic_0182207105_p156411614201714"></a><a name="en-us_topic_0182207105_p156411614201714"></a>Configures the storage driver option for a container.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p156411614201714"><a name="en-us_topic_0182207105_p156411614201714"></a><a name="en-us_topic_0182207105_p156411614201714"></a>Configures the storage driver options for the container.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row19571175416574"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p35093214585"><a name="en-us_topic_0182207105_p35093214585"></a><a name="en-us_topic_0182207105_p35093214585"></a>-t, --tty</p>
@@ -290,7 +290,7 @@ The following table lists the parameters supported by the  **create**  command.
 </tr>
 <tr id="en-us_topic_0182207105_row15496195712522"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p11497185745212"><a name="en-us_topic_0182207105_p11497185745212"></a><a name="en-us_topic_0182207105_p11497185745212"></a>--ulimit</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p1349715755214"><a name="en-us_topic_0182207105_p1349715755214"></a><a name="en-us_topic_0182207105_p1349715755214"></a>Sets the ulimit for a container.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p1349715755214"><a name="en-us_topic_0182207105_p1349715755214"></a><a name="en-us_topic_0182207105_p1349715755214"></a>Sets the ulimit options for the container.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207105_row26709251165"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p2408193911715"><a name="en-us_topic_0182207105_p2408193911715"></a><a name="en-us_topic_0182207105_p2408193911715"></a>-u, --user</p>
@@ -305,7 +305,7 @@ The following table lists the parameters supported by the  **create**  command.
 </tr>
 <tr id="en-us_topic_0182207105_row969873217614"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p1443220391575"><a name="en-us_topic_0182207105_p1443220391575"></a><a name="en-us_topic_0182207105_p1443220391575"></a>--volumes-from=[]</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p343617396718"><a name="en-us_topic_0182207105_p343617396718"></a><a name="en-us_topic_0182207105_p343617396718"></a>Uses the mounting configuration of the specified container.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207105_p343617396718"><a name="en-us_topic_0182207105_p343617396718"></a><a name="en-us_topic_0182207105_p343617396718"></a>Mount volumes using the configurations of the specified container</p>
 </td>
 </tr>
 </tbody>
@@ -313,7 +313,7 @@ The following table lists the parameters supported by the  **create**  command.
 
 ### Constraints
 
--   When the  **--user**  or  **--group-add**  parameter is used to verify the user or group during container startup, if the container uses an OCI image, the verification is performed in the  **etc/passwd**  and  **etc/group**  files of the actual rootfs of the image. If a folder or block device is used as the rootfs of the container, the  **etc/passwd**  and  **etc/group**  files in the host are verified. The rootfs ignores mounting parameters such as  **-v**  and  **--mount**. That is, when these parameters are used to attempt to overwrite the  **etc/passwd**  and  **etc/group**  files, the parameters do not take effect during the search and take effect only when the container is started. The generated configuration is saved in the  **iSulad root directory/engine/container ID/start\_generate\_config.json**  file. The file format is as follows:
+-   When the  **--user**  or  **--group-add**  parameter is used to verify the user or group during container startup, if the container uses an OCI image, the verification is performed in the  `etc/passwd`  and  `etc/group`  files of the actual rootfs of the image. If a folder or block device is used as the rootfs of the container, the  `etc/passwd`  and  `etc/group`  files in the host are verified. The rootfs ignores mounting parameters such as  **-v**  and  **--mount** during the search. That is, when these parameters are used to attempt to overwrite the  `etc/passwd`  and  `etc/group`  files, the parameters do not take effect during the search and take effect only when the container is started. The generated configuration is saved in the  `iSulad root directory/engine/container ID/start\_generate\_config.json`  file. The file format is as follows:
 
     ```
     {
@@ -368,7 +368,7 @@ The following table lists the parameters supported by the  **start**  command.
 </td>
 <td class="cellrowborder" valign="top" width="39.57575757575758%"><p id="en-us_topic_0182207106_p1977623312410"><a name="en-us_topic_0182207106_p1977623312410"></a><a name="en-us_topic_0182207106_p1977623312410"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0182207106_p577673362410"><a name="en-us_topic_0182207106_p577673362410"></a><a name="en-us_topic_0182207106_p577673362410"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0182207106_p577673362410"><a name="en-us_topic_0182207106_p577673362410"></a><a name="en-us_topic_0182207106_p577673362410"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207106_row107521335112317"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207106_p207603617248"><a name="en-us_topic_0182207106_p207603617248"></a><a name="en-us_topic_0182207106_p207603617248"></a>-R, --runtime</p>
@@ -417,7 +417,7 @@ The following table lists the parameters supported by the  **run**  command.
 </td>
 <td class="cellrowborder" valign="top" width="39.57575757575758%"><p id="en-us_topic_0182207107_p8129151463514"><a name="en-us_topic_0182207107_p8129151463514"></a><a name="en-us_topic_0182207107_p8129151463514"></a>--annotation</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0182207107_p5129191418354"><a name="en-us_topic_0182207107_p5129191418354"></a><a name="en-us_topic_0182207107_p5129191418354"></a>Sets annotations for the container. For example, set the <strong id="en-us_topic_0182207107_b2872815123414"><a name="en-us_topic_0182207107_b2872815123414"></a><a name="en-us_topic_0182207107_b2872815123414"></a>native.umask</strong> option.</p>
+<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0182207107_p5129191418354"><a name="en-us_topic_0182207107_p5129191418354"></a><a name="en-us_topic_0182207107_p5129191418354"></a>Sets annotations for the container. For example, set the <strong id="en-us_topic_0182207107_b2872815123414"><a name="en-us_topic_0182207107_b2872815123414"></a><a name="en-us_topic_0182207107_b2872815123414"></a>native.umask</strong> annotation.</p>
 <pre class="screen" id="en-us_topic_0182207107_screen1112917145352"><a name="en-us_topic_0182207107_screen1112917145352"></a><a name="en-us_topic_0182207107_screen1112917145352"></a>--annotation native.umask=normal #The <strong id="en-us_topic_0182207107_b1391954118341"><a name="en-us_topic_0182207107_b1391954118341"></a><a name="en-us_topic_0182207107_b1391954118341"></a>umask</strong> value of the started container is 0022.
 --annotation native.umask=secure #The <strong id="en-us_topic_0182207107_b18664736133419"><a name="en-us_topic_0182207107_b18664736133419"></a><a name="en-us_topic_0182207107_b18664736133419"></a>umask</strong> value of the started container is 0027.</pre>
 <p id="en-us_topic_0182207107_p10129314183518"><a name="en-us_topic_0182207107_p10129314183518"></a><a name="en-us_topic_0182207107_p10129314183518"></a>If this parameter is not set, the <strong id="en-us_topic_0182207107_b723110559347"><a name="en-us_topic_0182207107_b723110559347"></a><a name="en-us_topic_0182207107_b723110559347"></a>umask</strong> configuration in iSulad is used.</p>
@@ -450,7 +450,7 @@ The following table lists the parameters supported by the  **run**  command.
 </tr>
 <tr id="en-us_topic_0182207107_row694113301204"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p0941130804"><a name="en-us_topic_0182207107_p0941130804"></a><a name="en-us_topic_0182207107_p0941130804"></a>--cpu-quota</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p8685621334"><a name="en-us_topic_0182207107_p8685621334"></a><a name="en-us_topic_0182207107_p8685621334"></a>Limits the CPU CFS quota.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p8685621334"><a name="en-us_topic_0182207107_p8685621334"></a><a name="en-us_topic_0182207107_p8685621334"></a>Sets the CPU quota in Completely Fair Scheduler (CFS).</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row176131541687"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p116131041289"><a name="en-us_topic_0182207107_p116131041289"></a><a name="en-us_topic_0182207107_p116131041289"></a>-d, --detach</p>
@@ -515,17 +515,17 @@ The following table lists the parameters supported by the  **run**  command.
 </tr>
 <tr id="en-us_topic_0182207107_row1863011175146"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p1063041731417"><a name="en-us_topic_0182207107_p1063041731417"></a><a name="en-us_topic_0182207107_p1063041731417"></a>--health-cmd</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p18630517191411"><a name="en-us_topic_0182207107_p18630517191411"></a><a name="en-us_topic_0182207107_p18630517191411"></a>Command executed in a container.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p18630517191411"><a name="en-us_topic_0182207107_p18630517191411"></a><a name="en-us_topic_0182207107_p18630517191411"></a>Command executed in the container.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row753412041411"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p11535132013142"><a name="en-us_topic_0182207107_p11535132013142"></a><a name="en-us_topic_0182207107_p11535132013142"></a>--health-exit-on-unhealthy</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p0535152041412"><a name="en-us_topic_0182207107_p0535152041412"></a><a name="en-us_topic_0182207107_p0535152041412"></a>Determines whether to kill a container when the container is detected unhealthy.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p0535152041412"><a name="en-us_topic_0182207107_p0535152041412"></a><a name="en-us_topic_0182207107_p0535152041412"></a>Determines whether to kill the container when the container is detected unhealthy.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row17173192319142"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p91733234142"><a name="en-us_topic_0182207107_p91733234142"></a><a name="en-us_topic_0182207107_p91733234142"></a>--health-interval</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p217320238146"><a name="en-us_topic_0182207107_p217320238146"></a><a name="en-us_topic_0182207107_p217320238146"></a>Interval between two consecutive command executions.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p217320238146"><a name="en-us_topic_0182207107_p217320238146"></a><a name="en-us_topic_0182207107_p217320238146"></a>Interval between health check commands.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row65618261149"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p55612611410"><a name="en-us_topic_0182207107_p55612611410"></a><a name="en-us_topic_0182207107_p55612611410"></a>--health-retries</p>
@@ -535,7 +535,7 @@ The following table lists the parameters supported by the  **run**  command.
 </tr>
 <tr id="en-us_topic_0182207107_row6356102941410"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p1835612991419"><a name="en-us_topic_0182207107_p1835612991419"></a><a name="en-us_topic_0182207107_p1835612991419"></a>--health-start-period</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p93568290147"><a name="en-us_topic_0182207107_p93568290147"></a><a name="en-us_topic_0182207107_p93568290147"></a>Container initialization interval.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p93568290147"><a name="en-us_topic_0182207107_p93568290147"></a><a name="en-us_topic_0182207107_p93568290147"></a>Time required to initialize the container.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row1029384718146"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p16294154716147"><a name="en-us_topic_0182207107_p16294154716147"></a><a name="en-us_topic_0182207107_p16294154716147"></a>--health-timeout</p>
@@ -550,7 +550,7 @@ The following table lists the parameters supported by the  **run**  command.
 </tr>
 <tr id="en-us_topic_0182207107_row1498202319272"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p9571162842711"><a name="en-us_topic_0182207107_p9571162842711"></a><a name="en-us_topic_0182207107_p9571162842711"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p1157482818273"><a name="en-us_topic_0182207107_p1157482818273"></a><a name="en-us_topic_0182207107_p1157482818273"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p1157482818273"><a name="en-us_topic_0182207107_p1157482818273"></a><a name="en-us_topic_0182207107_p1157482818273"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row6362153610268"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p13621736192618"><a name="en-us_topic_0182207107_p13621736192618"></a><a name="en-us_topic_0182207107_p13621736192618"></a>-h, --hostname</p>
@@ -565,12 +565,12 @@ The following table lists the parameters supported by the  **run**  command.
 </tr>
 <tr id="en-us_topic_0182207107_row205911371908"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p1059163713014"><a name="en-us_topic_0182207107_p1059163713014"></a><a name="en-us_topic_0182207107_p1059163713014"></a>-i, --interactive</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p158943505"><a name="en-us_topic_0182207107_p158943505"></a><a name="en-us_topic_0182207107_p158943505"></a>Enables the standard input of the container even if it is not connected to the standard input of the container.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p158943505"><a name="en-us_topic_0182207107_p158943505"></a><a name="en-us_topic_0182207107_p158943505"></a>Keep the standard input open even if it is not attached to the container.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row659103717013"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p8599371505"><a name="en-us_topic_0182207107_p8599371505"></a><a name="en-us_topic_0182207107_p8599371505"></a>--log-opt=[]</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p668514211339"><a name="en-us_topic_0182207107_p668514211339"></a><a name="en-us_topic_0182207107_p668514211339"></a>Log driver option. By default, the container serial port log function is disabled. You can run the<strong id="en-us_topic_0182207107_b74241541113719"><a name="en-us_topic_0182207107_b74241541113719"></a><a name="en-us_topic_0182207107_b74241541113719"></a> --log-opt disable-log=false</strong> command to enable it.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p668514211339"><a name="en-us_topic_0182207107_p668514211339"></a><a name="en-us_topic_0182207107_p668514211339"></a>Log driver option. By default, the container serial port log function is disabled. You can use the<strong id="en-us_topic_0182207107_b74241541113719"><a name="en-us_topic_0182207107_b74241541113719"></a><a name="en-us_topic_0182207107_b74241541113719"></a> --log-opt disable-log=false</strong> option to enable it.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row75913717012"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p175918371019"><a name="en-us_topic_0182207107_p175918371019"></a><a name="en-us_topic_0182207107_p175918371019"></a>-m, --memory</p>
@@ -580,17 +580,17 @@ The following table lists the parameters supported by the  **run**  command.
 </tr>
 <tr id="en-us_topic_0182207107_row10796185703219"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p3692125919328"><a name="en-us_topic_0182207107_p3692125919328"></a><a name="en-us_topic_0182207107_p3692125919328"></a>--memory-reservation</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p12693185913322"><a name="en-us_topic_0182207107_p12693185913322"></a><a name="en-us_topic_0182207107_p12693185913322"></a>Sets the container memory limit. The default value is the same as that of <strong id="en-us_topic_0182207107_b88101911113811"><a name="en-us_topic_0182207107_b88101911113811"></a><a name="en-us_topic_0182207107_b88101911113811"></a>--memory</strong>. <strong id="en-us_topic_0182207107_b3943132917381"><a name="en-us_topic_0182207107_b3943132917381"></a><a name="en-us_topic_0182207107_b3943132917381"></a>--memory</strong> is a hard limit, and <strong id="en-us_topic_0182207107_b109431329163818"><a name="en-us_topic_0182207107_b109431329163818"></a><a name="en-us_topic_0182207107_b109431329163818"></a>--memory-reservation</strong> is a soft limit. When the memory usage exceeds the preset value, the memory usage is dynamically adjusted (the system attempts to reduce the memory usage to a value less than the preset value when reclaiming the memory). However, the memory usage may exceed the preset value. Generally, this parameter can be used together with <strong id="en-us_topic_0182207107_b9735145153819"><a name="en-us_topic_0182207107_b9735145153819"></a><a name="en-us_topic_0182207107_b9735145153819"></a>--memory</strong>. The value must be less than the preset value of <strong id="en-us_topic_0182207107_b9736194511383"><a name="en-us_topic_0182207107_b9736194511383"></a><a name="en-us_topic_0182207107_b9736194511383"></a>--memory</strong>. The minimum value is 4 MB.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p12693185913322"><a name="en-us_topic_0182207107_p12693185913322"></a><a name="en-us_topic_0182207107_p12693185913322"></a>Sets the container memory limit. The default value is the same as that of <strong id="en-us_topic_0182207107_b88101911113811"><a name="en-us_topic_0182207107_b88101911113811"></a><a name="en-us_topic_0182207107_b88101911113811"></a>--memory</strong>. <strong id="en-us_topic_0182207107_b3943132917381"><a name="en-us_topic_0182207107_b3943132917381"></a><a name="en-us_topic_0182207107_b3943132917381"></a>--memory</strong> is a hard limit, and <strong id="en-us_topic_0182207107_b109431329163818"><a name="en-us_topic_0182207107_b109431329163818"></a><a name="en-us_topic_0182207107_b109431329163818"></a>--memory-reservation</strong> is a soft limit. When the memory usage exceeds the value of <strong>--memory</strong>, the memory usage is dynamically adjusted (the system attempts to reduce the memory usage to a value less than the value of <strong>--memory</strong> when reclaiming the memory). However, the memory usage may still exceed the value of <strong>--memory</strong>. Generally, this parameter can be used together with <strong id="en-us_topic_0182207107_b9735145153819"><a name="en-us_topic_0182207107_b9735145153819"></a><a name="en-us_topic_0182207107_b9735145153819"></a>--memory</strong>. The value must be less than the preset value of <strong id="en-us_topic_0182207107_b9736194511383"><a name="en-us_topic_0182207107_b9736194511383"></a><a name="en-us_topic_0182207107_b9736194511383"></a>--memory</strong>. The minimum value is 4 MB.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row20593371607"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p12592371704"><a name="en-us_topic_0182207107_p12592371704"></a><a name="en-us_topic_0182207107_p12592371704"></a>--memory-swap</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p15685521736"><a name="en-us_topic_0182207107_p15685521736"></a><a name="en-us_topic_0182207107_p15685521736"></a>Memory swap space, which should be a positive integer. The value <strong id="en-us_topic_0182207107_b3280163919"><a name="en-us_topic_0182207107_b3280163919"></a><a name="en-us_topic_0182207107_b3280163919"></a>-1</strong> indicates no limit.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p15685521736"><a name="en-us_topic_0182207107_p15685521736"></a><a name="en-us_topic_0182207107_p15685521736"></a>Memory swap space, which must be a positive integer. The value <strong id="en-us_topic_0182207107_b3280163919"><a name="en-us_topic_0182207107_b3280163919"></a><a name="en-us_topic_0182207107_b3280163919"></a>-1</strong> indicates no limit.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row18121147112914"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p18287417161414"><a name="en-us_topic_0182207107_p18287417161414"></a><a name="en-us_topic_0182207107_p18287417161414"></a>--memory-swappiness</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p101221378297"><a name="en-us_topic_0182207107_p101221378297"></a><a name="en-us_topic_0182207107_p101221378297"></a>The value of swappiness is a positive integer ranging from 0 to 100. The smaller the value is, the less the swap partition is used and the more the memory is used in the Linux system. The larger the value is, the more the swap space is used by the kernel. The default value is <strong id="en-us_topic_0182207107_b4124438286"><a name="en-us_topic_0182207107_b4124438286"></a><a name="en-us_topic_0182207107_b4124438286"></a>–1</strong>, indicating that the default system value is used.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p101221378297"><a name="en-us_topic_0182207107_p101221378297"></a><a name="en-us_topic_0182207107_p101221378297"></a>The value of swappiness is a positive integer ranging from 0 to 100. The smaller the value is, the less the swap partition is used and the more the memory is used by Linux. The larger the value is, the more the swap space is used by the kernel. The default value is <strong id="en-us_topic_0182207107_b4124438286"><a name="en-us_topic_0182207107_b4124438286"></a><a name="en-us_topic_0182207107_b4124438286"></a>–1</strong>, indicating that the default system value is used.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row53314518493"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p134145154916"><a name="en-us_topic_0182207107_p134145154916"></a><a name="en-us_topic_0182207107_p134145154916"></a>--mount</p>
@@ -600,17 +600,17 @@ The following table lists the parameters supported by the  **run**  command.
 </tr>
 <tr id="en-us_topic_0182207107_row206012104181"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p196011710151815"><a name="en-us_topic_0182207107_p196011710151815"></a><a name="en-us_topic_0182207107_p196011710151815"></a>--no-healthcheck</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p146011610121814"><a name="en-us_topic_0182207107_p146011610121814"></a><a name="en-us_topic_0182207107_p146011610121814"></a>Disables the health check configuration.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p146011610121814"><a name="en-us_topic_0182207107_p146011610121814"></a><a name="en-us_topic_0182207107_p146011610121814"></a>Disables health check configurations.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row17591371014"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p19601237408"><a name="en-us_topic_0182207107_p19601237408"></a><a name="en-us_topic_0182207107_p19601237408"></a>--name=NAME</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p206851721434"><a name="en-us_topic_0182207107_p206851721434"></a><a name="en-us_topic_0182207107_p206851721434"></a>Container name.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p206851721434"><a name="en-us_topic_0182207107_p206851721434"></a><a name="en-us_topic_0182207107_p206851721434"></a>Sets a name for the container.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row56017376010"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p17601537306"><a name="en-us_topic_0182207107_p17601537306"></a><a name="en-us_topic_0182207107_p17601537306"></a>--net=none</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p86855212031"><a name="en-us_topic_0182207107_p86855212031"></a><a name="en-us_topic_0182207107_p86855212031"></a>Connects a container to a network.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p86855212031"><a name="en-us_topic_0182207107_p86855212031"></a><a name="en-us_topic_0182207107_p86855212031"></a>Connects the container to a network.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row1442163033611"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p14422173013363"><a name="en-us_topic_0182207107_p14422173013363"></a><a name="en-us_topic_0182207107_p14422173013363"></a>--pids-limit</p>
@@ -620,7 +620,7 @@ The following table lists the parameters supported by the  **run**  command.
 </tr>
 <tr id="en-us_topic_0182207107_row11605371201"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p196012371304"><a name="en-us_topic_0182207107_p196012371304"></a><a name="en-us_topic_0182207107_p196012371304"></a>--privileged</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p968516212319"><a name="en-us_topic_0182207107_p968516212319"></a><a name="en-us_topic_0182207107_p968516212319"></a>Grants container extension privileges.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p968516212319"><a name="en-us_topic_0182207107_p968516212319"></a><a name="en-us_topic_0182207107_p968516212319"></a>Grants container extended privileges.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row10649172419178"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p1464912421718"><a name="en-us_topic_0182207107_p1464912421718"></a><a name="en-us_topic_0182207107_p1464912421718"></a>-R, --runtime</p>
@@ -635,7 +635,7 @@ The following table lists the parameters supported by the  **run**  command.
 </tr>
 <tr id="en-us_topic_0182207107_row3601237402"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p36013375013"><a name="en-us_topic_0182207107_p36013375013"></a><a name="en-us_topic_0182207107_p36013375013"></a>--restart</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p46863217311"><a name="en-us_topic_0182207107_p46863217311"></a><a name="en-us_topic_0182207107_p46863217311"></a>Restart policy upon container exit.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p46863217311"><a name="en-us_topic_0182207107_p46863217311"></a><a name="en-us_topic_0182207107_p46863217311"></a>Restart policy to apply upon container exit.</p>
 <p id="en-us_topic_0182207107_p51198252521"><a name="en-us_topic_0182207107_p51198252521"></a><a name="en-us_topic_0182207107_p51198252521"></a>For a system container, <strong id="en-us_topic_0182207107_b5772183224020"><a name="en-us_topic_0182207107_b5772183224020"></a><a name="en-us_topic_0182207107_b5772183224020"></a>--restart on-reboot</strong> is supported.</p>
 </td>
 </tr>
@@ -646,7 +646,7 @@ The following table lists the parameters supported by the  **run**  command.
 </tr>
 <tr id="en-us_topic_0182207107_row1314105618175"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p1785335691711"><a name="en-us_topic_0182207107_p1785335691711"></a><a name="en-us_topic_0182207107_p1785335691711"></a>--storage-opt</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p1885310565170"><a name="en-us_topic_0182207107_p1885310565170"></a><a name="en-us_topic_0182207107_p1885310565170"></a>Configures the storage driver option for a container.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p1885310565170"><a name="en-us_topic_0182207107_p1885310565170"></a><a name="en-us_topic_0182207107_p1885310565170"></a>Configures the storage driver options for the container.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row1160183710015"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p9601837302"><a name="en-us_topic_0182207107_p9601837302"></a><a name="en-us_topic_0182207107_p9601837302"></a>-t, --tty</p>
@@ -656,7 +656,7 @@ The following table lists the parameters supported by the  **run**  command.
 </tr>
 <tr id="en-us_topic_0182207107_row13353886542"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p193531487548"><a name="en-us_topic_0182207107_p193531487548"></a><a name="en-us_topic_0182207107_p193531487548"></a>--ulimit</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p1944203011543"><a name="en-us_topic_0182207107_p1944203011543"></a><a name="en-us_topic_0182207107_p1944203011543"></a>Sets the ulimit for a container.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p1944203011543"><a name="en-us_topic_0182207107_p1944203011543"></a><a name="en-us_topic_0182207107_p1944203011543"></a>Sets the ulimit options for the container.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0182207107_row192184195910"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207107_p1310416598"><a name="en-us_topic_0182207107_p1310416598"></a><a name="en-us_topic_0182207107_p1310416598"></a>-u, --user</p>
@@ -677,10 +677,10 @@ The following table lists the parameters supported by the  **run**  command.
 -   When the parent process of a container exits, the corresponding container automatically exits.
 -   When a common container is created, the parent process cannot be initiated because the permission of common containers is insufficient. As a result, the container does not respond when you run the  **attach**  command though it is created successfully.
 -   If  **--net**  is not specified when the container is running, the default host name is  **localhost**.
--   If the  **--files-limit**  parameter is to transfer a small value, for example, 1, when the container is started, iSulad creates a cgroup, sets the files.limit value, and writes the PID of the container process to the  **cgroup.procs**  file of the cgroup. At this time, the container process has opened more than one handle. As a result, a write error is reported, and the container fails to be started.
--   If both** --mount**  and  **--volume**  exist and their destination paths conflict,  **--mount**  will be run after  **--volume**  \(that is, the mount point in  **--volume**  will be overwritten\).
+-   If the  **--files-limit**  parameter is to transfer a small value, for example, 1, when the container is started, iSulad creates a cgroup, sets the **files.limit** value, and writes the PID of the container process to the  **cgroup.procs**  file of the cgroup. At this time, the container process has opened more than one handle. As a result, a write error is reported, and the container fails to be started.
+-   If both **--mount**  and  **--volume**  exist and their destination paths conflict,  **--mount**  will be run after  **--volume**  \(that is, the mount point in  **--volume**  will be overwritten\).
 
-    Note: The value of the  **type**  parameter of lightweight containers can be  **bind**  or  **squashfs**. When  **type**  is set to  **squashfs**,  **src**  is the image path. The value of the  **type**  parameter of the native Docker can be  **bind**,  **volume**, and  **tmpfs**.
+    Note: The value of the  **type**  parameter of lightweight containers can be  **bind**  or  **squashfs**. When  **type**  is set to  **squashfs**,  `src`  is the image path. The value of the  **type**  parameter of the native Docker can be  **bind**,  **volume**, and  **tmpfs**.
 
 -   The restart policy does not support  **unless-stopped**.
 -   The values returned for Docker and lightweight containers are 127 and 125 respectively in the following three scenarios:
@@ -691,8 +691,8 @@ The following table lists the parameters supported by the  **run**  command.
 
     The entry point specified by  **--entrypoint**  does not exist.
 
--   When the  **--volume**  parameter is used, /dev/ptmx will be deleted and recreated during container startup. Therefore, do not mount the  **/dev**  directory to that of the container. Use  **--device**  to mount the devices in  **/dev**  of the container.
--   Do not use the echo option to input data to the standard input of the  **run**  command. Otherwise, the client will be suspended. The echo value should be directly transferred to the container as a command line parameter.
+-   When the  **--volume**  parameter is used, `/dev/ptmx` will be deleted and recreated during container startup. Therefore, do not mount the  `/dev`  directory to that of the container. Use  **--device**  to mount the devices in  `/dev`  of the container.
+-   Do not use the **echo** command to input data to the standard input of the  **run**  command. Otherwise, the client will be suspended. The value of **echo** should be directly transferred to the container as a command line parameter.
 
     ```
     [root@localhost ~]# echo ls | isula run -i busybox /bin/sh
@@ -702,7 +702,7 @@ The following table lists the parameters supported by the  **run**  command.
     [root@localhost ~]# 
     ```
 
-    The client is suspended when the preceding command is executed because the preceding command is equivalent to input  **ls**  to  **stdin**. Then EOF is read and the client does not send data and waits for the server to exit. However, the server cannot determine whether the client needs to continue sending data. As a result, the server is suspended in reading data, and both parties are suspended.
+    The client is suspended when the preceding command is executed because the preceding command is equivalent to input  **ls**  to  **STDIN**. Then EOF is read and the client does not send data and waits for the server to exit. However, the server cannot determine whether the client needs to continue sending data. As a result, the server is suspended in reading data, and both parties are suspended.
 
     The correct execution method is as follows:
 
@@ -721,7 +721,7 @@ The following table lists the parameters supported by the  **run**  command.
     [root@localhost ~]# 
     ```
 
--   If the root directory \(/\) of the host is used as the file system of the container, the following situations may occur during the mounting:
+-   If the root directory \(`/`\) of the host is used as the file system of the container, the following situations may occur during the mounting:
 
     **Table  2**  Mounting scenarios
 
@@ -746,8 +746,8 @@ The following table lists the parameters supported by the  **run**  command.
     </table>
 
     >![](./public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >Scenario 1: Mount  **/home/test1**  and then  **/home/test2**. In this case, the content in  **/home/test1**  overwrites the content in  **/mnt**. As a result, the  **abc**  directory does not exist in  **/mnt**, and mounting** /home/test2**  to  **/mnt/abc**  fails.  
-    >Scenario 2: Mount  **/home/test2**  and then  **/home/test1**. In this case, the content of  **/mnt**  is replaced with the content of  **/home/test1**  during the second mounting. In this way, the content mounted during the first mounting from  **/home/test2**  to  **/mnt/abc**  is overwritten.  
+    >Scenario 1: Mount  `/home/test1`  and then  `/home/test2`. In this case, the content in  `/home/test1`  overwrites the content in  `/mnt`. As a result, the  `abc`  directory does not exist in  `/mnt`, and mounting `/home/test2`  to  `/mnt/abc`  fails.  
+    >Scenario 2: Mount  `/home/test2`  and then  `/home/test1`. In this case, the content of  `/mnt`  is replaced with the content of  `/home/test1`  during the second mounting. In this way, the content mounted during the first mounting from  `/home/test2`  to  `/mnt/abc`  is overwritten.  
     >The first scenario is not supported. For the second scenario, users need to understand the risk of data access failures.  
 
     >![](./public_sys-resources/icon-notice.gif) **NOTICE:**   
@@ -804,7 +804,7 @@ The following table lists the parameters supported by the  **stop**  command.
 </tr>
 <tr id="en-us_topic_0183292664_row19123163783212"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292664_p6279743153214"><a name="en-us_topic_0183292664_p6279743153214"></a><a name="en-us_topic_0183292664_p6279743153214"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292664_p16284174363216"><a name="en-us_topic_0183292664_p16284174363216"></a><a name="en-us_topic_0183292664_p16284174363216"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292664_p16284174363216"><a name="en-us_topic_0183292664_p16284174363216"></a><a name="en-us_topic_0183292664_p16284174363216"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183292664_row15138151255"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292664_p3513121512514"><a name="en-us_topic_0183292664_p3513121512514"></a><a name="en-us_topic_0183292664_p3513121512514"></a>-t, --time</p>
@@ -872,7 +872,7 @@ The following table lists the parameters supported by the  **kill**  command.
 </td>
 <td class="cellrowborder" valign="top" width="39.57575757575758%"><p id="en-us_topic_0183292665_p788705815285"><a name="en-us_topic_0183292665_p788705815285"></a><a name="en-us_topic_0183292665_p788705815285"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183292665_p98932586284"><a name="en-us_topic_0183292665_p98932586284"></a><a name="en-us_topic_0183292665_p98932586284"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183292665_p98932586284"><a name="en-us_topic_0183292665_p98932586284"></a><a name="en-us_topic_0183292665_p98932586284"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183292665_row1581911017514"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292665_p118190101656"><a name="en-us_topic_0183292665_p118190101656"></a><a name="en-us_topic_0183292665_p118190101656"></a>-s, --signal</p>
@@ -892,11 +892,11 @@ $ isula kill fd7376591a9c3d8ee9a14f5d2c2e5255b02cc44cddaabca82170efd4497510e1
 fd7376591a9c3d8ee9a14f5d2c2e5255b02cc44cddaabca82170efd4497510e1
 ```
 
-## Removing a Container
+## Deleting a Container
 
 ### Description
 
-To remove a container, run the  **isula rm**  command.
+To delete a container, run the  **isula rm**  command.
 
 ### Usage
 
@@ -922,17 +922,17 @@ The following table lists the parameters supported by the  **rm**  command.
 </td>
 <td class="cellrowborder" valign="top" width="39.57575757575758%"><p id="en-us_topic_0183292666_p18513141514517"><a name="en-us_topic_0183292666_p18513141514517"></a><a name="en-us_topic_0183292666_p18513141514517"></a>-f, --force</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183292666_p18686121639"><a name="en-us_topic_0183292666_p18686121639"></a><a name="en-us_topic_0183292666_p18686121639"></a>Forcibly removes a running container.</p>
+<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183292666_p18686121639"><a name="en-us_topic_0183292666_p18686121639"></a><a name="en-us_topic_0183292666_p18686121639"></a>Forcibly deletes a running container.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183292666_row1394151573014"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292666_p445111743017"><a name="en-us_topic_0183292666_p445111743017"></a><a name="en-us_topic_0183292666_p445111743017"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292666_p1145701733014"><a name="en-us_topic_0183292666_p1145701733014"></a><a name="en-us_topic_0183292666_p1145701733014"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292666_p1145701733014"><a name="en-us_topic_0183292666_p1145701733014"></a><a name="en-us_topic_0183292666_p1145701733014"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183292666_row11287834145116"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292666_p132871334115116"><a name="en-us_topic_0183292666_p132871334115116"></a><a name="en-us_topic_0183292666_p132871334115116"></a>-v, --volume</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292666_p15287103415118"><a name="en-us_topic_0183292666_p15287103415118"></a><a name="en-us_topic_0183292666_p15287103415118"></a>Removes a volume mounted to a container. (Note: Currently, iSulad does not use this function.)</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292666_p15287103415118"><a name="en-us_topic_0183292666_p15287103415118"></a><a name="en-us_topic_0183292666_p15287103415118"></a>Deletes a volume mounted to a container. (Note: Currently, iSulad does not support this parameter.)</p>
 </td>
 </tr>
 </tbody>
@@ -987,7 +987,7 @@ The following table lists the parameters supported by the  **attach**  command.
 </tr>
 <tr id="en-us_topic_0183292667_row159823516222"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0183292667_p622945315220"><a name="en-us_topic_0183292667_p622945315220"></a><a name="en-us_topic_0183292667_p622945315220"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0183292667_p11229125362213"><a name="en-us_topic_0183292667_p11229125362213"></a><a name="en-us_topic_0183292667_p11229125362213"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0183292667_p11229125362213"><a name="en-us_topic_0183292667_p11229125362213"></a><a name="en-us_topic_0183292667_p11229125362213"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183292667_row14595112722316"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0183292667_p17595162742311"><a name="en-us_topic_0183292667_p17595162742311"></a><a name="en-us_topic_0183292667_p17595162742311"></a>-D, --debug</p>
@@ -1060,7 +1060,7 @@ $ isula rename my_container my_new_container
 
 ### Description
 
-To execute a command in a running container, run the  **isula exec**  command. This command is executed in the default directory of the container. If a user-defined directory is specified for the basic image, the user-defined directory is used.
+To execute a command in a running container, run the  **isula exec**  command. This command is executed in the default directory of the container. If a user-defined directory is specified for the base image, the user-defined directory is used.
 
 ### Usage
 
@@ -1092,22 +1092,22 @@ The following table lists the parameters supported by the  **exec**  command.
 </tr>
 <tr id="en-us_topic_0183292669_row144815810419"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292669_p248105814415"><a name="en-us_topic_0183292669_p248105814415"></a><a name="en-us_topic_0183292669_p248105814415"></a>-e, --env</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292669_p1240225963710"><a name="en-us_topic_0183292669_p1240225963710"></a><a name="en-us_topic_0183292669_p1240225963710"></a>Sets environment variables. (Note: Currently, iSulad does not use this function.)</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292669_p1240225963710"><a name="en-us_topic_0183292669_p1240225963710"></a><a name="en-us_topic_0183292669_p1240225963710"></a>Sets environment variables. (Note: Currently, iSulad does not support this parameter.)</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183292669_row225582276"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292669_p16101657289"><a name="en-us_topic_0183292669_p16101657289"></a><a name="en-us_topic_0183292669_p16101657289"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292669_p10104456281"><a name="en-us_topic_0183292669_p10104456281"></a><a name="en-us_topic_0183292669_p10104456281"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292669_p10104456281"><a name="en-us_topic_0183292669_p10104456281"></a><a name="en-us_topic_0183292669_p10104456281"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183292669_row185407613516"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292669_p115401661558"><a name="en-us_topic_0183292669_p115401661558"></a><a name="en-us_topic_0183292669_p115401661558"></a>-i, --interactive</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292669_p4818143019389"><a name="en-us_topic_0183292669_p4818143019389"></a><a name="en-us_topic_0183292669_p4818143019389"></a>Enables the standard input though no connection is set up. (Note: Currently, iSulad does not use this function.)</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292669_p4818143019389"><a name="en-us_topic_0183292669_p4818143019389"></a><a name="en-us_topic_0183292669_p4818143019389"></a>Enables the standard input though no connection is set up. (Note: Currently, iSulad does not support this parameter.)</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183292669_row2054016654"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292669_p65401663515"><a name="en-us_topic_0183292669_p65401663515"></a><a name="en-us_topic_0183292669_p65401663515"></a>-t, --tty</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292669_p1783413176392"><a name="en-us_topic_0183292669_p1783413176392"></a><a name="en-us_topic_0183292669_p1783413176392"></a>Allocates a pseudo terminal. (Note: Currently, iSulad does not use this function.)</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292669_p1783413176392"><a name="en-us_topic_0183292669_p1783413176392"></a><a name="en-us_topic_0183292669_p1783413176392"></a>Allocates a pseudo terminal. (Note: Currently, iSulad does not support this parameter.)</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183292669_row3321661767"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292669_p18331961361"><a name="en-us_topic_0183292669_p18331961361"></a><a name="en-us_topic_0183292669_p18331961361"></a>-u, --user</p>
@@ -1127,11 +1127,11 @@ The following table lists the parameters supported by the  **exec**  command.
 
 -   After running the  **isula exec**  command to access the container process, do not run background programs. Otherwise, the system will be suspended.
 
-    To run the  **isula exec**  command to execute a background process, perform the following steps:
+    The  **isula exec**  command runs a background process as follows:
 
-    1.  Run the  **isula exec container\_name bash**  command to access the container.
-    2.  After entering the container, run the  **script &**  command.
-    3.  Run the  **exit**  command. The terminal stops responding.
+    1.  The  **isula exec container\_name bash**  command is executed to accesses the container terminal.
+    2.  After entering the container, the  **script &**  command is executed.
+    3.  The  **exit**  command is executed. The terminal stops responding.
 
     ```
     After the isula exec command is executed to enter the container, the background program stops responding because the isula exec command is executed to enter the container and run the background while1 program. When the bash command is run to exit the process, the while1 program does not exit and becomes an orphan process, which is taken over by process 1.
@@ -1141,17 +1141,17 @@ The following table lists the parameters supported by the  **exec**  command.
 
 -   Do not run the  **isula exec**  command in the background. Otherwise, the system may be suspended.
 
-    Run the  **isula exec**  command in the background as follows:
+    The  **isula exec**  command runs in the background as follows:
 
-    Run the  **isula exec script &**  command in the background, for example,  **isula exec container\_name script &,isula exec**. The command is executed in the background. The script continuously displays a file by running the  **cat**  command. Normally, there is output on the current terminal. If you press  **Enter**  on the current terminal, the client exits the stdout read operation due to the I/O read failure. As a result, the terminal does not output data. The server continues to write data to the buffer of the FIFO because the process is still displaying files by running the  **cat**  command. When the buffer is full, the process in the container is suspended in the write operation.
+    The  **isula exec script &**  command is used to run **exec** in the background, for example,  **isula exec container\_name script &**. The **isula exec** command is executed in the background. The script continuously runs the **cat** command on a file. Normally, the file is concatenated to the current terminal. If you press  **Enter**  on the current terminal, the client exits the standard output read operation due to the I/O read failure. As a result, the terminal does not output data. The server continues to write data to the buffer of the FIFO because the process is still running the **cat** command on the file. When the buffer is full, the process in the container is suspended in the write operation.
 
--   When a lightweight container uses the  **exec**  command to execute commands with pipe operations, you are advised to run the  **/bin/bash -c**  command.
+-   When a lightweight container uses the  **exec**  command to execute commands with pipe operations, you are advised to run the command using  **/bin/bash -c**.
 
     Typical application scenarios:
 
-    Run the  **isula exec container\_name -it ls /test | grep "xx" | wc -l**  command to count the number of xx files in the test directory. The output is processed by  **grep**  and  **wc**  through the pipe because  **ls /test**  is executed with  **exec**. The output of  **ls /test**  executed by  **exec**  contains line breaks. When the output is processed, the result is incorrect.
+    Run the  **isula exec container\_name -it ls /test | grep "xx" | wc -l**  command to count the number of xx files in the test directory. The **exec** command executes the **ls /test** command. The output is then processed by  **grep**  and  **wc**  through the pipe. Because the output of  **ls /test**  executed by  **exec**  contains line feed characters, when the output is processed, the result is incorrect.
 
-    Cause: Run the  **ls /test**  command using  **exec**. The command output contains a line feed character. Run the** | grep "xx" | wc -l**  command for the output. The processing result is 2 \(two lines\).
+    Cause: The  **ls /test**  command is executed by  **exec**. The command output contains a line feed character. The output is then processced by the **| grep "xx" | wc -l**  command. The processing result is 2 \(two lines\).
 
     ```
     [root@localhost ~]# isula exec  -it container ls /test
@@ -1160,7 +1160,7 @@ The following table lists the parameters supported by the  **exec**  command.
     [root@localhost ~]#
     ```
 
-    Suggestion: When running the  **run/exec**  command to perform pipe operations, run the  **/bin/bash -c**  command to perform pipe operations in the container.
+    Suggestion: When running the  **run/exec**  command to perform pipe operations, run the command using **/bin/bash -c**  to perform pipe operations in the container.
 
     ```
     [root@localhost ~]# isula exec  -it container  /bin/sh -c "ls /test | grep "xx" | wc -l"
@@ -1168,7 +1168,7 @@ The following table lists the parameters supported by the  **exec**  command.
     [root@localhost ~]#
     ```
 
--   Do not use the  **echo**  option to input data to the standard input of the  **exec**  command. Otherwise, the client will be suspended. The echo value should be directly transferred to the container as a command line parameter.
+-   Do not use the  **echo**  option to input data to the standard input of the  **exec**  command. Otherwise, the client will be suspended. The value of **echo** should be directly transferred to the container as a command line parameter.
 
     ```
     [root@localhost ~]# echo ls | isula exec 38 /bin/sh
@@ -1178,7 +1178,7 @@ The following table lists the parameters supported by the  **exec**  command.
     [root@localhost ~]# 
     ```
 
-    The client is suspended when the preceding command is executed because the preceding command is equivalent to input  **ls**  to  **stdin**. Then EOF is read and the client does not send data and waits for the server to exit. However, the server cannot determine whether the client needs to continue sending data. As a result, the server is suspended in reading data, and both parties are suspended.
+    The client is suspended when the preceding command is executed because the command is equivalent to input  **ls**  to the standard input. Then EOF is read and the client does not send data and waits for the server to exit. However, the server cannot determine whether the client needs to continue sending data. As a result, the server is suspended in reading data, and both parties are suspended.
 
     The correct execution method is as follows:
 
@@ -1190,7 +1190,7 @@ The following table lists the parameters supported by the  **exec**  command.
 
 ### Example
 
-Run the echo command in a running container.
+Run the **echo** command in a running container.
 
 ```
 $ isula exec c75284634bee echo "hello,world"
@@ -1228,12 +1228,12 @@ The following table lists the parameters supported by the  **inspect**  command.
 </td>
 <td class="cellrowborder" valign="top" width="39.57575757575758%"><p id="en-us_topic_0183292670_p775614486282"><a name="en-us_topic_0183292670_p775614486282"></a><a name="en-us_topic_0183292670_p775614486282"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183292670_p16761048112813"><a name="en-us_topic_0183292670_p16761048112813"></a><a name="en-us_topic_0183292670_p16761048112813"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183292670_p16761048112813"><a name="en-us_topic_0183292670_p16761048112813"></a><a name="en-us_topic_0183292670_p16761048112813"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183292670_row88191210357"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292670_p781919105511"><a name="en-us_topic_0183292670_p781919105511"></a><a name="en-us_topic_0183292670_p781919105511"></a>-f, --format</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292670_p468615213310"><a name="en-us_topic_0183292670_p468615213310"></a><a name="en-us_topic_0183292670_p468615213310"></a>Output format.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292670_p468615213310"><a name="en-us_topic_0183292670_p468615213310"></a><a name="en-us_topic_0183292670_p468615213310"></a>Formats the output using a template.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183292670_row084314449019"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292670_p18448447015"><a name="en-us_topic_0183292670_p18448447015"></a><a name="en-us_topic_0183292670_p18448447015"></a>-t, --time</p>
@@ -1419,7 +1419,7 @@ The following table lists the parameters supported by the  **ps**  command.
 </tr>
 <tr id="en-us_topic_0183292671_row1293653612919"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292671_p1950214384295"><a name="en-us_topic_0183292671_p1950214384295"></a><a name="en-us_topic_0183292671_p1950214384295"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292671_p10506113822910"><a name="en-us_topic_0183292671_p10506113822910"></a><a name="en-us_topic_0183292671_p10506113822910"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292671_p10506113822910"><a name="en-us_topic_0183292671_p10506113822910"></a><a name="en-us_topic_0183292671_p10506113822910"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183292671_row4733729230"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292671_p5733162132318"><a name="en-us_topic_0183292671_p5733162132318"></a><a name="en-us_topic_0183292671_p5733162132318"></a>-q, --quiet</p>
@@ -1434,12 +1434,12 @@ The following table lists the parameters supported by the  **ps**  command.
 </tr>
 <tr id="en-us_topic_0183292671_row12287190155116"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292671_p42872015512"><a name="en-us_topic_0183292671_p42872015512"></a><a name="en-us_topic_0183292671_p42872015512"></a>--format</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292671_p1228717019517"><a name="en-us_topic_0183292671_p1228717019517"></a><a name="en-us_topic_0183292671_p1228717019517"></a>Output format.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292671_p1228717019517"><a name="en-us_topic_0183292671_p1228717019517"></a><a name="en-us_topic_0183292671_p1228717019517"></a>Formats the output using a template.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183292671_row1454255310529"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292671_p854305314521"><a name="en-us_topic_0183292671_p854305314521"></a><a name="en-us_topic_0183292671_p854305314521"></a>--no-trunc</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292671_p554315313522"><a name="en-us_topic_0183292671_p554315313522"></a><a name="en-us_topic_0183292671_p554315313522"></a>Do not truncate the container ID.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0183292671_p554315313522"><a name="en-us_topic_0183292671_p554315313522"></a><a name="en-us_topic_0183292671_p554315313522"></a>Does not truncate the container ID.</p>
 </td>
 </tr>
 </tbody>
@@ -1490,7 +1490,7 @@ The following table lists the parameters supported by the  **restart**  command.
 </td>
 <td class="cellrowborder" valign="top" width="39.57575757575758%"><p id="en-us_topic_0183292672_p1153405792918"><a name="en-us_topic_0183292672_p1153405792918"></a><a name="en-us_topic_0183292672_p1153405792918"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183292672_p12538145719290"><a name="en-us_topic_0183292672_p12538145719290"></a><a name="en-us_topic_0183292672_p12538145719290"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183292672_p12538145719290"><a name="en-us_topic_0183292672_p12538145719290"></a><a name="en-us_topic_0183292672_p12538145719290"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183292672_row351313151155"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292672_p1151310155517"><a name="en-us_topic_0183292672_p1151310155517"></a><a name="en-us_topic_0183292672_p1151310155517"></a>-t, --time</p>
@@ -1505,7 +1505,7 @@ The following table lists the parameters supported by the  **restart**  command.
 
 -   If the  **t**  parameter is specified and the value of  **t**  is less than 0, ensure that the application in the container can process the stop signal.
 
-    The restart command first calls the stop command to stop the container. Send the SIGTERM signal to the container, and then wait for a period of time \(**t**  entered by the user\). If the container is still running after the period of time, the SIGKILL signal is sent to forcibly kill the container.
+    The restart command first calls the **stop** command to stop the container. Send the SIGTERM signal to the container, and then wait for a period of time \(**t**  entered by the user\). If the container is still running after the period of time, the SIGKILL signal is sent to forcibly kill the container.
 
 -   The meaning of the input parameter  **t**  is as follows:
 
@@ -1515,7 +1515,7 @@ The following table lists the parameters supported by the  **restart**  command.
 
     **t**  \> 0: Wait for a specified period and send  **kill -9**  to the container if the container does not stop within the specified period.
 
-    Therefore, if  **t**  is set to a value less than 0 \(for example,  **t**  = -1\), ensure that the container application correctly processes the SIGTERM signal. If the container ignores this signal, the container will be suspended when the  **isula stop**  command is run.
+    Therefore, if  **t**  is set to a value less than 0 \(for example,  **t**  = -1\), ensure that the container application correctly processes the SIGTERM signal. If the container ignores this signal, the container will be suspended when the  **isula restart**  command is run.
 
 
 ### Example
@@ -1557,7 +1557,7 @@ The following table lists the parameters supported by the  **wait**  command.
 </td>
 <td class="cellrowborder" valign="top" width="39.57575757575758%"><p id="en-us_topic_0183292673_p1949112354334"><a name="en-us_topic_0183292673_p1949112354334"></a><a name="en-us_topic_0183292673_p1949112354334"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183292673_p249913515339"><a name="en-us_topic_0183292673_p249913515339"></a><a name="en-us_topic_0183292673_p249913515339"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183292673_p249913515339"><a name="en-us_topic_0183292673_p249913515339"></a><a name="en-us_topic_0183292673_p249913515339"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183292673_row8513715552"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292673_p15141715253"><a name="en-us_topic_0183292673_p15141715253"></a><a name="en-us_topic_0183292673_p15141715253"></a>/</p>
@@ -1608,7 +1608,7 @@ The following table lists the parameters supported by the  **top**  command.
 </td>
 <td class="cellrowborder" valign="top" width="39.57575757575758%"><p id="en-us_topic_0183292674_p999125117202"><a name="en-us_topic_0183292674_p999125117202"></a><a name="en-us_topic_0183292674_p999125117202"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183292674_p599115517207"><a name="en-us_topic_0183292674_p599115517207"></a><a name="en-us_topic_0183292674_p599115517207"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183292674_p599115517207"><a name="en-us_topic_0183292674_p599115517207"></a><a name="en-us_topic_0183292674_p599115517207"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183292674_row525202712159"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183292674_p20991125110207"><a name="en-us_topic_0183292674_p20991125110207"></a><a name="en-us_topic_0183292674_p20991125110207"></a>/</p>
@@ -1661,7 +1661,7 @@ The following table lists the parameters supported by the  **stats**  command.
 </td>
 <td class="cellrowborder" valign="top" width="39.57575757575758%"><p id="en-us_topic_0183385024_p104901417103610"><a name="en-us_topic_0183385024_p104901417103610"></a><a name="en-us_topic_0183385024_p104901417103610"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183385024_p166979433617"><a name="en-us_topic_0183385024_p166979433617"></a><a name="en-us_topic_0183385024_p166979433617"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183385024_p166979433617"><a name="en-us_topic_0183385024_p166979433617"></a><a name="en-us_topic_0183385024_p166979433617"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183385024_row114031757103617"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183385024_p194045578363"><a name="en-us_topic_0183385024_p194045578363"></a><a name="en-us_topic_0183385024_p194045578363"></a>-a, --all</p>
@@ -1671,7 +1671,7 @@ The following table lists the parameters supported by the  **stats**  command.
 </tr>
 <tr id="en-us_topic_0183385024_row056333013377"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183385024_p165641030193716"><a name="en-us_topic_0183385024_p165641030193716"></a><a name="en-us_topic_0183385024_p165641030193716"></a>--no-stream</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0183385024_p01374203812"><a name="en-us_topic_0183385024_p01374203812"></a><a name="en-us_topic_0183385024_p01374203812"></a>Display the first result only. Only statistics in non-stream mode are displayed.</p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0183385024_p01374203812"><a name="en-us_topic_0183385024_p01374203812"></a><a name="en-us_topic_0183385024_p01374203812"></a>Disables streaming stats and displays the first result only.</p>
 </td>
 </tr>
 </tbody>
@@ -1717,7 +1717,7 @@ The following table lists the parameters supported by the  **logs**  command.
 </td>
 <td class="cellrowborder" valign="top" width="39.57575757575758%"><p id="en-us_topic_0183385749_p5821430112915"><a name="en-us_topic_0183385749_p5821430112915"></a><a name="en-us_topic_0183385749_p5821430112915"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183385749_p284113015293"><a name="en-us_topic_0183385749_p284113015293"></a><a name="en-us_topic_0183385749_p284113015293"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183385749_p284113015293"><a name="en-us_topic_0183385749_p284113015293"></a><a name="en-us_topic_0183385749_p284113015293"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0183385749_row128198101251"><td class="cellrowborder" valign="top"><p id="en-us_topic_0183385749_p108192101852"><a name="en-us_topic_0183385749_p108192101852"></a><a name="en-us_topic_0183385749_p108192101852"></a>-f, --follow</p>
@@ -1735,7 +1735,7 @@ The following table lists the parameters supported by the  **logs**  command.
 
 ### Constraints
 
--   By default, the container log function is enabled. To disable this function, run the  **isula create --log-opt disable-log=true**  or  **isula run --log-opt disable-log=true**  command.
+-   By default, the container serial port log function is enabled. To disable this function, run the  **isula create --log-opt disable-log=true**  or  **isula run --log-opt disable-log=true**  command.
 
 ### Example
 
@@ -1779,7 +1779,7 @@ The following table lists the parameters supported by the  **cp**  command.
 </td>
 <td class="cellrowborder" valign="top" width="39.57575757575758%"><p id="en-us_topic_0183385750_p549293210212"><a name="en-us_topic_0183385750_p549293210212"></a><a name="en-us_topic_0183385750_p549293210212"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183385750_p1049213321528"><a name="en-us_topic_0183385750_p1049213321528"></a><a name="en-us_topic_0183385750_p1049213321528"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0183385750_p1049213321528"><a name="en-us_topic_0183385750_p1049213321528"></a><a name="en-us_topic_0183385750_p1049213321528"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 </tbody>
@@ -1795,7 +1795,7 @@ The following table lists the parameters supported by the  **cp**  command.
     [root@localhost tmp]# 
     ```
 
--   When decompressing a file, iSulad does not check the type of the file or folder to be overwritten in the file system. Instead, iSulad directly overwrites the file or folder. Therefore, if the source is a folder, the file with the same name is forcibly overwritten as a folder. If the source file is a file, the folder with the same name will be forcibly overwritten as a file.
+-   When decompressing files, iSulad does not check whether a file or folder is to be overwritten in the file system. Instead, iSulad directly overwrites the file or folder. Therefore, if the source is a folder, the file with the same name is forcibly overwritten as a folder. If the source is a file, the folder with the same name will be forcibly overwritten as a file.
 
     ```
     [root@localhost tmp]# rm -rf /tmp/test_file_to_dir && mkdir /tmp/test_file_to_dir
@@ -1810,13 +1810,13 @@ The following table lists the parameters supported by the  **cp**  command.
 
 ### Example
 
-Copy the  **/test/host**  directory on the host to the  **/test**  directory on container 21fac8bb9ea8.
+Copy the  `/test/host`  directory on the host to the  `/test`  directory on container 21fac8bb9ea8.
 
 ```
 isula cp /test/host 21fac8bb9ea8:/test
 ```
 
-Copy the  **/www**  directory on container 21fac8bb9ea8 to the  **/tmp**  directory on the host.
+Copy the  `/www`  directory on container 21fac8bb9ea8 to the  `/tmp`  directory on the host.
 
 ```
 isula cp 21fac8bb9ea8:/www /tmp/
@@ -1848,7 +1848,7 @@ isula pause CONTAINER [CONTAINER...]
 </td>
 <td class="cellrowborder" valign="top" width="39.57575757575758%"><p id="en-us_topic_0224966142_p549293210212"><a name="en-us_topic_0224966142_p549293210212"></a><a name="en-us_topic_0224966142_p549293210212"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0224966142_p1049213321528"><a name="en-us_topic_0224966142_p1049213321528"></a><a name="en-us_topic_0224966142_p1049213321528"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0224966142_p1049213321528"><a name="en-us_topic_0224966142_p1049213321528"></a><a name="en-us_topic_0224966142_p1049213321528"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 </tbody>
@@ -1856,7 +1856,7 @@ isula pause CONTAINER [CONTAINER...]
 
 ### Constraints
 
--   Only containers in the running state can be paused.
+-   Only containers in the running status can be paused.
 -   After a container is paused, other lifecycle management operations \(such as  **restart**,  **exec**,  **attach**,  **kill**,  **stop**, and  **rm**\) cannot be performed.
 -   After a container with health check configurations is paused, the container status changes to unhealthy.
 
@@ -1895,7 +1895,7 @@ isula unpause CONTAINER [CONTAINER...]
 </td>
 <td class="cellrowborder" valign="top" width="39.57575757575758%"><p id="en-us_topic_0224966143_p549293210212"><a name="en-us_topic_0224966143_p549293210212"></a><a name="en-us_topic_0224966143_p549293210212"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0224966143_p1049213321528"><a name="en-us_topic_0224966143_p1049213321528"></a><a name="en-us_topic_0224966143_p1049213321528"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0224966143_p1049213321528"><a name="en-us_topic_0224966143_p1049213321528"></a><a name="en-us_topic_0224966143_p1049213321528"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 </tbody>
@@ -1903,7 +1903,7 @@ isula unpause CONTAINER [CONTAINER...]
 
 ### Constraints
 
--   Only containers in the paused state can be unpaused.
+-   Only containers in the paused status can be unpaused.
 
 ### Example
 
@@ -1916,7 +1916,7 @@ $ isula unpause 8fe25506fb5883b74c2457f453a960d1ae27a24ee45cdd78fb7426d2022a8bac
 
 ## Obtaining Event Messages from the Server in Real Time
 
-### **Description**
+### Description
 
 The  **isula events**  command is used to obtain event messages such as container image lifecycle and running event from the server in real time. Only containers whose runtime type is  **lcr**  are supported.
 
@@ -1941,7 +1941,7 @@ isula events [OPTIONS]
 </td>
 <td class="cellrowborder" valign="top" width="39.57575757575758%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0231454831_p549293210212"><a name="en-us_topic_0231454831_p549293210212"></a><a name="en-us_topic_0231454831_p549293210212"></a>-H, --host</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.09090909090909%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0231454831_p1049213321528"><a name="en-us_topic_0231454831_p1049213321528"></a><a name="en-us_topic_0231454831_p1049213321528"></a>Specifies the iSulad socket file path to be accessed.</p>
+<td class="cellrowborder" valign="top" width="43.09090909090909%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0231454831_p1049213321528"><a name="en-us_topic_0231454831_p1049213321528"></a><a name="en-us_topic_0231454831_p1049213321528"></a>Specifies the iSulad socket file path to be connected.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0231454831_row287455224012"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0231454831_p687465212409"><a name="en-us_topic_0231454831_p687465212409"></a><a name="en-us_topic_0231454831_p687465212409"></a>-n, --name</p>
