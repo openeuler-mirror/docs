@@ -16,11 +16,11 @@ Operating system: openEuler 21.03
 
 
 
-## Installing Components
+## Component Installation
 
 To use StratoVirt virtualization, it is necessary to install StratoVirt. Before the installation, ensure that the openEuler yum source has been configured.
 
-1. Run the following command as user root to install the StratoVirt components:
+1. Run the following command as user **root** to install the StratoVirt components:
 
    ```
    # yum install stratovirt
@@ -31,7 +31,7 @@ To use StratoVirt virtualization, it is necessary to install StratoVirt. Before 
 
    ```
    $ stratovirt -version
-   StratoVirt 0.1.0
+   StratoVirt 2.0.0
    ```
 
 

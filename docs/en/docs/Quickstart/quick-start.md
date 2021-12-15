@@ -1,8 +1,6 @@
 # Quick Start
 
-This document uses openEuler 21.03 installed on the TaiShan 200 server as an example to describe how to quickly install and use openEuler OS. For details about the installation requirements and methods, see  [ Installation Guide](./../Installation/Installation.html).
-
-<!-- TOC -->
+This document uses openEuler 21.09 installed on the TaiShan 200 server as an example to describe how to quickly install and use openEuler OS. For details about the installation requirements and methods, see  [ Installation Guide](./../Installation/Installation.html).
 
 - [Quick Start](#quick-start)
   - [Installation Preparations](#installation-preparations)
@@ -13,7 +11,7 @@ This document uses openEuler 21.03 installed on the TaiShan 200 server as an exa
   - [Viewing System Information](#viewing-system-information)
 
 <!-- /TOC -->
-## Installation Preparations
+## Making Preparations
 
 - Hardware Compatibility
   
@@ -102,16 +100,13 @@ This document uses openEuler 21.03 installed on the TaiShan 200 server as an exa
 
 Perform the following operations to obtain the openEuler release package:
 
-> ![](./public_sys-resources/icon-note.gif) **NOTE:**   
-The release packages of the AArch64 architecture support the UEFI mode, and the release packages of the x86\_64 architecture support the UEFI and Legacy modes.
-
 1. Log in to the [openEuler Community](https://openeuler.org) website.
 
 2. Click  **Download**.
 
 3. Click the link provided after  **Download ISO**. The download list is displayed.
 
-4. Click **openEuler-21.03**. The openEuler 21.03  version download list is displayed.
+4. Click **openEuler-21.09**. The openEuler 21.09  version download list is displayed.
 
 5. Click  **ISO**. The ISO download list is displayed.
    
@@ -124,29 +119,29 @@ The release packages of the AArch64 architecture support the UEFI mode, and the 
    - If the AArch64 architecture is used:
      
      1. Click  **aarch64**.
-     2. Click  **openEuler-21.03-aarch64-dvd.iso**  to download the openEuler release package to the local host.
-     3. Click  **openEuler-21.03-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
+     2. Click  **openEuler-21.09-aarch64-dvd.iso**  to download the openEuler release package to the local host.
+     3. Click  **openEuler-21.09-aarch64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
    
    - If the x86\_64 architecture is used:
      
      1. Click  **x86\_64**.
-     2. Click  **openEuler-21.03-x86\_64-dvd.iso**  to download the openEuler release package to the local host.
-     3. Click  **openEuler-21.03-x86\_64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
+     2. Click  **openEuler-21.09-x86\_64-dvd.iso**  to download the openEuler release package to the local host.
+     3. Click  **openEuler-21.09-x86\_64-dvd.iso.sha256sum**  to download the openEuler verification file to the local host.
 
-## Release Package Integrity Check
+## Checking the Release Package Integrity
 
 To prevent incomplete download of the software package due to network or storage device problems during the transmission, you can perform the following steps to check the integrity of the obtained openEuler software package:
 
 1. Obtain the verification value in the verification file. Run the following command:
    
    ```
-   $cat openEuler-21.03-aarch64-dvd.iso.sha256sum 
+   $cat openEuler-21.09-aarch64-dvd.iso.sha256sum 
    ```
 
 2. Calculate the SHA256 verification value of the file. Run the following command:
    
    ```
-   $sha256sum openEuler-21.03-aarch64-dvd.iso
+   $sha256sum openEuler-21.09-aarch64-dvd.iso
    ```
    
    After the command is run, the verification value is displayed.
@@ -155,7 +150,7 @@ To prevent incomplete download of the software package due to network or storage
    
    If the verification values are consistent, the .iso file is not damaged. If they are inconsistent, you can confirm that the file is damaged and you need to obtain the file again.
 
-## Starting the Installation
+## Starting Installation
 
 1. Log in to the iBMC WebUI.
    
@@ -195,15 +190,15 @@ To prevent incomplete download of the software package due to network or storage
    
    > ![](./public_sys-resources/icon-note.gif) **NOTE:**
    > 
-   > - If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media \& install openEuler 21.03**  and enters the installation page.
+   > - If you do not perform any operations within 1 minute, the system automatically selects the default option  **Test this media \& install openEuler 21.09**  and enters the installation page.
    > - During PM installation, if you cannot use the arrow keys to select boot options and the system does not respond after you press  **Enter**, click  ![](./figures/en-us_image_0229420473.png)  on the BMC page and configure  **Key \& Mouse Reset**.
    
-    **Figure  5**  Installation Wizard<a name="fig1648754873314"></a>  
+    **Figure  5**  Installation wizard<a name="fig1648754873314"></a>  
     ![](./figures/Installation_wizard.png "Installation_wizard")
 
-9. On the installation wizard page, press  **Enter**  to select the default option  **Test this media \& install openEuler 21.03**  to enter the GUI installation page.
+9. On the installation wizard page, press  **Enter**  to select the default option  **Test this media \& install openEuler 21.09**  to enter the GUI installation page.
 
-## Installation
+## Performing Installation
 
 After entering the GUI installation page, perform the following operations to install the system:
 
@@ -280,14 +275,14 @@ After entering the GUI installation page, perform the following operations to in
         > ![](./public_sys-resources/icon-note.gif) **NOTE:**   
         > In the openEuler environment, you can run the `cracklib-unpacker /usr/share/cracklib/pw_dict > dictionary.txt` command to export the dictionary library file **dictionary.txt**. You can check whether the password is in this dictionary.
 		
-        **Figure 10** Root password<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018"></a>  
+        **Figure 10** root password<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1323165793018"></a>  
         ![](./figures/password-of-the-root-account.png "Root password")
    
         After the settings are completed, click **Done** in the upper left corner to return to the **INSTALLATION SUMMARY** page.
 
    4. Select **Create a User** and set the parameters.
       
-        Figure 11](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319) shows the page for creating a user. Enter the user name and set the password. The password complexity must be the same as that of the root password. In addition, you can set the home directory and user group by clicking **Advanced**, as shown in [Figure 12](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319).
+        [Figure 11](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319) shows the page for creating a user. Enter the user name and set the password. The password complexity must be the same as that of the root password. In addition, you can set the home directory and user group by clicking **Advanced**, as shown in [Figure 12](#zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319).
       
         **Figure 11** Creating a user<a name="zh-cn_topic_0186390266_zh-cn_topic_0122145909_fig1237715313319"></a>  
         ![](./figures/creating-a-user.png "creating-a-user")     
@@ -308,7 +303,7 @@ After entering the GUI installation page, perform the following operations to in
 
 ## Viewing System Information
 
-After the system is installed and restarted, the system CLI login page is displayed. Enter the username and password set during the installation to log in to openEuler OS and view the following system information. For details about system management and configuration, see the  [openEuler 21.03 Administrator Guide](./../Administration/administration.html).
+After the system is installed and restarted, the system CLI login page is displayed. Enter the username and password set during the installation to log in to openEuler OS and view the following system information. For details about system management and configuration, see the  [openEuler 21.09 Administrator Guide](./../Administration/administration.html).
 
 - Run the following command to view the system information:
   
@@ -321,10 +316,10 @@ After the system is installed and restarted, the system CLI login page is displa
   ```
   $ cat /etc/os-release
   NAME="openEuler"
-  VERSION="21.03"
+  VERSION="21.09"
   ID="openEuler"
-  VERSION_ID="21.03"
-  PRETTY_NAME="openEuler 21.03"
+  VERSION_ID="21.09"
+  PRETTY_NAME="openEuler 21.09"
   ANSI_COLOR="0;31"
   ```
 

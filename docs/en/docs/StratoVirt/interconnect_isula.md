@@ -2,24 +2,24 @@
 
 ## Overview
 
-To provide a better isolation environment for containers and improve system security, you can use the iSula secure container, that is, connect StratoVirt to the iSula secure container.
+To provide a better isolation environment for containers and improve system security, you can interconnect StratoVirt with iSula security containers.
 
 ## Connecting to the iSula Secure Container
 
 ### **Prerequisites**
 
-The iSulad and kata-containers have been installed, and the iSulad supports the containerd-kata-shim-v2 container runtime and the devicemapper storage driver.
+iSulad and kata-containers have been installed, and iSulad supports the containerd-kata-shim-v2 container runtime and devicemapper storage driver.
 
 The following describes how to install and configure iSulad and kata-containers.
 
-1. Configure the yum repository and install iSulad and kata-containers as user root:
+1. Configure the yum source and install iSulad and kata-containers as the **root** user.
 
    ```shell
    # yum install iSulad
    # yum install kata-containers
    ```
 
-2. Create and configure the storage:
+2. Create and configure a storage device.
 
    You need to plan the drive, for example, /dev/sdxx, which will be formatted.
 
@@ -31,7 +31,7 @@ The following describes how to install and configure iSulad and kata-containers.
     # lvconvert -y --zero n -c 512K --thinpool isulaVG0/thinpool --poolmetadata isulaVG0/thinpoolmeta
     ```
 
-   Add the following information to the /etc/lvm/profile/isulaVG0-thinpool.profile configuration file:
+   Add the following information to the **/etc/lvm/profile/isulaVG0-thinpool.profile** configuration file:
 
     ```
     activation {
@@ -40,7 +40,7 @@ The following describes how to install and configure iSulad and kata-containers.
     }
     ```
 
-   Modify storage-driver and storage-opts in the /etc/isulad/daemon.json configuration file as follows. Set the default storage driver type overlay to devicemapper.
+   Modify **storage-driver** and **storage-opts** in the **/etc/isulad/daemon.json** configuration file as follows. Set the default storage driver type **overlay** to **devicemapper**.
 
     ```
     "storage-driver": "devicemapper",
@@ -49,69 +49,41 @@ The following describes how to install and configure iSulad and kata-containers.
      "dm.fs=ext4",
      "dm.min_free_space=10%"
     ],
+    ```
 
-3. Run the following command to restart isulad:
+3. Restart isulad.
 
     ```shell
     # systemctl daemon-reload
     # systemctl restart isulad
     ```
 
-4. Check whether the iSula storage driver is successfully configured:
+4. Check whether the iSula storage driver is successfully configured.
 
     ```shell
     # isula info
     ```
 
-     If the following information is displayed, the configuration is successful.
+     If the following information is displayed, the configuration is successful:
 
     ```
     Storage Driver: devicemapper
     ```
 
-5. Open the /etc/isulad/daemon.json file. If kata-runtime is not configured, set runtime to kata-runtime.
+   
 
-   ```json
-   "runtimes": {
-       "kata-runtime": {
-           "path": "/usr/bin/kata-runtime",
-           "runtimeArgs": [
-               "--kata-config",
-               "/usr/share/defaults/kata-containers/configuration.toml"
-           ]
-       }
-   },
-   ```
+### **Interconnection Guide**
 
-### **Connection Guide**
+This section describes how to interconnect StratoVirt with kata-containers to access the iSula container ecosystem.
 
-StratoVirt connects to the iSula secure container, that is, StratoVirt connects to kata-runtime in the iSula secure container. The procedure is as follows:
+1. Modify the kata configuration file. Its default path is **/usr/share/defaults/kata-containers/configuration.toml**. You can also configure the file by referring to **configuration-stratovirt.toml** in the same directory. Set the Hypervisor type of the security container to **stratovirt**, kernel to the absolute path of the kernel image of kata-containers, and initrd to the **initrd** image file of kata-containers. (If you use yum to install kata-containers, the two image files are downloaded and stored in the **/var/lib/kata/** directory by default. You can also use other images during the configuration.)
 
-1. Create the script file stratovirt.sh in any directory (for example, /home) and add the execution permission to the file as the root user:
-
-   ```shell
-   # touch /home/stratovirt.sh
-   # chmod +x /home/stratovirt.sh
-   ```
-
-   The content of stratovirt.sh is as follows, which is used to specify the StratoVirt path:
-
-   ```
-   #!/bin/bash
-   export STRATOVIRT_LOG_LEVEL=info  # set log level which includes trace, debug, info, warn and error.
-   /usr/bin/stratovirt $@
-   ```
-
-   ​
-
-2. Modify the kata configuration file (The default path is /usr/share/defaults/kata-containers/configuration.toml). Set the hypervisor type of the secure container to stratovirt, the kernel to the absolute path of the StratoVirt kernel image, and initrd to the initrd image file of kata-containers. When you use yum to install kata-containers, the two image files are downloaded by default and stored in the /var/lib/kata/ directory. You can also use other images during configuration.
-
-   The configuration reference is as follows:
+   The configurations are as follows:
 
    ```shell
    [hypervisor.stratovirt]
-   path = "/home/stratovirt.sh"
-   kernel = "/var/lib/kata/vmlinux.bin"
+   path = "/usr/bin/stratovirt"
+   kernel = "/var/lib/kata/kernel"
    initrd = "/var/lib/kata/kata-containers-initrd.img"
    block_device_driver = "virtio-mmio"
    use_vsock = true
@@ -123,16 +95,49 @@ StratoVirt connects to the iSula secure container, that is, StratoVirt connects 
    disable_vhost_net = true
    ```
 
-3. Use the root permission and **isula** command to run the BusyBox secure container to interconnect with the StratoVirt to the secure container.
+3. Use the **root** permission and **isula** command to run the BusyBox security container and interconnect StratoVirt with it.
 
    ```shell
-   # isula run -tid --runtime=kata-runtime --net=none --name test busybox:latest sh
+   # isula run -tid --runtime "io.containerd.kata.v2" --net=none --name test busybox:latest sh
    ```
 
-4. Run the **isula ps** command to check whether the secure container test is running properly. If yes, run the following command to access the test container.
+4. Run the **isula ps** command to check whether the security container **test** is running properly. Then run the following command to access the container:
 
    ```
    # isula exec –ti test sh
    ```
 
- Now, you can run container commands in the test container.
+5. Use a VM snapshot to accelerate startup of the security container and reduce the VM memory overhead.
+
+   Modify the kata configuration file **configuration.toml** and set **enable_template** to **true** to allow the VM to start by creating a snapshot.
+
+   ```shell
+   [factory]
+   # VM templating support. Once enabled, new VMs are created from template
+   # using vm cloning. They will share the same initial kernel, initramfs and
+   # agent memory by mapping it readonly. It helps speeding up new container
+   # creation and saves a lot of memory if there are many kata containers running
+   # on the same host.
+   #
+   # When disabled, new VMs are created from scratch.
+   #
+   # Note: Requires "initrd=" to be set ("image=" is not supported).
+   #
+   # Default false
+   enable_template = true
+   ```
+
+   After the **enable_template** configuration item is set to **true**, kata-containers checks whether a snapshot file exists in the default path (**/run/vc/vm/template**) during security container creation. If yes, kata-containers starts the VM using the snapshot file. If no, kata-containers creates a VM snapshot and start the VM using the snapshot file.
+
+6. Use the security component Ozone to further enhance the isolation of security containers.
+
+   Modify the kata configuration file **configuration.toml** and set the configuration item **ozone_path** to the path of the Ozone executable file. (If StratoVirt is installed using yum, the Ozone executable file is stored in the **/usr/bin** directory by default.) After this item is configured, the Ozone security sandbox function is enabled to protect the VM against attacks after the virtualization layer isolation is broken and further enhance the isolation of StratoVirt security containers.
+
+   ```shell
+   # Path for the ozone specific to stratovirt
+   # If the ozone path is set, stratovirt will be launched in
+   # ozone secure environment. It is disabled by default.
+   ozone_path = "/usr/bin/ozone"
+   ```
+
+ You can now run container commands in the **test** container.
