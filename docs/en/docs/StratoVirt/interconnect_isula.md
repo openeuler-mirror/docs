@@ -1,10 +1,10 @@
-# Connecting to the iSula Security Container
+# Connecting to the iSula Secure Container
 
 ## Overview
 
 To provide a better isolation environment for containers and improve system security, you can use the iSula secure container, that is, connect StratoVirt to the iSula secure container.
 
-## Connecting to the iSula Security Container
+## Connecting to the iSula Secure Container
 
 ### **Prerequisites**
 
@@ -21,7 +21,7 @@ The following describes how to install and configure iSulad and kata-containers.
 
 2. Create and configure the storage:
 
-   You need to plan the drive, for example, /dev/sdx, which will be formatted.
+   You need to plan the drive, for example, /dev/sdxx, which will be formatted.
 
     ```shell
     # pvcreate /dev/sdxx

@@ -17,7 +17,7 @@ When you enter DDE for the very first time, a welcome program will automatically
 
 ## Desktop
 
-Desktop is the main screen you see after logging in. On the desktop, you can create a new file/folder, sort files, open in terminal, set wallpaper and screensaver and etc. You can also add shortcuts for applications on desktop by using [Send to desktop](#Set App Shortcut).
+Desktop is the main screen you see after logging in. On the desktop, you can create a new file/folder, sort files, open in terminal, set wallpaper and screensaver and etc. You can also add shortcuts for applications on desktop by using [Send to desktop](#set-app-shortcut).
 
 ![0|contextmenu](./figures/41.png)
 
