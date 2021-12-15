@@ -20,7 +20,7 @@
     <!-- /TOC -->
 
 ## 安装与部署
--  环境准备：需要至少两台安装了openEuler 20.03 LTS SP2的物理机/虚拟机（现以两台为例），安装方法参考《openEuler 20.03 LTS SP2 安装指南》。
+-  环境准备：需要至少两台安装了openEuler 20.03 LTS SP3的物理机/虚拟机（现以两台为例），安装方法参考《openEuler 20.03 LTS SP3 安装指南》。
 
 ### 修改主机名称及/etc/hosts文件
 -  **注：两台主机均需要进行以下操作，现以其中一台为例。**
@@ -42,29 +42,29 @@
 ```
 [OS]
 name=OS
-baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/$basearch/
+baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP3/OS/$basearch/
 enabled=1
 gpgcheck=1
-gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/$basearch/RPM-GPG-KEY-openEuler
+gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP3/OS/$basearch/RPM-GPG-KEY-openEuler
 
 [everything]
 name=everything
-baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/everything/$basearch/
+baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP3/everything/$basearch/
 enabled=1
 gpgcheck=1
-gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/everything/$basearch/RPM-GPG-KEY-openEuler
+gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP3/everything/$basearch/RPM-GPG-KEY-openEuler
 
 [EPOL]
 name=EPOL
-baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/EPOL/$basearch/
+baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP3/EPOL/main/$basearch/
 enabled=1
 gpgcheck=1
-gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/$basearch/RPM-GPG-KEY-openEuler
+gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP3/OS/$basearch/RPM-GPG-KEY-openEuler
 ```
 
 ### 安装HA软件包组件
 ```
-# yum install -y corosync pacemaker pcs fence-agents fence-virt corosync-qdevice sbd drbd drbd-utils
+# yum install -y corosync pacemaker pcs fence-agents fence-virt corosync-qdevice sbd drbd
 ```
 
 ### 设置hacluster用户密码
@@ -87,7 +87,7 @@ logging {
         logfile: /var/log/cluster/corosync.log
         to_syslog: yes
         debug: on
-       logger_subsys {
+        logger_subsys {
                subsys: QUORUM
                debug: on
         }

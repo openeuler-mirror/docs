@@ -141,6 +141,10 @@
 
 ![](./figures/HA-vip-suc.png)
 
+设置资源位置（每个资源都需要设置），以vip资源为例。
+
+![](./figures/HA-resource-location.png)
+
 ### 配置NFS存储
 -  另外找一台机器作为nfs服务端进行配置
 
@@ -194,12 +198,16 @@
 
 ![](./figures/HA-mariadb.png)
 
+配置操作属性
+
+![](./figures/HA-operational-attributes.png)
+
 -  若回显为如下，则资源添加成功
 
 ![](./figures/HA-mariadb-suc.png)
 
 ### 添加上述资源为组资源
--  按资源启动顺序添加三个资源
+-  按资源启动顺序添加三个资源，需要先停止vip、nfs、mariadb资源
 
 在首页中点击添加-->添加组资源，并按如下进行配置组资源。
 

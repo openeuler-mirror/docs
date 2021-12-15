@@ -1,32 +1,32 @@
 # Installing, Deploying, and Using HA
 
 <!-- TOC -->
-- [Installing, Deploying, and Using HA](#ha的安装部署与使用)
-  - [Installation and Configuration](#安装与配置)
-    - [Modifying the Host Name and the /etc/hosts File](#修改主机名称及etchosts文件)
-    - [Configuring the Yum Source](#配置yum源)
-    - [Installing HA Software Package Components](#安装ha软件包组件)
-    - [Setting the hacluster User Password](#设置hacluster用户密码)
-    - [Modifying the `/etc/corosync/corosync.conf` File](#修改etccorosynccorosyncconf文件)
-    - [Managing Services](#管理服务)
-      - [Disabling the Firewall](#关闭防火墙)
-      - [Managing the pcs Service](#管理pcs服务)
-      - [Managing the pacemaker Service](#管理pacemaker服务)
-      - [Managing the corosync Service](#管理corosync服务)
-    - [Performing Node Authentication](#节点鉴权)
-    - [Accessing the Front-End Management Platform](#访问前端管理平台)
-  - [Quick User Guide](#快速使用指南)
-    - [Login Page](#登陆页面)
-    - [Home Page](#主页面)
-    - [Managing Nodes](#节点鉴权)
-      - [Node](#节点)
-    - [Preference Setting](#首选项配置)
-      - [Adding Resources](#添加资源)
-        - [Adding Common Resources](#添加普通资源)
-        - [Adding Group Resources](#添加组资源)
-        - [Adding Clone Resources](#添加克隆资源)
-      - [Editing Resources](#编辑资源)
-      - [Setting Resource Relationships](#设置资源关系)
+- [Installing, Deploying, and Using HA](#installing-deploying-and-using-ha)
+  - [Installation and Configuration](#installation-and-configuration)
+    - [Modifying the Host Name and the /etc/hosts File](#modifying-the-host-name-and-the-etchosts-file)
+    - [Configuring the Yum Source](#configuring-the-yum-source)
+    - [Installing HA Software Package Components](#installing-ha-software-package-components)
+    - [Setting the hacluster User Password](#setting-the-hacluster-user-password)
+    - [Modifying the `/etc/corosync/corosync.conf` File](#modifying-the-etccorosynccorosyncconf-file)
+    - [Managing Services](#managing-services)
+      - [Disabling the Firewall](#disabling-the-firewall)
+      - [Managing the pcs Service](#managing-the-pcs-service)
+      - [Managing the pacemaker Service](#managing-the-pacemaker-service)
+      - [Managing the corosync Service](#managing-the-corosync-service)
+    - [Performing Node Authentication](#performing-node-authentication)
+    - [Accessing the Front-End Management Platform](#accessing-the-front-end-management-platform)
+  - [Quick User Guide](#quick-user-guide)
+    - [Login Page](#login-page)
+    - [Home Page](#home-page)
+    - [Managing Nodes](#managing-nodes)
+      - [Node](#node)
+    - [Preference Setting](#preference-setting)
+      - [Adding Resources](#adding-resources)
+        - [Adding Common Resources](#adding-common-resources)
+        - [Adding Group Resources](#adding-group-resources)
+        - [Adding Clone Resources](#adding-clone-resources)
+      - [Editing Resources](#editing-resources)
+      - [Setting Resource Relationships](#setting-resource-relationships)
       - [ACLS](#acls)
     
     <!-- /TOC -->
@@ -34,7 +34,7 @@
 
 ## Installation and Configuration
 
-- Environment preparation: At least two physical machines or VMs with openEuler 20.03 LTS SP2 installed are required. (This section uses two physical machines or VMs as an example.) For details, see the *openEuler 20.03 LTS SP2 Installation Guide*.
+- Environment preparation: At least two physical machines or VMs with openEuler 20.03 LTS SP3 installed are required. (This section uses two physical machines or VMs as an example.) For details, see the *openEuler 20.03 LTS SP3 Installation Guide*.
 
 ### Modifying the Host Name and the /etc/hosts File
 
@@ -62,30 +62,30 @@ After the system is successfully installed, the Yum source is configured by defa
 ```
 [OS]
 name=OS
-baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/$basearch/
+baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP3/OS/$basearch/
 enabled=1
 gpgcheck=1
-gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/$basearch/RPM-GPG-KEY-openEuler
+gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP3/OS/$basearch/RPM-GPG-KEY-openEuler
 
 [everything]
 name=everything
-baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/everything/$basearch/
+baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP3/everything/$basearch/
 enabled=1
 gpgcheck=1
-gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/everything/$basearch/RPM-GPG-KEY-openEuler
+gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP3/everything/$basearch/RPM-GPG-KEY-openEuler
 
 [EPOL]
 name=EPOL
-baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/EPOL/$basearch/
+baseurl=http://repo.openeuler.org/openEuler-20.03-LTS-SP3/EPOL/main/$basearch/
 enabled=1
 gpgcheck=1
-gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP2/OS/$basearch/RPM-GPG-KEY-openEuler
+gpgkey=http://repo.openeuler.org/openEuler-20.03-LTS-SP3/OS/$basearch/RPM-GPG-KEY-openEuler
 ```
 
 ### Installing HA Software Package Components
 
 ```
-# yum install corosync pacemaker pcs fence-agents fence-virt corosync-qdevice sbd drbd drbd-utils -y
+# yum install corosync pacemaker pcs fence-agents fence-virt corosync-qdevice sbd drbd -y
 ```
 
 ### Setting the hacluster User Password
