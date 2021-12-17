@@ -169,19 +169,29 @@ The Open vSwitch bridge provides more convenient automatic orchestration capabil
 
 If the Open vSwitch is used to provide virtual network, you need to install the Open vSwitch network virtualization component.
 
-1.  Install the Open vSwitch component.
+1.  Disable the SELinux.Otherwise ovsdb-server Manager can not work properly.
+    ```
+    # setenforce 0
+    ```
+    To query whether SELinux is shut down successfully, you can refer to the following commands and information.
+    ```
+    # cat /etc/selinux/config | grep -v ^#
+    SELINUX=disabled
+    SELINUXTYPE=targeted
+    ```
+2.  Install the Open vSwitch component.
 
     ```
     # yum install -y openvswitch
     ```
 
-2.  Start the Open vSwitch service.
+3.  Start the Open vSwitch service.
 
     ```
     # service openvswitch start
     ```
 
-
+Note: The ovn-controller-vtep.service service should be operated by Non-root user
 **2. Check whether the installation is successful.**
 
 Check whether the Open vSwitch components, openvswitch is successfully installed.
