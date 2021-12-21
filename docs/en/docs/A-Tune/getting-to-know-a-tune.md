@@ -47,7 +47,7 @@ The following figure shows the A-Tune core technical architecture, which consist
 </th>
 </tr>
 </thead>
-<tbody><tr id="row519275518572"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p1349454518111"><a name="p1349454518111"></a><a name="p1349454518111"></a>Auto optimization of 15 applications in  11 workload types</p>
+<tbody><tr id="row519275518572"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p1349454518111"><a name="p1349454518111"></a><a name="p1349454518111"></a>Auto optimization of 50 applications in  14 workload types</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p48001027191117"><a name="p48001027191117"></a><a name="p48001027191117"></a>Tested</p>
 </td>
@@ -74,7 +74,7 @@ The following figure shows the A-Tune core technical architecture, which consist
 
 ### Supported Service Models
 
-Based on the workload characteristics of applications, A-Tune classifies services into 11 types. For details about the bottleneck of each type and the applications supported by A-Tune, see  [Table 2](#table2819164611311).
+Based on the workload characteristics of applications, A-Tune classifies services into 14 types. For details about the bottleneck of each type and the applications supported by A-Tune, see  [Table 2](#table2819164611311).
 
 **Table  2**  Supported workload types and applications
 
@@ -131,8 +131,23 @@ Based on the workload characteristics of applications, A-Tune classifies service
                     network</p>
             </td>
             <td class="cellrowborder" valign="top" width="27.650000000000002%" headers="mcps1.2.5.1.4 ">
-                <p id="p159111546161317"><a name="p159111546161317"></a><a name="p159111546161317"></a>Nginx, Apache
-                    Traffic Server</p>
+                <p id="p159111546161317"><a name="p159111546161317"></a><a name="p159111546161317"></a>Nginx, Apache Traffic Server, 
+                    Tomcat, Apache Http Server, Squid, Postfix, lighttpd</p>
+            </td>
+        </tr>
+        <tr id="row791164631318">
+            <td class="cellrowborder" valign="top" width="22.12%" headers="mcps1.2.5.1.1 ">
+                <p id="p179110461137"><a name="p179110461137"></a><a name="p179110461137"></a>ftp server</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="12.959999999999999%" headers="mcps1.2.5.1.2 ">
+                <p id="p20532111512117"><a name="p20532111512117"></a><a name="p20532111512117"></a>ftp application</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="37.269999999999996%" headers="mcps1.2.5.1.3 ">
+                <p id="p1191117469133"><a name="p1191117469133"></a><a name="p1191117469133"></a>Bottlenecks of cpu and
+                    network</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="27.650000000000002%" headers="mcps1.2.5.1.4 ">
+                <p id="p159111546161317"><a name="p159111546161317"></a><a name="p159111546161317"></a>vsftpd, proftpd</p>
             </td>
         </tr>
         <tr id="row13911946141311">
@@ -147,9 +162,25 @@ Based on the workload characteristics of applications, A-Tune classifies service
                 cpu, memory, and I/O
             </td>
             <td class="cellrowborder" valign="top" width="27.650000000000002%" headers="mcps1.2.5.1.4 ">
-                <p id="p1091134671313"><a name="p1091134671313"></a><a name="p1091134671313"></a>Mongodb, Mysql,
-                    Postgresql, Mariadb
+                <p id="p1091134671313"><a name="p1091134671313"></a><a name="p1091134671313"></a>Mongodb, Mysql, Postgresql,
+                    Mariadb, openGauss, tidb, sqlite, QuestDB, influxdb, splunk, Cassandra, Neo4j
                 </p>
+            </td>
+        </tr>
+        <tr id="row13911946141311">
+            <td class="cellrowborder" valign="top" width="22.12%" headers="mcps1.2.5.1.1 ">
+                <p id="p2911164610134"><a name="p2911164610134"></a><a name="p2911164610134"></a>DDS</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="12.959999999999999%" headers="mcps1.2.5.1.2 ">
+                <p id="p4532111561119"><a name="p4532111561119"></a><a name="p4532111561119"></a>distributed data store</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="37.269999999999996%" headers="mcps1.2.5.1.3 ">
+                <a name="ul3724104521013"></a><a name="ul3724104521013"></a><a name="p14911124612131"></a>Bottlenecks of
+                cpu, memory, and I/O
+            </td>
+            <td class="cellrowborder" valign="top" width="27.650000000000002%" headers="mcps1.2.5.1.4 ">
+                <p id="p1091134671313"><a name="p1091134671313"></a><a name="p1091134671313"></a>storm, glusterFS, Ceph, 
+                    Infinispan, ElasticSearch</p>
             </td>
         </tr>
         <tr id="row3911174641312">
@@ -165,7 +196,7 @@ Based on the workload characteristics of applications, A-Tune classifies service
             </td>
             <td class="cellrowborder" valign="top" width="27.650000000000002%" headers="mcps1.2.5.1.4 ">
                 <p id="p119111946161317"><a name="p119111946161317"></a><a name="p119111946161317"></a>Hadoop-hdfs,
-                    Hadoop-spark</p>
+                    Hadoop-spark, hive</p>
             </td>
         </tr>
         <tr id="row591112462132">
@@ -180,7 +211,8 @@ Based on the workload characteristics of applications, A-Tune classifies service
                     network</p>
             </td>
             <td class="cellrowborder" valign="top" width="27.650000000000002%" headers="mcps1.2.5.1.4 ">
-                <p id="p2912846121315"><a name="p2912846121315"></a><a name="p2912846121315"></a>Dubbo</p>
+                <p id="p2912846121315"><a name="p2912846121315"></a><a name="p2912846121315"></a>Dubbo, Zookeeper,
+                    kafka, rabbitMQ, activeMQ, rocketMQ, etcd, karaf</p>
             </td>
         </tr>
         <tr id="row59121246181320">
@@ -195,7 +227,23 @@ Based on the workload characteristics of applications, A-Tune classifies service
                     and I/O</p>
             </td>
             <td class="cellrowborder" valign="top" width="27.650000000000002%" headers="mcps1.2.5.1.4 ">
-                <p id="p1691254621313"><a name="p1691254621313"></a><a name="p1691254621313"></a>Redis</p>
+                <p id="p1691254621313"><a name="p1691254621313"></a><a name="p1691254621313"></a>Redis, Memcached, cachefilesd</p>
+            </td>
+        </tr>
+        <tr id="row1991224641317">
+            <td class="cellrowborder" valign="top" width="22.12%" headers="mcps1.2.5.1.1 ">
+                <p id="p5912154613139"><a name="p5912154613139"></a><a name="p5912154613139"></a>operation</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="12.959999999999999%" headers="mcps1.2.5.1.2 ">
+                <p id="p12532161561115"><a name="p12532161561115"></a><a name="p12532161561115"></a>O&M tools</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="37.269999999999996%" headers="mcps1.2.5.1.3 ">
+                <p id="p10912154631311"><a name="p10912154631311"></a><a name="p10912154631311"></a>Bottlenecks of cpu and
+                    network</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="27.650000000000002%" headers="mcps1.2.5.1.4 ">
+                <p id="p11912164617133"><a name="p11912164617133"></a><a name="p11912164617133"></a>prometheus, ansible,
+                    puppet, zabbix</p>
             </td>
         </tr>
         <tr id="row1891264641315">
@@ -231,21 +279,6 @@ Based on the workload characteristics of applications, A-Tune classifies service
         </tr>
         <tr id="row1991224641317">
             <td class="cellrowborder" valign="top" width="22.12%" headers="mcps1.2.5.1.1 ">
-                <p id="p5912154613139"><a name="p5912154613139"></a><a name="p5912154613139"></a>storage</p>
-            </td>
-            <td class="cellrowborder" valign="top" width="12.959999999999999%" headers="mcps1.2.5.1.2 ">
-                <p id="p12532161561115"><a name="p12532161561115"></a><a name="p12532161561115"></a>Storage</p>
-            </td>
-            <td class="cellrowborder" valign="top" width="37.269999999999996%" headers="mcps1.2.5.1.3 ">
-                <p id="p10912154631311"><a name="p10912154631311"></a><a name="p10912154631311"></a>Bottlenecks of
-                    network, and I/O</p>
-            </td>
-            <td class="cellrowborder" valign="top" width="27.650000000000002%" headers="mcps1.2.5.1.4 ">
-                <p id="p11912164617133"><a name="p11912164617133"></a><a name="p11912164617133"></a>Ceph</p>
-            </td>
-        </tr>
-        <tr id="row1991224641317">
-            <td class="cellrowborder" valign="top" width="22.12%" headers="mcps1.2.5.1.1 ">
                 <p id="p5912154613139"><a name="p5912154613139"></a><a name="p5912154613139"></a>virtualization</p>
             </td>
             <td class="cellrowborder" valign="top" width="12.959999999999999%" headers="mcps1.2.5.1.2 ">
@@ -273,6 +306,20 @@ Based on the workload characteristics of applications, A-Tune classifies service
             </td>
             <td class="cellrowborder" valign="top" width="27.650000000000002%" headers="mcps1.2.5.1.4 ">
                 <p id="p11912164617133"><a name="p11912164617133"></a><a name="p11912164617133"></a>Mariadb</p>
+            </td>
+        </tr>
+        <tr id="row1991224641317">
+            <td class="cellrowborder" valign="top" width="22.12%" headers="mcps1.2.5.1.1 ">
+                <p id="p5912154613139"><a name="p5912154613139"></a><a name="p5912154613139"></a>others</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="12.959999999999999%" headers="mcps1.2.5.1.2 ">
+                <p id="p12532161561115"><a name="p12532161561115"></a><a name="p12532161561115"></a>others</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="37.269999999999996%" headers="mcps1.2.5.1.3 ">
+                <p id="p10912154631311"><a name="p10912154631311"></a><a name="p10912154631311"></a>-</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="27.650000000000002%" headers="mcps1.2.5.1.4 ">
+                <p id="p11912164617133"><a name="p11912164617133"></a><a name="p11912164617133"></a>Encryption</p>
             </td>
         </tr>
     </tbody>
