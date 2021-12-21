@@ -371,9 +371,9 @@ The following table lists the parameters supported by the  **start**  command.
 <td class="cellrowborder" valign="top" width="43.09090909090909%"><p id="en-us_topic_0182207106_p577673362410"><a name="en-us_topic_0182207106_p577673362410"></a><a name="en-us_topic_0182207106_p577673362410"></a>Specifies the iSulad socket file path to be accessed.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0182207106_row107521335112317"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207106_p207603617248"><a name="en-us_topic_0182207106_p207603617248"></a><a name="en-us_topic_0182207106_p207603617248"></a>-R, --runtime</p>
+<tr id="en-us_topic_0182207106_row107521335112317"><td class="cellrowborder" valign="top"><p id="en-us_topic_0182207106_p207603617248"><a name="en-us_topic_0182207106_p207603617248"></a><a name="en-us_topic_0182207106_p207603617248"></a>-a, --attach</p>
 </td>
-<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207106_p176218616242"><a name="en-us_topic_0182207106_p176218616242"></a><a name="en-us_topic_0182207106_p176218616242"></a>Container runtime. The parameter value can be <strong id="en-us_topic_0182207106_b4227193592110"><a name="en-us_topic_0182207106_b4227193592110"></a><a name="en-us_topic_0182207106_b4227193592110"></a>lcr</strong>, which is case insensitive. Therefore, <strong id="en-us_topic_0182207106_b1322863532117"><a name="en-us_topic_0182207106_b1322863532117"></a><a name="en-us_topic_0182207106_b1322863532117"></a>LCR</strong> and <strong id="en-us_topic_0182207106_b18228183511215"><a name="en-us_topic_0182207106_b18228183511215"></a><a name="en-us_topic_0182207106_b18228183511215"></a>lcr</strong> are equivalent. </p>
+<td class="cellrowborder" valign="top"><p id="en-us_topic_0182207106_p176218616242"><a name="en-us_topic_0182207106_p176218616242"></a><a name="en-us_topic_0182207106_p176218616242"></a>Connects to the <strong>STDOUT</strong> and <strong>STDERR</strong> of the container when the container starts.</p>
 </td>
 </tr>
 </tbody>
