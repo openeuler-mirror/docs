@@ -1,4 +1,4 @@
-# DDE installation
+# DDE Installation
 #### Introduction
 
 DDE is a powerful desktop environment developed by UnionTech Team. Contains dozens of powerful desktop applications, which are truly self-developed desktop products.
