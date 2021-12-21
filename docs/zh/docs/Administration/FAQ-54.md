@@ -533,3 +533,30 @@ install-info: 没有那个文件或目录 for /usr/share/info/gdbm.info.gz
 1.  单包升级gdbm，安装使用gdbm-1.18.1-2版本相关软件包后，告警信息消失；
 2.  在单包升级gdbm后，再进行安装依赖的gdbm-devel软件包安装，让其依赖高版本gdbm软件包，告警信息消失。
 
+## bind升级输出异常日志
+
+### 问题现象
+在升级bind的时候输出日志：ImportError: cannot import name 'IbpkeyconRange' from 'setools.policyrep'，导致升级过程中semanage命令执行失败。
+```
+  File "/usr/lib64/python3.7/site-packages/setools/__init__.py", line 31, in <module>
+    from .policyrep import SELinuxPolicy, BoundsRuletype, ConstraintRuletype, DefaultRuletype, \
+ImportError: cannot import name 'IbpkeyconRange' from 'setools.policyrep' (/usr/lib64/python3.7/site-packages/setools/policyrep/__init__.py)
+```
+
+### 原因分析
+全量升级的流程是先升级所有软件包，都升级到新版本后，才去统一清理旧版本文件。policyrep模块属于python3-setools软件包，setools包结构发生过变更：
+-   在setools-4.2.0之前版本中，policyrep模块在/usr/lib64/python3.7/site-packages/setools/policyrep目录中。
+-   在社区稳定版本setools-4.2.0及之后版本中，policyrep模块集成到动态库/usr/lib64/python3.7/site-packages/setools/policyrep.cpython-37m-aarch64-linux-gnu.so。
+
+全量升级过程中，bind升级时以上两者都存在，寻找policyrep模块时，python的机制会优先找policyrep目录，导致找到了旧版本的文件从而没有成功执行semanage命令。由于bind是在post和postun处理的以下语句中执行semanage命令，如果用户需要配置selinux策略，执行失败会影响selinux策略的配置。
+-   post处理：
+```
+%selinux_set_booleans named_write_master_zones=1
+```
+-   postun处理：
+```
+%selinux_unset_booleans named_write_master_zones=1
+```
+
+### 解决方案
+bind能升级到新版本，但影响升级时的semanage命令的正常执行。为不影响关于bind的selinux策略的配置，请使用“dnf -y reinstall bind”命令重新安装bind软件包。
