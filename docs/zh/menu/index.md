@@ -191,3 +191,5 @@ headless: true
     - [认识容器OS升级]({{< relref "./docs/KubeOS/认识容器OS升级.md" >}})
     - [安装与部署]({{< relref "./docs/KubeOS/安装与部署.md" >}})
     - [使用方法]({{< relref "./docs/KubeOS/使用方法.md" >}})
+-   [镜像裁剪定制工具使用指南]({{< relref "./docs/TailorCustom/overview.md" >}})
+    - [isocut 使用指南]({{< relref "./docs/TailorCustom/isocut使用指南.md" >}})
