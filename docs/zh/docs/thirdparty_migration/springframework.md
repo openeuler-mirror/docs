@@ -61,7 +61,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 
 |  软件名称   |版本号  |安装方法   |
 |:---  |:----  |:----  |
-| openEuler | 20.03-LTS-SP2 |iso  |
+| openEuler | 20.03-LTS-SP3 |iso  |
 | tar | 1.32 |yum install  |
 | wget | 1.20.3 |yum install |
 | git | 2.27 |yum install |
@@ -95,7 +95,7 @@ Spring Boot 是 Spring 的一套快速配置方案，可以用来快速开发单
 2. 执行以下命令，挂载源镜像。
 
     ```
-    # mount /root/openEuler-20.03-LTS-SP2-everything-aarch64-dvd.iso /mnt
+    # mount /root/openEuler-20.03-LTS-SP3-everything-aarch64-dvd.iso /mnt
     ```
 
 ## 软件编译
