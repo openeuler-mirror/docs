@@ -54,6 +54,8 @@ The system uses the Flask-RESTful development mode. The following figure shows t
 
 ## Installing the Tool
 
+>Note: The software can run in Docker. In openEuler 21.09, due to environment restrictions, use the **--privileged** parameter when creating a Docker. Otherwise, the software fails to be started. This document will be updated after the adaptation.
+
 **1\. Installing the pkgship**
 
 You can use either of the following methods to install the pkgship:
@@ -213,6 +215,8 @@ pkgshipd stop Stop the service.
 > Only one mode is supported in each start/stop period. The two modes cannot be used at the same time.
 > 
 > The pkgshipd startup mode can be used only by the **pkgshipuser** user.
+>
+> If the **systemctl** command is not supported in the Docker environment, run the **pkgshipd** command to start or stop the service.
 
 ## Using the Tool
 
