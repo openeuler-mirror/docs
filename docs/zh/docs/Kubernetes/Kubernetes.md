@@ -10,5 +10,5 @@
 
 本文所使用的集群状态如下：
 
-- 集群结构：6 个 `openEuler 20.03 LTS SP2`系统的虚拟机，3 个 master 和 3 个 node 节点
-- 物理机：`openEuler 20.03 LTS SP2`的 `x86/ARM`服务器
+- 集群结构：6 个 `openEuler 20.03 LTS SP3`系统的虚拟机，3 个 master 和 3 个 node 节点
+- 物理机：`openEuler 20.03 LTS SP3`的 `x86/ARM`服务器
