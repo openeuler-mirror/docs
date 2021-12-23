@@ -35,27 +35,61 @@
     
     - [Trove 安装](#Trove-安装)
 
+    - [Rally 安装](#Rally-安装)
 <!-- /TOC -->
 
 ## OpenStack 简介
 
 OpenStack 是一个社区，也是一个项目。它提供了一个部署云的操作平台或工具集，为组织提供可扩展的、灵活的云计算。
 
-作为一个开源的云计算管理平台，OpenStack 由nova、cinder、neutron、glance、keystone、horizon等几个主要的组件组合起来完成具体工作。OpenStack 支持几乎所有类型的云环境，项目目标是提供实施简单、可大规模扩展、丰富、标准统一的云计算管理平台。OpenStack 通过各种互补的服务提供了基础设施即服务（IaaS）的解决方案，每个服务提供 API 进行集成。
+作为一个开源的云计算管理平台，OpenStack 由 nova、cinder、neutron、glance、keystone、horizon 等几个主要的组件组合起来完成具体工作。OpenStack 支持几乎所有类型的云环境，项目目标是提供实施简单、可大规模扩展、丰富、标准统一的云计算管理平台。OpenStack 通过各种互补的服务提供了基础设施即服务（IaaS）的解决方案，每个服务提供 API 进行集成。
 
-openEuler 20.03-LTS-SP2 版本官方认证的第三方oepkg yum 源已经支持 Openstack-Rocky 版本，用户可以配置好oepkg yum 源后根据此文档进行 OpenStack 部署。
+openEuler 20.03-LTS-SP3 版本官方认证的第三方 oepkg yum 源已经支持 Openstack-Rocky 版本，用户可以配置好 oepkg yum 源后根据此文档进行 OpenStack 部署。
 
+
+## 软件包多版本约定
+
+openEuler 20.03-LTS-SP3 版本支持 OpenStack 的 Queens、Rocky 和 Train 版本，有些软件包存在多版本，对于OpenStack Queens 和 Rocky 版本的安装，这些多版本软件包的安装我们需要指出对应版本号，
+以 OpenStack Nova 为例，可以使用 `yum list --showduplicates |grep openstack-nova` 列出对应nova服务的版本，这里我们选择对应 Rocky 版本，以下安装文档均以 ‘$RockyVer’ 来表示。
+
+涉及的软件包：
+
+openstack-keystone 及其子包
+
+openstack-glance 及其子包
+
+openstack-nova 及其子包
+
+openstack-neutron 及其子包
+
+openstack-cinder 及其子包
+
+openstack-dashboard 及其子包
+
+openstack-ironic 及其子包
+
+openstack-tempest
+
+openstack-kolla
+
+openstack-kolla-ansible
+
+openstack-trove 及其子包
+
+novnc
+
+diskimage-builder
 
 ## 准备环境
 ### OpenStack yum源配置
 
-配置 20.03-LTS-SP2 官方认证的第三方源 oepkg，以x86_64为例
+配置 20.03-LTS-SP3 官方认证的第三方源 oepkg，以x86_64为例
 
 ```shell
 $ cat << EOF >> /etc/yum.repos.d/OpenStack_Rocky.repo
 [openstack_rocky]
 name=OpenStack_Rocky
-baseurl=https://repo.oepkgs.net/openEuler/rpm/openEuler-20.03-LTS-SP2/budding-openeuler/openstack/rocky/x86_64/
+baseurl=https://repo.oepkgs.net/openEuler/rpm/openEuler-20.03-LTS-SP3/budding-openeuler/openstack/rocky/x86_64/
 gpgcheck=0
 enabled=1
 EOF
@@ -170,7 +204,7 @@ $ yum clean all && yum makecache
 2. 执行如下命令，安装软件包。
 
     ```shell
-    $ yum install openstack-keystone httpd python2-mod_wsgi
+    $ yum install openstack-keystone-$RockyVer httpd python2-mod_wsgi
     ```
 
 3. 配置keystone，编辑 `/etc/keystone/keystone.conf` 文件。在[database]部分，配置数据库入口。在[token]部分，配置token provider
@@ -362,7 +396,7 @@ $ yum clean all && yum makecache
 	安装软件包：
 
 	```shell
-	$ yum install openstack-glance
+	$ yum install openstack-glance-$RockyVer
 	```
 	配置glance：
 
@@ -533,9 +567,9 @@ $ yum clean all && yum makecache
     安装软件包：
 
     ```shell
-    $ yum install openstack-nova-api openstack-nova-conductor \
-      openstack-nova-novncproxy openstack-nova-scheduler openstack-nova-compute \
-      openstack-nova-placement-api openstack-nova-console
+    $ yum install openstack-nova-api-$RockyVer openstack-nova-conductor-$RockyVer \
+      openstack-nova-novncproxy-$RockyVer openstack-nova-scheduler-$RockyVer openstack-nova-compute-$RockyVer \
+      openstack-nova-placement-api-$RockyVer openstack-nova-console-$RockyVer
     ```
 
     配置nova：
@@ -827,8 +861,8 @@ $ yum clean all && yum makecache
     安装软件包：
 
     ```shell
-    $ yum install openstack-neutron openstack-neutron-ml2 \
-    openstack-neutron-linuxbridge ebtables ipset
+    $ yum install openstack-neutron-$RockyVer openstack-neutron-ml2-$RockyVer \
+    openstack-neutron-linuxbridge-$RockyVer ebtables ipset
     ```
     配置neutron：
 
@@ -1110,7 +1144,7 @@ $ yum clean all && yum makecache
     安装软件包：
 
     ```shell
-    $ yum install openstack-cinder
+    $ yum install openstack-cinder-$RockyVer
     ```
     配置cinder：
 
@@ -1189,7 +1223,7 @@ $ yum clean all && yum makecache
 
     ```shell
     $ yum install lvm2 device-mapper-persistent-data scsi-target-utils python2-keystone \
-    openstack-cinder-volume
+    openstack-cinder-volume-$RockyVer
     ```
 
     创建LVM物理卷 /dev/sdb：
@@ -1251,7 +1285,7 @@ $ yum clean all && yum makecache
     安装软件包：
 
     ```shell
-    $ yum install ceph-common python2-rados python2-rbd python2-keystone openstack-cinder-volume
+    $ yum install ceph-common python2-rados python2-rbd python2-keystone openstack-cinder-volume-$RockyVer
     ```
     
     在[DEFAULT]部分，启用LVM后端，配置镜像服务API的位置。
@@ -1360,7 +1394,7 @@ $ yum clean all && yum makecache
 1. 安装软件包
 
     ```shell
-    $ yum install openstack-dashboard
+    $ yum install openstack-dashboard-$RockyVer
     ```
 2. 修改文件`/usr/share/openstack-dashboard/openstack_dashboard/local/local_settings.py`
    
@@ -1432,7 +1466,7 @@ Tempest是OpenStack的集成测试服务，如果用户需要全面自动化测�
 
 1. 安装Tempest
     ```shell
-    $ yum install openstack-tempest
+    $ yum install openstack-tempest-$RockyVer
     ```
 2. 初始化目录
 
@@ -1475,7 +1509,20 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    IDENTIFIED BY 'IRONIC_DBPASSWORD';
    ```
 
-2. 组件安装与配置
+2. 安装软件包
+
+   ```shell
+   yum install openstack-ironic-api-$RockyVer openstack-ironic-conductor-$RockyVer python2-ironicclient
+   ```
+
+   启动服务
+
+   ```shell
+   systemctl enable openstack-ironic-api openstack-ironic-conductor
+   systemctl start openstack-ironic-api openstack-ironic-conductor
+   ```
+
+3. 组件安装与配置
 
    ##### 创建服务用户认证
 
@@ -1487,10 +1534,6 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    $ openstack role add --project service --user ironic admin 
    $ openstack service create --name ironic --description \ 
    "Ironic baremetal provisioning service" baremetal 
-   
-   $ openstack service create --name ironic-inspector --description     "Ironic inspector baremetal provisioning service" baremetal-introspection 
-   $ openstack user create --password IRONIC_INSPECTOR_PASSWORD --email ironic_inspector@example.com ironic_inspector 
-   $ openstack role add --project service --user ironic-inspector admin
    ```
 
    2、创建Bare Metal服务访问入口
@@ -1499,9 +1542,6 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    $ openstack endpoint create --region RegionOne baremetal admin http://$IRONIC_NODE:6385 
    $ openstack endpoint create --region RegionOne baremetal public http://$IRONIC_NODE:6385 
    $ openstack endpoint create --region RegionOne baremetal internal http://$IRONIC_NODE:6385 
-   $ openstack endpoint create --region RegionOne baremetal-introspection internal http://$IRONIC_NODE:5050/v1 
-   $ openstack endpoint create --region RegionOne baremetal-introspection public http://$IRONIC_NODE:5050/v1 
-   $ openstack endpoint create --region RegionOne baremetal-introspection admin http://$IRONIC_NODE:5050/v1
    ```
 
    ##### 配置ironic-api服务
@@ -1714,123 +1754,26 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    ```shell
    $ systemctl restart openstack-ironic-conductor
    ```
-   
-   ##### 配置ironic-inspector服务
-   
-   配置文件路径`/etc/ironic-inspector/inspector.conf`
-   
-   1、创建数据库
-   
-   ```shell
-   $ mysql -u root -p 
-   ```
-   ```sql
-   MariaDB [(none)]> CREATE DATABASE ironic_inspector CHARACTER SET utf8; 
-   
-   MariaDB [(none)]> GRANT ALL PRIVILEGES ON ironic_inspector.* TO 'ironic_inspector'@'localhost' \     IDENTIFIED BY 'IRONIC_INSPECTOR_DBPASSWORD'; 
-   MariaDB [(none)]> GRANT ALL PRIVILEGES ON ironic_inspector.* TO 'ironic_inspector'@'%' \     
-   IDENTIFIED BY 'IRONIC_INSPECTOR_DBPASSWORD';
-   ```
-   
-   2、通过**connection**选项配置数据库的位置，如下所示，替换**IRONIC_INSPECTOR_DBPASSWORD**为**ironic_inspector**用户的密码，替换**DB_IP**为DB服务器所在的IP地址：
-   
-   ```ini
-   [database] 
-   backend = sqlalchemy 
-   connection = mysql+pymysql://ironic_inspector:IRONIC_INSPECTOR_DBPASSWORD@DB_IP/ironic_inspector
-   ```
-   
-   3、调用 ironic-inspector-dbsync 生成表
-   
-   ```
-   ironic-inspector-dbsync --config-file /etc/ironic-inspector/inspector.conf upgrade
-   ```
-   
-   4、配置消息队列通信地址
-   
-   ```ini
-   [DEFAULT]
-   transport_url = rabbit://RPC_USER:RPC_PASSWORD@RPC_HOST:RPC_PORT/
-   ```
-   
-   5、设置keystone认证
-   
-   ```ini
-   [DEFAULT] 
-   
-   auth_strategy = keystone 
-   
-   [ironic] 
-   
-   api_endpoint = http://IRONIC_API_HOST_ADDRRESS:6385 
-   auth_type = password 
-   auth_url = http://PUBLIC_IDENTITY_IP:5000 
-   auth_strategy = keystone 
-   ironic_url = http://IRONIC_API_HOST_ADDRRESS:6385 
-   os_region = RegionOne 
-   project_name = service 
-   project_domain_name = Default 
-   user_domain_name = Default 
-   username = IRONIC_SERVICE_USER_NAME 
-   password = IRONIC_SERVICE_USER_PASSWORD
-   ```
-   
-   6、配置ironic inspector dnsmasq服务
-   
-   ```ini
-   # 配置文件地址：/etc/ironic-inspector/dnsmasq.conf 
-   port=0 
-   interface=enp3s0                         #替换为实际监听网络接口 
-   dhcp-range=172.20.19.100,172.20.19.110   #替换为实际dhcp地址范围 
-   bind-interfaces 
-   enable-tftp 
-   
-   dhcp-match=set:efi,option:client-arch,7 
-   dhcp-match=set:efi,option:client-arch,9 
-   dhcp-match=aarch64, option:client-arch,11 
-   dhcp-boot=tag:aarch64,grubaa64.efi 
-   dhcp-boot=tag:!aarch64,tag:efi,grubx64.efi 
-   dhcp-boot=tag:!aarch64,tag:!efi,pxelinux.0 
-   
-   tftp-root=/tftpboot                       #替换为实际tftpboot目录 
-   log-facility=/var/log/dnsmasq.log
-   ```
-   
-   7、启动服务
-   
-   ```shell
-   $ systemctl enable --now openstack-ironic-inspector.service 
-   $ systemctl enable --now openstack-ironic-inspector-dnsmasq.service
-   ```
-   
-   8、如果节点单独部署ironic服务还需要部署启动iscsid.service服务
-   
-   ```
-   $ systemctl enable openstack-cinder-volume.service tgtd.service iscsid.service
-   $ systemctl start openstack-cinder-volume.service tgtd.service iscsid.service
-   ```
-   
-   **注意**：arm架构支持不完全，需要根据自己情况进行适配；
-   
-3. deploy ramdisk镜像制作
+
+4. deploy ramdisk镜像制作
 
    目前ramdisk镜像支持通过ironic python agent builder来进行制作，这里介绍下使用这个工具构建ironic使用的deploy镜像的完整过程。（用户也可以根据自己的情况获取ironic-python-agent，这里提供使用ipa-builder制作ipa方法）
 
    ##### 安装 ironic-python-agent-builder
 
-   2. 安装工具：
+   1. 安装工具：
 
       ```shell
-      $ pip install ironic-python-agent-builder
+      $ pip install ironic-python-agent-builder-$RockyVer
       ```
 
-   3. 修改以下文件中的python解释器：
+   2. 修改以下文件中的python解释器：
 
       ```shell
       $ /usr/bin/yum /usr/libexec/urlgrabber-ext-down
       ```
 
-   4. 安装其它必须的工具：
+   3. 安装其它必须的工具：
 
       ```shell
       $ yum install git
@@ -1924,20 +1867,32 @@ Ironic是OpenStack的裸金属服务，如果用户需要进行裸机部署则�
    参考：[source-repositories](https://docs.openstack.org/diskimage-builder/latest/elements/source-repositories/README.html)。
 
    指定仓库地址及版本验证成功。
+   
+在Rocky中，我们还提供了ironic-inspector等服务，用户可根据自身需求安装。
 
 ### Kolla 安装
 
-Kolla为OpenStack服务提供生产环境可用的容器化部署的功能。openEuler 20.03 LTS SP2中引入了Kolla和Kolla-ansible服务。
+Kolla为OpenStack服务提供生产环境可用的容器化部署的功能。openEuler 20.03 LTS SP2中已经引入了Kolla和Kolla-ansible服务，但是Kolla 以及 Kolla-ansible 原生并不支持 openEuler，
+因此 Openstack SIG 在openEuler 20.03 LTS SP3中提供了 `openstack-kolla-plugin` 和 `openstack-kolla-ansible-plugin` 这两个补丁包。
 
 Kolla的安装十分简单，只需要安装对应的RPM包即可
 
+支持 openEuler 版本：
+
 ```shell
-$ yum install openstack-kolla openstack-kolla-ansible
+yum install openstack-kolla-plugin openstack-kolla-ansible-plugin
+```
+
+不支持 openEuler 版本：
+
+```shell
+yum install openstack-kolla-$RockyVer openstack-kolla-ansible-$RockyVer
 ```
 
 安装完后，就可以使用`kolla-ansible`, `kolla-build`, `kolla-genpwd`, `kolla-mergepwd`等命令了。
 
 ### Trove 安装
+
 Trove是OpenStack的数据库服务，如果用户使用OpenStack提供的数据库服务则推荐使用该组件。否则，可以不用安装。
 
 1. 设置数据库
@@ -1983,7 +1938,7 @@ Trove是OpenStack的数据库服务，如果用户使用OpenStack提供的数据
    1、安装**Trove**包
 
    ```shell
-   $ yum install openstack-trove python-troveclient
+   $ yum install openstack-trove-$RockyVer python2-troveclient
    ```
    2、配置`/etc/trove/trove.conf`
 
@@ -2102,3 +2057,11 @@ Trove是OpenStack的数据库服务，如果用户使用OpenStack提供的数据
    openstack-trove-taskmanager.service \
    openstack-trove-conductor.service
    ```
+
+### Rally 安装
+
+Rally是OpenStack提供的性能测试工具。只需要简单的安装即可。
+
+```
+yum install openstack-rally openstack-rally-plugins
+```
