@@ -404,7 +404,7 @@ $ vi hello.spec
 ```
 Name:     hello
 Version:  2.10
-Release:  1%{?dist}
+Release:  
 Summary:  The "Hello World" program from GNU
 Summary(zh_CN):  GNU "Hello World" 程序
 License:  GPLv3+
