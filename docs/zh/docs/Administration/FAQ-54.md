@@ -316,3 +316,23 @@ install-info: 没有那个文件或目录 for /usr/share/info/gdbm.info.gz
 
 1.  单包升级gdbm，安装使用gdbm-1.18.1-2版本相关软件包后，告警信息消失；
 2.  在单包升级gdbm后，再进行安装依赖的gdbm-devel软件包安装，让其依赖高版本gdbm软件包，告警信息消失。
+
+## 系统reboot后，执行yum/dnf 等命令报错，提示rpmdb error  
+
+### 问题现象  
+
+1.  reboot系统，重启后，执行rpm相关命令(yum/dnf)提示：  
+ error: db5 error(-30973) from dbenv->open: BDB0087 DB_RUNRECOVERY: Fatal error, run database recovery  
+ error: cannot open Packages index using db5 -  (-30973)  
+ error: cannot open Packages database in /var/lib/rpm  
+ Error: Error: rpmdb open failed  
+
+### 原因分析
+
+1.  执行安装升级动作过程中，会对/var/lib/rpm/__db.00*文件进行读写操作，如果在运行中出现强制下电、磁盘空间满或者 ‘kill -9’ 等异常中断操作，会导致对应_db文件损坏，后续执行rpm相关命令（dnf/yum）会发生报错  
+
+### 解决方案
+
+步骤1 使用 ‘kill -9’ 停止所有正在运行的rpm命令。  
+步骤2 删除所有的/var/lib/rpm/__db.00*文件。  
+步骤3 执行 ‘rpmdb --rebuilddb’ 命令，重建rpm db后即可。  
