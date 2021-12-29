@@ -176,5 +176,8 @@ headless: true
     -   [XFCE]({{< relref "./docs/desktop/xfce.md" >}})
         -   [安装 Xfce]({{< relref "./docs/desktop/Install_XFCE.md" >}})
         -   [Xfce 用户指南]({{< relref "./docs/desktop/Xfce_userguide.md" >}})
+    -   [KIRAN]({{< relref "./docs/desktop/kiran.md" >}})
+        -   [安装 Kiran]({{< relref "./docs/desktop/kiran安装手册.md" >}})
+        -   [Kiran 用户指南]({{< relref "./docs/desktop/Kiran_userguide.md" >}})
 -   [镜像裁剪定制工具使用指南]({{< relref "./docs/TailorCustom/overview.md" >}})
     - [isocut 使用指南]({{< relref "./docs/TailorCustom/isocut使用指南.md" >}})
