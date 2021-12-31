@@ -22,4 +22,34 @@ Figure 1 shows the overall architecture.
 
 **Figure 1** Overall architecture of StratoVirt
 
-![](./figures/StratoVirt_architecture.png)
+![](./figures/StratoVirt_architecture.jpg)
+
+## Features
+
+- High isolation ability based on hardware;
+- Fast cold boot: Benefit from the minimalist design, microvm can be started within 50ms;
+- Low memory overhead: StratoVirt works with a memory footprint less than 4MB;
+- IO enhancement: StratoVirt offers normal IO ability with minimalist IO device emulation;
+- OCI compatibility: StratoVirt works with isula and kata container, and can be integrated
+in Kubernetes ecosystem perfectly;
+- Multi-platform support: Fully support for Intel and Arm platform;
+- Expansibility: StratoVirt reserves interface and design for importing more features,
+even expand to standard virtualization support;
+- Security: lower than 46 syscalls while running;
+
+## Implementation
+
+#### Running Architecture
+
+- StratoVirt VM is an independent process in Linux. The process has three types of
+threads: main thread, VCPU thread and I/O thread:
+    - The main thread is a cycle for asynchronous collecting and processing events
+from external modules, such as a VCPU thread;
+    - Each VCPU has a thread to process trap events of this VCPU;
+    - Iothreads can be configured for I/O devices to improve I/O performance;
+
+## Restrictions
+
+- Only the Linux operating system is supported; The recommended kernel version is 4.19;
+- Only Linux is supported as the operating system of VM, and the recommended kernel version is 4.19;
+- Supports a maximum of 254 CPUs;
